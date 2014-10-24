@@ -7,9 +7,9 @@ set nocompatible
 " Initialize Vundle and load plugins (plugin manager)
 " If vundle is not installed, do it first
 let should_plugin_install=0
-if (!isdirectory(expand("$HOME/.vim/bundle/Vundle.vim")))
-    call system(expand("mkdir -p $HOME/.vim/bundle"))
-    call system(expand("git clone git@github.com:gmarik/Vundle.vim $HOME/.vim/bundle/Vundle.vim"))
+if !filereadable($HOME."/.vim/bundle/Vundle.vim/README.md")
+    silent !mkdir -p $HOME/.vim/bundle
+    silent !git clone https://github.com/gmarik/Vundle.vim $HOME/.vim/bundle/Vundle.vim > /dev/null 2>&1
     let should_plugin_install=1
 endif
 
@@ -149,7 +149,8 @@ Plugin 'kien/ctrlp.vim'
 " Finish initializing Vundle plugins
 call vundle#end()
 if should_plugin_install == 1
-    :PluginInstall
+    :silent! PluginInstall
+    :qa
 endif
 filetype plugin indent on
 
