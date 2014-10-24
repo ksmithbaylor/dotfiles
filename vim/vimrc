@@ -1,0 +1,302 @@
+" location ~/.vimrc
+set encoding=utf-8
+
+" Get rid of vi-era compatibility, we are better than that.
+set nocompatible
+
+" Initialize Vundle and load plugins (plugin manager)
+" If vundle is not installed, do it first
+let should_plugin_install=0
+if (!isdirectory(expand("$HOME/.vim/bundle/Vundle.vim")))
+    call system(expand("mkdir -p $HOME/.vim/bundle"))
+    call system(expand("git clone git@github.com:gmarik/Vundle.vim $HOME/.vim/bundle/Vundle.vim"))
+    let should_plugin_install=1
+endif
+
+filetype off
+set rtp+=~/.vim/bundle/Vundle.vim
+call vundle#begin()
+Plugin 'gmarik/Vundle.vim'
+
+" ----- BEGIN PLUGIN LIST -----
+
+" Directory tree popover, use CTRL-E to toggle
+    Plugin 'scrooloose/nerdtree'
+        nmap <C-e> :NERDTreeToggle<CR>
+        imap <C-e> :NERDTreeToggle<CR>
+        autocmd bufenter * if (winnr("$") == 1 && exists("b:NERDTreeType") && b:NERDTreeType == "primary") | q | endif
+        let g:NERDTreeChDirMode=2
+        let g:NERDTreeWinPos = "left"
+" Commenter, (leader)c<space> to (un)comment
+    Plugin 'scrooloose/nerdcommenter'
+" Fuzzy-finds a file in the current directory and subdirectories
+Plugin 'kien/ctrlp.vim'
+    set wildignore+=*/node_modules/**
+    let g:ctrlp_show_hidden=1
+" Git stuff
+    Plugin 'tpope/vim-fugitive'
+    Plugin 'airblade/vim-gitgutter'
+" Awesome minimalistic statusline
+    Plugin 'bling/vim-airline'
+        let g:airline_powerline_fonts=1
+        let g:airline#extensions#quickfix#quickfix_text = 'Quickfix'
+        let g:airline#extensions#quickfix#location_text = 'Location'
+        let g:airline#extensions#tabline#enabled = 1
+        let g:airline#extensions#tabline#tab_nr_type = 1
+        let g:airline#extensions#tabline#show_tab_nr = 1
+        let g:airline#extensions#tabline#buffer_nr_show = 1
+        let g:airline#extensions#tabline#formatter = 'unique_tail_improved'
+
+            nnoremap <Leader>- :bp<CR>
+            nnoremap <Leader>= :bn<CR>
+            nnoremap <Leader>0 :bd<CR>
+            nnoremap <Leader>p <C-^>
+            nnoremap <Leader>] :tabn<CR>
+            nnoremap <Leader>[ :tabp<CR>
+            nnoremap <Leader><CR> :tabnew<CR>
+        let g:airline#extensions#branch#enabled = 1
+        let g:airline#extensions#syntastic#enabled = 1
+        let g:airline#extensions#ctrlp#show_adjacent_modes = 1
+        let g:airline#extensions#whitespace#enabled = 1
+" Adds an html color background for hex colors
+    Plugin 'lilydjwg/colorizer'
+" Inserts pairs of appropriate characters
+    Plugin 'tpope/vim-unimpaired'
+        " Enables line bubbling using unimpaired shortcuts
+        nmap <C-k> [e
+        nmap <C-j> ]e
+        vmap <C-k> [egv
+        vmap <C-j> ]egv
+        inoremap <C-j> <Esc>:m .+1<CR>==gi
+        inoremap <C-k> <Esc>:m .-2<CR>==gi
+" Auto-insert pairs
+    Plugin 'jiangmiao/auto-pairs.git'
+" Awesome syntax highlighting and checker
+    Plugin 'scrooloose/syntastic'
+        let g:syntastic_mode_map = {'mode':'passive','active_filetypes':[],'passive_filetypes':[]}
+        nmap <C-l><C-l> :SyntasticCheck<CR>
+" Aligns text on certain characters
+    Plugin 'godlygeek/tabular'
+        nmap <leader>l= :Tabularize /=<CR>
+        vmap <leader>l= :Tabularize /=<CR>
+        nmap <leader>l: :Tabularize /:\zs<CR>
+        vmap <leader>l: :Tabularize /:\zs<CR>
+" Enable some plugins like surround.vim to be repeated
+    Plugin 'tpope/vim-repeat'
+" Change surroundings of a word
+    Plugin 'tpope/vim-surround'
+" Syntax highlighting for tmux config files
+    Plugin 'zaiste/tmux.vim'
+" Clojure stuff
+    Plugin 'tpope/vim-leiningen'
+    Plugin 'tpope/vim-fireplace'
+    Plugin 'vim-scripts/paredit.vim'
+    Plugin 'kien/rainbow_parentheses.vim'
+    Plugin 'jpalardy/vim-slime'
+        let g:slime_target = "tmux"
+        let g:slime_paste_file = tempname()
+
+        nmap ,e va(<C-c><C-c>
+        nmap ,d <C-c><C-c>
+
+        autocmd BufEnter *.clj RainbowParenthesesToggle
+        autocmd BufLeave *.clj RainbowParenthesesToggle
+        autocmd Syntax * RainbowParenthesesLoadRound
+        autocmd Syntax * RainbowParenthesesLoadSquare
+        autocmd Syntax * RainbowParenthesesLoadBraces
+
+        let g:rbpt_colorpairs = [
+            \ ['magenta',     'purple1'],
+            \ ['cyan',        'magenta1'],
+            \ ['green',       'slateblue1'],
+            \ ['yellow',      'cyan1'],
+            \ ['red',         'springgreen1'],
+            \ ['magenta',     'green1'],
+            \ ['cyan',        'greenyellow'],
+            \ ['green',       'yellow1'],
+            \ ['yellow',      'orange1'],
+            \ ]
+        let g:rbpt_max = 9
+" Ruby stuff
+    Plugin 'vim-ruby/vim-ruby'
+    Plugin 'tpope/vim-endwise'
+    Plugin 'pgr0ss/vimux-ruby-test'
+        map <leader>rb :RunAllRubyTests<CR>
+        map <leader>rf :RunRubyFocusedTest<CR>
+" Coffeescript support
+    Plugin 'kchmck/vim-coffee-script'
+" Handlebars support
+    Plugin 'mustache/vim-mustache-handlebars'
+        let g:mustache_abbreviations = 1
+" awesome tmux integration
+    Plugin 'benmills/vimux'
+        map <Leader>rn :wa<CR> :VimuxPromptCommand<CR>
+        map <Leader>rl :wa<CR> :VimuxRunLastCommand<CR>
+        map <leader>vq :VimuxCloseRunner<CR>
+" Cool color picker for OS X
+    Plugin 'iandoe/vim-osx-colorpicker'
+" Syntax highlighting
+    Plugin 'ksmithbaylor/tomorrow-theme', {'rtp': 'vim/'} " modified
+    Plugin 'pangloss/vim-javascript'
+    Plugin 'groenewege/vim-less'
+    Plugin 'briancollins/vim-jst'
+" Searching
+    Plugin 'mileszs/ack.vim'
+        let g:ackprg = 'ag --nogroup --nocolor --column'
+
+" ------ END PLUGIN LIST ------
+
+" Finish initializing Vundle plugins
+call vundle#end()
+if should_plugin_install == 1
+    :PluginInstall
+endif
+filetype plugin indent on
+
+" General Options
+""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+" Configure syntax highlighting
+syntax enable
+ " Necessary for tmux support
+set t_Co=256
+set t_ut=
+colorscheme Tomorrow-Night-Bright
+    " Change gutter line numbers to be lighter
+    highlight LineNr      ctermbg=235
+    highlight LineNr      ctermfg=241
+
+" Default tab settings, may be overridden in syntax-specific files
+set tabstop=4      " Width of a tab character
+set shiftwidth=4   "
+set softtabstop=4  " Number of spaces per tabstop
+set expandtab      " Uses spaces in place of tab characters
+
+" Mappings for exiting insert mode more conveniently, without moving cursor
+imap jj <C-c>
+
+" General options to make things better
+set encoding=utf-8                " Default encoding is UTF-8
+set scrolloff=3                   " Don't let the cursor get to the edge
+set autoindent                    " Start new lines at the same indent level
+set showmode                      " Shows the current mode at bottom
+set showcmd                       " Shows extra info about the current command
+set hidden                        " Hides buffers when they are abandoned
+set wildmenu                      " Tab-completion of menu options
+set wildmode=list:longest         " List as many possibilities as possible
+set visualbell                    " Flash screen instead of beeping for bell
+set cursorline                    " Highlight the current line
+set ttyfast                       " Improves smoothness in fast terminals
+set backspace=indent,eol,start    " Not sure what this does, but I trust him
+set laststatus=2                  " Put a statusline in every buffer
+set relativenumber                " Display relative line numbers
+set number                        " Display the absolute line number as well
+
+" Tame searching and moving
+set ignorecase
+set smartcase
+set gdefault
+set incsearch
+set showmatch
+set hlsearch
+nnoremap <leader><space> :noh<cr>
+nnoremap <tab> %
+vnoremap <tab> %
+
+" Make Vim handle long lines correctly
+set wrap
+set textwidth=80
+set formatoptions=qrn1
+nnoremap j gj
+nnoremap k gk
+nnoremap <Down> gj
+nnoremap <Up> gk
+
+" Show invisible characters
+set list
+set listchars=tab:▸\
+
+" Re-highlight lines in visual mode after indent
+:vmap < <gv
+:vmap > >gv
+
+" Makes Vim use the same bashrc so aliases are available in shell commands
+set shell=/bin/bash\ --rcfile\ ~/.bashrc\ -i
+
+" When saving a session, only save certain things
+set ssop=blank,buffers,curdir,help,tabpages
+
+" Enable mouse movements
+set mouse=nicr
+
+" Set clipboard pasting to automatically work
+function! WrapForTmux(s)
+  if !exists('$TMUX')
+    return a:s
+  endif
+  let tmux_start = "\<Esc>Ptmux;"
+  let tmux_end = "\<Esc>\\"
+  return tmux_start . substitute(a:s, "\<Esc>", "\<Esc>\<Esc>", 'g') . tmux_end
+endfunction
+let &t_SI .= WrapForTmux("\<Esc>[?2004h")
+let &t_EI .= WrapForTmux("\<Esc>[?2004l")
+function! XTermPasteBegin()
+  set pastetoggle=<Esc>[201~
+  set paste
+  return ""
+endfunction
+inoremap <special> <expr> <Esc>[200~ XTermPasteBegin()
+
+" Highlight trailing whitespace
+autocmd InsertEnter * match ExtraWhitespace /\s\+\%#\@<!$/
+autocmd BufRead,InsertLeave * match ExtraWhitespace /\s\+$/
+" Set up highlight group & retain through colorscheme changes
+highlight ExtraWhitespace ctermbg=red guibg=red
+autocmd ColorScheme * highlight ExtraWhitespace ctermbg=red guibg=red
+map <silent> <LocalLeader>ws :highlight clear ExtraWhitespace<CR>
+
+" Automatically strip trailing blank lines on all files
+function! TrimEndLines()
+    let save_cursor = getpos(".")
+    :silent! %s#\($\n\s*\)\+\%$##
+    call setpos('.', save_cursor)
+endfunction
+au BufWritePre * call TrimEndLines()
+
+""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+" Leader key customizations
+""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+
+" some commands from ove
+map <silent> <LocalLeader>ff :CtrlP<CR>
+map <silent> <LocalLeader>aw :Ack '<C-R><C-W>'
+map <silent> <LocalLeader>nt :NERDTreeToggle<CR>
+nnoremap * *N
+
+" ev opens up the vimrc file
+nnoremap <leader>ev :e $MYVIMRC<cr>
+
+" split splits the window vertically and switches to the new one
+nnoremap <leader>s <C-w>v<C-w>l
+
+"Bind <leader>y to forward last-yanked text to Clipper
+nnoremap <leader>y :call system('nc localhost 8377', @0)<CR>
+vmap <leader>y y<leader>y
+
+" toggle relative number
+function! ToggleRelativeNumber()
+    if &relativenumber
+        set number
+    else
+        set number
+        set relativenumber
+    endif
+endfunction
+nnoremap <silent> <LocalLeader>rr :call ToggleRelativeNumber()<CR>
+
+" clear trailing whitespace in the whole file
+nnoremap <silent> <LocalLeader>ww :%s/\s\+$//<CR>:let @/=''<CR><C-o>
+
+" source the vimrc and install plugins using Vundle
+nnoremap <silent> <LocalLeader>bi :w<CR>:so $MYVIMRC<CR>:PluginInstall<CR>:q<CR>

@@ -1,0 +1,22 @@
+# location ~/.gitconfig
+[user]
+    name = Kevin Smith
+    email = ksmithbaylor@gmail.com
+[core]
+    editor = vim
+    autocrlf = input
+    safecrlf = true
+    excludesfile = ~/.gitignore_global
+[color]
+    ui = true
+[color "status"]
+    changed = green
+    untracked = blue
+    added = yellow
+[alias]
+    co = checkout
+    com = commit
+    br = branch
+    lg = log --color --graph --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr) %C(bold blue)<%an>%Creset' --abbrev-commit
+[push]
+    default = simple
