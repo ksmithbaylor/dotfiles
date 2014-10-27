@@ -11,5 +11,9 @@ function _prepend_path() {
 _prepend_path true       ~/bin
 _prepend_path nodebrew   ~/.nodebrew/current/bin
 _prepend_path brew       /usr/local/bin
+_prepend_path true       /usr/local/opt/coreutils/libexec/gnubin
 
 unset _prepend_path
+
+# Manpath for gnu utils
+export MANPATH="/usr/local/opt/coreutils/libexec/gnuman:$MANPATH"
