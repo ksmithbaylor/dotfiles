@@ -87,17 +87,15 @@ function runjava {
     echo "--- Compiling $RJFILE..."
     javac $RJFILE
     if [ $? -eq 0 ]; then
-        echo -ne "--- Running the $RJCLASS class"
+        echo "--- Running the $RJCLASS class"
         if [ "$#" -ne 0 ]; then
-            echo " with arguments '$@'"
             java $RJCLASS $@
         else
-            echo
             java $RJCLASS
         fi
         rm *.class 2> /dev/null
     else
-        echo; echo "There were compilation issues."
+        echo "There were compilation issues."
     fi
 }
 
