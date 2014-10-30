@@ -11,7 +11,7 @@
 # The bookmark will be named "foo"
 #
 # When you want to get back to that folder use:
-#   goto foo
+#   g foo
 #
 # To see a list of bookmarks:
 #   bms
@@ -53,14 +53,14 @@ bms (){
   column -t -s '|' $bookmarks_file
 }
 
-goto(){
+g(){
   bookmark_name=$1
 
   bookmark=`grep "|$bookmark_name$" "$bookmarks_file"`
 
   if [[ -z $bookmark ]]; then
     echo 'Invalid name, please provide a valid bookmark name. For example:'
-    echo '  goto foo'
+    echo '  g foo'
     echo
     echo 'To bookmark a folder, go to the folder then do this (naming the bookmark 'foo'):'
     echo '  bm foo'
@@ -90,4 +90,4 @@ _go_complete(){
   cat $bookmarks_file | cut -d\| -f2 | grep "$2.*"
 }
 
-complete -C _go_complete -o default goto
+complete -C _go_complete -o default g
