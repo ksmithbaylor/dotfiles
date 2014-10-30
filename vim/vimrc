@@ -36,6 +36,8 @@ Plugin 'kien/ctrlp.vim'
 " Git stuff
     Plugin 'tpope/vim-fugitive'
     Plugin 'airblade/vim-gitgutter'
+" CSV viewing and manipulation
+    Plugin 'chrisbra/csv.vim'
 " Awesome minimalistic statusline
     Plugin 'bling/vim-airline'
         let g:airline_powerline_fonts=1
