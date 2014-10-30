@@ -1,9 +1,9 @@
 _prompt () {
     local previous=$?
-    local Red='\e[0;31m'
-    local Green='\e[0;32m'
-    local Yellow='\e[0;33m'
-    local Reset='\e[0m'
+    local Red='\[\e[0;31m\]'
+    local Green='\[\e[0;32m\]'
+    local Yellow='\[\e[0;33m\]'
+    local Reset='\[\e[0m\]'
     local PwdLimit=14
     local Dir=$(pwd |
                 sed -e "s|$HOME|~|" |
