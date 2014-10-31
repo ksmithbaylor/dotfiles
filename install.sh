@@ -6,7 +6,7 @@ function setup_symlinks() {
 
     for link in $symlinks; do
         local actual=$PWD/$link
-        if [ -f $link ]; then
+        if [[ -f $link && $(head -n 1 $link | grep location) ]]; then
             local symlink_path="$(head -n 1 $link |
                                   awk '{print $NF}' |
                                   sed "s|~|$HOME|")"
