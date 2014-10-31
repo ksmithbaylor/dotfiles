@@ -9,7 +9,7 @@ function setup_symlinks() {
     local symlinks=$(find * -maxdepth 1 -mindepth 1 ! -name *.swp |
                      grep -ve '^bin.*' |
                      grep -ve '^packages.*' |
-                     grep -ve '^applications*')
+                     grep -ve '^serials*')
 
     for link in $symlinks; do
         local actual=$PWD/$link
