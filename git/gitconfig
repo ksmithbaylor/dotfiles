@@ -4,7 +4,7 @@
     email = ksmithbaylor@gmail.com
 [core]
     editor = vim
-    autocrlf = input
+    autocrlf = false
     safecrlf = true
     excludesfile = ~/.gitignore_global
 [color]
