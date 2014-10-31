@@ -1,3 +1,8 @@
+function die() {
+    echo $@
+    exit 1
+}
+
 function setup_symlinks() {
     local symlinks=$(find * -maxdepth 1 -mindepth 1 ! -name *.swp |
                      grep -ve '^bin.*' |
@@ -20,16 +25,30 @@ function setup_symlinks() {
 echo -- Setting up symlinks
 setup_symlinks
 
-# Link personal binaries into ~/bin
 echo -- Linking personal binaries
 rm -rf $HOME/bin
 ln -sf $PWD/bin $HOME/bin
 
-# Update homebrew/cask
+echo -- Making sure that Xcode is installed
+[ ! -d /Applications/Xcode.app ] && die "Xcode is not installed. Go install it and re-run this script"
+
+echo -- Making sure that Homebrew is installed
+if [[ ! $(which brew) ]]; then
+    echo "Homebrew is not installed. Installing Homebrew..."
+    sudo mkdir -p /usr/local/Cellar
+    sudo chown -R $(whoami) /usr/local
+    ruby -e "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install)"
+fi
+
+echo -- Making sure that Homebrew Cask is installed
+if [[ ! -n $(brew list | grep brew-cask) ]]; then
+    echo "Homebrew Cask is not installed. Installing Homebrew Cask..."
+    brew install caskroom/cask/brew-cask
+fi
+
 echo -- Updating Homebrew and Homebrew cask
 brew update | grep -v 'Already up-to-date'
 
-# Install homebrew packages
 echo -- Installing any missing Homebrew packages
 brew_packages=$(cat packages/brew)
 installed_packages=$(brew list)
@@ -37,7 +56,6 @@ for package in $brew_packages; do
     [[ ! $(echo $installed_packages | grep $package) ]] && brew install $package
 done
 
-# Install homebrew-cask packages
 echo -- Installing any missing Homebrew Cask packages
 brew_packages=$(cat packages/brew-cask)
 installed_packages=$(brew cask list)
@@ -46,7 +64,6 @@ for package in $brew_packages; do
     [[ ! $(echo $installed_packages | grep $package) ]] && brew cask install $package
 done
 
-# Check for other apps (mac app store)
 echo -- Checking for presence of other apps
 SAVEIFS=$IFS
 IFS=$(echo -en "\n\b")
@@ -58,11 +75,14 @@ do
 done
 IFS=$SAVEIFS
 
-# Checking other things
-echo -- Looking for potential problems
+echo -- Running Brew doctor
+brew doctor || echo Brew doctor failed
+
+echo -- Checking for other potential problems
 [ -d $HOME/Applications ] && echo Why is the ~/Applications folder present?
 
 # Cleanup
+unset die
 unset setup_symlinks
 unset brew_cask_packages
 unset installed_packages
