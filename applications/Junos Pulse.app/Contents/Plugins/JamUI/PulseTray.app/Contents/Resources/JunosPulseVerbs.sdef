@@ -1,0 +1,58 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE dictionary SYSTEM "file://localhost/System/Library/DTDs/sdef.dtd">
+
+
+
+	<!-- declare the namespace for using XInclude so we can include the standard suite -->
+<dictionary xmlns:xi="http://www.w3.org/2003/XInclude">
+
+		<!-- use XInclude to include the standard suite -->
+	<xi:include href="file:///System/Library/ScriptingDefinitions/CocoaStandard.sdef" xpointer="xpointer(/dictionary/suite)"/>
+	<suite name="Pulse Tray Commands" code="PTUI" description="Terminology for the Pulse UI .">
+
+    <class name="application" code="ptap" 
+					description="Our scriptable application class." inherits="application">
+
+			<cocoa class="NSApplication"/>
+                        <property name="weight" code="PtWt" type="real" access="r"
+			        description="the weight of all of the items in the application"/>
+			
+			<element type="connection"/>
+            
+		</class>
+        
+        
+        <class name="connection" code="PTco"
+			description="An object that can contain connection details.">
+			
+			<cocoa class="MacConnectionItem"/>
+			
+			
+			<!-- properties -->
+			
+			<property name="connectionDisplayName" code="Ptna" type="text" access="r"
+			        description="the item's name"/>
+          <property name="connectionButtonTitle" code="Ptbt" type="text" access="r"
+			        description="the item's buttin title"/>
+           <property name="indexStr" code="Ptis" type="text" access="r"
+			        description="the item's index"/>
+          <property name="connectionStatus" code="Pccs" type="text" access="r"
+			        description="the item's status"/>
+            <property name="connectionServerUrl" code="Mcur" type="text" access="r"
+			        description="the item's URl"/>     
+		</class>
+	<command name="do PulseTray command" code="PTUIDpCm" description="run a Pulse Tray command with a direct parameter">
+			<cocoa class="TrayScriptHelper"/>
+			<direct-parameter description="commandId  to be passed to the tray command">
+				<type type="text"/>
+			</direct-parameter>
+            <parameter name="ConnectionIndexStr" code="savo" type="text" optional="yes" 
+				description="a boolean parameter.">
+				<cocoa key="ConnectionIndexStr"/>
+			</parameter>
+
+			<result type="integer" description="result code"/>
+		</command>
+ </suite>
+
+</dictionary>

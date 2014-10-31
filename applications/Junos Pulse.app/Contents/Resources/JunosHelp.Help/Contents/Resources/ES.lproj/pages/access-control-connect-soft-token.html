@@ -1,0 +1,27 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<title>Descripción general de la configuración de Junos Pulse</title><meta http-equiv="Content-Type" content_SDL="text/html; charset=UTF-8"/> <meta name="keywords" content="tokens, autenticación, RSA SecurID"/> <meta name="description" content="Describe cómo Pulse admite la autenticación de token." /> <link href="../sty/standard.css" rel="stylesheet" type="text/css" />
+</head>
+<body style="width:98%;">
+<div id="content"><h1 class="Title">Autenticación con token</h1>
+<p class="Para1">Pulse admite el sistema de autenticación con token RSA SecurID. La autenticación con token, también llamada autenticación de dos factores, es un método de generación de credenciales de autenticación que son muy difíciles de comprometer. Un código token es un número que se genera simultáneamente tanto en el cliente como en el servidor. El usuario crea un número de identificación personal (PIN). A continuación, el nombre de usuario y el PIN más el código de token actual permiten al usuario iniciar sesión en el servidor. Un PIN más un código token forman una contraseña. Un código token caduca después de un breve intervalo de tiempo, por lo general un minuto. A continuación, se reemplaza por un nuevo código token. </p>
+<p class="Para1">La primera vez que utilice el sistema, Pulse le pedirá que cree un PIN. Si el administrador ya le ha proporcionado un PIN, se le solicitará que lo cambie. Si el administrador de red requiere que cambie el PIN periódicamente, Pulse va a solicitarle un PIN nuevo. Por lo general, debe proporcionar el código token actual al cambiar el PIN. En algunos casos, después de introducir la contraseña, se le solicitará que especifique el siguiente código token antes de acceder a la red. Espere hasta que su dispositivo de token cambie a un nuevo código token y a continuación introduzca ese número para continuar.</p>
+<h2 class="Head2"> <!--Pulse 3.0 for Mac supports only soft tokens so the folllowing is commented out - Hardware and Software  -->Autenticadores</h2>
+<p class="Para1">El dispositivo o software que genera el token se denomina autenticador. Pulse admite la gama completa de autenticadores <!--Pulse 3.0 for Mac supports only soft tokens so the folllowing is commented out - and software   -->de hardware SecurID.</p>
+<p class="Para1">Los autenticadores de hardware (físicos) de RSA SecurID muestran un nuevo código token cada 60 segundos. Cuando vaya a iniciar sesión, deberá tener con usted la tarjeta o el llavero que genera el token. En la ventana de inicio de sesión de Pulse, introduzca su nombre de usuario y su PIN más el código token actual. Un autenticador USB permite almacenar sus credenciales de contraseña y nombre de usuario de MacOS, así como sus certificados digitales. Cuando el dispositivo está conectado a su equipo, este permite la introducción automática del código token y Pulse puede obtener acceso de manera automática a los códigos token directamente desde el dispositivo, una vez que haya introducido su PIN. </p> <!--  <p class="Para1">SecurID also offers a variety of software authenticators
+including smartphone applications, software for desktop and laptop
+computers, and browser-based applications. These authenticators enable
+login options such as the ability to store login credentials
+and digital certificates. Your Pulse login procedure using a software
+authenticator depends on how your security administrator has configured
+the system. Typically, if you have the SecurID software installed
+on your endpoint, Pulse interacts with the software to retrieve the
+token code after you provide your PIN. If the system supports multiple
+tokens, Pulse prompts you to select one. </p><p class="Para1">If your authentication environment supports both software and
+hardware tokens, Pulse prompts you to select the type of token you
+want to use.</p>-->
+<h4 class="Head4">Temas relacionados</h4><ul><li class="li"><a href="access-control-connect-smartcard-overview.html">Autenticación con tarjeta inteligente</a></li></ul></div>
+
+</body></html>

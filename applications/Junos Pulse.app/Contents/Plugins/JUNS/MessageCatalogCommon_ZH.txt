@@ -1,0 +1,92 @@
+﻿; JUNS catalogUtil requires catalog message files to be saved with UTF-8 encoding, which put 3 bytes {0xEF, 0xBB, 0xBF} at the file beginning called Byte Order Mark (BOM) for UTF-8 files . For modifications in this files, please use Text Editors which persist these BOM bytes (like Notepad.exe, Visual Studio IDE, etc).
+
+
+;kMsgCommonErrOk
+[0]
+Short-desc = 成功。
+Long-desc = 操作已成功。
+
+;kMsgCommonErrFailure
+[1]
+Short-desc = 一般失敗。
+Long-desc = 重試操作。如果問題仍然存在，請與您的網路管理員聯絡。
+
+;kMsgCommonErrConnection
+[2]
+Short-desc = 內部 IPC 連線失敗。
+Long-desc = 請重試操作，或者重新啟動電腦。如果問題仍然存在，請與您的網路管理員聯絡。
+
+;kMsgCommonErrUnimplemented
+[3]
+Short-desc = 未執行指令或功能
+Long-desc = 請與您的網路管理員聯絡。
+
+;kMsgCommonErrParameter
+[4]
+Short-desc = 參數無效。
+Long-desc = 重試操作。如果問題仍然存在，請與您的網路管理員聯絡。
+
+;kMsgCommonErrInvalidHandle
+[5]
+Short-desc = 無效的控制代碼。
+Long-desc = 重試操作。如果問題仍然存在，請重新啟動系統。
+
+;kMsgCommonErrBufferSize
+[6]
+Short-desc = 提供的緩衝區太小。
+Long-desc = 重試操作。如果問題仍然存在，請重新啟動系統。
+
+;kMsgCommonErrOutOfMemory
+[7]
+Short-desc = 記憶體不足
+Long-desc = 重試操作。如果問題仍然存在，請嘗試關閉沒有用的應用程式，以釋出一些記憶體。如果問題仍然存在，請重新啟動系統。
+
+;kMsgCommonErrNotStarted
+[8]
+Short-desc = IO 子系統未啟動。
+Long-desc = 重試操作。如果問題仍然存在，請重新啟動系統。
+
+;kMsgCommonErrUnknownCommand
+[9]
+Short-desc = 服務收到未知指令。
+Long-desc = 重試操作。如果問題仍然存在，請重新啟動系統。
+
+;kMsgCommonErrIoSystem
+[10]
+Short-desc = IO 子系統發生一般故障。
+Long-desc = 重試操作。如果問題仍然存在，請重新啟動系統。
+
+;kMsgCommonErrNotFound
+[11]
+Short-desc = 未找到要求的項目。
+Long-desc = 重試操作。如果問題仍然存在，請與您的網路管理員聯絡。
+
+;kMsgCommonErrAlreadyExists
+[12]
+Short-desc = 要求的實體已經存在。
+Long-desc = 重試操作。如果問題仍然存在，請與您的網路管理員聯絡。
+
+;kMsgCommonErrAlreadyStarted
+[13]
+Short-desc = 要求的實體已經啟動。
+Long-desc = 重試操作。如果問題仍然存在，請與您的網路管理員聯絡。
+
+;kMsgCommonErrInvalidService
+[14]
+Short-desc = 實體的代碼簽名無效。
+Long-desc = 請與您的網路管理員聯絡。
+
+;kMsgCommonErrCancelled
+[15]
+Short-desc = 操作已取消。
+Long-desc = 重試操作。如果問題仍然存在，請與您的網路管理員聯絡。
+
+;kMsgCommonErrShutdown
+[16]
+Short-desc = 連線已關閉。
+Long-desc = 伺服器已重設連線。必須再次登入以重新連線。
+
+;kMsgCommonPassAnySuppTypeArg, used for passing thru any supported data type argument
+[999]
+Short-desc = {0}
+Long-desc = {0}

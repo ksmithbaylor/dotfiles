@@ -1,0 +1,92 @@
+﻿; JUNS catalogUtil requires catalog message files to be saved with UTF-8 encoding, which put 3 bytes {0xEF, 0xBB, 0xBF} at the file beginning called Byte Order Mark (BOM) for UTF-8 files . For modifications in this files, please use Text Editors which persist these BOM bytes (like Notepad.exe, Visual Studio IDE, etc).
+
+
+;kMsgCommonErrOk
+[0]
+Short-desc = Powodzenie.
+Long-desc = Operacja powiodła się.
+
+;kMsgCommonErrFailure
+[1]
+Short-desc = Błąd ogólny.
+Long-desc = Spróbuj ponownie wykonać operację. Jeśli problem będzie się powtarzać, skontaktuj się z administratorem sieci.
+
+;kMsgCommonErrConnection
+[2]
+Short-desc = Wewnętrzne połączenie IPC nie powiodło się.
+Long-desc = Spróbuj ponownie wykonać operację lub nawet ponownie uruchomić komputer. Jeśli problem będzie się powtarzać, skontaktuj się z administratorem sieci.
+
+;kMsgCommonErrUnimplemented
+[3]
+Short-desc = Polecenie lub funkcja nie została zaimplementowana
+Long-desc = Skontaktuj się z administratorem sieci.
+
+;kMsgCommonErrParameter
+[4]
+Short-desc = Parametr jest nieprawidłowy.
+Long-desc = Spróbuj ponownie wykonać operację. Jeśli problem będzie się powtarzać, skontaktuj się z administratorem sieci.
+
+;kMsgCommonErrInvalidHandle
+[5]
+Short-desc = Nieprawidłowy uchwyt.
+Long-desc = Spróbuj ponownie wykonać operację. Jeśli problem będzie się powtarzać, ponownie uruchom system.
+
+;kMsgCommonErrBufferSize
+[6]
+Short-desc = Wprowadzony bufor jest za mały.
+Long-desc = Spróbuj ponownie wykonać operację. Jeśli problem będzie się powtarzać, ponownie uruchom system.
+
+;kMsgCommonErrOutOfMemory
+[7]
+Short-desc = Brak pamięci
+Long-desc = Spróbuj ponownie wykonać operację. Jeśli problem będzie się powtarzać, spróbuj zwolnić nieco pamięci, zamykając niepożądane aplikacje. Jeśli problem nadal będzie się powtarzać, ponownie uruchom system.
+
+;kMsgCommonErrNotStarted
+[8]
+Short-desc = Podsystem we/wy nie został uruchomiony.
+Long-desc = Spróbuj ponownie wykonać operację. Jeśli problem będzie się powtarzać, ponownie uruchom system.
+
+;kMsgCommonErrUnknownCommand
+[9]
+Short-desc = Usługa otrzymała nieznane polecenie.
+Long-desc = Spróbuj ponownie wykonać operację. Jeśli problem będzie się powtarzać, ponownie uruchom system.
+
+;kMsgCommonErrIoSystem
+[10]
+Short-desc = Ogólna usterka podsystemu we/wy.
+Long-desc = Spróbuj ponownie wykonać operację. Jeśli problem będzie się powtarzać, ponownie uruchom system.
+
+;kMsgCommonErrNotFound
+[11]
+Short-desc = Nie znaleziono elementu żądania.
+Long-desc = Spróbuj ponownie wykonać operację. Jeśli problem będzie się powtarzać, skontaktuj się z administratorem sieci.
+
+;kMsgCommonErrAlreadyExists
+[12]
+Short-desc = Obiekt żądania już istnieje.
+Long-desc = Spróbuj ponownie wykonać operację. Jeśli problem będzie się powtarzać, skontaktuj się z administratorem sieci.
+
+;kMsgCommonErrAlreadyStarted
+[13]
+Short-desc = Obiekt żądania został już uruchomiony.
+Long-desc = Spróbuj ponownie wykonać operację. Jeśli problem będzie się powtarzać, skontaktuj się z administratorem sieci.
+
+;kMsgCommonErrInvalidService
+[14]
+Short-desc = Obiekt ma nieprawidłową sygnaturę podpisu kodu.
+Long-desc = Skontaktuj się z administratorem sieci.
+
+;kMsgCommonErrCancelled
+[15]
+Short-desc = Operacja została anulowana.
+Long-desc = Spróbuj ponownie wykonać operację. Jeśli problem będzie się powtarzać, skontaktuj się z administratorem sieci.
+
+;kMsgCommonErrShutdown
+[16]
+Short-desc = Połączenie zostało zamknięte.
+Long-desc = Serwer zresetował połączenie. Aby połączyć się ponownie, należy zalogować się ponownie.
+
+;kMsgCommonPassAnySuppTypeArg, used for passing thru any supported data type argument
+[999]
+Short-desc = {0}
+Long-desc = {0}

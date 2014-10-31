@@ -1,0 +1,26 @@
+﻿; JUNS catalogUtil requires catalog message files to be saved with UTF-8 encoding, which put 3 bytes {0xEF, 0xBB, 0xBF} at the file beginning called Byte Order Mark (BOM) for UTF-8 files . For modifications in this files, please use Text Editors which persist these BOM bytes (like Notepad.exe, Visual Studio IDE, etc).
+
+;kMsgConnMgrErrConnectionMethodFailure
+[1800]
+Short-desc = Failed to invoke connection method. 
+Long-desc = Retry the operation. If the problem persists, re-install application or contact your network administrator.
+
+;kMsgConnMgrErrConnectionDoesNotExist
+[1801]
+Short-desc = Connection does not exist
+Long-desc = A connection attempt was made on a connection which does not exist, try deleting and re-adding the connection.
+
+;kMsgConnMgrErrConnectionDoesAlreadyExists
+[1802]
+Short-desc = Connection already exists
+Long-desc = A connection attempt was made to a connection which already exists, try disconnecting and re-connecting the connection.
+
+;kMsgConnMgrErrConnMethodTerminated
+[1803]
+Short-desc = Connection method stopped unexpectedly
+Long-desc = Connection method {0} stopped unexpectedly with error {1}, try re-starting your application.
+
+;kMsgConnMgrErrConnMethodTooMany
+[1804]
+Short-desc = Connection method doesn't allow concurrent connections
+Long-desc = The connection failed because there is already a connection of that type connected, and the connection method doesn't allow concurrent connections.

@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<title>Add a Connection</title><meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
+<link href="../sty/standard.css" rel="stylesheet" type="text/css" />
+<meta name="keywords" content="connections, adding a connection"/>
+<meta name="description" content="Describes how to use the Pulse interface to create a secure connection to a specific network." />
+</head>
+<body style="width:95%;>
+<div id="content"><h1 class="Head1Split" >Add a Connection</h1>
+<p class="Para1">Each connection in Junos Pulse represents a protected
+network. Typically, your network administrator defines the connections
+for you and might disable the Add a Connection feature. If you are
+required to create new connections, your network administrator will
+tell you the settings that you must use. </p><p class="Para1">To add a new connection:</p>
+<ol type="1">
+  <li class="li">On the Connections pane, click the <b>Add a Connection</b> button: 
+    <p class="Para1"><img src="../../../shrd/add.png"></img> </p>
+    <p class="Para1">The Add Connection dialog box opens.</p>
+  </li>
+  <li class="li">For Type, typically your network administrator will tell you which option to   select. Choose one of the following:</li>
+  <ul>
+ 	<li class="li2"><strong>SSL VPN or UAC</strong>—Use this network type if you are connecting to Junos Pulse Secure Access Service   or Junos Pulse Access Control Service.</li>
+	<li class="li2"><strong>SRX</strong>—Use this network type if you are connecting to a Juniper Networks SRX Series   device. </li>
+      
+  </ul>
+    <li class="li">For Name, specify a descriptive name for this connection. The 
+    name you specify appears in the Pulse Connections pane.</li>
+  <li class="li">For Server URL, specify the network that you want to connect 
+    to. You can enter the Server URL in any of the following formats:
+    <ul>
+      <li class="li2">An IP address, for example <code>10.204.71.86</code></li>
+      <li class="li2">A DNS name, for example <code>server.mycompany.net.</code></li>
+    </ul>
+  </li>
+  <li class="li">Click <b>Add</b> to save your new connection and close the dialog 
+    box. Click <b>Connect</b> to save your new connection and initiate a connection 
+    to the network.</li>
+</ol>
+<h4 class="Head4">Related Topics</h4>
+<ul><li class="li"><a href="access-control-connect-client-ui.html">Junos Pulse Interface</a></li>
+<li class="li"><a href="access-control-connect-client-connecting.html">Connect to a Network</a></li></ul></div>
+
+</body></html>

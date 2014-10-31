@@ -1,0 +1,92 @@
+﻿; JUNS catalogUtil requires catalog message files to be saved with UTF-8 encoding, which put 3 bytes {0xEF, 0xBB, 0xBF} at the file beginning called Byte Order Mark (BOM) for UTF-8 files . For modifications in this files, please use Text Editors which persist these BOM bytes (like Notepad.exe, Visual Studio IDE, etc).
+
+
+;kMsgCommonErrOk
+[0]
+Short-desc = 成功。
+Long-desc = 操作成功。
+
+;kMsgCommonErrFailure
+[1]
+Short-desc = 常规故障。
+Long-desc = 请重新尝试此操作。如果问题仍然存在，请联系网络管理员。
+
+;kMsgCommonErrConnection
+[2]
+Short-desc = 内部 IPC 连接失败。
+Long-desc = 请重新尝试此操作或重新启动计算机。如果问题仍然存在，请联系网络管理员。
+
+;kMsgCommonErrUnimplemented
+[3]
+Short-desc = 命令或功能未实现
+Long-desc = 请联系网络管理员。
+
+;kMsgCommonErrParameter
+[4]
+Short-desc = 参数无效。
+Long-desc = 请重新尝试此操作。如果问题仍然存在，请联系网络管理员。
+
+;kMsgCommonErrInvalidHandle
+[5]
+Short-desc = 句柄无效。
+Long-desc = 请重新尝试此操作。如果问题仍然存在，请重新启动系统。
+
+;kMsgCommonErrBufferSize
+[6]
+Short-desc = 提供的缓冲区太小。
+Long-desc = 请重新尝试此操作。如果问题仍然存在，请重新启动系统。
+
+;kMsgCommonErrOutOfMemory
+[7]
+Short-desc = 内存不足
+Long-desc = 请重新尝试此操作。如果问题仍然存在，请关闭不需要的应用程序以释放部分内存。如果问题仍然存在，请重新启动系统。
+
+;kMsgCommonErrNotStarted
+[8]
+Short-desc = IO 子系统未启动。
+Long-desc = 请重新尝试此操作。如果问题仍然存在，请重新启动系统。
+
+;kMsgCommonErrUnknownCommand
+[9]
+Short-desc = 服务接收到未知命令。
+Long-desc = 请重新尝试此操作。如果问题仍然存在，请重新启动系统。
+
+;kMsgCommonErrIoSystem
+[10]
+Short-desc = IO 子系统出现常规故障。
+Long-desc = 请重新尝试此操作。如果问题仍然存在，请重新启动系统。
+
+;kMsgCommonErrNotFound
+[11]
+Short-desc = 未找到请求条目。
+Long-desc = 请重新尝试此操作。如果问题仍然存在，请联系网络管理员。
+
+;kMsgCommonErrAlreadyExists
+[12]
+Short-desc = 请求实体已存在。
+Long-desc = 请重新尝试此操作。如果问题仍然存在，请联系网络管理员。
+
+;kMsgCommonErrAlreadyStarted
+[13]
+Short-desc = 请求实体已启动。
+Long-desc = 请重新尝试此操作。如果问题仍然存在，请联系网络管理员。
+
+;kMsgCommonErrInvalidService
+[14]
+Short-desc = 实体的代码签名无效。
+Long-desc = 请联系网络管理员。
+
+;kMsgCommonErrCancelled
+[15]
+Short-desc = 操作已取消。
+Long-desc = 请重新尝试此操作。如果问题仍然存在，请联系网络管理员。
+
+;kMsgCommonErrShutdown
+[16]
+Short-desc = 连接已关闭。
+Long-desc = 服务器已重置此连接。必须再次登录才能重新连接。
+
+;kMsgCommonPassAnySuppTypeArg, used for passing thru any supported data type argument
+[999]
+Short-desc = {0}
+Long-desc = {0}

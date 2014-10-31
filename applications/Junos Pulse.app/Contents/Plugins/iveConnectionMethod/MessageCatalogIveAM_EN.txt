@@ -1,0 +1,328 @@
+﻿; JUNS catalogUtil requires catalog message files to be saved with UTF-8 encoding, which put 3 bytes {0xEF, 0xBB, 0xBF} at the file beginning called Byte Order Mark (BOM) for UTF-8 files . For modifications in this files, please use Text Editors which persist these BOM bytes (like Notepad.exe, Visual Studio IDE, etc).
+
+;kMsgIveAMErrInstanceAlreadyInUse
+[1100]
+Short-desc = Instance already in use.
+Long-desc = 
+
+;kMsgIveAMErrLoadingStore
+[1101]
+Short-desc = Failed to load store.
+Long-desc = Restart your system. If the problem persists, contact your network administrator.
+
+;kMsgIveAMErrLoadConnection
+[1102]
+Short-desc = Failed to load connection. 
+Long-desc = Retry the operation. If the problem persists, contact your network administrator.
+
+;kMsgIveAMErrRetrieveURI
+[1103]
+Short-desc = Could not retrieve Uniform Resource Identifier (URI). 
+Long-desc =  Retry the operation. If the problem persists, contact your network administrator.
+
+;kMsgIveAMErrInitiateConnect
+[1104]
+Short-desc = Failed to initiate the connection. 
+Long-desc = Retry the operation. If the problem persists, contact your network administrator.
+
+;kMsgIveAMErrConnectingChannel
+[1105]
+Short-desc = Error connecting channel. 
+Long-desc = Error Connecting channel (stage: {0}, error: {1}).
+
+;kMsgIveAMErrAccessMethod
+[1106]
+; generic access method connection error
+Short-desc = Error {0} provisioning access method connection.
+Long-desc = Error provisioning access method {0}; error can vary based on the access method. 
+
+;kMsgIveAMErrInvalidCertificate
+[1107]
+Short-desc = Invalid server certificate.
+Long-desc = Server certificate validation failed. If you are certain that this is a valid destination, click Retry to continue. Otherwise, click Close and contact your network administrator.
+
+;kMsgIveAMErrConnectionFailed
+[1108]
+Short-desc = Connection failed. 
+Long-desc = Retry the operation. If the problem persists, contact your network administrator.
+
+;kMsgIveAMErrSessionExpired
+[1109]
+Short-desc = Session expired. 
+Long-desc = Your connection to the network has expired due to inactivity. Please log in again to establish connectivity.
+
+;kMsgIveAMErrProtocol
+[1110]
+Short-desc = Unable to communicate with the server.
+Long-desc = The server can't respond to Juniper networking requests.  This could be due to the server being down, or connecting to a server that's not a Juniper server.  If this condition persists, please contact your administrator.
+
+;kMsgIveAMErrHostUnknown
+[1111]
+Short-desc = Host not found.
+Long-desc = Hostname could not be resolved using the Domain Name System (DNS). Please try again. If your system allows you to edit your connections and you know the destination's IP address, try this connection using the IP address. If the problem persists, contact your network administrator.
+
+;kMsgIveAMErrPulseSubsystem
+[1112]
+Short-desc = Pulse sub-system error. 
+Long-desc = Retry the operation. If the problem persists, contact your network administrator.
+
+;kMsgIveAMErrCancelled
+[1113]
+Short-desc = Canceled.
+Long-desc = The operation has been canceled.
+
+;kMsgIveAMErrAuthentication
+[1114]
+Short-desc = Authentication error.
+Long-desc = Retry the operation. Make sure you are using current credentials. If you recently changed your password and Pulse is using saved settings, you must use the Forget Saved Settings feature to be prompted again for your login credentials.
+
+;kMsgIveAMErrNetwork
+[1115]
+Short-desc = Network error.
+Long-desc = Network errors can be caused by temporary conditions such as an invalid IP address, a server not available, and so on. Please try the operation again. Restart your system and try the operation again. If the problem persists, contact your network administrator.
+
+;kMsgIveAMErrServer
+[1116]
+Short-desc = Server error.
+Long-desc = The server is not available. Please try again later. If the problem persists, contact your network administrator.
+
+;kMsgIveAMErrUIPromptFailed
+[1117]
+Short-desc = UI prompt failed.
+Long-desc = Please try the operation again. If the problem persists, contact your network administrator.
+
+;kMsgIveAMErrUIPromptTimedout
+[1118]
+Short-desc = UI prompt timed-out.
+Long-desc = Please try the operation again.
+
+;kMsgIveAMErrNoProxy
+[1119]
+Short-desc = Proxy not available.
+Long-desc = The proxy system is not currently available. Please try again later. If the problem persists, contact your network administrator.
+
+;kMsgIveAMErrConnectionClosed
+[1120]
+Short-desc = Connection closed.
+Long-desc = The server has reset this connection. You must login again to establish connectivity.
+
+;kMsgIveAMErrVLANChange
+[1121]
+Short-desc = VLAN Hash changed
+Long-desc = VLAN Hash changed to {0}.
+
+
+;kMsgIveAMErrCompliance
+[1122]
+Short-desc = Endpoint is out of compliance.
+Long-desc = Access was refused because your system does not meet security requirements. Some issues can be fixed automatically, and then you can try the login again. For other issues, please click the link to see the actions you can take to resolve the issue.
+
+;kMsgSuspendForUpdate
+[1123]
+Short-desc = Connection suspended for component upgrade
+Long-desc = The Connection has been temporarily terminated to allow the system to update components.  The connection will resume when the update is complete.
+
+; kMsgIveAMUnknownFatalError
+[1124]
+Short-desc = The access server has encountered an error.
+Long-desc = The access server has encountered an error {0} that prevents this client from obtaining access.  Contact your administrator.
+
+; kMsgAMErrNcIpAllocFail
+[1125]
+Short-desc = Unable to allocate address for client 
+Long-desc = The Remote Access server was unable to allocate a network address for your client.  Contact your administrator.
+
+; kMsgIveAMErrNcWrongClient
+[1126]
+Short-desc = Connection not configured for Junos Pulse 
+Long-desc = You have chosen, or were assigned, a realm and role that are not configured for Junos Pulse.   Disconnect, clear your saved settings, reconnect, and choose another username, realm or role.  If this error persists, please contact your administrator.
+
+; kMsgIveAMErrUACMultipleClients
+[1127]
+Short-desc = Too many connections from the same endpoint
+Long-desc = The access server you are connecting to does not allow connections from both Pulse and Odyssey Access Client.  Please disconnect your connection from OAC to continue.
+
+; kMsgIveAMErrNoRoaming
+[1128]
+Short-desc = Roaming not allowed for connection
+Long-desc = The network address of this client has changed since the client originally authenticated, which is not allowed.
+
+; kMsgIveAMUnknownMethodError
+[1129]
+Short-desc = Server requested policy for unknown access method.
+Long-desc = The server requested a policy for an access method that is unknown or not installed. 
+
+; kMsgIveAMMethodFailed
+[1130]
+Short-desc = Unable to load access method.
+Long-desc = The access method failed to initialize properly.  This could be caused by attempting to connect to multiple remote access devices simultaneously.
+
+; kMsgIveAMSessionInvalid
+[1131]
+Short-desc = Invalid authentication session.
+Long-desc = The server reported an invalid user authentication session {0}.
+
+; kMsgIveAMServerError
+[1132]
+Short-desc = Server detected error.
+Long-desc = The server detected error {0} during your session.  Please contact your administrator.
+
+;kMsgIveAMNetworkUnreachable
+[1133]
+Short-desc = Network unreachable
+Long-desc = Network unreachable
+
+;kMsgIveAMErrSAAccessMethodLoaded
+[1134]
+Short-desc = Too many remote access methods
+Long-desc = The server attempted to configure more than one remote access method, when only one is allowed.  Please contact your administrator.
+
+;kMsgIveAMErrSAAccessMethodLoadedOtherInstance
+[1135]
+Short-desc = Remote access already provided by another connection.
+Long-desc = The connection attempted to provide remote access services, however, another connection is already providing remote access.  Disconnect the other connection and try again.
+
+;kMsgIveAMErrTransport
+[1136]
+Short-desc = Unable to load communication module.
+Long-desc = Failed to load the communication module.  Check the Pulse installation, and try again.
+
+;kMsgIveAMSessionTerminated
+[1137]
+Short-desc = Login session terminated by server.
+Long-desc = Your login session has been terminated.  Please log in again.
+
+;kMsgIveAMSessionTimeout
+[1138]
+Short-desc = Login session expired.
+Long-desc = Your login session has been expired by the server.  Please log in again.
+
+;kMsgIveAMSessionRoleChange
+[1139]
+Short-desc = Access options have changed.
+Long-desc = The server has requested that your remote access method be changed.  You will be reconnected automatically.
+
+;kMsgIveAMConnectionRouteChange
+[1140]
+Short-desc = The network route to server has changed.
+Long-desc = The network route to the server has changed.  You will be reconnected automatically.
+
+;kMsgIveAMErrInstanceAlreadyConnected
+[1200]
+Short-desc = Multiple secure connections attempted.
+Long-desc =  Network policies support only one secure connection at a time. To create a new secure connection, you must first disconnect your current secure connection.
+
+;kMsgNcAMErrInstanceAlreadyStarting
+[1201]
+Short-desc = Another secure session is connecting.
+Long-desc = 
+
+;kMsgNcAMErrInstanceDisconnecting
+[1202]
+Short-desc = Another secure session is disconnecting. 
+Long-desc = 
+
+;kMsgNcAMErrGetUserContext
+[1203]
+Short-desc = Failed to get user context.
+Long-desc = Please try the operation again. If the problem persists, contact your network administrator.
+
+;kMsgNcAMErrGetProxyInfo
+[1204]
+Short-desc = Failed to get proxy info.
+Long-desc = Please try the operation again. If the problem persists, contact your network administrator.
+
+;kMsgNcAMErrSetupVA
+[1205]
+Short-desc = Failed to setup virtual adapter. 
+Long-desc = Restart your system and try again. If the problem persists, contact your network administrator.
+
+;kMsgNcAMErrSendMessage
+[1206]
+Short-desc = Failed to send message to the access method.
+Long-desc = Restart your system and try again. If the problem persists, contact your network administrator.
+
+;kMsgNcAMErrSetupHosts
+[1207]
+Short-desc = Failed to configure hosts file.
+Long-desc = Restart your system and try again. If the problem persists, contact your network administrator.
+
+;kMsgNcAMErrToggleDNS
+[1208]
+Short-desc = Failed to restart DNS service.
+Long-desc = Restart your system and try again. If the problem persists, contact your network administrator.
+
+;kMsgNcAMErrSetIEProxy
+[1209]
+Short-desc = Failed to setup IE proxy.
+Long-desc = Restart your system and try again. If the problem persists, contact your network administrator.
+
+;kMsgNcAMSetFFProxy
+[1210]
+Short-desc = Failed to setup Firefox proxy.
+Long-desc = Restart your system and try again. If the problem persists, contact your network administrator.
+
+;kMsgNcAMErrDiffConfig
+[1211]
+Short-desc = Different NC config, disconnect.
+Long-desc = New NC config is different than the older one. Will disconnect.
+
+;kMsgNcAMErrRouteMonitor
+[1212]
+Short-desc = NC route conflict detected, disconnect.
+Long-desc = There is a route conflict detected in the routing table. Will disconnect.
+
+;kMsgNcAMErrUnknownMsg
+[1213]
+Short-desc = Remote access failed unexpectedly, retrying connection.
+Long-desc = There was an unexpected error from the remote access service.  The connection will disconnect and retry.
+
+;kMsgNcAMErrEspOnlyFailed
+[1214]
+Short-desc = Fallback to SSL disabled by administrator
+Long-desc = The ipsec connection to the server failed, and fallback to SSL is disabled by the administrator.  The connection will be retried.
+
+;kMsgNcAMErrEspOnlyThroughProxy
+[1215]
+Short-desc = ESP-only connection through web proxy is not supported
+Long-desc = The ESP connection to the server through web proxy is not supported, and fallback to SSL is disabled by the administrator.
+
+;kMsgNcAMErrMD5NotAllowedInFIPSMode
+[1216]
+Short-desc = MD5 not allowed in FIPS mode
+Long-desc = MD5 hash for ESP is not allowed when client is running with FIPS mode enabled. Please contact your network administrator.
+
+;kMsgSamAMLegacyWSAMFound
+[1251]
+Short-desc = WSAM is running.
+Long-desc = WSAM is already running. Please stop WSAM and try again.
+
+;kMsgSamAMErrJnprTdiInstall
+[1252]
+Short-desc = jnprTdi driver is not installed.
+Long-desc = Please re-install Pulse and try again. If the problem persists, contact your network administrator.
+
+;kMsgSamAMErrJnprTdiStart
+[1253]
+Short-desc = Failed to start jnprTdi driver.
+Long-desc = Restart your system and try again. If the problem persists, contact your network administrator.
+
+;kMsgSamAMErrJnprTdiOpen
+[1254]
+Short-desc = Failed to open jnprTdi device.
+Long-desc = Restart your system and try again. If the problem persists, contact your network administrator.
+
+;kMsgSamAMErrRebootRequired
+[1255]
+Short-desc = A system reboot is required.
+Long-desc = A system reboot is required for SAM Access method. Please reboot your system.
+
+;kMsgSamErrInitFailed
+[1256]
+Short-desc = Failed to initialize SAM Access Method.
+Long-desc = Please try again. If the problem persists, contact your network administrator.
+
+;kMsgSamErrIVEHostNotFound
+[1257]
+Short-desc = Failed to resolve host.
+Long-desc = Hostname could not be resolved using the Domain Name System (DNS). Please try again.

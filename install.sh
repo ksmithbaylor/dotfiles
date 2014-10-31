@@ -2,7 +2,7 @@ function _setup_symlinks() {
     local symlinks=$(find * -maxdepth 1 -mindepth 1 ! -name *.swp |
                      grep -ve '^bin.*' |
                      grep -ve '^packages.*' |
-                     grep -ve '^automator.*')
+                     grep -ve '^applications*')
 
     for link in $symlinks; do
         local actual=$PWD/$link
@@ -24,12 +24,12 @@ unset _setup_symlinks
 rm -rf $HOME/bin
 ln -sf $PWD/bin $HOME/bin
 
-# Link automator apps into /Applications
+# Link applications apps into /Applications
 SAVEIFS=$IFS
 IFS=$(echo -en "\n\b")
-for file in $(ls automator)
+for file in $(ls applications)
 do
   rm -rf /Applications/$file
-  cp -r automator/$file /Applications/$file
+  cp -r applications/$file /Applications/$file
 done
 IFS=$SAVEIFS

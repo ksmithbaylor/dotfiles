@@ -1,0 +1,101 @@
+﻿; JUNS catalogUtil requires catalog message files to be saved with UTF-8 encoding, which put 3 bytes {0xEF, 0xBB, 0xBF} at the file beginning called Byte Order Mark (BOM) for UTF-8 files . For modifications in this files, please use Text Editors which persist these BOM bytes (like Notepad.exe, Visual Studio IDE, etc).
+
+;kMsgTnccErrCksumGenerate
+[2000]
+Short-desc = Can't generate checksum.
+Long-desc = Can't generate checksum, {0}
+
+;kMsgTnccErrCksumMismatch
+[2001]
+Short-desc = Checksum does not match.
+Long-desc = Checksum does not match, {0}
+
+;kMsgTnccErrFileNotFound
+[2002]
+Short-desc = File not found.
+Long-desc = File not found: {0}
+
+;kMsgTnccErrFileNotVerified
+[2003]
+Short-desc = File not verified.
+Long-desc = File not verified: {0}
+
+;kMsgTnccErrParamNotFound
+[2004]
+Short-desc = Parameter not found.
+Long-desc = Invalid parameter: {0} not found.
+
+;kMsgTnccErrParamEmpty
+[2005]
+Short-desc = Parameter empty.
+Long-desc = Invalid parameter: {0} is empty.
+
+;kMsgTnccErrParamTooLong
+[2006]
+Short-desc = Parameter too long.
+Long-desc = Invalid parameter value : {0} is greater then maximum path length `{1}'
+
+;kMsgTnccErrGenericObjectNotFound
+[2007]
+Short-desc = Not found.
+Long-desc = {0} not found.
+
+;kMsgTnccErrGenericObjectFound
+[2008]
+Short-desc = Found.
+Long-desc = Found {0}.
+
+;kMsgTnccErrFileTooOld
+[2009]
+Short-desc = File is too old.
+Long-desc = {0} is {1} days old, expect:less than {2} days.
+
+;kMsgTnccErrCantGetFilename
+[2010]
+Short-desc = Can't get file time.
+Long-desc = Can't get file time: {0}
+
+;kMsgTnccErrNoPortInfo
+[2011]
+Short-desc = Can't get local TCP/UDP port info.
+Long-desc = Can't get local TCP/UDP port info.
+
+;kMsgTnccErrPortNotOpen
+[2012]
+Short-desc = Port is not open.
+Long-desc = Port {0} not open.
+
+;kMsgTnccErrPortOpen
+[2013]
+Short-desc = Port is open.
+Long-desc = Port {0} is open.
+
+;kMsgTnccErrNoProcOrCksum
+[2014]
+Short-desc = Target or checksum did not match.
+Long-desc = {0} not found or checksum did not match.
+
+;kMsgTnccErrProcOrCksum
+[2015]
+Short-desc = Target found and checksum matched.
+Long-desc = Found {0} and checksum matched.
+
+;kMsgTnccErrProcRemedSucc
+[2016]
+Short-desc = Successfully terminated process.
+Long-desc = Successfully terminated {0} process.
+
+;kMsgTnccErrProcRemedFail
+[2017]
+Short-desc = Failed to terminate process.
+Long-desc = Failed to terminate {0} process.
+
+;kMsgTnccErrFileRemedSucc
+[2018]
+Short-desc = Successfully deleted the file.
+Long-desc = Successfully deleted the file {0}
+
+;kMsgTnccErrFileRemedFail
+[2019]
+Short-desc = Failed to delete the file.
+Long-desc = Failed to delete the file {0}

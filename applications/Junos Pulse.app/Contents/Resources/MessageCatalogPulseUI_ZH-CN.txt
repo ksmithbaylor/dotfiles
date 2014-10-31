@@ -1,0 +1,151 @@
+﻿; JUNS catalogUtil requires message catalog files to be saved with UTF-8 encoding, which put 3 bytes {0xEF, 0xBB, 0xBF} at the file beginning called Byte Order Mark (BOM) for UTF-8 files . For modifications in this files, please use Text Editors which persist these BOM bytes (like Notepad.exe, Visual Studio IDE, etc).
+
+;kMsgCommonCertTrustNoError
+[1700]
+Short-desc = 未发现此证书或链的任何错误。
+Long-desc = 此连接的网络资源已经过验证，因此可以信任。
+
+;kMsgCommonCertTrustIsNotTimeValid
+[1701]
+Short-desc = 此证书或证书链中的其中一个证书的时间无效。
+Long-desc = 您的端点的系统时间可能不正确、证书可能已过期，或者签发证书的系统的时间可能不正确。验证计算机的时钟是否准确。如果计算机时钟不准确，则无法验证此连接的网络资源。请联系网络管理员。
+
+;kMsgCommonCertTrustIsNotTimeNested
+[1702]
+Short-desc = 证书链中证书的时间嵌套不正确。 
+Long-desc = 此消息表明证书链已损坏或者不再可靠。无法验证此连接的网络资源。请联系网络管理员。
+
+;kMsgCommonCertTrustIsRevoked
+[1703]
+Short-desc = 对此证书或证书链中的其中一个证书的信任已被撤销。 
+Long-desc = 无法验证此连接的网络资源。请联系网络管理员。
+
+;kMsgCommonCertTrustIsNotSignatureValid
+[1704]
+Short-desc = 此证书或证书链中的其中一个证书的签名无效。
+Long-desc = 无法验证此连接的网络资源。请联系网络管理员。
+
+;kMsgCommonCertTrustIsNotValidForUsage
+[1705]
+Short-desc = 证书或证书链对于其提议的用法无效。
+Long-desc = 此状态消息表明证书未针对当前应用程序中的用途正确启用。无法验证此连接的网络资源。请联系网络管理员。
+
+;kMsgCommonCertTrustIsUntrustedRoot
+[1706]
+Short-desc = 证书或证书链基于不受信任的根。 
+Long-desc = 无法验证此连接的网络资源。请联系网络管理员。 
+
+;kMsgCommonCertTrustRevocationStatusUnknown
+[1707]
+Short-desc = 证书或证书链中的其中一个证书的撤销状态未知。
+Long-desc = 接受证书之前，系统必须确保该证书未被撤销。系统无法验证该证书是否有效。请联系网络管理员。
+
+;kMsgCommonCertTrustIsCyclic
+[1708]
+Short-desc = 证书链中的其中一个证书是由原始证书已经过认证的证书授权机构所颁发。
+Long-desc = 系统无法验证该证书是否有效。请联系网络管理员。
+
+;kMsgCommonCertTrustInvalidExtension
+[1709]
+Short-desc = 其中一个证书带有无效的扩展。
+Long-desc = 系统无法验证该证书是否有效。请联系网络管理员。
+
+;kMsgCommonCertTrustInvalidPolicyConstraints
+[1710]
+Short-desc = 证书或证书链具有策略约束扩展。
+Long-desc = 系统无法验证该证书是否有效。请联系网络管理员。
+
+;kMsgCommonCertTrustInvalidBasicConstraints
+[1711]
+Short-desc = 证书或证书链具有基本约束扩展。
+Long-desc = 系统无法验证该证书是否有效。请联系网络管理员。
+
+;kMsgCommonCertTrustInvalidNameConstraints
+[1712]
+Short-desc = 证书或证书链中的其中一个证书具有的名称约束扩展无效。
+Long-desc = 系统无法验证该证书是否有效。请联系网络管理员。
+
+;kMsgCommonCertTrustHasNotSupportedNameConstraint
+[1713]
+Short-desc = 证书或证书链中的其中一个证书具有的名称约束扩展包含不支持的字段。
+Long-desc = 系统无法验证该证书是否有效。请联系网络管理员。
+
+;kMsgCommonCertTrustHasNotDefinedNameConstraint
+[1714]
+Short-desc = 证书或证书链中的其中一个证书具有名称约束扩展，且在最终证书中，其中一个名称选择的名称约束缺失。
+Long-desc = 系统无法验证该证书是否有效。请联系网络管理员。
+
+;kMsgCommonCertTrustHasNotPermittedNameContraint
+[1715]
+Short-desc = 证书或证书链中的其中一个证书具有名称约束扩展，且在最终证书中，其中一个名称选择没有允许的名称约束。
+Long-desc = 系统无法验证该证书是否有效。请联系网络管理员。
+
+;kMsgCommonCertTrustHasExcludedNameConstraint
+[1716]
+Short-desc = 证书或证书链中的其中一个证书具有名称约束扩展，且在最终证书中，其中一个名称选择被明确排除。
+Long-desc = 系统无法验证该证书是否有效。请联系网络管理员。
+
+;kMsgCommonCertTrustIsPartialChain
+[1717]
+Short-desc = 证书链不完整。 
+Long-desc = 系统无法验证该证书是否有效。请联系网络管理员。
+
+;kMsgCommonCertTrustCtlIsNotTimeValid
+[1718]
+Short-desc = 用于创建此证书链的证书信任列表的时间无效。
+Long-desc = 系统无法验证该证书是否有效。请联系网络管理员。
+
+;kMsgCommonCertTrustCtlIsNotSignatureValid
+[1719]
+Short-desc = 用于创建此证书链的证书信任列表的签名无效。
+Long-desc = 系统无法验证该证书是否有效。请联系网络管理员。
+
+;kMsgCommonCertTrustCtlIsNotValidForUsage
+[1720]
+Short-desc = 用于创建此证书链的证书信任列表对于此用法无效。
+Long-desc = 系统无法验证该证书是否有效。请联系网络管理员。
+
+;kMsgCommonCertTrustIsOfflineRevocation
+[1725]
+Short-desc = 最终证书或其证书链的撤销服务器已离线。
+Long-desc = 请重新尝试此操作。如果问题仍然存在，请联系网络管理员。
+
+;kMsgCommonCertTrustNoIssuanceChainPolicy
+[1726]
+Short-desc = 最终证书没有任何发行策略。
+Long-desc = 系统无法验证该证书是否有效。请联系网络管理员。
+
+;kMsgCommonCertTrustIsExplicitDistrust
+[1727]
+Short-desc = 最终证书明确不受信任。
+Long-desc = 系统无法验证该证书是否有效。请联系网络管理员。
+
+;kMsgCommonCertHasNotSupportedCriticalExt
+[1728]
+Short-desc = 最终证书具有不受支持的关键扩展。
+Long-desc = 系统无法验证该证书是否有效。请联系网络管理员。
+
+[1730]
+;kMsgCommonCertTrustPulseCertificateError
+Short-desc=Certificate Error
+Long-desc=Certificate Error
+
+[1731]
+;kMsgCommonCertTrustPulseAuthServerIdentityNotFound
+Short-desc = 认证服务器不受信任。
+Long-desc = 客户端的“信任的服务器列表”中找不到认证服务器身份。请联系网络管理员。
+
+;kMsgCommonCertTrustPulseDoesntMatch
+[1732]
+Short-desc = 证书名称与正在尝试连接的服务器不符。
+Long-desc = 所有证书均包含服务器名称以确认连接未遭盗用。如果正在访问具有不同名称的服务器，将显示此警告。如果正处于网络连接有可能遭盗用的位置，那么请与管理员联系，确保服务器指纹为正确。
+
+;kMsgUISmartcardPinError
+[1733]
+Short-desc = PIN 不正确。
+Long-desc = 重新输入 PIN 时请小心，因为如果超过重试次数限制，将导致令牌锁定。
+
+;kMsgUISmartcardBlockedError
+[1734]
+Short-desc = 智能卡已锁。
+Long-desc = 请联系管理员为智能卡解锁。

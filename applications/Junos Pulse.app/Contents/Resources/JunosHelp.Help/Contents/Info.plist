@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>CFBundleDevelopmentRegion</key>
+	<string>en-us</string>
+	<key>CFBundleExecutable</key>
+	<string>Junos Pulse</string>
+	<key>CFBundleHelpTOCFile</key>
+	<string>pulse-help-home.html</string>
+	<key>CFBundleIconFile</key>
+	<string>pulse.icns</string>
+	<key>CFBundleIdentifier</key>
+	<string>net.juniper.junospulse</string>
+	<key>CFBundleInfoDictionaryVersion</key>
+	<string>6.0</string>
+	<key>CFBundleName</key>
+	<string>Junos Pulse</string>
+	<key>CFBundlePackageType</key>
+	<string>BNDL</string>
+	<key>CFBundleSignature</key>
+	<string>hbwr</string>
+	<key>CFBundleVersion</key>
+	<string>16</string>
+	<key>HPDBookTopicListCSSPath</key>
+	<string>sty/standard.css</string>
+</dict>
+</plist>

@@ -1,0 +1,151 @@
+﻿; JUNS catalogUtil requires message catalog files to be saved with UTF-8 encoding, which put 3 bytes {0xEF, 0xBB, 0xBF} at the file beginning called Byte Order Mark (BOM) for UTF-8 files . For modifications in this files, please use Text Editors which persist these BOM bytes (like Notepad.exe, Visual Studio IDE, etc).
+
+;kMsgCommonCertTrustNoError
+[1700]
+Short-desc = 이 인증서 또는 체인에 대해 오류가 발견되지 않음.
+Long-desc = 이 연결에 대한 네트워크 리소스가 검증되었고 신뢰할 수 있습니다.
+
+;kMsgCommonCertTrustIsNotTimeValid
+[1701]
+Short-desc = 이 인증서 또는 인증서 체인에 있는 인증서 중 하나가 시간이 유효하지 않음.
+Long-desc = 종점의 시스템 시간이 올바르지 않거나, 인증서가 만료되었거나, 인증서에 서명된 시스템의 시간이 올바르지 않은 것일 수 있습니다. 컴퓨터의 시계가 정확한지 확인하십시오. 컴퓨터 시계가 정확하다면, 이 연결을 위한 네트워크 리소스를 검증할 수 없습니다. 네트워크 관리자에게 문의하십시오.
+
+;kMsgCommonCertTrustIsNotTimeNested
+[1702]
+Short-desc = 체인에 있는 인증서가 제대로 시간 중첩되지 않음. 
+Long-desc = 이 메시지는 인증서 체인이 손상되었거나 그렇지 않으면 신뢰할 수 없는 상황임을 나타냅니다. 이 연결을 위한 네트워크 리소스를 검증할 수 없습니다. 네트워크 관리자에게 문의하십시오.
+
+;kMsgCommonCertTrustIsRevoked
+[1703]
+Short-desc = 이 인증서 또는 인증서 체인에 있는 인증서 중 하나를 위한 신뢰가 해지됨. 
+Long-desc = 이 연결을 위한 네트워크 리소스를 검증할 수 없습니다. 네트워크 관리자에게 문의하십시오.
+
+;kMsgCommonCertTrustIsNotSignatureValid
+[1704]
+Short-desc = 인증서 또는 인증서 체인에 있는 인증서 중 하나가 유효하지 않은 서명을 가지고 있음.
+Long-desc = 이 연결을 위한 네트워크 리소스를 검증할 수 없습니다. 네트워크 관리자에게 문의하십시오.
+
+;kMsgCommonCertTrustIsNotValidForUsage
+[1705]
+Short-desc = 인증서 또는 인증서 체인이 이 제안된 용도에 대해 유효하지 않음.
+Long-desc = 이 상태 메시지는 인증서가 현재 응용 프로그램 내에서의 사용을 위해 올바로 활성화되지 않음을 나타냅니다. 이 연결을 위한 네트워크 리소스를 검증할 수 없습니다. 네트워크 관리자에게 문의하십시오.
+
+;kMsgCommonCertTrustIsUntrustedRoot
+[1706]
+Short-desc = 인증서 또는 인증서 체인이 신뢰할 수 없는 루트를 기반으로 함. 
+Long-desc = 이 연결을 위한 네트워크 리소스를 검증할 수 없습니다. 네트워크 관리자에게 문의하십시오. 
+
+;kMsgCommonCertTrustRevocationStatusUnknown
+[1707]
+Short-desc = 인증서 또는 인증서 체인에 있는 인증서 중 하나의 해지 상태를 알 수 없음.
+Long-desc = 인증서를 수락하기 전, 시스템은 인증서가 해지되지 않은 것임을 확인해야 합니다. 시스템은 인증서가 유효한지를 검증할 수 없습니다. 네트워크 관리자에게 문의하십시오.
+
+;kMsgCommonCertTrustIsCyclic
+[1708]
+Short-desc = 체인에 있는 인증서 중 하나가 최초의 인증서를 인증하였던 인증 기관에 의해 발행됨.
+Long-desc = 시스템은 인증서가 유효한지를 검증할 수 없습니다. 네트워크 관리자에게 문의하십시오.
+
+;kMsgCommonCertTrustInvalidExtension
+[1709]
+Short-desc = 인증서 중 하나가 유효하지 않은 확장을 가지고 있음.
+Long-desc = 시스템은 인증서가 유효한지를 검증할 수 없습니다. 네트워크 관리자에게 문의하십시오.
+
+;kMsgCommonCertTrustInvalidPolicyConstraints
+[1710]
+Short-desc = 인증서 또는 인증서 체인이 정책 제약 조건 확장을 가지고 있음.
+Long-desc = 시스템은 인증서가 유효한지를 검증할 수 없습니다. 네트워크 관리자에게 문의하십시오.
+
+;kMsgCommonCertTrustInvalidBasicConstraints
+[1711]
+Short-desc = 인증서 또는 인증서 체인이 기본 제약 조건 확장을 가지고 있음.
+Long-desc = 시스템은 인증서가 유효한지를 검증할 수 없습니다. 네트워크 관리자에게 문의하십시오.
+
+;kMsgCommonCertTrustInvalidNameConstraints
+[1712]
+Short-desc = 인증서 또는 인증서 체인에 있는 인증서 중 하나가 유효하지 않은 이름 제약 조건 확장을 가지고 있음.
+Long-desc = 시스템은 인증서가 유효한지를 검증할 수 없습니다. 네트워크 관리자에게 문의하십시오.
+
+;kMsgCommonCertTrustHasNotSupportedNameConstraint
+[1713]
+Short-desc = 인증서 또는 인증서 체인에 있는 인증서 중 하나가 지원되지 않는 필드를 포함한 이름 제약 조건 확장을 가지고 있음.
+Long-desc = 시스템은 인증서가 유효한지를 검증할 수 없습니다. 네트워크 관리자에게 문의하십시오.
+
+;kMsgCommonCertTrustHasNotDefinedNameConstraint
+[1714]
+Short-desc = 인증서 또는 인증서 체인에 있는 인증서 중 하나가 이름 제약 조건 확장을 가지고 있고, 최종 인증서의 이름 선택 중 하나에 대한 이름 제약 조건이 누락됨.
+Long-desc = 시스템은 인증서가 유효한지를 검증할 수 없습니다. 네트워크 관리자에게 문의하십시오.
+
+;kMsgCommonCertTrustHasNotPermittedNameContraint
+[1715]
+Short-desc = 인증서 또는 인증서 체인에 있는 인증서 중 하나가 이름 제약 조건 확장을 가지고 있고, 최종 인증서의 이름 선택 중 하나에 대해 허용된 이름 제약 조건이 없음.
+Long-desc = 시스템은 인증서가 유효한지를 검증할 수 없습니다. 네트워크 관리자에게 문의하십시오.
+
+;kMsgCommonCertTrustHasExcludedNameConstraint
+[1716]
+Short-desc = 인증서 또는 인증서 체인에 있는 인증서 중 하나가 이름 제약 조건 확장을 가지고 있고, 최종 인증서의 이름 선택 중 하나가 명시적으로 제외됨.
+Long-desc = 시스템은 인증서가 유효한지를 검증할 수 없습니다. 네트워크 관리자에게 문의하십시오.
+
+;kMsgCommonCertTrustIsPartialChain
+[1717]
+Short-desc = 인증서 체인이 완료되지 않음. 
+Long-desc = 시스템은 인증서가 유효한지를 검증할 수 없습니다. 네트워크 관리자에게 문의하십시오.
+
+;kMsgCommonCertTrustCtlIsNotTimeValid
+[1718]
+Short-desc = 이 체인을 생성하기 위해 사용된 인증서 신뢰 목록이 시간 유효하지 않았음.
+Long-desc = 시스템은 인증서가 유효한지를 검증할 수 없습니다. 네트워크 관리자에게 문의하십시오.
+
+;kMsgCommonCertTrustCtlIsNotSignatureValid
+[1719]
+Short-desc = 이 인증서 체인을 생성하기 위해 사용된 인증서 신뢰 목록이 유효한 서명을 가지고 있지 않았음.
+Long-desc = 시스템은 인증서가 유효한지를 검증할 수 없습니다. 네트워크 관리자에게 문의하십시오.
+
+;kMsgCommonCertTrustCtlIsNotValidForUsage
+[1720]
+Short-desc = 이 체인을 생성하기 위해 사용된 인증서 신뢰 목록이 인증서 용도에 대해 유효하지 않음.
+Long-desc = 시스템은 인증서가 유효한지를 검증할 수 없습니다. 네트워크 관리자에게 문의하십시오.
+
+;kMsgCommonCertTrustIsOfflineRevocation
+[1725]
+Short-desc = 최종 인증서나 체인 인증서의 해지 서버가 오프라인 상태입니다.
+Long-desc = 작업을 다시 시도해 주십시오. 문제가 지속되면 네트워크 관리자에게 문의하십시오.
+
+;kMsgCommonCertTrustNoIssuanceChainPolicy
+[1726]
+Short-desc = 최종 인증서가 발급 방침에 부합하지 않음.
+Long-desc = 이 시스템은 인증서가 유효한지를 검증할 수 없습니다. 네트워크 관리자에게 문의하십시오.
+
+;kMsgCommonCertTrustIsExplicitDistrust
+[1727]
+Short-desc = 최종 인증서를 명백하게 신뢰할 수 없음.
+Long-desc = 이 시스템은 인증서가 유효한지를 검증할 수 없습니다. 네트워크 관리자에게 문의하십시오.
+
+;kMsgCommonCertHasNotSupportedCriticalExt
+[1728]
+Short-desc = 최종 인증서에 지원되지 않는 중대 확장자가 포함되어 있습니다.
+Long-desc = 이 시스템은 인증서가 유효한지를 검증할 수 없습니다. 네트워크 관리자에게 문의하십시오.
+
+[1730]
+;kMsgCommonCertTrustPulseCertificateError
+Short-desc=Certificate Error
+Long-desc=Certificate Error
+
+[1731]
+;kMsgCommonCertTrustPulseAuthServerIdentityNotFound
+Short-desc = 인증 서버를 신뢰할 수 없음.
+Long-desc = 클라이언트의 "신뢰할 수 있는 서버 목록"에서 인증 서버 ID를 찾을 수 없음. 네트워크 관리자에게 문의하십시오.
+
+;kMsgCommonCertTrustPulseDoesntMatch
+[1732]
+Short-desc = 인증서 이름이 연결하려는 서버와 일치하지 않습니다.
+Long-desc = 모든 인증서에는 연결이 훼손되지 않았는지 확인할 수 있도록 서버 이름이 포함되어 있습니다. 따라서 이름이 다른 서버에 액세스하려고 하면 이 경고가 나타납니다. 네트워크 연결이 훼손될 수 있는 장소에 있다면, 관리자에게 문의해 서버 손 도장이 올바른지 확인해야 합니다.
+
+;kMsgUISmartcardPinError
+[1733]
+Short-desc = PIN이 올바르지 않습니다.
+Long-desc = PIN 재입력시 주의하십시오. 재입력 한도를 초과하면 토큰이 잠깁니다.
+
+;kMsgUISmartcardBlockedError
+[1734]
+Short-desc = 스마트 카드가 차단되었습니다.
+Long-desc = 스마트 카드 차단을 해제하려면 관리자에게 문의하십시오.

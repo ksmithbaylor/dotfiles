@@ -1,0 +1,328 @@
+﻿; JUNS catalogUtil requires catalog message files to be saved with UTF-8 encoding, which put 3 bytes {0xEF, 0xBB, 0xBF} at the file beginning called Byte Order Mark (BOM) for UTF-8 files . For modifications in this files, please use Text Editors which persist these BOM bytes (like Notepad.exe, Visual Studio IDE, etc).
+
+;kMsgIveAMErrInstanceAlreadyInUse
+[1100]
+Short-desc = インスタンスはすでに使用されています。
+Long-desc = 
+
+;kMsgIveAMErrLoadingStore
+[1101]
+Short-desc = ストアのロードに失敗しました。
+Long-desc = システムを再起動してください。問題が解消されない場合は、ネットワーク管理者に連絡してください。
+
+;kMsgIveAMErrLoadConnection
+[1102]
+Short-desc = 接続のロードに失敗しました。 
+Long-desc = 操作をもう一度試みてください。問題が解消されない場合は、ネットワーク管理者に連絡してください。
+
+;kMsgIveAMErrRetrieveURI
+[1103]
+Short-desc = ユニフォーム リソース ロケータ (URL) を取得できませんでした。 
+Long-desc =  操作をもう一度試みてください。問題が解消されない場合は、ネットワーク管理者に連絡してください。
+
+;kMsgIveAMErrInitiateConnect
+[1104]
+Short-desc = 接続の開始に失敗しました。 
+Long-desc = 操作をもう一度試みてください。問題が解消されない場合は、ネットワーク管理者に連絡してください。
+
+;kMsgIveAMErrConnectingChannel
+[1105]
+Short-desc = チャンネル接続エラー。 
+Long-desc = チャンネル接続エラー (ステージ:{0}、エラー: {1})。
+
+;kMsgIveAMErrAccessMethod
+[1106]
+; generic access method connection error
+Short-desc = アクセス方法接続のプロビジョニングのエラー {0}。
+Long-desc = アクセス方法プロビジョニングのエラー {0}。エラーはアクセス方法により異なります。 
+
+;kMsgIveAMErrInvalidCertificate
+[1107]
+Short-desc = 無効なサーバー証明書。
+Long-desc = サーバー証明書の検証に失敗しました。有効な宛先であることがわかっている場合は、[再試行] をクリックして続行します。そうでない場合は [閉じる] をクリックしてネットワーク管理者に連絡してください。
+
+;kMsgIveAMErrConnectionFailed
+[1108]
+Short-desc = 接続は失敗しました。 
+Long-desc = 操作をもう一度試みてください。問題が解消されない場合は、ネットワーク管理者に連絡してください。
+
+;kMsgIveAMErrSessionExpired
+[1109]
+Short-desc = セッションの期限切れ。 
+Long-desc = ネットワークへの接続は、無活動のため期限切れになりました。もう一度ログインして、接続を確立してください。
+
+;kMsgIveAMErrProtocol
+[1110]
+Short-desc = サーバーと通信できません。
+Long-desc = サーバーが Juniper ネットワーク要求に応答できません。この理由として、サーバーがダウン中であるか、または Juniper サーバー以外のサーバーに接続している可能性があります。この状態が継続するときは、管理者に連絡してください。
+
+;kMsgIveAMErrHostUnknown
+[1111]
+Short-desc = ホストが見つかりません。
+Long-desc = ドメイン名システム (DNS) を使用してホスト名を解決できませんでした。再試行してください。システムで接続を編集することができ、宛先の IP アドレスがわかっている場合は、IP アドレスを使用してこの接続を試みてください。問題が解消されない場合は、ネットワーク管理者に連絡してください。
+
+;kMsgIveAMErrPulseSubsystem
+[1112]
+Short-desc = Pulse サブシステムのエラー。 
+Long-desc = 操作をもう一度試みてください。問題が解消されない場合は、ネットワーク管理者に連絡してください。
+
+;kMsgIveAMErrCancelled
+[1113]
+Short-desc = キャンセルされました。
+Long-desc = 操作がキャンセルされました。
+
+;kMsgIveAMErrAuthentication
+[1114]
+Short-desc = 認証エラー。
+Long-desc = 操作をもう一度試みてください。最新の証明書を使用していることを確認してください。最近パスワードを変更し、Pulse が保存された設定を使用している場合、[保存した設定を破棄] 機能を使用して、ログイン証明書の入力要求をもう一度表示してください。
+
+;kMsgIveAMErrNetwork
+[1115]
+Short-desc = ネットワーク エラー。
+Long-desc = ネットワーク エラーは、無効な IP アドレス、サーバーの利用不可など、一時的な状況により発生する場合があります。もう一度操作を試みてください。システムを再起動し、もう一度操作を試みてください。問題が解消されない場合は、ネットワーク管理者に連絡してください。
+
+;kMsgIveAMErrServer
+[1116]
+Short-desc = サーバー エラー。
+Long-desc = サーバーが利用できません。後で再試行してください。問題が解消されない場合は、ネットワーク管理者に連絡してください。
+
+;kMsgIveAMErrUIPromptFailed
+[1117]
+Short-desc = UI プロンプトが失敗しました。
+Long-desc = もう一度操作を試みてください。問題が解消されない場合は、ネットワーク管理者に連絡してください。
+
+;kMsgIveAMErrUIPromptTimedout
+[1118]
+Short-desc = UI プロンプトがタイムアウトしました。
+Long-desc = もう一度操作を試みてください。
+
+;kMsgIveAMErrNoProxy
+[1119]
+Short-desc = プロキシが利用できません。
+Long-desc = 現在、プロキシ システムが利用できません。後で再試行してください。問題が解消されない場合は、ネットワーク管理者に連絡してください。
+
+;kMsgIveAMErrConnectionClosed
+[1120]
+Short-desc = 接続が終了しました。
+Long-desc = サーバーがこの接続をリセットしました。接続を確立するには、もう一度ログインしてください。
+
+;kMsgIveAMErrVLANChange
+[1121]
+Short-desc = VLAN ハッシュが変更されました。
+Long-desc = VLAN ハッシュが {0} に変更されました。
+
+
+;kMsgIveAMErrCompliance
+[1122]
+Short-desc = エンドポイントが準拠していません。
+Long-desc = システムがセキュリティ要件を満たさないので、アクセスが拒否されました。問題が自動的に解決された場合は、もう一度ログインを試みてください。他の問題については、リンクをクリックして、問題を解決するための方法を確認してください。
+
+;kMsgSuspendForUpdate
+[1123]
+Short-desc = コンポーネントのアップグレードのために接続が中断されました
+Long-desc = システムがコンポーネントを更新できるように、接続は一時的に終了しました。更新が完了すると、接続は再開されます。
+
+; kMsgIveAMUnknownFatalError
+[1124]
+Short-desc = アクセス サーバーはエラーに遭遇しました。
+Long-desc = アクセス サーバーはエラー {0} に遭遇しました。このクライアントはアクセスできません。管理者に連絡してください。
+
+; kMsgAMErrNcIpAllocFail
+[1125]
+Short-desc = クライアントにアドレスを割り当てることができません 
+Long-desc = リモート アクセス サーバーがクライアントのネットワーク アドレスを割り当てることができませんでした。管理者に連絡してください。
+
+; kMsgIveAMErrNcWrongClient
+[1126]
+Short-desc = Junos Pulse に接続が設定されていません 
+Long-desc = Junos Pulse に設定されていないレルムおよびロールを選択したか、Junos Pulse に設定されていないレルムおよびロールが割り当てられました。切断して、保存されている設定をクリアし、再接続して、別のユーザ名、レルム、またはロールを選択してください。このエラーが解決されない場合は、管理者に問い合わせてください。
+
+; kMsgIveAMErrUACMultipleClients
+[1127]
+Short-desc = 同じエンドポイントからの接続が多すぎます
+Long-desc = 接続しているアクセス サーバーは、Pulse と Odyssey の両方の Access Client からの接続を許可しません。続行するには、OAC からの接続を切断してください。
+
+; kMsgIveAMErrNoRoaming
+[1128]
+Short-desc = 接続にはローミングは許可されません
+Long-desc = このクライアントのネットワーク アドレスは、クライアントが最初に認証された後に変更されています。これは許可されていません。
+
+; kMsgIveAMUnknownMethodError
+[1129]
+Short-desc = サーバーは、未知のアクセス方法のポリシーを要求しました。
+Long-desc = サーバーは、未知のまたはインストールされていないアクセス方法のポリシーを要求しました。 
+
+; kMsgIveAMMethodFailed
+[1130]
+Short-desc = アクセス方法をロードできません。
+Long-desc = アクセス方法は正常に初期化しませんでした。複数のリモートのアクセス デバイスへの同時接続を試みたのが原因である可能性があります。
+
+; kMsgIveAMSessionInvalid
+[1131]
+Short-desc = 無効な認証セッション。
+Long-desc = サーバーは、無効なユーザー認証セッション {0} を報告しました。
+
+; kMsgIveAMServerError
+[1132]
+Short-desc = サーバーはエラーを検出しました。
+Long-desc = サーバーはセッションの間にエラー {0} を検出しました。管理者に連絡してください。
+
+;kMsgIveAMNetworkUnreachable
+[1133]
+Short-desc = ネットワークに到達不能
+Long-desc = ネットワークに到達不能
+
+;kMsgIveAMErrSAAccessMethodLoaded
+[1134]
+Short-desc = リモート アクセス方式が多すぎます
+Long-desc = 1 つのリモート アクセス方式しか許可されていないにもかかわらず、サーバーが複数の方式を設定しようとしました。管理者に問い合わせてください。
+
+;kMsgIveAMErrSAAccessMethodLoadedOtherInstance
+[1135]
+Short-desc = 別の接続によってリモート アクセスがすでに提供されています。
+Long-desc = 接続はリモート アクセス サービスを提供しようとしましたが、別の接続がすでにリモート アクセスを提供しています。もう一方の接続を切断して、もう一度実行してください。
+
+;kMsgIveAMErrTransport
+[1136]
+Short-desc = 通信モジュールをロードできませんでした。
+Long-desc = 通信モジュールをロードできませんでした。Pulse インストールをチェックして、もう一度実行してください。
+
+;kMsgIveAMSessionTerminated
+[1137]
+Short-desc = ログイン セッションがサーバーから終了されました。
+Long-desc = ログイン セッションが終了されました。もう一度ログインしてください。
+
+;kMsgIveAMSessionTimeout
+[1138]
+Short-desc = ログイン セッションの期限が切れました。
+Long-desc = サーバーが設定したログイン セッションの期限が切れました。もう一度ログインしてください。
+
+;kMsgIveAMSessionRoleChange
+[1139]
+Short-desc = アクセス オプションが変更されています。
+Long-desc = リモート アクセス方法を変更するようにサーバーから要求されています。自動的に再接続します。
+
+;kMsgIveAMConnectionRouteChange
+[1140]
+Short-desc = サーバーへのネットワーク ルートが変更されました。
+Long-desc = サーバーへのネットワーク ルートが変更されました。自動的に再接続されます。
+
+;kMsgIveAMErrInstanceAlreadyConnected
+[1200]
+Short-desc = セキュア トンネルは 1 つすでに確立されています。
+Long-desc =  ネットワーク ポリシーでは、一度に 1 つのセキュア接続のみがサポートされています。新しいセキュア接続を作成するには、まず現在のセキュア接続を切断する必要があります。
+
+;kMsgNcAMErrInstanceAlreadyStarting
+[1201]
+Short-desc = 別のセキュア セッションが接続中です。
+Long-desc = 
+
+;kMsgNcAMErrInstanceDisconnecting
+[1202]
+Short-desc = 別のセキュア セッションが切断中です。 
+Long-desc = 
+
+;kMsgNcAMErrGetUserContext
+[1203]
+Short-desc = ユーザー コンテキストの取得に失敗しました。
+Long-desc = もう一度操作を試みてください。問題が解消されない場合は、ネットワーク管理者に連絡してください。
+
+;kMsgNcAMErrGetProxyInfo
+[1204]
+Short-desc = プロキシ情報の取得に失敗しました。
+Long-desc = もう一度操作を試みてください。問題が解消されない場合は、ネットワーク管理者に連絡してください。
+
+;kMsgNcAMErrSetupVA
+[1205]
+Short-desc = 仮想アダプタのセットアップに失敗しました。 
+Long-desc = システムを再起動し、もう一度試みてください。問題が解消されない場合は、ネットワーク管理者に連絡してください。
+
+;kMsgNcAMErrSendMessage
+[1206]
+Short-desc = アクセス方法へのメッセージの送信に失敗しました。
+Long-desc = システムを再起動し、もう一度試みてください。問題が解消されない場合は、ネットワーク管理者に連絡してください。
+
+;kMsgNcAMErrSetupHosts
+[1207]
+Short-desc = ホスト ファイルの構成に失敗しました。
+Long-desc = システムを再起動し、もう一度試みてください。問題が解消されない場合は、ネットワーク管理者に連絡してください。
+
+;kMsgNcAMErrToggleDNS
+[1208]
+Short-desc = DNS サービスの再起動に失敗しました。
+Long-desc = システムを再起動し、もう一度試みてください。問題が解消されない場合は、ネットワーク管理者に連絡してください。
+
+;kMsgNcAMErrSetIEProxy
+[1209]
+Short-desc = IE プロキシのセットアップに失敗しました。
+Long-desc = システムを再起動し、もう一度試みてください。問題が解消されない場合は、ネットワーク管理者に連絡してください。
+
+;kMsgNcAMSetFFProxy
+[1210]
+Short-desc = Firefox プロキシのセットアップに失敗しました。
+Long-desc = システムを再起動し、もう一度試みてください。問題が解消されない場合は、ネットワーク管理者に連絡してください。
+
+;kMsgNcAMErrDiffConfig
+[1211]
+Short-desc = 異なる NC 設定です。接続を切断してください。
+Long-desc = 新しい NC 設定はこの前の NC 設定と異なります。接続は切断されます。
+
+;kMsgNcAMErrRouteMonitor
+[1212]
+Short-desc = NC ルートの競合が検出されました。接続を切断してください。
+Long-desc = ルーティング テーブルにルートの競合が存在します。接続は切断されます。
+
+;kMsgNcAMErrUnknownMsg
+[1213]
+Short-desc = リモート アクセスは予期せず失敗しました。接続を再試行しています。
+Long-desc = リモート アクセス サービスからの予期しないエラーがありました。接続は切断され、再試行されます。
+
+;kMsgNcAMErrEspOnlyFailed
+[1214]
+Short-desc = SSL へのフェールバックは管理者によって無効にされています
+Long-desc = サーバーへの IPsec 接続は失敗し、SSL へのフェールバックは管理者によって無効にされています。接続が再試行されます。
+
+;kMsgNcAMErrEspOnlyThroughProxy
+[1215]
+Short-desc = Web プロキシを介した ESP のみの接続はサポートされていません
+Long-desc = Web プロキシを介したサーバーへの ESP 接続はサポートされておらず、SSL へのフォールバックは管理者によって無効にされています。
+
+;kMsgNcAMErrMD5NotAllowedInFIPSMode
+[1216]
+Short-desc = FIPS モードで MD5 は使用できません。
+Long-desc = FIPS モードを有効にしてクライアントを実行している場合 、ESP 用の MD5 ハッシュは使用できません。ネットワーク管理者に連絡してください。
+
+;kMsgSamAMLegacyWSAMFound
+[1251]
+Short-desc = WSAM は実行中です。
+Long-desc = WSAM はすでに実行されています。WSAM を停止し、もう一度実行してください。
+
+;kMsgSamAMErrJnprTdiInstall
+[1252]
+Short-desc = jnprTdi ドライバがインストールされていません。
+Long-desc = Pulse を再インストールして、もう一度実行してください。問題が解決されない場合は、ネットワーク管理者に問い合わせてください。
+
+;kMsgSamAMErrJnprTdiStart
+[1253]
+Short-desc = jnprTdi ドライバを起動できませんでした。
+Long-desc = システムを再起動し、もう一度試みてください。問題が解消されない場合は、ネットワーク管理者に連絡してください。
+
+;kMsgSamAMErrJnprTdiOpen
+[1254]
+Short-desc = jnprTdi デバイスを開くことができませんでした。
+Long-desc = システムを再起動し、もう一度試みてください。問題が解消されない場合は、ネットワーク管理者に連絡してください。
+
+;kMsgSamAMErrRebootRequired
+[1255]
+Short-desc = システムの再起動が必要です。
+Long-desc = SAM アクセス方式にはシステムの再起動が必要です。システムを再起動してください。
+
+;kMsgSamErrInitFailed
+[1256]
+Short-desc = SAM アクセス方式の初期化に失敗しました。
+Long-desc = もう一度実行してください。問題が解消されない場合は、ネットワーク管理者に問い合わせてください。
+
+;kMsgSamErrIVEHostNotFound
+[1257]
+Short-desc = ホストの解決に失敗しました。
+Long-desc = ドメイン名システム (DNS) を使用してホスト名を解決できませんでした。もう一度実行してください。

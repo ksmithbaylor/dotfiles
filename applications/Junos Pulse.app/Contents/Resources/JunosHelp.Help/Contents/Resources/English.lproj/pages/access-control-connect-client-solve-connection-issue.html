@@ -1,0 +1,70 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<title>Troubleshoot a Junos Pulse Connection Issue</title>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
+<meta name="keywords" content="connection status, icons, troubleshooting" />
+<meta name="description" content="Describes the most common problems you might encounter in Pulse and suggests remedies." />
+<link href="../sty/standard.css" rel="stylesheet" type="text/css" />
+</head>
+<body style="width:95%;>
+<div id="content"><h1 class="Head1Split">Troubleshoot a Junos Pulse Connection Issue</h1>
+<p class="Para1">You can use the following troubleshooting information to help resolve connection issues. </p>
+<div style="width:100%;margin: 15px 0 15px 0;"><table cellspacing="0" style="border-top:thin solid black;" width="99%">
+<colgroup><col/><col/></colgroup>
+<thead><tr valign="bottom"><th align="left" style="border-bottom:thin solid black;text-align: left;padding-right: 10px;padding-left: 10px;">
+<p class="Para1">Issue</p></th><th align="left" style="border-bottom:thin solid black;text-align: left;padding-right: 10px;padding-left: 10px;"><p class="Para1">Description and Resolution Suggestions</p></th></tr></thead><tbody>
+  <tr valign="top">
+    <td align="left" style="border-bottom:thin solid black;text-align: left;padding-right: 10px;padding-left: 10px;"><span class="Para1">Pulse has disabled wireless connections and displays <strong>Disabled<br />
+- Wired Connection Active</strong>.</span></td>
+    <td align="left" style="border-bottom:thin solid black;text-align: left;padding-right: 10px;padding-left: 10px;"><span class="Para1">The Pulse administrator can configure Pulse connections so that wireless connections work only when there is no wired connection available. As soon as you connect your computer to a wired connection, for example, by connecting it to a docking station, Pulse drops the wireless connection and uses the wired connection.</span></td>
+  </tr>
+  <tr valign="top"><td align="left" style="border-bottom:thin solid black;text-align: left;padding-right: 10px;padding-left: 10px;"><p class="Para1">After installing Pulse and uninstalling Odyssey Access
+Client (OAC), your system can no longer connect to any wireless network.</p></td><td align="left" style="border-bottom:thin solid black;text-align: left;padding-right: 10px;padding-left: 10px;"><p class="Para1">Junos 
+            Pulse replaces the access services provided by OAC. However, OAC manages 
+            a computer's wireless connectivity and Pulse relies on the connectivity 
+            provided by MacOS. After uninstalling OAC, you must set your computer's 
+            wireless networking properties to manage wireless networks (System 
+            Preferences &gt; Network).</p></td></tr><tr class="row-with-bg" valign="top"><td align="left" style="border-bottom:thin solid black;text-align: left;padding-right: 10px;padding-left: 10px;"><p class="Para1">During login, the following message appears:</p><p class="Para1"><span class="ExampleInline">You are about to authenticate to an untrusted server. Do you accept
+the certificate for this connection?</span></p><p class="Para1"/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</td><td align="left" style="border-bottom:thin solid black;text-align: left;padding-right: 10px;padding-left: 10px;"><p class="Para1">Junos Pulse cannot verify the identity of the server.
+This error or any certificate error means that Pulse cannot ensure
+that you are connecting to a trusted server. The server certificate
+might have been revoked or it might have expired. It could have been
+issued by a certificate authority that is not recognized by Pulse,
+such as when your organization uses a self-signed certificate. If
+your network administrator has enabled this permission, you can choose
+to proceed and connect to the server but you should do so only if
+your network administrator has advised you to ignore the certificate
+error.</p></td></tr><tr valign="top"><td align="left" style="border-bottom:thin solid black;text-align: left;padding-right: 10px;padding-left: 10px;"><p class="Para1">After login, the following message appears:</p><p class="Para1"><span class="ExampleInline">Limited network access due to compliance issue</span></p></td><td align="left" style="border-bottom:thin solid black;text-align: left;padding-right: 10px;padding-left: 10px;"><p class="Para1">Your 
+            endpoint does not meet one or more of the requirements that your network 
+            access policies require. If the Pulse Remediation information does 
+            not provide enough information to enable you to solve the issue, see 
+            your network administrator. After you fix the problem, Junos Pulse 
+            automatically connects you to the network.</p></td></tr><tr class="row-with-bg" valign="top"><td align="left" style="border-bottom:thin solid black;text-align: left;padding-right: 10px;padding-left: 10px;"><p class="Para1">During login, the following message appears:</p><p class="Para1"><span class="ExampleInline">Credentials were invalid. Please try again.</span></p></td><td align="left" style="border-bottom:thin solid black;text-align: left;padding-right: 10px;padding-left: 10px;"><p class="Para1">If 
+            you selected the <b>Save Settings</b> check box when you activated 
+            a Pulse connection, the credentials you provided are used every time 
+            you activate that connection without prompting you to enter login 
+            information. However, Pulse cannot detect when you change your network 
+            password,  it continues to use the saved settings, and that can result 
+            in the &quot;Credentials were invalid&quot; error. To resolve this 
+            issue, click <b>File &gt; Connections &gt; Forget Saved Settings</b>.</p>
+          <p class="Para1">The next time you connect, you are prompted for your login credentials,
+and you can specify your new login information. If you select the <b>Save Settings</b> check box, the new credential information
+will be saved.</p></td></tr><tr valign="top"><td align="left" style="border-bottom:thin solid black;text-align: left;padding-right: 10px;padding-left: 10px;"><p class="Para1">The 
+            Pulse menu icon changes to the failed state:
+          <div align="center">
+            <p><img src="../../../shrd/pulse_menubar_error.png" width="16" height="16"Para1"></div>
+			<p class="Para1">The Pulse Connections list icon changes to the failed state:</p>
+			
+          <div align="center"><img src="../../../shrd/pulse_connecting_error.png" /></div></td>
+        <td align="left" style="border-bottom:thin solid black;text-align: left;padding-right: 10px;padding-left: 10px;"><p class="Para1">When 
+            Pulse indicates that your network connection has failed, open Pulse 
+            and then click the arrow next to the connection name to display the 
+            detailed connection status. The <b>Details</b> section shows the specific 
+            error, which you can click to open a window that shows a detailed 
+            description of the error. </p></td></tr><tr class="row-with-bg" valign="top"><td align="left" style="border-bottom:thin solid black;text-align: left;padding-right: 10px;padding-left: 10px;"><p class="Para1">Your login attempt fails when you specify the target
+realm as part of your username. For example:</p><p class="Para1"><span class="ExampleInline">username@realm</span></p></td><td align="left" style="border-bottom:thin solid black;text-align: left;padding-right: 10px;padding-left: 10px;"><p class="Para1">The 
+            username@realm convention is not supported in Junos 
+            Pulse.  If you have access to more than one realm, Pulse prompts you to select the one you want. </p></td></tr></tbody></table></div><h4 class="Head4">Related Topics</h4><ul><li class="li"><a href="access-control-delete-client-connection-status.html">Junos Pulse Connection Status</a></li><li class="li"><a href="access-control-connect-client-forget-credentials.html">Forget Saved Settings</a></li><li class="li"><a href="access-control-connect-client-view-properties.html">View Connection Properties</a></li></ul>
+</body></html>

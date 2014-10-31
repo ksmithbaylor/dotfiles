@@ -1,0 +1,34 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<title>Junos Pulse Dock アイコンの使用と接続ステータスの表示</title> <meta name="description" content="メニューバーの Pulse アイコンから使用できるオプションについて説明します。" /> <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/> <link href="../sty/standard.css" rel="stylesheet" type="text/css" /> <meta name="keywords" content="メニューバーアイコン、アイコン、接続ステータス、Pulse を開く、Pulse を閉じる、接続、切断" />
+</head>
+<body style="width:95%;>
+<div id="content">
+<h1 class="Title">Junos Pulse メニューバーアイコンの使用と接続ステータスの表示</h1>
+<p class="Para1">Junos Pulse メニューバーアイコンは、ネットワーク接続の現在の状態を示します。 現在の接続が複数ある場合でも、メニューバーに表示される Pulse アイコンは 1 つのみです。 アクティブな接続のいずれかに問題がある場合は、アイコンの状態が変わります。 次のリストでメニューバーアイコンの状態を説明します。</p>
+<p class="Para2"><img src="../../../shrd/pulse_menubar_connected.png" width="16" height="16" />    接続済み<br /> <img src="../../../shrd/pulse_menubar_icon_colored.png" /> 接続がありません<br /> <img src="../../../shrd/pulse_menubar_02.png" width="16" height="16" /> 接続中 
+  <br /> <img src="../../../shrd/pulse_menubar_error.png" width="16" height="16" /> 接続に問題があります<br /><img src="../../../shrd/pulse_menubar_error.png" width="16" height="16" /> 接続は失敗しました<br /> <img src="../../../shrd/pulse_menubar_icon_suspended.png" width="16" height="16" /> 接続は中断されました<br /> <img src="../../../shrd/pulse_menubar_icon_GrayScaled.png" alt="アイコン - Pulse が動作していません" width="16" height="16" /> Pulse が実行されていません </p>
+<p class="Para1">メニューバーアイコンをクリックしてメニューを表示し、次の操作を実行することもできます。</p>
+<ul>
+  <li class="li"><strong>［Junos Pulse を開く］</strong>- Pulse インターフェースを表示します。 Pulse が動作していない場合、<strong>［Junos Pulse を開く］</strong>ではまず、Pulse サービスを起動します。 </li>
+  <li class="li"><strong>［接続リスト］</strong>- 各 Pulse 接続を一覧表示します。 接続名をクリックして、該当する接続に対して実行できる操作を表示します。</p>
+  </li>
+
+  <ul>
+    <li><strong>［接続］</strong>- 選択したネットワークへの接続を確立します。</li>
+    <li><strong>［切断］</strong>- 選択したネットワーク接続を終了します。</li>
+    <li><strong>［キャンセル］</strong>- Pulse サーバーによって開始された操作をキャンセルします。 サーバーで Host Checker 操作を開始すると、［キャンセル］オプションが使用可能になります。 キャンセルすると、Pulse はネットワークに接続しません。</li><li><strong>［中断/再開］</strong>- リモートネットワークへの接続を中断してからまた再開し、ローカルプリンタなどのローカルネットワークリソースにアクセスできるようにします。 接続を中断すると、接続を再開するまでは、保護されたネットワークリソースにはアクセスできません。 接続を再開すると、ログイン認証情報を求められることなく、接続します。 </li>
+    
+    <li><strong>［セッションの延長］</strong>- Pulse によってセッションの期限切れを通知されるのを待たずに、アクティブな接続セッションを延長できます。 いつでもこのオプションを選択して、セッションタイマーとアイドルタイマーをそれぞれの最大値にリセットできます。</li>
+  </ul>
+<li class="li"><strong>［終了］</strong>- アクティブな接続を閉じて、Pulse を停止します。 Pulse を終了した後も、メニューバーの Pulse メニューバーアイコンはそのままなので、これを使用して Pulse 再起動できます。</li></ul>
+
+<h4 class="Head4">関連項目</h4>
+<ul>
+  <li class="li"><a href="access-control-connect-client-ui.html">Junos Pulse インターフェース</a></li>
+  <li class="li"><a href="access-control-connect-pulse-starting-stopping.html">Junos Pulse の起動または停止</a></li>
+</ul>
+
+</body></html>

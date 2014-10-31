@@ -1,0 +1,92 @@
+﻿; JUNS catalogUtil requires catalog message files to be saved with UTF-8 encoding, which put 3 bytes {0xEF, 0xBB, 0xBF} at the file beginning called Byte Order Mark (BOM) for UTF-8 files . For modifications in this files, please use Text Editors which persist these BOM bytes (like Notepad.exe, Visual Studio IDE, etc).
+
+
+;kMsgCommonErrOk
+[0]
+Short-desc = 成功しました。
+Long-desc = 操作は成功しました。
+
+;kMsgCommonErrFailure
+[1]
+Short-desc = 失敗しました。
+Long-desc = もう一度操作を試みてください。問題が解消されない場合は、ネットワーク管理者に連絡してください。
+
+;kMsgCommonErrConnection
+[2]
+Short-desc = 内部 IPC 接続が失敗しました。
+Long-desc = もう一度操作を試みるか、またはシステムを再起動してください。問題が解消されない場合は、ネットワーク管理者に連絡してください。
+
+;kMsgCommonErrUnimplemented
+[3]
+Short-desc = コマンドまたは機能が実装されていません。
+Long-desc = ネットワーク管理者に連絡してください。
+
+;kMsgCommonErrParameter
+[4]
+Short-desc = パラメータが無効です。
+Long-desc = もう一度操作を試みてください。問題が解消されない場合は、ネットワーク管理者に連絡してください。
+
+;kMsgCommonErrInvalidHandle
+[5]
+Short-desc = 無効なハンドル
+Long-desc = もう一度操作を試みてください。問題が解消されない場合は、システムを再起動してください。
+
+;kMsgCommonErrBufferSize
+[6]
+Short-desc = バッファが小さすぎます。
+Long-desc = もう一度操作を試みてください。問題が解消されない場合は、システムを再起動してください。
+
+;kMsgCommonErrOutOfMemory
+[7]
+Short-desc = メモリ不足
+Long-desc = もう一度操作を試みてください。問題が解消されない場合は、不要なアプリケーションを閉じて、メモリを解放してください。それでも問題が解消されない場合は、システムを再起動してください。
+
+;kMsgCommonErrNotStarted
+[8]
+Short-desc = IO サブシステムが起動しませんでした。
+Long-desc = もう一度操作を試みてください。問題が解消されない場合は、システムを再起動してください。
+
+;kMsgCommonErrUnknownCommand
+[9]
+Short-desc = サービスは不明なコマンドを受信しました。
+Long-desc = もう一度操作を試みてください。問題が解消されない場合は、システムを再起動してください。
+
+;kMsgCommonErrIoSystem
+[10]
+Short-desc = IO サブシステムが正常に動作していません。
+Long-desc = もう一度操作を試みてください。問題が解消されない場合は、システムを再起動してください。
+
+;kMsgCommonErrNotFound
+[11]
+Short-desc = 要求項目が見つかりません。
+Long-desc = もう一度操作を試みてください。問題が解消されない場合は、ネットワーク管理者に連絡してください。
+
+;kMsgCommonErrAlreadyExists
+[12]
+Short-desc = 要求されたエンティティは、すでに存在します。
+Long-desc = もう一度操作を試みてください。問題が解消されない場合は、ネットワーク管理者に連絡してください。
+
+;kMsgCommonErrAlreadyStarted
+[13]
+Short-desc = 要求されたエンティティは、すでに起動されています。
+Long-desc = もう一度操作を試みてください。問題が解消されない場合は、ネットワーク管理者に連絡してください。
+
+;kMsgCommonErrInvalidService
+[14]
+Short-desc = エンティティのコード署名シグネチャが無効です。
+Long-desc = ネットワーク管理者に連絡してください。
+
+;kMsgCommonErrCancelled
+[15]
+Short-desc = 操作が取り消されました。
+Long-desc = もう一度操作を試みてください。問題が解消されない場合は、ネットワーク管理者に連絡してください。
+
+;kMsgCommonErrShutdown
+[16]
+Short-desc = 接続がシャットダウンされました。
+Long-desc = サーバーが接続をリセットしました。再接続するには、もう一度ログインしてください。
+
+;kMsgCommonPassAnySuppTypeArg, used for passing thru any supported data type argument
+[999]
+Short-desc = {0}
+Long-desc = {0}

@@ -1,0 +1,92 @@
+﻿; JUNS catalogUtil requires catalog message files to be saved with UTF-8 encoding, which put 3 bytes {0xEF, 0xBB, 0xBF} at the file beginning called Byte Order Mark (BOM) for UTF-8 files . For modifications in this files, please use Text Editors which persist these BOM bytes (like Notepad.exe, Visual Studio IDE, etc).
+
+
+;kMsgCommonErrOk
+[0]
+Short-desc = Réussite
+Long-desc = Réussite de l’opération
+
+;kMsgCommonErrFailure
+[1]
+Short-desc = Échec général
+Long-desc = Réessayez. Si le problème persiste, contactez l’administrateur du réseau.
+
+;kMsgCommonErrConnection
+[2]
+Short-desc = Échec de la connexion IPC interne
+Long-desc = Réessayez ou redémarrez l’ordinateur. Si le problème persiste, contactez l’administrateur du réseau.
+
+;kMsgCommonErrUnimplemented
+[3]
+Short-desc = Commande ou fonctionnalité non appliquée
+Long-desc = Contactez l’administrateur du réseau.
+
+;kMsgCommonErrParameter
+[4]
+Short-desc = Paramètre non valable
+Long-desc = Réessayez. Si le problème persiste, contactez l’administrateur du réseau.
+
+;kMsgCommonErrInvalidHandle
+[5]
+Short-desc = Poignée non valable
+Long-desc = Réessayez. Si le problème persiste, redémarrez le système.
+
+;kMsgCommonErrBufferSize
+[6]
+Short-desc = La mémoire tampon fournie n’est pas suffisamment grande.
+Long-desc = Réessayez. Si le problème persiste, redémarrez le système.
+
+;kMsgCommonErrOutOfMemory
+[7]
+Short-desc = Mémoire insuffisante
+Long-desc = Réessayez. Si le problème persiste, libérez de la mémoire en fermant les applications inutiles. Si le problème persiste encore, redémarrez le système.
+
+;kMsgCommonErrNotStarted
+[8]
+Short-desc = Le sous-système ES n’a pas été démarré.
+Long-desc = Réessayez. Si le problème persiste, redémarrez le système.
+
+;kMsgCommonErrUnknownCommand
+[9]
+Short-desc = Le service a reçu une commande inconnue.
+Long-desc = Réessayez. Si le problème persiste, redémarrez le système.
+
+;kMsgCommonErrIoSystem
+[10]
+Short-desc = Le sous-système ES présente une anomalie de fonctionnement générale.
+Long-desc = Réessayez. Si le problème persiste, redémarrez le système.
+
+;kMsgCommonErrNotFound
+[11]
+Short-desc = Impossible de localiser l’élément de la requête
+Long-desc = Réessayez. Si le problème persiste, contactez l’administrateur du réseau.
+
+;kMsgCommonErrAlreadyExists
+[12]
+Short-desc = L’entité de la requête existe déjà.
+Long-desc = Réessayez. Si le problème persiste, contactez l’administrateur du réseau.
+
+;kMsgCommonErrAlreadyStarted
+[13]
+Short-desc = L’entité de la requête était déjà démarrée.
+Long-desc = Réessayez. Si le problème persiste, contactez l’administrateur du réseau.
+
+;kMsgCommonErrInvalidService
+[14]
+Short-desc = L’entité dispose d’une signature de code non valable.
+Long-desc = Contactez l’administrateur du réseau.
+
+;kMsgCommonErrCancelled
+[15]
+Short-desc = Opération annulée
+Long-desc = Réessayez. Si le problème persiste, contactez l’administrateur du réseau.
+
+;kMsgCommonErrShutdown
+[16]
+Short-desc = Arrêt de la connexion
+Long-desc = Le serveur a réinitialisé la connexion. Vous devez vous reconnecter.
+
+;kMsgCommonPassAnySuppTypeArg, used for passing thru any supported data type argument
+[999]
+Short-desc = {0}
+Long-desc = {0}

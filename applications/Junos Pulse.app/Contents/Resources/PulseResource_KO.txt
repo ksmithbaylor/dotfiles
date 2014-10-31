@@ -1,0 +1,2068 @@
+﻿; JUNS catalogUtil requires resource catalog files to be saved with UTF-8 encoding, which put 3 bytes {0xEF, 0xBB, 0xBF} at the file beginning called Byte Order Mark (BOM) for UTF-8 files . For modifications in this files, please use Text Editors which persist these BOM bytes (like Notepad.exe, Visual Studio IDE, etc).
+
+; Following are English Resource Strings used in Pulse
+; ----------------------------------------------------
+
+; Notes: 1) Language Translation not needed for these:
+;           a) hyperlink anchor tags: <a>, </a>
+;           b) escape characters: \n, \r, \t
+
+;IDS_AS_IS
+[0]
+Value = {0}
+
+;IDS_SSID
+[1]
+Value = SSID:
+
+;IDS_WARNING_CONNECTING_ACCESS_SERVICE
+[2]
+Value = Juniper Unified Network Service로의 연결이 실패하였습니다.
+
+;IDS_WARNING_ADD_EDIT_CONN_NOT_ALLOWED
+[3]
+Value = 관리자가 연결 추가 또는 편집을 허용하지 않습니다.
+
+;IDS_WARNING_CAN_NOT_CREATE_CONN
+[4]
+Value = 이용 가능한 액세스 방법이 없기 때문에 연결을 만들 수 없습니다.
+
+;IDS_WARNING_USE_WINDOWS_FOR_CONTROLING_CONN
+[5]
+Value = 이 연결을 제어하려면 Windows를 이용하십시오.
+
+;IDS_WARNING_CONN_AUTO_CONTROLLED_CANT_EDIT
+[6]
+Value = 이 연결은 자동으로 제어되며, 무시할 수 없습니다.
+
+;IDS_WARNING_CONN_DELETED_EDITS_DISCARDED
+[7]
+Value = 이 연결은 편집 과정에서 삭제되었습니다.  편집 사항이 무시되었습니다.
+
+;IDS_WARNING_CONN_DELETE_NOT_ALLOWED
+[8]
+Value = 관리자가 이 연결의 삭제를 허용하지 않습니다.
+
+;IDS_QUESTION_REMOVE_CONN
+[9]
+Value = 이 연결을 제거하시겠습니까?\n\n연결: {0}
+
+;IDS_WARNING_ACCELERATION_NOT_CONTROLLABLE
+[10]
+Value = 가속도가 현재 제어 가능하지 않습니다.
+
+;IDS_WARNING_ACCELERATION_AUTO_CONTROLLED_CANT_EDIT
+[11]
+Value = 가속도가 자동으로 제어되며, 무시할 수 없습니다.
+
+;IDS_ERROR_CANT_CLEAR_SAVED_SETTINGS
+[12]
+Value = 저장된 설정을 지울 수 없습니다.
+
+;IDS_INFO_ALL_SAVED_SETTINGS_CLEARED
+[13]
+Value = 모든 저장된 설정을 지웠습니다.
+
+;IDS_STATUS_EES_NOT_RUNNING
+[14]
+Value = 실행 중이지 않음
+
+;IDS_STATUS_EES_DISABLED
+[15]
+Value = 비활성화됨
+
+;IDS_STATUS_EES_DOWNLOADING_SOFTWARE
+[16]
+Value = 소프트웨어 다운로드 중
+
+;IDS_STATUS_EES_DOWNLOADING_SIGNATURES
+[17]
+Value = 서명 다운로드 중
+
+;IDS_STATUS_EES_CHECKING_MEMORY
+[18]
+Value = 메모리 스캔 수행 중
+
+;IDS_STATUS_EES_REALTIME_PROTECTION_ENABLED
+[19]
+Value = 실시간 보호 활성화됨
+
+;IDS_STATUS_EES_REBOOT_NEEDED_FOR_MALWARE_REMEDIATE
+[20]
+Value = 맬웨어를 재구성하기 위해 재부팅이 요구됨
+
+;IDS_STATUS_EES_MALWARE_DETECTED_AUTO_REMEDIATION_FAILED
+[21]
+Value = 맬웨어 감지됨 – 자동 재구성 실패
+
+;IDS_STATUS_EES_MALWARE_DETECTED_CHECKING_MEMORY
+[22]
+Value = 맬웨어 감지됨 – 메모리 재스캔 수행 중
+
+;IDS_STATUS_EES_INITIALIZING
+[23]
+Value = 초기화하는 중
+
+;IDS_STATUS_EES_INIT_FAILED
+[24]
+Value = 초기화 실패
+
+;IDS_VERSION
+[25]
+Value = 버전 
+
+;IDS_REMEDIATION_INFO
+[26]
+Value = 재구성 정보: 
+
+;IDS_CONNECTIONS
+[27]
+Value = 연결(&O)
+
+;IDS_DELETE_CONN
+[28]
+Value = 연결 삭제
+
+;IDS_FORGET_SAVED_SETTING
+[29]
+Value = 저장된 설정 잊음
+
+;IDS_EDIT_CONN
+[30]
+Value = 연결 편집
+
+;IDS_ADD_CONN
+[31]
+Value = 연결 추가
+
+;IDS_SECURITY
+[32]
+Value = 보안(&S)
+
+;IDS_ENHANDCED_ENDPOINT_SECURITY
+[33]
+Value = 강화된 종점 보안
+
+;IDS_ACCELERATION
+[34]
+Value = 가속화(&A)
+
+;IDS_WAN_BANDWIDTH_OPTIMIZATION
+[35]
+Value = 응용 프로그램 가속화
+
+;IDS_CUSTOM
+[36]
+Value = 사용자 지정({0})
+
+;IDS_MAIN_DLG_MENU_DISCONNECT
+[37]
+Value = 연결 해제(&I)
+
+;IDS_WARNING_SELECT_CONN
+[38]
+Value = 연결을 선택하십시오.
+
+;IDS_WARNING_DISCONNECT_BEFORE_EDIT
+[39]
+Value = 편집하기 전에 연결을 해제하십시오.
+
+
+;IDS_ERROR_INVALID_CREDENTIALS
+[40]
+Value = 자격 증명이 유효하지 않았습니다. 다시 시도하십시오.
+
+;IDS_STATUS_INPUT_CREDENTIALS
+[41]
+Value = 이 연결을 완료하기 위해 다음 자격 증명을 제공하십시오.
+
+;IDS_STATUS_MAKE_SELECTION
+[42]
+Value = 이 연결을 완료하기 위해 다음을 선택하여 주십시오.
+
+;IDS_STATUS_INPUT_INFO
+[43]
+Value = 이 연결을 완료하기 위해 다음 정보를 제공하십시오.
+
+;IDS_STATUS_CONNECTING
+[44]
+Value = 연결 중…
+
+;IDS_STATUS_CONN_COMPLETE
+[45]
+Value = 연결이 완료되었습니다.
+
+;IDS_STATUS_DETAILS_FROM_TRAY_ICON
+[46]
+Value = {0} 세부정보는 시스템 트레이 아이콘으로 액세스할 수 있습니다.
+
+;IDS_ERROR_DISCONNECTED_BY_CONN_POLICY
+[47]
+Value = 연결 정책에 의해 연결 해제됨.
+
+;IDS_ERROR_CONN_FAILED
+[48]
+Value = 연결에 실패했습니다.
+
+;IDS_ERROR_LIMITED_CONN_COMPLIANCE_ISSUE
+[49]
+Value = 준수 문제로 인한 제한된 네트워크 액세스.
+
+;IDS_STATUS_LIMITED_CONN_UPDATE_IN_PROGRESS
+[50]
+Value = 제한된 네트워크 액세스입니다.\n업데이트가 진행 중입니다. 이 대화상자는 닫으셔도 됩니다. 업데이트가 완료되면, 네트워크로 로그인될 것입니다.
+
+;IDS_STATUS_LIMITED_CONN_UPDATE_DONE_RELOGIN
+[51]
+Value = 제한된 네트워크 액세스입니다.\n업데이트가 완료되었습니다.  연결이 곧바로 재시도되지 않으면, 다시 로그인하기 위해 재시도 버튼을 눌러 주십시오.
+
+;IDS_NAME_UNNAMED_CONN
+[53]
+Value = <이름 없는 연결>
+
+;IDS_NAME_UNSPECIFIED_HOST
+[54]
+Value = <지정되지 않은 호스트>
+
+
+;IDS_TT_CONNECT
+[55]
+Value = 연결하려면 클릭
+
+;IDS_TT_DISCONNECT
+[56]
+Value = 연결 해제하려면 클릭
+
+;IDS_BTN_CONNECT
+[59]
+Value = 연결
+
+;IDS_BTN_STATUS
+[60]
+Value = 연결
+
+;IDS_HL_READ_INSTRUCTIONS
+[61]
+Value = 문제 해결을 위해 <a>지침을 읽으십시오</a>.
+
+;IDS_LB_SERVER_URL
+[62]
+Value = 서버 URL:
+
+;IDS_LB_STATUS
+[63]
+Value = 상태:
+
+;IDS_LB_COMPLIANCE
+[64]
+Value = 준수:
+
+;IDS_LB_EES_STATUS
+[65]
+Value = 상태:
+
+;IDS_LB_EES_DEFINATIONS
+[66]
+Value = 정의:
+
+;IDS_ST_COMPLIANCE_ISSUE
+[68]
+Value = 준수 문제
+
+;IDS_ST_MESSAGE
+[69]
+Value = 메시지
+
+;IDS_ST_UPDATE_IN_PROGRESS
+[70]
+Value = 업데이트가 진행 중입니다. 이 대화상자는 닫으셔도 됩니다. 업데이트가 완료되면, 네트워크로 로그인될 것입니다.
+
+;IDS_ST_UPDATE_COMPLETE
+[71]
+Value = 업데이트가 완료되었습니다.
+
+
+;IDS_WARNING_SPECIFY_CONN_NAME
+[72]
+Value = 이 연결에 대한 이름을 지정해 주십시오.
+
+;IDS_WARNING_SPECIFY_UNIQUE_CONN_NAME
+[73]
+Value = 이미 사용 중인 이름입니다.\n이 연결에 대한 고유 이름을 지정해 주십시오.
+
+;IDS_WARNING_SPECIFY_CONN_URL
+[74]
+Value = 이 연결에 대한 URL을 지정해 주십시오.
+
+;IDS_SAVE
+[75]
+Value = 저장(&A)
+
+;IDS_CERT_PROMPT_0
+[76]
+Value = 신뢰하지 않는 서버에 인증하려고 합니다.  사이트 보안 인증서에 문제가 있습니다:  
+
+;IDS_DATE_FORMAT
+[77]
+Value = {0}/{1}/{2}
+
+;IDS_ST_CONN_INFO
+[78]
+Value = 연결 정보:
+
+;IDS_ST_HOST
+[79]
+Value = 호스트:
+
+;IDS_ST_CERT_INFO
+[80]
+Value = 인증서 정보:
+
+;IDS_ST_CERT_SUBJECT
+[81]
+Value = 발행 대상:
+
+;IDS_ST_CERT_ISSUER
+[82]
+Value = 발행자:
+
+;IDS_ST_CERT_VALIDITY
+[83]
+Value = 유효 기간:
+
+;IDS_ST_CERT_HASH
+[84]
+Value = 전자 지문:
+
+;IDS_ST_VALIDITY_DATE_RANGE
+[85]
+Value = {0}-{1}
+ 
+;IDS_EMPTY
+[86]
+Value = <비어 있음>
+
+
+;IDS_ST_PWD
+[87]
+Value = 암호(&P):
+
+;IDS_ST_ENTER_OLD_PWD
+[88]
+Value = 기존 암호를 입력해 주십시오(&O):
+
+;IDS_ST_ENTER_NEW_PWD
+[89]
+Value = 새 암호를 입력해 주십시오(&N):
+
+;IDS_ST_CONFIRM_NEW_PWD
+[90]
+Value = 새 암호를 확인해 주십시오(&P):
+
+;IDS_ST_SECONDARY_PWD
+[91]
+Value = 보조 암호(&P):
+
+;IDS_ST_SAVE_SETTINGS
+[92]
+Value = 설정 저장(&S)
+
+;IDS_ST_USER_NAME
+[93]
+Value = 사용자 이름(&U):
+
+;IDS_ST_SECONDARY_USER_NAME
+[94]
+Value = 보조 사용자 이름(&U):
+
+;IDS_ST_ENTER_REALM
+[95]
+Value = 영역을 입력하십시오(&R):
+
+;IDS_ST_ENTER_TOKEN_INFO
+[96]
+Value = 암호를 입력하십시오(&P):
+
+;IDS_ST_ENTER_TOKEN_SECONDARY_INFO
+[97]
+Value = 보조 토큰(&T) 정보를 입력하십시오.
+
+;IDS_ST_SERVER_CHALLENGE
+[98]
+Value = 서버의 메시지:
+
+;IDS_ST_ENTER_CLIENT_RESPONSE
+[99]
+Value = 응답을 입력하십시오(&R):
+
+;IDS_ST_SELECT_REALM
+[100]
+Value = 영역을 선택하십시오(&R):
+
+;IDS_ST_SELECT_ROLE
+[101]
+Value = 역할을 선택하십시오(&R):
+
+;IDS_WARNING_MAX_SESSONS
+[102]
+Value = 경고(&W): 최대 수의 세션이 실행되고 있습니다.  세션을 선택하고 연결을 클릭하여 이를 종료한 다음 새로운 세션을 만드십시오.  기존 세션을 유지하려면 취소를 클릭하십시오. 
+
+;IDS_WARNING_SESSION_RUNNING
+[103]
+Value = 경고(&W):이미 실행 중인 세션이 있습니다. 연결을 클릭하여 이를 종료한 다음 새로운 세션을 만드십시오. 기존 세션을 유지하려면 취소를 클릭하십시오. 
+
+;IDS_ST_SELECT_CERTIFICATE
+[104]
+Value = 인증서를 선택하십시오(&P):
+
+;IDS_LOGIN_DLG_BTN_CONNECT
+[105]
+Value = 연결(&C)
+
+;IDS_LOGIN_DLG_BTN_RETRY
+[106]
+Value = 재시도(&R)
+
+;IDS_LOGIN_DLG_BTN_CANCEL
+[107]
+Value = 취소(&A)
+
+;IDS_LOGIN_DLG_BTN_CLOSE
+[108]
+Value = 닫기(&L)
+
+;IDS_LOGIN_DLG_CONNECT_TO
+[109]
+Value = 연결 대상: {0}
+
+;IDS_LOGIN_DLG_ERROR_INVALID_PWD
+[110]
+Value = 새로운 암호가 잘못되었습니다.  유효한 새 이름을 입력하십시오.
+
+;IDS_LOGIN_STATUS_WND_PROGRESS_BTN_CANCEL
+[111]
+Value = 취소(&N)
+
+;IDS_LOGIN_STATUS_WND_PROGRESS_BTN_CLOSE
+[112]
+Value = 닫기(&O)
+
+;IDS_LOG_SAVE_DLG_TITLE
+[113]
+Value = 로그 및 진단 저장
+
+;IDS_LOG_SAVE_DLG_ST_SAVING_LOGS
+[114]
+Value = 로그 및 진단 저장 중…
+
+;IDS_LOG_SAVE_DLG_ST_SAVE_LOGS_COMPLETE
+[115]
+Value = 로그 및 진단 저장 완료!
+
+;IDS_LOG_SAVE_DLG_SAVING_FILES
+[116]
+Value = 파일 저장 중…
+
+;IDS_LOG_SAVE_DLG_SAVING_COMMANDS
+[117]
+Value = 명령 저장 중…
+
+;IDS_LOG_SAVE_DLG_SAVING_DIAGNOSTICS
+[118]
+Value = 진단 저장 중…
+
+;IDS_LOG_SAVE_DLG_SAVING_FAILED
+[119]
+Value = 저장에 실패함!
+
+;IDS_REMEDIATION_POLICY_STR_REASONS_MISSING
+[120]
+Value = 사용할 수 없습니다.
+
+;IDS_REMEDIATION_POLICY_STR_INSTRUCTIONS_MISSING
+[121]
+Value = 사용할 수 있는 지침이 없습니다.
+
+;IDS_REMEDIATION_POLICY_STR_NO_DATA_AVAILABLE
+[122]
+Value = 사용할 수 있는 추가 정보가 없습니다.  시스템 관리자에게 문의하십시오.
+
+;IDS_TRAY_WND_STATE_NO_CONN
+[123]
+Value = 활성 연결이 없습니다.
+
+;IDS_TRAY_WND_STATE_CONNECTED
+[124]
+Value = 연결됨
+
+;IDS_TRAY_WND_STATE_CONNECTING
+[125]
+Value = 연결 중…
+
+;IDS_TRAY_WND_STATE_CONN_FAILED
+[126]
+Value = 연결 실패.
+
+;IDS_TRAY_WND_STATE_LIMITED_CONNECTIVITY
+[127]
+Value = 제한된 연결
+
+;IDS_TRAY_WND_STATE_ACCESS_SERVICE_NOT_RUNNING
+[128]
+Value = Juniper Pulse 서비스가 실행되고 있지 않음
+
+;IDS_TRAY_WND_TT_PRODUCT_AND_STATE
+[129]
+Value = {0}:{1}
+
+;IDS_TRAY_WND_TT_CONN_FAILED
+[130]
+Value = 연결에 실패했습니다.  자세한 내용을 보려면 여기를 클릭하십시오.
+
+;IDS_TRAY_WND_MENU_OPEN
+[131]
+Value = {0} 열기(&O)
+
+;IDS_TRAY_WND_EXIT_QUESTION
+[132]
+Value = {0}을(를) 종료하면 {0}을(를) 재시작할 때까지 네트워크 연결 중 일부가 차단될 수 있습니다.\n\n시작 메뉴에서 {0}을(를) 실행해 재시작할 수 있습니다.\n\n정말로 종료하시겠습니까?
+
+;IDS_LOG_VIEWER_WND_TITLE
+[133]
+Value = 로그 뷰어
+
+;IDS_ANNOTATION_DLG_TITLE
+[136]
+Value = 주석 로그
+
+;IDS_ANNOTATION_DLG_WARNING_SPECIFY_ANNOTATION_TEXT
+[137]
+Value = 주석 텍스트를 지정하십시오.
+
+;IDS_CONN_ITEM_STATUS_DISCONNECT_REQUESTED
+[139]
+Value = 연결 해제 요청
+
+;IDS_CONN_ITEM_STATUS_CONNECT_REQUESTED
+[140]
+Value = 연결 요청
+
+;IDS_CONN_ITEM_STATUS_DISCONNECTED
+[141]
+Value = 연결 해제됨
+
+;IDS_CONN_ITEM_STATUS_CONNECTING
+[142]
+Value = 연결 중
+
+;IDS_CONN_ITEM_STATUS_CONNECTED
+[143]
+Value = 연결됨
+
+;IDS_CONN_ITEM_STATUS_RECONNECTING
+[144]
+Value = 연결을 기다리는 중
+
+;IDS_CONN_ITEM_STATUS_DISCONNECTING
+[145]
+Value = 연결 해제 중
+
+;IDS_CONN_ITEM_STATUS_FAILED
+[146]
+Value = 실패
+
+;IDS_CONN_ITEM_STATUS_UNKNOWN
+[147]
+Value = 알 수 없음
+
+;IDS_CONN_ITEM_WX_STATUS_DISABLED
+[148]
+Value = 비활성화됨
+
+;IDS_CONN_ITEM_WX_STATUS_ENABLING
+[149]
+Value = 활성화 중
+
+;IDS_CONN_ITEM_WX_STATUS_ENABLED
+[150]
+Value = 활성화됨
+
+;IDS_CONN_ITEM_WX_STATUS_RE_ENABLING
+[151]
+Value = 활성화 중
+
+;IDS_CONN_ITEM_WX_STATUS_DISABLING
+[152]
+Value = 비활성화 중
+
+;IDS_CONN_ITEM_WX_STATUS_FAILED
+[153]
+Value = 실패
+
+;IDS_CONN_ITEM_WX_STATUS_UNKNOWN
+[154]
+Value = 알 수 없음
+
+;IDS_CONN_ITEM_COMPLIANCE_LIMITED_CONNECTIVITY
+[155]
+Value = 제한된 연결
+
+;IDS_CONN_ITEM_COMPLIANCE_REMEDIATION_REQUIRED
+[156]
+Value = 재구성 요청
+
+;IDS_CONN_ITEM_COMPLIANCE_MEETS_SECURITIES_POLICIES
+[157]
+Value = 보안 정책 충족
+
+;IDS_MAIN_DLG_MENU_CONNECTIONS
+[158]
+Value = 연결(&O)
+
+;IDS_MAIN_DLG_MENU_CONNECT
+[159]
+Value = 연결(&C)
+
+;IDS_MAIN_DLG_MENU_REMEDIATION_INFO
+[160]
+Value = 재구성 정보(&R)
+
+;IDS_MAIN_DLG_MENU_EDIT
+[161]
+Value = 편집(&E)
+
+;IDS_MAIN_DLG_MENU_DELETE
+[162]
+Value = 삭제(&D)
+
+;IDS_MAIN_DLG_MENU_FORGET_SAVED_SETTINGS
+[163]
+Value = 저장된 설정 잊음(&F)
+
+;IDS_MAIN_DLG_MENU_ADD
+[164]
+Value = 추가(&A)
+
+;IDS_MAIN_DLG_MENU_LOGS
+[165]
+Value = 로그(&L)
+
+;IDS_MAIN_DLG_MENU_ANNOTATE
+[166]
+Value = 주석(&A)…
+
+;IDS_MAIN_DLG_MENU_LOG_LEVEL
+[167]
+Value = 로그 수준(&L)
+
+;IDS_MAIN_DLG_MENU_DETAILED
+[168]
+Value = 세부(&D)
+
+;IDS_MAIN_DLG_MENU_NORMAL
+[169]
+Value = 기본(&N)
+
+;IDS_MAIN_DLG_MENU_SAVE_AS
+[170]
+Value = 다른 이름으로 저장(&S)
+
+;IDS_MAIN_DLG_MENU_HELP
+[171]
+Value = 도움말(&H)
+
+;IDS_MAIN_DLG_MENU_ABOUT
+[172]
+Value = 정보(&A)
+
+;IDS_MAIN_DLG_MENU_CLOSE
+[173]
+Value = 닫기(&C)
+
+;IDS_TRAY_WND_MENU_EXIT
+[174]
+Value = 끝내기(&X)
+
+;IDS_LOG_SAVE_DLG_FILTER
+[175]
+Value = Zip 파일
+
+;IDS_ABOUT_VERSION
+[176]
+Value = Junos Pulse\n버전 {0}
+
+;IDS_ABOUT_COPYRIGHT
+[177]
+Value = © 2010-2014 Juniper Networks, Inc.\nAll rights reserved.
+
+;IDS_ABOUT_TOS
+[178]
+Value = Juniper Networks와 Junos는 미국 및 기타 국가에 있는 Juniper Networks, Inc.의 등록상표입니다. Juniper 로고 및 Junos 로고는 Juniper Networks, Inc.의 상표입니다. 다른 모든 상표, 서비스 마크, 등록 상표 또는 등록 서비스 마크는 각 해당 소유자의 재산입니다.
+
+;IDS_BTN_OK
+[179]
+Value  = 확인(&O)
+
+;IDS_BTN_CANCEL
+[180]
+Value  = 취소(&C)
+
+;IDS_LOG_ANNOTATION_DLG_ST_ENTER_TEXT_TO_ANNOTATE
+[181]
+Value  = 다음으로 로그 파일에 주석을 달기 위해 텍스트 입력(&E):
+
+;IDS_CONNECTION_DLG_ST_CONN_TYPE
+[182]
+Value  = 유형(&T):
+
+;IDS_CONNECTION_DLG_ST_NAME
+[183]
+Value  = 이름(&M):
+
+;IDS_CONNECTION_DLG_ST_URL
+[184]
+Value  = 서버 URL(&S):
+
+;IDS_CONNECTION_DLG_BTN_CONNECT
+[185]
+Value  = 연결(&C)
+
+;IDS_CONNECTION_DLG_BTN_ADD
+[186]
+Value  = 추가(&A)
+
+;IDS_CONNECTION_DLG_BTN_CANCEL
+[187]
+Value  = 취소(&N)
+
+;IDS_MAIN_DLG_BTN_CANCEL
+[188]
+Value  = 닫기(&C)
+
+;IDS_MAIN_DLG_TT_CLICK_HERE_FOR_APP_MENU
+[189]
+Value = 응용 프로그램 메뉴는 여기를 누르십시오.
+
+;IDS_WARNING_NO_ERROR_DETAILS
+[190]
+Value = 이용 가능한 추가 세부정보가 없습니다.
+
+;IDS_LB_DETAILS
+[191]
+Value = 세부정보:
+
+;IDS_CERT_PROMPT_1
+[193]
+Value = Pulse가 연결을 지속해야 합니까?
+
+;IDS_ST_USER_NAME_PROXY
+[194]
+Value = 프록시 사용자 이름(&U):
+
+;IDS_ST_PASSWORD_PROXY
+[195]
+Value = 프록시 암호(&P):
+
+;IDS_ST_PASSWORD_CURRENT
+[196]
+Value = 암호(&P):
+
+;IDS_ST_PASSWORD_OLD
+[197]
+Value = 기존 암호를 입력해 주십시오(&O):
+
+;IDS_ST_PASSWORD_NEW
+[198]
+Value = 새 암호를 입력해 주십시오(&N):
+
+;IDS_ST_PASSWORD_NEW_VERIFY
+[199]
+Value = 새 암호를 확인해 주십시오(&P):
+
+;IDS_ST_PASSWORD_SECONDARY
+[200]
+Value = 보조 암호(&P):
+
+;IDS_ST_SSID
+[201]
+Value = SSID:
+
+;IDS_ST_PROXY_USER_NAME_PROMPT_0
+[202]
+Value = 프록시 서버 자격 증명 제공
+
+;IDS_ST_PROXY_USER_NAME_PROMPT_1
+[203]
+Value = 대상:
+
+;IDS_ST_PROXY_USER_NAME_PROMPT_2
+[204]
+Value = .
+
+;IDS_ST_UPGRADE_PROMPT
+[205]
+Value = Junos Pulse를 업그레이드할 수 있습니다. 지금 업그레이드를 설치하려면 업그레이드를 클릭하고 또는 나중에 업그레이드하려면 취소를 클릭하십시오. 업그레이드하기 전에는 네트워크 문제가 발생할 수 있습니다.\n\n업그레이드 도중, 컴퓨터에 있는 프로그램의 네트워크 액세스가 일시적으로 해제될 수 있습니다.  업그레이드를 시작하기 전에 작업을 저장하십시오.
+
+;IDS_ST_UPGRADE_ACTION
+[206]
+Value = 다음을 위한 소프트웨어 업그레이드:
+
+;IDS_ST_UPGRADE_BUTTON
+[207]
+Value = 업그레이드(&U)
+
+;IDS_STATUS_RECONNECTING
+[208]
+Value = 연결을 기다리는 중…
+
+;IDS_ERROR_DETAILS_FORMAT
+[209]
+Value = 오류 {0}: {1}\n\n{2}
+
+;IDS_LOGIN_DLG_BTN_INFO
+[210]
+Value = 정보(&I)
+
+;IDS_STATUS_CHECKING_COMPLIANCE
+[211]
+Value = 준수 확인 중…
+
+;IDS_HL_REMEDIATION_AUTO
+[212]
+Value = 수정된 문제를 보려면 <a>여기를 클릭</a>하십시오.
+
+;IDS_HL_REMEDIATION_COMPLETE
+[213]
+Value = 메시지가 곧바로 사라지지 않으면 <a>여기를 클릭</a>하십시오.
+
+;IDS_CONN_ITEM_STATUS_CHECKING_COMPLIANCE
+[214]
+Value = 준수 확인 중
+
+;IDS_STATUS_RETRY_REQUESTED
+[215]
+Value = 재시도 요청됨…
+
+;IDS_REMEDIATION_HTML_POLICY_INSTRUCTIONS
+[216]
+Value = 지침:
+
+;IDS_REMEDIATION_HTML_POLICY_REASON
+[217]
+Value = 이유:
+
+;IDS_REMEDIATION_HTML_TITLE
+[218]
+Value = 사용자의 컴퓨터 보안이 불충분함
+
+;IDS_REMEDIATION_HTML_EXPLANATION
+[219]
+Value = 사용자의 컴퓨터가 다음 보안 요구조건을 충족하지 못합니다. 이 문제를 해결하려면 아래의 지침을 따르십시오. 작업을 완료하면 <b>재시도</b>를 클릭합니다. 이 문제를 해결하지 않고 <b>닫기</b>를 선택하는 경우, 모든 인트라넷 서버에 액세스하지 못할 수 있습니다.
+
+;IDS_ST_ENTER_PIN
+[220]
+Value = PIN을 입력하십시오.
+
+;IDS_ST_SELECT_TOKEN
+[221]
+Value = 토큰을 선택하십시오.
+
+;IDS_ST_USE_PHYSICAL_TOKEN
+[222]
+Value = 물리적 토큰 사용(&U)
+
+;IDS_ST_NEXT_TOKENCODE
+[223]
+Value = 토큰코드가 변경될 때까지 기다리십시오(&P). 그런 다음 새 토큰코드를 입력하십시오.
+
+;IDS_LOGIN_DLG_BTN_CONTINUE
+[224]
+Value = 계속(&C)
+
+;IDS_CONN_ITEM_STATUS_CANCELLED
+[226]
+Value = 취소됨
+
+;IDS_CONN_ITEM_WX_STATUS_CONNECTED_WITH_ERRORS
+[227]
+Value = 오류와 함께 연결됨
+
+;IDS_CONN_ITEM_WX_STATUS_CANCELLED
+[228]
+Value = 취소됨
+
+;IDS_ST_ENTER_NUMERIC_PIN
+[229]
+Value = 숫자로 이루어진 새 PIN을 입력하십시오(&E). 새 PIN의 길이는 {0}자리부터 {1}자리까지이어야 합니다.
+
+;IDS_ST_ENTER_ALPHANUMERIC_PIN
+[230]
+Value = 문자와 숫자로 이루어진 새 PIN을 입력하십시오(&E). 새 PIN의 길이는 {0}자부터 {1}자까지이어야 합니다.
+
+;IDS_ST_SYSTEM_PIN
+[231]
+Value = 귀하의 새 PIN은 {0}입니다. 새 PIN을 기억해두십시오.
+
+;IDS_ST_CONFIRM_NEW_PIN
+[232]
+Value = 새 PIN을 확인해 주십시오(&P).
+
+;IDS_ST_ERROR_PIN_MATCH
+[233]
+Value = PIN이 일치하지 않습니다. 새 PIN을 입력하고 확인하십시오.
+
+;IDS_ST_ERROR_NUMERIC_PIN
+[234]
+Value = 유효하지 않은 PIN입니다. 새 PIN을 입력하십시오({0} - {1}개 숫자).
+
+;IDS_ST_ERROR_ALPHANUMERIC_PIN
+[235]
+Value = 유효하지 않은 PIN입니다. 새 PIN을 입력하십시오({0} - {1}개 영숫자). 
+
+;IDS_WARNING_ERROR_SHORT_DESC_UNAVAILABLE
+[300]
+Value = 오류 {0}
+
+;IDS_WARNING_NO_ERROR_DETAILS_WITH_CATALOG_LOAD_ERROR
+[301]
+Value = 이용 가능한 추가 세부정보가 없습니다. Pulse 설치에 필수 파일이 누락되었습니다.  문제가 지속되면, Pulse를 재설치하십시오.
+
+;IDS_WARNING_ACCESS_SERVICE_NOT_RUNNING_GLOBAL_LOG_LEVEL_CHANGE_WONT_PERSIST
+[302]
+Value = Juniper Pulse 서비스가 실행되고 있지 않습니다. 글로벌 로그 수준 변경은 재부팅 시 유지되지 않습니다.
+
+;IDS_BTN_DISCONNECT
+[303]
+Value = 연결 해제
+
+;IDS_TT_SHOW_DETAILS
+[306]
+Value = 세부 정보를 표시하려면 클릭
+
+;IDS_TT_HIDE_DETAILS
+[307]
+Value = 세부 정보를 숨기려면 클릭
+
+;IDS_CONNECTION_TYPE_IVE
+[308]
+Value = UAC 또는 SSL-VPN
+
+;IDS_CONNECTION_TYPE_FIREWALL
+[309]
+Value = SRX
+
+;IDS_CONNECTION_TYPE_WX
+[310]
+Value = WX
+
+;IDS_CONNECTION_TYPE_WIRED
+[311]
+Value = 유선
+
+;IDS_CONNECTION_TYPE_WIRELESS
+[312]
+Value = 무선
+
+;IDS_CONNECTION_TYPE_FIREWALL_VPN
+[313]
+Value = 방화벽
+
+;IDS_EES_STATUS_FORMAT
+[314]
+Value = EES: {0}
+
+;IDS_LOGS_SAVE_BUTTON_CANCEL
+[315]
+Value = 중지(&S)
+
+;IDS_LOG_SAVE_DLG_STOPPING
+[316]
+Value = 수집을 중지하고 로그 파일을 닫는 중…
+
+;IDS_LOG_SAVE_PARTIAL_SUCCESS
+[317]
+Value = 로그와 진단을 일부만 저장했습니다!
+
+;IDS_TRAY_FAILURE_TEMPLATE
+[318]
+Value = 연결에 실패했습니다.\n연결:\t{0}\n이유:   \t{1}\n{2}
+
+;IDS_TRAY_LIMITED_TEMPLATE
+[319]
+Value = 연결에 제한이 있습니다.\n연결:\t{0}\n이유:   \t{1}\n{2}
+
+;IDS_TRAY_CLICK_FOR_INSTRUCTIONS
+[320]
+Value = 지침을 받으려면 여기를 클릭하십시오.
+
+;IDS_TRAY_CLICK_FOR_INFORMATION
+[321]
+Value = 자세한 정보를 보려면 여기를 클릭하십시오.
+
+;IDS_TRAY_COMPLIANCE_ISSUES
+[322]
+Value = 준수 문제
+
+;IDS_CONN_ITEM_STATUS_DISABLE_REQUESTED
+[323]
+Value = 비활성화 요청됨
+
+;IDS_CONN_ITEM_STATUS_ENABLE_REQUESTED
+[324]
+Value = 활성화 요청됨
+
+;IDS_LB_WX_STATUS
+[325]
+Value = 상태:
+
+;IDS_MSG_UNSPECIFIED_ERROR
+[329]
+Value = 알 수 없는 오류
+
+;IDS_PULSE_VERSIONS
+[330]
+Value = {0} 버전 세부 정보
+
+;IDS_LINK_VERSION_DETAILS
+[331]
+Value = 버전 세부 정보
+
+;IDS_BTN_SMALL_DECREMENT - Decreases button font size.
+[332]
+Value = 0
+
+;IDS_STATUS_EES_CHECKING_MEMORY
+[333]
+Value = 파일 스캔 수행
+
+;IDS_STATUS_EES_MALWARE_DETECTED_CHECKING_MEMORY
+[334]
+Value = 맬웨어 감지됨 – 메모리 재스캔 수행 중
+
+;IDS_INVALID
+[335]
+Value = <잘못됨>
+
+;IDS_STATUS_AUTH_USING_CLIENT_CERT
+[400]
+Value = 클라이언트 인증서로 인증하는 중…
+
+;IDS_LOGIN_DLG_BTN_VIEW_CERT
+[401]
+Value = 보기(&V)
+
+;IDS_TRAY_DISCONNECT
+[450]
+Value = 네트워크 연결 해제(&D)
+
+;IDS_TRAY_CONNECT
+[451]
+Value = 네트워크에 연결(&C)
+
+;IDS_BUTTON_NETWORK_PROPERTIES
+[452]
+Value = 속성
+
+;IDS_BUTTON_NETWORK_HELP
+[453]
+Value = 도움말
+
+;IDS_BUTTON_NETWORK_DIAL
+[454]
+Value = 다이얼
+
+;IDS_PULSE_NOT_RUNNING
+[455]
+Value = Juniper Pulse 서비스가 실행되고 있지 않음
+
+;IDS_NO_CHOICE_TEMPLATE
+[456]
+Value = ({0} 선택)
+
+;IDS_NO_CHOICES_TEMPLATE
+[457]
+Value = ({0} 선택)
+
+;IDS_NO_ITEMS
+[458]
+Value = 아니오 {0}
+
+;IDS_EMPTY_NETWORK_PROVIDER
+[459]
+Value = 
+
+;IDS_TRAY_WND_TT_ACCELERATION
+[460]
+Value = \r\n가속화: {0}
+
+;IDS_TRAY_WND_TT_NETWORK
+[461]
+Value = \r\n네트워크: {0}
+
+;IDS_ST_TNC_SHAVLIK_CONSENT_PROMPT
+[462]
+Value = Pulse가 보안 패치를 설치해야 연결을 완료할 수 있습니다.\n\n참고: "설치 안 함"을 선택하면 연결이 제한되거나 불가능할 수 있습니다.
+
+;IDS_LOGIN_DLG_BTN_INSTALL
+[463]
+Value = 설치(&I)
+
+;IDS_LOGIN_DLG_BTN_DONT_INSTALL
+[464]
+Value = 설치 안 함(&D)
+
+;IDS_LOGIN_DLG_BTN_CONTINUE
+[465]
+Value = 계속(&C)
+
+;IDS_LOGIN_DLG_BTN_REBOOT_NOW
+[466]
+Value = 지금 재부팅(&N)
+
+;IDS_LOGIN_DLG_BTN_REBOOT_LATER
+[467]
+Value = 나중에 재부팅(&L)
+
+;IDS_ST_TNC_REBOOT_REQUIRED
+[468]
+Value = 패치 설치를 완료하려면 재부팅해야 합니다.\n\n참고: 재부팅하지 않으면 재부팅할 때까지 연결이 제한되거나 불가능할 수 있습니다.
+
+;IDS_CONN_ITEM_WX_STATUS_ACCELERATING
+[469]
+Value = 가속화
+
+;IDS_CONN_ITEM_WX_STATUS_NOT_ACCELERATING
+[470]
+Value = 가속화하지 않음
+
+;IDS_MAIN_DLG_MENU_ACCELERATION
+[471]
+Value = 가속화(&E)
+
+;IDS_MAIN_DLG_MENU_ENABLE
+[472]
+Value = 활성화(&E)
+
+;IDS_MAIN_DLG_MENU_DISABLE
+[473]
+Value = 비활성화(&D)
+
+;IDS_MAIN_DLG_MENU_CANCEL
+[474]
+Value = 취소(&C)
+
+;IDS_TRAY_WND_TT_CONNECTIONS
+[475]
+Value = \r\n{0}
+
+;IDS_ST_TNC_REBOOT_REQUIRED
+[476]
+Value = 패치 설치를 완료하려면 재부팅해야 합니다.\n\n참고: "나중에 재부팅"을 선택하면 재부팅할 때까지 연결이 제한되거나 불가능할 수 있습니다.
+
+;IDS_ERROR_INFO_ACTION_PREFIX
+[477]
+Value = 오류 정보: 
+
+;IDS_ERROR_INFO_TITLE
+[478]
+Value = 연결 오류 
+
+;IDS_ERROR_INFO_ERROR_CODE
+[479]
+Value = 오류:
+
+;IDS_MAIN_DLG_MENU_FILE
+[480]
+Value = 파일(&F)
+
+;IDS_TT_CANCEL
+[481]
+Value = 취소하려면 클릭
+
+;IDS_REMEDIATION_HTML_REPORT
+[482]
+Value = Pulse에 의해 다음 작업이 해소되었습니다.
+
+;IDS_STATUS_CHECKING_COMPLIANCE_REMEDIATION_COMPLETE
+[483]
+Value = 자동 수정 완료.  준수 확인 중…
+
+;IDS_REMEDIATION_PROGRESS_TITLE_SHAVLIK_PATCH
+[484]
+Value = 패치 설치:
+
+;IDS_REMEDIATION_PROGRESS_MESSAGE_OTHER
+[485]
+Value = 작업 1개를 완료해야 함.
+
+;IDS_REMEDIATION_PROGRESS_MESSAGE_OTHER_PLURAL
+[486]
+Value = 작업 {0}개를 완료해야 함.
+
+;IDS_REMEDIATION_PROGRESS_MESSAGE_OTHER_COMPLETED
+[487]
+Value = 작업 1개를 완료함.
+
+;IDS_REMEDIATION_PROGRESS_MESSAGE_OTHER_PLURAL_COMPLETED
+[488]
+Value = 작업 {0}개를 완료함.
+
+;IDS_REMEDIATION_PATCH_SUMMARY_DOWNLOAD_FAILED
+[489]
+Value = [다운로드
+
+;IDS_REMEDIATION_PATCH_SUMMARY_INSTALL_FAILED
+[490]
+Value = [설치
+
+;IDS_REMEDIATION_PATCH_SUMMARY_REBOOT_REQUIRED
+[491]
+Value = [재부팅해야 함]
+
+;IDS_REMEDIATION_PATCH_PROGRESS_MESSAGE_ERROR
+[492]
+Value = {0} 패치 다운로드. {1} 패치 설치.  
+
+;IDS_REMEDIATION_PATCH_PROGRESS_MESSAGE_ERROR_PLURAL
+[493]
+Value = 패치 {1}개 중 {0}개 설치. 패치 {3}개 중 {2}개 설치.
+
+;IDS_REMEDIATION_PATCH_PROGRESS_MESSAGE_START
+[494]
+Value = 패치 1개 설치를 시작하는 중…
+
+;IDS_REMEDIATION_PATCH_PROGRESS_MESSAGE_START_PLURAL
+[495]
+Value = 패치 {0}개 설치를 시작하는 중...
+
+;IDS_REMEDIATION_PATCH_PROGRESS_MESSAGE_DOWNLOADING
+[496]
+Value = 패치 1개 다운로드 중…
+
+;IDS_REMEDIATION_PATCH_PROGRESS_MESSAGE_DOWNLOADING_PLURAL
+[497]
+Value = 패치 {1}개 중 {0}개 다운로드 중...
+
+;IDS_REMEDIATION_PATCH_PROGRESS_MESSAGE_DOWNLOADED
+[498]
+Value = 패치 1개 다운로드.
+
+;IDS_REMEDIATION_PATCH_PROGRESS_MESSAGE_DOWNLOADED_PLURAL
+[499]
+Value = 패치 {0}개 다운로드.
+
+;IDS_REMEDIATION_PATCH_PROGRESS_MESSAGE_PREINSTALL
+[500]
+Value = 패치 1개 설치 준비…
+
+;;IDS_REMEDIATION_PATCH_PROGRESS_MESSAGE_PREINSTALL_PLURAL
+[501]
+Value = 패치 {0}개 설치 준비...
+
+;IDS_REMEDIATION_PATCH_PROGRESS_MESSAGE_INSTALLING
+[502]
+Value = 패치 1개 설치 중…
+
+;IDS_REMEDIATION_PATCH_PROGRESS_MESSAGE_INSTALLING_PLURAL
+[503]
+Value = 패치 {1}개 중 {0}개 설치 중...
+
+;IDS_REMEDIATION_PATCH_PROGRESS_MESSAGE_INSTALLED
+[504]
+Value = 패치 1개 설치.
+
+;IDS_REMEDIATION_PATCH_PROGRESS_MESSAGE_INSTALLED_PLURAL
+[505]
+Value = 패치 {0}개 설치.
+
+;IDS_REMEDIATION_PATCH_PROGRESS_INIT
+[506]
+Value = 패치 엔진 초기화 중…
+
+;IDS_REMEDIATION_PATCH_PROGRESS_INIT_SDK_DL_IN_PROGRESS
+[507]
+Value = 패치 엔진이 SDK 다운로드 중…
+
+;IDS_REMEDIATION_PATCH_PROGRESS_INIT_SDK_DL_DONE
+[508]
+Value = 패치 엔진이 SDK 다운로드함.
+
+;IDS_REMEDIATION_PATCH_PROGRESS_INIT_SDK_DL_FAILED
+[509]
+Value = 패치 엔진이 SDK 다운로드 실패.
+
+;IDS_REMEDIATION_PATCH_PROGRESS_INIT_SDK_UP_TO_DATE
+[510]
+Value = 패치 엔진 최신 SDK.
+
+;IDS_REMEDIATION_PATCH_PROGRESS_UNINITIALIZED
+[511]
+Value = 초기화되지 않음.
+
+;IDS_REMEDIATION_PATCH_PROGRESS_POSTINSTALL
+[512]
+Value = 설치를 완료하는 중…
+
+;IDS_REMEDIATION_PATCH_PROGRESS_CLEAN_UP
+[513]
+Value = 클린업 중…
+
+;IDS_REMEDIATION_PATCH_PROGRESS_REBOOT_REQUIRED
+[514]
+Value = 설치를 완료하려면 재부팅해야 함.
+
+;IDS_REMEDIATION_PATCH_PROGRESS_FINISHED
+[515]
+Value = 완료.
+
+;IDS_REMEDIATION_PATCH_PROGRESS_CANCELED
+[516]
+Value = 취소됨.
+
+;IDS_REMEDIATION_OTHER_PROGRESS_AV_RTP_ON
+[517]
+Value = 실시간 보호 켜짐({0})
+
+;IDS_REMEDIATION_OTHER_PROGRESS_AV_SIG_DL_STARTED
+[518]
+Value = 바이러스 서명 다운로드 시작됨({0})...
+
+;IDS_REMEDIATION_OTHER_PROGRESS_AV_SIG_DL_FINISHED
+[519]
+Value = 바이러스 서명 다운로드됨({0})
+
+;IDS_REMEDIATION_OTHER_PROGRESS_AV_SCAN_STARTED
+[520]
+Value = 바이러스 스캔 시작됨({0})...
+
+;IDS_REMEDIATION_OTHER_PROGRESS_FIREWALL_ON
+[521]
+Value = 방화벽 ({0}) 켜는 중.
+
+;IDS_REMEDIATION_OTHER_PROGRESS_FIREWALL_OFF
+[522]
+Value = 방화벽 ({0}) 끄는 중.
+
+;IDS_REMEDIATION_OTHER_PROGRESS_PROCESS
+[523]
+Value = {0} 중지 중...
+
+;IDS_REMEDIATION_OTHER_PROGRESS_FILE
+[524]
+Value = {0} 삭제 중...
+
+;IDS_REMEDIATION_OTHER_PROGRESS_REGISTRY
+[525]
+Value = {0}을(를) {1}(으)로 설정하는 중...
+
+;IDS_REMEDIATION_OTHER_PROGRESS_SMS
+[526]
+Value = Microsoft 패치 배포 클라이언트 시작 중…
+
+;IDS_REMEDIATION_OTHER_PROGRESS_UNDEFINED
+[527]
+Value = 정의되지 않은 작업.
+
+;IDS_REMEDIATION_OTHER_SUMMARY_AV_RTP_ON
+[528]
+Value = 실시간 보호 켜짐({0})
+
+;IDS_REMEDIATION_OTHER_SUMMARY_AV_SIG_DL_STARTED
+[529]
+Value = 바이러스 서명 다운로드 시작됨({0})
+
+;IDS_REMEDIATION_OTHER_SUMMARY_AV_SIG_DL_FINISHED
+[530]
+Value = 바이러스 서명 다운로드됨({0})
+
+;IDS_REMEDIATION_PATCH_SUMMARY_FIREWALL_ON
+[531]
+Value = 방화벽 ({0}) 켜짐.
+
+;IDS_REMEDIATION_PATCH_SUMMARY_FIREWALL_OFF
+[532]
+Value = 방화벽 ({0}) 꺼짐.
+
+;IDS_REMEDIATION_PATCH_SUMMARY_PROCESS
+[533]
+Value = 프로세스 {0} 중지됨.
+
+;IDS_REMEDIATION_PATCH_SUMMARY_FILE
+[534]
+Value = 파일 {0} 삭제됨.
+
+;IDS_REMEDIATION_PATCH_SUMMARY_REGISTRY
+[535]
+Value = 레지스트리 키 {0}을(를) {1}(으)로 설정하는 중.
+
+;IDS_REMEDIATION_PATCH_SUMMARY_SMS
+[536]
+Value = Microsoft 패치 배포 클라이언트 시작.
+
+;IDS_REMEDIATION_PATCH_SUMMARY_SMS_FAIL
+[537]
+Value = Microsoft 패치 배포 클라이언트 시작 [실패].
+
+;IDS_REMEDIATION_PATCH_SUMMARY_UNDEFINED
+[538]
+Value = 정의되지 않은 작업.
+
+;IDS_REMEDIATION_PATCH_MANUAL_REBOOT_REQUIRED_POLICY
+[539]
+Value = 재부팅해야 함
+
+;IDS_REMEDIATION_PATCH_MANUAL_REBOOT_REQUIRED_REASON
+[540]
+Value = 패치를 설치했으면 컴퓨터를 재부팅해야 합니다.
+
+;IDS_REMEDIATION_PATCH_MANUAL_REBOOT_REQUIRED_INSTRUCTIONS
+[541]
+Value = 패치 설치를 완료하려면 컴퓨터를 재부팅하십시오.
+
+;IDS_REMEDIATION_PATCH_COMPLETE_MESSAGE
+[542]
+Value = 수정 작업을 완료했습니다.
+
+;IDS_REMEDIATION_DETAILS_LINK
+[544]
+Value = 완료된 수정 작업에 대한 <a>세부정보</a>를 봅니다.
+
+;IDS_REMEDIATION_PATCH_SUMMARY_FAILED
+[546]
+Value = 실패함]
+
+;IDS_REMEDIATION_SUMMARY_TITLE
+[547]
+Value = 작업 완료
+
+;IDS_REMEDIATION_SUMMARY_DESCRIPTION
+[548]
+Value = Pulse가 이 작업을 자동으로 완료했습니다.
+
+;IDS_REMEDIATION_PATCH_ACTION_TAKEN
+[549]
+Value = 취한 조치:
+
+;IDS_REMEDIATION_PATCH_NO_ACTIONS
+[550]
+Value = 취할 수 있는 조치가 없습니다.
+
+;IDS_REMEDIATION_PATCH_SUMMARY_PATCHES_INSTALLED
+[551]
+Value = 패치 설치:
+
+;IDS_REMEDIATION_PROGRESS_DETAILS_LINK
+[553]
+Value = 추가 수정 작업이 필요할 수 있습니다. 자세한 정보를 보려면 <a>여기</a>를 클릭하십시오.
+
+;IDS_REMEDIATION_PROGRESS_TITLE_OTHER
+[555]
+Value = 기타 수정 작업:
+
+;IDS_REMEDIATION_ACTION_TAKEN_SMS_STARTED
+[556]
+Value = <b>Microsoft 패치 설치 클라이언트를 시작했습니다.  위에 명시되어 있는 누락된 패치를 설치하지 못할 경우, 다운로드 링크를 클릭해 수동으로 설치해 보십시오.</b>
+
+;IDS_REMEDIATION_ACTION_TAKEN_SMS_FAILED
+[557]
+Value = <b>Microsoft 패치 설치 클라이언트를 시작하지 못했습니다.  위에 있는 다운로드 링크를 클릭해 누락된 패치를 수동으로 설치해 보십시오.</b>
+
+;IDS_LIST_NAME_PULSE_CONNECTIONS
+[558]
+Value = 연결
+
+;IDS_LIST_NAME_ACCELERATION
+[559]
+Value = 가속
+
+;IDS_LIST_NAME_SECURITY
+[560]
+Value = 보안
+
+;IDS_LIST_NAME_IPASS_NETWORKS
+[561]
+Value = iPass 네트워크
+
+;IDS_REMEDIATION_OTHER_SUMMARY_AV_SCAN_STARTED
+[562]
+Value = 바이러스 스캔 시작됨({0})
+
+;IDS_REMEDIATION_OTHER_SUMMARY_AV_SCAN_FINISHED
+[563]
+Value = 바이러스 스캔 완료({0})
+
+;IDS_REMEDIATION_OTHER_PROGRESS_AV_SCAN_FINISHED
+[564]
+Value = 바이러스 스캔 완료({0})
+
+;IDS_REMEDIATION_OTHER_SUMMARY_AV_RTP_FAILED
+[565]
+Value = 실시간 보호 켜기 실패({0})
+
+;IDS_REMEDIATION_OTHER_PROGRESS_AV_RTP_FAILED
+[566]
+Value = 실시간 보호 켜기 실패({0})
+
+;IDS_NETWORK_TYPE_WIRED
+[581]
+Value = 유선
+
+;IDS_NETWORK_TYPE_WIRELESS
+[582]
+Value = Wi-Fi
+
+;IDS_NETWORK_TYPE_DIALUP
+[583]
+Value = 전화연결
+
+;IDS_NETWORK_TYPE_MOBILE_DATA
+[584]
+Value = 3G
+
+;IDS_NETWORK_TYPE_WIMAX
+[585]
+Value = 4G
+
+;IDS_NETWORK_TYPE_UNKNOWN
+[586]
+Value = 알 수 없음
+
+;IDS_NETWORK_TYPE_FMT_NUMBERED
+[587]
+Value = 유형{0}
+
+;IDS_CONN_ITEM_STATUS_CONNECTED_NO_INTERNET
+[588]
+Value = 연결됨 - 인터넷 연결 안 됨
+
+;IDS_TRAY_WND_STATE_CONNECTED_NO_INTERNET
+[589]
+Value = 연결됨 - 인터넷 연결 안 됨
+
+;IDS_CONN_ITEM_STATUS_CONNECTED_DETECTING_INTERNET
+[590]
+Value = 연결됨 - 인터넷 감지 중
+
+;IDS_TRAY_WND_STATE_CONNECTED_DETECTING_INTERNET
+[591]
+Value = 연결됨 - 인터넷 감지 중
+
+;IDS_LINK_WX_HELP
+[592]
+Value = (자세한 설명)
+
+;IDS_TIP_CLICK_FOR_DETAILS
+[593]
+Value = 자세한 내용을 보려면 여기를 클릭하십시오.
+
+;IDS_INTRUSION_DETECTION
+[700]
+Value = 침입 감지
+
+;IDS_NETWORK_ACCESS_LIMITED
+[701]
+Value = 비정상적인 네트워크 동작이 감지되어 네트워크 액세스가 제한되었습니다. 관리자에게 문의하여 도움을 받으십시오.
+
+;IDS_TRAY_ROLE
+[800]
+Value = 역할
+
+;IDS_TRAY_REALMS
+[801]
+Value = 영역
+
+;IDS_TRAY_SESSIONS
+[802]
+Value = 세션
+
+;IDS_TRAY_ROLE_DESC
+[803]
+Value = 역할 선택
+
+;IDS_TRAY_REALMS_DESC
+[804]
+Value = 영역 선택
+
+;IDS_TRAY_SESSION_DESC
+[805]
+Value = 세션 선택
+
+;IDS_TRAY_ROLE_TITLE
+[806]
+Value = 연결하려면 역할을 선택해야 합니다.
+
+;IDS_TRAY_REALMS_TITLE
+[807]
+Value = 연결하려면 영역을 선택해야 합니다.
+
+;IDS_TRAY_SESSION_TITLE
+[808]
+Value = 연결하려면 세션을 선택해야 합니다.
+
+;IDS_TRAY_PASSCODE
+[809]
+Value = 암호
+
+;IDS_TRAY_MESSAGEFROMSERVER_TITLE
+[810]
+Value = 이 연결에 대한 서버에 응답을 해야 연결을 계속할 수 있습니다.
+
+;IDS_TRAY_CONNECTTO_LABEL
+[811]
+Value = 연결 대상:
+
+;IDS_MAC_MENU_HIDE
+[812]
+Value = 숨기기 대상:
+
+;IDS_MAC_MENU_TURNON
+[813]
+Value = {0} 켜기
+
+;IDS_MAC_MENU_TURNOFF
+[814]
+Value = {0} 끄기
+
+;IDS_MAC_MENU_OFF
+[815]
+Value = 꺼짐
+
+;IDS_MAC_MENU_ON
+[816]
+Value = 켜짐
+
+;IDS_MAIN_DLG_MENU_EDIT
+[817]
+Value = 고급 연결 세부정보(&V)...
+
+;IDS_ST_SELECT_SSID
+[818]
+Value = 네트워크 선택(&N):
+
+;IDS_MAC_WINDOWTITLE_CONNECTIONS
+[819]
+Value = 연결
+
+;IDS_TRAY_CERT_DESC
+[820]
+Value = 인증서를 선택하십시오.
+
+;IDS_TRAY_CERT_TITLE
+[821]
+Value = 이 연결을 사용하려면 인증서를 선택해야 합니다.
+
+;IDS_TRAY_CERTS
+[822]
+Value = 인증서
+
+;IDS_MAC_ABOUTVERSION
+[823]
+Value = 버전
+
+;IDS_ST_SELECT_CONNECTION
+[824]
+Value = 연결 선택:
+
+;IDS_MAC_MAINMENU_WINDOW
+[825]
+Value = 창 
+
+;IDS_MAC_MAINMENU_MINIMIZE
+[826]
+Value = 최소화
+
+;IDS_MAC_MAINMENU_ZOOM
+[827]
+Value = 확대/축소
+
+;IDS_MAC_MAINMENU_BRINGTOFRONT
+[828]
+Value = 모두 맨 앞으로 가져오기
+
+;IDS_MAC_MAINMENU_CUT
+[829]
+Value = 잘라내기
+
+;IDS_MAC_MAINMENU_COPY
+[830]
+Value = 복사
+ 
+;IDS_MAC_MAINMENU_PASTE
+[831]
+Value = 붙여넣기
+
+;IDS_MAC_MAINMENU_SELECTALL
+[832]
+Value = 모두 선택
+
+;IDS_MAC_MAINMENU_SPEECH
+[833]
+Value = 음성 읽기
+ 
+;IDS_MAC_MAINMENU_STARTSPEAKING
+[834]
+Value = 읽기 시작
+
+;IDS_MAC_MAINMENU_STOPSPEAKING
+[835]
+Value = 읽기 중지
+
+;IDS_MAC_MAINMENU_HIDEOTHERS
+[836]
+Value = 기타 숨기기
+
+;IDS_MAC_MAINMENU_SHOWALL
+[837]
+Value = 모두 표시
+
+;IDS_MAC_STATUS_DETAILS_FROM_TRAY_ICON
+[838]
+Value = {0} 메뉴 모음의 Pulse 아이콘을 사용하여 연결 세부정보에 액세스할 수 있습니다.
+
+;IDS_MAC_EXIT_NOT_ALLOWED
+[839]
+Value = 관리자가 Pulse 중지를 허용하지 않습니다.
+
+;IDS_MAC_MENU_EXIT
+[840]
+Value = 종료
+
+;IDS_TRAY_MAC_EXIT_QUESTION
+[841]
+Value = {0}을(를) 종료하면 {0}을(를) 재시작할 때까지 네트워크 연결 중 일부가 차단될 수 있습니다.\n\응용 프로그램 목록에서 {0}을(를) 실행해 재시작할 수 있습니다.\n\n정말로 종료하시겠습니까?
+
+;IDS_LOGIN_DLG_TEXT_SESSION_EXPIRING_ACTION
+[900]
+Value = 연결: {0}
+
+;IDS_LOGIN_DLG_BTN_EXTEND_SESSION
+[901]
+Value = 연장(&E)
+
+;IDS_LOGIN_DLG_TEXT_SESSION_EXPIRING
+[902]
+Value = 이 Pulse 연결이 {0} 후에 종료됩니다.\n세션을 연장하려면 "연장"을 선택하십시오.
+
+;IDS_LOGIN_DLG_TEXT_SESSION_WILL_EXPIRE_SHORTLY
+[903]
+Value = 이 Pulse 연결이 곧 종료됩니다.
+
+;IDS_LOGIN_DLG_TEXT_SESSION_LIFETIME_FORMAT_INCLUDE_DAYS_HOURS_MINUTES_SECONDS
+[904]
+Value = {0}일 {1}시간 {2}분 {3}초
+
+;IDS_LOGIN_DLG_TEXT_SESSION_LIFETIME_FORMAT_INCLUDE_HOURS_MINUTES_SECONDS
+[905]
+Value = {0}시간 {1}분 {2}초
+
+;IDS_LOGIN_DLG_TEXT_SESSION_LIFETIME_FORMAT_INCLUDE_MINUTES_SECONDS
+[906]
+Value = {0}분 {1}초
+
+;IDS_LOGIN_DLG_TEXT_SESSION_LIFETIME_FORMAT_INCLUDE_SECONDS
+[907]
+Value = {0}초
+
+;IDS_MENU_ITEM_EXTEND_SESSION
+[908]
+Value = 세션 연장(&X)
+
+;IDS_WARNING_ALSO_SECURE_MEETING
+[910]
+Value = 이 작업을 수행하면 보안 미팅도 종료될 수 있습니다.
+
+;IDS_WARNING_SECURE_MEETING_FAILURE
+[911]
+Value = 이 연결에서는 보안 미팅을 시작할 수 없습니다.
+
+;IDS_MENU_ITEM_SECURE_MEETING
+[912]
+Value = Pulse Collaboration
+
+;IDS_MENU_ITEM_SECURE_MEETING_START
+[913]
+Value = 미팅
+
+;IDS_MENU_ITEM_SECURE_MEETING_STOP
+[914]
+Value = 로그아웃
+ 
+;IDS_SECURE_MEETING_STARTED_SOON
+[915]
+Value = Pulse Collaboration 미팅이 곧 시작됩니다.
+
+;IDS_SECURE_MEETING_USE_DISCONNECT_TO_STOP
+[916]
+Value = (로그아웃하려면 연결해제하십시오.)
+
+;IDS_ADVANCED_INFO
+[917]
+Value = 고급 정보:
+
+;IDS_LOGIN_DLG_BTN_REFRESH
+[918]
+Value = 새로 고침(&R)
+
+;IDS_ADVANCED_STR_NO_DATA_AVAILABLE
+[919]
+Value = 사용할 수 있는 추가 정보가 없습니다.
+
+;IDS_ADVANCED_LABEL_BYTES_IN
+[920]
+Value = 받은 바이트 수
+
+;IDS_ADVANCED_LABEL_BYTES_OUT
+[921]
+Value = 보낸 바이트 수
+
+;IDS_ADVANCED_LABEL_TIME_REMAINING
+[922]
+Value = 남은 세션 시간
+
+;IDS_ADVANCED_LABEL_TEMPLATE
+[923]
+Value = {0}: 
+
+;IDS_ADVANCED_LABEL_TUNNEL_TYPE
+[924]
+Value = 터널 종류
+
+;IDS_ADVANCED_LABEL_VPN_TYPE
+[925]
+Value = VPN 유형
+
+;IDS_ADVANCED_VPN_ESP
+[926]
+Value = ESP
+
+;IDS_ADVANCED_VPN_SSL
+[927]
+Value = SSL/VPN
+
+;IDS_ADVANCED_TUNNEL_VPN
+[928]
+Value = VPN
+
+;IDS_ADVANCED_TUNNEL_WSAM
+[929]
+Value = WSAM
+
+;IDS_ADVANCED_TUNNEL_UNKNOWN
+[930]
+Value = 기타
+
+;IDS_ADVANCED_VPN_UNKNOWN
+[931]
+Value = 기타
+
+;IDS_ADVANCED_STR_GATHERING
+[932]
+Value = 데이터를 수집하는 중...
+
+;IDS_LOGIN_DLG_TEXT_SESSION_EXPIRING_NO_EXTEND_SESSION_BUTTON
+[933]
+Value = 이 Pulse 연결이 {0} 후에 종료됩니다.\n네트워크 연결 끊김으로 인해 데이터를 손실하지 않도록\n작업을 저장해 주십시오.
+
+;IDS_ADVANCED_STR_DISCONNECTED
+[934]
+Value = 이 세션은 연결되어 있지 않습니다.
+
+;IDS_TT_MINIMIZE
+[935]
+Value = 최소화
+
+;IDS_TT_MAXIMIZE
+[936]
+Value = 최대화
+
+;IDS_TT_CLOSE
+[937]
+Value = 닫기
+
+;IDS_ERROR_URL_FORMAT
+[938]
+Value = URL에는 %&?: 문자와 공백을 사용할 수 없습니다.
+
+;IDS_ADVANCED_TUNNEL_UAC
+[939]
+Value = UAC
+
+;IDS_CRED_PROV_STATUS_TO_WINDOWS
+[950]
+Value = Pulse가 '{0}'에 연결중입니다...
+
+;IDS_CRED_PROV_ERROR_TO_WINDOWS
+[951]
+Value = Pulse가 '{0}'에 연결하지 못했습니다.\n이유: {1}
+
+;IDS_EXIT_NOT_ALLOWED
+[952]
+Value = 관리자가 Pulse 종료를 허용하지 않았습니다.
+
+;IDS_ADVANCED_TUNNEL_NONE
+[953]
+Value = &lt;터널이 활성화되지 않음&gt;
+
+;IDS_ST_TNCSAM_REBOOT_REQUIRED
+[954]
+Value = Pulse 구성을 완료하려면 재부팅해야 합니다. 모든 응용 프로그램을 종료하여 데이터 손실을 방지한 후 컴퓨터를 재부팅하십시오.\n\n참고: 재부팅하지 않는 경우 재부팅할 때까지 연결되지 않을 수 있습니다.
+
+;IDS_PROXY_SERVERDETAILS
+[955]
+Value = 프록시 서버 주소(&S):
+
+;IDS_PROXY_SERVERDETAILSMESSAGE
+[956]
+Value = Pulse에서 로그인 서버에 연결할 수 없습니다. 프록시 서버를 사용하는 사이트인 경우, 프록시 서버 세부 사항을 입력 후 연결을 누르십시오. 그렇지 않으면 취소를 누르십시오.
+
+;IDS_ST_PROXY_USER_NAME_PROMPT_3
+[957]
+Value = 프록시 서버 자격 증명 입력(필요한 사이트인 경우)
+
+;IDS_MSG_TOAST_INPUT_NEEDED
+[958]
+Value = 연결에 입력 필요
+
+;IDS_LOGIN_DLG_BTN_DECLINE
+[959]
+Value = 거부(&D)
+
+;IDS_LOGIN_DLG_BTN_PROCEED
+[960]
+Value = 진행(&P)
+
+;IDS_CONN_ITEM_STATUS_WAITING_FOR_NETWORK
+[961]
+Value = 취소
+
+;IDS_MAIN_DLG_MENU_SUSPEND
+[962]
+Value = 중지(&S)
+
+;IDS_MAIN_DLG_MENU_RESUME
+[963]
+Value = 다시 시작(&R)
+
+;IDS_TT_CANCEL
+[964]
+Value = 클릭하여 다시 시작
+
+;IDS_BTN_RESUME
+[965]
+Value = 다시 시작(&R)
+
+;IDS_CONN_ITEM_STATUS_SUSPENDING
+[966]
+Value = 중지하는 중
+
+;IDS_CONN_ITEM_STATUS_SUSPENDED
+[967]
+Value = 중지됨
+
+;IDS_TRAY_WND_STATE_CONNECTED
+[968]
+Value = 중지됨
+
+;IDS_BTN_CANCEL_NOSHORTCUT
+[969]
+Value  = 취소
+
+;IDS_MAIN_DLG_MENU_FIPS
+[970]
+Value = FIPS(&I)
+
+;IDS_FIPS_MODE_ON
+[971]
+Value = FIPS 켜짐
+
+;IDS_FIPS_MODE_OFF
+[972]
+Value = FIPS 꺼짐
+
+;IDS_PASSWORD_EXPIRING
+[973]
+Value = {0}암호가 {1}에 만료됩니다.
+
+;IDS_PASSWORD_EXPIRING_ONE_DAY
+[974]
+Value = 하루 후
+
+;IDS_PASSWORD_EXPIRING_DAYS
+[975]
+Value = {0}일 후
+
+;IDS_PASSWORD_EXPIRING_ONE_HOUR
+[976]
+Value = 1시간 후
+
+;IDS_PASSWORD_EXPIRING_HOURS
+[977]
+Value = {0}시간 후
+
+;IDS_PASSWORD_EXPIRING_UNDER_ONE_HOUR
+[978]
+Value = 1시간 이내
+
+;IDS_STATUS_SECURING_CONNECTION
+[980]
+Value = 연결 보안 중...
+
+;IDS_CONN_ITEM_STATUS_SECURING_CONNECTION
+[981]
+Value = 연결 보안 중
+
+;IDS_ADVANCED_LABEL_ADDRESS_IP4
+[990]
+Value = 할당된 IPV4
+
+;IDS_ADVANCED_LABEL_ADDRESS_IP6
+[991]
+Value = 할당된 IPV6
+
+;IDS_ST_AUTOMATIC_REFRESH
+[992]
+Value = 자동 새로 고침(&A)
+
+;IDS_ADVANCED_ADDRESS_NOT_ASSIGNED
+[993]
+Value = &lt;할당되지 않음&gt;
+
+;IDS_ADVANCED_ADDRESS_NOT_ASSIGNED
+[993]
+Value = &lt;할당되지 않음&gt;
+
+;IDS_CONN_ITEM_STATUS_MANUAL_OVERRIDE
+[994]
+Value = 수동 재정의
+
+;IDS_DASH_SEPARATOR
+[995]
+Value = -
+
+;IDS_MAIN_DLG_MENU_REMOVE_OVERRIDE
+[996]
+Value = 재정의 제거(&O)(자동 제어로 돌아가기)
+
+; IDS_CONN_ITEM_STATUS_WIRELESS_SUPPRESSED
+[1004]
+Value = 비활성화됨 - 유선 연결 활성화
+
+; IDS_CONN_ITEM_STATUS_WIRELESS_ADAPTER_NOT_PRESENT
+[1005]
+Value = 무선 어댑터를 사용할 수 없음
+
+; IDS_TRAY_WIRELESS_CANCEL_IO
+[1006]
+Value = 관리자가 유무선 연결을 동시에 허용하지 않기 때문에 Pulse가 무선 연결을 해제했습니다.
+
+; IDS_TRAY_WND_TT_WIRELESS_SUPPRESSED
+[1007]
+Value = \r\n무선 연결이 비활성화됨
+
+; IDS_PASSWORD_EXPIRING_PRIMARY
+[1008]
+Value = 기본
+
+; IDS_PASSWORD_EXPIRING_SECONDARY
+[1009]
+Value = 보조

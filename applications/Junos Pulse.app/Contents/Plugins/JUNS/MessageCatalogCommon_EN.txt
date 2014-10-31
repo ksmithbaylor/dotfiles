@@ -1,0 +1,92 @@
+﻿; JUNS catalogUtil requires catalog message files to be saved with UTF-8 encoding, which put 3 bytes {0xEF, 0xBB, 0xBF} at the file beginning called Byte Order Mark (BOM) for UTF-8 files . For modifications in this files, please use Text Editors which persist these BOM bytes (like Notepad.exe, Visual Studio IDE, etc).
+
+
+;kMsgCommonErrOk
+[0]
+Short-desc = Success.
+Long-desc = Operation succeeded.
+
+;kMsgCommonErrFailure
+[1]
+Short-desc = General failure.
+Long-desc = Try the operation again. If the problem persists, contact your network administrator.
+
+;kMsgCommonErrConnection
+[2]
+Short-desc = Internal IPC connection has failed.
+Long-desc = Try the operation again or even restarting the  machine. If the problem persists, contact your network administrator.
+
+;kMsgCommonErrUnimplemented
+[3]
+Short-desc = Command or feature is unimplemented
+Long-desc = Contact your network administrator.
+
+;kMsgCommonErrParameter
+[4]
+Short-desc = Parameter is invalid.
+Long-desc = Try the operation again. If the problem persists, contact your network administrator.
+
+;kMsgCommonErrInvalidHandle
+[5]
+Short-desc = Invalid handle.
+Long-desc = Try the operation again. If the problem persists, restart your system.
+
+;kMsgCommonErrBufferSize
+[6]
+Short-desc = Supplied buffer is too small.
+Long-desc = Try the operation again. If the problem persists, restart your system.
+
+;kMsgCommonErrOutOfMemory
+[7]
+Short-desc = Out of memory
+Long-desc = Try the operation again. If the problem persists, try freeing up some memory by closing unwanted applications. If the problem still persists, then restart your system.
+
+;kMsgCommonErrNotStarted
+[8]
+Short-desc = IO subsystem was not started.
+Long-desc = Try the operation again. If the problem persists, restart your system.
+
+;kMsgCommonErrUnknownCommand
+[9]
+Short-desc = Service received an unknown command.
+Long-desc = Try the operation again. If the problem persists, restart your system.
+
+;kMsgCommonErrIoSystem
+[10]
+Short-desc = IO sub system has generally malfunctioned.
+Long-desc = Try the operation again. If the problem persists, restart your system.
+
+;kMsgCommonErrNotFound
+[11]
+Short-desc = Request item is not found.
+Long-desc = Try the operation again. If the problem persists, contact your network administrator.
+
+;kMsgCommonErrAlreadyExists
+[12]
+Short-desc = Request entity already exists.
+Long-desc = Try the operation again. If the problem persists, contact your network administrator.
+
+;kMsgCommonErrAlreadyStarted
+[13]
+Short-desc = Request entity was already started.
+Long-desc = Try the operation again. If the problem persists, contact your network administrator.
+
+;kMsgCommonErrInvalidService
+[14]
+Short-desc = Entity has an invalid code signing signature.
+Long-desc = Contact your network administrator.
+
+;kMsgCommonErrCancelled
+[15]
+Short-desc = Operation canceled.
+Long-desc = Try the operation again. If the problem persists, contact your network administrator.
+
+;kMsgCommonErrShutdown
+[16]
+Short-desc = Connection has been shutdown.
+Long-desc = The server has reset the connection. You must login again to reconnect.
+
+;kMsgCommonPassAnySuppTypeArg, used for passing thru any supported data type argument
+[999]
+Short-desc = {0}
+Long-desc = {0}

@@ -1,0 +1,33 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<title>連線至網路</title> <meta http-equiv="Content-Type" content_SDL="text/html; charset=UTF-8"/> <meta name="keywords" content="連線, 認證, 領域, 角色, 驗證資料, 同時工作階段, 矯正"/> <meta name="description" content="說明如何啟動現有的 Pulse 連線。" /> <link href="../sty/standard.css" rel="stylesheet" type="text/css" />
+</head>
+<body style="width:95%;><div id="content"><h1 class="Head1Split">連線至網路</h1>
+<p class="Para1">您必須在 Connections [連線] 窗格中列出至少一個連線，然後才能連線至網路。 您看到的連線提示會根據您的網路存取環境而有所不同。 </p><div style="margin: 15px 0 5px 0;width:100%;"><table border="1" cellpadding="5" cellspacing="0" width="95%" style="text-align: left;"><tr>
+      <td style="text-align: center;"><img src="../../../shrd/note.gif" width="20" height="20" /></td>
+      <td><p class="Para1"><b>注意： 
+            </b>若要將 Junos Pulse 與無線網路搭配使用，您可能需要先透過 System Preferences [系統喜好設定] 來設定您電腦的無線網路設定。</p></td></tr></table></div><p class="Para1">若要使用定義的連線來連線至網路：</p>
+  <ol type="1">
+    <li class="li">在 Connections [連線] 清單中，針對您要建立的連線按一下 <b>Connect</b> [連線]。</li>
+    <li class="li">對要求您輸入使用者名稱、密碼、領域及角色等資訊的提示做出回應。 您看到的提示將根據網路管理員設定存取環境的方式而有所不同。</li>
+    <li class="li">連線狀態對話方塊隨即出現。 如果連線嘗試成功，您可以按一下 <b>Close</b> [關閉]，或等待對話方塊自動關閉。 <p class="Para1">如果連線嘗試發生問題，會有矯正對話方塊出現，其中顯示有關該問題解決方法的資訊；或者，會有另外的矯正對話方塊出現，並顯示 Junos Pulse 自動開始修正問題時所採取之措施的進度。</p></li>
+    
+  </ol>
+  <p class="Para1">按一下 <b>Connect</b> [連線] 按鈕後，您可能需要對下列提示做出回應：</p>
+  <ul>
+    <li class="li"><b>認證</b> - 如果 Pulse 需要與認證伺服器通訊，且您的網路管理員已組態多個伺服器，則系統會提示您選擇其中一個伺服器。 認證授權單位發行的認證會確認您要連線的網路資源是否有效。 如果認證是由受信任的來源發行，則系統會自動接受，您不會看到認證提示。 如果認證存在問題，系統可能會詢問您是否要接受認證並繼續連線。</li>
+    <li class="li"><b>領域</b> - <i>領域</i>會定義您可以存取的網路資源。 如果您擁有多個領域的存取權，則需要選擇一個領域。</li>
+    <li class="li"><b>驗證資料</b> &#8212; 您的使用者名稱與密碼或使用者名稱與權杖碼，用於建立您存取裝置的識別身份。 系統也可能會提示您輸入次要使用者名稱與密碼，及 Proxy 伺服器的使用者名稱與密碼。 您的驗證環境可能會定期提示您變更密碼或符記 PIN 號碼。 </li>
+    <li class="li"><b>角色</b> - <i>角色</i>會定義工作階段參數 (逾時值、允許的同時工作階段數量等)、個人化設定及啟用的存取功能。 您的網路管理員可讓您選擇在連線時要扮演的角色。 </li>
+    <li class="li"><b>同時工作階段</b> - 如果您多次登入系統 (例如使用相同的驗證資料從兩部不同的電腦登入)，那麼系統可能會提示您必須結束目前工作階段，才能開始新工作階段。</li>
+    <li class="li"><b>矯正動作</b> &#8212; 系統可能會提示您執行一些動作，以使您的端點符合安全性政策。 </li>
+  </ul>
+  <p class="Para1">每個登入畫面上都可能會出現「儲存設定」核取方塊。 (您的管理員可停用此功能)。如果您啟用該核取方塊，系統便不會在您下次登入時提示輸入該資訊。 如果您儲存設定，則可使用 Forget Saved Settings [忘記儲存的設定] 功能來恢復登入資訊提示。 Save Settings [儲存設定] 功能可讓您儲存下列資訊：</p><ul><li class="li">認證接受</li><li class="li">認證選擇</li><li class="li">領域 </li><li class="li">使用者名稱與密碼</li><li class="li">Proxy 使用者名稱/密碼</li><li class="li">次要使用者名稱/密碼</li><li class="li">角色</li></ul>
+<p class="Para1">對所有連線提示做出回應後所發生的步驟，取決於您的網路管理員設定的存取政策及網路存取裝置的類型。 連線過程可包含下列工作：</p>
+<ul>
+  <li class="li"><b>軟體更新</b> - Junos Pulse 可於連線時自動更新。 您的系統可能接收更新的 Junos Pulse 軟體，或您可能接收其他連線。</li>
+  <li class="li"><b>主機檢查器</b> &#8212; 主機檢查器會檢查您的端點，以確定其是否符合您組織的安全性政策。 例如，Host Checker [主機檢查器] 可能會檢查防毒軟體、最新病毒碼及個人防火牆狀態，並會檢查是否存在惡意程式與間諜軟體。 這些設定由您的網路管理員定義。 如果 Host Checker [主機檢查器] 發現問題，它會顯示一則訊息，說明要修正問題或自動初始化矯正操作所必須執行的步驟。</li>
+  
+</ul><h4 class="Head4">相關主題</h4><ul><li class="li"><a href="access-control-connect-client-ui.html">Junos Pulse 介面</a></li><li class="li"><a href="access-control-connect-client-solve-connection-issue.html">解決 Junos Pulse 連線問題</a></li><li class="li"><a href="access-control-connect-client-forget-credentials.html">忘記儲存的設定</a></li></ul></div></body></html>

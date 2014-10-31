@@ -1,0 +1,328 @@
+﻿; JUNS catalogUtil requires catalog message files to be saved with UTF-8 encoding, which put 3 bytes {0xEF, 0xBB, 0xBF} at the file beginning called Byte Order Mark (BOM) for UTF-8 files . For modifications in this files, please use Text Editors which persist these BOM bytes (like Notepad.exe, Visual Studio IDE, etc).
+
+;kMsgIveAMErrInstanceAlreadyInUse
+[1100]
+Short-desc = Die Instanz ist bereits in Verwendung.
+Long-desc = 
+
+;kMsgIveAMErrLoadingStore
+[1101]
+Short-desc = Der Speicher konnte nicht geladen werden.
+Long-desc = Starten Sie das System neu. Wenden Sie sich an den Netzwerkadministrator, wenn das Problem weiterhin besteht.
+
+;kMsgIveAMErrLoadConnection
+[1102]
+Short-desc = Die Verbindung konnte nicht geladen werden. 
+Long-desc = Versuchen Sie es noch einmal. Wenden Sie sich an den Netzwerkadministrator, wenn das Problem weiterhin besteht.
+
+;kMsgIveAMErrRetrieveURI
+[1103]
+Short-desc = Der URI (Uniform Resource Identifier) konnte nicht abgerufen werden. 
+Long-desc =  Versuchen Sie es noch einmal. Wenden Sie sich an den Netzwerkadministrator, wenn das Problem weiterhin besteht.
+
+;kMsgIveAMErrInitiateConnect
+[1104]
+Short-desc = Die Verbindung wurde nicht initiiert. 
+Long-desc = Versuchen Sie es noch einmal. Wenden Sie sich an den Netzwerkadministrator, wenn das Problem weiterhin besteht.
+
+;kMsgIveAMErrConnectingChannel
+[1105]
+Short-desc = Fehler bei Kanalverbindung. 
+Long-desc = Fehler bei Kanalverbindung (Phase: {0}, Fehler: {1}).
+
+;kMsgIveAMErrAccessMethod
+[1106]
+; generic access method connection error
+Short-desc = Fehler {0} bei Bereitstellung von Zugriffsmethode.
+Long-desc = Fehler bei Bereitstellung von Zugriffsmethode {0}; der Fehler kann je nach Zugriffsmethode variieren. 
+
+;kMsgIveAMErrInvalidCertificate
+[1107]
+Short-desc = Falsches Serverzertifikat.
+Long-desc = Validierung des Serverzertifikats fehlgeschlagen. Wenn Sie sicher sind, dass dieses Ziel korrekt ist, klicken Sie zum Fortfahren auf "Erneut versuchen". Klicken Sie andernfalls auf "Schließen", und wenden Sie sich an den Netzwerkadministrator.
+
+;kMsgIveAMErrConnectionFailed
+[1108]
+Short-desc = Verbindungsherstellung fehlgeschlagen. 
+Long-desc = Versuchen Sie es noch einmal. Wenden Sie sich an den Netzwerkadministrator, wenn das Problem weiterhin besteht.
+
+;kMsgIveAMErrSessionExpired
+[1109]
+Short-desc = Die Sitzung ist abgelaufen. 
+Long-desc = Die Netzwerkverbindung ist aufgrund von Inaktivität abgelaufen. Melden Sie sich noch einmal an, um die Verbindung herzustellen.
+
+;kMsgIveAMErrProtocol
+[1110]
+Short-desc = Mit dem Server kann nicht kommuniziert werden.
+Long-desc = Der Server kann auf Juniper-Netzwerkanforderungen nicht reagieren. Möglicherweise wurde der Server heruntergefahren, oder der Server ist kein Juniper-Server. Falls dieses Problem weiterhin besteht, wenden Sie sich an den Administrator.
+
+;kMsgIveAMErrHostUnknown
+[1111]
+Short-desc = Host nicht gefunden.
+Long-desc = Der Hostname konnte mittels Domain Name System (DNS) nicht aufgelöst werden. Versuchen Sie es noch einmal. Ermöglicht Ihr System das Bearbeiten von Verbindungen, und kennen Sie die IP-Adresse des Ziels, versuchen Sie die Verbindungsherstellung mit der IP-Adresse. Wenden Sie sich an den Netzwerkadministrator, wenn das Problem weiterhin besteht.
+
+;kMsgIveAMErrPulseSubsystem
+[1112]
+Short-desc = Pulse-Subsystem-Fehler. 
+Long-desc = Versuchen Sie es noch einmal. Wenden Sie sich an den Netzwerkadministrator, wenn das Problem weiterhin besteht.
+
+;kMsgIveAMErrCancelled
+[1113]
+Short-desc = Abgebrochen.
+Long-desc = Der Vorgang wurde abgebrochen.
+
+;kMsgIveAMErrAuthentication
+[1114]
+Short-desc = Authentifizierungsfehler.
+Long-desc = Versuchen Sie es noch einmal. Vergewissern Sie sich, dass Sie die aktuellen Anmeldeinformationen verwenden. Wenn Sie vor kurzem Ihr Kennwort geändert haben, und Pulse die gespeicherten Einstellungen verwendet, verwenden Sie "Gespeicherte Einstellungen vergessen", woraufhin Sie noch einmal zur Eingabe Ihrer Anmeldeinformationen gebeten werden.
+
+;kMsgIveAMErrNetwork
+[1115]
+Short-desc = Netzwerkfehler.
+Long-desc = Netzwerkfehler können durch temporäre Bedingungen wie eine ungültige IP-Adresse, ein nicht verfügbarer Server usw. ausgelöst werden. Versuchen Sie es noch einmal. Starten Sie das System neu, und versuchen Sie es noch einmal. Wenden Sie sich an den Netzwerkadministrator, wenn das Problem weiterhin besteht.
+
+;kMsgIveAMErrServer
+[1116]
+Short-desc = Serverfehler.
+Long-desc = Der Server ist nicht verfügbar. Wiederholen Sie den Vorgang später. Wenden Sie sich an den Netzwerkadministrator, wenn das Problem weiterhin besteht.
+
+;kMsgIveAMErrUIPromptFailed
+[1117]
+Short-desc = SW-Aufforderung fehlgeschlagen.
+Long-desc = Versuchen Sie es noch einmal. Wenden Sie sich an den Netzwerkadministrator, wenn das Problem weiterhin besteht.
+
+;kMsgIveAMErrUIPromptTimedout
+[1118]
+Short-desc = Zeitüberschreitung von SW-Aufforderung.
+Long-desc = Versuchen Sie es noch einmal.
+
+;kMsgIveAMErrNoProxy
+[1119]
+Short-desc = Proxy nicht verfügbar.
+Long-desc = Das Proxysystem ist derzeit nicht verfügbar. Wiederholen Sie den Vorgang später. Wenden Sie sich an den Netzwerkadministrator, wenn das Problem weiterhin besteht.
+
+;kMsgIveAMErrConnectionClosed
+[1120]
+Short-desc = Verbindung wurde geschlossen.
+Long-desc = Diese Verbindung wurde vom Server zurückgesetzt. Sie müssen sich erneut anmelden, um die Verbindung wiederherzustellen.
+
+;kMsgIveAMErrVLANChange
+[1121]
+Short-desc = VLAN-Hash geändert
+Long-desc = VLAN-Hash wurde zu {0} geändert.
+
+
+;kMsgIveAMErrCompliance
+[1122]
+Short-desc = Endpunkt ist nicht kompatibel.
+Long-desc = Der Zugriff wurde verweigert, da Ihr System die Sicherheitsanforderungen nicht erfüllt. Einige Probleme können automatisch behoben werden, woraufhin Sie sich erneut anmelden können. Bei anderen Problemen klicken Sie auf den Link, um die zum Beheben des Problems möglichen Aktionen anzuzeigen.
+
+;kMsgSuspendForUpdate
+[1123]
+Short-desc = Verbindung wegen Komponentenaktualisierung unterbrochen
+Long-desc = Die Verbindung wurde vorübergehend unterbrochen, um die Aktualisierung von Systemkomponenten zu ermöglichen. Die Verbindung wird nach Abschluss der Aktualisierung wiederhergestellt.
+
+; kMsgIveAMUnknownFatalError
+[1124]
+Short-desc = Der Zugriffsserver hat einen Fehler festgestellt.
+Long-desc = Der Zugriffsserver hat einen Fehler festgestellt ({0}), der diesen Client am Zugriff hindert. Wenden Sie sich an den Administrator.
+
+; kMsgAMErrNcIpAllocFail
+[1125]
+Short-desc = Die Adresse für den Client kann nicht zugewiesen werden 
+Long-desc = Der Remote Access-Server konnte keine Netzwerkadresse für Ihren Client zuweisen. Wenden Sie sich an Ihren Administrator.
+
+; kMsgIveAMErrNcWrongClient
+[1126]
+Short-desc = Verbindung nicht für Junos Pulse konfiguriert 
+Long-desc = Sie haben einen Bereich und eine Rolle gewählt oder wurden dafür zugewiesen, die nicht für Junos Pulse konfiguriert sind. Trennen Sie die Verbindung, löschen Sie die gespeicherten Einstellungen, stellen Sie erneut eine Verbindung her, und wählen Sie einen anderen Benutzernamen, einen anderen Bereich oder eine andere Rolle. Wenn der Fehler weiterhin besteht, wenden Sie sich an den Administrator.
+
+; kMsgIveAMErrUACMultipleClients
+[1127]
+Short-desc = Zu viele Verbindungen vom selben Endpunkt
+Long-desc = Der Zugriffsserver, zu dem Sie eine Verbindung herstellen, lässt keine Verbindung von einem Pulse und Odyssey Access Client zu. Trennen Sie die  OAC-Verbindung, um fortzufahren.
+
+; kMsgIveAMErrNoRoaming
+[1128]
+Short-desc = Verbindung lässt kein Roaming zu
+Long-desc = Die Netzwerkadresse dieses Clients hat sich seit der ersten Authentifizierung geändert, was nicht zulässig ist.
+
+; kMsgIveAMUnknownMethodError
+[1129]
+Short-desc = Der Server hat eine Richtlinie für eine unbekannte Zugriffsmethode angefordert.
+Long-desc = Der Server hat eine Richtlinie für eine unbekannte oder nicht installierte Zugriffsmethode angefordert. 
+
+; kMsgIveAMMethodFailed
+[1130]
+Short-desc = Die Zugriffsmethode kann nicht geladen werden.
+Long-desc = Die Zugriffsmethode wurde nicht korrekt initialisiert. Der Grund liegt u. U. darin, dass versucht wurde, zu mehreren Remotezugriffsgeräten gleichzeitig eine Verbindung herzustellen.
+
+; kMsgIveAMSessionInvalid
+[1131]
+Short-desc = Ungültige Authentifizierungssitzung.
+Long-desc = Der Server hat eine ungültige Authentifizierungssitzung gemeldet {0}.
+
+; kMsgIveAMServerError
+[1132]
+Short-desc = Der Server hat einen Fehler festgestellt.
+Long-desc = Der Server hat während Ihrer Sitzung den Fehler {0} festgestellt. Wenden Sie sich an den Administrator.
+
+;kMsgIveAMNetworkUnreachable
+[1133]
+Short-desc = Netzwerk nicht erreichbar
+Long-desc = Netzwerk nicht erreichbar
+
+;kMsgIveAMErrSAAccessMethodLoaded
+[1134]
+Short-desc = Zu viele Remote-Zugriffsmethoden
+Long-desc = Der Server hat versucht, mehr als eine Remote-Zugriffsmethode zu konfigurieren, obwohl nur eine zulässig ist. Wenden Sie sich an den Administrator.
+
+;kMsgIveAMErrSAAccessMethodLoadedOtherInstance
+[1135]
+Short-desc = Remote-Zugriff ist bereits durch eine andere Verbindung möglich.
+Long-desc = Die Verbindung hat versucht, Remote-Zugriffsservices bereitzustellen, obwohl bereits eine andere Verbindung Remote-Zugriff bietet. Trennen Sie die andere Verbindung, und versuchen Sie es erneut.
+
+;kMsgIveAMErrTransport
+[1136]
+Short-desc = Laden des Kommunikationsmoduls nicht möglich.
+Long-desc = Fehler beim Laden des Kommunikationsmoduls. Prüfen Sie die Pulse-Installation, und versuchen Sie es erneut.
+
+;kMsgIveAMSessionTerminated
+[1137]
+Short-desc = Anmeldesitzung vom Server beendet.
+Long-desc = Ihre Anmeldesitzung wurde beendet. Melden Sie sich erneut an.
+
+;kMsgIveAMSessionTimeout
+[1138]
+Short-desc = Anmeldesitzung abgelaufen.
+Long-desc = Ihre Anmeldesitzung ist abgelaufen und wurde vom Server beendet. Melden Sie sich erneut an.
+
+;kMsgIveAMSessionRoleChange
+[1139]
+Short-desc = Zugriffsoptionen haben sich geändert.
+Long-desc = Der Server hat angefordert, dass Ihre Remote-Zugriffmethode geändert wird. Sie werden automatisch neu verbunden.
+
+;kMsgIveAMConnectionRouteChange
+[1140]
+Short-desc = Die Netzwerkroute zum Server wurde geändert.
+Long-desc = Die Netzwerkroute zum Server wurde geändert. Sie werden automatisch erneut verbunden.
+
+;kMsgIveAMErrInstanceAlreadyConnected
+[1200]
+Short-desc = Ein sicherer Tunnel wurde bereits eingerichtet.
+Long-desc =  Netzwerkrichtlinien unterstützen nur eine sichere Verbindung. Um eine neue sichere Verbindung zu erstellen, müssen Sie zunächst die aktuelle sichere Verbindung trennen.
+
+;kMsgNcAMErrInstanceAlreadyStarting
+[1201]
+Short-desc = Die Verbindung für eine weitere sichere Sitzung wird hergestellt.
+Long-desc = 
+
+;kMsgNcAMErrInstanceDisconnecting
+[1202]
+Short-desc = Die Verbindung für eine weitere sichere Sitzung wird getrennt. 
+Long-desc = 
+
+;kMsgNcAMErrGetUserContext
+[1203]
+Short-desc = Der Benutzerkontext wurde nicht abgerufen.
+Long-desc = Versuchen Sie es noch einmal. Wenden Sie sich an den Netzwerkadministrator, wenn das Problem weiterhin besteht.
+
+;kMsgNcAMErrGetProxyInfo
+[1204]
+Short-desc = Proxyinformationen wurden nicht abgerufen.
+Long-desc = Versuchen Sie es noch einmal. Wenden Sie sich an den Netzwerkadministrator, wenn das Problem weiterhin besteht.
+
+;kMsgNcAMErrSetupVA
+[1205]
+Short-desc = Bei der Einrichtung eines virtuellen Adapters ist ein Fehler aufgetreten. 
+Long-desc = Starten Sie das System neu, und versuchen Sie es noch einmal. Wenden Sie sich an den Netzwerkadministrator, wenn das Problem weiterhin besteht.
+
+;kMsgNcAMErrSendMessage
+[1206]
+Short-desc = Fehler beim Senden einer Nachricht an die Zugriffsmethode.
+Long-desc = Starten Sie das System neu, und versuchen Sie es noch einmal. Wenden Sie sich an den Netzwerkadministrator, wenn das Problem weiterhin besteht.
+
+;kMsgNcAMErrSetupHosts
+[1207]
+Short-desc = Die hosts-Datei wurde nicht konfiguriert.
+Long-desc = Starten Sie das System neu, und versuchen Sie es noch einmal. Wenden Sie sich an den Netzwerkadministrator, wenn das Problem weiterhin besteht.
+
+;kMsgNcAMErrToggleDNS
+[1208]
+Short-desc = Der DNS-Dienst wurde nicht neu gestartet.
+Long-desc = Starten Sie das System neu, und versuchen Sie es noch einmal. Wenden Sie sich an den Netzwerkadministrator, wenn das Problem weiterhin besteht.
+
+;kMsgNcAMErrSetIEProxy
+[1209]
+Short-desc = Der IE-Proxy wurde nicht eingerichtet.
+Long-desc = Starten Sie das System neu, und versuchen Sie es noch einmal. Wenden Sie sich an den Netzwerkadministrator, wenn das Problem weiterhin besteht.
+
+;kMsgNcAMSetFFProxy
+[1210]
+Short-desc = Der Firefox-Proxy wurde nicht eingerichtet.
+Long-desc = Starten Sie das System neu, und versuchen Sie es noch einmal. Wenden Sie sich an den Netzwerkadministrator, wenn das Problem weiterhin besteht.
+
+;kMsgNcAMErrDiffConfig
+[1211]
+Short-desc = Andere NC-Konfiguration, Verbindung trennen.
+Long-desc = Die neue NC-Konfiguration unterscheidet sich von der älteren. Verbindung wird getrennt.
+
+;kMsgNcAMErrRouteMonitor
+[1212]
+Short-desc = NC-Routenkonflikt wurde erkannt. Verbindung wird getrennt.
+Long-desc = Die Routingtabelle enthält einen Routenkonflikt. Die Verbindung wird getrennt.
+
+;kMsgNcAMErrUnknownMsg
+[1213]
+Short-desc = Unerwarteter Fehler beim Remote-Zugriff. Es wird versucht, erneut eine Verbindung herzustellen.
+Long-desc = Im Remote-Zugriffsservice ist ein unerwarteter Fehler aufgetreten. Die Verbindung wird getrennt und erneut hergestellt.
+
+;kMsgNcAMErrEspOnlyFailed
+[1214]
+Short-desc = Fallback auf SSL vom Administrator deaktiviert
+Long-desc = Fehler in der IPSec-Verbindung zum Server, und Fallback auf SSL vom Administrator deaktiviert. Es wird versucht, die Verbindung erneut herzustellen.
+
+;kMsgNcAMErrEspOnlyThroughProxy
+[1215]
+Short-desc = Nur-ESP-Verbindung über Webproxy wird nicht unterstützt.
+Long-desc = Die ESP-Verbindung mit dem Server über den Webproxy wird nicht unterstützt, und Fallback auf SSL wurde vom Administrator deaktiviert.
+
+;kMsgNcAMErrMD5NotAllowedInFIPSMode
+[1216]
+Short-desc = MD5 nicht im FIPS-Modus erlaubt
+Long-desc = MD5-Hash für ESP ist nicht erlaubt, wenn der Client mit aktiviertem FIPS-Modus ausgeführt wird. Bitte wenden Sie sich an Ihren Netzwerkadministrator.
+
+;kMsgSamAMLegacyWSAMFound
+[1251]
+Short-desc = WSAM wird ausgeführt
+Long-desc = WSAM wird bereits ausgeführt. Halten Sie WSAM an, und versuchen Sie es erneut.
+
+;kMsgSamAMErrJnprTdiInstall
+[1252]
+Short-desc = jnprTdi-Treiber ist nicht installiert.
+Long-desc = Installieren Sie Pulse erneut, und versuchen Sie es erneut. Wenn das Problem weiterhin besteht, wenden Sie sich an den Netzwerkadministrator.
+
+;kMsgSamAMErrJnprTdiStart
+[1253]
+Short-desc = Fehler beim Starten des jnprTdi-Treibers.
+Long-desc = Starten Sie das System neu, und versuchen Sie es erneut. Wenn das Problem weiterhin besteht, wenden Sie sich an den Netzwerkadministrator.
+
+;kMsgSamAMErrJnprTdiOpen
+[1254]
+Short-desc = Fehler beim Öffnen des jnprTdi-Geräts.
+Long-desc = Starten Sie das System neu, und versuchen Sie es noch einmal. Wenden Sie sich an den Netzwerkadministrator, wenn das Problem weiterhin besteht.
+
+;kMsgSamAMErrRebootRequired
+[1255]
+Short-desc = Ein Systemneustart ist erforderlich.
+Long-desc = Ein Systemneustart ist für die SAM-Zugriffsmethode erforderlich. Starten Sie das System neu.
+
+;kMsgSamErrInitFailed
+[1256]
+Short-desc = Fehler beim Initialisieren der SAM-Zugriffsmethode.
+Long-desc = Versuchen Sie es erneut. Wenn das Problem weiterhin besteht, wenden Sie sich an den Netzwerkadministrator.
+
+;kMsgSamErrIVEHostNotFound
+[1257]
+Short-desc = Fehler beim Auflösen des Hosts.
+Long-desc = Hostname konnte mit Domain Name System (DNS) nicht aufgelöst werden. Versuchen Sie es erneut.

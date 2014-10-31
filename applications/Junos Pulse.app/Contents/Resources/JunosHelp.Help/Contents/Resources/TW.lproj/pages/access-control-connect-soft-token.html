@@ -1,0 +1,27 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<title>Junos Pulse 設定綜述</title><meta http-equiv="Content-Type" content_SDL="text/html; charset=UTF-8"/> <meta name="keywords" content="符記, 驗證, RSA SecurID"/> <meta name="description" content="說明 Pulse 如何支援符記驗證。" /> <link href="../sty/standard.css" rel="stylesheet" type="text/css" />
+</head>
+<body style="width:98%;">
+<div id="content"><h1 class="Title">符記驗證</h1>
+<p class="Para1">Pulse 支援 RSA SecurID 符記驗證系統。 符記驗證，亦稱為兩因素驗證，是可以產生非常難以破解之驗證資料的一種方法。 符記代碼是在用戶端與伺服器雙方上同時產生的號碼。 使用者會建立私人識別號碼 (PIN)，之後使用者名稱與 PIN 加上當時的符記代碼就能讓使用者登入伺服器。 PIN 後面加上符記代碼即形成密碼。 符記代碼會在短暫的時間間隔 (通常是一分鐘) 後過期，然後被新產生的符記代碼取代。 </p>
+<p class="Para1">第一次使用系統時，Pulse 會提示您建立 PIN。 如果管理員已經提供 PIN，則系統會提示您加以變更。 如果網路管理員要求您定期變更 PIN，Pulse 會提示您輸入新的 PIN。 一般而言，您必須在變更 PIN 時提供當時的符記代碼。 在某些情況下，輸入密碼後，系統會提示您輸入下一個符記代碼，然後您才能存取網路。 只要等到符記裝置變更為新的符記代碼，然後輸入該號碼就能繼續。</p>
+<h2 class="Head2"> <!--Pulse 3.0 for Mac supports only soft tokens so the folllowing is commented out - Hardware and Software  -->驗證器</h2>
+<p class="Para1">產生符記的裝置或軟體稱為驗證器。 Pulse 支援全系列的 SecurID 硬體<!--Pulse 3.0 for Mac supports only soft tokens so the folllowing is commented out - and software   -->驗證器。</p>
+<p class="Para1">RSA SecurID 硬體 (實體) 驗證器每 60 秒即會顯示一個新的符記代碼。 登入時，您手邊必須要有能產生符記的卡片或鑰匙圈。 看到 Pulse 登入視窗時，請提供您的使用者名稱，密碼請用 PIN 加上當時的符記代碼。 USB 驗證器可儲存 MacOS 使用者名稱/密碼驗證資料與數位認證。 該裝置連接到您的電腦時，會自動啟用符記代碼輸入，而 Pulse 便會在您提供 PIN 後，自動從關閉的裝置直接存取符記代碼。 </p> <!--  <p class="Para1">SecurID also offers a variety of software authenticators
+including smartphone applications, software for desktop and laptop
+computers, and browser-based applications. These authenticators enable
+login options such as the ability to store login credentials
+and digital certificates. Your Pulse login procedure using a software
+authenticator depends on how your security administrator has configured
+the system. Typically, if you have the SecurID software installed
+on your endpoint, Pulse interacts with the software to retrieve the
+token code after you provide your PIN. If the system supports multiple
+tokens, Pulse prompts you to select one. </p><p class="Para1">If your authentication environment supports both software and
+hardware tokens, Pulse prompts you to select the type of token you
+want to use.</p>-->
+<h4 class="Head4">相關主題</h4><ul><li class="li"><a href="access-control-connect-smartcard-overview.html">智慧卡驗證</a></li></ul></div>
+
+</body></html>

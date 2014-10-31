@@ -1,0 +1,151 @@
+﻿; JUNS catalogUtil requires message catalog files to be saved with UTF-8 encoding, which put 3 bytes {0xEF, 0xBB, 0xBF} at the file beginning called Byte Order Mark (BOM) for UTF-8 files . For modifications in this files, please use Text Editors which persist these BOM bytes (like Notepad.exe, Visual Studio IDE, etc).
+
+;kMsgCommonCertTrustNoError
+[1700]
+Short-desc = Für dieses Zertifikat oder diese Zertifikatkette wurde kein Fehler gefunden.
+Long-desc = Die Netzwerkressource für diese Verbindung wurde überprüft, und ihr kann vertraut werden.
+
+;kMsgCommonCertTrustIsNotTimeValid
+[1701]
+Short-desc = Die Uhrzeit dieses Zertifikats oder eines der Zertifikate in der Zertifikatkette ist ungültig.
+Long-desc = Die Systemzeit am Endpunkt ist u. U. falsch. Möglicherweise ist das Zertifikat abgelaufen, oder die Zeit des Systems, von dem das Zertifikat unterzeichnet wurde, stimmt nicht. Vergewissern Sie sich, dass die Uhr Ihres Computers korrekt eingestellt ist. Stimmt die Computeruhr, kann die Netzwerkressource für diese Verbindung nicht überprüft werden. Wenden Sie sich an den Netzwerkadministrator.
+
+;kMsgCommonCertTrustIsNotTimeNested
+[1702]
+Short-desc = Die Zertifikate in der Kette sind nicht korrekt zeitverschachtelt. 
+Long-desc = Diese Meldung weist darauf hin, dass die Zertifikatkette beschädigt oder unzuverlässig ist. Die Netzwerkressource für diese Verbindung kann nicht überprüft werden. Wenden Sie sich an den Netzwerkadministrator.
+
+;kMsgCommonCertTrustIsRevoked
+[1703]
+Short-desc = Das Vertrauen für dieses Zertifikat oder für eines der Zertifikate in der Zertifikatkette wurde widerufen. 
+Long-desc = Die Netzwerkressource für diese Verbindung kann nicht überprüft werden. Wenden Sie sich an den Netzwerkadministrator.
+
+;kMsgCommonCertTrustIsNotSignatureValid
+[1704]
+Short-desc = Die Signatur dieses Zertifikats oder eines der Zertifikate in der Zertifikatkette ist ungültig.
+Long-desc = Die Netzwerkressource für diese Verbindung kann nicht überprüft werden. Wenden Sie sich an den Netzwerkadministrator.
+
+;kMsgCommonCertTrustIsNotValidForUsage
+[1705]
+Short-desc = Das Zertifikat oder die Zertifikatkette ist nicht für die gewünschte Verwendung vorgesehen.
+Long-desc = Diese Statusmeldung weist darauf hin, dass das Zertifikat für die Verwendung in der aktuellen Anwendung nicht korrekt aktiviert wurde. Die Netzwerkressource für diese Verbindung kann nicht überprüft werden. Wenden Sie sich an den Netzwerkadministrator.
+
+;kMsgCommonCertTrustIsUntrustedRoot
+[1706]
+Short-desc = Das Zertifikat oder die Zertifikatkette basiert auf einem nicht vertrautem Stammzertifikat. 
+Long-desc = Die Netzwerkressource für diese Verbindung kann nicht überprüft werden. Wenden Sie sich an den Netzwerkadministrator. 
+
+;kMsgCommonCertTrustRevocationStatusUnknown
+[1707]
+Short-desc = Der Widerrufsstatus des Zertifikats oder eines der Zertifikate in der Zertifikatkette ist unbekannt.
+Long-desc = Das System muss vor dem Akzeptieren eines Zertifikats sicherstellten, dass das Zertifikat nicht widerrufen wurde. Das System kann nicht überprüfen, ob das Zertifikat gültig ist. Wenden Sie sich an den Netzwerkadministrator.
+
+;kMsgCommonCertTrustIsCyclic
+[1708]
+Short-desc = Eines der Zertifikate in der Zertifikatkette wurde von einer Zertifizierungsstelle ausgestellt, die vom ursprünglichen Zertifikat zertifiziert wurde.
+Long-desc = Das System kann nicht überprüfen, ob das Zertifikat gültig ist. Wenden Sie sich an den Netzwerkadministrator.
+
+;kMsgCommonCertTrustInvalidExtension
+[1709]
+Short-desc = Eines der Zertifikate besitzt eine ungültige Erweiterung.
+Long-desc = Das System kann nicht überprüfen, ob das Zertifikat gültig ist. Wenden Sie sich an den Netzwerkadministrator.
+
+;kMsgCommonCertTrustInvalidPolicyConstraints
+[1710]
+Short-desc = Das Zertifikat oder die Zertifikatkette besitzt die Erweiterung einer Richtlinieneinschränkung.
+Long-desc = Das System kann nicht überprüfen, ob das Zertifikat gültig ist. Wenden Sie sich an den Netzwerkadministrator.
+
+;kMsgCommonCertTrustInvalidBasicConstraints
+[1711]
+Short-desc = Das Zertifikat oder die Zertifikatkette besitzt die Erweiterung einer grundlegenden Einschränkung.
+Long-desc = Das System kann nicht überprüfen, ob das Zertifikat gültig ist. Wenden Sie sich an den Netzwerkadministrator.
+
+;kMsgCommonCertTrustInvalidNameConstraints
+[1712]
+Short-desc = Das Zertifikat oder eines der Zertifikate in der Zertifikatkette besitzt eine ungültige Erweiterung für Namenseinschränkungen.
+Long-desc = Das System kann nicht überprüfen, ob das Zertifikat gültig ist. Wenden Sie sich an den Netzwerkadministrator.
+
+;kMsgCommonCertTrustHasNotSupportedNameConstraint
+[1713]
+Short-desc = Das Zertifikat oder eines der Zertifikate in der Zertifikatkette besitzt eine Erweiterung für Namenseinschränkungen, die nicht unterstützte Felder enthält.
+Long-desc = Das System kann nicht überprüfen, ob das Zertifikat gültig ist. Wenden Sie sich an den Netzwerkadministrator.
+
+;kMsgCommonCertTrustHasNotDefinedNameConstraint
+[1714]
+Short-desc = Das Zertifikat oder eines der Zertifikate in der Zertifikatkette besitzt eine Erweiterung für Namenseinschränkungen, und für einen der Namen im Endzertifikat fehlt eine Namenseinschränkung.
+Long-desc = Das System kann nicht überprüfen, ob das Zertifikat gültig ist. Wenden Sie sich an den Netzwerkadministrator.
+
+;kMsgCommonCertTrustHasNotPermittedNameContraint
+[1715]
+Short-desc = Das Zertifikat oder eines der Zertifikate in der Zertifikatkette besitzt eine Erweiterung für Namenseinschränkungen, und für einen der Namen im Endzertifikat ist keine zulässige Namenseinschränkung vorhanden.
+Long-desc = Das System kann nicht überprüfen, ob das Zertifikat gültig ist. Wenden Sie sich an den Netzwerkadministrator.
+
+;kMsgCommonCertTrustHasExcludedNameConstraint
+[1716]
+Short-desc = Das Zertifikat oder eines der Zertifikate in der Zertifikatkette besitzt eine Erweiterung für Namenseinschränkungen, und einer der Namen im Endzertifikat ist ausdrücklich ausgeschlossen.
+Long-desc = Das System kann nicht überprüfen, ob das Zertifikat gültig ist. Wenden Sie sich an den Netzwerkadministrator.
+
+;kMsgCommonCertTrustIsPartialChain
+[1717]
+Short-desc = Die Zertifikatkette ist unvollständig. 
+Long-desc = Das System kann nicht überprüfen, ob das Zertifikat gültig ist. Wenden Sie sich an den Netzwerkadministrator.
+
+;kMsgCommonCertTrustCtlIsNotTimeValid
+[1718]
+Short-desc = Die Uhrzeit einer zum Erstellen dieser Kette verwendeten Zertifikatvertrauensliste ist ungültig.
+Long-desc = Das System kann nicht überprüfen, ob das Zertifikat gültig ist. Wenden Sie sich an den Netzwerkadministrator.
+
+;kMsgCommonCertTrustCtlIsNotSignatureValid
+[1719]
+Short-desc = Die Signatur einer zum Erstellen dieser Zertifikatkette verwendeten Zertifikatvertrauensliste ist ungültig.
+Long-desc = Das System kann nicht überprüfen, ob das Zertifikat gültig ist. Wenden Sie sich an den Netzwerkadministrator.
+
+;kMsgCommonCertTrustCtlIsNotValidForUsage
+[1720]
+Short-desc = Eine zum Erstellen dieser Kette verwendete Zertifikatvertrauensliste ist nicht für diesen Verwendungszweck geeignet.
+Long-desc = Das System kann nicht überprüfen, ob das Zertifikat gültig ist. Wenden Sie sich an den Netzwerkadministrator.
+
+;kMsgCommonCertTrustIsOfflineRevocation
+[1725]
+Short-desc = Die Widerrufserver für das Endzertifikat oder die verketteten Zertifikate sind offline geschaltet.
+Long-desc = Versuchen Sie es noch einmal. Wenden Sie sich an den Netzwerkadministrator, wenn das Problem weiterhin besteht.
+
+;kMsgCommonCertTrustNoIssuanceChainPolicy
+[1726]
+Short-desc = Das Endzertifikat besitzt keine Ausstellungsrichtlinie.
+Long-desc = Das System kann nicht überprüfen, ob das Zertifikat gültig ist. Wenden Sie sich an den Netzwerkadministrator.
+
+;kMsgCommonCertTrustIsExplicitDistrust
+[1727]
+Short-desc = Dem Endzertifikat wird ausdrücklich misstraut.
+Long-desc = Das System kann nicht überprüfen, ob das Zertifikat gültig ist. Wenden Sie sich an den Netzwerkadministrator.
+
+;kMsgCommonCertHasNotSupportedCriticalExt
+[1728]
+Short-desc = Das Endzertifikat besitzt eine nicht unterstützte wichtige Erweiterung.
+Long-desc = Das System kann nicht überprüfen, ob das Zertifikat gültig ist. Wenden Sie sich an den Netzwerkadministrator.
+
+[1730]
+;kMsgCommonCertTrustPulseCertificateError
+Short-desc=Certificate Error
+Long-desc=Certificate Error
+
+[1731]
+;kMsgCommonCertTrustPulseAuthServerIdentityNotFound
+Short-desc = Dem Authentifizierungsserver wird misstraut.
+Long-desc = Die Authentifizierungsserveridentität wurde in der Liste mit vertrauten Servern des Clients nicht gefunden. Wenden Sie sich an den Netzwerkadministrator.
+
+;kMsgCommonCertTrustPulseDoesntMatch
+[1732]
+Short-desc = Der Zertifikatname stimmt nicht mit dem Server überein, zu dem Sie eine Verbindung herstellen möchten.
+Long-desc = Alle Zertifikate enthalten den Namen des Servers, um sicherzustellen, dass die Verbindung nicht missbraucht wurde. Dieser Warnhinweis erscheint, wenn Sie auf einen Server mit einem anderen Namen zugreifen. Falls an Ihrem Standort die Möglichkeit des Missbrauchs der Netzwerkverbindung besteht, vergewissern Sie sich beim Administrator, ob der Serverfingerabdruck stimmt.
+
+;kMsgUISmartcardPinError
+[1733]
+Short-desc = Falsche PIN.
+Long-desc = Achten Sie beim erneuten Eingeben der PIN auf Richtigkeit. Wenn die maximale Anzahl der Wiederholungsversuche erreicht wurde, wird der Token gesperrt.
+
+;kMsgUISmartcardBlockedError
+[1734]
+Short-desc = Smartcard gesperrt.
+Long-desc = Wenden Sie sich zum Entsperren der Smartcard an den Administrator.

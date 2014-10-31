@@ -1,0 +1,220 @@
+﻿
+; JUNS catalogUtil requires catalog message files to be saved with UTF-8 encoding, which put 3 bytes {0xEF, 0xBB, 0xBF} at the file beginning called Byte Order Mark (BOM) for UTF-8 files . For modifications in this files, please use Text Editors which persist these BOM bytes (like Notepad.exe, Visual Studio IDE, etc).
+
+; kMsgVpnAMErrAlreadyInUse
+[1400]
+Short-desc = Die Komponenteninstanz ist bereits in Verwendung.
+Long-desc = Diese VPN-Verbindung wurde bereits gestartet, oder sie wurde nicht vollständig geschlossen.
+
+; kMsgVpnAMErrMemoryAllocation
+[1401]
+Short-desc = Fehler bei der Speicherzuordnung.
+Long-desc = Es konnte nicht genügend Arbeitsspeicher zugeordnet werden.
+
+; kMsgVpnAMErrIpsecMgrFailed
+[1402]
+Short-desc = IPSecManager konnte nicht initialisiert werden.
+Long-desc = Pulse konnte IPSecManager, worin alle IPSec-Eigenschaften enthalten sind, nicht initialisieren. 
+
+;kMsgVpnAMErrConnStoreFailed
+[1403]
+Short-desc = Verbindungsspeicher konnte nicht geladen werden.
+Long-desc = Pulse konnte den Verbindungsspeicher nicht laden, in dem alle Verbindungseinstellungen enthalten sind. Starten Sie Pulse neu, oder starten Sie den Computer neu, und versuchen Sie es noch einmal. Falls dieses Problem weiterhin besteht, wenden Sie sich an den Administrator.
+
+; kMsgVpnAMErrHttpAuthError 
+[1404]
+Short-desc = Unbekannter HTTP-Antwortcode
+Long-desc = Der Server reagierte auf die Authentifizierungsanforderung mit einer unbekannten Antwort
+
+
+; kMsgVpnAMErrHttpAuthFailed = 
+[1405]
+Short-desc = Falsche Authentifizierungsinformationen.
+Long-desc = Falsche Authentifizierungsinformationen. Überprüfen Sie Ihren Benutzernamen und Ihr Kennwort, und vergewissern Sie sich, dass die Feststelltaste nicht gedrückt ist.
+
+; kMsgVpnAMErrHttpNoLicense
+[1406]
+Short-desc = Firewall verfügt über keine weiteren Lizenzen.
+Long-desc = Die gemäß Lizenz zulässige maximale Benutzeranzahl der Firewall wurde überschritten. Wenden Sie sich an den Administrator.
+
+; kMsgVpnAMErrHttpNoConfig 
+[1407]
+Short-desc = Keine Konfiguration verfügbar
+Long-desc = Keine Clientkonfiguration verfügbar.
+
+; kMsgVpnAMErrNoConnInfo = 
+[1408]
+Short-desc = Verbindungsinformationen für Firewall konnten nicht abgerufen werden.
+Long-desc = Die Verbindungseinstellungen für die Firewall konnten im Verbindungsspeicher nicht abgerufen werden.
+
+; kMsgVpnAMErrAuthFailed = 
+[1409]
+Short-desc = Authentifizierungsfehler.
+Long-desc = Authentifizierungsfehler.
+        
+; kMsgVpnAMErrAuthSuccess = 
+[1410]
+Short-desc = Authentifizierung erfolgreich
+Long-desc = Authentifizierung erfolgreich
+
+; kMsgVpnAMErrCreateRouteFailed = 
+[1411]
+Short-desc = IPSec-Routeneintrag kann nicht erstellt werden.
+Long-desc = Die von der Firewall bereitgestellten IPSec-Parameter können nicht bereitgestellt werden.
+
+; kMsgVpnAMErrReadRouteFailed = 
+[1412]
+Short-desc = Der Routeneintrag im Verbindungsspeicher konnte nicht gelesen werden.
+Long-desc = Die Konfigurationsparameter für die IPSec-Route konnten im Verbindungsspeicher nicht abgerufen werden.
+
+; kMsgVpnAMErrAddRouteFailed = 
+[1413]
+Short-desc = Der Routeneintrag konnte der Richtlinie nicht hinzugefügt werden.
+Long-desc = Der vorhandenen IPSec-Richtlinie konnte kein IPSec-Routeneintrag hinzugefügt werden.
+
+; kMsgVpnAMErrDisconnect 
+[1414]
+Short-desc = Verbindungstrennung erfolgt.
+Long-desc =
+
+; kMsgVpnAMErrDisconnected = 
+[1415]
+Short-desc = Verbindung getrennt
+Long-desc =
+
+; kMsgVpnAMErrIpsecAuthFailed = 
+[1416]
+Short-desc = Die IPSec-Authentifizierung ist fehlgeschlagen.
+Long-desc = Die Verbindung ist in der IPSec (IKE)-Authentifizierungsphase fehlgeschlagen.
+
+;kMsgVpnAMErrIpsecConfigFailed = 
+[1417]
+Short-desc = IPSec-Konfiguration fehlgeschlagen
+Long-desc =
+
+; kMsgVpnAMErrConnectStarted = 1418,
+[1418]
+Short-desc = Die Verbindung wird gestartet.
+Long-desc = 
+       
+; kMsgVpnAMErrConnectPhase1NoProp = 
+[1419]
+Short-desc = IKE-Aushandlung fehlgeschlagen.
+Long-desc = Der Client und die Firewall konnten sich nicht auf die Tunneleinstellungen einigen.
+
+;kMsgVpnAMErrConnectAuthChangedUser = 
+[1420]
+Short-desc = Der Benutzer hat versucht, den Benutzernamen für die Anmeldung zu ändern.
+Long-desc = Sie müssen für alle Abschnitte der Anmeldung denselben Benutzernamen und dasselbe Kennwort verwenden.
+
+;kMsgVpnAMErrHttpOneConnPerPc =
+[1421]
+Short-desc = Pro Endpunkt ist nur eine Verbindung erlaubt.
+Long-desc = Dieser Benutzer hat bereits eine Verbindung von diesem Endpunkt hergestellt. Trennen Sie die Verbindung, und versuchen Sie es erneut.
+
+;kMsgVpnAMErrHttpInvalidResponse
+[1422]
+Short-desc = Ungültige Antwort vom Server.
+Long-desc = Der Server hat eine ungültige Antwort gesendet. Stellen Sie sicher, dass es sich bei dem Server, mit dem Sie eine Verbindung herstellen, um eine JUNOS-Firewall handelt. Wenn dieser Fehler weiterhin besteht, wenden Sie sich an Ihren Administrator.
+
+; kMsgVpnAMErrHttpErrBase
+; this message is unused; it's an offset base for the messages which succeed it
+;
+[1450]        
+Short-desc = Unbekannter Fehler
+Long-desc = Unbekannter Fehler
+
+; kMsgVpnAMErrHttpInitialization 
+[1451]
+Short-desc = Initialisierung des Webdienstes fehlgeschlagen.
+Long-desc = Es ist ein interner Fehler bei der Initialisierung von WinHTTP in Pulse aufgetreten. Starten Sie Ihren Computer neu, und wiederholen Sie den Vorgang. Wenn das Problem weiterhin besteht, wenden Sie sich an Ihren Administrator.
+
+; kMsgVpnAMErrHttpStageConnect = 
+[1452]
+Short-desc = Serververbindung konnte nicht hergestellt werden.
+Long-desc = Die Verbindung zum Server kann nicht hergestellt werden. Überprüfen Sie, ob eine Internetverbindung besteht.
+
+; kMsgVpnAMErrHttpStageSendHeader = 
+[1453]
+Short-desc = Die anfängliche HTTP-Anforderung konnte nicht gesendet werden.
+Long-desc =
+
+; kMsgVpnAMErrHttpStageGetResponse = 
+[1454]
+Short-desc = Die HTTP-Antwort wurde nicht empfangen.
+Long-desc = Die Firewall hat auf die erste HTTP-Authentifizierungsanforderung nicht reagiert.
+
+; kMsgVpnAMErrHttpStageAuthSetup = 
+[1455]
+Short-desc = Die Authentifizierungsanforderung wurde von der Firewall nicht initiiert.
+Long-desc =
+
+; kMsgVpnAMErrHttpStageSendAuthHeader = 
+[1456]
+Short-desc = Die Authentifizierungsanforderung wurde von der Firewall nicht gesendet.
+Long-desc =
+
+; kMsgVpnAMErrHttpStageGetAuthResponse = 
+[1457]
+Short-desc = Die Firewall reagierte nicht auf die Authentifizierungsanforderung. 
+Long-desc =
+
+; kMsgVpnAMErrHttpStageAuthentication = 
+[1458]
+Short-desc = Die Authentifizierungsaushandlung ist fehlgeschlagen.
+Long-desc =
+
+; kMsgVpnAMErrHttpStageInputCancel = 
+[1459]
+Short-desc = Authentifizierung wurde vom Benutzer abgebrochen.
+Long-desc = Der Authentifizierungsprozess wurde vom Benutzer abgebrochen.
+
+; kMsgVpnAMErrHttpStageInputTimeout = 
+[1460]
+Short-desc = Benutzername oder Kennwort wurde nicht eingegeben.
+Long-desc = Das Zeitlimit für den Authentifizierungsprozess wurde überschritten. Der Benutzername und/oder das Kennwort wurde nicht rechtzeitig eingegeben.
+
+; kMsgVpnAMErrHttpStageInputFailure = 
+[1461]
+Short-desc = Benutzereingabe wurde nicht angefordert.
+Long-desc = Der Client konnte den Benutzer nicht nach den nötigen Informationen fragen.
+
+; kMsgVpnAMErrHttpStageWrongState = 
+[1462]
+Short-desc = Die Verbindung wird vom Client verhindert.
+Long-desc =
+
+; kMsgVpnAMErrHttpResponseFailure = 
+[1463]
+Short-desc = Unbekannter HTTP-Antwortcode. 
+Long-desc = Die Firewall reagierte auf die Authentifizierung mit einem unerwarteten oder unbekannten Antwortcode.
+
+; kMsgVpnAMErrHttpAuthFailure = 
+[1464]
+Short-desc = Falsche Authentifizierungsinformationen.
+Long-desc = Die Firewall hat die angegebenen Anmeldeinformationen zurückgewiesen.
+
+; kMsgVpnAMErrHttpAuthLicense = 
+[1465]
+Short-desc = Die Firewall verfügt über keine weiteren Lizenzen.
+Long-desc = Die Anzahl der Benutzer der Firewall überschreitet die gemäß Lizenz zulässige Anzahl. Wenden Sie sich an den Administrator.
+
+; kMsgVpnAMErrHttpAuthNoCfg = 
+[1466]
+Short-desc = Keine Konfiguration verfügbar.
+Long-desc = Die Firewall meldet, dass für den authentifizierten Benutzer keine Remotekonfiguration verfügbar ist.
+
+; kMsgVpnAMErrProcessScript = 
+[1467]
+Short-desc = Die von der Firewall bereitgestellte Verbindung kann nicht verarbeitet werden.
+Long-desc = Der Client versteht die von der Firewall bereitgestellten Konfigurationsdaten nicht.  
+
+; kMsgVpnAMErrHostNotFound
+[1468]
+Short-desc = Auflösen des Hostnamens nicht möglich.
+Long-desc = Der Name der angegebenen Firewall stimmt mit keinem bekannten Server überein. Stellen Sie sicher, dass der Name richtig eingegeben wurde.
+
+; kMsgVpnAMErrInvalidFipsConfiguration
+[1469]
+Short-desc = Ungültiger FIPS IKE-/IPSec-Konfigurationsparameter.
+Long-desc = Die von SRX gesendete IKE-/IPSec-Konfiguration ist für einen FIPS-Modus-Client nicht gültig.  Korrigieren Sie die SRX-Konfiguration, oder deaktivieren Sie den Pulse FIPS-Modus.

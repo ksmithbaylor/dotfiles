@@ -1,0 +1,34 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<title>Utilizzare l'icona nel Dock di Junos Pulse e visualizzare lo stato della connessione</title> <meta name="description" content="Descrive le opzioni disponibili mediante l'icona Pulse nella barra dei menu." /> <meta http-equiv="Content-Type" content_SDL="text/html; charset=UTF-8"/> <link href="../sty/standard.css" rel="stylesheet" type="text/css" /> <meta name="keywords" content="icone nella barra dei menu, icone, stato della connessione, aprire Pulse, connettersi, disconnettersi" />
+</head>
+<body style="width:95%;>
+<div id="content">
+<h1 class="Title">Utilizzare l'icona nella barra dei menu di Junos Pulse e visualizzare lo stato della connessione</h1>
+<p class="Para1">L'icona nell'area barra dei menu di Junos Pulse segnala lo stato corrente della connessione di rete. Anche in caso di più connessioni correnti, viene visualizzata una sola icona Pulse nella barra dei menu. Se si verifica un problema in una connessione attiva, lo stato dell'icona cambia. Il seguente elenco descrive gli stati dell'icona nella barra dei menu.</p>
+<p class="Para2"><img src="../../../shrd/pulse_menubar_connected.png" width="16" height="16" />    Connesso<br /> <img src="../../../shrd/pulse_menubar_icon_colored.png" /> Nessuna connessione<br /> <img src="../../../shrd/pulse_menubar_02.png" width="16" height="16" /> Connessione in corso 
+  <br /> <img src="../../../shrd/pulse_menubar_error.png" width="16" height="16" /> Connesso con errori<br /><img src="../../../shrd/pulse_menubar_error.png" width="16" height="16" /> Connessione non riuscita<br /> <img src="../../../shrd/pulse_menubar_icon_suspended.png" width="16" height="16" /> Connessione sospesa<br /> <img src="../../../shrd/pulse_menubar_icon_GrayScaled.png" alt="icona - pulse non in esecuzione" width="16" height="16" /> Pulse non in esecuzione </p>
+<p class="Para1">È inoltre possibile fare clic sull'icona nella barra dei menu per visualizzare un menu ed eseguire le seguenti azioni:</p>
+<ul>
+  <li class="li"><strong>Open Junos Pulse</strong> (Apri Junos Pulse): consente di visualizzare l'interfaccia di Pulse. Se Pulse non è in esecuzione, selezionando <strong>Open Junos Pulse</strong> (Apri Junos Pulse) viene prima avviato il servizio Pulse. </li>
+  <li class="li"><strong>Connection list</strong> (Elenco connessioni): il menu elenca tutta le connessioni Pulse. Fare clic sul nome di una connessione per visualizzare le azioni che è possibile eseguire su di essa:</p>
+  </li>
+
+  <ul>
+    <li><strong>Connect</strong> (Connetti): consente di stabilire una connessione alla rete selezionata.</li>
+    <li><strong>Disconnect</strong> (Disconnetti): consente di terminare la connessione di rete selezionata.</li>
+    <li><strong>Cancel</strong> (Annulla): consente di annullare un'azione avviata dal server Pulse. L'opzione Cancel (Annulla) è disponibile quando il server ha avviato un'operazione di Host Checker. Se si annulla l'operazione, la connessione alla rete non viene eseguita.</li><li><strong>Suspend/Resume</strong> (Sospendi/Riprendi): consente di sospendere e quindi riprendere una connessione a una rete remota per permettere l'accesso alle risorse di rete locali, ad esempio a una stampante locale. Quando si sospende una connessione, l'accesso alle risorse di rete protette non è più disponibile fino a quando non si riprende la connessione. Quando si riprende una connessione, la connessione avviene senza che venga richiesta l'immissione delle credenziali di accesso. </li>
+    
+    <li><strong>Extend Session</strong> (Estendi sessione): è possibile estendere una sessione di connessione attiva senza attendere la notifica di sessione in scadenza da parte di Pulse. Selezionare questa opzione in qualsiasi momento per reimpostare i contatori della sessione e di inattività sui relativi valori massimi.</li>
+  </ul>
+<li class="li"><strong>Exit</strong> (Esci): consente di chiudere ogni connessione attiva e di arrestare Pulse. L'icona nella barra dei menu di Pulse rimane nella barra dei menu dopo l'uscita da Pulse e può essere utilizzata per avviare nuovamente Pulse.</li></ul>
+
+<h4 class="Head4">Argomenti correlati</h4>
+<ul>
+  <li class="li"><a href="access-control-connect-client-ui.html">Interfaccia di Junos Pulse</a></li>
+  <li class="li"><a href="access-control-connect-pulse-starting-stopping.html">Avviare o arrestare Junos Pulse</a></li>
+</ul>
+
+</body></html>

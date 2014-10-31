@@ -1,0 +1,15 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<title>Junos Pulse 配置概述</title><meta http-equiv="Content-Type" content_SDL="text/html; charset=UTF-8"/> <link href="../sty/standard.css" rel="stylesheet" type="text/css" /> <meta name="keywords" content="Pulse 概述, 概述, Pulse" /> <meta name="description" content="Junos Pulse 及其功能的简短介绍。" />
+</head>
+<body style="width:95%;><div id="content"><h1 class="Title">Junos Pulse 概述</h1><p class="Para1">Junos Pulse 可通过局域网和广域网实现<!-- and licensed third-party
+services  -->与受保护资源经认证的安全网络连接。 Junos Pulse 可以让网络管理员配置您的网络访问环境，从而简化网络连接。</p><p class="Para1"><i>安全连接</i>可以加密网络信息流，以便只有您的端点和与之通信的服务器才能了解其中内容。 网络管理员可定义安全设置，Junos Pulse 建立网络连接时将使用这些安全设置。 网络管理员还可以将 Junos Pulse 配置为自动安装安全通信所需的软件。</p><p class="Para1"><i>经认证的连接</i>表示您的端点和服务器均已互相验证标识。 服务器使用受信任的证书授权机构所颁发的证书来自行认证，而您的端点会将登录凭证（用户名和密码）提交到服务器。 网络管理员可以对环境进行配置，以便认证可自动进行而不会提示任何信息，但进行连接时，系统通常会要求您输入用户名和密码。 </p>
+<p class="Para1"><i>受保护的网络资源</i>是通过经认证的连接所访问的任何网络设备或应用程序。 例如，如果要访问组织的电子邮件系统，首先要登录到网络。 网络管理员将受保护的网络资源组织成多个领域，然后通过授予所选领域访问权限的方式授权您访问这些资源。 如果您有权访问多个领域，则通过 Junos Pulse 连接到网络时可以选择领域。 网络管理员还可以通过启用“主机检查程序”这个程序来定义访问某个领域所需的安全属性。 通过 Junos Pulse 连接到网络时，“主机检查程序”会运行。 它将检查您的端点，以确保已安装所需的软件。 <!--such as current virus definitions or the Enhanced Endpoint Security 
+  (EES) application. EES is an optional program that Junos Pulse can download 
+  and install. EES protects your endpoint device from spyware and malware.  --> </p>
+<p class="Para1">网络管理员可以配置访问策略，以便连接到网络后，该连接为便携式连接。 例如，如果您在家中将便携式计算机连接到公司网络，则将便携式计算机带到办公室时，无需断开再重新连接。 您只需在家中关闭便携式计算机即可。 当到达办公室并打开便携式计算机后，Junos Pulse 会检测到变化的网络环境。 Junos Pulse 使用您的连接配置文件信息来配置连接，以获得相应的访问权限，然后在新环境中对您进行认证。 如果管理员已配置了 Junos Pulse 的位置感知功能，则在启动时即可连接到相应的网络。 例如，如果端点在远程位置启动，Junos Pulse 将自动建立与 WAN 访问设备的连接。</p>
+<h4 class="Head4">相关主题</h4><ul><li class="li"><a href="access-control-connect-client-ui.html">Junos Pulse 界面</a></li></ul></div>
+
+</body></html>

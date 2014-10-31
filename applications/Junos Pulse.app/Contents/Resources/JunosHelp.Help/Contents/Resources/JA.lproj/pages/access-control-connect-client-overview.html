@@ -1,0 +1,15 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<title>Junos Pulse 設定の概要</title><meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/> <link href="../sty/standard.css" rel="stylesheet" type="text/css" /> <meta name="keywords" content="Pulse の概要、概要、Pulse" /> <meta name="description" content="Junos Pulse およびその機能の簡単な概要。" />
+</head>
+<body style="width:95%;><div id="content"><h1 class="Title">Junos Pulse の概要</h1><p class="Para1">Junos Pulse は、LAN および WAN <!-- and licensed third-party
+services  -->上で、保護されたネットワークリソースへの認証されたセキュア接続を可能にします。 Junos Pulse では、ネットワーク管理者がネットワークアクセス環境を構成できるため、ネットワーク接続が簡単になります。</p><p class="Para1"><i>安全な接続</i>では、ユーザーのトラフィックを暗号化して、ユーザーのエンドポイントおよびそのエンドポイントの通信相手であるサーバーにのみ、トラフィックの内容が理解できるようにします。 ネットワーク管理者は、ネットワーク接続を確立するときに Junos Pulse が使用するセキュリティ設定を定義します。 ネットワーク管理者は、安全な通信に必要なソフトウェアを自動的にインストールするよう Junos Pulse を構成することもできます。</p><p class="Para1"><i>認証された接続</i>とは、エンドポイントとサーバーが両方とも、互いに身元を証明していることを意味します。 サーバーは、自身を認証するために、信頼された認証機関からの証明書を使用します。また、エンドポイントは、ユーザーのログイン認証情報（ユーザー名とパスワード）をサーバーへ提示します。 ネットワーク管理者は、ユーザーに情報の入力を要求せずに認証が自動的に行われるよう、環境を構成できます。しかし、通常は接続時にユーザー名とパスワードが要求されます。 </p>
+<p class="Para1"><i>保護されたネットワークリソース</i>とは、認証された接続によってアクセスするあらゆるネットワークデバイスやアプリケーションのことです。 例えば、組織の電子メールシステムにアクセスするには、最初にネットワークにログインします。 ネットワーク管理者は、保護されたネットワークリソースをレルムに整理します。そして、選択されたレルムへのアクセスを認めることによって、それらのリソースへのアクセスを承認します。 複数のレルムにアクセスできる場合は、Junos Pulse を通してネットワークに接続するときに、希望のレルムを選択できます。 また、ネットワーク管理者は、Host Checker プログラムを有効化することで、レルムへのアクセスに必要なセキュリティプロパティを定義することもできます。 ユーザーが Junos Pulse を通してネットワークに接続すると、Host Checker が動作します。 必要なソフトウェアがあることを確認するため、エンドポイントを検査します。 <!--such as current virus definitions or the Enhanced Endpoint Security 
+  (EES) application. EES is an optional program that Junos Pulse can download 
+  and install. EES protects your endpoint device from spyware and malware.  --> </p>
+<p class="Para1">ネットワーク管理者は、ネットワークに接続したユーザーに対してその接続がポータブルになるようにアクセスポリシーを設定できます。 例えば、自宅から会社のネットワークにノート PC を接続しておけば、オフィスへ出勤するときにネットワークから切断してオフィスで再接続する必要はありません。 自宅でノート PC を閉じるだけです。 オフィスに着いてノート PC を開くと、Junos Pulse がネットワーク環境の変化を感知します。 Junos Pulse は、ユーザーの接続プロファイル情報を使用して、適切なアクセスのために接続を構成してから、新しい環境でユーザーを認証します。 管理者が Junos Pulse の位置認識機能を構成していれば、ユーザーは、起動時に適切なネットワークに接続されます。 例えば、オフィス外の場所でエンドポイントを起動すると、Junos Pulse は、WAN アクセスデバイスへの接続を自動的に行います。</p>
+<h4 class="Head4">関連項目</h4><ul><li class="li"><a href="access-control-connect-client-ui.html">Junos Pulse インターフェース</a></li></ul></div>
+
+</body></html>

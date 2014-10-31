@@ -1,0 +1,439 @@
+﻿; JUNS catalogUtil requires catalog message files to be saved with UTF-8 encoding, which put 3 bytes {0xEF, 0xBB, 0xBF} at the file beginning called Byte Order Mark (BOM) for UTF-8 files . For modifications in this files, please use Text Editors which persist these BOM bytes (like Notepad.exe, Visual Studio IDE, etc).
+
+; kMsgEapAMErrGeneralFailure
+[1300]
+Short-desc = 常规故障。
+Long-desc = 请重新尝试此操作。如果问题仍然存在，请联系网络管理员。
+
+; kMsgEapAMErrTimeout
+[1301]
+Short-desc = 超时。
+Long-desc = 操作超出时间限制。请重新尝试此操作。
+
+; kMsgEapAMErrIncomplete
+[1302]
+Short-desc = 认证未完成。
+Long-desc = 请重新尝试此操作。如果问题仍然存在，请联系网络管理员。
+
+; kMsgEapAMErrParseFailure
+[1303]
+Short-desc = 所接收消息的格式有误。
+Long-desc = 请重新尝试此操作。如果问题仍然存在，请联系网络管理员。
+
+; kMsgEapAMErrNoCredentials
+[1304]
+Short-desc = 客户端凭证不可用。
+Long-desc = 请重新尝试此操作。如果问题仍然存在，请联系网络管理员。
+
+; kMsgEapAMErrInternalFailure
+[1305]
+Short-desc = 未知错误。
+Long-desc = 请重新尝试此操作。如果问题仍然存在，请联系网络管理员。
+
+; kMsgEapAMErrProtocolFailure
+[1306]
+Short-desc = 所接收消息中存在协议错误。
+Long-desc = 请重新尝试此操作。如果问题仍然存在，请联系网络管理员。
+
+; kMsgEapAMErrClientReject
+[1307]
+Short-desc = 服务器未认证。
+Long-desc = 请重新尝试此操作。如果问题仍然存在，请联系网络管理员。
+
+; kMsgEapAMErrServerReject
+[1308]
+Short-desc = 认证被服务器拒绝。
+Long-desc = 请重新尝试此操作。如果问题仍然存在，请联系网络管理员。
+
+; kMsgEapAMErrAuthenticationFailure
+[1309]
+Short-desc = 认证失败。
+Long-desc = 请重新尝试此操作。如果问题仍然存在，请联系网络管理员。
+
+; kMsgEapAMErrTlsHandshakeFailrure
+[1310]
+Short-desc = TLS 握手失败。
+Long-desc = 请重新尝试此操作。如果问题仍然存在，请联系网络管理员。
+
+; kMsgEapAMErrNoUserCertificate
+[1311]
+Short-desc = 用户证书不可用
+Long-desc = 请重新尝试此操作。如果问题仍然存在，请联系网络管理员。
+
+; kMsgEapAMErrNoAgreedMethod
+[1312]
+Short-desc = 客户端和服务器没有就认证方法达成一致。
+Long-desc = 请重新尝试此操作。如果问题仍然存在，请联系网络管理员。
+
+; kMsgEapAMErrErrorChangingPassword
+[1313]
+Short-desc = 更改密码时出错。
+Long-desc = 认证服务器目前可能不可用。请稍后重新尝试此操作。如果问题仍然存在，请联系网络管理员。
+
+; kMsgEapAMErrRestrictedLogonHours
+[1314]
+Short-desc = 限制的登录时间。
+Long-desc = 您的登录凭证仅在特定登录时间内有效。
+
+; kMsgEapAMErrNoPermission
+[1315]
+Short-desc = 没有权限。
+Long-desc = 您没有执行此操作的权限。
+
+; kMsgEapAMErrAcctDisabled
+[1316]
+Short-desc = 帐户已禁用
+Long-desc = 您的帐户已被禁用。请联系网络管理员。
+
+; kMsgEapAMErrPasswordExpired
+[1317]
+Short-desc = 密码已过期。
+Long-desc = 必须更改密码才能登录。
+
+; kMsgEapAMErrUnknown
+[1318]
+Short-desc = 未知错误。
+Long-desc = 请重新尝试此操作。如果问题仍然存在，请联系网络管理员。
+
+; kMsgEapAMErrJuacAuthFailed
+[1319]
+Short-desc = 认证被服务器拒绝。
+Long-desc = 请重新尝试此操作。如果问题仍然存在，请联系网络管理员。
+
+; kMsgEapAMErrJuacInvalidRealm
+[1320]
+Short-desc = 无效的领域。
+Long-desc = 此领域不再可用。如果您使用保存的凭证登录到系统，请使用“忘记保存的设置”功能，然后尝试重新登录。
+
+; kMsgEapAMErrJuacVersionUnsupported
+[1321]
+Short-desc = 版本不受支持。
+Long-desc = 请重新尝试此操作。如果问题仍然存在，请联系网络管理员。
+
+; kMsgEapAMErrJuacMaxSessions
+[1322]
+Short-desc = 此领域的用户数太多。
+Long-desc = 所选领域服务已达最大用户数。 
+
+; kMsgEapAMErrJuacAdminsOnly
+[1323]
+Short-desc = 只有管理员可以登录。
+Long-desc = 此领域目前被限制为只有管理员才能访问。 
+
+; kMsgEapAMErrJuacTooMany
+[1324]
+Short-desc = 并发用户过多。
+Long-desc = 请稍后重新尝试此操作。 
+
+; kMsgEapAMErrJuacIpDenied
+[1325]
+Short-desc = 禁止从此 IP 地址登录。
+Long-desc = 服务器已将您的登录信息与特定 IP 地址相关联，此次登录使用的 IP 地址与所配置的设置不匹配。 
+
+; kMsgEapAMErrJuacOtherFailure
+[1326]
+Short-desc = 其它 JUAC 故障。
+Long-desc = 请重新尝试此操作。如果问题仍然存在，请联系网络管理员。
+
+; kMsgEapAMErrJuacAccountDisabled
+[1327]
+Short-desc = 帐户已禁用。
+Long-desc = 请联系网络管理员。
+
+; kMsgEapAMErrJuacAccountExired
+[1328]
+Short-desc = 帐户已过期。
+Long-desc = 请联系网络管理员。
+
+; kMsgEapAMErrJuacNoRoles
+[1329]
+Short-desc = 您被禁止登录。
+Long-desc = 请联系网络管理员。
+
+; kMsgEapAMErrJuacIpBlocked
+[1330]
+Short-desc = 临时禁止从此计算机登录
+Long-desc = 请稍后重新尝试此操作。
+
+; kMsgEapAMErrJuacUnknown
+[1331]
+Short-desc = 认证被服务器拒绝。
+Long-desc = 请重新尝试此操作。如果问题仍然存在，请联系网络管理员。
+
+; kMsgEapAMErrJuacWrongCertificate
+[1332]
+Short-desc = 客户端证书遗失或无效
+Long-desc = 请联系网络管理员。
+
+; kMsgEapAMErrJuacAccountLockedOut
+[1333]
+Short-desc = 帐户被锁定
+Long-desc = 请联系网络管理员。
+
+
+; kMsgEapAMErrTlsClientAlert_0
+[1334]
+Short-desc = 客户端发出警示: 关闭通知。
+Long-desc = 请重新尝试此操作。如果问题仍然存在，请联系网络管理员。
+
+; kMsgEapAMErrTlsClientAlert_10
+[1335]
+Short-desc = 客户端发出警示: 意外消息。
+Long-desc = 请重新尝试此操作。如果问题仍然存在，请联系网络管理员。
+
+; kMsgEapAMErrTlsClientAlert_20
+[1336]
+Short-desc = 客户端发出警示: 记录 mac 错误。
+Long-desc = 请重新尝试此操作。如果问题仍然存在，请联系网络管理员。
+
+; kMsgEapAMErrTlsClientAlert_21
+[1337]
+Short-desc = 客户端发出警示: 解密失败。
+Long-desc = 请重新尝试此操作。如果问题仍然存在，请联系网络管理员。
+
+; kMsgEapAMErrTlsClientAlert_22
+[1338]
+Short-desc = 客户端发出警示: 记录溢出。
+Long-desc = 请重新尝试此操作。如果问题仍然存在，请联系网络管理员。
+
+; kMsgEapAMErrTlsClientAlert_30
+[1339]
+Short-desc = 客户端发出警示: 解压失败。
+Long-desc = 请重新尝试此操作。如果问题仍然存在，请联系网络管理员。
+
+; kMsgEapAMErrTlsClientAlert_40
+[1340]
+Short-desc = 客户端发出警示: 握手失败。
+Long-desc = 请重新尝试此操作。如果问题仍然存在，请联系网络管理员。
+
+; kMsgEapAMErrTlsClientAlert_42
+[1341]
+Short-desc = 客户端发出警示: 证书错误。
+Long-desc = 请联系网络管理员。
+
+; kMsgEapAMErrTlsClientAlert_43
+[1342]
+Short-desc = 客户端发出警示: 不支持的证书。
+Long-desc = 请联系网络管理员。
+
+; kMsgEapAMErrTlsClientAlert_44
+[1343]
+Short-desc = 客户端发出警示: 证书被撤消。
+Long-desc = 请联系网络管理员。
+
+; kMsgEapAMErrTlsClientAlert_45
+[1344]
+Short-desc = 客户端发出警示: 证书已过期。
+Long-desc = 请联系网络管理员。
+
+; kMsgEapAMErrTlsClientAlert_46
+[1345]
+Short-desc = 客户端发出警示: 证书未知。
+Long-desc = 请联系网络管理员。
+
+; kMsgEapAMErrTlsClientAlert_47
+[1346]
+Short-desc = 客户端发出警示: 非法参数。
+Long-desc = 请重新尝试此操作。如果问题仍然存在，请联系网络管理员。
+
+; kMsgEapAMErrTlsClientAlert_48
+[1347]
+Short-desc = 客户端发出警示: 未知的证书授权机构。
+Long-desc = 请联系网络管理员。
+
+; kMsgEapAMErrTlsClientAlert_49
+[1348]
+Short-desc = 客户端发出警示: 访问被拒绝。
+Long-desc = 请重新尝试此操作。如果问题仍然存在，请联系网络管理员。
+
+; kMsgEapAMErrTlsClientAlert_50
+[1349]
+Short-desc = 客户端发出警示: 解码错误。
+Long-desc = 请重新尝试此操作。如果问题仍然存在，请联系网络管理员。
+
+; kMsgEapAMErrTlsClientAlert_51
+[1350]
+Short-desc = 客户端发出警示: 解密错误。
+Long-desc = 请重新尝试此操作。如果问题仍然存在，请联系网络管理员。
+
+; kMsgEapAMErrTlsClientAlert_60
+[1351]
+Short-desc = 客户端发出警示: 导出限制。
+Long-desc = 请联系网络管理员。
+
+; kMsgEapAMErrTlsClientAlert_70
+[1352]
+Short-desc = 客户端发出警示: 协议版本。
+Long-desc = 请联系网络管理员。
+
+; kMsgEapAMErrTlsClientAlert_71
+[1353]
+Short-desc = 客户端发出警示: 安全性不足。
+Long-desc = 请联系网络管理员。
+
+; kMsgEapAMErrTlsClientAlert_80
+[1354]
+Short-desc = 客户端发出警示: 内部错误。
+Long-desc = 请重新尝试此操作。如果问题仍然存在，请联系网络管理员。
+
+; kMsgEapAMErrTlsClientAlert_90
+[1355]
+Short-desc = 客户端发出警示: 用户被取消。
+Long-desc = 请重新尝试此操作。如果问题仍然存在，请联系网络管理员。
+
+; kMsgEapAMErrTlsClientAlert_100
+[1356]
+Short-desc = 客户端发出警示: 没有重新协商。
+Long-desc = 请重新尝试此操作。如果问题仍然存在，请联系网络管理员。
+
+
+
+; kMsgEapAMErrTlsServerAlert_0
+[1357]
+Short-desc = 服务器发出警示: 关闭通知。
+Long-desc = 请重新尝试此操作。如果问题仍然存在，请联系网络管理员。
+
+; kMsgEapAMErrTlsServerAlert_10
+[1358]
+Short-desc = 服务器发出警示: 意外消息。
+Long-desc = 请重新尝试此操作。如果问题仍然存在，请联系网络管理员。
+
+; kMsgEapAMErrTlsServerAlert_20
+[1359]
+Short-desc = 服务器发出警示: 记录 mac 错误。
+Long-desc = 请重新尝试此操作。如果问题仍然存在，请联系网络管理员。
+
+; kMsgEapAMErrTlsServerAlert_21
+[1360]
+Short-desc = 服务器发出警示: 解密失败。
+Long-desc = 请重新尝试此操作。如果问题仍然存在，请联系网络管理员。
+
+; kMsgEapAMErrTlsServerAlert_22
+[1361]
+Short-desc = 服务器发出警示: 记录溢出。
+Long-desc = 请重新尝试此操作。如果问题仍然存在，请联系网络管理员。
+
+; kMsgEapAMErrTlsServerAlert_30
+[1362]
+Short-desc = 服务器发出警示: 解压失败。
+Long-desc = 请重新尝试此操作。如果问题仍然存在，请联系网络管理员。
+
+; kMsgEapAMErrTlsServerAlert_40
+[1363]
+Short-desc = 服务器发出警示: 握手失败。
+Long-desc = 请重新尝试此操作。如果问题仍然存在，请联系网络管理员。
+
+; kMsgEapAMErrTlsServerAlert_42
+[1364]
+Short-desc = 服务器发出警示: 证书错误。
+Long-desc = 请使用有效的客户端证书重新尝试此操作。如果问题仍然存在，请联系网络管理员。
+
+; kMsgEapAMErrTlsServerAlert_43
+[1365]
+Short-desc = 服务器发出警示: 不支持的证书。
+Long-desc = 请使用有效的客户端证书重新尝试此操作。如果问题仍然存在，请联系网络管理员。
+
+; kMsgEapAMErrTlsServerAlert_44
+[1366]
+Short-desc = 服务器发出警示: 证书被撤消。
+Long-desc = 请使用有效的客户端证书重新尝试此操作。如果问题仍然存在，请联系网络管理员。
+
+; kMsgEapAMErrTlsServerAlert_45
+[1367]
+Short-desc = 服务器发出警示: 证书已过期。
+Long-desc = 请使用有效的客户端证书重新尝试此操作。如果问题仍然存在，请联系网络管理员。
+
+; kMsgEapAMErrTlsServerAlert_46
+[1368]
+Short-desc = 服务器发出警示: 证书未知。
+Long-desc = 请使用有效的客户端证书重新尝试此操作。如果问题仍然存在，请联系网络管理员。
+
+; kMsgEapAMErrTlsServerAlert_47
+[1369]
+Short-desc = 服务器发出警示: 非法参数。
+Long-desc = 请重新尝试此操作。如果问题仍然存在，请联系网络管理员。
+
+; kMsgEapAMErrTlsServerAlert_48
+[1370]
+Short-desc = 服务器发出警示: 未知的证书授权机构。
+Long-desc = 请使用 CA 已得到服务器信任的有效客户端证书重新尝试此操作。如果问题仍然存在，请联系网络管理员。
+
+; kMsgEapAMErrTlsServerAlert_49
+[1371]
+Short-desc = 服务器发出警示: 访问被拒绝。
+Long-desc = 请重新尝试此操作。如果问题仍然存在，请联系网络管理员。
+
+; kMsgEapAMErrTlsServerAlert_50
+[1372]
+Short-desc = 服务器发出警示: 解码错误。
+Long-desc = 请重新尝试此操作。如果问题仍然存在，请联系网络管理员。
+
+; kMsgEapAMErrTlsServerAlert_51
+[1373]
+Short-desc = 服务器发出警示: 解密错误。
+Long-desc = 请重新尝试此操作。如果问题仍然存在，请联系网络管理员。
+
+; kMsgEapAMErrTlsServerAlert_60
+[1374]
+Short-desc = 服务器发出警示: 导出限制。
+Long-desc = 请联系网络管理员。
+
+; kMsgEapAMErrTlsServerAlert_70
+[1375]
+Short-desc = 服务器发出警示: 协议版本。
+Long-desc = 请联系网络管理员。
+
+; kMsgEapAMErrTlsServerAlert_71
+[1376]
+Short-desc = 服务器发出警示: 安全性不足。
+Long-desc = 请联系网络管理员。
+
+; kMsgEapAMErrTlsServerAlert_80
+[1377]
+Short-desc = 服务器发出警示: 内部错误。
+Long-desc = 请重新尝试此操作。如果问题仍然存在，请联系网络管理员。
+
+; kMsgEapAMErrTlsServerAlert_90
+[1378]
+Short-desc = 服务器发出警示: 用户被取消。
+Long-desc = 请重新尝试此操作。如果问题仍然存在，请联系网络管理员。
+
+; kMsgEapAMErrTlsServerAlert_100
+[1379]
+Short-desc = 服务器发出警示: 没有重新协商。
+Long-desc = 请联系网络管理员。
+
+; kMsgEapAMErrJuacTooManyEESUsers
+[1380]
+Short-desc = EES 的用户太多。
+Long-desc = 登录系统的并发增强型端点防御（恶意程序保护）用户数已超出系统限制。可以在数分钟后重试，或与网络管理员联系。 
+
+; kMsgEapAMErrJuacTooManyPRMUsers
+[1381]
+Short-desc = Shavlik 修复的用户过多。
+Long-desc = 同时登录系统的 Shavlik 修复用户数目已超出系统限制。可以在数分钟后重试，或与网络管理员联系。 
+
+; kMsgEapAMErrPromptTimeout
+[1382]
+Short-desc = 用户输入超时。
+Long-desc = 等待用户输入时 Pulse 超时。<br><br>Pulse 将很快再次尝试连接。请按“重试”立即开始。
+
+; kMsgEapAMErrPromptNotAllowed
+[1383]
+Short-desc = 不允许使用用户提示。
+Long-desc = 此时不允许使用 Pulse UI 提示。这可能是计算机连接的配置出现错误。请联系网络管理员。
+
+; kMsgEapAMErrJuacFipsRequired
+[1384]
+Short-desc = 需要 FIPS 模式。
+Long-desc = 不允许进行此连接，因为服务器已指明仅允许来自 FIPS 模式下运行的 Junos Pulse 客户端所进行的连接。请联系您的管理员获取更多信息。
+
+; kMsgEapAMErrJuacFipsRequiredNotSupportedOnPlatform
+[1385]
+Short-desc = 需要 FIPS 模式。
+Long-desc = 不允许进行此连接，因为服务器已指明仅允许来自 FIPS 模式下运行的 Junos Pulse 客户端所进行的连接。此操作系统上，FIPS 模式当前在 Pulse 中不可用。
+
+; kMsgEapAMErrJuacPasswordExpiredNoPMI
+[1386]
+Short-desc = 您必须更改密码。
+Long-desc = 您的密码已过期，更改密码后方可通过 Pulse 访问。请使用其他方式更改密码，或者联系管理员以寻求帮助。

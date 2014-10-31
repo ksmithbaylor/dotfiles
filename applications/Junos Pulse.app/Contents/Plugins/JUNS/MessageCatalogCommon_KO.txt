@@ -1,0 +1,92 @@
+﻿; JUNS catalogUtil requires catalog message files to be saved with UTF-8 encoding, which put 3 bytes {0xEF, 0xBB, 0xBF} at the file beginning called Byte Order Mark (BOM) for UTF-8 files . For modifications in this files, please use Text Editors which persist these BOM bytes (like Notepad.exe, Visual Studio IDE, etc).
+
+
+;kMsgCommonErrOk
+[0]
+Short-desc = 성공.
+Long-desc = 작업이 성공하였습니다.
+
+;kMsgCommonErrFailure
+[1]
+Short-desc = 일반 오류.
+Long-desc = 작업을 다시 시도해 주십시오. 문제가 지속되면 네트워크 관리자에게 문의하십시오.
+
+;kMsgCommonErrConnection
+[2]
+Short-desc = 내부 IPC 연결 실패
+Long-desc = 작업을 다시 시도해 주시거나 기기를 다시 시작해 주십시오. 문제가 지속되면 네트워크 관리자에게 문의하십시오.
+
+;kMsgCommonErrUnimplemented
+[3]
+Short-desc = 명령 또는 기능을 실행할 수 없음.
+Long-desc = 네트워크 관리자에게 문의하십시오.
+
+;kMsgCommonErrParameter
+[4]
+Short-desc = 매개변수가 유효하지 않음.
+Long-desc = 작업을 다시 시도해 주십시오. 문제가 지속되면 네트워크 관리자에게 문의하십시오.
+
+;kMsgCommonErrInvalidHandle
+[5]
+Short-desc = 유효하지 않은 핸들.
+Long-desc = 작업을 다시 시도해 주십시오. 문제가 지속되면 시스템을 다시 시작해 주십시오.
+
+;kMsgCommonErrBufferSize
+[6]
+Short-desc = 제공되는 버퍼가 너무 작음.
+Long-desc = 작업을 다시 시도해 주십시오. 문제가 지속되면 시스템을 다시 시작해 주십시오.
+
+;kMsgCommonErrOutOfMemory
+[7]
+Short-desc = 메모리 부족.
+Long-desc = 작업을 다시 시도해 주십시오. 문제가 지속되면, 필요 없는 응용 프로그램을 닫아 메모리 공간을 사용 가능하도록 해 주십시오.  그래도 문제가 지속된다면, 시스템을 다시 시작해 주십시오.
+
+;kMsgCommonErrNotStarted
+[8]
+Short-desc = IO 하위시스템이 시작되지 않음.
+Long-desc = 작업을 다시 시도해 주십시오. 문제가 지속되면 시스템을 다시 시작해 주십시오.
+
+;kMsgCommonErrUnknownCommand
+[9]
+Short-desc = 서비스가 알 수 없는 명령을 받음.
+Long-desc = 작업을 다시 시도해 주십시오. 문제가 지속되면 시스템을 다시 시작해 주십시오.
+
+;kMsgCommonErrIoSystem
+[10]
+Short-desc = IO 하위 시스템이 일반적으로 오작동됨.
+Long-desc = 작업을 다시 시도해 주십시오. 문제가 지속되면 시스템을 다시 시작해 주십시오.
+
+;kMsgCommonErrNotFound
+[11]
+Short-desc = 요청 항목이 발견되지 않음.
+Long-desc = 작업을 다시 시도해 주십시오. 문제가 지속되면 네트워크 관리자에게 문의하십시오.
+
+;kMsgCommonErrAlreadyExists
+[12]
+Short-desc = 요청 엔터티가 이미 존재함.
+Long-desc = 작업을 다시 시도해 주십시오. 문제가 지속되면 네트워크 관리자에게 문의하십시오.
+
+;kMsgCommonErrAlreadyStarted
+[13]
+Short-desc = 요청 엔터티가 이미 시작됨.
+Long-desc = 작업을 다시 시도해 주십시오. 문제가 지속되면 네트워크 관리자에게 문의하십시오.
+
+;kMsgCommonErrInvalidService
+[14]
+Short-desc = 엔터티가 유효하지 않는 코드 서명 시그너처를 가짐.
+Long-desc = 네트워크 관리자에게 문의하십시오.
+
+;kMsgCommonErrCancelled
+[15]
+Short-desc = 작업 취소됨.
+Long-desc = 작업을 다시 시도해 주십시오. 문제가 지속되면 네트워크 관리자에게 문의하십시오.
+
+;kMsgCommonErrShutdown
+[16]
+Short-desc = 연결이 종료되었습니다.
+Long-desc = 서버가 연결을 다시 설정합니다. 재연결하려면 다시 로그인해야 합니다.
+
+;kMsgCommonPassAnySuppTypeArg, used for passing thru any supported data type argument
+[999]
+Short-desc = {0}
+Long-desc = {0}

@@ -1,0 +1,26 @@
+﻿; JUNS catalogUtil requires catalog message files to be saved with UTF-8 encoding, which put 3 bytes {0xEF, 0xBB, 0xBF} at the file beginning called Byte Order Mark (BOM) for UTF-8 files . For modifications in this files, please use Text Editors which persist these BOM bytes (like Notepad.exe, Visual Studio IDE, etc).
+
+;kMsgConnMgrErrConnectionMethodFailure
+[1800]
+Short-desc = 接続方法の呼び出しに失敗しました。 
+Long-desc = 操作をもう一度試みてください。問題が解消されない場合は、アプリケーションを再インストールするか、またはネットワーク管理者に連絡してください。
+
+;kMsgConnMgrErrConnectionDoesNotExist
+[1801]
+Short-desc = 接続が存在しません。
+Long-desc = 存在しない接続を接続しようとしました。この接続を削除した後にもう一度接続を試みてください。
+
+;kMsgConnMgrErrConnectionDoesAlreadyExists
+[1802]
+Short-desc = 接続はすでに存在します。
+Long-desc = すでに存在する接続に接続しようとしました。この接続を切断した後にもう一度接続してください。
+
+;kMsgConnMgrErrConnMethodTerminated
+[1803]
+Short-desc = 接続方法が予期せずに中断しました。
+Long-desc = 接続方法 {0} が {1} エラーによって予期せずに中断しました。アプリケーションを再起動してください。
+
+;kMsgConnMgrErrConnMethodTooMany
+[1804]
+Short-desc = この接続方法では同時接続ができません。
+Long-desc = そのタイプの接続はすでに接続されており、同時接続が許されない接続方法であるため、接続に失敗しました。

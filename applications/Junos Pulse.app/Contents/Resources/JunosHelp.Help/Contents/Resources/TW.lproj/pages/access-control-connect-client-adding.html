@@ -1,0 +1,34 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<title>新增連線</title><meta http-equiv="Content-Type" content_SDL="text/html; charset=UTF-8"/> <link href="../sty/standard.css" rel="stylesheet" type="text/css" /> <meta name="keywords" content="連線, 新增連線"/> <meta name="description" content="說明如何使用 Pulse 介面來建立特定網路的安全連線。" />
+</head>
+<body style="width:95%;>
+<div id="content"><h1 class="Head1Split">新增連線</h1>
+<p class="Para1">Junos Pulse 中的每個連線都代表一個受保護的網路。 一般而言，您的網路管理員會為您定義連線，且可能會停用 Add a Connection [新增連線] 功能。 如果您需要建立新連線，您的網路管理員會告知您必須使用的設定。 </p><p class="Para1">若要新增連線：</p>
+<ol type="1">
+  <li class="li">在 Connections [連線] 窗格上，按一下 <b>Add a Connection</b> [新增連線] 按鈕： 
+    <p class="Para1"><img src="../../../shrd/add.png"></img> </p>
+    <p class="Para1">Add Connection [新增連線] 對話方塊隨即開啟。</p>
+  </li>
+    <li class="li">針對 Type [類型]，您的網路管理員通常會告知您應選取的選項。 請選擇下列其中一項：</li>
+  <ul>
+ 	<li class="li2"><strong>SSL VPN or UAC</strong>—如果您是連線至 Junos Pulse Secure Access Service 或 Junos Pulse Access Control   Service，請使用此網路類型。</li>
+	<li class="li2"><strong>SRX</strong>—如果您是連線至 Juniper Networks SRX 系列裝置，請使用此網路類型。</code></li>
+      
+  </ul>
+  <li class="li">針對 Name [名稱]，請為此連線指定一個說明性的名稱。 您指定的名稱會顯示在 Pulse 的 Connections [連線] 窗格中。</li>
+  <li class="li">針對 Server URL [伺服器 URL]，請指定您要連線的目標網路。 您可以使用下列其中任一種格式輸入伺服器 URL：
+    <ul>
+      <li class="li2">IP 位址，例如 <code>10.204.71.86</code></li>
+      <li class="li2">DNS 名稱，例如 <code>server.mycompany.net</code>。</li>
+    </ul>
+  </li>
+  <li class="li">按一下 <b>Add</b> [新增]，儲存您的新連線並關閉對話方塊。 按一下 <b>Connect</b> [連線]，儲存您的新連線並初始化與網路的連線。</li>
+</ol>
+<h4 class="Head4">相關主題</h4>
+<ul><li class="li"><a href="access-control-connect-client-ui.html">Junos Pulse 介面</a></li>
+<li class="li"><a href="access-control-connect-client-connecting.html">連線至網路</a></li></ul></div>
+
+</body></html>

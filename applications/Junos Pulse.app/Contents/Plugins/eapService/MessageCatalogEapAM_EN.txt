@@ -1,0 +1,439 @@
+﻿; JUNS catalogUtil requires catalog message files to be saved with UTF-8 encoding, which put 3 bytes {0xEF, 0xBB, 0xBF} at the file beginning called Byte Order Mark (BOM) for UTF-8 files . For modifications in this files, please use Text Editors which persist these BOM bytes (like Notepad.exe, Visual Studio IDE, etc).
+
+; kMsgEapAMErrGeneralFailure
+[1300]
+Short-desc = General failure.
+Long-desc = Try the operation again. If the problem persists, contact your network administrator.
+
+; kMsgEapAMErrTimeout
+[1301]
+Short-desc = Timeout.
+Long-desc = The operation exceeded the time limit. Try the operation again.
+
+; kMsgEapAMErrIncomplete
+[1302]
+Short-desc = Authentication not completed.
+Long-desc = Try the operation again. If the problem persists, contact your network administrator.
+
+; kMsgEapAMErrParseFailure
+[1303]
+Short-desc = Error in format of received messages.
+Long-desc = Try the operation again. If the problem persists, contact your network administrator.
+
+; kMsgEapAMErrNoCredentials
+[1304]
+Short-desc = Client credentials were not available.
+Long-desc = Try the operation again. If the problem persists, contact your network administrator.
+
+; kMsgEapAMErrInternalFailure
+[1305]
+Short-desc = Unknown error.
+Long-desc = Try the operation again. If the problem persists, contact your network administrator.
+
+; kMsgEapAMErrProtocolFailure
+[1306]
+Short-desc = Protocol error in received messages.
+Long-desc = Try the operation again. If the problem persists, contact your network administrator.
+
+; kMsgEapAMErrClientReject
+[1307]
+Short-desc = Server not authenticated.
+Long-desc = Try the operation again. If the problem persists, contact your network administrator.
+
+; kMsgEapAMErrServerReject
+[1308]
+Short-desc = Authentication rejected by server.
+Long-desc = Try the operation again. If the problem persists, contact your network administrator.
+
+; kMsgEapAMErrAuthenticationFailure
+[1309]
+Short-desc = Authentication failure.
+Long-desc = Try the operation again. If the problem persists, contact your network administrator.
+
+; kMsgEapAMErrTlsHandshakeFailrure
+[1310]
+Short-desc = TLS handshake failure.
+Long-desc = Try the operation again. If the problem persists, contact your network administrator.
+
+; kMsgEapAMErrNoUserCertificate
+[1311]
+Short-desc = User certificate not available
+Long-desc = Try the operation again. If the problem persists, contact your network administrator.
+
+; kMsgEapAMErrNoAgreedMethod
+[1312]
+Short-desc = Client and server could not agree on authentication method.
+Long-desc = Try the operation again. If the problem persists, contact your network administrator.
+
+; kMsgEapAMErrErrorChangingPassword
+[1313]
+Short-desc = Error changing password.
+Long-desc = The authentication server might not be currently available. Try the operation at a later time. If the problem persists, contact your network administrator.
+
+; kMsgEapAMErrRestrictedLogonHours
+[1314]
+Short-desc = Restricted logon hours.
+Long-desc = Your logon credentials are valid only during certain hours.
+
+; kMsgEapAMErrNoPermission
+[1315]
+Short-desc = No permission.
+Long-desc = You do not have permission to perform the operation.
+
+; kMsgEapAMErrAcctDisabled
+[1316]
+Short-desc = Account disabled
+Long-desc = Your account has been disabled. Contact your network administrator.
+
+; kMsgEapAMErrPasswordExpired
+[1317]
+Short-desc = Password expired.
+Long-desc = You must change your password before you can login.
+
+; kMsgEapAMErrUnknown
+[1318]
+Short-desc = Unknown error.
+Long-desc = Try the operation again. If the problem persists, contact your network administrator.
+
+; kMsgEapAMErrJuacAuthFailed
+[1319]
+Short-desc = Authentication rejected by server.
+Long-desc = Try the operation again. If the problem persists, contact your network administrator.
+
+; kMsgEapAMErrJuacInvalidRealm
+[1320]
+Short-desc = Invalid Realm.
+Long-desc = The realm is no longer available. If you use saved credentials to log in to the system, use the Forget Saved Settings feature and then try logging in again.
+
+; kMsgEapAMErrJuacVersionUnsupported
+[1321]
+Short-desc = Version unsupported.
+Long-desc = Try the operation again. If the problem persists, contact your network administrator.
+
+; kMsgEapAMErrJuacMaxSessions
+[1322]
+Short-desc = Too many users for this realm.
+Long-desc = The selected realm is already serving the maximum number of users. 
+
+; kMsgEapAMErrJuacAdminsOnly
+[1323]
+Short-desc = Only administrators can sign on.
+Long-desc = The realm is currently restricted to administrator access. 
+
+; kMsgEapAMErrJuacTooMany
+[1324]
+Short-desc = Too many concurrent users.
+Long-desc = Try the operation again at a later time. 
+
+; kMsgEapAMErrJuacIpDenied
+[1325]
+Short-desc = Logins disabled from this IP address.
+Long-desc = The server has associated your login information with a specific IP address and the IP address for this login attempt does not match configured settings.. 
+
+; kMsgEapAMErrJuacOtherFailure
+[1326]
+Short-desc = Other JUAC failure.
+Long-desc = Try the operation again. If the problem persists, contact your network administrator.
+
+; kMsgEapAMErrJuacAccountDisabled
+[1327]
+Short-desc = Account has been disabled.
+Long-desc = Contact your network administrator.
+
+; kMsgEapAMErrJuacAccountExired
+[1328]
+Short-desc = Account has expired.
+Long-desc = Contact your network administrator.
+
+; kMsgEapAMErrJuacNoRoles
+[1329]
+Short-desc = You are not allowed to sign in.
+Long-desc = Contact your network administrator.
+
+; kMsgEapAMErrJuacIpBlocked
+[1330]
+Short-desc = Logins temporarily disabled from this computer
+Long-desc = Try the operation again at a later time.
+
+; kMsgEapAMErrJuacUnknown
+[1331]
+Short-desc = Authentication rejected by server.
+Long-desc = Try the operation again. If the problem persists, contact your network administrator.
+
+; kMsgEapAMErrJuacWrongCertificate
+[1332]
+Short-desc = Missing or invalid client certificate
+Long-desc = Contact your network administrator.
+
+; kMsgEapAMErrJuacAccountLockedOut
+[1333]
+Short-desc = Account locked out
+Long-desc = Contact your network administrator.
+
+
+; kMsgEapAMErrTlsClientAlert_0
+[1334]
+Short-desc = Client issued alert close notify.
+Long-desc = Try the operation again. If the problem persists, contact your network administrator.
+
+; kMsgEapAMErrTlsClientAlert_10
+[1335]
+Short-desc = Client issued alert unexpected message.
+Long-desc = Try the operation again. If the problem persists, contact your network administrator.
+
+; kMsgEapAMErrTlsClientAlert_20
+[1336]
+Short-desc = Client issued alert bad record mac.
+Long-desc = Try the operation again. If the problem persists, contact your network administrator.
+
+; kMsgEapAMErrTlsClientAlert_21
+[1337]
+Short-desc = Client issued alert decryption failed.
+Long-desc = Try the operation again. If the problem persists, contact your network administrator.
+
+; kMsgEapAMErrTlsClientAlert_22
+[1338]
+Short-desc = Client issued alert record overflow.
+Long-desc = Try the operation again. If the problem persists, contact your network administrator.
+
+; kMsgEapAMErrTlsClientAlert_30
+[1339]
+Short-desc = Client issued alert decompression failure.
+Long-desc = Try the operation again. If the problem persists, contact your network administrator.
+
+; kMsgEapAMErrTlsClientAlert_40
+[1340]
+Short-desc = Client issued alert handshake failure.
+Long-desc = Try the operation again. If the problem persists, contact your network administrator.
+
+; kMsgEapAMErrTlsClientAlert_42
+[1341]
+Short-desc = Client issued alert bad certificate.
+Long-desc = Contact your network administrator.
+
+; kMsgEapAMErrTlsClientAlert_43
+[1342]
+Short-desc = Client issued alert unsupported certificate.
+Long-desc = Contact your network administrator.
+
+; kMsgEapAMErrTlsClientAlert_44
+[1343]
+Short-desc = Client issued alert certificate revoked.
+Long-desc = Contact your network administrator.
+
+; kMsgEapAMErrTlsClientAlert_45
+[1344]
+Short-desc = Client issued alert certificate expired.
+Long-desc = Contact your network administrator.
+
+; kMsgEapAMErrTlsClientAlert_46
+[1345]
+Short-desc = Client issued alert certificate unknown.
+Long-desc = Contact your network administrator.
+
+; kMsgEapAMErrTlsClientAlert_47
+[1346]
+Short-desc = Client issued alert illegal parameter.
+Long-desc = Try the operation again. If the problem persists, contact your network administrator.
+
+; kMsgEapAMErrTlsClientAlert_48
+[1347]
+Short-desc = Client issued alert unknown certificate authority.
+Long-desc = Contact your network administrator.
+
+; kMsgEapAMErrTlsClientAlert_49
+[1348]
+Short-desc = Client issued alert access denied.
+Long-desc = Try the operation again. If the problem persists, contact your network administrator.
+
+; kMsgEapAMErrTlsClientAlert_50
+[1349]
+Short-desc = Client issued alert decode error.
+Long-desc = Try the operation again. If the problem persists, contact your network administrator.
+
+; kMsgEapAMErrTlsClientAlert_51
+[1350]
+Short-desc = Client issued alert decrypt error.
+Long-desc = Try the operation again. If the problem persists, contact your network administrator.
+
+; kMsgEapAMErrTlsClientAlert_60
+[1351]
+Short-desc = Client issued alert export restriction.
+Long-desc = Contact your network administrator.
+
+; kMsgEapAMErrTlsClientAlert_70
+[1352]
+Short-desc = Client issued alert protocol version.
+Long-desc = Contact your network administrator.
+
+; kMsgEapAMErrTlsClientAlert_71
+[1353]
+Short-desc = Client issued alert insufficient security.
+Long-desc = Contact your network administrator.
+
+; kMsgEapAMErrTlsClientAlert_80
+[1354]
+Short-desc = Client issued alert internal error.
+Long-desc = Try the operation again. If the problem persists, contact your network administrator.
+
+; kMsgEapAMErrTlsClientAlert_90
+[1355]
+Short-desc = Client issued alert user canceled.
+Long-desc = Try the operation again. If the problem persists, contact your network administrator.
+
+; kMsgEapAMErrTlsClientAlert_100
+[1356]
+Short-desc = Client issued alert no renegotiation.
+Long-desc = Try the operation again. If the problem persists, contact your network administrator.
+
+
+
+; kMsgEapAMErrTlsServerAlert_0
+[1357]
+Short-desc = Server issued alert close notify.
+Long-desc = Try the operation again. If the problem persists, contact your network administrator.
+
+; kMsgEapAMErrTlsServerAlert_10
+[1358]
+Short-desc = Server issued alert unexpected message.
+Long-desc = Try the operation again. If the problem persists, contact your network administrator.
+
+; kMsgEapAMErrTlsServerAlert_20
+[1359]
+Short-desc = Server issued alert bad record mac.
+Long-desc = Try the operation again. If the problem persists, contact your network administrator.
+
+; kMsgEapAMErrTlsServerAlert_21
+[1360]
+Short-desc = Server issued alert decryption failed.
+Long-desc = Try the operation again. If the problem persists, contact your network administrator.
+
+; kMsgEapAMErrTlsServerAlert_22
+[1361]
+Short-desc = Server issued alert record overflow.
+Long-desc = Try the operation again. If the problem persists, contact your network administrator.
+
+; kMsgEapAMErrTlsServerAlert_30
+[1362]
+Short-desc = Server issued alert decompression failure.
+Long-desc = Try the operation again. If the problem persists, contact your network administrator.
+
+; kMsgEapAMErrTlsServerAlert_40
+[1363]
+Short-desc = Server issued alert handshake failure.
+Long-desc = Try the operation again. If the problem persists, contact your network administrator.
+
+; kMsgEapAMErrTlsServerAlert_42
+[1364]
+Short-desc = Server issued alert bad certificate.
+Long-desc = Try the operation again with a valid client certificate. If the problem persists, contact your network administrator.
+
+; kMsgEapAMErrTlsServerAlert_43
+[1365]
+Short-desc = Server issued alert unsupported certificate.
+Long-desc = Try the operation again with a valid client certificate. If the problem persists, contact your network administrator.
+
+; kMsgEapAMErrTlsServerAlert_44
+[1366]
+Short-desc = Server issued alert certificate revoked.
+Long-desc = Try the operation again with a valid client certificate. If the problem persists, contact your network administrator.
+
+; kMsgEapAMErrTlsServerAlert_45
+[1367]
+Short-desc = Server issued alert certificate expired.
+Long-desc = Try the operation again with a valid client certificate. If the problem persists, contact your network administrator.
+
+; kMsgEapAMErrTlsServerAlert_46
+[1368]
+Short-desc = Server issued alert certificate unknown.
+Long-desc = Try the operation again with a valid client certificate. If the problem persists, contact your network administrator.
+
+; kMsgEapAMErrTlsServerAlert_47
+[1369]
+Short-desc = Server issued alert illegal parameter.
+Long-desc = Try the operation again. If the problem persists, contact your network administrator.
+
+; kMsgEapAMErrTlsServerAlert_48
+[1370]
+Short-desc = Server issued alert unknown certificate authority.
+Long-desc = Try the operation again with a valid client certificate whose CA is trusted by the server. If the problem persists, contact your network administrator.
+
+; kMsgEapAMErrTlsServerAlert_49
+[1371]
+Short-desc = Server issued alert access denied.
+Long-desc = Try the operation again. If the problem persists, contact your network administrator.
+
+; kMsgEapAMErrTlsServerAlert_50
+[1372]
+Short-desc = Server issued alert decode error.
+Long-desc = Try the operation again. If the problem persists, contact your network administrator.
+
+; kMsgEapAMErrTlsServerAlert_51
+[1373]
+Short-desc = Server issued alert decrypt error.
+Long-desc = Try the operation again. If the problem persists, contact your network administrator.
+
+; kMsgEapAMErrTlsServerAlert_60
+[1374]
+Short-desc = Server issued alert export restriction.
+Long-desc = Contact your network administrator.
+
+; kMsgEapAMErrTlsServerAlert_70
+[1375]
+Short-desc = Server issued alert protocol version.
+Long-desc = Contact your network administrator.
+
+; kMsgEapAMErrTlsServerAlert_71
+[1376]
+Short-desc = Server issued alert insufficient security.
+Long-desc = Contact your network administrator.
+
+; kMsgEapAMErrTlsServerAlert_80
+[1377]
+Short-desc = Server issued alert internal error.
+Long-desc = Try the operation again. If the problem persists, contact your network administrator.
+
+; kMsgEapAMErrTlsServerAlert_90
+[1378]
+Short-desc = Server issued alert user canceled.
+Long-desc = Try the operation again. If the problem persists, contact your network administrator.
+
+; kMsgEapAMErrTlsServerAlert_100
+[1379]
+Short-desc = Server issued alert no renegotiation.
+Long-desc = Contact your network administrator.
+
+; kMsgEapAMErrJuacTooManyEESUsers
+[1380]
+Short-desc = Too many users for EES.
+Long-desc = The number of concurrent Enhanced Endpoint Defense (Malware Protection) users signed into the system has exceeded the system limit. You can try again in a few minutes, else contact your network administrator. 
+
+; kMsgEapAMErrJuacTooManyPRMUsers
+[1381]
+Short-desc = Too many users for Shavlik remediation.
+Long-desc = The number of concurrent Shavlik Remediation users signed into the system has exceeded the system limit. You can try again in a few minutes, else contact your network administrator. 
+
+; kMsgEapAMErrPromptTimeout
+[1382]
+Short-desc = User input timeout.
+Long-desc = Pulse timed out waiting for user input.<br><br>Pulse will attempt to connect again shortly.  Press Retry to start right away.
+
+; kMsgEapAMErrPromptNotAllowed
+[1383]
+Short-desc = User prompt not allowed.
+Long-desc = Pulse UI prompts are not allowed at this time. This may be a result of misconfiguration related to machine connection. Please contact your network administrator.
+
+; kMsgEapAMErrJuacFipsRequired
+[1384]
+Short-desc = FIPS mode required.
+Long-desc = You are not allowed to make this connection because the server has indicated that it will only allow connections from a Junos Pulse client running in FIPS mode. Please contact your administrator for more information.
+
+; kMsgEapAMErrJuacFipsRequiredNotSupportedOnPlatform
+[1385]
+Short-desc = FIPS mode required.
+Long-desc = You are not allowed to make this connection because the server has indicated that it will only allow connections from a Junos Pulse client running in FIPS mode. FIPS mode is not currently available in Pulse on this operating system.
+
+; kMsgEapAMErrJuacPasswordExpiredNoPMI
+[1386]
+Short-desc = You are required to change your password.
+Long-desc = Your password has expired and needs to be changed before you can gain access through Pulse. Please use alternate means to change your password, or contact your administrator for help.

@@ -1,0 +1,34 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<title>Conectar a una red</title> <meta http-equiv="Content-Type" content_SDL="text/html; charset=UTF-8"/> <meta name="keywords" content="conexión, certificado, territorio, rol, credenciales, sesiones simultáneas, corrección"/> <meta name="description" content="Describe cómo activar una conexión de Pulse existente." /> <link href="../sty/standard.css" rel="stylesheet" type="text/css" />
+</head>
+<body style="width:95%;><div id="content"><h1 class="Head1Split">Conectar a una red</h1>
+<p class="Para1">Debe tener al menos una conexión en la lista del Panel de conexiones para poder conectarse a una red. Los indicadores de la conexión que va a ver dependerán de su entorno de acceso a la red. </p><div style="margin: 15px 0 5px 0;width:100%;"><table border="1" cellpadding="5" cellspacing="0" width="95%" style="text-align: left;"><tr>
+      <td style="text-align: center;"><img src="../../../shrd/note.gif" width="20" height="20" /></td>
+      <td><p class="Para1"><b>Nota: 
+            </b> Para utilizar Junos Pulse con una red inalámbrica, debe configurar primero los ajustes de la red inalámbrica de su equipo a través de Preferencias del sistema.</p></td></tr></table></div><p class="Para1">Para usar una conexión definida para conectarse a una red:</p>
+  <ol type="1">
+    <li class="li">En la lista de conexiones, haga clic en <b>Conectar</b> en la conexión que desee establecer.</li>
+    <li class="li">Responda las solicitudes de información como nombre de usuario y contraseña, territorio, rol, etc. Las solicitudes que va a ver dependerán de la forma en la que el administrador de red haya configurado su entorno de acceso.</li>
+    <li class="li">Aparecerá un cuadro de diálogo con el estado de conexión. Si el intento de conexión se ha realizado correctamente, podrá hacer clic en <b>Cerrar</b> o esperar un momento hasta que el cuadro de diálogo se cierre automáticamente. <p class="Para1">Si hay un problema con el intento de conexión, un cuadro de diálogo de corrección va a mostrar información sobre lo que puede hacer para resolver el problema. También puede aparecer un cuadro de diálogo de corrección, que muestra el progreso de las medidas que ha tomado Junos Pulse de forma automática para solucionar el problema.
+</p></li>
+    
+  </ol>
+  <p class="Para1">Tras hacer clic en el botón <b>Conectar</b>, puede que necesite responder a las siguientes solicitudes:</p>
+  <ul>
+    <li class="li"><b>Certificado</b>: si Pulse necesita comunicarse con un servidor de certificados y el administrador de red ha configurado más de uno, se le pedirá que elija un servidor. Un certificado emitido por una autoridad de certificación verifica que el recurso de red al que se conecta es válido. Si el certificado procede de una fuente fiable, se acepta automáticamente y no verá la solicitud de certificado. Si hay un problema con el certificado, es posible que se le pregunte si desea aceptar el certificado y realizar la conexión.</li>
+    <li class="li"><b>Territorio</b>: un <i>territorio</i> define el recurso de red al que puede acceder. Si tiene acceso a más de un territorio, debe seleccionar uno.</li>
+    <li class="li"><b>Credenciales</b>: su nombre de usuario y contraseña o nombre de usuario y código token determinan su identidad para acceder al dispositivo. Puede que también se le pida un nombre de usuario y contraseña secundarios, así como un nombre de usuario y contraseña para un servidor proxy. Su entorno de autenticación puede solicitarle periódicamente que cambie su contraseña y su número PIN de token. </li>
+    <li class="li"><b>Rol</b>: un <i>rol</i> define los parámetros de la sesión (valores de tiempo de espera, el número de sesiones simultáneas permitido, etc.), los ajustes de personalización y las características de acceso activadas. El administrador de red puede permitirle escoger el rol que desee al conectarse. </li>
+    <li class="li"><b>Sesiones simultáneas</b>: si inicia sesión en el sistema más de una vez (por ejemplo, utiliza las mismas credenciales para iniciar sesión desde dos equipos diferentes), es posible que el sistema le solicite cerrar la sesión actual antes de comenzar una nueva.</li>
+    <li class="li"><b>Acciones de corrección</b>: puede que se le pida llevar a cabo acciones para que el equipo cumpla las directivas de seguridad. </li>
+  </ul>
+  <p class="Para1">En cada pantalla de inicio de sesión, puede aparecer la casilla de verificación Guardar ajustes. (El administrador puede desactivar esta función). Si activa la casilla de verificación, la próxima vez que inicie sesión no se le pedirá esa información. Si guarda los ajustes, puede usar la función Olvidar ajustes guardados para que se vuelva a solicitar la información de inicio de sesión. La función Guardar ajustes le permite guardar la siguiente información:</p><ul><li class="li">Aceptación del certificado</li><li class="li">Selección del certificado</li><li class="li">Territorio </li><li class="li">Nombre de usuario y contraseña</li><li class="li">Nombre de usuario/contraseña de proxy</li><li class="li">Nombre de usuario/contraseña secundarios</li><li class="li">Rol</li></ul>
+<p class="Para1">Los pasos que se realizan después de responder a todas las solicitudes de conexión dependen de las directivas de acceso que el administrador de red haya configurado y del tipo de dispositivo de acceso a red. El proceso de conexión puede incluir las siguientes tareas:</p>
+<ul>
+  <li class="li"><b>Actualizaciones de software</b>: Junos Pulse se puede actualizar automáticamente al establecer la conexión. El sistema podría recibir software Junos Pulse actualizado o podría recibir conexiones adicionales.</li>
+  <li class="li"><b>Host Checker:</b> Host Checker examina su punto final para determinar si cumple las directivas de seguridad de su organización. Por ejemplo, Host Checker puede verificar si tiene un software antivirus y firmas de virus actualizadas, el estado del cortafuegos personal y la presencia de malware y spyware. Estos ajustes los define el administrador de red. Si Host Checker encuentra un problema, puede mostrar un mensaje que describe los pasos que debe seguir para corregir el problema o iniciar operaciones de corrección automáticamente.</li>
+  
+</ul><h4 class="Head4">Temas relacionados</h4><ul><li class="li"><a href="access-control-connect-client-ui.html">Interfaz de Junos Pulse</a></li><li class="li"><a href="access-control-connect-client-solve-connection-issue.html">Solución de un problema de conexión de Junos Pulse</a></li><li class="li"><a href="access-control-connect-client-forget-credentials.html">Olvidar ajustes guardados</a></li></ul></div></body></html>

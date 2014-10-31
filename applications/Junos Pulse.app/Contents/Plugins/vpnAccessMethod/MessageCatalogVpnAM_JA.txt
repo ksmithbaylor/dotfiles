@@ -1,0 +1,220 @@
+﻿
+; JUNS catalogUtil requires catalog message files to be saved with UTF-8 encoding, which put 3 bytes {0xEF, 0xBB, 0xBF} at the file beginning called Byte Order Mark (BOM) for UTF-8 files . For modifications in this files, please use Text Editors which persist these BOM bytes (like Notepad.exe, Visual Studio IDE, etc).
+
+; kMsgVpnAMErrAlreadyInUse
+[1400]
+Short-desc = コンポーネント インスタンスはすでに使用中です。
+Long-desc = この VPN 接続はすでに開始されたか、または完全に終了されていません。
+
+; kMsgVpnAMErrMemoryAllocation
+[1401]
+Short-desc = メモリの割り当てに失敗しました。
+Long-desc = 十分な量のメモリを割り当てることに失敗しました。
+
+; kMsgVpnAMErrIpsecMgrFailed
+[1402]
+Short-desc = IPsecManager の初期化に失敗しました。
+Long-desc = Pulse は、すべての IPSec プロパティを維持している IPsecManager を初期化できませんでした。 
+
+;kMsgVpnAMErrConnStoreFailed
+[1403]
+Short-desc = 接続ストアのロードに失敗しました。
+Long-desc = Pulse は、すべての接続設定を保持している接続ストアをロードできませんでした。Pulse を再起動するか、またはコンピューターを再起動してから、もう一度試みてください。この状態が継続するときは、管理者に連絡してください。
+
+; kMsgVpnAMErrHttpAuthError 
+[1404]
+Short-desc = 未知の HTTP 応答コードです。
+Long-desc = サーバーは、認証要求に対して未知の応答を返しました。
+
+
+; kMsgVpnAMErrHttpAuthFailed = 
+[1405]
+Short-desc = 証明書情報が正しくありません。
+Long-desc = 認証証明書が正しくありません。ユーザー名とパスワードをチェックし、CAPS LOCK キーがオフになっていることを確認してください。
+
+; kMsgVpnAMErrHttpNoLicense
+[1406]
+Short-desc = ファイアウォールのライセンスが不足しています。
+Long-desc = ファイアウォールのユーザー数がライセンスの上限数を超えます。管理者に連絡してください。
+
+; kMsgVpnAMErrHttpNoConfig 
+[1407]
+Short-desc = 構成が利用できません。
+Long-desc = クライアント構成が利用できません。
+
+; kMsgVpnAMErrNoConnInfo = 
+[1408]
+Short-desc = ファイアウォールの接続情報を取得できません。
+Long-desc = 接続ストアからファイアウォールの接続設定を抽出できませんでした。
+
+; kMsgVpnAMErrAuthFailed = 
+[1409]
+Short-desc = 認証に失敗しました。
+Long-desc = 認証に失敗しました。
+        
+; kMsgVpnAMErrAuthSuccess = 
+[1410]
+Short-desc = 認証に成功しました。
+Long-desc = 認証に成功しました。
+
+; kMsgVpnAMErrCreateRouteFailed = 
+[1411]
+Short-desc = IPsec ルート エントリを作成できません。
+Long-desc = ファイアウォールが提供する IPsec パラメータを提供できませんでした。
+
+; kMsgVpnAMErrReadRouteFailed = 
+[1412]
+Short-desc = 接続ストアからのルート エントリの読み取りに失敗しました。
+Long-desc = 接続ストアから IPSec ルート設定パラメータを抽出できませんでした。
+
+; kMsgVpnAMErrAddRouteFailed = 
+[1413]
+Short-desc = ポリシーへのルート エントリの追加に失敗しました。
+Long-desc = IPSec ルート エントリを既存の IPSec ポリシーに追加できませんでした。
+
+; kMsgVpnAMErrDisconnect 
+[1414]
+Short-desc = 切断が進行中です。
+Long-desc =
+
+; kMsgVpnAMErrDisconnected = 
+[1415]
+Short-desc = 切断済みです。
+Long-desc =
+
+; kMsgVpnAMErrIpsecAuthFailed = 
+[1416]
+Short-desc = IPSec 認証に失敗しました。
+Long-desc = IPSec (IKE) 認証段階で、接続に失敗しました。
+
+;kMsgVpnAMErrIpsecConfigFailed = 
+[1417]
+Short-desc = IPSec 構成が失敗しました。
+Long-desc =
+
+; kMsgVpnAMErrConnectStarted = 1418,
+[1418]
+Short-desc = 接続の開始中。
+Long-desc = 
+       
+; kMsgVpnAMErrConnectPhase1NoProp = 
+[1419]
+Short-desc = IKE ネゴシエーションが失敗しました。
+Long-desc = クライアントとファイアウォールは、トンネル設定について一致できませんでした。
+
+;kMsgVpnAMErrConnectAuthChangedUser = 
+[1420]
+Short-desc = ユーザーはログイン用ユーザー名を変更しようとしました。
+Long-desc = ログイン操作の全過程で、同じユーザー名とパスワードを使用する必要があります。
+
+;kMsgVpnAMErrHttpOneConnPerPc =
+[1421]
+Short-desc = エンドポイントごとに 1 つの接続のみが許可されています。
+Long-desc = このユーザーは、すでにこのエンドポイントからの接続を確立しています。切断してから再試行してください。
+
+;kMsgVpnAMErrHttpInvalidResponse
+[1422]
+Short-desc = サーバーからの応答が無効です。
+Long-desc = サーバーは返信しましたが、送信されてきた応答が無効です。接続しているサーバーが JUNOS ファイアウォールであることを確認してください。このエラーが続く場合は、管理者に連絡してください。
+
+; kMsgVpnAMErrHttpErrBase
+; this message is unused; it's an offset base for the messages which succeed it
+;
+[1450]        
+Short-desc = 未知のエラーです。
+Long-desc = 未知のエラーです。
+
+; kMsgVpnAMErrHttpInitialization 
+[1451]
+Short-desc = Web サービスの初期化に失敗しました。
+Long-desc = WinHTTP の初期化中に Pulse 内部でエラーが発生しました。コンピュータを再起動してこの操作を再試行してください。問題が解消されない場合は、ネットワーク管理者に連絡してください。
+
+; kMsgVpnAMErrHttpStageConnect = 
+[1452]
+Short-desc = サーバーへの接続に失敗しました。
+Long-desc = サーバーとの接続を確立できませんでした。インターネットに接続できることを確認してください。
+
+; kMsgVpnAMErrHttpStageSendHeader = 
+[1453]
+Short-desc = 最初の HTTP 要求の送信に失敗しました。
+Long-desc =
+
+; kMsgVpnAMErrHttpStageGetResponse = 
+[1454]
+Short-desc = HTTP 応答の取得に失敗しました。
+Long-desc = ファイアウォールは、最初の HTTP 認証要求に応答しませんでした。
+
+; kMsgVpnAMErrHttpStageAuthSetup = 
+[1455]
+Short-desc = ファイアウォールは認証要求の開始に失敗しました。
+Long-desc =
+
+; kMsgVpnAMErrHttpStageSendAuthHeader = 
+[1456]
+Short-desc = ファイアウォールは認証要求の送信に失敗しました。
+Long-desc =
+
+; kMsgVpnAMErrHttpStageGetAuthResponse = 
+[1457]
+Short-desc = ファイアウォールは認証要求の応答に失敗しました。 
+Long-desc =
+
+; kMsgVpnAMErrHttpStageAuthentication = 
+[1458]
+Short-desc = 認証ネゴシエーションが失敗しました。
+Long-desc =
+
+; kMsgVpnAMErrHttpStageInputCancel = 
+[1459]
+Short-desc = ユーザーが認証をキャンセルしました。
+Long-desc = 認証プロセスはユーザーによってキャンセルされました。
+
+; kMsgVpnAMErrHttpStageInputTimeout = 
+[1460]
+Short-desc = ユーザー名またはパスワードの入力に失敗しました。
+Long-desc = 認証プロセスがプロンプトを待つ間にタイムアウトになりました。ユーザーまたはパスワード、またはその両方が制限時間内に入力されませんでした。
+
+; kMsgVpnAMErrHttpStageInputFailure = 
+[1461]
+Short-desc = ユーザーに対する入力要求に失敗しました。
+Long-desc = クライアントがユーザーに必要な情報の入力を催促することができませんでした。
+
+; kMsgVpnAMErrHttpStageWrongState = 
+[1462]
+Short-desc = クライアントの状態のため接続できません。
+Long-desc =
+
+; kMsgVpnAMErrHttpResponseFailure = 
+[1463]
+Short-desc = 未知の HTTP 応答コードです。 
+Long-desc = ファイアウォールは、予期せぬまたは未知の応答コードで認証に応答しました。
+
+; kMsgVpnAMErrHttpAuthFailure = 
+[1464]
+Short-desc = 証明書情報が正しくありません。
+Long-desc = ファイアウォールは供給された証明情報を拒否しました。
+
+; kMsgVpnAMErrHttpAuthLicense = 
+[1465]
+Short-desc = ファイアウォールのライセンスが不足しています。
+Long-desc = ファイアウォールのユーザー数がライセンス数を超えます。管理者に連絡してください。
+
+; kMsgVpnAMErrHttpAuthNoCfg = 
+[1466]
+Short-desc = 構成が利用できません。
+Long-desc = ファイアウォールは、認証されたユーザーに対するリモート構成がないことを報告しました。
+
+; kMsgVpnAMErrProcessScript = 
+[1467]
+Short-desc = ファイアウォールが提供した構成を処理できません。
+Long-desc = ファイアウォールは、クライアントが理解不能な構成データを提供しました。  
+
+; kMsgVpnAMErrHostNotFound
+[1468]
+Short-desc = ホスト名を解決できません。
+Long-desc = 提供されたファイアウォールの名前が既知のサーバーと一致しません。サーバー名のスペルが正しいことを確認してください。
+
+; kMsgVpnAMErrInvalidFipsConfiguration
+[1469]
+Short-desc = FIPS IKE/IPSec 設定パラメータが無効です。
+Long-desc = SRX によって送信された IKE/IPSec 設定が、FIPS モードのクライアントに対して有効ではありません。SRX 設定を修正するか、Pulse の FIPS モードを無効にしてください。

@@ -1,0 +1,101 @@
+﻿; JUNS catalogUtil requires catalog message files to be saved with UTF-8 encoding, which put 3 bytes {0xEF, 0xBB, 0xBF} at the file beginning called Byte Order Mark (BOM) for UTF-8 files . For modifications in this files, please use Text Editors which persist these BOM bytes (like Notepad.exe, Visual Studio IDE, etc).
+
+;kMsgTnccErrCksumGenerate
+[2000]
+Short-desc = No se puede generar la suma de comprobación.
+Long-desc = No se puede generar la suma de comprobación, {0}
+
+;kMsgTnccErrCksumMismatch
+[2001]
+Short-desc = La suma de comprobación no coincide.
+Long-desc = La suma de comprobación no coincide, {0}
+
+;kMsgTnccErrFileNotFound
+[2002]
+Short-desc = Archivo no encontrado.
+Long-desc = Archivo no encontrado: {0}
+
+;kMsgTnccErrFileNotVerified
+[2003]
+Short-desc = Archivo no verificado.
+Long-desc = Archivo no verificado: {0}
+
+;kMsgTnccErrParamNotFound
+[2004]
+Short-desc = Parámetro no encontrado.
+Long-desc = Parámetro no válido: no se encuentra {0}.
+
+;kMsgTnccErrParamEmpty
+[2005]
+Short-desc = Parámetro vacío.
+Long-desc = Parámetro no válido: {0} está vacío.
+
+;kMsgTnccErrParamTooLong
+[2006]
+Short-desc = Parámetro demasiado largo.
+Long-desc = Valor de parámetro no válido : {0} es mayor que la longitud de ruta máxima `{1}'
+
+;kMsgTnccErrGenericObjectNotFound
+[2007]
+Short-desc = No encontrado.
+Long-desc = No se encuentra {0}.
+
+;kMsgTnccErrGenericObjectFound
+[2008]
+Short-desc = Encontrado.
+Long-desc = Se ha encontrado {0}.
+
+;kMsgTnccErrFileTooOld
+[2009]
+Short-desc = El archivo es demasiado antiguo.
+Long-desc = {0} tiene {1} días. Valor esperado: menos de {2} días.
+
+;kMsgTnccErrCantGetFilename
+[2010]
+Short-desc = No se puede obtener la hora del archivo.
+Long-desc = No se puede obtener la hora del archivo: {0}
+
+;kMsgTnccErrNoPortInfo
+[2011]
+Short-desc = No se puede obtener la información del puerto local TCP/UDP.
+Long-desc = No se puede obtener la información del puerto local TCP/UDP.
+
+;kMsgTnccErrPortNotOpen
+[2012]
+Short-desc = El puerto no está abierto.
+Long-desc = El puerto {0} no está abierto.
+
+;kMsgTnccErrPortOpen
+[2013]
+Short-desc = El puerto está abierto.
+Long-desc = El puerto {0} está abierto.
+
+;kMsgTnccErrNoProcOrCksum
+[2014]
+Short-desc = El destino o la suma de comprobación no coinciden.
+Long-desc = {0} no encontrado o la suma de comprobación no coincide.
+
+;kMsgTnccErrProcOrCksum
+[2015]
+Short-desc = Se ha encontrado el destino y la suma de comprobación coincide.
+Long-desc = Se ha encontrado {0} y la suma de comprobación coincide.
+
+;kMsgTnccErrProcRemedSucc
+[2016]
+Short-desc = Proceso completado correctamente.
+Long-desc = El proceso {0} ha terminado correctamente.
+
+;kMsgTnccErrProcRemedFail
+[2017]
+Short-desc = Error al finalizar el proceso.
+Long-desc = Error al finalizar el proceso {0}.
+
+;kMsgTnccErrFileRemedSucc
+[2018]
+Short-desc = Se ha eliminado el archivo correctamente.
+Long-desc = Se ha eliminado correctamente el archivo {0}
+
+;kMsgTnccErrFileRemedFail
+[2019]
+Short-desc = Error al eliminar el archivo.
+Long-desc = Error al eliminar el archivo {0}

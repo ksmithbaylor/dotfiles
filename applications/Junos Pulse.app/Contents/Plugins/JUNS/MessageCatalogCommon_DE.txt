@@ -1,0 +1,92 @@
+﻿; JUNS catalogUtil requires catalog message files to be saved with UTF-8 encoding, which put 3 bytes {0xEF, 0xBB, 0xBF} at the file beginning called Byte Order Mark (BOM) for UTF-8 files . For modifications in this files, please use Text Editors which persist these BOM bytes (like Notepad.exe, Visual Studio IDE, etc).
+
+
+;kMsgCommonErrOk
+[0]
+Short-desc = Erfolg.
+Long-desc = Vorgang war erfolgreich.
+
+;kMsgCommonErrFailure
+[1]
+Short-desc = Allgemeiner Fehler.
+Long-desc = Versuchen Sie es noch einmal. Wenden Sie sich an den Netzwerkadministrator, wenn das Problem weiterhin besteht.
+
+;kMsgCommonErrConnection
+[2]
+Short-desc = Interne IPC-Verbindung wurde unterbrochen.
+Long-desc = Versuchen Sie es noch einmal, oder starten Sie den Computer neu. Wenden Sie sich an den Netzwerkadministrator, wenn das Problem weiterhin besteht.
+
+;kMsgCommonErrUnimplemented
+[3]
+Short-desc = Befehl oder Funktion ist nicht implementiert
+Long-desc = Wenden Sie sich an den Netzwerkadministrator.
+
+;kMsgCommonErrParameter
+[4]
+Short-desc = Der Parameter ist ungültig.
+Long-desc = Versuchen Sie es noch einmal. Wenden Sie sich an den Netzwerkadministrator, wenn das Problem weiterhin besteht.
+
+;kMsgCommonErrInvalidHandle
+[5]
+Short-desc = Handle ungültig.
+Long-desc = Versuchen Sie es noch einmal. Starten Sie das System neu, wenn das Problem weiterhin besteht.
+
+;kMsgCommonErrBufferSize
+[6]
+Short-desc = Der bereitgestellte Puffer ist zu klein.
+Long-desc = Versuchen Sie es noch einmal. Starten Sie das System neu, wenn das Problem weiterhin besteht.
+
+;kMsgCommonErrOutOfMemory
+[7]
+Short-desc = Nicht genügend Arbeitsspeicher
+Long-desc = Versuchen Sie es noch einmal. Tritt das Problem weiterhin auf, stellen Sie mehr Arbeitsspeicher bereit, oder schließen Sie nicht benötigte Anwendungen. Starten Sie das System neu, wenn das Problem weiterhin besteht.
+
+;kMsgCommonErrNotStarted
+[8]
+Short-desc = IO-Subsystem wurde nicht gestartet.
+Long-desc = Versuchen Sie es noch einmal. Starten Sie das System neu, wenn das Problem weiterhin besteht.
+
+;kMsgCommonErrUnknownCommand
+[9]
+Short-desc = Der Dienst erhielt einen unbekannten Befehl.
+Long-desc = Versuchen Sie es noch einmal. Starten Sie das System neu, wenn das Problem weiterhin besteht.
+
+;kMsgCommonErrIoSystem
+[10]
+Short-desc = Im IO-Subsystem ist ein allgemeiner Fehler aufgetreten.
+Long-desc = Versuchen Sie es noch einmal. Starten Sie das System neu, wenn das Problem weiterhin besteht.
+
+;kMsgCommonErrNotFound
+[11]
+Short-desc = Das angeforderte Objekt wurde nicht gefunden.
+Long-desc = Versuchen Sie es noch einmal. Wenden Sie sich an den Netzwerkadministrator, wenn das Problem weiterhin besteht.
+
+;kMsgCommonErrAlreadyExists
+[12]
+Short-desc = Die angeforderte Einheit ist bereits vorhanden.
+Long-desc = Versuchen Sie es noch einmal. Wenden Sie sich an den Netzwerkadministrator, wenn das Problem weiterhin besteht.
+
+;kMsgCommonErrAlreadyStarted
+[13]
+Short-desc = Die gewünschte Einheit wurde bereits gestartet.
+Long-desc = Versuchen Sie es noch einmal. Wenden Sie sich an den Netzwerkadministrator, wenn das Problem weiterhin besteht.
+
+;kMsgCommonErrInvalidService
+[14]
+Short-desc = Die Einheit besitzt eine ungültige Codesignatur.
+Long-desc = Wenden Sie sich an den Netzwerkadministrator.
+
+;kMsgCommonErrCancelled
+[15]
+Short-desc = Der Vorgang wurde abgebrochen.
+Long-desc = Versuchen Sie es noch einmal. Wenden Sie sich an den Netzwerkadministrator, wenn das Problem weiterhin besteht.
+
+;kMsgCommonErrShutdown
+[16]
+Short-desc = Die Verbindung wurde beendet.
+Long-desc = Die Verbindung wurde vom Server zurückgesetzt. Sie müssen sich anmelden, um die Verbindung wiederherzustellen.
+
+;kMsgCommonPassAnySuppTypeArg, used for passing thru any supported data type argument
+[999]
+Short-desc = {0}
+Long-desc = {0}

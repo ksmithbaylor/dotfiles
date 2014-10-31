@@ -1,0 +1,439 @@
+﻿; JUNS catalogUtil requires catalog message files to be saved with UTF-8 encoding, which put 3 bytes {0xEF, 0xBB, 0xBF} at the file beginning called Byte Order Mark (BOM) for UTF-8 files . For modifications in this files, please use Text Editors which persist these BOM bytes (like Notepad.exe, Visual Studio IDE, etc).
+
+; kMsgEapAMErrGeneralFailure
+[1300]
+Short-desc = Falla general.
+Long-desc = Intente realizar nuevamente la operación. Si el problema continúa, comuníquese con el administrador de la red.
+
+; kMsgEapAMErrTimeout
+[1301]
+Short-desc = Se agotó el tiempo de espera.
+Long-desc = La operación excedió el límite de tiempo. Intente realizar nuevamente la operación.
+
+; kMsgEapAMErrIncomplete
+[1302]
+Short-desc = Autenticación no finalizada.
+Long-desc = Intente realizar nuevamente la operación. Si el problema continúa, comuníquese con el administrador de la red.
+
+; kMsgEapAMErrParseFailure
+[1303]
+Short-desc = Error en el formato de los mensajes recibidos.
+Long-desc = Intente realizar nuevamente la operación. Si el problema continúa, comuníquese con el administrador de la red.
+
+; kMsgEapAMErrNoCredentials
+[1304]
+Short-desc = Las credenciales del cliente no estaban disponibles.
+Long-desc = Intente realizar nuevamente la operación. Si el problema continúa, comuníquese con el administrador de la red.
+
+; kMsgEapAMErrInternalFailure
+[1305]
+Short-desc = Error desconocido.
+Long-desc = Intente realizar nuevamente la operación. Si el problema continúa, comuníquese con el administrador de la red.
+
+; kMsgEapAMErrProtocolFailure
+[1306]
+Short-desc = Error de protocolo en los mensajes recibidos.
+Long-desc = Intente realizar nuevamente la operación. Si el problema continúa, comuníquese con el administrador de la red.
+
+; kMsgEapAMErrClientReject
+[1307]
+Short-desc = Servidor no autenticado.
+Long-desc = Intente realizar nuevamente la operación. Si el problema continúa, comuníquese con el administrador de la red.
+
+; kMsgEapAMErrServerReject
+[1308]
+Short-desc = El servidor rechazó la autenticación.
+Long-desc = Intente realizar nuevamente la operación. Si el problema continúa, comuníquese con el administrador de la red.
+
+; kMsgEapAMErrAuthenticationFailure
+[1309]
+Short-desc = Error de autenticación.
+Long-desc = Intente realizar nuevamente la operación. Si el problema continúa, comuníquese con el administrador de la red.
+
+; kMsgEapAMErrTlsHandshakeFailrure
+[1310]
+Short-desc = Fallo de establecimiento de una conexión TLS.
+Long-desc = Intente realizar nuevamente la operación. Si el problema continúa, comuníquese con el administrador de la red.
+
+; kMsgEapAMErrNoUserCertificate
+[1311]
+Short-desc = Certificado del cliente no disponible
+Long-desc = Intente realizar nuevamente la operación. Si el problema continúa, comuníquese con el administrador de la red.
+
+; kMsgEapAMErrNoAgreedMethod
+[1312]
+Short-desc = El cliente y el servidor no concuerdan en el método de autenticación.
+Long-desc = Intente realizar nuevamente la operación. Si el problema continúa, comuníquese con el administrador de la red.
+
+; kMsgEapAMErrErrorChangingPassword
+[1313]
+Short-desc = Error al cambiar la contraseña.
+Long-desc = El servidor de autenticación podría no estar disponible actualmente. Intente realizar la operación más adelante. Si el problema continúa, comuníquese con el administrador de la red.
+
+; kMsgEapAMErrRestrictedLogonHours
+[1314]
+Short-desc = Horas de inicio de sesión restringidas.
+Long-desc = Sus credenciales de inicio de sesión son válidas sólo durante ciertas horas.
+
+; kMsgEapAMErrNoPermission
+[1315]
+Short-desc = Sin permiso.
+Long-desc = No tiene permiso para realizar esta operación.
+
+; kMsgEapAMErrAcctDisabled
+[1316]
+Short-desc = Cuenta deshabilitada
+Long-desc = Se ha deshabilitado su cuenta. Comuníquese con el administrador de la red.
+
+; kMsgEapAMErrPasswordExpired
+[1317]
+Short-desc = Contraseña vencida.
+Long-desc = Debe cambiar su contraseña antes de poder iniciar sesión.
+
+; kMsgEapAMErrUnknown
+[1318]
+Short-desc = Error desconocido.
+Long-desc = Intente realizar nuevamente la operación. Si el problema continúa, comuníquese con el administrador de la red.
+
+; kMsgEapAMErrJuacAuthFailed
+[1319]
+Short-desc = El servidor rechazó la autenticación.
+Long-desc = Intente realizar nuevamente la operación. Si el problema continúa, comuníquese con el administrador de la red.
+
+; kMsgEapAMErrJuacInvalidRealm
+[1320]
+Short-desc = Territorio no válido.
+Long-desc = El territorio ya no está disponible. Si usa credenciales guardadas para iniciar sesión en el sistema, use la función Olvidar configuraciones guardadas y luego intente iniciar sesión nuevamente.
+
+; kMsgEapAMErrJuacVersionUnsupported
+[1321]
+Short-desc = Versión no compatible.
+Long-desc = Intente realizar nuevamente la operación. Si el problema continúa, comuníquese con el administrador de la red.
+
+; kMsgEapAMErrJuacMaxSessions
+[1322]
+Short-desc = Demasiados usuarios para este territorio.
+Long-desc = El territorio seleccionado ya se encuentra atendiendo la cantidad máxima de usuarios. 
+
+; kMsgEapAMErrJuacAdminsOnly
+[1323]
+Short-desc = Sólo los administradores pueden iniciar sesión.
+Long-desc = El territorio se encuentra actualmente restringido a acceso como administrador. 
+
+; kMsgEapAMErrJuacTooMany
+[1324]
+Short-desc = Demasiados usuarios simultáneos.
+Long-desc = Intente realizar la operación nuevamente más adelante. 
+
+; kMsgEapAMErrJuacIpDenied
+[1325]
+Short-desc = Inicios de sesión deshabilitados de esta dirección IP.
+Long-desc = El servidor ha asociado su información de inicio de sesión con una dirección de IP específica y la dirección IP para este intento de inicio de sesión no coincide con los ajustes configurados. 
+
+; kMsgEapAMErrJuacOtherFailure
+[1326]
+Short-desc = Otro fallo JUAC.
+Long-desc = Intente realizar nuevamente la operación. Si el problema continúa, comuníquese con el administrador de la red.
+
+; kMsgEapAMErrJuacAccountDisabled
+[1327]
+Short-desc = Se deshabilitó la cuenta.
+Long-desc = Comuníquese con el administrador de la red.
+
+; kMsgEapAMErrJuacAccountExired
+[1328]
+Short-desc = La cuenta venció.
+Long-desc = Comuníquese con el administrador de la red.
+
+; kMsgEapAMErrJuacNoRoles
+[1329]
+Short-desc = No está autorizado para iniciar sesión.
+Long-desc = Comuníquese con el administrador de la red.
+
+; kMsgEapAMErrJuacIpBlocked
+[1330]
+Short-desc = Los inicios de sesión están temporalmente deshabilitados en este equipo
+Long-desc = Intente realizar la operación nuevamente más adelante.
+
+; kMsgEapAMErrJuacUnknown
+[1331]
+Short-desc = El servidor rechazó la autenticación.
+Long-desc = Intente realizar nuevamente la operación. Si el problema continúa, comuníquese con el administrador de la red.
+
+; kMsgEapAMErrJuacWrongCertificate
+[1332]
+Short-desc = Certificado de cliente faltante o no válido
+Long-desc = Comuníquese con el administrador de la red.
+
+; kMsgEapAMErrJuacAccountLockedOut
+[1333]
+Short-desc = Cuenta bloqueada
+Long-desc = Comuníquese con el administrador de la red.
+
+
+; kMsgEapAMErrTlsClientAlert_0
+[1334]
+Short-desc = Alerta emitida por el cliente: Notificar cierre.
+Long-desc = Intente realizar nuevamente la operación. Si el problema continúa, comuníquese con el administrador de la red.
+
+; kMsgEapAMErrTlsClientAlert_10
+[1335]
+Short-desc = Alerta emitida por el cliente: Mensaje inesperado.
+Long-desc = Intente realizar nuevamente la operación. Si el problema continúa, comuníquese con el administrador de la red.
+
+; kMsgEapAMErrTlsClientAlert_20
+[1336]
+Short-desc = Alerta emitida por el cliente: Mac de registro incorrecto.
+Long-desc = Intente realizar nuevamente la operación. Si el problema continúa, comuníquese con el administrador de la red.
+
+; kMsgEapAMErrTlsClientAlert_21
+[1337]
+Short-desc = Alerta emitida por el cliente: Error de desencriptación.
+Long-desc = Intente realizar nuevamente la operación. Si el problema continúa, comuníquese con el administrador de la red.
+
+; kMsgEapAMErrTlsClientAlert_22
+[1338]
+Short-desc = Alerta emitida por el cliente: Desbordamiento de registro.
+Long-desc = Intente realizar nuevamente la operación. Si el problema continúa, comuníquese con el administrador de la red.
+
+; kMsgEapAMErrTlsClientAlert_30
+[1339]
+Short-desc = Alerta emitida por el cliente: Fallo de descompresión.
+Long-desc = Intente realizar nuevamente la operación. Si el problema continúa, comuníquese con el administrador de la red.
+
+; kMsgEapAMErrTlsClientAlert_40
+[1340]
+Short-desc = Alerta emitida por el cliente: Falla de establecimiento de una conexión.
+Long-desc = Intente realizar nuevamente la operación. Si el problema continúa, comuníquese con el administrador de la red.
+
+; kMsgEapAMErrTlsClientAlert_42
+[1341]
+Short-desc = Alerta emitida por el cliente: Certificado incorrecto.
+Long-desc = Comuníquese con el administrador de la red.
+
+; kMsgEapAMErrTlsClientAlert_43
+[1342]
+Short-desc = Alerta emitida por el cliente: Certificado no admitido.
+Long-desc = Comuníquese con el administrador de la red.
+
+; kMsgEapAMErrTlsClientAlert_44
+[1343]
+Short-desc = Alerta emitida por el cliente: Certificado revocado.
+Long-desc = Comuníquese con el administrador de la red.
+
+; kMsgEapAMErrTlsClientAlert_45
+[1344]
+Short-desc = Alerta emitida por el cliente: Certificado vencido.
+Long-desc = Comuníquese con el administrador de la red.
+
+; kMsgEapAMErrTlsClientAlert_46
+[1345]
+Short-desc = Alerta emitida por el cliente: Certificado desconocido.
+Long-desc = Comuníquese con el administrador de la red.
+
+; kMsgEapAMErrTlsClientAlert_47
+[1346]
+Short-desc = Alerta emitida por el cliente: Parámetro no permitido.
+Long-desc = Intente realizar nuevamente la operación. Si el problema continúa, comuníquese con el administrador de la red.
+
+; kMsgEapAMErrTlsClientAlert_48
+[1347]
+Short-desc = Alerta emitida por el cliente: Autoridad de certificación desconocida.
+Long-desc = Comuníquese con el administrador de la red.
+
+; kMsgEapAMErrTlsClientAlert_49
+[1348]
+Short-desc = Alerta emitida por el cliente: Acceso denegado.
+Long-desc = Intente realizar nuevamente la operación. Si el problema continúa, comuníquese con el administrador de la red.
+
+; kMsgEapAMErrTlsClientAlert_50
+[1349]
+Short-desc = Alerta emitida por el cliente: Error de decodificación.
+Long-desc = Intente realizar nuevamente la operación. Si el problema continúa, comuníquese con el administrador de la red.
+
+; kMsgEapAMErrTlsClientAlert_51
+[1350]
+Short-desc = Alerta emitida por el cliente: Error de desencriptación.
+Long-desc = Intente realizar nuevamente la operación. Si el problema continúa, comuníquese con el administrador de la red.
+
+; kMsgEapAMErrTlsClientAlert_60
+[1351]
+Short-desc = Alerta emitida por el cliente: Restricción de exportación.
+Long-desc = Comuníquese con el administrador de la red.
+
+; kMsgEapAMErrTlsClientAlert_70
+[1352]
+Short-desc = Alerta emitida por el cliente: Versión del protocolo.
+Long-desc = Comuníquese con el administrador de la red.
+
+; kMsgEapAMErrTlsClientAlert_71
+[1353]
+Short-desc = Alerta emitida por el cliente: Seguridad insuficiente.
+Long-desc = Comuníquese con el administrador de la red.
+
+; kMsgEapAMErrTlsClientAlert_80
+[1354]
+Short-desc = Alerta emitida por el cliente: Error interno.
+Long-desc = Intente realizar nuevamente la operación. Si el problema continúa, comuníquese con el administrador de la red.
+
+; kMsgEapAMErrTlsClientAlert_90
+[1355]
+Short-desc = Alerta emitida por el cliente: Usuario cancelado.
+Long-desc = Intente realizar nuevamente la operación. Si el problema continúa, comuníquese con el administrador de la red.
+
+; kMsgEapAMErrTlsClientAlert_100
+[1356]
+Short-desc = Alerta emitida por el cliente: Sin renegociaciones.
+Long-desc = Intente realizar nuevamente la operación. Si el problema continúa, comuníquese con el administrador de la red.
+
+
+
+; kMsgEapAMErrTlsServerAlert_0
+[1357]
+Short-desc = Alerta emitida por el servidor: Notificar cierre.
+Long-desc = Intente realizar nuevamente la operación. Si el problema continúa, comuníquese con el administrador de la red.
+
+; kMsgEapAMErrTlsServerAlert_10
+[1358]
+Short-desc = Alerta emitida por el servidor: Mensaje inesperado.
+Long-desc = Intente realizar nuevamente la operación. Si el problema continúa, comuníquese con el administrador de la red.
+
+; kMsgEapAMErrTlsServerAlert_20
+[1359]
+Short-desc = Alerta emitida por el servidor: Mac de registro incorrecto.
+Long-desc = Intente realizar nuevamente la operación. Si el problema continúa, comuníquese con el administrador de la red.
+
+; kMsgEapAMErrTlsServerAlert_21
+[1360]
+Short-desc = Alerta emitida por el servidor: Error de desencriptación.
+Long-desc = Intente realizar nuevamente la operación. Si el problema continúa, comuníquese con el administrador de la red.
+
+; kMsgEapAMErrTlsServerAlert_22
+[1361]
+Short-desc = Alerta emitida por el servidor: Desbordamiento del registro.
+Long-desc = Intente realizar nuevamente la operación. Si el problema continúa, comuníquese con el administrador de la red.
+
+; kMsgEapAMErrTlsServerAlert_30
+[1362]
+Short-desc = Alerta emitida por el servidor: Fallo de descompresión.
+Long-desc = Intente realizar nuevamente la operación. Si el problema continúa, comuníquese con el administrador de la red.
+
+; kMsgEapAMErrTlsServerAlert_40
+[1363]
+Short-desc = Alerta emitida por el servidor: Fallo de establecimiento de una conexión.
+Long-desc = Intente realizar nuevamente la operación. Si el problema continúa, comuníquese con el administrador de la red.
+
+; kMsgEapAMErrTlsServerAlert_42
+[1364]
+Short-desc = Alerta emitida por el servidor: Certificado incorrecto.
+Long-desc = Intente realizar la operación nuevamente con un certificado de cliente válido. Si el problema continúa, comuníquese con el administrador de la red.
+
+; kMsgEapAMErrTlsServerAlert_43
+[1365]
+Short-desc = Alerta emitida por el servidor: Certificado no admitido.
+Long-desc = Intente realizar la operación nuevamente con un certificado de cliente válido. Si el problema continúa, comuníquese con el administrador de la red.
+
+; kMsgEapAMErrTlsServerAlert_44
+[1366]
+Short-desc = Alerta emitida por el servidor: Certificado revocado.
+Long-desc = Intente realizar la operación nuevamente con un certificado de cliente válido. Si el problema continúa, comuníquese con el administrador de la red.
+
+; kMsgEapAMErrTlsServerAlert_45
+[1367]
+Short-desc = Alerta emitida por el servidor: Certificado caducado.
+Long-desc = Intente realizar la operación nuevamente con un certificado de cliente válido. Si el problema continúa, comuníquese con el administrador de la red.
+
+; kMsgEapAMErrTlsServerAlert_46
+[1368]
+Short-desc = Alerta emitida por el servidor: Certificado desconocido.
+Long-desc = Intente realizar la operación nuevamente con un certificado de cliente válido. Si el problema continúa, comuníquese con el administrador de la red.
+
+; kMsgEapAMErrTlsServerAlert_47
+[1369]
+Short-desc = Alerta emitida por el servidor: Parámetro no permitido.
+Long-desc = Intente realizar nuevamente la operación. Si el problema continúa, comuníquese con el administrador de la red.
+
+; kMsgEapAMErrTlsServerAlert_48
+[1370]
+Short-desc = Alerta emitida por el servidor: Autoridad de certificación desconocida.
+Long-desc = Intente realizar la operación nuevamente con un certificado de cliente válido cuya CA sea confiable para el servidor. Si el problema continúa, comuníquese con el administrador de la red.
+
+; kMsgEapAMErrTlsServerAlert_49
+[1371]
+Short-desc = Alerta emitida por el servidor: Acceso denegado.
+Long-desc = Intente realizar nuevamente la operación. Si el problema continúa, comuníquese con el administrador de la red.
+
+; kMsgEapAMErrTlsServerAlert_50
+[1372]
+Short-desc = Alerta emitida por el servidor: Error de decodificación.
+Long-desc = Intente realizar nuevamente la operación. Si el problema continúa, comuníquese con el administrador de la red.
+
+; kMsgEapAMErrTlsServerAlert_51
+[1373]
+Short-desc = Alerta emitida por el servidor: Error de desencriptación.
+Long-desc = Intente realizar nuevamente la operación. Si el problema continúa, comuníquese con el administrador de la red.
+
+; kMsgEapAMErrTlsServerAlert_60
+[1374]
+Short-desc = Alerta emitida por el servidor: Restricción de exportación.
+Long-desc = Comuníquese con el administrador de la red.
+
+; kMsgEapAMErrTlsServerAlert_70
+[1375]
+Short-desc = Alerta emitida por el servidor: Versión del protocolo.
+Long-desc = Comuníquese con el administrador de la red.
+
+; kMsgEapAMErrTlsServerAlert_71
+[1376]
+Short-desc = Alerta emitida por el servidor: Seguridad insuficiente.
+Long-desc = Comuníquese con el administrador de la red.
+
+; kMsgEapAMErrTlsServerAlert_80
+[1377]
+Short-desc = Alerta emitida por el servidor: Error interno.
+Long-desc = Intente realizar nuevamente la operación. Si el problema continúa, comuníquese con el administrador de la red.
+
+; kMsgEapAMErrTlsServerAlert_90
+[1378]
+Short-desc = Alerta emitida por el servidor: Usuario cancelado.
+Long-desc = Intente realizar nuevamente la operación. Si el problema continúa, comuníquese con el administrador de la red.
+
+; kMsgEapAMErrTlsServerAlert_100
+[1379]
+Short-desc = Alerta emitida por el servidor: Sin renegociaciones.
+Long-desc = Comuníquese con el administrador de la red.
+
+; kMsgEapAMErrJuacTooManyEESUsers
+[1380]
+Short-desc = Demasiados usuarios para EES.
+Long-desc = La cantidad de usuarios de defensa de punto final mejorada (protección contra malware) que iniciaron sesión en el sistema simultáneamente ha excedido el límite de éste. Puede volver a intentarlo en algunos minutos; de lo contrario, comuníquese con el administrador de red. 
+
+; kMsgEapAMErrJuacTooManyPRMUsers
+[1381]
+Short-desc = Demasiados usuarios para la corrección de Shavlik.
+Long-desc = La cantidad de usuarios de la corrección de Shavlik que iniciaron sesión en el sistema simultáneamente ha excedido el límite de éste. Puede volver a intentarlo en algunos minutos; de lo contrario, comuníquese con el administrador de red. 
+
+; kMsgEapAMErrPromptTimeout
+[1382]
+Short-desc = Tiempo de espera de entrada del usuario agotado.
+Long-desc = Se ha agotado el tiempo de espera de entrada del usuario. <br><br>Pulse intentará conectarse de nuevo en breve. Pulse Reintentar para comenzar inmediatamente.
+
+; kMsgEapAMErrPromptNotAllowed
+[1383]
+Short-desc = Solicitud de usuario no permitida.
+Long-desc = Las solicitudes de interfaz de usuario de Pulse no están permitidas en este momento. Este problema puede deberse a un error de configuración relacionado con la conexión del equipo. Póngase en contacto con el administrador de la red.
+
+; kMsgEapAMErrJuacFipsRequired
+[1384]
+Short-desc = Se requiere el modo FIPS.
+Long-desc = No está autorizado para realizar esta conexión porque el servidor ha indicado que solo permitirá conexiones de un cliente de Junos Pulse si está en modo FIPS. Para obtener más información, póngase en contacto con el administrador.
+
+; kMsgEapAMErrJuacFipsRequiredNotSupportedOnPlatform
+[1385]
+Short-desc = Se requiere el modo FIPS.
+Long-desc = No está autorizado para realizar esta conexión porque el servidor ha indicado que solo permitirá conexiones de un cliente de Junos Pulse si está en modo FIPS. El modo FIPS actualmente no está disponible en Pulse en este sistema operativo.
+
+; kMsgEapAMErrJuacPasswordExpiredNoPMI
+[1386]
+Short-desc = Debe cambiar la contraseña.
+Long-desc = La contraseña ha caducado y debe cambiarla para poder acceder a través de Pulse. Recurra a un método alternativo para cambiar la contraseña o póngase en contacto con su administrador si necesita ayuda.

@@ -1,0 +1,151 @@
+﻿; JUNS catalogUtil requires message catalog files to be saved with UTF-8 encoding, which put 3 bytes {0xEF, 0xBB, 0xBF} at the file beginning called Byte Order Mark (BOM) for UTF-8 files . For modifications in this files, please use Text Editors which persist these BOM bytes (like Notepad.exe, Visual Studio IDE, etc).
+
+;kMsgCommonCertTrustNoError
+[1700]
+Short-desc = Nie znaleziono błędu dotyczącego tego certyfikatu lub łańcucha.
+Long-desc = Zasób sieciowy dla tego połączenia został zweryfikowany i można mu zaufać.
+
+;kMsgCommonCertTrustIsNotTimeValid
+[1701]
+Short-desc = Ten certyfikat lub jeden z certyfikatów w łańcuchu jest nieważny.
+Long-desc = Być może czas systemowy w punkcie końcowym jest nieprawidłowy, certyfikat wygasł albo czas systemowy na podpisie certyfikatu jest nieprawidłowy. Sprawdź, czy zegar w komputerze jest dokładny. Jeśli tak jest, nie można zweryfikować zasobu sieciowego dla tego połączenia. Skontaktuj się z administratorem sieci.
+
+;kMsgCommonCertTrustIsNotTimeNested
+[1702]
+Short-desc = Certyfikaty w łańcuchu są nieprawidłowo zagnieżdżone w czasie. 
+Long-desc = Ten komunikat oznacza, że łańcuch certyfikatów jest uszkodzony lub niepewny z innego powodu. Nie można zweryfikować zasobu sieciowego dla tego połączenia. Skontaktuj się z administratorem sieci.
+
+;kMsgCommonCertTrustIsRevoked
+[1703]
+Short-desc = Ten certyfikat lub jeden z certyfikatów w łańcuchu został unieważniony. 
+Long-desc = Nie można zweryfikować zasobu sieciowego dla tego połączenia. Skontaktuj się z administratorem sieci.
+
+;kMsgCommonCertTrustIsNotSignatureValid
+[1704]
+Short-desc = Ten certyfikat lub jeden z certyfikatów w łańcuchu ma nieprawidłowy podpis.
+Long-desc = Nie można zweryfikować zasobu sieciowego dla tego połączenia. Skontaktuj się z administratorem sieci.
+
+;kMsgCommonCertTrustIsNotValidForUsage
+[1705]
+Short-desc = Ten certyfikat lub łańcuch certyfikatów nie jest odpowiedni do proponowanego zastosowania.
+Long-desc = Ten komunikat o stanie oznacza, że certyfikat nie został prawidłowo włączony do użytku w bieżącej aplikacji. Nie można zweryfikować zasobu sieciowego dla tego połączenia. Skontaktuj się z administratorem sieci.
+
+;kMsgCommonCertTrustIsUntrustedRoot
+[1706]
+Short-desc = Certyfikat lub łańcuch certyfikatów opiera się na niezaufanym certyfikacie głównym. 
+Long-desc = Nie można zweryfikować zasobu sieciowego dla tego połączenia. Skontaktuj się z administratorem sieci. 
+
+;kMsgCommonCertTrustRevocationStatusUnknown
+[1707]
+Short-desc = Stan odwołania certyfikatu lub jednego z certyfikatów w łańcuchu jest nieznany.
+Long-desc = Przed zaakceptowaniem certyfikatu system musi upewnić się, że certyfikat nie został odwołany. System nie może zweryfikować, czy certyfikat jest ważny. Skontaktuj się z administratorem sieci.
+
+;kMsgCommonCertTrustIsCyclic
+[1708]
+Short-desc = Jeden z certyfikatów w łańcuchu został wystawiony przez urząd certyfikacji, który wystawił oryginalny certyfikat.
+Long-desc = System nie może zweryfikować, czy certyfikat jest ważny. Skontaktuj się z administratorem sieci.
+
+;kMsgCommonCertTrustInvalidExtension
+[1709]
+Short-desc = Jeden z certyfikatów ma rozszerzenie, które jest nieprawidłowe.
+Long-desc = System nie może zweryfikować, czy certyfikat jest ważny. Skontaktuj się z administratorem sieci.
+
+;kMsgCommonCertTrustInvalidPolicyConstraints
+[1710]
+Short-desc = Certyfikat lub łańcuch certyfikatów ma rozszerzenie z warunkami ograniczającymi zasady.
+Long-desc = System nie może zweryfikować, czy certyfikat jest ważny. Skontaktuj się z administratorem sieci.
+
+;kMsgCommonCertTrustInvalidBasicConstraints
+[1711]
+Short-desc = Certyfikat lub łańcuch certyfikatów ma rozszerzenie z podstawowymi warunkami ograniczającymi.
+Long-desc = System nie może zweryfikować, czy certyfikat jest ważny. Skontaktuj się z administratorem sieci.
+
+;kMsgCommonCertTrustInvalidNameConstraints
+[1712]
+Short-desc = Certyfikat lub jeden z certyfikatów w łańcuchu ma rozszerzenie z warunkami ograniczającymi nazwy, które jest nieprawidłowe.
+Long-desc = System nie może zweryfikować, czy certyfikat jest ważny. Skontaktuj się z administratorem sieci.
+
+;kMsgCommonCertTrustHasNotSupportedNameConstraint
+[1713]
+Short-desc = Certyfikat lub jeden z certyfikatów w łańcuchu ma rozszerzenie z warunkami ograniczającymi nazwy, które zawiera nieobsługiwane pola.
+Long-desc = System nie może zweryfikować, czy certyfikat jest ważny. Skontaktuj się z administratorem sieci.
+
+;kMsgCommonCertTrustHasNotDefinedNameConstraint
+[1714]
+Short-desc = Certyfikat lub jeden z certyfikatów w łańcuchu ma rozszerzenie z warunkami ograniczającymi nazwy, a brakuje warunku ograniczającego dotyczącego jednej z nazw wybranych na końcu certyfikatu.
+Long-desc = System nie może zweryfikować, czy certyfikat jest ważny. Skontaktuj się z administratorem sieci.
+
+;kMsgCommonCertTrustHasNotPermittedNameContraint
+[1715]
+Short-desc = Certyfikat lub jeden z certyfikatów w łańcuchu ma rozszerzenie z warunkami ograniczającymi nazwy, a dla jednej z nazw wybranych na końcu certyfikatu istnieje niedozwolony warunek ograniczający.
+Long-desc = System nie może zweryfikować, czy certyfikat jest ważny. Skontaktuj się z administratorem sieci.
+
+;kMsgCommonCertTrustHasExcludedNameConstraint
+[1716]
+Short-desc = Certyfikat lub jeden z certyfikatów w łańcuchu ma rozszerzenie z warunkami ograniczającymi nazwy, a jedna z nazw wybranych na końcu certyfikatu została wykluczona wprost.
+Long-desc = System nie może zweryfikować, czy certyfikat jest ważny. Skontaktuj się z administratorem sieci.
+
+;kMsgCommonCertTrustIsPartialChain
+[1717]
+Short-desc = Łańcuch certyfikatów jest niepełny. 
+Long-desc = System nie może zweryfikować, czy certyfikat jest ważny. Skontaktuj się z administratorem sieci.
+
+;kMsgCommonCertTrustCtlIsNotTimeValid
+[1718]
+Short-desc = Lista zaufania certyfikatów służąca do utworzenia tego łańcucha jest nieważna.
+Long-desc = System nie może zweryfikować, czy certyfikat jest ważny. Skontaktuj się z administratorem sieci.
+
+;kMsgCommonCertTrustCtlIsNotSignatureValid
+[1719]
+Short-desc = Lista zaufania certyfikatów służąca do utworzenia tego łańcucha certyfikatów ma nieprawidłowy podpis.
+Long-desc = System nie może zweryfikować, czy certyfikat jest ważny. Skontaktuj się z administratorem sieci.
+
+;kMsgCommonCertTrustCtlIsNotValidForUsage
+[1720]
+Short-desc = Lista zaufania certyfikatów służąca do utworzenia tego łańcucha nie jest odpowiednia do tego zastosowania.
+Long-desc = System nie może zweryfikować, czy certyfikat jest ważny. Skontaktuj się z administratorem sieci.
+
+;kMsgCommonCertTrustIsOfflineRevocation
+[1725]
+Short-desc = Serwery odwoływania certyfikatu końcowego lub certyfikatów w jego łańcuchu są w trybie offline.
+Long-desc = Spróbuj ponownie wykonać operację. Jeśli problem będzie się powtarzać, skontaktuj się z administratorem sieci.
+
+;kMsgCommonCertTrustNoIssuanceChainPolicy
+[1726]
+Short-desc = Nie ma żadnych zasad wystawiania certyfikatu końcowego.
+Long-desc = System nie może zweryfikować, czy certyfikat jest ważny. Skontaktuj się z administratorem sieci.
+
+;kMsgCommonCertTrustIsExplicitDistrust
+[1727]
+Short-desc = Certyfikat końcowy jest jawnie niezaufany.
+Long-desc = System nie może zweryfikować, czy certyfikat jest ważny. Skontaktuj się z administratorem sieci.
+
+;kMsgCommonCertHasNotSupportedCriticalExt
+[1728]
+Short-desc = Certyfikat końcowy ma nieobsługiwane rozszerzenie krytyczne.
+Long-desc = System nie może zweryfikować, czy certyfikat jest ważny. Skontaktuj się z administratorem sieci.
+
+[1730]
+;kMsgCommonCertTrustPulseCertificateError
+Short-desc = Błąd certyfikatu
+Long-desc = Błąd certyfikatu
+
+[1731]
+;kMsgCommonCertTrustPulseAuthServerIdentityNotFound
+Short-desc = Serwer uwierzytelniania jest niezaufany.
+Long-desc = Nie znaleziono tożsamości serwera uwierzytelniania na „liście zaufanych serwerów” klienta. Skontaktuj się z administratorem sieci.
+
+;kMsgCommonCertTrustPulseDoesntMatch
+[1732]
+Short-desc = Nazwa certyfikatu jest niezgodna z serwerem, z którym próbujesz nawiązać połączenie.
+Long-desc = Wszystkie certyfikaty zawierają nazwę serwera. Jest to zabezpieczenie na wypadek złamania połączenia. W przypadku próby uzyskania dostępu do serwera o innej nazwie pojawi się to ostrzeżenie. Jeśli w lokalizacji, w której się znajdujesz, mogło dojść do złamania połączenia sieciowego, skontaktuj się z administratorem w celu upewnienia się, że odcisk kciuka na serwerze jest poprawny.
+
+;kMsgUISmartcardPinError
+[1733]
+Short-desc = Nieprawidłowy kod PIN.
+Long-desc = Podczas ponownego wprowadzania kodu PIN należy zachować ostrożność, ponieważ po przekroczeniu liczby dozwolonych prób token zostanie zablokowany.
+
+;kMsgUISmartcardBlockedError
+[1734]
+Short-desc = Karta inteligentna została zablokowana.
+Long-desc = Aby odblokować kartę inteligentną, skontaktuj się z administratorem.

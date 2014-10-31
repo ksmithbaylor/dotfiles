@@ -1,0 +1,15 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<title>Junos Pulse 設定綜述</title><meta http-equiv="Content-Type" content_SDL="text/html; charset=UTF-8"/> <link href="../sty/standard.css" rel="stylesheet" type="text/css" /> <meta name="keywords" content="Pulse 綜述, 綜述, Pulse" /> <meta name="description" content="Junos Pulse 及其功能簡介。" />
+</head>
+<body style="width:95%;><div id="content"><h1 class="Title">Junos Pulse 綜述</h1><p class="Para1">Junos Pulse <!-- and licensed third-party
+services  -->可透過區域網路和廣域網路，啟用受保護網路資源的安全驗證連線。 Junos Pulse 可藉由讓網路管理員設定您的網路存取環境來簡化網路連線功能。</p><p class="Para1"><i>安全連線</i>會加密網路通訊流量，以便只有您的端點以及與之通訊的伺服器能夠瞭解通訊內容。 當 Junos Pulse 建立網路連線時，網路管理員會定義 Junos Pulse 所採用的安全性設定。 網路管理員也可能會將 Junos Pulse 設定為自動安裝安全通訊所需的軟體。</p><p class="Para1"><i>已經過驗證的連線</i>表示您的端點與伺服器已向彼此證明其身份。 伺服器會使用來自信任的認證授權單位之認證來驗證其自身，而端點會向伺服器提供您的登入驗證資料 (使用者名稱與密碼)。 網路管理員可以設定您的環境，以在不提示您輸入任何資訊的情況下自動進行驗證 (雖然當您連線時，系統通常仍會要求您輸入使用者名稱和密碼)。 </p>
+<p class="Para1"><i>受保護的網路資源</i>是指使用經過驗證之連線存取的任何網路裝置或應用程式。 例如，若要存取企業的電子郵件系統，首先要登入您的網路。 網路管理員會管理領域中受保護的網路資源，並透過授予對所選領域的存取權限來賦予您對這些資源的存取權。 如果您具有多個領域的存取權限，則可在透過 Junos Pulse 連線至網路時，選擇想要的領域。 網路管理員也可以透過啟用 Host Checker [主機檢查器] 程式，定義存取領域所需的安全屬性。 當您透過 Junos Pulse 連線至網路時，Host Checker [主機檢查器] 便會執行。 它會檢查您的端點，以確保擁有所需的軟體。 <!--such as current virus definitions or the Enhanced Endpoint Security 
+  (EES) application. EES is an optional program that Junos Pulse can download 
+  and install. EES protects your endpoint device from spyware and malware.  --> </p>
+<p class="Para1">網路管理員可以設定存取政策，以便在您連線至網路之後，該連線可成為可攜式連線。 例如，如果您從家中將筆記型電腦連線至公司網路，那麼當您將筆記型電腦帶到辦公室時，便無需先中斷連線再重新連線。 您在家中只需將筆記型電腦關閉即可。 當您到達辦公室並開啟筆記型電腦時，Junos Pulse 會檢測到網路環境的變更。 Junos Pulse 會使用您的連線設定檔資訊來設定連線，以在新環境中為您提供適當的存取與驗證。 如果管理員已設定 Junos Pulse 的位置檢測功能，您將會在電腦啟動時連線至適當的網路。 例如，如果您在遠端位置啟動了端點，Junos Pulse 會自動與 WAN 存取裝置建立連線。</p>
+<h4 class="Head4">相關主題</h4><ul><li class="li"><a href="access-control-connect-client-ui.html">Junos Pulse 介面</a></li></ul></div>
+
+</body></html>

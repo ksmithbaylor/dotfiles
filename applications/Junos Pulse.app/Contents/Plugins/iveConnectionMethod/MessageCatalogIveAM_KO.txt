@@ -1,0 +1,328 @@
+﻿; JUNS catalogUtil requires catalog message files to be saved with UTF-8 encoding, which put 3 bytes {0xEF, 0xBB, 0xBF} at the file beginning called Byte Order Mark (BOM) for UTF-8 files . For modifications in this files, please use Text Editors which persist these BOM bytes (like Notepad.exe, Visual Studio IDE, etc).
+
+;kMsgIveAMErrInstanceAlreadyInUse
+[1100]
+Short-desc = 이미 사용 중인 인스턴스.
+Long-desc = 
+
+;kMsgIveAMErrLoadingStore
+[1101]
+Short-desc = 저장을 위한 로드에 실패.
+Long-desc = 시스템을 다시 시작해 주십시오. 문제가 지속되면 네트워크 관리자에게 문의하십시오.
+
+;kMsgIveAMErrLoadConnection
+[1102]
+Short-desc = 연결을 위한 로드에 실패. 
+Long-desc = 작업을 다시 시도해 주십시오. 문제가 지속되면 네트워크 관리자에게 문의하십시오.
+
+;kMsgIveAMErrRetrieveURI
+[1103]
+Short-desc = URI(Uniform Resource Identifier)를 검색할 수 없음. 
+Long-desc =  작업을 다시 시도해 주십시오. 문제가 지속되면 네트워크 관리자에게 문의하십시오.
+
+;kMsgIveAMErrInitiateConnect
+[1104]
+Short-desc = 연결 초기화에 실패. 
+Long-desc = 작업을 다시 시도해 주십시오. 문제가 지속되면 네트워크 관리자에게 문의하십시오.
+
+;kMsgIveAMErrConnectingChannel
+[1105]
+Short-desc = 채널 연결 중 오류. 
+Long-desc = 채널 연결 중 오류(단계:  {0}, 오류: {1}).
+
+;kMsgIveAMErrAccessMethod
+[1106]
+; generic access method connection error
+Short-desc = 액세스 방법 연결 프로비저닝 중 {0} 오류
+Long-desc = 액세스 방법 {0} 프로비저닝 중 오류; 오류는 액세스 방법에 따라 다양할 수 있습니다. 
+
+;kMsgIveAMErrInvalidCertificate
+[1107]
+Short-desc = 유효하지 않는 서버 인증서.
+Long-desc = 서버 인증서 유효성 검사에 실패하였습니다. 유효한 대상이라고 확신하는 경우, 다시 시도를 클릭하여 계속하십시오. 그렇지 않은 경우, 닫기를 클릭하고 네트워크 관리자에게 문의하십시오.
+
+;kMsgIveAMErrConnectionFailed
+[1108]
+Short-desc = 연결 실패. 
+Long-desc = 작업을 다시 시도해 주십시오. 문제가 지속되면 네트워크 관리자에게 문의하십시오.
+
+;kMsgIveAMErrSessionExpired
+[1109]
+Short-desc = 세션 만료됨. 
+Long-desc = 네트워크로의 연결이 오랫동안 사용하지 않아서 만료되었습니다. 연결하려면 다시 로그인해 주십시오.
+
+;kMsgIveAMErrProtocol
+[1110]
+Short-desc = 서버와 통신할 수 없음.
+Long-desc = 서버가 Juniper 네트워킹 요청에 응답할 수 없습니다.  서버가 다운되었거나 Juniper 서버가 아닌 서버에 연결되어 있기 때문일 것입니다.  이 상태가 지속될 경우, 관리자에게 문의해 주십시오.
+
+;kMsgIveAMErrHostUnknown
+[1111]
+Short-desc = 호스트 찾을 수 없음.
+Long-desc = 호스트 이름이 DNS(Domain Name System)를 이용하여 해결할 수 없습니다. 다시 시도하십시오. 시스템에서 연결을 편집할 수 있고, 대상 IP 주소를 알고 있다면, IP 주소를 이용하여 이 연결을 다시 시도해 주십시오. 문제가 지속되면 네트워크 관리자에게 문의하십시오.
+
+;kMsgIveAMErrPulseSubsystem
+[1112]
+Short-desc = Pulse 하위 시스템 오류. 
+Long-desc = 작업을 다시 시도해 주십시오. 문제가 지속되면 네트워크 관리자에게 문의하십시오.
+
+;kMsgIveAMErrCancelled
+[1113]
+Short-desc = 취소됨.
+Long-desc = 작업이 취소되었습니다.
+
+;kMsgIveAMErrAuthentication
+[1114]
+Short-desc = 인증 오류.
+Long-desc = 작업을 다시 시도해 주십시오. 현재 자격 증명을 사용하고 있어야 합니다. 최근에 암호를 변경하였고 Pulse가 저장된 설정을 사용하고 있다면, 로그인 자격 증명을 위한 메시지가 다시 표시되도록 저장된 설정 잊음 기능을 이용해야 합니다.
+
+;kMsgIveAMErrNetwork
+[1115]
+Short-desc = 네트워크 오류.
+Long-desc = 네트워크 오류는 유효하지 않은 IP 주소, 이용 가능하지 않은 서버 등과 같은 일시적인 상황에 의해 발생할 수 있습니다. 작업을 다시 시도해 주십시오. 시스템을 다시 시작하고 작업을 다시 시도해 주십시오. 문제가 지속되면 네트워크 관리자에게 문의하십시오.
+
+;kMsgIveAMErrServer
+[1116]
+Short-desc = 서버 오류.
+Long-desc = 서버가 이용 가능하지 않습니다. 나중에 다시 시도하십시오. 문제가 지속되면 네트워크 관리자에게 문의하십시오.
+
+;kMsgIveAMErrUIPromptFailed
+[1117]
+Short-desc = UI 프롬프트 실패.
+Long-desc = 작업을 다시 시도해 주십시오. 문제가 지속되면 네트워크 관리자에게 문의하십시오.
+
+;kMsgIveAMErrUIPromptTimedout
+[1118]
+Short-desc = UI 프롬프트 시간초가.
+Long-desc = 작업을 다시 시도해 주십시오.
+
+;kMsgIveAMErrNoProxy
+[1119]
+Short-desc = 프록시가 이용 가능하지 않음.
+Long-desc = 프록시 시스템이 현재 이용 가능하지 않습니다. 나중에 다시 시도하십시오. 문제가 지속되면 네트워크 관리자에게 문의하십시오.
+
+;kMsgIveAMErrConnectionClosed
+[1120]
+Short-desc = 연결 닫힘.
+Long-desc = 서버가 이 연결을 다시 설정합니다. 재연결하려면 다시 로그인해야 합니다.
+
+;kMsgIveAMErrVLANChange
+[1121]
+Short-desc = VLAN 해시 변경됨.
+Long-desc = VLAN 해시가  {0}(으)로 변경되었습니다.
+
+
+;kMsgIveAMErrCompliance
+[1122]
+Short-desc = 종점이 규정을 준수하지 않음.
+Long-desc = 시스템이 보안 요구사항을 충족하지 않기 때문에 액세스가 거부되었습니다. 일부 문제는 자동으로 해결될 수 있으므로, 다시 로그인을 시도해 볼 수 있습니다. 그 외의 문제의 경우, 문제 해결을 위한 조치를 확인하기 위해 링크를 클릭해 주십시오.
+
+;kMsgSuspendForUpdate
+[1123]
+Short-desc = 구성요소 업그레이드를 위한 연결 중지.
+Long-desc = 시스템이 구성요소를 업데이트할 수 있도록 연결이 임시로 종료되었습니다.  연결은 업데이트가 완료되면 다시 재개될 것입니다.
+
+; kMsgIveAMUnknownFatalError
+[1124]
+Short-desc = 액세스 서버에 오류 발생.
+Long-desc = 액세스 서버에 클라이언트가 액세스를 얻는 것을 금지하는 {0} 오류가 발생하였습니다.  관리자에게 문의하십시오.
+
+; kMsgAMErrNcIpAllocFail
+[1125]
+Short-desc = 클라이언트를 위해 주소를 할당할 수 없음 
+Long-desc = 원격 액세스 서버에서 클라이언트에 네트워크 주소를 할당할 수 없습니다. 관리자에게 문의하십시오.
+
+; kMsgIveAMErrNcWrongClient
+[1126]
+Short-desc = Junos Pulse에 대한 연결이 구성되어 있지 않습니다. 
+Long-desc = Junos Pulse에 대해 구성되어 있지 않은 영역 및 역할을 선택했거나 지정되어 있습니다. 연결을 끊고, 저장된 설정을 지운 후 다른 사용자 이름, 영역 또는 역할을 선택하십시오. 이 오류가 계속되면 관리자에게 문의해 주십시오.
+
+; kMsgIveAMErrUACMultipleClients
+[1127]
+Short-desc = 동일한 끝점으로부터 너무 많은 연결.
+Long-desc = 연결되어 있는 액세스 서버가 Pulse와 Odyssey Access Client 둘 모두로부터의 연결을 허용하지 않습니다.  계속하려면, OAC에서의 연결을 해제하십시오
+
+; kMsgIveAMErrNoRoaming
+[1128]
+Short-desc = 연결을 위한 로밍이 허용되지 않음.
+Long-desc = 클라이언트가 처음 인증된 이후로 이 클라이언트의 네트워크 주소가 변경되었지만, 허용되지 않았습니다.
+
+; kMsgIveAMUnknownMethodError
+[1129]
+Short-desc = 서버가 알 수 없는 액세스 방법을 위한 정책을 요청함.
+Long-desc = 서버가 알 수 없는 또는 설치되지 않는 액세스 방법에 대한 정책을 요청하였습니다. 
+
+; kMsgIveAMMethodFailed
+[1130]
+Short-desc = 액세스 방법을 로드할 수 없음.
+Long-desc = 액세스 방법을 적절히 초기화하는데 실패하였습니다.  이는 동시에 여러 원격 액세스 기기에 연결하려고 시도하였기 때문에 발생되었을 수 있습니다.
+
+; kMsgIveAMSessionInvalid
+[1131]
+Short-desc = 유효하지 않은 인증 세션.
+Long-desc = 서버가 유효하지 않은 사용자 인증 세션 {0}을(를) 보고하였습니다.
+
+; kMsgIveAMServerError
+[1132]
+Short-desc = 서버에 오류 감지됨.
+Long-desc = 세션 동안 서버에 오류  {0}이(가) 감지되었습니다.  관리자에게 문의하십시오.
+
+;kMsgIveAMNetworkUnreachable
+[1133]
+Short-desc = 네트워크에 연결할 수 없음
+Long-desc = 네트워크에 연결할 수 없음
+
+;kMsgIveAMErrSAAccessMethodLoaded
+[1134]
+Short-desc = 원격 액세스 방법이 너무 많습니다.
+Long-desc = 서버에 둘 이상의 원격 액세스 방법을 구성하려고 했습니다. 원격 액세스 방법은 한 가지만 허용됩니다. 관리자에게 문의해 주십시오.
+
+;kMsgIveAMErrSAAccessMethodLoadedOtherInstance
+[1135]
+Short-desc = 이미 다른 연결에 의해 원격 액세스가 제공되고 있습니다.
+Long-desc = 원격 액세스를 제공하기 위해 연결을 시도했으나 이미 다른 연결에 의해 원격 액세스가 제공되고 있습니다. 기존의 연결을 끊고 다시 시도하십시오.
+
+;kMsgIveAMErrTransport
+[1136]
+Short-desc = 통신 모듈을 로드할 수 없습니다.
+Long-desc = 통신 모듈을 로드하지 못했습니다. Pulse가 설치되어 있는지 확인한 후 다시 시도하십시오.
+
+;kMsgIveAMSessionTerminated
+[1137]
+Short-desc = 서버에서 로그인 세션을 종료했습니다.
+Long-desc = 로그인 세션이 종료되었습니다. 다시 로그인해 주십시오.
+
+;kMsgIveAMSessionTimeout
+[1138]
+Short-desc = 로그인 세션이 만료되었습니다.
+Long-desc = 서버에서 로그인 세션이 만료되었습니다. 다시 로그인해 주십시오.
+
+;kMsgIveAMSessionRoleChange
+[1139]
+Short-desc = 액세스 옵션이 변경되었습니다.
+Long-desc = 서버에서 원격 액세스 방법 변경을 요청했습니다. 자동으로 다시 연결됩니다.
+
+;kMsgIveAMConnectionRouteChange
+[1140]
+Short-desc = 서버 네트워크 경로가 변경되었습니다.
+Long-desc = 서버 네트워크 경로가 변경되었습니다.  자동으로 다시 연결됩니다.
+
+;kMsgIveAMErrInstanceAlreadyConnected
+[1200]
+Short-desc = 하나의 보안 터널이 이미 형성됨.
+Long-desc =  현재 네트워크 정책에서는 보안 연결이 하나만 지원됩니다. 새 보안 연결을 만들려면 먼저 현재 보안 연결을 끊어야 합니다.
+
+;kMsgNcAMErrInstanceAlreadyStarting
+[1201]
+Short-desc = 다른 보안 세션이 연결 중.
+Long-desc = 
+
+;kMsgNcAMErrInstanceDisconnecting
+[1202]
+Short-desc = 다른 보안 세션이 연결 해제 중. 
+Long-desc = 
+
+;kMsgNcAMErrGetUserContext
+[1203]
+Short-desc = 사용자 컨텍스트 얻기에 실패
+Long-desc = 작업을 다시 시도해 주십시오. 문제가 지속되면 네트워크 관리자에게 문의하십시오.
+
+;kMsgNcAMErrGetProxyInfo
+[1204]
+Short-desc = 프록시 정보 얻기에 실패.
+Long-desc = 작업을 다시 시도해 주십시오. 문제가 지속되면 네트워크 관리자에게 문의하십시오.
+
+;kMsgNcAMErrSetupVA
+[1205]
+Short-desc = 가상 어댑터 설치에 실패 
+Long-desc = 시스템을 다시 시작하고 다시 시도해 주십시오. 문제가 지속되면 네트워크 관리자에게 문의하십시오.
+
+;kMsgNcAMErrSendMessage
+[1206]
+Short-desc = 액세스 방법으로 메시지 전송에 실패.
+Long-desc = 시스템을 다시 시작하고 다시 시도해 주십시오. 문제가 지속되면 네트워크 관리자에게 문의하십시오.
+
+;kMsgNcAMErrSetupHosts
+[1207]
+Short-desc = 호스트 파일 구성에 실패.
+Long-desc = 시스템을 다시 시작하고 다시 시도해 주십시오. 문제가 지속되면 네트워크 관리자에게 문의하십시오.
+
+;kMsgNcAMErrToggleDNS
+[1208]
+Short-desc = DNS 서비스 재시작에 실패
+Long-desc = 시스템을 다시 시작하고 다시 시도해 주십시오. 문제가 지속되면 네트워크 관리자에게 문의하십시오.
+
+;kMsgNcAMErrSetIEProxy
+[1209]
+Short-desc = IE 프록시 설정에 실패.
+Long-desc = 시스템을 다시 시작하고 다시 시도해 주십시오. 문제가 지속되면 네트워크 관리자에게 문의하십시오.
+
+;kMsgNcAMSetFFProxy
+[1210]
+Short-desc = Firefox 프록시 설정에 실패.
+Long-desc = 시스템을 다시 시작하고 다시 시도해 주십시오. 문제가 지속되면 네트워크 관리자에게 문의하십시오.
+
+;kMsgNcAMErrDiffConfig
+[1211]
+Short-desc = NC 구성이 다릅니다, 연결을 해제하십시오.
+Long-desc = 새로운 NC 구성이 이전 구성과 다릅니다. 연결이 해제됩니다.
+
+;kMsgNcAMErrRouteMonitor
+[1212]
+Short-desc = NC 경로 충돌을 감지했습니다. 연결을 해제하십시오.
+Long-desc = 라우팅 표에서 경로 충돌을 감지했습니다. 연결이 해제됩니다.
+
+;kMsgNcAMErrUnknownMsg
+[1213]
+Short-desc = 예기치 않은 문제로 원격 액세스에 실패했습니다. 다시 연결하십시오.
+Long-desc = 원격 액세스 서비스에 예기치 않은 오류가 발생했습니다. 연결이 끊기면 다시 시도하십시오.
+
+;kMsgNcAMErrEspOnlyFailed
+[1214]
+Short-desc = 관리자가 SSL 대체 사용을 설정하지 않았습니다.
+Long-desc = 서버에 ipsec을 연결하지 못했습니다. 관리자가 SSL 대체 사용을 설정하지 않았습니다. 연결을 다시 시도합니다.
+
+;kMsgNcAMErrEspOnlyThroughProxy
+[1215]
+Short-desc = 웹 프록시를 통한 ESP 전용 연결은 지원되지 않습니다.
+Long-desc = 웹 프록시를 통한 ESP의 서버 연결은 지원되지 않으며 관리자가 SSL에 대한 대체 사용을 비활성화하였습니다.
+
+;kMsgNcAMErrMD5NotAllowedInFIPSMode
+[1216]
+Short-desc = FIPS 모드에서는 MD5를 허용하지 않음
+Long-desc = 클라이언트가 FIPS 모드를 활성화한 상태에서 실행 중일 때는 ESP용 MD5 해시가 허용되지 않습니다. 네트워크 관리자에게 문의하십시오.
+
+;kMsgSamAMLegacyWSAMFound
+[1251]
+Short-desc = WSAM이 실행 중입니다.
+Long-desc = WSAM이 이미 실행 중입니다. WSAM을 중지하고 다시 시도하십시오.
+
+;kMsgSamAMErrJnprTdiInstall
+[1252]
+Short-desc = jnprTdi 드라이버가 설치되어 있지 않습니다.
+Long-desc = Pulse를 다시 설치한 후 시도하십시오. 문제가 계속되면 네트워크 관리자에게 문의해 주십시오.
+
+;kMsgSamAMErrJnprTdiStart
+[1253]
+Short-desc = jnprTdi 드라이버를 시작하지 못했습니다.
+Long-desc = 시스템을 다시 시작한 후 시도해 주십시오. 문제가 계속되면 네트워크 관리자에게 문의해 주십시오.
+
+;kMsgSamAMErrJnprTdiOpen
+[1254]
+Short-desc = jnprTdi 장치를 열지 못했습니다.
+Long-desc = 시스템을 다시 시작한 후 시도해 주십시오. 문제가 계속되면 네트워크 관리자에게 문의해 주십시오.
+
+;kMsgSamAMErrRebootRequired
+[1255]
+Short-desc = 시스템 재부팅이 필요합니다.
+Long-desc = SAM 액세스 방법의 경우 시스템 재부팅이 필요합니다. 시스템을 재부팅하십시오.
+
+;kMsgSamErrInitFailed
+[1256]
+Short-desc = SAM 액세스 방법을 초기화하지 못했습니다.
+Long-desc = 다시 시도해 주십시오. 문제가 계속되면 네트워크 관리자에게 문의해 주십시오.
+
+;kMsgSamErrIVEHostNotFound
+[1257]
+Short-desc = 호스트를 확인하지 못했습니다.
+Long-desc = DNS(Domain Name System)를 사용하여 호스트 이름을 확인할 수 없습니다. 다시 시도해 주십시오.

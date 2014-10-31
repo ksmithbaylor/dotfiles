@@ -1,0 +1,2068 @@
+﻿; JUNS catalogUtil requires resource catalog files to be saved with UTF-8 encoding, which put 3 bytes {0xEF, 0xBB, 0xBF} at the file beginning called Byte Order Mark (BOM) for UTF-8 files . For modifications in this files, please use Text Editors which persist these BOM bytes (like Notepad.exe, Visual Studio IDE, etc).
+
+; Following are English Resource Strings used in Pulse
+; ----------------------------------------------------
+
+; Notes: 1) Language Translation not needed for these:
+;           a) hyperlink anchor tags: <a>, </a>
+;           b) escape characters: \n, \r, \t
+
+;IDS_AS_IS
+[0]
+Value = {0}
+
+;IDS_SSID
+[1]
+Value = SSID:
+
+;IDS_WARNING_CONNECTING_ACCESS_SERVICE
+[2]
+Value = Failed to connect to the Juniper Unified Network Service.
+
+;IDS_WARNING_ADD_EDIT_CONN_NOT_ALLOWED
+[3]
+Value = Your administrator does not allow adding or editing connections.
+
+;IDS_WARNING_CAN_NOT_CREATE_CONN
+[4]
+Value = You cannot create a connection because there are no access methods available.
+
+;IDS_WARNING_USE_WINDOWS_FOR_CONTROLING_CONN
+[5]
+Value = Please use Windows to control this connection.
+
+;IDS_WARNING_CONN_AUTO_CONTROLLED_CANT_EDIT
+[6]
+Value = This connection is automatically controlled and cannot be overridden.
+
+;IDS_WARNING_CONN_DELETED_EDITS_DISCARDED
+[7]
+Value = This connection was deleted while being edited.  Your edits were discarded.
+
+;IDS_WARNING_CONN_DELETE_NOT_ALLOWED
+[8]
+Value = Your administrator does not allow deletion of this connection.
+
+;IDS_QUESTION_REMOVE_CONN
+[9]
+Value = Do you want to remove this connection?\n\nConnection: {0}
+
+;IDS_WARNING_ACCELERATION_NOT_CONTROLLABLE
+[10]
+Value = Acceleration is not currently controllable.
+
+;IDS_WARNING_ACCELERATION_AUTO_CONTROLLED_CANT_EDIT
+[11]
+Value = Acceleration is automatically controlled and cannot be overridden.
+
+;IDS_ERROR_CANT_CLEAR_SAVED_SETTINGS
+[12]
+Value = Saved settings could not be cleared.
+
+;IDS_INFO_ALL_SAVED_SETTINGS_CLEARED
+[13]
+Value = All saved settings have been cleared.
+
+;IDS_STATUS_EES_NOT_RUNNING
+[14]
+Value = Not running
+
+;IDS_STATUS_EES_DISABLED
+[15]
+Value = Disabled
+
+;IDS_STATUS_EES_DOWNLOADING_SOFTWARE
+[16]
+Value = Downloading software
+
+;IDS_STATUS_EES_DOWNLOADING_SIGNATURES
+[17]
+Value = Downloading signatures
+
+;IDS_STATUS_EES_CHECKING_MEMORY
+[18]
+Value = Performing memory scan
+
+;IDS_STATUS_EES_REALTIME_PROTECTION_ENABLED
+[19]
+Value = Real time protection enabled
+
+;IDS_STATUS_EES_REBOOT_NEEDED_FOR_MALWARE_REMEDIATE
+[20]
+Value = Reboot needed to remediate malware
+
+;IDS_STATUS_EES_MALWARE_DETECTED_AUTO_REMEDIATION_FAILED
+[21]
+Value = Malware detected - automatic remediation failed
+
+;IDS_STATUS_EES_MALWARE_DETECTED_CHECKING_MEMORY
+[22]
+Value = Malware detected - performing memory rescan
+
+;IDS_STATUS_EES_INITIALIZING
+[23]
+Value = Initializing
+
+;IDS_STATUS_EES_INIT_FAILED
+[24]
+Value = Initialization failed
+
+;IDS_VERSION
+[25]
+Value = Version 
+
+;IDS_REMEDIATION_INFO
+[26]
+Value = Remediation info: 
+
+;IDS_CONNECTIONS
+[27]
+Value = C&onnections
+
+;IDS_DELETE_CONN
+[28]
+Value = Delete Connection
+
+;IDS_FORGET_SAVED_SETTING
+[29]
+Value = Forget Saved Settings
+
+;IDS_EDIT_CONN
+[30]
+Value = Edit Connection
+
+;IDS_ADD_CONN
+[31]
+Value = Add Connection
+
+;IDS_SECURITY
+[32]
+Value = &Security
+
+;IDS_ENHANDCED_ENDPOINT_SECURITY
+[33]
+Value = Enhanced Endpoint Security
+
+;IDS_ACCELERATION
+[34]
+Value = &Acceleration
+
+;IDS_WAN_BANDWIDTH_OPTIMIZATION
+[35]
+Value = Application Acceleration
+
+;IDS_CUSTOM
+[36]
+Value = Custom({0})
+
+;IDS_MAIN_DLG_MENU_DISCONNECT
+[37]
+Value = D&isconnect
+
+;IDS_WARNING_SELECT_CONN
+[38]
+Value = Please select a connection.
+
+;IDS_WARNING_DISCONNECT_BEFORE_EDIT
+[39]
+Value = Please disconnect before editing.
+
+
+;IDS_ERROR_INVALID_CREDENTIALS
+[40]
+Value = Credentials were invalid. Please try again.
+
+;IDS_STATUS_INPUT_CREDENTIALS
+[41]
+Value = Provide the following credentials to complete the connection.
+
+;IDS_STATUS_MAKE_SELECTION
+[42]
+Value = Make the following selection to complete the connection.
+
+;IDS_STATUS_INPUT_INFO
+[43]
+Value = Provide the following information to complete the connection.
+
+;IDS_STATUS_CONNECTING
+[44]
+Value = Connecting...
+
+;IDS_STATUS_CONN_COMPLETE
+[45]
+Value = Connection complete.
+
+;IDS_STATUS_DETAILS_FROM_TRAY_ICON
+[46]
+Value = {0} details are accessible from system tray icon.
+
+;IDS_ERROR_DISCONNECTED_BY_CONN_POLICY
+[47]
+Value = Disconnected by connection policy.
+
+;IDS_ERROR_CONN_FAILED
+[48]
+Value = Your connection has failed.
+
+;IDS_ERROR_LIMITED_CONN_COMPLIANCE_ISSUE
+[49]
+Value = Limited network access due to compliance issue.
+
+;IDS_STATUS_LIMITED_CONN_UPDATE_IN_PROGRESS
+[50]
+Value = Limited network access.\nUpdate is in progress. You may close this dialog. Once updating is complete you will be logged in to the network.
+
+;IDS_STATUS_LIMITED_CONN_UPDATE_DONE_RELOGIN
+[51]
+Value = Limited network access.\nUpdate complete. If the connection does not retry shortly, you may press the Retry button to try logging in again.
+
+;IDS_NAME_UNNAMED_CONN
+[53]
+Value = <Unnamed Connection>
+
+;IDS_NAME_UNSPECIFIED_HOST
+[54]
+Value = <unspecified host>
+
+
+;IDS_TT_CONNECT
+[55]
+Value = Click to connect
+
+;IDS_TT_DISCONNECT
+[56]
+Value = Click to disconnect
+
+;IDS_BTN_CONNECT
+[59]
+Value = Connect
+
+;IDS_BTN_STATUS
+[60]
+Value = Connect
+
+;IDS_HL_READ_INSTRUCTIONS
+[61]
+Value = <a>Read instructions</a> for resolving issues.
+
+;IDS_LB_SERVER_URL
+[62]
+Value = Server URL:
+
+;IDS_LB_STATUS
+[63]
+Value = Status:
+
+;IDS_LB_COMPLIANCE
+[64]
+Value = Compliance:
+
+;IDS_LB_EES_STATUS
+[65]
+Value = Status:
+
+;IDS_LB_EES_DEFINATIONS
+[66]
+Value = Definitions:
+
+;IDS_ST_COMPLIANCE_ISSUE
+[68]
+Value = Compliance Issue
+
+;IDS_ST_MESSAGE
+[69]
+Value = message
+
+;IDS_ST_UPDATE_IN_PROGRESS
+[70]
+Value = Update is in progress. You may close this dialog. Once updating is complete you will be logged in to the network.
+
+;IDS_ST_UPDATE_COMPLETE
+[71]
+Value = Update is complete.
+
+
+;IDS_WARNING_SPECIFY_CONN_NAME
+[72]
+Value = Please specify a name for this connection.
+
+;IDS_WARNING_SPECIFY_UNIQUE_CONN_NAME
+[73]
+Value = This name is already in use.\nPlease specify a unique name for this connection.
+
+;IDS_WARNING_SPECIFY_CONN_URL
+[74]
+Value = Please specify a URL for this connection.
+
+;IDS_SAVE
+[75]
+Value = S&ave
+
+;IDS_CERT_PROMPT_0
+[76]
+Value = You are about to authenticate to an untrusted server.  There are problems with the site's security certificate:  
+
+;IDS_DATE_FORMAT
+[77]
+Value = {0}/{1}/{2}
+
+;IDS_ST_CONN_INFO
+[78]
+Value = Connection Information:
+
+;IDS_ST_HOST
+[79]
+Value = Host:
+
+;IDS_ST_CERT_INFO
+[80]
+Value = Certificate Information:
+
+;IDS_ST_CERT_SUBJECT
+[81]
+Value = Issued To:
+
+;IDS_ST_CERT_ISSUER
+[82]
+Value = Issued By:
+
+;IDS_ST_CERT_VALIDITY
+[83]
+Value = Valid Through:
+
+;IDS_ST_CERT_HASH
+[84]
+Value = Thumb Print:
+
+;IDS_ST_VALIDITY_DATE_RANGE
+[85]
+Value = {0}-{1}
+ 
+;IDS_EMPTY
+[86]
+Value = <empty>
+
+
+;IDS_ST_PWD
+[87]
+Value = &Password:
+
+;IDS_ST_ENTER_OLD_PWD
+[88]
+Value = Please enter your &old password:
+
+;IDS_ST_ENTER_NEW_PWD
+[89]
+Value = Please enter your &new password:
+
+;IDS_ST_CONFIRM_NEW_PWD
+[90]
+Value = &Please confirm your new password:
+
+;IDS_ST_SECONDARY_PWD
+[91]
+Value = Secondary &Password:
+
+;IDS_ST_SAVE_SETTINGS
+[92]
+Value = &Save settings
+
+;IDS_ST_USER_NAME
+[93]
+Value = &User Name:
+
+;IDS_ST_SECONDARY_USER_NAME
+[94]
+Value = Secondary &User Name:
+
+;IDS_ST_ENTER_REALM
+[95]
+Value = Please enter a &Realm:
+
+;IDS_ST_ENTER_TOKEN_INFO
+[96]
+Value = &Please enter your passcode:
+
+;IDS_ST_ENTER_TOKEN_SECONDARY_INFO
+[97]
+Value = Please enter your secondary &token information:
+
+;IDS_ST_SERVER_CHALLENGE
+[98]
+Value = Message from server:
+
+;IDS_ST_ENTER_CLIENT_RESPONSE
+[99]
+Value = Please enter &response:
+
+;IDS_ST_SELECT_REALM
+[100]
+Value = Please select a &Realm:
+
+;IDS_ST_SELECT_ROLE
+[101]
+Value = Please select a &Role:
+
+;IDS_WARNING_MAX_SESSONS
+[102]
+Value = &Warning: You have the maximum number of sessions running.  Select a session and click Connect to terminate it and create a new session.  Click Cancel to keep the existing sessions. 
+
+;IDS_WARNING_SESSION_RUNNING
+[103]
+Value = &Warning: You have a session already running.  Click Connect to terminate it and create a new session.  Click Cancel to keep the existing session. 
+
+;IDS_ST_SELECT_CERTIFICATE
+[104]
+Value = &Please select a certificate:
+
+;IDS_LOGIN_DLG_BTN_CONNECT
+[105]
+Value = &Connect
+
+;IDS_LOGIN_DLG_BTN_RETRY
+[106]
+Value = &Retry
+
+;IDS_LOGIN_DLG_BTN_CANCEL
+[107]
+Value = C&ancel
+
+;IDS_LOGIN_DLG_BTN_CLOSE
+[108]
+Value = C&lose
+
+;IDS_LOGIN_DLG_CONNECT_TO
+[109]
+Value = Connect to: {0}
+
+;IDS_LOGIN_DLG_ERROR_INVALID_PWD
+[110]
+Value = New password is invalid.  Please enter a valid new password.
+
+;IDS_LOGIN_STATUS_WND_PROGRESS_BTN_CANCEL
+[111]
+Value = Ca&ncel
+
+;IDS_LOGIN_STATUS_WND_PROGRESS_BTN_CLOSE
+[112]
+Value = Cl&ose
+
+;IDS_LOG_SAVE_DLG_TITLE
+[113]
+Value = Save Logs and Diagnostics
+
+;IDS_LOG_SAVE_DLG_ST_SAVING_LOGS
+[114]
+Value = Saving logs and diagnostics...
+
+;IDS_LOG_SAVE_DLG_ST_SAVE_LOGS_COMPLETE
+[115]
+Value = Saving logs and diagnostics complete!
+
+;IDS_LOG_SAVE_DLG_SAVING_FILES
+[116]
+Value = Saving files...
+
+;IDS_LOG_SAVE_DLG_SAVING_COMMANDS
+[117]
+Value = Saving commands...
+
+;IDS_LOG_SAVE_DLG_SAVING_DIAGNOSTICS
+[118]
+Value = Saving diagnostics...
+
+;IDS_LOG_SAVE_DLG_SAVING_FAILED
+[119]
+Value = Saving failed!
+
+;IDS_REMEDIATION_POLICY_STR_REASONS_MISSING
+[120]
+Value = Not available.
+
+;IDS_REMEDIATION_POLICY_STR_INSTRUCTIONS_MISSING
+[121]
+Value = No instructions are available.
+
+;IDS_REMEDIATION_POLICY_STR_NO_DATA_AVAILABLE
+[122]
+Value = No additional information is available.  Please contact your system administrator.
+
+;IDS_TRAY_WND_STATE_NO_CONN
+[123]
+Value = No active connections
+
+;IDS_TRAY_WND_STATE_CONNECTED
+[124]
+Value = Connected
+
+;IDS_TRAY_WND_STATE_CONNECTING
+[125]
+Value = Connecting
+
+;IDS_TRAY_WND_STATE_CONN_FAILED
+[126]
+Value = Connection failed
+
+;IDS_TRAY_WND_STATE_LIMITED_CONNECTIVITY
+[127]
+Value = Limited connectivity
+
+;IDS_TRAY_WND_STATE_ACCESS_SERVICE_NOT_RUNNING
+[128]
+Value = Juniper Pulse service is not running
+
+;IDS_TRAY_WND_TT_PRODUCT_AND_STATE
+[129]
+Value = {0}:{1}
+
+;IDS_TRAY_WND_TT_CONN_FAILED
+[130]
+Value = Your connection has failed.  Please click here for more information.
+
+;IDS_TRAY_WND_MENU_OPEN
+[131]
+Value = &Open {0}
+
+;IDS_TRAY_WND_EXIT_QUESTION
+[132]
+Value = Exiting {0} may disable some of your network connections until you restart {0}.\n\nYou can restart {0} by running it from the Start menu.\n\nDo you really want to exit?
+
+;IDS_LOG_VIEWER_WND_TITLE
+[133]
+Value = Log Viewer
+
+;IDS_ANNOTATION_DLG_TITLE
+[136]
+Value = Annotate Logs
+
+;IDS_ANNOTATION_DLG_WARNING_SPECIFY_ANNOTATION_TEXT
+[137]
+Value = Please specify annotation text.
+
+;IDS_CONN_ITEM_STATUS_DISCONNECT_REQUESTED
+[139]
+Value = Disconnect requested
+
+;IDS_CONN_ITEM_STATUS_CONNECT_REQUESTED
+[140]
+Value = Connect requested
+
+;IDS_CONN_ITEM_STATUS_DISCONNECTED
+[141]
+Value = Disconnected
+
+;IDS_CONN_ITEM_STATUS_CONNECTING
+[142]
+Value = Connecting
+
+;IDS_CONN_ITEM_STATUS_CONNECTED
+[143]
+Value = Connected
+
+;IDS_CONN_ITEM_STATUS_RECONNECTING
+[144]
+Value = Waiting to connect
+
+;IDS_CONN_ITEM_STATUS_DISCONNECTING
+[145]
+Value = Disconnecting
+
+;IDS_CONN_ITEM_STATUS_FAILED
+[146]
+Value = Failed
+
+;IDS_CONN_ITEM_STATUS_UNKNOWN
+[147]
+Value = Unknown
+
+;IDS_CONN_ITEM_WX_STATUS_DISABLED
+[148]
+Value = Disabled
+
+;IDS_CONN_ITEM_WX_STATUS_ENABLING
+[149]
+Value = Enabling
+
+;IDS_CONN_ITEM_WX_STATUS_ENABLED
+[150]
+Value = Enabled
+
+;IDS_CONN_ITEM_WX_STATUS_RE_ENABLING
+[151]
+Value = Enabling
+
+;IDS_CONN_ITEM_WX_STATUS_DISABLING
+[152]
+Value = Disabling
+
+;IDS_CONN_ITEM_WX_STATUS_FAILED
+[153]
+Value = Failed
+
+;IDS_CONN_ITEM_WX_STATUS_UNKNOWN
+[154]
+Value = Unknown
+
+;IDS_CONN_ITEM_COMPLIANCE_LIMITED_CONNECTIVITY
+[155]
+Value = Limited connectivity
+
+;IDS_CONN_ITEM_COMPLIANCE_REMEDIATION_REQUIRED
+[156]
+Value = Remediation required
+
+;IDS_CONN_ITEM_COMPLIANCE_MEETS_SECURITIES_POLICIES
+[157]
+Value = Meets security policies
+
+;IDS_MAIN_DLG_MENU_CONNECTIONS
+[158]
+Value = C&onnections
+
+;IDS_MAIN_DLG_MENU_CONNECT
+[159]
+Value = &Connect
+
+;IDS_MAIN_DLG_MENU_REMEDIATION_INFO
+[160]
+Value = &Remediation Info
+
+;IDS_MAIN_DLG_MENU_EDIT
+[161]
+Value = &Edit
+
+;IDS_MAIN_DLG_MENU_DELETE
+[162]
+Value = &Delete
+
+;IDS_MAIN_DLG_MENU_FORGET_SAVED_SETTINGS
+[163]
+Value = &Forget Saved Settings
+
+;IDS_MAIN_DLG_MENU_ADD
+[164]
+Value = &Add
+
+;IDS_MAIN_DLG_MENU_LOGS
+[165]
+Value = &Logs
+
+;IDS_MAIN_DLG_MENU_ANNOTATE
+[166]
+Value = &Annotate...
+
+;IDS_MAIN_DLG_MENU_LOG_LEVEL
+[167]
+Value = &Log Level
+
+;IDS_MAIN_DLG_MENU_DETAILED
+[168]
+Value = &Detailed
+
+;IDS_MAIN_DLG_MENU_NORMAL
+[169]
+Value = &Normal
+
+;IDS_MAIN_DLG_MENU_SAVE_AS
+[170]
+Value = &Save As...
+
+;IDS_MAIN_DLG_MENU_HELP
+[171]
+Value = &Help
+
+;IDS_MAIN_DLG_MENU_ABOUT
+[172]
+Value = &About
+
+;IDS_MAIN_DLG_MENU_CLOSE
+[173]
+Value = &Close
+
+;IDS_TRAY_WND_MENU_EXIT
+[174]
+Value = E&xit
+
+;IDS_LOG_SAVE_DLG_FILTER
+[175]
+Value = Zip Files
+
+;IDS_ABOUT_VERSION
+[176]
+Value = Junos Pulse\nVersion {0}
+
+;IDS_ABOUT_COPYRIGHT
+[177]
+Value = © 2010-2014 Juniper Networks, Inc.\nAll rights reserved.
+
+;IDS_ABOUT_TOS
+[178]
+Value = Juniper Networks and Junos are registered trademarks of Juniper Networks, Inc. in the United States and other countries. The Juniper logo and the Junos logo are trademarks of Juniper Networks, Inc. All other trademarks, service marks, registered trademarks, or registered service marks are the property of their respective owners.
+
+;IDS_BTN_OK
+[179]
+Value  = &OK
+
+;IDS_BTN_CANCEL
+[180]
+Value  = &Cancel
+
+;IDS_LOG_ANNOTATION_DLG_ST_ENTER_TEXT_TO_ANNOTATE
+[181]
+Value  = &Enter text to annotate the log file with:
+
+;IDS_CONNECTION_DLG_ST_CONN_TYPE
+[182]
+Value  = &Type:
+
+;IDS_CONNECTION_DLG_ST_NAME
+[183]
+Value  = Na&me:
+
+;IDS_CONNECTION_DLG_ST_URL
+[184]
+Value  = &Server URL:
+
+;IDS_CONNECTION_DLG_BTN_CONNECT
+[185]
+Value  = &Connect
+
+;IDS_CONNECTION_DLG_BTN_ADD
+[186]
+Value  = &Add
+
+;IDS_CONNECTION_DLG_BTN_CANCEL
+[187]
+Value  = Ca&ncel
+
+;IDS_MAIN_DLG_BTN_CANCEL
+[188]
+Value  = &Close
+
+;IDS_MAIN_DLG_TT_CLICK_HERE_FOR_APP_MENU
+[189]
+Value = Press here for the application menu.
+
+;IDS_WARNING_NO_ERROR_DETAILS
+[190]
+Value = No additional details available.
+
+;IDS_LB_DETAILS
+[191]
+Value = Details:
+
+;IDS_CERT_PROMPT_1
+[193]
+Value = Should Pulse continue to connect?
+
+;IDS_ST_USER_NAME_PROXY
+[194]
+Value = Proxy &User Name:
+
+;IDS_ST_PASSWORD_PROXY
+[195]
+Value = Proxy &Password:
+
+;IDS_ST_PASSWORD_CURRENT
+[196]
+Value = &Password:
+
+;IDS_ST_PASSWORD_OLD
+[197]
+Value = Please enter your &old password:
+
+;IDS_ST_PASSWORD_NEW
+[198]
+Value = Please enter your &new password:
+
+;IDS_ST_PASSWORD_NEW_VERIFY
+[199]
+Value = &Please confirm your new password:
+
+;IDS_ST_PASSWORD_SECONDARY
+[200]
+Value = Secondary &Password:
+
+;IDS_ST_SSID
+[201]
+Value = SSID:
+
+;IDS_ST_PROXY_USER_NAME_PROMPT_0
+[202]
+Value = Please provide proxy server credentials
+
+;IDS_ST_PROXY_USER_NAME_PROMPT_1
+[203]
+Value = for
+
+;IDS_ST_PROXY_USER_NAME_PROMPT_2
+[204]
+Value = .
+
+;IDS_ST_UPGRADE_PROMPT
+[205]
+Value = An upgrade is available for Junos Pulse. Click Upgrade to install the upgrade now or click Cancel to upgrade at a later time. Until you upgrade, you may experience network problems.\n\nDuring the upgrade, programs on your computer may temporarily lose access to the network.  Please save your work before beginning the upgrade.
+
+;IDS_ST_UPGRADE_ACTION
+[206]
+Value = Software Upgrade for:
+
+;IDS_ST_UPGRADE_BUTTON
+[207]
+Value = &Upgrade
+
+;IDS_STATUS_RECONNECTING
+[208]
+Value = Waiting to connect...
+
+;IDS_ERROR_DETAILS_FORMAT
+[209]
+Value = Error {0}: {1}\n\n{2}
+
+;IDS_LOGIN_DLG_BTN_INFO
+[210]
+Value = &Info
+
+;IDS_STATUS_CHECKING_COMPLIANCE
+[211]
+Value = Checking compliance...
+
+;IDS_HL_REMEDIATION_AUTO
+[212]
+Value = <a>Click here</a> to see issues being fixed.
+
+;IDS_HL_REMEDIATION_COMPLETE
+[213]
+Value = <a>Click here</a> if this message does not go away shortly.
+
+;IDS_CONN_ITEM_STATUS_CHECKING_COMPLIANCE
+[214]
+Value = Checking compliance
+
+;IDS_STATUS_RETRY_REQUESTED
+[215]
+Value = Retry requested...
+
+;IDS_REMEDIATION_HTML_POLICY_INSTRUCTIONS
+[216]
+Value = Instructions:
+
+;IDS_REMEDIATION_HTML_POLICY_REASON
+[217]
+Value = Reasons:
+
+;IDS_REMEDIATION_HTML_TITLE
+[218]
+Value = Your computer's security is unsatisfactory
+
+;IDS_REMEDIATION_HTML_EXPLANATION
+[219]
+Value = Your computer does not meet the following security requirements. Please follow the instructions below to fix these problems. When you are done click <b>Retry</b>. If you choose to <b>Close</b> without fixing these problems, you may not have access to all of your intranet servers.
+
+;IDS_ST_ENTER_PIN
+[220]
+Value = Please enter your PIN:
+
+;IDS_ST_SELECT_TOKEN
+[221]
+Value = Please select a token:
+
+;IDS_ST_USE_PHYSICAL_TOKEN
+[222]
+Value = &Use physical token
+
+;IDS_ST_NEXT_TOKENCODE
+[223]
+Value = &Please wait for your tokencode to change. Then enter that new tokencode:
+
+;IDS_LOGIN_DLG_BTN_CONTINUE
+[224]
+Value = &Continue
+
+;IDS_CONN_ITEM_STATUS_CANCELLED
+[226]
+Value = Cancelled
+
+;IDS_CONN_ITEM_WX_STATUS_CONNECTED_WITH_ERRORS
+[227]
+Value = Connected with errors
+
+;IDS_CONN_ITEM_WX_STATUS_CANCELLED
+[228]
+Value = Cancelled
+
+;IDS_ST_ENTER_NUMERIC_PIN
+[229]
+Value = &Enter your new PIN consisting of numeric digits. Your new PIN must be at least {0} and no more than {1} digits in length:
+
+;IDS_ST_ENTER_ALPHANUMERIC_PIN
+[230]
+Value = &Enter your new PIN consisting of characters and digits. Your new PIN must be at least {0} and no more than {1} characters and digits in length:
+
+;IDS_ST_SYSTEM_PIN
+[231]
+Value = Your new PIN is {0}. Please remember your new PIN.
+
+;IDS_ST_CONFIRM_NEW_PIN
+[232]
+Value = &Please confirm your new PIN:
+
+;IDS_ST_ERROR_PIN_MATCH
+[233]
+Value = PINs do not match; please enter new PIN and confirm
+
+;IDS_ST_ERROR_NUMERIC_PIN
+[234]
+Value = Invalid PIN; please enter new PIN consisting of at least {0} and no more than {1} digits
+
+;IDS_ST_ERROR_ALPHANUMERIC_PIN
+[235]
+Value = Invalid PIN; please enter new PIN consisting of at least {0} and no more than {1} characters and digits 
+
+;IDS_WARNING_ERROR_SHORT_DESC_UNAVAILABLE
+[300]
+Value = Error {0}
+
+;IDS_WARNING_NO_ERROR_DETAILS_WITH_CATALOG_LOAD_ERROR
+[301]
+Value = No additional details are available. Your Pulse installation is missing required files.  If this issue persists, then please reinstall Pulse.
+
+;IDS_WARNING_ACCESS_SERVICE_NOT_RUNNING_GLOBAL_LOG_LEVEL_CHANGE_WONT_PERSIST
+[302]
+Value = Juniper Pulse service is not running; global log-level change won't persist across reboot.
+
+;IDS_BTN_DISCONNECT
+[303]
+Value = Disconnect
+
+;IDS_TT_SHOW_DETAILS
+[306]
+Value = Click to show details
+
+;IDS_TT_HIDE_DETAILS
+[307]
+Value = Click to hide details
+
+;IDS_CONNECTION_TYPE_IVE
+[308]
+Value = UAC or SSL-VPN
+
+;IDS_CONNECTION_TYPE_FIREWALL
+[309]
+Value = SRX
+
+;IDS_CONNECTION_TYPE_WX
+[310]
+Value = WX
+
+;IDS_CONNECTION_TYPE_WIRED
+[311]
+Value = Wired
+
+;IDS_CONNECTION_TYPE_WIRELESS
+[312]
+Value = Wireless
+
+;IDS_CONNECTION_TYPE_FIREWALL_VPN
+[313]
+Value = Firewall
+
+;IDS_EES_STATUS_FORMAT
+[314]
+Value = EES: {0}
+
+;IDS_LOGS_SAVE_BUTTON_CANCEL
+[315]
+Value = &Stop
+
+;IDS_LOG_SAVE_DLG_STOPPING
+[316]
+Value = Stopping collection and closing log file...
+
+;IDS_LOG_SAVE_PARTIAL_SUCCESS
+[317]
+Value = Partial logs and diagnostics saved!
+
+;IDS_TRAY_FAILURE_TEMPLATE
+[318]
+Value = Your connection has failed.\nConnection:\t{0}\nReason:   \t{1}\n{2}
+
+;IDS_TRAY_LIMITED_TEMPLATE
+[319]
+Value = Your connection has limited connectivity.\nConnection:\t{0}\nReason:   \t{1}\n{2}
+
+;IDS_TRAY_CLICK_FOR_INSTRUCTIONS
+[320]
+Value = Click here for instructions.
+
+;IDS_TRAY_CLICK_FOR_INFORMATION
+[321]
+Value = Click here for more information.
+
+;IDS_TRAY_COMPLIANCE_ISSUES
+[322]
+Value = Compliance issues
+
+;IDS_CONN_ITEM_STATUS_DISABLE_REQUESTED
+[323]
+Value = Disable requested
+
+;IDS_CONN_ITEM_STATUS_ENABLE_REQUESTED
+[324]
+Value = Enable requested
+
+;IDS_LB_WX_STATUS
+[325]
+Value = Status:
+
+;IDS_MSG_UNSPECIFIED_ERROR
+[329]
+Value = Unspecified error
+
+;IDS_PULSE_VERSIONS
+[330]
+Value = {0} Version Details
+
+;IDS_LINK_VERSION_DETAILS
+[331]
+Value = version details
+
+;IDS_BTN_SMALL_DECREMENT - Decreases button font size.
+[332]
+Value = 0
+
+;IDS_STATUS_EES_CHECKING_MEMORY
+[333]
+Value = Performing file scan
+
+;IDS_STATUS_EES_MALWARE_DETECTED_CHECKING_MEMORY
+[334]
+Value = Malware detected - performing memory rescan
+
+;IDS_INVALID
+[335]
+Value = <invalid>
+
+;IDS_STATUS_AUTH_USING_CLIENT_CERT
+[400]
+Value = Authenticating using client certificate...
+
+;IDS_LOGIN_DLG_BTN_VIEW_CERT
+[401]
+Value = &View
+
+;IDS_TRAY_DISCONNECT
+[450]
+Value = &Disconnect from network
+
+;IDS_TRAY_CONNECT
+[451]
+Value = &Connect to network
+
+;IDS_BUTTON_NETWORK_PROPERTIES
+[452]
+Value = Properties
+
+;IDS_BUTTON_NETWORK_HELP
+[453]
+Value = Help
+
+;IDS_BUTTON_NETWORK_DIAL
+[454]
+Value = Dial
+
+;IDS_PULSE_NOT_RUNNING
+[455]
+Value = The Juniper Pulse service is not running
+
+;IDS_NO_CHOICE_TEMPLATE
+[456]
+Value = ({0} choice)
+
+;IDS_NO_CHOICES_TEMPLATE
+[457]
+Value = ({0} choices)
+
+;IDS_NO_ITEMS
+[458]
+Value = No {0}
+
+;IDS_EMPTY_NETWORK_PROVIDER
+[459]
+Value = 
+
+;IDS_TRAY_WND_TT_ACCELERATION
+[460]
+Value = \r\nAcceleration: {0}
+
+;IDS_TRAY_WND_TT_NETWORK
+[461]
+Value = \r\nNetwork: {0}
+
+;IDS_ST_TNC_SHAVLIK_CONSENT_PROMPT
+[462]
+Value = Pulse needs to install security patches to complete the connection.\n\nNote: Choosing Don't Install may result in limited or no connectivity.
+
+;IDS_LOGIN_DLG_BTN_INSTALL
+[463]
+Value = &Install
+
+;IDS_LOGIN_DLG_BTN_DONT_INSTALL
+[464]
+Value = &Don't Install
+
+;IDS_LOGIN_DLG_BTN_CONTINUE
+[465]
+Value = &Continue
+
+;IDS_LOGIN_DLG_BTN_REBOOT_NOW
+[466]
+Value = Reboot &Now
+
+;IDS_LOGIN_DLG_BTN_REBOOT_LATER
+[467]
+Value = Reboot &Later
+
+;IDS_ST_TNC_REBOOT_REQUIRED
+[468]
+Value = A reboot is required to complete the patch installation.\n\nNote: Not rebooting may result in limited or no connectivity until you reboot.
+
+;IDS_CONN_ITEM_WX_STATUS_ACCELERATING
+[469]
+Value = Accelerating
+
+;IDS_CONN_ITEM_WX_STATUS_NOT_ACCELERATING
+[470]
+Value = Not accelerating
+
+;IDS_MAIN_DLG_MENU_ACCELERATION
+[471]
+Value = Acc&eleration
+
+;IDS_MAIN_DLG_MENU_ENABLE
+[472]
+Value = &Enable
+
+;IDS_MAIN_DLG_MENU_DISABLE
+[473]
+Value = &Disable
+
+;IDS_MAIN_DLG_MENU_CANCEL
+[474]
+Value = &Cancel
+
+;IDS_TRAY_WND_TT_CONNECTIONS
+[475]
+Value = \r\n{0}
+
+;IDS_ST_TNC_REBOOT_REQUIRED
+[476]
+Value = A reboot is required to complete the patch installation.\n\nNote: Selecting Reboot Later may result in limited or no connectivity until you reboot.
+
+;IDS_ERROR_INFO_ACTION_PREFIX
+[477]
+Value = Error info: 
+
+;IDS_ERROR_INFO_TITLE
+[478]
+Value = Connection Error 
+
+;IDS_ERROR_INFO_ERROR_CODE
+[479]
+Value = Error:
+
+;IDS_MAIN_DLG_MENU_FILE
+[480]
+Value = &File
+
+;IDS_TT_CANCEL
+[481]
+Value = Click to cancel
+
+;IDS_REMEDIATION_HTML_REPORT
+[482]
+Value = The following tasks were resolved by Pulse:
+
+;IDS_STATUS_CHECKING_COMPLIANCE_REMEDIATION_COMPLETE
+[483]
+Value = Auto remediation complete.  Checking compliance...
+
+;IDS_REMEDIATION_PROGRESS_TITLE_SHAVLIK_PATCH
+[484]
+Value = Patch Installation:
+
+;IDS_REMEDIATION_PROGRESS_MESSAGE_OTHER
+[485]
+Value = 1 task to complete.
+
+;IDS_REMEDIATION_PROGRESS_MESSAGE_OTHER_PLURAL
+[486]
+Value = {0} tasks to complete.
+
+;IDS_REMEDIATION_PROGRESS_MESSAGE_OTHER_COMPLETED
+[487]
+Value = 1 task completed.
+
+;IDS_REMEDIATION_PROGRESS_MESSAGE_OTHER_PLURAL_COMPLETED
+[488]
+Value = {0} tasks completed.
+
+;IDS_REMEDIATION_PATCH_SUMMARY_DOWNLOAD_FAILED
+[489]
+Value = [Download
+
+;IDS_REMEDIATION_PATCH_SUMMARY_INSTALL_FAILED
+[490]
+Value = [Install
+
+;IDS_REMEDIATION_PATCH_SUMMARY_REBOOT_REQUIRED
+[491]
+Value = [Reboot Required]
+
+;IDS_REMEDIATION_PATCH_PROGRESS_MESSAGE_ERROR
+[492]
+Value = {0} patch downloaded. {1} patch installed.  
+
+;IDS_REMEDIATION_PATCH_PROGRESS_MESSAGE_ERROR_PLURAL
+[493]
+Value = {0} of {1} patches installed. {2} of {3} patches installed.
+
+;IDS_REMEDIATION_PATCH_PROGRESS_MESSAGE_START
+[494]
+Value = Starting to install 1 patch...
+
+;IDS_REMEDIATION_PATCH_PROGRESS_MESSAGE_START_PLURAL
+[495]
+Value = Starting to install {0} patches...
+
+;IDS_REMEDIATION_PATCH_PROGRESS_MESSAGE_DOWNLOADING
+[496]
+Value = Downloading 1 patch...
+
+;IDS_REMEDIATION_PATCH_PROGRESS_MESSAGE_DOWNLOADING_PLURAL
+[497]
+Value = Downloading {0} of {1} patches...
+
+;IDS_REMEDIATION_PATCH_PROGRESS_MESSAGE_DOWNLOADED
+[498]
+Value = Downloaded 1 patch.
+
+;IDS_REMEDIATION_PATCH_PROGRESS_MESSAGE_DOWNLOADED_PLURAL
+[499]
+Value = Downloaded {0} patches.
+
+;IDS_REMEDIATION_PATCH_PROGRESS_MESSAGE_PREINSTALL
+[500]
+Value = Ready to install 1 patch...
+
+;;IDS_REMEDIATION_PATCH_PROGRESS_MESSAGE_PREINSTALL_PLURAL
+[501]
+Value = Ready to install {0} patches...
+
+;IDS_REMEDIATION_PATCH_PROGRESS_MESSAGE_INSTALLING
+[502]
+Value = Installing 1 patch...
+
+;IDS_REMEDIATION_PATCH_PROGRESS_MESSAGE_INSTALLING_PLURAL
+[503]
+Value = Installing {0} of {1} patches...
+
+;IDS_REMEDIATION_PATCH_PROGRESS_MESSAGE_INSTALLED
+[504]
+Value = Installed 1 patch.
+
+;IDS_REMEDIATION_PATCH_PROGRESS_MESSAGE_INSTALLED_PLURAL
+[505]
+Value = Installed {0} patches.
+
+;IDS_REMEDIATION_PATCH_PROGRESS_INIT
+[506]
+Value = Patch Engine initializing...
+
+;IDS_REMEDIATION_PATCH_PROGRESS_INIT_SDK_DL_IN_PROGRESS
+[507]
+Value = Patch Engine downloading SDK...
+
+;IDS_REMEDIATION_PATCH_PROGRESS_INIT_SDK_DL_DONE
+[508]
+Value = Patch Engine SDK downloaded.
+
+;IDS_REMEDIATION_PATCH_PROGRESS_INIT_SDK_DL_FAILED
+[509]
+Value = Patch Engine SDK download failed.
+
+;IDS_REMEDIATION_PATCH_PROGRESS_INIT_SDK_UP_TO_DATE
+[510]
+Value = Patch Engine SDK up to date.
+
+;IDS_REMEDIATION_PATCH_PROGRESS_UNINITIALIZED
+[511]
+Value = Uninitialized.
+
+;IDS_REMEDIATION_PATCH_PROGRESS_POSTINSTALL
+[512]
+Value = Finishing Install...
+
+;IDS_REMEDIATION_PATCH_PROGRESS_CLEAN_UP
+[513]
+Value = Cleaning up...
+
+;IDS_REMEDIATION_PATCH_PROGRESS_REBOOT_REQUIRED
+[514]
+Value = Reboot required to finish install.
+
+;IDS_REMEDIATION_PATCH_PROGRESS_FINISHED
+[515]
+Value = Finished.
+
+;IDS_REMEDIATION_PATCH_PROGRESS_CANCELED
+[516]
+Value = Canceled.
+
+;IDS_REMEDIATION_OTHER_PROGRESS_AV_RTP_ON
+[517]
+Value = Real Time Protection turned on ({0}).
+
+;IDS_REMEDIATION_OTHER_PROGRESS_AV_SIG_DL_STARTED
+[518]
+Value = Virus signature download started ({0})...
+
+;IDS_REMEDIATION_OTHER_PROGRESS_AV_SIG_DL_FINISHED
+[519]
+Value = Virus signatures downloaded ({0}).
+
+;IDS_REMEDIATION_OTHER_PROGRESS_AV_SCAN_STARTED
+[520]
+Value = Virus scan started ({0})...
+
+;IDS_REMEDIATION_OTHER_PROGRESS_FIREWALL_ON
+[521]
+Value = Firewall turning ON ({0}).
+
+;IDS_REMEDIATION_OTHER_PROGRESS_FIREWALL_OFF
+[522]
+Value = Firewall turning OFF ({0}).
+
+;IDS_REMEDIATION_OTHER_PROGRESS_PROCESS
+[523]
+Value = Killing {0}...
+
+;IDS_REMEDIATION_OTHER_PROGRESS_FILE
+[524]
+Value = Deleting {0}...
+
+;IDS_REMEDIATION_OTHER_PROGRESS_REGISTRY
+[525]
+Value = Setting {0} to {1}...
+
+;IDS_REMEDIATION_OTHER_PROGRESS_SMS
+[526]
+Value = Starting Microsoft patch deployment client...
+
+;IDS_REMEDIATION_OTHER_PROGRESS_UNDEFINED
+[527]
+Value = Undefined task.
+
+;IDS_REMEDIATION_OTHER_SUMMARY_AV_RTP_ON
+[528]
+Value = Real Time Protection turned on ({0}).
+
+;IDS_REMEDIATION_OTHER_SUMMARY_AV_SIG_DL_STARTED
+[529]
+Value = Virus signature download started ({0}).
+
+;IDS_REMEDIATION_OTHER_SUMMARY_AV_SIG_DL_FINISHED
+[530]
+Value = Virus signatures downloaded ({0}).
+
+;IDS_REMEDIATION_PATCH_SUMMARY_FIREWALL_ON
+[531]
+Value = Firewall ({0}) turned ON.
+
+;IDS_REMEDIATION_PATCH_SUMMARY_FIREWALL_OFF
+[532]
+Value = Firewall ({0}) turned OFF.
+
+;IDS_REMEDIATION_PATCH_SUMMARY_PROCESS
+[533]
+Value = Killed process {0}.
+
+;IDS_REMEDIATION_PATCH_SUMMARY_FILE
+[534]
+Value = Deleted file {0}.
+
+;IDS_REMEDIATION_PATCH_SUMMARY_REGISTRY
+[535]
+Value = Setting registry key {0} to {1}.
+
+;IDS_REMEDIATION_PATCH_SUMMARY_SMS
+[536]
+Value = Started Microsoft patch deployment client.
+
+;IDS_REMEDIATION_PATCH_SUMMARY_SMS_FAIL
+[537]
+Value = Started Microsoft patch deployment client [Failed].
+
+;IDS_REMEDIATION_PATCH_SUMMARY_UNDEFINED
+[538]
+Value = Undefined task.
+
+;IDS_REMEDIATION_PATCH_MANUAL_REBOOT_REQUIRED_POLICY
+[539]
+Value = Reboot Required
+
+;IDS_REMEDIATION_PATCH_MANUAL_REBOOT_REQUIRED_REASON
+[540]
+Value = The patch(s) installed require this computer to be rebooted.
+
+;IDS_REMEDIATION_PATCH_MANUAL_REBOOT_REQUIRED_INSTRUCTIONS
+[541]
+Value = Reboot this computer to finish patch installation.
+
+;IDS_REMEDIATION_PATCH_COMPLETE_MESSAGE
+[542]
+Value = Remediation tasks are complete.
+
+;IDS_REMEDIATION_DETAILS_LINK
+[544]
+Value = View <a>details</a> for completed remediation tasks.
+
+;IDS_REMEDIATION_PATCH_SUMMARY_FAILED
+[546]
+Value = Failed]
+
+;IDS_REMEDIATION_SUMMARY_TITLE
+[547]
+Value = Completed Tasks
+
+;IDS_REMEDIATION_SUMMARY_DESCRIPTION
+[548]
+Value = These tasks were completed automatically by Pulse:
+
+;IDS_REMEDIATION_PATCH_ACTION_TAKEN
+[549]
+Value = Action Taken:
+
+;IDS_REMEDIATION_PATCH_NO_ACTIONS
+[550]
+Value = No actions are available.
+
+;IDS_REMEDIATION_PATCH_SUMMARY_PATCHES_INSTALLED
+[551]
+Value = Patch Installation:
+
+;IDS_REMEDIATION_PROGRESS_DETAILS_LINK
+[553]
+Value = Additional remediation tasks may be required.  Click <a>here</a> for details.
+
+;IDS_REMEDIATION_PROGRESS_TITLE_OTHER
+[555]
+Value = Misc. Remediation Tasks:
+
+;IDS_REMEDIATION_ACTION_TAKEN_SMS_STARTED
+[556]
+Value = <b>Microsoft patch deployment client is started.  If it cannot install the missing patches listed above, try clicking the download link and installing them manually.</b>
+
+;IDS_REMEDIATION_ACTION_TAKEN_SMS_FAILED
+[557]
+Value = <b>Microsoft patch deployment client failed to start.  Try clicking the download link above to manually install the missing patches.</b>
+
+;IDS_LIST_NAME_PULSE_CONNECTIONS
+[558]
+Value = Connections
+
+;IDS_LIST_NAME_ACCELERATION
+[559]
+Value = Acceleration
+
+;IDS_LIST_NAME_SECURITY
+[560]
+Value = Security
+
+;IDS_LIST_NAME_IPASS_NETWORKS
+[561]
+Value = iPass Networks
+
+;IDS_REMEDIATION_OTHER_SUMMARY_AV_SCAN_STARTED
+[562]
+Value = Virus scan started ({0}).
+
+;IDS_REMEDIATION_OTHER_SUMMARY_AV_SCAN_FINISHED
+[563]
+Value = Virus scan completed ({0}).
+
+;IDS_REMEDIATION_OTHER_PROGRESS_AV_SCAN_FINISHED
+[564]
+Value = Virus scan completed ({0}).
+
+;IDS_REMEDIATION_OTHER_SUMMARY_AV_RTP_FAILED
+[565]
+Value = Real Time Protection failed to turn on ({0}).
+
+;IDS_REMEDIATION_OTHER_PROGRESS_AV_RTP_FAILED
+[566]
+Value = Real Time Protection failed to turn on ({0}).
+
+;IDS_NETWORK_TYPE_WIRED
+[581]
+Value = Wired
+
+;IDS_NETWORK_TYPE_WIRELESS
+[582]
+Value = Wi-Fi
+
+;IDS_NETWORK_TYPE_DIALUP
+[583]
+Value = Dialup
+
+;IDS_NETWORK_TYPE_MOBILE_DATA
+[584]
+Value = 3G
+
+;IDS_NETWORK_TYPE_WIMAX
+[585]
+Value = 4G
+
+;IDS_NETWORK_TYPE_UNKNOWN
+[586]
+Value = Unknown
+
+;IDS_NETWORK_TYPE_FMT_NUMBERED
+[587]
+Value = type {0}
+
+;IDS_CONN_ITEM_STATUS_CONNECTED_NO_INTERNET
+[588]
+Value = Connected - no internet
+
+;IDS_TRAY_WND_STATE_CONNECTED_NO_INTERNET
+[589]
+Value = Connected - no internet
+
+;IDS_CONN_ITEM_STATUS_CONNECTED_DETECTING_INTERNET
+[590]
+Value = Connected - detecting internet
+
+;IDS_TRAY_WND_STATE_CONNECTED_DETECTING_INTERNET
+[591]
+Value = Connected - detecting internet
+
+;IDS_LINK_WX_HELP
+[592]
+Value = (why?)
+
+;IDS_TIP_CLICK_FOR_DETAILS
+[593]
+Value = Click here for details
+
+;IDS_INTRUSION_DETECTION
+[700]
+Value = Intrusion detection
+
+;IDS_NETWORK_ACCESS_LIMITED
+[701]
+Value = Your network access has been limited due to the detection of unusual network behavior.  Please contact your administrator for help.
+
+;IDS_TRAY_ROLE
+[800]
+Value = Roles
+
+;IDS_TRAY_REALMS
+[801]
+Value = Realms
+
+;IDS_TRAY_SESSIONS
+[802]
+Value = Sessions
+
+;IDS_TRAY_ROLE_DESC
+[803]
+Value = Select a Role
+
+;IDS_TRAY_REALMS_DESC
+[804]
+Value = Select a Realms
+
+;IDS_TRAY_SESSION_DESC
+[805]
+Value = Select a Session
+
+;IDS_TRAY_ROLE_TITLE
+[806]
+Value = This connection requires that a Role be selected
+
+;IDS_TRAY_REALMS_TITLE
+[807]
+Value = This connection requires that a Realms be selected
+
+;IDS_TRAY_SESSION_TITLE
+[808]
+Value = This connection requires that a session be selected
+
+;IDS_TRAY_PASSCODE
+[809]
+Value = Passcode
+
+;IDS_TRAY_MESSAGEFROMSERVER_TITLE
+[810]
+Value = The Server for this connection requires a response before continuing with the connection.
+
+;IDS_TRAY_CONNECTTO_LABEL
+[811]
+Value = Connect to:
+
+;IDS_MAC_MENU_HIDE
+[812]
+Value = Hide:
+
+;IDS_MAC_MENU_TURNON
+[813]
+Value = Turn {0} On
+
+;IDS_MAC_MENU_TURNOFF
+[814]
+Value = Turn {0} Off
+
+;IDS_MAC_MENU_OFF
+[815]
+Value = Off
+
+;IDS_MAC_MENU_ON
+[816]
+Value = On
+
+;IDS_MAIN_DLG_MENU_EDIT
+[817]
+Value = Ad&vanced Connection Details...
+
+;IDS_ST_SELECT_SSID
+[818]
+Value = Please select a &Network:
+
+;IDS_MAC_WINDOWTITLE_CONNECTIONS
+[819]
+Value = Connections
+
+;IDS_TRAY_CERT_DESC
+[820]
+Value = Select a Certificate
+
+;IDS_TRAY_CERT_TITLE
+[821]
+Value = This connection requires that a certificate be selected
+
+;IDS_TRAY_CERTS
+[822]
+Value = Certificates
+
+;IDS_MAC_ABOUTVERSION
+[823]
+Value = Version
+
+;IDS_ST_SELECT_CONNECTION
+[824]
+Value = Select a connection:
+
+;IDS_MAC_MAINMENU_WINDOW
+[825]
+Value = Window 
+
+;IDS_MAC_MAINMENU_MINIMIZE
+[826]
+Value = Minimize
+
+;IDS_MAC_MAINMENU_ZOOM
+[827]
+Value = Zoom
+
+;IDS_MAC_MAINMENU_BRINGTOFRONT
+[828]
+Value = Bring All to Front
+
+;IDS_MAC_MAINMENU_CUT
+[829]
+Value = Cut
+
+;IDS_MAC_MAINMENU_COPY
+[830]
+Value = Copy
+ 
+;IDS_MAC_MAINMENU_PASTE
+[831]
+Value = Paste
+
+;IDS_MAC_MAINMENU_SELECTALL
+[832]
+Value = Select All
+
+;IDS_MAC_MAINMENU_SPEECH
+[833]
+Value = Speech
+ 
+;IDS_MAC_MAINMENU_STARTSPEAKING
+[834]
+Value = Start Speaking
+
+;IDS_MAC_MAINMENU_STOPSPEAKING
+[835]
+Value = Stop Speaking
+
+;IDS_MAC_MAINMENU_HIDEOTHERS
+[836]
+Value = Hide Others
+
+;IDS_MAC_MAINMENU_SHOWALL
+[837]
+Value = Show All
+
+;IDS_MAC_STATUS_DETAILS_FROM_TRAY_ICON
+[838]
+Value = {0} Connection details are accessible from the Pulse icon on the menu bar.
+
+;IDS_MAC_EXIT_NOT_ALLOWED
+[839]
+Value = Your administrator does not allow turn off from Pulse.
+
+;IDS_MAC_MENU_EXIT
+[840]
+Value = Exit
+
+;IDS_TRAY_MAC_EXIT_QUESTION
+[841]
+Value = Exiting {0} may disable some of your network connections until you restart {0}.\n\nYou can restart {0} by running it from the applications list.\n\nDo you really want to exit?
+
+;IDS_LOGIN_DLG_TEXT_SESSION_EXPIRING_ACTION
+[900]
+Value = Connection: {0}
+
+;IDS_LOGIN_DLG_BTN_EXTEND_SESSION
+[901]
+Value = &Extend
+
+;IDS_LOGIN_DLG_TEXT_SESSION_EXPIRING
+[902]
+Value = This Pulse connection will time out in: {0}.\nPlease select "Extend" to extend the session.
+
+;IDS_LOGIN_DLG_TEXT_SESSION_WILL_EXPIRE_SHORTLY
+[903]
+Value = This Pulse connection will expire shortly.
+
+;IDS_LOGIN_DLG_TEXT_SESSION_LIFETIME_FORMAT_INCLUDE_DAYS_HOURS_MINUTES_SECONDS
+[904]
+Value = {0}d {1}h {2}m {3}s
+
+;IDS_LOGIN_DLG_TEXT_SESSION_LIFETIME_FORMAT_INCLUDE_HOURS_MINUTES_SECONDS
+[905]
+Value = {0}h {1}m {2}s
+
+;IDS_LOGIN_DLG_TEXT_SESSION_LIFETIME_FORMAT_INCLUDE_MINUTES_SECONDS
+[906]
+Value = {0}m {1}s
+
+;IDS_LOGIN_DLG_TEXT_SESSION_LIFETIME_FORMAT_INCLUDE_SECONDS
+[907]
+Value = {0}s
+
+;IDS_MENU_ITEM_EXTEND_SESSION
+[908]
+Value = E&xtend Session
+
+;IDS_WARNING_ALSO_SECURE_MEETING
+[910]
+Value = This may also end your Secure Meeting.
+
+;IDS_WARNING_SECURE_MEETING_FAILURE
+[911]
+Value = Secure Meeting could not be started for this connection
+
+;IDS_MENU_ITEM_SECURE_MEETING
+[912]
+Value = Pulse Collaboration
+
+;IDS_MENU_ITEM_SECURE_MEETING_START
+[913]
+Value = Meetings
+
+;IDS_MENU_ITEM_SECURE_MEETING_STOP
+[914]
+Value = Sign Out
+ 
+;IDS_SECURE_MEETING_STARTED_SOON
+[915]
+Value = Your Pulse Collaboration meeting will be started shortly.
+
+;IDS_SECURE_MEETING_USE_DISCONNECT_TO_STOP
+[916]
+Value = (use disconnect to sign out)
+
+;IDS_ADVANCED_INFO
+[917]
+Value = Advanced details:
+
+;IDS_LOGIN_DLG_BTN_REFRESH
+[918]
+Value = &Refresh
+
+;IDS_ADVANCED_STR_NO_DATA_AVAILABLE
+[919]
+Value = No additional details are available
+
+;IDS_ADVANCED_LABEL_BYTES_IN
+[920]
+Value = Bytes in
+
+;IDS_ADVANCED_LABEL_BYTES_OUT
+[921]
+Value = Bytes out
+
+;IDS_ADVANCED_LABEL_TIME_REMAINING
+[922]
+Value = Session time remaining
+
+;IDS_ADVANCED_LABEL_TEMPLATE
+[923]
+Value = {0}: 
+
+;IDS_ADVANCED_LABEL_TUNNEL_TYPE
+[924]
+Value = Tunnel type
+
+;IDS_ADVANCED_LABEL_VPN_TYPE
+[925]
+Value = VPN type
+
+;IDS_ADVANCED_VPN_ESP
+[926]
+Value = ESP
+
+;IDS_ADVANCED_VPN_SSL
+[927]
+Value = SSL/VPN
+
+;IDS_ADVANCED_TUNNEL_VPN
+[928]
+Value = VPN
+
+;IDS_ADVANCED_TUNNEL_WSAM
+[929]
+Value = WSAM
+
+;IDS_ADVANCED_TUNNEL_UNKNOWN
+[930]
+Value = Other
+
+;IDS_ADVANCED_VPN_UNKNOWN
+[931]
+Value = Other
+
+;IDS_ADVANCED_STR_GATHERING
+[932]
+Value = Gathering data...
+
+;IDS_LOGIN_DLG_TEXT_SESSION_EXPIRING_NO_EXTEND_SESSION_BUTTON
+[933]
+Value = This Pulse connection will time out in: {0}.\nPlease save your work to prevent data loss from \nnetwork disconnection.
+
+;IDS_ADVANCED_STR_DISCONNECTED
+[934]
+Value = This session is not connected.
+
+;IDS_TT_MINIMIZE
+[935]
+Value = Minimize
+
+;IDS_TT_MAXIMIZE
+[936]
+Value = Maximize
+
+;IDS_TT_CLOSE
+[937]
+Value = Close
+
+;IDS_ERROR_URL_FORMAT
+[938]
+Value = Characters %&?: and white spaces are not allowed in URLs.
+
+;IDS_ADVANCED_TUNNEL_UAC
+[939]
+Value = UAC
+
+;IDS_CRED_PROV_STATUS_TO_WINDOWS
+[950]
+Value = Pulse is connecting to '{0}' ...
+
+;IDS_CRED_PROV_ERROR_TO_WINDOWS
+[951]
+Value = Pulse Connection to '{0}' failed.\nReason: {1}
+
+;IDS_EXIT_NOT_ALLOWED
+[952]
+Value = Your administrator does not allow exiting from Pulse
+
+;IDS_ADVANCED_TUNNEL_NONE
+[953]
+Value = &lt;tunnel not enabled&gt;
+
+;IDS_ST_TNCSAM_REBOOT_REQUIRED
+[954]
+Value = A reboot is required to complete the Pulse configuration. Please close all applications to avoid loss of data and reboot your computer.\n\nNote: Not rebooting may result in no connectivity until you reboot.
+
+;IDS_PROXY_SERVERDETAILS
+[955]
+Value = Proxy &Server Address:
+
+;IDS_PROXY_SERVERDETAILSMESSAGE
+[956]
+Value = Pulse could not contact the login server. If your site uses a proxy server, please enter the proxy server details now and then press Connect.  Otherwise press Cancel.
+
+;IDS_ST_PROXY_USER_NAME_PROMPT_3
+[957]
+Value = Please provide proxy server credentials (if required at your site)
+
+;IDS_MSG_TOAST_INPUT_NEEDED
+[958]
+Value = Your input is needed to connect
+
+;IDS_LOGIN_DLG_BTN_DECLINE
+[959]
+Value = &Decline
+
+;IDS_LOGIN_DLG_BTN_PROCEED
+[960]
+Value = &Proceed
+
+;IDS_CONN_ITEM_STATUS_WAITING_FOR_NETWORK
+[961]
+Value = Waiting for network
+
+;IDS_MAIN_DLG_MENU_SUSPEND
+[962]
+Value = &Suspend
+
+;IDS_MAIN_DLG_MENU_RESUME
+[963]
+Value = &Resume
+
+;IDS_TT_CANCEL
+[964]
+Value = Click to resume
+
+;IDS_BTN_RESUME
+[965]
+Value = &Resume
+
+;IDS_CONN_ITEM_STATUS_SUSPENDING
+[966]
+Value = Suspending
+
+;IDS_CONN_ITEM_STATUS_SUSPENDED
+[967]
+Value = Suspended
+
+;IDS_TRAY_WND_STATE_CONNECTED
+[968]
+Value = Suspended
+
+;IDS_BTN_CANCEL_NOSHORTCUT
+[969]
+Value  = Cancel
+
+;IDS_MAIN_DLG_MENU_FIPS
+[970]
+Value = F&IPS
+
+;IDS_FIPS_MODE_ON
+[971]
+Value = FIPS ON
+
+;IDS_FIPS_MODE_OFF
+[972]
+Value = FIPS OFF
+
+;IDS_PASSWORD_EXPIRING
+[973]
+Value = Your {0}password will expire {1}.
+
+;IDS_PASSWORD_EXPIRING_ONE_DAY
+[974]
+Value = in one day
+
+;IDS_PASSWORD_EXPIRING_DAYS
+[975]
+Value = in {0} days
+
+;IDS_PASSWORD_EXPIRING_ONE_HOUR
+[976]
+Value = in one hour
+
+;IDS_PASSWORD_EXPIRING_HOURS
+[977]
+Value = in {0} hours
+
+;IDS_PASSWORD_EXPIRING_UNDER_ONE_HOUR
+[978]
+Value = in under one hour
+
+;IDS_STATUS_SECURING_CONNECTION
+[980]
+Value = Securing Connection...
+
+;IDS_CONN_ITEM_STATUS_SECURING_CONNECTION
+[981]
+Value = Securing Connection
+
+;IDS_ADVANCED_LABEL_ADDRESS_IP4
+[990]
+Value = Assigned IPV4
+
+;IDS_ADVANCED_LABEL_ADDRESS_IP6
+[991]
+Value = Assigned IPV6
+
+;IDS_ST_AUTOMATIC_REFRESH
+[992]
+Value = &Automatically refresh
+
+;IDS_ADVANCED_ADDRESS_NOT_ASSIGNED
+[993]
+Value = &lt;not assigned&gt;
+
+;IDS_ADVANCED_ADDRESS_NOT_ASSIGNED
+[993]
+Value = &lt;not assigned&gt;
+
+;IDS_CONN_ITEM_STATUS_MANUAL_OVERRIDE
+[994]
+Value = manual override
+
+;IDS_DASH_SEPARATOR
+[995]
+Value = -
+
+;IDS_MAIN_DLG_MENU_REMOVE_OVERRIDE
+[996]
+Value = Remove &Override (return to automatic control)
+
+; IDS_CONN_ITEM_STATUS_WIRELESS_SUPPRESSED
+[1004]
+Value = Disabled - wired connection active
+
+; IDS_CONN_ITEM_STATUS_WIRELESS_ADAPTER_NOT_PRESENT
+[1005]
+Value = No wireless adapter available
+
+; IDS_TRAY_WIRELESS_CANCEL_IO
+[1006]
+Value = Pulse has disconnected your wireless connection because your administrator does not allow wired and wireless connections at the same time.
+
+; IDS_TRAY_WND_TT_WIRELESS_SUPPRESSED
+[1007]
+Value = \r\nWireless connections are disabled
+
+; IDS_PASSWORD_EXPIRING_PRIMARY
+[1008]
+Value = primary
+
+; IDS_PASSWORD_EXPIRING_SECONDARY
+[1009]
+Value = secondary

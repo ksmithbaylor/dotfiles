@@ -1,0 +1,2068 @@
+﻿; JUNS catalogUtil requires resource catalog files to be saved with UTF-8 encoding, which put 3 bytes {0xEF, 0xBB, 0xBF} at the file beginning called Byte Order Mark (BOM) for UTF-8 files . For modifications in this files, please use Text Editors which persist these BOM bytes (like Notepad.exe, Visual Studio IDE, etc).
+
+; Following are English Resource Strings used in Pulse
+; ----------------------------------------------------
+
+; Notes: 1) Language Translation not needed for these:
+;           a) hyperlink anchor tags: <a>, </a>
+;           b) escape characters: \n, \r, \t
+
+;IDS_AS_IS
+[0]
+Value = {0}
+
+;IDS_SSID
+[1]
+Value = SSID:
+
+;IDS_WARNING_CONNECTING_ACCESS_SERVICE
+[2]
+Value = Error al conectarse al servicio de red unificado de Juniper.
+
+;IDS_WARNING_ADD_EDIT_CONN_NOT_ALLOWED
+[3]
+Value = El administrador no permite agregar o editar conexiones.
+
+;IDS_WARNING_CAN_NOT_CREATE_CONN
+[4]
+Value = No puede crear una conexión porque no hay métodos de acceso disponibles.
+
+;IDS_WARNING_USE_WINDOWS_FOR_CONTROLING_CONN
+[5]
+Value = Utilice Windows para controlar esta conexión.
+
+;IDS_WARNING_CONN_AUTO_CONTROLLED_CANT_EDIT
+[6]
+Value = Esta conexión se controla automáticamente y no se puede anular.
+
+;IDS_WARNING_CONN_DELETED_EDITS_DISCARDED
+[7]
+Value = Esta conexión se eliminó mientras se editaba.  Se descartaron sus ediciones.
+
+;IDS_WARNING_CONN_DELETE_NOT_ALLOWED
+[8]
+Value = El administrador no permite la eliminación de esta conexión.
+
+;IDS_QUESTION_REMOVE_CONN
+[9]
+Value = ¿Desea eliminar esta conexión?\n\nConexión: {0}
+
+;IDS_WARNING_ACCELERATION_NOT_CONTROLLABLE
+[10]
+Value = La aceleración no es controlable actualmente.
+
+;IDS_WARNING_ACCELERATION_AUTO_CONTROLLED_CANT_EDIT
+[11]
+Value = La aceleración se controla automáticamente y no se puede anular.
+
+;IDS_ERROR_CANT_CLEAR_SAVED_SETTINGS
+[12]
+Value = No se pueden borrar las configuraciones guardadas.
+
+;IDS_INFO_ALL_SAVED_SETTINGS_CLEARED
+[13]
+Value = Se han borrado todas las configuraciones guardadas.
+
+;IDS_STATUS_EES_NOT_RUNNING
+[14]
+Value = No en ejecución
+
+;IDS_STATUS_EES_DISABLED
+[15]
+Value = Deshabilitado
+
+;IDS_STATUS_EES_DOWNLOADING_SOFTWARE
+[16]
+Value = Descarga de software
+
+;IDS_STATUS_EES_DOWNLOADING_SIGNATURES
+[17]
+Value = Descarga de firmas
+
+;IDS_STATUS_EES_CHECKING_MEMORY
+[18]
+Value = Realización de análisis de memoria
+
+;IDS_STATUS_EES_REALTIME_PROTECTION_ENABLED
+[19]
+Value = Protección en tiempo real habilitada
+
+;IDS_STATUS_EES_REBOOT_NEEDED_FOR_MALWARE_REMEDIATE
+[20]
+Value = Debe reiniciar para corregir el malware
+
+;IDS_STATUS_EES_MALWARE_DETECTED_AUTO_REMEDIATION_FAILED
+[21]
+Value = Malware detectado - falló la corrección automática
+
+;IDS_STATUS_EES_MALWARE_DETECTED_CHECKING_MEMORY
+[22]
+Value = Malware detectado - realizando análisis de memoria
+
+;IDS_STATUS_EES_INITIALIZING
+[23]
+Value = Inicializando
+
+;IDS_STATUS_EES_INIT_FAILED
+[24]
+Value = Error al inicializar
+
+;IDS_VERSION
+[25]
+Value = Versión 
+
+;IDS_REMEDIATION_INFO
+[26]
+Value = Información de corrección: 
+
+;IDS_CONNECTIONS
+[27]
+Value = C&onexiones
+
+;IDS_DELETE_CONN
+[28]
+Value = Eliminar conexión
+
+;IDS_FORGET_SAVED_SETTING
+[29]
+Value = Olvidar configuraciones guardadas
+
+;IDS_EDIT_CONN
+[30]
+Value = Editar conexiones
+
+;IDS_ADD_CONN
+[31]
+Value = Agregar conexiones
+
+;IDS_SECURITY
+[32]
+Value = &Seguridad
+
+;IDS_ENHANDCED_ENDPOINT_SECURITY
+[33]
+Value = Seguridad de punto final mejorada
+
+;IDS_ACCELERATION
+[34]
+Value = &Aceleración
+
+;IDS_WAN_BANDWIDTH_OPTIMIZATION
+[35]
+Value = Aceleración de aplicaciones
+
+;IDS_CUSTOM
+[36]
+Value = Personalizado({0})
+
+;IDS_MAIN_DLG_MENU_DISCONNECT
+[37]
+Value = D&esconectar
+
+;IDS_WARNING_SELECT_CONN
+[38]
+Value = Seleccione una conexión.
+
+;IDS_WARNING_DISCONNECT_BEFORE_EDIT
+[39]
+Value = Desconecte antes de editar.
+
+
+;IDS_ERROR_INVALID_CREDENTIALS
+[40]
+Value = Las credenciales no eran válidas. Vuelva a intentarlo.
+
+;IDS_STATUS_INPUT_CREDENTIALS
+[41]
+Value = Proporcione las siguientes credenciales para completar la conexión.
+
+;IDS_STATUS_MAKE_SELECTION
+[42]
+Value = Realice la siguiente selección para completar la conexión.
+
+;IDS_STATUS_INPUT_INFO
+[43]
+Value = Proporcione la siguiente información para completar la conexión.
+
+;IDS_STATUS_CONNECTING
+[44]
+Value = Conectando...
+
+;IDS_STATUS_CONN_COMPLETE
+[45]
+Value = Conexión completa.
+
+;IDS_STATUS_DETAILS_FROM_TRAY_ICON
+[46]
+Value = Se puede acceder a {0} detalles en el icono de la bandeja del sistema.
+
+;IDS_ERROR_DISCONNECTED_BY_CONN_POLICY
+[47]
+Value = Desconectado por la directiva de conexión.
+
+;IDS_ERROR_CONN_FAILED
+[48]
+Value = Se produjo un error en la conexión.
+
+;IDS_ERROR_LIMITED_CONN_COMPLIANCE_ISSUE
+[49]
+Value = Acceso limitado a la red debido a un problema de cumplimiento.
+
+;IDS_STATUS_LIMITED_CONN_UPDATE_IN_PROGRESS
+[50]
+Value = Acceso limitado a la red.\nLa actualización está en progreso. Puede cerrar este diálogo. Una vez que la actualización haya terminado iniciará sesión en la red.
+
+;IDS_STATUS_LIMITED_CONN_UPDATE_DONE_RELOGIN
+[51]
+Value = Acceso limitado a la red.\nActualización completa. Si no hay reintentos de conexión dentro de poco, puede presionar el botón Intentar nuevamente para intentar iniciar sesión de nuevo.
+
+;IDS_NAME_UNNAMED_CONN
+[53]
+Value = <Conexión sin nombre>
+
+;IDS_NAME_UNSPECIFIED_HOST
+[54]
+Value = <Host no especificado>
+
+
+;IDS_TT_CONNECT
+[55]
+Value = Haga clic para conectar
+
+;IDS_TT_DISCONNECT
+[56]
+Value = Haga clic para desconectar
+
+;IDS_BTN_CONNECT
+[59]
+Value = Conectar
+
+;IDS_BTN_STATUS
+[60]
+Value = Conectar
+
+;IDS_HL_READ_INSTRUCTIONS
+[61]
+Value = <a>Lea las instrucciones</a> para resolver problemas.
+
+;IDS_LB_SERVER_URL
+[62]
+Value = URL del servidor:
+
+;IDS_LB_STATUS
+[63]
+Value = Estado:
+
+;IDS_LB_COMPLIANCE
+[64]
+Value = Cumplimiento:
+
+;IDS_LB_EES_STATUS
+[65]
+Value = Estado:
+
+;IDS_LB_EES_DEFINATIONS
+[66]
+Value = Definiciones:
+
+;IDS_ST_COMPLIANCE_ISSUE
+[68]
+Value = Problema de cumplimiento
+
+;IDS_ST_MESSAGE
+[69]
+Value = mensaje
+
+;IDS_ST_UPDATE_IN_PROGRESS
+[70]
+Value = La actualización está en progreso. Puede cerrar este diálogo. Una vez que la actualización haya terminado iniciará sesión en la red.
+
+;IDS_ST_UPDATE_COMPLETE
+[71]
+Value = La actualización está completa.
+
+
+;IDS_WARNING_SPECIFY_CONN_NAME
+[72]
+Value = Especifique un nombre para esta conexión.
+
+;IDS_WARNING_SPECIFY_UNIQUE_CONN_NAME
+[73]
+Value = El nombre ya está en uso.\nEspecifique un nombre único para esta conexión.
+
+;IDS_WARNING_SPECIFY_CONN_URL
+[74]
+Value = Especifique un URL para esta conexión.
+
+;IDS_SAVE
+[75]
+Value = Gu&ardar
+
+;IDS_CERT_PROMPT_0
+[76]
+Value = Está a punto de autenticar un servidor que no es de confianza.  Existen problemas con el certificado de seguridad del sitio:  
+
+;IDS_DATE_FORMAT
+[77]
+Value = {0}/{1}/{2}
+
+;IDS_ST_CONN_INFO
+[78]
+Value = Información de conexión:
+
+;IDS_ST_HOST
+[79]
+Value = Host:
+
+;IDS_ST_CERT_INFO
+[80]
+Value = Información del certificado:
+
+;IDS_ST_CERT_SUBJECT
+[81]
+Value = Emitido a:
+
+;IDS_ST_CERT_ISSUER
+[82]
+Value = Emitido por:
+
+;IDS_ST_CERT_VALIDITY
+[83]
+Value = Válido hasta:
+
+;IDS_ST_CERT_HASH
+[84]
+Value = Huella dactilar:
+
+;IDS_ST_VALIDITY_DATE_RANGE
+[85]
+Value = {0}-{1}
+ 
+;IDS_EMPTY
+[86]
+Value = <vacío>
+
+
+;IDS_ST_PWD
+[87]
+Value = &Contraseña:
+
+;IDS_ST_ENTER_OLD_PWD
+[88]
+Value = Ingrese su contraseña &anterior:
+
+;IDS_ST_ENTER_NEW_PWD
+[89]
+Value = Ingrese su &contraseña nueva:
+
+;IDS_ST_CONFIRM_NEW_PWD
+[90]
+Value = &Confirme su contraseña nueva:
+
+;IDS_ST_SECONDARY_PWD
+[91]
+Value = Contraseña &secundaria:
+
+;IDS_ST_SAVE_SETTINGS
+[92]
+Value = &Configuraciones guardadas
+
+;IDS_ST_USER_NAME
+[93]
+Value = &Nombre de usuario:
+
+;IDS_ST_SECONDARY_USER_NAME
+[94]
+Value = Nombre de usuario &secundario:
+
+;IDS_ST_ENTER_REALM
+[95]
+Value = Ingrese un te&rritorio:
+
+;IDS_ST_ENTER_TOKEN_INFO
+[96]
+Value = &Ingrese su contraseña:
+
+;IDS_ST_ENTER_TOKEN_SECONDARY_INFO
+[97]
+Value = Ingrese su &información de token secundaria:
+
+;IDS_ST_SERVER_CHALLENGE
+[98]
+Value = Mensaje del servidor:
+
+;IDS_ST_ENTER_CLIENT_RESPONSE
+[99]
+Value = Ingrese &respuesta:
+
+;IDS_ST_SELECT_REALM
+[100]
+Value = Seleccione un te&rritorio:
+
+;IDS_ST_SELECT_ROLE
+[101]
+Value = Seleccione un &Rol:
+
+;IDS_WARNING_MAX_SESSONS
+[102]
+Value = &Advertencia: tiene la cantidad máxima de sesiones en ejecución.  Seleccione una sesión y haga clic en Conectar para terminarla y cree una sesión nueva.  Haga clic en Cancelar para conservar las sesiones existentes. 
+
+;IDS_WARNING_SESSION_RUNNING
+[103]
+Value = &Advertencia: tiene una sesión que ya se encuentra en ejecución.  Haga clic en Conectar para terminarla y cree una nueva sesión.  Haga clic en Cancelar para conservar la sesión existente. 
+
+;IDS_ST_SELECT_CERTIFICATE
+[104]
+Value = &Seleccione un certificado:
+
+;IDS_LOGIN_DLG_BTN_CONNECT
+[105]
+Value = &Conectar
+
+;IDS_LOGIN_DLG_BTN_RETRY
+[106]
+Value = &Reintentar
+
+;IDS_LOGIN_DLG_BTN_CANCEL
+[107]
+Value = C&ancelar
+
+;IDS_LOGIN_DLG_BTN_CLOSE
+[108]
+Value = C&errar
+
+;IDS_LOGIN_DLG_CONNECT_TO
+[109]
+Value = Conectarse a: {0}
+
+;IDS_LOGIN_DLG_ERROR_INVALID_PWD
+[110]
+Value = La contraseña nueva no es válida.  Introduzca una nueva contraseña válida.
+
+;IDS_LOGIN_STATUS_WND_PROGRESS_BTN_CANCEL
+[111]
+Value = Ca&ncelar
+
+;IDS_LOGIN_STATUS_WND_PROGRESS_BTN_CLOSE
+[112]
+Value = Ce&rrar
+
+;IDS_LOG_SAVE_DLG_TITLE
+[113]
+Value = Guardar registros y diagnósticos
+
+;IDS_LOG_SAVE_DLG_ST_SAVING_LOGS
+[114]
+Value = Guardar registros y diagnósticos...
+
+;IDS_LOG_SAVE_DLG_ST_SAVE_LOGS_COMPLETE
+[115]
+Value = ¡Guardar registros y diagnósticos terminado!
+
+;IDS_LOG_SAVE_DLG_SAVING_FILES
+[116]
+Value = Guardando archivos...
+
+;IDS_LOG_SAVE_DLG_SAVING_COMMANDS
+[117]
+Value = Guardando comandos...
+
+;IDS_LOG_SAVE_DLG_SAVING_DIAGNOSTICS
+[118]
+Value = Guardando diagnósticos...
+
+;IDS_LOG_SAVE_DLG_SAVING_FAILED
+[119]
+Value = ¡Error al guardar!
+
+;IDS_REMEDIATION_POLICY_STR_REASONS_MISSING
+[120]
+Value = No disponible.
+
+;IDS_REMEDIATION_POLICY_STR_INSTRUCTIONS_MISSING
+[121]
+Value = No hay instrucciones disponibles.
+
+;IDS_REMEDIATION_POLICY_STR_NO_DATA_AVAILABLE
+[122]
+Value = No se cuenta con información adicional.  Comuníquese con el administrador del sistema.
+
+;IDS_TRAY_WND_STATE_NO_CONN
+[123]
+Value = Sin conexiones activas
+
+;IDS_TRAY_WND_STATE_CONNECTED
+[124]
+Value = Conectado
+
+;IDS_TRAY_WND_STATE_CONNECTING
+[125]
+Value = Conectando
+
+;IDS_TRAY_WND_STATE_CONN_FAILED
+[126]
+Value = Error en la conexión
+
+;IDS_TRAY_WND_STATE_LIMITED_CONNECTIVITY
+[127]
+Value = Conectividad limitada
+
+;IDS_TRAY_WND_STATE_ACCESS_SERVICE_NOT_RUNNING
+[128]
+Value = El servicio Juniper Pulse no está en ejecución
+
+;IDS_TRAY_WND_TT_PRODUCT_AND_STATE
+[129]
+Value = {0}:{1}
+
+;IDS_TRAY_WND_TT_CONN_FAILED
+[130]
+Value = Se produjo un error en la conexión.  Haga clic aquí para obtener más información.
+
+;IDS_TRAY_WND_MENU_OPEN
+[131]
+Value = &Abrir {0}
+
+;IDS_TRAY_WND_EXIT_QUESTION
+[132]
+Value = Si sale de {0} es posible que se desactiven las conexiones de red hasta que reinicie {0}.\n\nPuede reiniciar {0} ejecutándolo desde el menú Inicio.\n\n¿Realmente desea salir?
+
+;IDS_LOG_VIEWER_WND_TITLE
+[133]
+Value = Visualizador de registros
+
+;IDS_ANNOTATION_DLG_TITLE
+[136]
+Value = Anotar registros
+
+;IDS_ANNOTATION_DLG_WARNING_SPECIFY_ANNOTATION_TEXT
+[137]
+Value = Especifique el texto de anotación.
+
+;IDS_CONN_ITEM_STATUS_DISCONNECT_REQUESTED
+[139]
+Value = Desconexión solicitada
+
+;IDS_CONN_ITEM_STATUS_CONNECT_REQUESTED
+[140]
+Value = Conexión solicitada
+
+;IDS_CONN_ITEM_STATUS_DISCONNECTED
+[141]
+Value = Desconectado
+
+;IDS_CONN_ITEM_STATUS_CONNECTING
+[142]
+Value = Conectando
+
+;IDS_CONN_ITEM_STATUS_CONNECTED
+[143]
+Value = Conectado
+
+;IDS_CONN_ITEM_STATUS_RECONNECTING
+[144]
+Value = Esperando conectarse
+
+;IDS_CONN_ITEM_STATUS_DISCONNECTING
+[145]
+Value = Desconectando
+
+;IDS_CONN_ITEM_STATUS_FAILED
+[146]
+Value = Error
+
+;IDS_CONN_ITEM_STATUS_UNKNOWN
+[147]
+Value = Desconocido
+
+;IDS_CONN_ITEM_WX_STATUS_DISABLED
+[148]
+Value = Deshabilitado
+
+;IDS_CONN_ITEM_WX_STATUS_ENABLING
+[149]
+Value = Habilitando
+
+;IDS_CONN_ITEM_WX_STATUS_ENABLED
+[150]
+Value = Habilitado
+
+;IDS_CONN_ITEM_WX_STATUS_RE_ENABLING
+[151]
+Value = Habilitando
+
+;IDS_CONN_ITEM_WX_STATUS_DISABLING
+[152]
+Value = Deshabilitando
+
+;IDS_CONN_ITEM_WX_STATUS_FAILED
+[153]
+Value = Error
+
+;IDS_CONN_ITEM_WX_STATUS_UNKNOWN
+[154]
+Value = Desconocido
+
+;IDS_CONN_ITEM_COMPLIANCE_LIMITED_CONNECTIVITY
+[155]
+Value = Conectividad limitada
+
+;IDS_CONN_ITEM_COMPLIANCE_REMEDIATION_REQUIRED
+[156]
+Value = Se necesita corrección
+
+;IDS_CONN_ITEM_COMPLIANCE_MEETS_SECURITIES_POLICIES
+[157]
+Value = Cumple las directivas de seguridad
+
+;IDS_MAIN_DLG_MENU_CONNECTIONS
+[158]
+Value = C&onexiones
+
+;IDS_MAIN_DLG_MENU_CONNECT
+[159]
+Value = &Conectar
+
+;IDS_MAIN_DLG_MENU_REMEDIATION_INFO
+[160]
+Value = &Información de corrección
+
+;IDS_MAIN_DLG_MENU_EDIT
+[161]
+Value = &Editar
+
+;IDS_MAIN_DLG_MENU_DELETE
+[162]
+Value = &Eliminar
+
+;IDS_MAIN_DLG_MENU_FORGET_SAVED_SETTINGS
+[163]
+Value = &Olvidar configuraciones guardadas
+
+;IDS_MAIN_DLG_MENU_ADD
+[164]
+Value = &Agregar
+
+;IDS_MAIN_DLG_MENU_LOGS
+[165]
+Value = &Registros
+
+;IDS_MAIN_DLG_MENU_ANNOTATE
+[166]
+Value = &Anotar...
+
+;IDS_MAIN_DLG_MENU_LOG_LEVEL
+[167]
+Value = &Nivel de registro
+
+;IDS_MAIN_DLG_MENU_DETAILED
+[168]
+Value = &Detallado
+
+;IDS_MAIN_DLG_MENU_NORMAL
+[169]
+Value = &Normal
+
+;IDS_MAIN_DLG_MENU_SAVE_AS
+[170]
+Value = &Guardar como...
+
+;IDS_MAIN_DLG_MENU_HELP
+[171]
+Value = &Ayuda
+
+;IDS_MAIN_DLG_MENU_ABOUT
+[172]
+Value = &Acerca de
+
+;IDS_MAIN_DLG_MENU_CLOSE
+[173]
+Value = &Cerrar
+
+;IDS_TRAY_WND_MENU_EXIT
+[174]
+Value = S&alir
+
+;IDS_LOG_SAVE_DLG_FILTER
+[175]
+Value = Archivo zip
+
+;IDS_ABOUT_VERSION
+[176]
+Value = Junos Pulse\nVersión {0}
+
+;IDS_ABOUT_COPYRIGHT
+[177]
+Value = © 2010-2014 Juniper Networks, Inc.\nTodos los derechos reservados.
+
+;IDS_ABOUT_TOS
+[178]
+Value = Juniper Networks y Juniper son marcas registradas de Juniper Networks, Inc. en los Estados Unidos y otros países. El logotipo de Juniper y el logotipo de Junos son marcas registradas de Juniper Networks, Inc. Todas las demás marcas comerciales, marcas de servicio, marcas comerciales registradas o marcas de servicio registradas pertenecen a sus respectivos propietarios.
+
+;IDS_BTN_OK
+[179]
+Value  = &Aceptar
+
+;IDS_BTN_CANCEL
+[180]
+Value  = &Cancelar
+
+;IDS_LOG_ANNOTATION_DLG_ST_ENTER_TEXT_TO_ANNOTATE
+[181]
+Value  = &Ingrese el texto para anotar el archivo de registro con:
+
+;IDS_CONNECTION_DLG_ST_CONN_TYPE
+[182]
+Value  = &Tipo:
+
+;IDS_CONNECTION_DLG_ST_NAME
+[183]
+Value  = No&mbre:
+
+;IDS_CONNECTION_DLG_ST_URL
+[184]
+Value  = &URL del servidor:
+
+;IDS_CONNECTION_DLG_BTN_CONNECT
+[185]
+Value  = &Conectar
+
+;IDS_CONNECTION_DLG_BTN_ADD
+[186]
+Value  = &Agregar
+
+;IDS_CONNECTION_DLG_BTN_CANCEL
+[187]
+Value  = Ca&ncelar
+
+;IDS_MAIN_DLG_BTN_CANCEL
+[188]
+Value  = &Cerrar
+
+;IDS_MAIN_DLG_TT_CLICK_HERE_FOR_APP_MENU
+[189]
+Value = Presione aquí para ver el menú de aplicaciones.
+
+;IDS_WARNING_NO_ERROR_DETAILS
+[190]
+Value = No hay mas detalles disponibles.
+
+;IDS_LB_DETAILS
+[191]
+Value = Detalles:
+
+;IDS_CERT_PROMPT_1
+[193]
+Value = ¿Debe Pulse seguir conectándose?
+
+;IDS_ST_USER_NAME_PROXY
+[194]
+Value = Nombre de &usuario de proxy:
+
+;IDS_ST_PASSWORD_PROXY
+[195]
+Value = Contraseña &proxy:
+
+;IDS_ST_PASSWORD_CURRENT
+[196]
+Value = &Contraseña:
+
+;IDS_ST_PASSWORD_OLD
+[197]
+Value = Ingrese su contraseña &anterior:
+
+;IDS_ST_PASSWORD_NEW
+[198]
+Value = Ingrese su &contraseña nueva:
+
+;IDS_ST_PASSWORD_NEW_VERIFY
+[199]
+Value = &Confirme su contraseña nueva:
+
+;IDS_ST_PASSWORD_SECONDARY
+[200]
+Value = Contraseña &secundaria:
+
+;IDS_ST_SSID
+[201]
+Value = SSID:
+
+;IDS_ST_PROXY_USER_NAME_PROMPT_0
+[202]
+Value = Proporcione las credenciales del servidor proxy
+
+;IDS_ST_PROXY_USER_NAME_PROMPT_1
+[203]
+Value = para
+
+;IDS_ST_PROXY_USER_NAME_PROMPT_2
+[204]
+Value = .
+
+;IDS_ST_UPGRADE_PROMPT
+[205]
+Value = Hay una actualización disponible para Junos Pulse. Haga clic en Actualizar para instalar la actualización o haga clic en Cancelar para actualizar en otro momento. Hasta que actualice, puede experimentar problemas de red.\n\nDurante la actualización, los programas de su equipo pueden perder temporalmente el acceso a la red.  Guarde su trabajo antes de comenzar la actualización.
+
+;IDS_ST_UPGRADE_ACTION
+[206]
+Value = Actualización de Software para:
+
+;IDS_ST_UPGRADE_BUTTON
+[207]
+Value = &Actualizar
+
+;IDS_STATUS_RECONNECTING
+[208]
+Value = Esperando conectarse...
+
+;IDS_ERROR_DETAILS_FORMAT
+[209]
+Value = Error {0}: {1}\n\n{2}
+
+;IDS_LOGIN_DLG_BTN_INFO
+[210]
+Value = &Info
+
+;IDS_STATUS_CHECKING_COMPLIANCE
+[211]
+Value = Comprobación del cumplimiento...
+
+;IDS_HL_REMEDIATION_AUTO
+[212]
+Value = <a>Haga clic aquí</a> para ver la solución de problemas.
+
+;IDS_HL_REMEDIATION_COMPLETE
+[213]
+Value = <a>Haga clic aquí</a> si este mensaje no desaparece dentro de poco.
+
+;IDS_CONN_ITEM_STATUS_CHECKING_COMPLIANCE
+[214]
+Value = Comprobación del cumplimiento
+
+;IDS_STATUS_RETRY_REQUESTED
+[215]
+Value = Reintento solicitado...
+
+;IDS_REMEDIATION_HTML_POLICY_INSTRUCTIONS
+[216]
+Value = Instrucciones:
+
+;IDS_REMEDIATION_HTML_POLICY_REASON
+[217]
+Value = Razones:
+
+;IDS_REMEDIATION_HTML_TITLE
+[218]
+Value = La seguridad de su equipo no es satisfactoria
+
+;IDS_REMEDIATION_HTML_EXPLANATION
+[219]
+Value = Su equipo no cumple los requisitos de seguridad especificados. Siga las instrucciones que aparecen a continuación para solucionar estos problemas. Cuando finalice, haga clic en <b>Reintentar</b>. Si elige <b>Cerrar</b> sin solucionar estos problemas, es posible que no tenga acceso a todos los servidores de intranet.
+
+;IDS_ST_ENTER_PIN
+[220]
+Value = Ingrese su PIN:
+
+;IDS_ST_SELECT_TOKEN
+[221]
+Value = Seleccione un token:
+
+;IDS_ST_USE_PHYSICAL_TOKEN
+[222]
+Value = &Use un token físico
+
+;IDS_ST_NEXT_TOKENCODE
+[223]
+Value = &Espere el cambio del código de token. Luego ingrese el nuevo código de token:
+
+;IDS_LOGIN_DLG_BTN_CONTINUE
+[224]
+Value = &Continuar
+
+;IDS_CONN_ITEM_STATUS_CANCELLED
+[226]
+Value = Cancelado
+
+;IDS_CONN_ITEM_WX_STATUS_CONNECTED_WITH_ERRORS
+[227]
+Value = Conectado con errores
+
+;IDS_CONN_ITEM_WX_STATUS_CANCELLED
+[228]
+Value = Cancelado
+
+;IDS_ST_ENTER_NUMERIC_PIN
+[229]
+Value = &Ingrese el nuevo PIN, el cual consta de dígitos numéricos. El nuevo PIN debe tener al menos {0} y no más de {1} dígitos de longitud:
+
+;IDS_ST_ENTER_ALPHANUMERIC_PIN
+[230]
+Value = &Ingrese el nuevo PIN, el cual consta de caracteres y dígitos. El nuevo PIN debe tener al menos {0} y no más de {1} caracteres y dígitos de longitud:
+
+;IDS_ST_SYSTEM_PIN
+[231]
+Value = El nuevo PIN es {0}. Recuerde el nuevo PIN.
+
+;IDS_ST_CONFIRM_NEW_PIN
+[232]
+Value = &Confirme su nuevo PIN:
+
+;IDS_ST_ERROR_PIN_MATCH
+[233]
+Value = Los PIN no coinciden; ingrese el nuevo PIN y confírmelo
+
+;IDS_ST_ERROR_NUMERIC_PIN
+[234]
+Value = PIN no válido; introduzca un nuevo PIN con al menos {0} pero no más de {1} dígitos
+
+;IDS_ST_ERROR_ALPHANUMERIC_PIN
+[235]
+Value = PIN no válido; introduzca un nuevo PIN con al menos {0} pero no más de {1} caracteres y dígitos 
+
+;IDS_WARNING_ERROR_SHORT_DESC_UNAVAILABLE
+[300]
+Value = Error {0}
+
+;IDS_WARNING_NO_ERROR_DETAILS_WITH_CATALOG_LOAD_ERROR
+[301]
+Value = No hay mas detalles disponibles. A su instalación de Pulse le faltan archivos requeridos.  Si este problema continúa, reinstale Pulse.
+
+;IDS_WARNING_ACCESS_SERVICE_NOT_RUNNING_GLOBAL_LOG_LEVEL_CHANGE_WONT_PERSIST
+[302]
+Value = El servicio Juniper Pulse no está en ejecución; el cambio de nivel de registro global no se conservará después de reiniciar.
+
+;IDS_BTN_DISCONNECT
+[303]
+Value = Desconectar
+
+;IDS_TT_SHOW_DETAILS
+[306]
+Value = Haga clic para mostrar los detalles
+
+;IDS_TT_HIDE_DETAILS
+[307]
+Value = Haga clic para esconder los detalles
+
+;IDS_CONNECTION_TYPE_IVE
+[308]
+Value = UAC o VPN SSL
+
+;IDS_CONNECTION_TYPE_FIREWALL
+[309]
+Value = SRX
+
+;IDS_CONNECTION_TYPE_WX
+[310]
+Value = WX
+
+;IDS_CONNECTION_TYPE_WIRED
+[311]
+Value = Alámbrico
+
+;IDS_CONNECTION_TYPE_WIRELESS
+[312]
+Value = Inalámbrico
+
+;IDS_CONNECTION_TYPE_FIREWALL_VPN
+[313]
+Value = Firewall
+
+;IDS_EES_STATUS_FORMAT
+[314]
+Value = EES: {0}
+
+;IDS_LOGS_SAVE_BUTTON_CANCEL
+[315]
+Value = &Detener
+
+;IDS_LOG_SAVE_DLG_STOPPING
+[316]
+Value = Se está deteniendo la recopilación y cerrando el archivo de registro…
+
+;IDS_LOG_SAVE_PARTIAL_SUCCESS
+[317]
+Value = Se guardaron los registros parciales y los diagnósticos.
+
+;IDS_TRAY_FAILURE_TEMPLATE
+[318]
+Value = Se produjo un error en la conexión.\nConexión:\t{0}\nRazón:   \t{1}\n{2}
+
+;IDS_TRAY_LIMITED_TEMPLATE
+[319]
+Value = Su conexión tiene conectividad limitada.\nConexión:\t{0}\nRazón:   \t{1}\n{2}
+
+;IDS_TRAY_CLICK_FOR_INSTRUCTIONS
+[320]
+Value = Haga clic aquí para ver las instrucciones.
+
+;IDS_TRAY_CLICK_FOR_INFORMATION
+[321]
+Value = Haga clic aquí para obtener más información.
+
+;IDS_TRAY_COMPLIANCE_ISSUES
+[322]
+Value = Problemas de cumplimiento
+
+;IDS_CONN_ITEM_STATUS_DISABLE_REQUESTED
+[323]
+Value = Se solicitó la desactivación
+
+;IDS_CONN_ITEM_STATUS_ENABLE_REQUESTED
+[324]
+Value = Se solicitó la activación
+
+;IDS_LB_WX_STATUS
+[325]
+Value = Estado:
+
+;IDS_MSG_UNSPECIFIED_ERROR
+[329]
+Value = Error sin especificar
+
+;IDS_PULSE_VERSIONS
+[330]
+Value = {0} Detalles de la versión
+
+;IDS_LINK_VERSION_DETAILS
+[331]
+Value = detalles de la versión
+
+;IDS_BTN_SMALL_DECREMENT - Decreases button font size.
+[332]
+Value = 0
+
+;IDS_STATUS_EES_CHECKING_MEMORY
+[333]
+Value = Se está realizando un análisis del archivo
+
+;IDS_STATUS_EES_MALWARE_DETECTED_CHECKING_MEMORY
+[334]
+Value = Malware detectado - realizando análisis de memoria
+
+;IDS_INVALID
+[335]
+Value = <no válido>
+
+;IDS_STATUS_AUTH_USING_CLIENT_CERT
+[400]
+Value = Autenticando mediante certificado de cliente...
+
+;IDS_LOGIN_DLG_BTN_VIEW_CERT
+[401]
+Value = &Ver
+
+;IDS_TRAY_DISCONNECT
+[450]
+Value = &Desconectar de la red
+
+;IDS_TRAY_CONNECT
+[451]
+Value = &Conectar a la red
+
+;IDS_BUTTON_NETWORK_PROPERTIES
+[452]
+Value = Propiedades
+
+;IDS_BUTTON_NETWORK_HELP
+[453]
+Value = Ayuda
+
+;IDS_BUTTON_NETWORK_DIAL
+[454]
+Value = Marcar
+
+;IDS_PULSE_NOT_RUNNING
+[455]
+Value = El servicio Juniper Pulse no está en ejecución
+
+;IDS_NO_CHOICE_TEMPLATE
+[456]
+Value = ({0} opción)
+
+;IDS_NO_CHOICES_TEMPLATE
+[457]
+Value = ({0} opciones)
+
+;IDS_NO_ITEMS
+[458]
+Value = No {0}
+
+;IDS_EMPTY_NETWORK_PROVIDER
+[459]
+Value = 
+
+;IDS_TRAY_WND_TT_ACCELERATION
+[460]
+Value = \r\nAceleración: {0}
+
+;IDS_TRAY_WND_TT_NETWORK
+[461]
+Value = \r\nNetwork: {0}
+
+;IDS_ST_TNC_SHAVLIK_CONSENT_PROMPT
+[462]
+Value = Pulse necesita instalar parches de seguridad para completar la conexión.\n\nNota: Si elije No instalar podría generar como resultado conectividad limitada o nula.
+
+;IDS_LOGIN_DLG_BTN_INSTALL
+[463]
+Value = &Instalar
+
+;IDS_LOGIN_DLG_BTN_DONT_INSTALL
+[464]
+Value = &No instalar
+
+;IDS_LOGIN_DLG_BTN_CONTINUE
+[465]
+Value = &Continuar
+
+;IDS_LOGIN_DLG_BTN_REBOOT_NOW
+[466]
+Value = Reiniciar &ahora
+
+;IDS_LOGIN_DLG_BTN_REBOOT_LATER
+[467]
+Value = Reiniciar más &tarde
+
+;IDS_ST_TNC_REBOOT_REQUIRED
+[468]
+Value = Se requiere reiniciar para completar la instalación del parche.\n\nNota: si no reinicia puede generar como resultado conectividad limitada o nula hasta que lo haga.
+
+;IDS_CONN_ITEM_WX_STATUS_ACCELERATING
+[469]
+Value = Aceleración
+
+;IDS_CONN_ITEM_WX_STATUS_NOT_ACCELERATING
+[470]
+Value = Sin aceleración
+
+;IDS_MAIN_DLG_MENU_ACCELERATION
+[471]
+Value = Ac&eleración
+
+;IDS_MAIN_DLG_MENU_ENABLE
+[472]
+Value = &Habilitar
+
+;IDS_MAIN_DLG_MENU_DISABLE
+[473]
+Value = &Deshabilitar
+
+;IDS_MAIN_DLG_MENU_CANCEL
+[474]
+Value = &Cancelar
+
+;IDS_TRAY_WND_TT_CONNECTIONS
+[475]
+Value = \r\n{0}
+
+;IDS_ST_TNC_REBOOT_REQUIRED
+[476]
+Value = Se requiere reiniciar para completar la instalación del parche.\n\nNota: si selecciona Reiniciar más adelante puede generar como resultado conectividad limitada o nula hasta que lo haga.
+
+;IDS_ERROR_INFO_ACTION_PREFIX
+[477]
+Value = Información de error: 
+
+;IDS_ERROR_INFO_TITLE
+[478]
+Value = Error de conexión 
+
+;IDS_ERROR_INFO_ERROR_CODE
+[479]
+Value = Error:
+
+;IDS_MAIN_DLG_MENU_FILE
+[480]
+Value = &Archivo
+
+;IDS_TT_CANCEL
+[481]
+Value = Haga clic para cancelar
+
+;IDS_REMEDIATION_HTML_REPORT
+[482]
+Value = Pulse resolvió las siguientes tareas:
+
+;IDS_STATUS_CHECKING_COMPLIANCE_REMEDIATION_COMPLETE
+[483]
+Value = Corrección automática completa.  Comprobación del cumplimiento...
+
+;IDS_REMEDIATION_PROGRESS_TITLE_SHAVLIK_PATCH
+[484]
+Value = Instalación del parche:
+
+;IDS_REMEDIATION_PROGRESS_MESSAGE_OTHER
+[485]
+Value = 1 tarea por completar.
+
+;IDS_REMEDIATION_PROGRESS_MESSAGE_OTHER_PLURAL
+[486]
+Value = {0} tareas por completar.
+
+;IDS_REMEDIATION_PROGRESS_MESSAGE_OTHER_COMPLETED
+[487]
+Value = 1 tarea completada.
+
+;IDS_REMEDIATION_PROGRESS_MESSAGE_OTHER_PLURAL_COMPLETED
+[488]
+Value = {0} tareas completadas.
+
+;IDS_REMEDIATION_PATCH_SUMMARY_DOWNLOAD_FAILED
+[489]
+Value = [Descargar
+
+;IDS_REMEDIATION_PATCH_SUMMARY_INSTALL_FAILED
+[490]
+Value = [Instalar
+
+;IDS_REMEDIATION_PATCH_SUMMARY_REBOOT_REQUIRED
+[491]
+Value = [Reinicio necesario]
+
+;IDS_REMEDIATION_PATCH_PROGRESS_MESSAGE_ERROR
+[492]
+Value = {0} parche descargado. {1} parche instalado.  
+
+;IDS_REMEDIATION_PATCH_PROGRESS_MESSAGE_ERROR_PLURAL
+[493]
+Value = {0} de {1} parches instalados. {2} de {3} parches instalados.
+
+;IDS_REMEDIATION_PATCH_PROGRESS_MESSAGE_START
+[494]
+Value = Comenzando a instalar parche 1...
+
+;IDS_REMEDIATION_PATCH_PROGRESS_MESSAGE_START_PLURAL
+[495]
+Value = Comenzando a instalar {0} parches...
+
+;IDS_REMEDIATION_PATCH_PROGRESS_MESSAGE_DOWNLOADING
+[496]
+Value = Descargando parche 1...
+
+;IDS_REMEDIATION_PATCH_PROGRESS_MESSAGE_DOWNLOADING_PLURAL
+[497]
+Value = Descargando {0} de {1} parches...
+
+;IDS_REMEDIATION_PATCH_PROGRESS_MESSAGE_DOWNLOADED
+[498]
+Value = Descargando parche 1...
+
+;IDS_REMEDIATION_PATCH_PROGRESS_MESSAGE_DOWNLOADED_PLURAL
+[499]
+Value = Se han descargado {0} parches.
+
+;IDS_REMEDIATION_PATCH_PROGRESS_MESSAGE_PREINSTALL
+[500]
+Value = Listo para instalar parche 1...
+
+;;IDS_REMEDIATION_PATCH_PROGRESS_MESSAGE_PREINSTALL_PLURAL
+[501]
+Value = Listo para instalar {0} parches...
+
+;IDS_REMEDIATION_PATCH_PROGRESS_MESSAGE_INSTALLING
+[502]
+Value = Instalando parche 1...
+
+;IDS_REMEDIATION_PATCH_PROGRESS_MESSAGE_INSTALLING_PLURAL
+[503]
+Value = Instalando {0} de {1} parches...
+
+;IDS_REMEDIATION_PATCH_PROGRESS_MESSAGE_INSTALLED
+[504]
+Value = 1 parche instalado.
+
+;IDS_REMEDIATION_PATCH_PROGRESS_MESSAGE_INSTALLED_PLURAL
+[505]
+Value = {0} parches instalados.
+
+;IDS_REMEDIATION_PATCH_PROGRESS_INIT
+[506]
+Value = Motor de parches inicializándose...
+
+;IDS_REMEDIATION_PATCH_PROGRESS_INIT_SDK_DL_IN_PROGRESS
+[507]
+Value = Motor de parches descargando SDK...
+
+;IDS_REMEDIATION_PATCH_PROGRESS_INIT_SDK_DL_DONE
+[508]
+Value = Motor de parches descargando SDK...
+
+;IDS_REMEDIATION_PATCH_PROGRESS_INIT_SDK_DL_FAILED
+[509]
+Value = Error en la descarga del motor de parches de SDK.
+
+;IDS_REMEDIATION_PATCH_PROGRESS_INIT_SDK_UP_TO_DATE
+[510]
+Value = SDK del motor de parches actualizado.
+
+;IDS_REMEDIATION_PATCH_PROGRESS_UNINITIALIZED
+[511]
+Value = No inicializado.
+
+;IDS_REMEDIATION_PATCH_PROGRESS_POSTINSTALL
+[512]
+Value = Finalizando instalación...
+
+;IDS_REMEDIATION_PATCH_PROGRESS_CLEAN_UP
+[513]
+Value = Limpiando...
+
+;IDS_REMEDIATION_PATCH_PROGRESS_REBOOT_REQUIRED
+[514]
+Value = Es necesario reiniciar para finalizar la instalación.
+
+;IDS_REMEDIATION_PATCH_PROGRESS_FINISHED
+[515]
+Value = Finalizado.
+
+;IDS_REMEDIATION_PATCH_PROGRESS_CANCELED
+[516]
+Value = Cancelado.
+
+;IDS_REMEDIATION_OTHER_PROGRESS_AV_RTP_ON
+[517]
+Value = La protección en tiempo real está activada ({0}).
+
+;IDS_REMEDIATION_OTHER_PROGRESS_AV_SIG_DL_STARTED
+[518]
+Value = Comenzó la descarga de la firma de virus ({0})...
+
+;IDS_REMEDIATION_OTHER_PROGRESS_AV_SIG_DL_FINISHED
+[519]
+Value = Se descargaron firmas de virus ({0}).
+
+;IDS_REMEDIATION_OTHER_PROGRESS_AV_SCAN_STARTED
+[520]
+Value = Comenzó el análisis de virus ({0})...
+
+;IDS_REMEDIATION_OTHER_PROGRESS_FIREWALL_ON
+[521]
+Value = ACTIVACIÓN del firewall ({0}).
+
+;IDS_REMEDIATION_OTHER_PROGRESS_FIREWALL_OFF
+[522]
+Value = DESACTIVACIÓN del firewall ({0}).
+
+;IDS_REMEDIATION_OTHER_PROGRESS_PROCESS
+[523]
+Value = Eliminando {0}...
+
+;IDS_REMEDIATION_OTHER_PROGRESS_FILE
+[524]
+Value = Borrando {0}...
+
+;IDS_REMEDIATION_OTHER_PROGRESS_REGISTRY
+[525]
+Value = Ajuste {0} a {1}...
+
+;IDS_REMEDIATION_OTHER_PROGRESS_SMS
+[526]
+Value = Iniciando cliente de implementación de parches de Microsoft...
+
+;IDS_REMEDIATION_OTHER_PROGRESS_UNDEFINED
+[527]
+Value = Tarea no definida.
+
+;IDS_REMEDIATION_OTHER_SUMMARY_AV_RTP_ON
+[528]
+Value = La protección en tiempo real está activada ({0}).
+
+;IDS_REMEDIATION_OTHER_SUMMARY_AV_SIG_DL_STARTED
+[529]
+Value = Comenzó la descarga de la firma de virus ({0}).
+
+;IDS_REMEDIATION_OTHER_SUMMARY_AV_SIG_DL_FINISHED
+[530]
+Value = Se descargaron firmas de virus ({0}).
+
+;IDS_REMEDIATION_PATCH_SUMMARY_FIREWALL_ON
+[531]
+Value = Firewall ({0}) ACTIVADO.
+
+;IDS_REMEDIATION_PATCH_SUMMARY_FIREWALL_OFF
+[532]
+Value = Firewall ({0}) DESACTIVADO.
+
+;IDS_REMEDIATION_PATCH_SUMMARY_PROCESS
+[533]
+Value = Proceso eliminado {0}.
+
+;IDS_REMEDIATION_PATCH_SUMMARY_FILE
+[534]
+Value = Archivo borrado {0}.
+
+;IDS_REMEDIATION_PATCH_SUMMARY_REGISTRY
+[535]
+Value = Ajustando clave de registro {0} a {1}.
+
+;IDS_REMEDIATION_PATCH_SUMMARY_SMS
+[536]
+Value = Cliente de implementación de parches de Microsoft iniciado.
+
+;IDS_REMEDIATION_PATCH_SUMMARY_SMS_FAIL
+[537]
+Value = Cliente de implementación de parches de Microsoft iniciado [Error].
+
+;IDS_REMEDIATION_PATCH_SUMMARY_UNDEFINED
+[538]
+Value = Tarea no definida.
+
+;IDS_REMEDIATION_PATCH_MANUAL_REBOOT_REQUIRED_POLICY
+[539]
+Value = Reinicio necesario
+
+;IDS_REMEDIATION_PATCH_MANUAL_REBOOT_REQUIRED_REASON
+[540]
+Value = Los parches instalados requieren el reinicio del equipo.
+
+;IDS_REMEDIATION_PATCH_MANUAL_REBOOT_REQUIRED_INSTRUCTIONS
+[541]
+Value = Reinicie el equipo para finalizar la instalación de parches.
+
+;IDS_REMEDIATION_PATCH_COMPLETE_MESSAGE
+[542]
+Value = Las tareas de corrección han finalizado.
+
+;IDS_REMEDIATION_DETAILS_LINK
+[544]
+Value = Ver los <a>detalles</a> de las tareas de corrección finalizadas.
+
+;IDS_REMEDIATION_PATCH_SUMMARY_FAILED
+[546]
+Value = Error]
+
+;IDS_REMEDIATION_SUMMARY_TITLE
+[547]
+Value = Tareas finalizadas
+
+;IDS_REMEDIATION_SUMMARY_DESCRIPTION
+[548]
+Value = Pulse finalizó automáticamente estas tareas:
+
+;IDS_REMEDIATION_PATCH_ACTION_TAKEN
+[549]
+Value = Acción tomada:
+
+;IDS_REMEDIATION_PATCH_NO_ACTIONS
+[550]
+Value = No hay acciones disponibles.
+
+;IDS_REMEDIATION_PATCH_SUMMARY_PATCHES_INSTALLED
+[551]
+Value = Instalación del parche:
+
+;IDS_REMEDIATION_PROGRESS_DETAILS_LINK
+[553]
+Value = Posiblemente se requieran tareas de corrección adicionales. Haga clic <a>aquí</a> para consultar los detalles.
+
+;IDS_REMEDIATION_PROGRESS_TITLE_OTHER
+[555]
+Value = Tareas de corrección misc.:
+
+;IDS_REMEDIATION_ACTION_TAKEN_SMS_STARTED
+[556]
+Value = <b>Se inició el cliente de implementación de parches de Microsoft.  Si no se pudieron instalar los parches faltantes de la lista anterior, intente hacer clic en el vínculo de descarga e instálelos manualmente.</b>
+
+;IDS_REMEDIATION_ACTION_TAKEN_SMS_FAILED
+[557]
+Value = <b>No se pudo iniciar el cliente de implementación de parches de Microsoft.  Intente hacer clic en el vínculo de descarga de arriba para instalar manualmente los parches faltantes.</b>
+
+;IDS_LIST_NAME_PULSE_CONNECTIONS
+[558]
+Value = Conexiones
+
+;IDS_LIST_NAME_ACCELERATION
+[559]
+Value = Aceleración
+
+;IDS_LIST_NAME_SECURITY
+[560]
+Value = Seguridad
+
+;IDS_LIST_NAME_IPASS_NETWORKS
+[561]
+Value = Redes de iPass
+
+;IDS_REMEDIATION_OTHER_SUMMARY_AV_SCAN_STARTED
+[562]
+Value = Comenzó el análisis de virus ({0}).
+
+;IDS_REMEDIATION_OTHER_SUMMARY_AV_SCAN_FINISHED
+[563]
+Value = Finalizó el análisis de virus ({0}).
+
+;IDS_REMEDIATION_OTHER_PROGRESS_AV_SCAN_FINISHED
+[564]
+Value = Finalizó el análisis de virus ({0}).
+
+;IDS_REMEDIATION_OTHER_SUMMARY_AV_RTP_FAILED
+[565]
+Value = No se pudo activar la protección en tiempo real ({0}).
+
+;IDS_REMEDIATION_OTHER_PROGRESS_AV_RTP_FAILED
+[566]
+Value = No se pudo activar la protección en tiempo real ({0}).
+
+;IDS_NETWORK_TYPE_WIRED
+[581]
+Value = Alámbrico
+
+;IDS_NETWORK_TYPE_WIRELESS
+[582]
+Value = Wi-Fi
+
+;IDS_NETWORK_TYPE_DIALUP
+[583]
+Value = Acceso telefónico
+
+;IDS_NETWORK_TYPE_MOBILE_DATA
+[584]
+Value = 3G
+
+;IDS_NETWORK_TYPE_WIMAX
+[585]
+Value = 4G
+
+;IDS_NETWORK_TYPE_UNKNOWN
+[586]
+Value = Desconocido
+
+;IDS_NETWORK_TYPE_FMT_NUMBERED
+[587]
+Value = tipo {0}
+
+;IDS_CONN_ITEM_STATUS_CONNECTED_NO_INTERNET
+[588]
+Value = Con conexión: sin Internet
+
+;IDS_TRAY_WND_STATE_CONNECTED_NO_INTERNET
+[589]
+Value = Con conexión: sin Internet
+
+;IDS_CONN_ITEM_STATUS_CONNECTED_DETECTING_INTERNET
+[590]
+Value = Con conexión: detectando Internet
+
+;IDS_TRAY_WND_STATE_CONNECTED_DETECTING_INTERNET
+[591]
+Value = Con conexión: detectando Internet
+
+;IDS_LINK_WX_HELP
+[592]
+Value = (¿Por qué?)
+
+;IDS_TIP_CLICK_FOR_DETAILS
+[593]
+Value = Haga clic aquí para obtener más información
+
+;IDS_INTRUSION_DETECTION
+[700]
+Value = Detección de intrusión
+
+;IDS_NETWORK_ACCESS_LIMITED
+[701]
+Value = Se ha limitado su acceso a la red porque se ha detectado un comportamiento anormal en la red. Comuníquese con su administrador para obtener ayuda.
+
+;IDS_TRAY_ROLE
+[800]
+Value = Funciones
+
+;IDS_TRAY_REALMS
+[801]
+Value = Territorios
+
+;IDS_TRAY_SESSIONS
+[802]
+Value = Sesiones
+
+;IDS_TRAY_ROLE_DESC
+[803]
+Value = Seleccione una función
+
+;IDS_TRAY_REALMS_DESC
+[804]
+Value = Seleccione un territorio
+
+;IDS_TRAY_SESSION_DESC
+[805]
+Value = Seleccione una sesión
+
+;IDS_TRAY_ROLE_TITLE
+[806]
+Value = Esta conexión requiere que se seleccione una función
+
+;IDS_TRAY_REALMS_TITLE
+[807]
+Value = Esta conexión requiere que se seleccione un territorio
+
+;IDS_TRAY_SESSION_TITLE
+[808]
+Value = Esta conexión requiere que se seleccione una sesión
+
+;IDS_TRAY_PASSCODE
+[809]
+Value = Contraseña
+
+;IDS_TRAY_MESSAGEFROMSERVER_TITLE
+[810]
+Value = El servidor necesita una respuesta para continuar con la conexión.
+
+;IDS_TRAY_CONNECTTO_LABEL
+[811]
+Value = Conectarse a:
+
+;IDS_MAC_MENU_HIDE
+[812]
+Value = Ocultar:
+
+;IDS_MAC_MENU_TURNON
+[813]
+Value = Activar {0}
+
+;IDS_MAC_MENU_TURNOFF
+[814]
+Value = Desactivar {0}
+
+;IDS_MAC_MENU_OFF
+[815]
+Value = Desactivado
+
+;IDS_MAC_MENU_ON
+[816]
+Value = Activado
+
+;IDS_MAIN_DLG_MENU_EDIT
+[817]
+Value = Datos de conexión a&vanzados...
+
+;IDS_ST_SELECT_SSID
+[818]
+Value = Seleccio&ne una red:
+
+;IDS_MAC_WINDOWTITLE_CONNECTIONS
+[819]
+Value = Conexiones
+
+;IDS_TRAY_CERT_DESC
+[820]
+Value = Seleccionar certificado
+
+;IDS_TRAY_CERT_TITLE
+[821]
+Value = Esta conexión requiere que se seleccione un certificado
+
+;IDS_TRAY_CERTS
+[822]
+Value = Certificados
+
+;IDS_MAC_ABOUTVERSION
+[823]
+Value = Versión
+
+;IDS_ST_SELECT_CONNECTION
+[824]
+Value = Seleccionar conexión:
+
+;IDS_MAC_MAINMENU_WINDOW
+[825]
+Value = Ventana 
+
+;IDS_MAC_MAINMENU_MINIMIZE
+[826]
+Value = Minimizar
+
+;IDS_MAC_MAINMENU_ZOOM
+[827]
+Value = Zoom
+
+;IDS_MAC_MAINMENU_BRINGTOFRONT
+[828]
+Value = Todo en primer plano
+
+;IDS_MAC_MAINMENU_CUT
+[829]
+Value = Cortar
+
+;IDS_MAC_MAINMENU_COPY
+[830]
+Value = Copiar
+ 
+;IDS_MAC_MAINMENU_PASTE
+[831]
+Value = Pegar
+
+;IDS_MAC_MAINMENU_SELECTALL
+[832]
+Value = Seleccionar todo
+
+;IDS_MAC_MAINMENU_SPEECH
+[833]
+Value = Voz
+ 
+;IDS_MAC_MAINMENU_STARTSPEAKING
+[834]
+Value = Comenzar a hablar
+
+;IDS_MAC_MAINMENU_STOPSPEAKING
+[835]
+Value = Parar de hablar
+
+;IDS_MAC_MAINMENU_HIDEOTHERS
+[836]
+Value = Ocultar otros
+
+;IDS_MAC_MAINMENU_SHOWALL
+[837]
+Value = Mostrar todo
+
+;IDS_MAC_STATUS_DETAILS_FROM_TRAY_ICON
+[838]
+Value = Puede acceder a los detalles de conexión de {0} a través del icono de Pulse de la barra de menús.
+
+;IDS_MAC_EXIT_NOT_ALLOWED
+[839]
+Value = El administrador no permite desconectarse de Pulse.
+
+;IDS_MAC_MENU_EXIT
+[840]
+Value = Salir
+
+;IDS_TRAY_MAC_EXIT_QUESTION
+[841]
+Value = Si sale de {0} es posible que se desactiven las conexiones de red hasta que reinicie {0}.\n\nPuede reiniciar {0} ejecutándolo desde la lista de aplicaciones.\n\n¿Realmente desea salir?
+
+;IDS_LOGIN_DLG_TEXT_SESSION_EXPIRING_ACTION
+[900]
+Value = Conexión: {0}
+
+;IDS_LOGIN_DLG_BTN_EXTEND_SESSION
+[901]
+Value = &Ampliar
+
+;IDS_LOGIN_DLG_TEXT_SESSION_EXPIRING
+[902]
+Value = Esta conexión de Pulse caducará en: {0}.\nSeleccione "Ampliar" para prolongar la sesión.
+
+;IDS_LOGIN_DLG_TEXT_SESSION_WILL_EXPIRE_SHORTLY
+[903]
+Value = Esta conexión de Pulse caducará dentro de poco.
+
+;IDS_LOGIN_DLG_TEXT_SESSION_LIFETIME_FORMAT_INCLUDE_DAYS_HOURS_MINUTES_SECONDS
+[904]
+Value = {0}d {1}h {2}m {3}s
+
+;IDS_LOGIN_DLG_TEXT_SESSION_LIFETIME_FORMAT_INCLUDE_HOURS_MINUTES_SECONDS
+[905]
+Value = {0}h {1}m {2}s
+
+;IDS_LOGIN_DLG_TEXT_SESSION_LIFETIME_FORMAT_INCLUDE_MINUTES_SECONDS
+[906]
+Value = {0}m {1}s
+
+;IDS_LOGIN_DLG_TEXT_SESSION_LIFETIME_FORMAT_INCLUDE_SECONDS
+[907]
+Value = {0}s
+
+;IDS_MENU_ITEM_EXTEND_SESSION
+[908]
+Value = A&mpliar sesión
+
+;IDS_WARNING_ALSO_SECURE_MEETING
+[910]
+Value = Puede que con esta acción también se finalice la sesión de Secure Meeting.
+
+;IDS_WARNING_SECURE_MEETING_FAILURE
+[911]
+Value = No se ha podido iniciar Secure Meeting con esta conexión
+
+;IDS_MENU_ITEM_SECURE_MEETING
+[912]
+Value = Pulse Collaboration
+
+;IDS_MENU_ITEM_SECURE_MEETING_START
+[913]
+Value = Reuniones
+
+;IDS_MENU_ITEM_SECURE_MEETING_STOP
+[914]
+Value = Cerrar sesión
+ 
+;IDS_SECURE_MEETING_STARTED_SOON
+[915]
+Value = La reunión de Pulse Collaboration se iniciará en breve.
+
+;IDS_SECURE_MEETING_USE_DISCONNECT_TO_STOP
+[916]
+Value = (use Desconectar para cerrar la sesión)
+
+;IDS_ADVANCED_INFO
+[917]
+Value = Información detallada:
+
+;IDS_LOGIN_DLG_BTN_REFRESH
+[918]
+Value = &Actualizar
+
+;IDS_ADVANCED_STR_NO_DATA_AVAILABLE
+[919]
+Value = No hay más detalles disponibles.
+
+;IDS_ADVANCED_LABEL_BYTES_IN
+[920]
+Value = Bytes recibidos
+
+;IDS_ADVANCED_LABEL_BYTES_OUT
+[921]
+Value = Bytes enviados
+
+;IDS_ADVANCED_LABEL_TIME_REMAINING
+[922]
+Value = Tiempo restante de la sesión
+
+;IDS_ADVANCED_LABEL_TEMPLATE
+[923]
+Value = {0}: 
+
+;IDS_ADVANCED_LABEL_TUNNEL_TYPE
+[924]
+Value = Tipo de túnel
+
+;IDS_ADVANCED_LABEL_VPN_TYPE
+[925]
+Value = Tipo de VPN
+
+;IDS_ADVANCED_VPN_ESP
+[926]
+Value = ESP
+
+;IDS_ADVANCED_VPN_SSL
+[927]
+Value = SSL/VPN
+
+;IDS_ADVANCED_TUNNEL_VPN
+[928]
+Value = VPN
+
+;IDS_ADVANCED_TUNNEL_WSAM
+[929]
+Value = WSAM
+
+;IDS_ADVANCED_TUNNEL_UNKNOWN
+[930]
+Value = Otro
+
+;IDS_ADVANCED_VPN_UNKNOWN
+[931]
+Value = Otro
+
+;IDS_ADVANCED_STR_GATHERING
+[932]
+Value = Recopilando datos...
+
+;IDS_LOGIN_DLG_TEXT_SESSION_EXPIRING_NO_EXTEND_SESSION_BUTTON
+[933]
+Value = Esta conexión de Pulse caducará en: {0}.\nGuarde el trabajo para evitar la pérdida de datos debido a la \ndesconexión de la red.
+
+;IDS_ADVANCED_STR_DISCONNECTED
+[934]
+Value = Esta sesión no está conectada.
+
+;IDS_TT_MINIMIZE
+[935]
+Value = Minimizar
+
+;IDS_TT_MAXIMIZE
+[936]
+Value = Maximizar
+
+;IDS_TT_CLOSE
+[937]
+Value = Cerrar
+
+;IDS_ERROR_URL_FORMAT
+[938]
+Value = Los caracteres %&?: y los espacios en blanco no pueden utilizarse en las direcciones URL.
+
+;IDS_ADVANCED_TUNNEL_UAC
+[939]
+Value = Iniciar reunión
+
+;IDS_CRED_PROV_STATUS_TO_WINDOWS
+[950]
+Value = Pulse se está conectando a '{0}' ...
+
+;IDS_CRED_PROV_ERROR_TO_WINDOWS
+[951]
+Value = Pulse no ha podido conectarse a '{0}'.\nMotivo: {1}
+
+;IDS_EXIT_NOT_ALLOWED
+[952]
+Value = El administrador no permite salir de Pulse
+
+;IDS_ADVANCED_TUNNEL_NONE
+[953]
+Value = &lt;túnel sin habilitar&gt;
+
+;IDS_ST_TNCSAM_REBOOT_REQUIRED
+[954]
+Value = Se necesita reiniciar para completar la configuración de Pulse. Cierre todas las aplicaciones para evitar la pérdida de datos y reinicie el equipo.\n\nNota: es posible que no haya conexión hasta que no se reinicie.
+
+;IDS_PROXY_SERVERDETAILS
+[955]
+Value = Dirección del &servidor proxy:
+
+;IDS_PROXY_SERVERDETAILSMESSAGE
+[956]
+Value = Pulse no ha podido ponerse en contacto con el servidor de inicio de sesión. Si el sitio utiliza un servidor proxy, introduzca los detalles correspondientes ahora y pulse Conectar. De lo contrario, pulse Cancelar.
+
+;IDS_ST_PROXY_USER_NAME_PROMPT_3
+[957]
+Value = Proporcione las credenciales del servidor proxy (si el sitio lo necesita)
+
+;IDS_MSG_TOAST_INPUT_NEEDED
+[958]
+Value = La entrada es necesaria para conectarse
+
+;IDS_LOGIN_DLG_BTN_DECLINE
+[959]
+Value = &Rechazar
+
+;IDS_LOGIN_DLG_BTN_PROCEED
+[960]
+Value = &Continuar
+
+;IDS_CONN_ITEM_STATUS_WAITING_FOR_NETWORK
+[961]
+Value = Cancelar
+
+;IDS_MAIN_DLG_MENU_SUSPEND
+[962]
+Value = &Suspender
+
+;IDS_MAIN_DLG_MENU_RESUME
+[963]
+Value = &Reanudar
+
+;IDS_TT_CANCEL
+[964]
+Value = Haga clic para reanudar
+
+;IDS_BTN_RESUME
+[965]
+Value = &Reanudar
+
+;IDS_CONN_ITEM_STATUS_SUSPENDING
+[966]
+Value = Suspendiendo
+
+;IDS_CONN_ITEM_STATUS_SUSPENDED
+[967]
+Value = Suspendido
+
+;IDS_TRAY_WND_STATE_CONNECTED
+[968]
+Value = Suspendido
+
+;IDS_BTN_CANCEL_NOSHORTCUT
+[969]
+Value  = Cancelar
+
+;IDS_MAIN_DLG_MENU_FIPS
+[970]
+Value = F&IPS
+
+;IDS_FIPS_MODE_ON
+[971]
+Value = FIPS ACTIVADO
+
+;IDS_FIPS_MODE_OFF
+[972]
+Value = FIPS DESACTIVADO
+
+;IDS_PASSWORD_EXPIRING
+[973]
+Value = Su contraseña {0} caducará {1}.
+
+;IDS_PASSWORD_EXPIRING_ONE_DAY
+[974]
+Value = en un día
+
+;IDS_PASSWORD_EXPIRING_DAYS
+[975]
+Value = en {0} días
+
+;IDS_PASSWORD_EXPIRING_ONE_HOUR
+[976]
+Value = en una hora
+
+;IDS_PASSWORD_EXPIRING_HOURS
+[977]
+Value = en {0} horas
+
+;IDS_PASSWORD_EXPIRING_UNDER_ONE_HOUR
+[978]
+Value = en menos de una hora
+
+;IDS_STATUS_SECURING_CONNECTION
+[980]
+Value = Protegiendo conexión...
+
+;IDS_CONN_ITEM_STATUS_SECURING_CONNECTION
+[981]
+Value = Protegiendo conexión
+
+;IDS_ADVANCED_LABEL_ADDRESS_IP4
+[990]
+Value = IPV4 asignada
+
+;IDS_ADVANCED_LABEL_ADDRESS_IP6
+[991]
+Value = IPV6 asignada
+
+;IDS_ST_AUTOMATIC_REFRESH
+[992]
+Value = &Actualizar automáticamente
+
+;IDS_ADVANCED_ADDRESS_NOT_ASSIGNED
+[993]
+Value = &lt;sin asignar&gt;
+
+;IDS_ADVANCED_ADDRESS_NOT_ASSIGNED
+[993]
+Value = &lt;sin asignar&gt;
+
+;IDS_CONN_ITEM_STATUS_MANUAL_OVERRIDE
+[994]
+Value = omisión manual
+
+;IDS_DASH_SEPARATOR
+[995]
+Value = -
+
+;IDS_MAIN_DLG_MENU_REMOVE_OVERRIDE
+[996]
+Value = Retirar &omisión (volver al control automático)
+
+; IDS_CONN_ITEM_STATUS_WIRELESS_SUPPRESSED
+[1004]
+Value = Desactivado - Conexión por cable activa
+
+; IDS_CONN_ITEM_STATUS_WIRELESS_SUPPRESSED
+[1005]
+Value = No hay ningún adaptador inalámbrico disponible
+
+; IDS_TRAY_WIRELESS_CANCEL_IO
+[1006]
+Value = Pulse ha desconectado su conexión inalámbrica porque el administrador no admite conexiones por cable e inalámbricas al mismo tiempo.
+
+; IDS_TRAY_WND_TT_WIRELESS_SUPPRESSED
+[1007]
+Value = \r\nConexiones inalámbricas desactivadas
+
+; IDS_PASSWORD_EXPIRING_PRIMARY
+[1008]
+Value = primaria
+
+; IDS_PASSWORD_EXPIRING_SECONDARY
+[1009]
+Value = secundaria

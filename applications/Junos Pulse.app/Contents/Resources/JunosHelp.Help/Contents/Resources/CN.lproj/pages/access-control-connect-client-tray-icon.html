@@ -1,0 +1,34 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<title>使用 Junos Pulse Dock 图标并查看连接状态</title> <meta name="description" content="介绍菜单栏中可从 Pulse 图标获取的选项。" /> <meta http-equiv="Content-Type" content_SDL="text/html; charset=UTF-8"/> <link href="../sty/standard.css" rel="stylesheet" type="text/css" /> <meta name="keywords" content="菜单栏图标, 图标, 连接状态, 打开 Pulse, 关闭 Pulse, 连接, 断开连接" />
+</head>
+<body style="width:95%;>
+<div id="content">
+<h1 class="Title">使用 Junos Pulse 菜单栏图标并查看连接状态</h1>
+<p class="Para1">Junos Pulse 菜单栏图标指示网络连接的当前状态。 即使当前有多个连接，菜单栏中也只会显示一个 Pulse 图标。 如果任何一个活动连接出现问题，图标都会更改其状态。 下面的列表介绍菜单栏图标状态。</p>
+<p class="Para2"><img src="../../../shrd/pulse_menubar_connected.png" width="16" height="16" />    已连接<br /> <img src="../../../shrd/pulse_menubar_icon_colored.png" /> 无连接<br /> <img src="../../../shrd/pulse_menubar_02.png" width="16" height="16" /> 正在连接 
+  <br /> <img src="../../../shrd/pulse_menubar_error.png" width="16" height="16" /> 已连接，但存在问题<br /><img src="../../../shrd/pulse_menubar_error.png" width="16" height="16" /> 连接失败<br /> <img src="../../../shrd/pulse_menubar_icon_suspended.png" width="16" height="16" /> 连接已挂起<br /> <img src="../../../shrd/pulse_menubar_icon_GrayScaled.png" alt="图标 - pulse 未运行" width="16" height="16" /> Pulse 未运行 </p>
+<p class="Para1">您也可以单击菜单栏图标以显示菜单和执行以下操作：</p>
+<ul>
+  <li class="li"><strong>打开 Junos Pulse</strong> - 显示 Pulse 界面。 若 Pulse 不运行，<strong>打开 Junos Pulse </strong>将会首先启动 Pulse 服务。 </li>
+  <li class="li"><strong>连接列表</strong> - 此菜单列出每个 Pulse 连接。 单击连接名称以便显示可以在该连接上执行的操作。</p>
+  </li>
+
+  <ul>
+    <li><strong>连接</strong> - 与选定网络建立连接。</li>
+    <li><strong>断开连接</strong> - 停止所选的网络连接。</li>
+    <li><strong>取消</strong> - 取消由 Pulse 服务器发起的操作。 当服务器启动“主机检查程序”操作时，“取消”选项可用。 如果取消，Pulse 将不连接到网络。</li><li><strong>暂停/恢复</strong> - 暂停并恢复远程网络连接，以便访问局域网资源（如本地打印机）。 暂停连接后，在您恢复连接前，您将无法访问受保护的网络资源。 恢复连接时，将不会提示输入登录凭证。 </li>
+    
+    <li><strong>延长会话</strong> - 您可以在不等待 Pulse 通知您会话到期的情况下延长活动连接会话。 您可以随时选择此选项，以便将会话和空闲计时器重置为最大值。</li>
+  </ul>
+<li class="li"><strong>退出 </strong>- 关闭所有活动连接并停止 Pulse。 从 Pulse 退出后，菜单栏上仍会保留 Pulse 菜单栏图标，您可以使用该图标重新启动 Pulse。</li></ul>
+
+<h4 class="Head4">相关主题</h4>
+<ul>
+  <li class="li"><a href="access-control-connect-client-ui.html">Junos Pulse 界面</a></li>
+  <li class="li"><a href="access-control-connect-pulse-starting-stopping.html">启动或停止 Junos Pulse</a></li>
+</ul>
+
+</body></html>

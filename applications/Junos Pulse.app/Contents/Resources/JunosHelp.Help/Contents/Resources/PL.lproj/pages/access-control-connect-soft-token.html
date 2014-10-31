@@ -1,0 +1,27 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<title>Junos Pulse — omówienie konfiguracji</title><meta http-equiv="Content-Type" content_SDL="text/html; charset=UTF-8"/> <meta name="keywords" content="tokeny, uwierzytelnianie, RSA SecurID"/> <meta name="description" content="Zawiera opis dotyczący obsługi uwierzytelniania za pomocą tokena w aplikacji Pulse." /> <link href="../sty/standard.css" rel="stylesheet" type="text/css" />
+</head>
+<body style="width:98%;">
+<div id="content"><h1 class="Title">Uwierzytelnianie za pomocą tokena</h1>
+<p class="Para1">Aplikacja Pulse obsługuje system uwierzytelniania za pomocą tokena RSA SecurID. Uwierzytelnianie za pomocą tokena, zwane również uwierzytelnianiem dwuskładnikowym, to metoda tworzenia poświadczeń uwierzytelniania, która jest bardzo trudna do złamania. Kod tokena to numer generowany równocześnie na kliencie i serwerze. Użytkownik tworzy osobisty numer identyfikacyjny (kod PIN), a logowanie do serwera wymaga podania kod PIN oraz bieżącego kodu tokena. Kod PIN wraz z kodem tokena tworzy hasło. Kod tokena wygasa w krótkim czasie, zwykle po minucie, a następnie zostaje zastąpiony nowo utworzonym kodem tokena. </p>
+<p class="Para1">Podczas pierwszego użycia systemu program Pulse wyświetla monit o utworzenie kodu PIN. Jeśli kod PIN został już wprowadzony przez administratora, zostanie wyświetlony monit o jego zmianę. Jeśli administrator sieci wymaga okresowej zmiany kodu PIN, program Pulse będzie wyświetlał monit o podanie nowego kodu. Zwykle podczas zmiany kodu PIN wymagane jest wprowadzenie aktualnego kodu tokenu. W niektórych przypadkach po podaniu hasła wyświetlany jest monit o wprowadzenie kolejnego kodu tokenu. Zaczekaj na zmianę kodu tokena na nowy, a następnie wprowadź go, aby kontynuować.</p>
+<h2 class="Head2"> <!--Pulse 3.0 for Mac supports only soft tokens so the folllowing is commented out - Hardware and Software  -->Wystawcy uwierzytelnienia</h2>
+<p class="Para1">Urządzenie lub oprogramowanie do generowania tokenu jest określane mianem autentykatora. Aplikacja Pulse obsługuje wszystkich sprzętowych wystawców uwierzytelnienia SecurID <!--Pulse 3.0 for Mac supports only soft tokens so the folllowing is commented out - and software   -->.</p>
+<p class="Para1">Sprzętowi (fizyczni) wystawcy uwierzytelnienia RSA SecurID wyświetlają nowy kod tokena co 60 sekund. Podczas logowania należy mieć przy sobie kartę lub breloczek generujący token. W oknie logowania programu Pulse należy wprowadzić nazwę użytkownika i kod PIN oraz aktualny kod tokenu. Wystawca uwierzytelnienia USB może przechowywać poświadczenia (nazwę użytkownika/hasło) systemu MacOS oraz certyfikaty cyfrowe. Po podłączeniu urządzenia do komputera umożliwia ono automatyczne wprowadzanie kodu tokena, a po wprowadzeniu kodu PIN przez użytkownika aplikacja Pulse może automatycznie uzyskać bezpośredni dostęp do tokena (bez pośrednictwa urządzenia). </p> <!--  <p class="Para1">SecurID also offers a variety of software authenticators
+including smartphone applications, software for desktop and laptop
+computers, and browser-based applications. These authenticators enable
+login options such as the ability to store login credentials
+and digital certificates. Your Pulse login procedure using a software
+authenticator depends on how your security administrator has configured
+the system. Typically, if you have the SecurID software installed
+on your endpoint, Pulse interacts with the software to retrieve the
+token code after you provide your PIN. If the system supports multiple
+tokens, Pulse prompts you to select one. </p><p class="Para1">If your authentication environment supports both software and
+hardware tokens, Pulse prompts you to select the type of token you
+want to use.</p>-->
+<h4 class="Head4">Powiązane tematy</h4><ul><li class="li"><a href="access-control-connect-smartcard-overview.html">Uwierzytelnianie za pomocą karty inteligentnej</a></li></ul></div>
+
+</body></html>

@@ -1,0 +1,92 @@
+﻿; JUNS catalogUtil requires catalog message files to be saved with UTF-8 encoding, which put 3 bytes {0xEF, 0xBB, 0xBF} at the file beginning called Byte Order Mark (BOM) for UTF-8 files . For modifications in this files, please use Text Editors which persist these BOM bytes (like Notepad.exe, Visual Studio IDE, etc).
+
+
+;kMsgCommonErrOk
+[0]
+Short-desc = Éxito.
+Long-desc = La operación se realizó con éxito.
+
+;kMsgCommonErrFailure
+[1]
+Short-desc = Falla general.
+Long-desc = Intente realizar nuevamente la operación. Si el problema continúa, comuníquese con el administrador de la red.
+
+;kMsgCommonErrConnection
+[2]
+Short-desc = La conexión de IPC interna ha fallado.
+Long-desc = Intente realizar la operación nuevamente o incluso reinicie el equipo. Si el problema continúa, comuníquese con el administrador de la red.
+
+;kMsgCommonErrUnimplemented
+[3]
+Short-desc = No se ha implementado el comando o la función.
+Long-desc = Comuníquese con el administrador de la red.
+
+;kMsgCommonErrParameter
+[4]
+Short-desc = El parámetro no es válido.
+Long-desc = Intente realizar nuevamente la operación. Si el problema continúa, comuníquese con el administrador de la red.
+
+;kMsgCommonErrInvalidHandle
+[5]
+Short-desc = Controlador no válido.
+Long-desc = Intente realizar nuevamente la operación. Si el problema continúa, reinicie el sistema.
+
+;kMsgCommonErrBufferSize
+[6]
+Short-desc = El búfer que se proporcionó es demasiado pequeño.
+Long-desc = Intente realizar nuevamente la operación. Si el problema continúa, reinicie el sistema.
+
+;kMsgCommonErrOutOfMemory
+[7]
+Short-desc = Memoria insuficiente
+Long-desc = Intente realizar nuevamente la operación. Si el problema continúa, intente liberar memoria cerrando las aplicaciones no deseadas. Si el problema aún continúa, entonces reinicie el sistema.
+
+;kMsgCommonErrNotStarted
+[8]
+Short-desc = No se ha iniciado el subsistema de E/S.
+Long-desc = Intente realizar nuevamente la operación. Si el problema continúa, reinicie el sistema.
+
+;kMsgCommonErrUnknownCommand
+[9]
+Short-desc = El servicio recibió un comando desconocido.
+Long-desc = Intente realizar nuevamente la operación. Si el problema continúa, reinicie el sistema.
+
+;kMsgCommonErrIoSystem
+[10]
+Short-desc = El subsistema de E/S ha fallado de forma general.
+Long-desc = Intente realizar nuevamente la operación. Si el problema continúa, reinicie el sistema.
+
+;kMsgCommonErrNotFound
+[11]
+Short-desc = No se encuentra el elemento de la solicitud.
+Long-desc = Intente realizar nuevamente la operación. Si el problema continúa, comuníquese con el administrador de la red.
+
+;kMsgCommonErrAlreadyExists
+[12]
+Short-desc = La entidad de la solicitud ya existe.
+Long-desc = Intente realizar nuevamente la operación. Si el problema continúa, comuníquese con el administrador de la red.
+
+;kMsgCommonErrAlreadyStarted
+[13]
+Short-desc = Ya se inició la entidad de la solicitud.
+Long-desc = Intente realizar nuevamente la operación. Si el problema continúa, comuníquese con el administrador de la red.
+
+;kMsgCommonErrInvalidService
+[14]
+Short-desc = La entidad tiene una firma de código no válida.
+Long-desc = Comuníquese con el administrador de la red.
+
+;kMsgCommonErrCancelled
+[15]
+Short-desc = Operación cancelada.
+Long-desc = Intente realizar nuevamente la operación. Si el problema continúa, comuníquese con el administrador de la red.
+
+;kMsgCommonErrShutdown
+[16]
+Short-desc = Se ha apagado la conexión.
+Long-desc = El servidor ha reiniciado la conexión. Debe iniciar sesión nuevamente para volver a conectarse.
+
+;kMsgCommonPassAnySuppTypeArg, used for passing thru any supported data type argument
+[999]
+Short-desc = {0}
+Long-desc = {0}

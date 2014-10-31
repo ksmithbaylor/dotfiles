@@ -1,0 +1,27 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<title>Junos Pulse 設定の概要</title><meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/> <meta name="keywords" content="トークン、認証、RSA SecurID"/> <meta name="description" content="Pulse によるトークン認証のサポート方法について説明します。" /> <link href="../sty/standard.css" rel="stylesheet" type="text/css" />
+</head>
+<body style="width:98%;">
+<div id="content"><h1 class="Title">トークン認証</h1>
+<p class="Para1">Pulse は、RSA SecurID トークン認証システムをサポートしています。 トークン認証は、2 要素認証とも呼ばれ、漏洩が非常に難しい認証情報を生成する方法です。 トークンコードは、クライアントとサーバーの両方で同時に生成される数字です。 ユーザー名およびユーザーが作成した PIN（個別識別番号）に現在のトークンコードを組み合わせることで、ユーザーはサーバーへのログインを許可されます。 PIN とトークンコードでパスコードが構成されます。 トークンコードは、短時間、通常は 1 分後に期限切れになり、新しく生成されたトークンコードと置き換えられます。 </p>
+<p class="Para1">はじめてシステムを使用するとき、PIN を作成するよう Pulse から要求があります。 管理者がすでに PIN を提供している場合は、それを変更するよう要求されます。 ネットワーク管理者が PIN を定期的に変更するよう要求している場合、Pulse から新しい PIN を要求されます。 通常、PIN を変更するときには、現在のトークンコードを提供しなければなりません。 場合によっては、パスコードを入力した後、ネットワークにアクセスする前に、次のトークンコードを入力するよう要求されます。 トークンデバイスが新しいトークンコードに変わるまで待って、その数字を入力し、先へ進みます。</p>
+<h2 class="Head2"> <!--Pulse 3.0 for Mac supports only soft tokens so the folllowing is commented out - Hardware and Software  -->認証</h2>
+<p class="Para1">トークンを生成するデバイスまたはソフトウェアは、オーセンティケータと呼ばれます。 Pulse は、SecurID ハードウェア<!--Pulse 3.0 for Mac supports only soft tokens so the folllowing is commented out - and software   -->オーセンティケータの全領域をサポートしています。</p>
+<p class="Para1">RSA SecurID ハードウェア（物理）オーセンティケータは、60 秒ごとに新しいトークンコードを表示します。 ログインするときには、トークンを生成するカードまたはキーフォブを携帯している必要があります。 Pulse ログインウィンドウで、ユーザー名、PIN、およびトークンコードを入力します。 USB オーセンティケータは、MacOS ユーザー名/パスワード認証情報とデジタル証明書を保管できます。 デバイスがご利用のコンピュータに接続されると、トークンコードの自動入力が有効になます。PIN を入力すると、Pulse は、デバイスから直接トークンコードに自動的にアクセスできます。 </p> <!--  <p class="Para1">SecurID also offers a variety of software authenticators
+including smartphone applications, software for desktop and laptop
+computers, and browser-based applications. These authenticators enable
+login options such as the ability to store login credentials
+and digital certificates. Your Pulse login procedure using a software
+authenticator depends on how your security administrator has configured
+the system. Typically, if you have the SecurID software installed
+on your endpoint, Pulse interacts with the software to retrieve the
+token code after you provide your PIN. If the system supports multiple
+tokens, Pulse prompts you to select one. </p><p class="Para1">If your authentication environment supports both software and
+hardware tokens, Pulse prompts you to select the type of token you
+want to use.</p>-->
+<h4 class="Head4">関連項目</h4><ul><li class="li"><a href="access-control-connect-smartcard-overview.html">スマートカード認証</a></li></ul></div>
+
+</body></html>

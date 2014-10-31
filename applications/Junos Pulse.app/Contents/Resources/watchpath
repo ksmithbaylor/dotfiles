@@ -1,0 +1,2 @@
+DO NOT TOUCH THIS FILE!!
+This file functions as a watchdog monitored by launchd for Mac OS X 10.8 and later. When it is modified, Pulse uninstaller will be triggered. 

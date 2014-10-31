@@ -1,0 +1,2068 @@
+﻿; JUNS catalogUtil requires resource catalog files to be saved with UTF-8 encoding, which put 3 bytes {0xEF, 0xBB, 0xBF} at the file beginning called Byte Order Mark (BOM) for UTF-8 files . For modifications in this files, please use Text Editors which persist these BOM bytes (like Notepad.exe, Visual Studio IDE, etc).
+
+; Following are English Resource Strings used in Pulse
+; ----------------------------------------------------
+
+; Notes: 1) Language Translation not needed for these:
+;           a) hyperlink anchor tags: <a>, </a>
+;           b) escape characters: \n, \r, \t
+
+;IDS_AS_IS
+[0]
+Value = {0}
+
+;IDS_SSID
+[1]
+Value = SSID:
+
+;IDS_WARNING_CONNECTING_ACCESS_SERVICE
+[2]
+Value = 未能连接到 Juniper 统一网络服务。
+
+;IDS_WARNING_ADD_EDIT_CONN_NOT_ALLOWED
+[3]
+Value = 管理员不允许您添加或编辑连接。
+
+;IDS_WARNING_CAN_NOT_CREATE_CONN
+[4]
+Value = 无法创建连接，因为没有可用的访问方法。
+
+;IDS_WARNING_USE_WINDOWS_FOR_CONTROLING_CONN
+[5]
+Value = 请使用 Windows 控制此连接。
+
+;IDS_WARNING_CONN_AUTO_CONTROLLED_CANT_EDIT
+[6]
+Value = 系统会自动控制此连接且不能覆盖它。
+
+;IDS_WARNING_CONN_DELETED_EDITS_DISCARDED
+[7]
+Value = 此连接在编辑期间被删除。编辑内容被丢弃。
+
+;IDS_WARNING_CONN_DELETE_NOT_ALLOWED
+[8]
+Value = 管理员不允许您删除此连接。
+
+;IDS_QUESTION_REMOVE_CONN
+[9]
+Value = 是否要删除此连接？\n\n连接: {0}
+
+;IDS_WARNING_ACCELERATION_NOT_CONTROLLABLE
+[10]
+Value = 当前无法控制加速。
+
+;IDS_WARNING_ACCELERATION_AUTO_CONTROLLED_CANT_EDIT
+[11]
+Value = 系统会自动控制加速且不能覆盖它。
+
+;IDS_ERROR_CANT_CLEAR_SAVED_SETTINGS
+[12]
+Value = 无法清除保存的设置。
+
+;IDS_INFO_ALL_SAVED_SETTINGS_CLEARED
+[13]
+Value = 所有保存的设置均已清除。
+
+;IDS_STATUS_EES_NOT_RUNNING
+[14]
+Value = 未运行
+
+;IDS_STATUS_EES_DISABLED
+[15]
+Value = 禁用
+
+;IDS_STATUS_EES_DOWNLOADING_SOFTWARE
+[16]
+Value = 正在下载软件
+
+;IDS_STATUS_EES_DOWNLOADING_SIGNATURES
+[17]
+Value = 正在下载签名
+
+;IDS_STATUS_EES_CHECKING_MEMORY
+[18]
+Value = 正在执行内存扫描
+
+;IDS_STATUS_EES_REALTIME_PROTECTION_ENABLED
+[19]
+Value = 已启用实时保护
+
+;IDS_STATUS_EES_REBOOT_NEEDED_FOR_MALWARE_REMEDIATE
+[20]
+Value = 需要重新启动以修复恶意软件
+
+;IDS_STATUS_EES_MALWARE_DETECTED_AUTO_REMEDIATION_FAILED
+[21]
+Value = 检测到恶意软件 – 自动修复失败
+
+;IDS_STATUS_EES_MALWARE_DETECTED_CHECKING_MEMORY
+[22]
+Value = 检测到恶意软件 – 正在执行内存重新扫描
+
+;IDS_STATUS_EES_INITIALIZING
+[23]
+Value = 正在初始化
+
+;IDS_STATUS_EES_INIT_FAILED
+[24]
+Value = 初始化失败
+
+;IDS_VERSION
+[25]
+Value = 版本 
+
+;IDS_REMEDIATION_INFO
+[26]
+Value = 修复信息: 
+
+;IDS_CONNECTIONS
+[27]
+Value = 连接(&O)
+
+;IDS_DELETE_CONN
+[28]
+Value = 删除连接
+
+;IDS_FORGET_SAVED_SETTING
+[29]
+Value = 忘记保存的设置
+
+;IDS_EDIT_CONN
+[30]
+Value = 编辑连接
+
+;IDS_ADD_CONN
+[31]
+Value = 添加连接
+
+;IDS_SECURITY
+[32]
+Value = 安全(&S)
+
+;IDS_ENHANDCED_ENDPOINT_SECURITY
+[33]
+Value = 增强的端点安全
+
+;IDS_ACCELERATION
+[34]
+Value = 加速(&A)
+
+;IDS_WAN_BANDWIDTH_OPTIMIZATION
+[35]
+Value = 应用程序加速
+
+;IDS_CUSTOM
+[36]
+Value = 自定义（{0}）
+
+;IDS_MAIN_DLG_MENU_DISCONNECT
+[37]
+Value = 断开连接(&I)
+
+;IDS_WARNING_SELECT_CONN
+[38]
+Value = 请选择一个连接。
+
+;IDS_WARNING_DISCONNECT_BEFORE_EDIT
+[39]
+Value = 请在编辑之前断开连接。
+
+
+;IDS_ERROR_INVALID_CREDENTIALS
+[40]
+Value = 用户名或密码错误。请重新尝试。
+
+;IDS_STATUS_INPUT_CREDENTIALS
+[41]
+Value = 提供以下信息以完成连接。
+
+;IDS_STATUS_MAKE_SELECTION
+[42]
+Value = 进行以下选择以完成连接。
+
+;IDS_STATUS_INPUT_INFO
+[43]
+Value = 提供以下信息以完成连接。
+
+;IDS_STATUS_CONNECTING
+[44]
+Value = 正在连接...
+
+;IDS_STATUS_CONN_COMPLETE
+[45]
+Value = 连接完成。
+
+;IDS_STATUS_DETAILS_FROM_TRAY_ICON
+[46]
+Value = 可通过系统托盘图标访问 {0} 详细信息。
+
+;IDS_ERROR_DISCONNECTED_BY_CONN_POLICY
+[47]
+Value = 通过连接策略断开连接。
+
+;IDS_ERROR_CONN_FAILED
+[48]
+Value = 您的连接已失败。
+
+;IDS_ERROR_LIMITED_CONN_COMPLIANCE_ISSUE
+[49]
+Value = 因为合规性问题导致网络访问受限。
+
+;IDS_STATUS_LIMITED_CONN_UPDATE_IN_PROGRESS
+[50]
+Value = 受限制的网络访问。\n更新正在进行中。您可以关闭此对话框。更新完成后，您即可登录到网络。
+
+;IDS_STATUS_LIMITED_CONN_UPDATE_DONE_RELOGIN
+[51]
+Value = 受限制的网络访问。\n更新完成。如果连接没有很快重试，您可以按“重试”按钮尝试重新登录。
+
+;IDS_NAME_UNNAMED_CONN
+[53]
+Value = <未命名的连接>
+
+;IDS_NAME_UNSPECIFIED_HOST
+[54]
+Value = <未指定的主机>
+
+
+;IDS_TT_CONNECT
+[55]
+Value = 单击以连接
+
+;IDS_TT_DISCONNECT
+[56]
+Value = 单击以断开连接
+
+;IDS_BTN_CONNECT
+[59]
+Value = 连接
+
+;IDS_BTN_STATUS
+[60]
+Value = 连接
+
+;IDS_HL_READ_INSTRUCTIONS
+[61]
+Value = <a>阅读说明</a>以解决问题。
+
+;IDS_LB_SERVER_URL
+[62]
+Value = 服务器 URL:
+
+;IDS_LB_STATUS
+[63]
+Value = 状态:
+
+;IDS_LB_COMPLIANCE
+[64]
+Value = 合规性:
+
+;IDS_LB_EES_STATUS
+[65]
+Value = 状态:
+
+;IDS_LB_EES_DEFINATIONS
+[66]
+Value = 定义:
+
+;IDS_ST_COMPLIANCE_ISSUE
+[68]
+Value = 合规性问题
+
+;IDS_ST_MESSAGE
+[69]
+Value = 消息
+
+;IDS_ST_UPDATE_IN_PROGRESS
+[70]
+Value = 更新正在进行中。您可以关闭此对话框。更新完成后，您即可登录到网络。
+
+;IDS_ST_UPDATE_COMPLETE
+[71]
+Value = 更新已完成。
+
+
+;IDS_WARNING_SPECIFY_CONN_NAME
+[72]
+Value = 请为此连接指定一个名称。
+
+;IDS_WARNING_SPECIFY_UNIQUE_CONN_NAME
+[73]
+Value = 此名称已被使用。\n请为此连接指定唯一名称。
+
+;IDS_WARNING_SPECIFY_CONN_URL
+[74]
+Value = 请为此连接指定一个 URL。
+
+;IDS_SAVE
+[75]
+Value = 保存(&A)
+
+;IDS_CERT_PROMPT_0
+[76]
+Value = 您将验证不受信任的服务器。站点的安全证书存在问题:  
+
+;IDS_DATE_FORMAT
+[77]
+Value = {0}/{1}/{2}
+
+;IDS_ST_CONN_INFO
+[78]
+Value = 连接信息:
+
+;IDS_ST_HOST
+[79]
+Value = 主机:
+
+;IDS_ST_CERT_INFO
+[80]
+Value = 证书信息:
+
+;IDS_ST_CERT_SUBJECT
+[81]
+Value = 颁发给:
+
+;IDS_ST_CERT_ISSUER
+[82]
+Value = 颁发者:
+
+;IDS_ST_CERT_VALIDITY
+[83]
+Value = 有效期:
+
+;IDS_ST_CERT_HASH
+[84]
+Value = 证书指纹:
+
+;IDS_ST_VALIDITY_DATE_RANGE
+[85]
+Value = {0}-{1}
+ 
+;IDS_EMPTY
+[86]
+Value = <空>
+
+
+;IDS_ST_PWD
+[87]
+Value = 密码(&P):
+
+;IDS_ST_ENTER_OLD_PWD
+[88]
+Value = 请输入您的旧密码(&O):
+
+;IDS_ST_ENTER_NEW_PWD
+[89]
+Value = 请输入您的新密码(&N):
+
+;IDS_ST_CONFIRM_NEW_PWD
+[90]
+Value = 请确认您的新密码(&P)：
+
+;IDS_ST_SECONDARY_PWD
+[91]
+Value = 辅助密码(&P):
+
+;IDS_ST_SAVE_SETTINGS
+[92]
+Value = 保存设置(&S)
+
+;IDS_ST_USER_NAME
+[93]
+Value = 用户名(&U):
+
+;IDS_ST_SECONDARY_USER_NAME
+[94]
+Value = 辅助用户名(&U):
+
+;IDS_ST_ENTER_REALM
+[95]
+Value = 请输入领域(&R):
+
+;IDS_ST_ENTER_TOKEN_INFO
+[96]
+Value = 请输入密码(&P)：
+
+;IDS_ST_ENTER_TOKEN_SECONDARY_INFO
+[97]
+Value = 请输入次要令牌信息(&T)：
+
+;IDS_ST_SERVER_CHALLENGE
+[98]
+Value = 来自服务器的消息:
+
+;IDS_ST_ENTER_CLIENT_RESPONSE
+[99]
+Value = 请输入响应(&R):
+
+;IDS_ST_SELECT_REALM
+[100]
+Value = 请选择领域(&R):
+
+;IDS_ST_SELECT_ROLE
+[101]
+Value = 请选择角色(&R):
+
+;IDS_WARNING_MAX_SESSONS
+[102]
+Value = 警告(&W)：正在运行的会话已达到最大数。选择一个会话并单击“连接”将其终止，然后创建一个新会话。单击“取消”以保留现有会话。 
+
+;IDS_WARNING_SESSION_RUNNING
+[103]
+Value = 警告(&W)：您已经有一个正在运行的会话。单击“连接”将其终止，然后创建一个新会话。单击“取消”以保留现有会话。 
+
+;IDS_ST_SELECT_CERTIFICATE
+[104]
+Value = 请选择一个证书(&P):
+
+;IDS_LOGIN_DLG_BTN_CONNECT
+[105]
+Value = 连接(&C)
+
+;IDS_LOGIN_DLG_BTN_RETRY
+[106]
+Value = 重试(&R)
+
+;IDS_LOGIN_DLG_BTN_CANCEL
+[107]
+Value = 取消(&A)
+
+;IDS_LOGIN_DLG_BTN_CLOSE
+[108]
+Value = 关闭(&L)
+
+;IDS_LOGIN_DLG_CONNECT_TO
+[109]
+Value = 连接到: {0}
+
+;IDS_LOGIN_DLG_ERROR_INVALID_PWD
+[110]
+Value = 新密码无效。请输入有效的新密码。
+
+;IDS_LOGIN_STATUS_WND_PROGRESS_BTN_CANCEL
+[111]
+Value = 取消(&N)
+
+;IDS_LOGIN_STATUS_WND_PROGRESS_BTN_CLOSE
+[112]
+Value = 关闭(&O)
+
+;IDS_LOG_SAVE_DLG_TITLE
+[113]
+Value = 保存日志和诊断
+
+;IDS_LOG_SAVE_DLG_ST_SAVING_LOGS
+[114]
+Value = 正在保存日志和诊断...
+
+;IDS_LOG_SAVE_DLG_ST_SAVE_LOGS_COMPLETE
+[115]
+Value = 保存日志和诊断完成！
+
+;IDS_LOG_SAVE_DLG_SAVING_FILES
+[116]
+Value = 正在保存文件...
+
+;IDS_LOG_SAVE_DLG_SAVING_COMMANDS
+[117]
+Value = 正在保存命令...
+
+;IDS_LOG_SAVE_DLG_SAVING_DIAGNOSTICS
+[118]
+Value = 正在保存诊断...
+
+;IDS_LOG_SAVE_DLG_SAVING_FAILED
+[119]
+Value = 保存失败！
+
+;IDS_REMEDIATION_POLICY_STR_REASONS_MISSING
+[120]
+Value = 不可用。
+
+;IDS_REMEDIATION_POLICY_STR_INSTRUCTIONS_MISSING
+[121]
+Value = 没有可用的说明。
+
+;IDS_REMEDIATION_POLICY_STR_NO_DATA_AVAILABLE
+[122]
+Value = 没有可用的附加信息。请联系系统管理员。
+
+;IDS_TRAY_WND_STATE_NO_CONN
+[123]
+Value = 没有活动连接
+
+;IDS_TRAY_WND_STATE_CONNECTED
+[124]
+Value = 已连接
+
+;IDS_TRAY_WND_STATE_CONNECTING
+[125]
+Value = 正在连接
+
+;IDS_TRAY_WND_STATE_CONN_FAILED
+[126]
+Value = 连接失败
+
+;IDS_TRAY_WND_STATE_LIMITED_CONNECTIVITY
+[127]
+Value = 受限制的连接
+
+;IDS_TRAY_WND_STATE_ACCESS_SERVICE_NOT_RUNNING
+[128]
+Value = Juniper Pulse 服务未运行
+
+;IDS_TRAY_WND_TT_PRODUCT_AND_STATE
+[129]
+Value = {0}:{1}
+
+;IDS_TRAY_WND_TT_CONN_FAILED
+[130]
+Value = 您的连接已失败。请单击此处了解更多信息。
+
+;IDS_TRAY_WND_MENU_OPEN
+[131]
+Value = 打开 {0}(&O)
+
+;IDS_TRAY_WND_EXIT_QUESTION
+[132]
+Value = 现有的 {0} 可能会禁用某些网络连接，直到您重新启动 {0}。\n\n可以从“开始”菜单运行以重新启动 {0}。\n\n确定要退出吗？
+
+;IDS_LOG_VIEWER_WND_TITLE
+[133]
+Value = 日志查看器
+
+;IDS_ANNOTATION_DLG_TITLE
+[136]
+Value = 注释日志
+
+;IDS_ANNOTATION_DLG_WARNING_SPECIFY_ANNOTATION_TEXT
+[137]
+Value = 请指定注释文本。
+
+;IDS_CONN_ITEM_STATUS_DISCONNECT_REQUESTED
+[139]
+Value = 请求断开连接
+
+;IDS_CONN_ITEM_STATUS_CONNECT_REQUESTED
+[140]
+Value = 请求连接
+
+;IDS_CONN_ITEM_STATUS_DISCONNECTED
+[141]
+Value = 已断开连接
+
+;IDS_CONN_ITEM_STATUS_CONNECTING
+[142]
+Value = 正在连接
+
+;IDS_CONN_ITEM_STATUS_CONNECTED
+[143]
+Value = 已连接
+
+;IDS_CONN_ITEM_STATUS_RECONNECTING
+[144]
+Value = 等待连接
+
+;IDS_CONN_ITEM_STATUS_DISCONNECTING
+[145]
+Value = 正在断开连接
+
+;IDS_CONN_ITEM_STATUS_FAILED
+[146]
+Value = 失败
+
+;IDS_CONN_ITEM_STATUS_UNKNOWN
+[147]
+Value = 未知
+
+;IDS_CONN_ITEM_WX_STATUS_DISABLED
+[148]
+Value = 已禁用
+
+;IDS_CONN_ITEM_WX_STATUS_ENABLING
+[149]
+Value = 正在启用
+
+;IDS_CONN_ITEM_WX_STATUS_ENABLED
+[150]
+Value = 已启用
+
+;IDS_CONN_ITEM_WX_STATUS_RE_ENABLING
+[151]
+Value = 正在启用
+
+;IDS_CONN_ITEM_WX_STATUS_DISABLING
+[152]
+Value = 正在禁用
+
+;IDS_CONN_ITEM_WX_STATUS_FAILED
+[153]
+Value = 失败
+
+;IDS_CONN_ITEM_WX_STATUS_UNKNOWN
+[154]
+Value = 未知
+
+;IDS_CONN_ITEM_COMPLIANCE_LIMITED_CONNECTIVITY
+[155]
+Value = 受限制的连接
+
+;IDS_CONN_ITEM_COMPLIANCE_REMEDIATION_REQUIRED
+[156]
+Value = 请求修复
+
+;IDS_CONN_ITEM_COMPLIANCE_MEETS_SECURITIES_POLICIES
+[157]
+Value = 满足安全策略
+
+;IDS_MAIN_DLG_MENU_CONNECTIONS
+[158]
+Value = 连接(&O)
+
+;IDS_MAIN_DLG_MENU_CONNECT
+[159]
+Value = 连接(&C)
+
+;IDS_MAIN_DLG_MENU_REMEDIATION_INFO
+[160]
+Value = 修复信息(&R)
+
+;IDS_MAIN_DLG_MENU_EDIT
+[161]
+Value = 编辑(&E)
+
+;IDS_MAIN_DLG_MENU_DELETE
+[162]
+Value = 删除(&D)
+
+;IDS_MAIN_DLG_MENU_FORGET_SAVED_SETTINGS
+[163]
+Value = 忘记保存的设置(&F)
+
+;IDS_MAIN_DLG_MENU_ADD
+[164]
+Value = 添加(&A)
+
+;IDS_MAIN_DLG_MENU_LOGS
+[165]
+Value = 日志(&L)
+
+;IDS_MAIN_DLG_MENU_ANNOTATE
+[166]
+Value = 注释(&A)...
+
+;IDS_MAIN_DLG_MENU_LOG_LEVEL
+[167]
+Value = 日志级别(&L)
+
+;IDS_MAIN_DLG_MENU_DETAILED
+[168]
+Value = 详细信息(&D)
+
+;IDS_MAIN_DLG_MENU_NORMAL
+[169]
+Value = 常规(&N)
+
+;IDS_MAIN_DLG_MENU_SAVE_AS
+[170]
+Value = 另存为(&S)...
+
+;IDS_MAIN_DLG_MENU_HELP
+[171]
+Value = 帮助(&H)
+
+;IDS_MAIN_DLG_MENU_ABOUT
+[172]
+Value = 关于(&A)
+
+;IDS_MAIN_DLG_MENU_CLOSE
+[173]
+Value = 关闭(&C)
+
+;IDS_TRAY_WND_MENU_EXIT
+[174]
+Value = 退出(&X)
+
+;IDS_LOG_SAVE_DLG_FILTER
+[175]
+Value = Zip 文件
+
+;IDS_ABOUT_VERSION
+[176]
+Value = Junos Pulse\n版本 {0}
+
+;IDS_ABOUT_COPYRIGHT
+[177]
+Value = © 2010-2014 Juniper Networks, Inc.\n保留所有权利。
+
+;IDS_ABOUT_TOS
+[178]
+Value = Juniper Networks 和 Junos 是 Juniper Networks, Inc. 在美国及其它国家/地区的注册商标。Juniper 徽标和 Junos 徽标是 Juniper Networks, Inc. 的商标。所有其它商标、服务标志、注册商标或注册服务标志均属其各自所有者的资产。
+
+;IDS_BTN_OK
+[179]
+Value  = 确定(&O)
+
+;IDS_BTN_CANCEL
+[180]
+Value  = 取消(&C)
+
+;IDS_LOG_ANNOTATION_DLG_ST_ENTER_TEXT_TO_ANNOTATE
+[181]
+Value  = 请输入文本为日志文件加入注释(&E):
+
+;IDS_CONNECTION_DLG_ST_CONN_TYPE
+[182]
+Value  = 类型(&T):
+
+;IDS_CONNECTION_DLG_ST_NAME
+[183]
+Value  = 名称(&M)：
+
+;IDS_CONNECTION_DLG_ST_URL
+[184]
+Value  = 服务器 URL(&S):
+
+;IDS_CONNECTION_DLG_BTN_CONNECT
+[185]
+Value  = 连接(&C)
+
+;IDS_CONNECTION_DLG_BTN_ADD
+[186]
+Value  = 添加(&A)
+
+;IDS_CONNECTION_DLG_BTN_CANCEL
+[187]
+Value  = 取消(&N)
+
+;IDS_MAIN_DLG_BTN_CANCEL
+[188]
+Value  = 关闭(&C)
+
+;IDS_MAIN_DLG_TT_CLICK_HERE_FOR_APP_MENU
+[189]
+Value = 单击此处获取应用程序菜单。
+
+;IDS_WARNING_NO_ERROR_DETAILS
+[190]
+Value = 没有可用的附加详细信息。
+
+;IDS_LB_DETAILS
+[191]
+Value = 详细信息:
+
+;IDS_CERT_PROMPT_1
+[193]
+Value = Pulse 应该继续连接吗？
+
+;IDS_ST_USER_NAME_PROXY
+[194]
+Value = 代理用户名(&U):
+
+;IDS_ST_PASSWORD_PROXY
+[195]
+Value = 代理密码(&P):
+
+;IDS_ST_PASSWORD_CURRENT
+[196]
+Value = 密码(&P):
+
+;IDS_ST_PASSWORD_OLD
+[197]
+Value = 请输入您的旧密码(&O):
+
+;IDS_ST_PASSWORD_NEW
+[198]
+Value = 请输入您的新密码(&N):
+
+;IDS_ST_PASSWORD_NEW_VERIFY
+[199]
+Value = 请确认您的新密码(&P)：
+
+;IDS_ST_PASSWORD_SECONDARY
+[200]
+Value = 辅助密码(&P):
+
+;IDS_ST_SSID
+[201]
+Value = SSID:
+
+;IDS_ST_PROXY_USER_NAME_PROMPT_0
+[202]
+Value = 请提供代理服务器证书
+
+;IDS_ST_PROXY_USER_NAME_PROMPT_1
+[203]
+Value = 用于
+
+;IDS_ST_PROXY_USER_NAME_PROMPT_2
+[204]
+Value = .
+
+;IDS_ST_UPGRADE_PROMPT
+[205]
+Value = Junos Pulse 可供升级。单击“升级”立即安装升级程序，或单击“取消”稍后进行升级。升级时，您可能会遇到网络问题。\n\n升级期间，计算机可能会发生暂时无法访问网络的问题。开始升级前，请先保存工作。
+
+;IDS_ST_UPGRADE_ACTION
+[206]
+Value = 软件升级对象:
+
+;IDS_ST_UPGRADE_BUTTON
+[207]
+Value = 升级(&U)
+
+;IDS_STATUS_RECONNECTING
+[208]
+Value = 等待连接...
+
+;IDS_ERROR_DETAILS_FORMAT
+[209]
+Value = 错误 {0}: {1}\n\n{2}
+
+;IDS_LOGIN_DLG_BTN_INFO
+[210]
+Value = 信息(&I)
+
+;IDS_STATUS_CHECKING_COMPLIANCE
+[211]
+Value = 正在检查合规性...
+
+;IDS_HL_REMEDIATION_AUTO
+[212]
+Value = <a>单击此处</a>查看正在修复的问题。
+
+;IDS_HL_REMEDIATION_COMPLETE
+[213]
+Value = 如果此消息没有很快消失，请<a>单击此处</a>。
+
+;IDS_CONN_ITEM_STATUS_CHECKING_COMPLIANCE
+[214]
+Value = 检查合规性
+
+;IDS_STATUS_RETRY_REQUESTED
+[215]
+Value = 请求重试...
+
+;IDS_REMEDIATION_HTML_POLICY_INSTRUCTIONS
+[216]
+Value = 说明:
+
+;IDS_REMEDIATION_HTML_POLICY_REASON
+[217]
+Value = 原因:
+
+;IDS_REMEDIATION_HTML_TITLE
+[218]
+Value = 您的计算机的安全性不符合要求
+
+;IDS_REMEDIATION_HTML_EXPLANATION
+[219]
+Value = 您的计算机不满足以下安全性要求。请按照以下说明修复这些问题。完成后请单击<b>重试</b>。如果选择<b>关闭</b>而不修复这些问题，您可能无法访问内部服务器的全部资源。
+
+;IDS_ST_ENTER_PIN
+[220]
+Value = 请输入 PIN：
+
+;IDS_ST_SELECT_TOKEN
+[221]
+Value = 请选择令牌：
+
+;IDS_ST_USE_PHYSICAL_TOKEN
+[222]
+Value = 使用实际令牌(&U)
+
+;IDS_ST_NEXT_TOKENCODE
+[223]
+Value = 请等待令牌代码变更(&P)。然后输入新的令牌代码：
+
+;IDS_LOGIN_DLG_BTN_CONTINUE
+[224]
+Value = 继续(&C)
+
+;IDS_CONN_ITEM_STATUS_CANCELLED
+[226]
+Value = 已取消
+
+;IDS_CONN_ITEM_WX_STATUS_CONNECTED_WITH_ERRORS
+[227]
+Value = 已连接但存在错误
+
+;IDS_CONN_ITEM_WX_STATUS_CANCELLED
+[228]
+Value = 已取消
+
+;IDS_ST_ENTER_NUMERIC_PIN
+[229]
+Value = 输入包含数字的新 PIN(&E)。新 PIN 的长度必须在 {0} 到 {1} 个数字之间：
+
+;IDS_ST_ENTER_ALPHANUMERIC_PIN
+[230]
+Value = 输入包含字符与数字的新 PIN(&E)。新 PIN 的长度必须在 {0} 到 {1} 个字符与数字之间：
+
+;IDS_ST_SYSTEM_PIN
+[231]
+Value = 新 PIN 为 {0}。请记住新的 PIN。
+
+;IDS_ST_CONFIRM_NEW_PIN
+[232]
+Value = 请确认新的 PIN(&P)：
+
+;IDS_ST_ERROR_PIN_MATCH
+[233]
+Value = PIN 不相符；请输入新的 PIN 并确认
+
+;IDS_ST_ERROR_NUMERIC_PIN
+[234]
+Value = PIN 无效；请输入包含 {0} 到 {1} 位数字的新 PIN
+
+;IDS_ST_ERROR_ALPHANUMERIC_PIN
+[235]
+Value = PIN 无效；请输入包含 {0} 到 {1} 个字符和数字的新 PIN 
+
+;IDS_WARNING_ERROR_SHORT_DESC_UNAVAILABLE
+[300]
+Value = 错误 {0}
+
+;IDS_WARNING_NO_ERROR_DETAILS_WITH_CATALOG_LOAD_ERROR
+[301]
+Value = 没有附加的详细信息可供使用。Pulse 安装缺少所需的文件。如果此问题持续存在，请重新安装 Pulse。
+
+;IDS_WARNING_ACCESS_SERVICE_NOT_RUNNING_GLOBAL_LOG_LEVEL_CHANGE_WONT_PERSIST
+[302]
+Value = Juniper Pulse 服务未运行；全局日志级别更改在重新启动后将不再继续。
+
+;IDS_BTN_DISCONNECT
+[303]
+Value = 断开连接
+
+;IDS_TT_SHOW_DETAILS
+[306]
+Value = 单击以显示详细信息
+
+;IDS_TT_HIDE_DETAILS
+[307]
+Value = 单击以隐藏详细信息
+
+;IDS_CONNECTION_TYPE_IVE
+[308]
+Value = UAC 或 SSL-VPN
+
+;IDS_CONNECTION_TYPE_FIREWALL
+[309]
+Value = SRX
+
+;IDS_CONNECTION_TYPE_WX
+[310]
+Value = WX
+
+;IDS_CONNECTION_TYPE_WIRED
+[311]
+Value = 有线
+
+;IDS_CONNECTION_TYPE_WIRELESS
+[312]
+Value = 无线
+
+;IDS_CONNECTION_TYPE_FIREWALL_VPN
+[313]
+Value = 防火墙
+
+;IDS_EES_STATUS_FORMAT
+[314]
+Value = EES: {0}
+
+;IDS_LOGS_SAVE_BUTTON_CANCEL
+[315]
+Value = 停止(&S)
+
+;IDS_LOG_SAVE_DLG_STOPPING
+[316]
+Value = 停止集合并关闭日志文件中...
+
+;IDS_LOG_SAVE_PARTIAL_SUCCESS
+[317]
+Value = 部分日志与诊断已保存！
+
+;IDS_TRAY_FAILURE_TEMPLATE
+[318]
+Value = 您的连接已失败。\n连接：\t{0}\n原因：\t{1}\n{2}
+
+;IDS_TRAY_LIMITED_TEMPLATE
+[319]
+Value = 连接具有连接性限制。\n连接：\t{0}\n原因：\t{1}\n{2}
+
+;IDS_TRAY_CLICK_FOR_INSTRUCTIONS
+[320]
+Value = 单击此处以了解说明。
+
+;IDS_TRAY_CLICK_FOR_INFORMATION
+[321]
+Value = 单击此处以获得更多信息。
+
+;IDS_TRAY_COMPLIANCE_ISSUES
+[322]
+Value = 合规性问题
+
+;IDS_CONN_ITEM_STATUS_DISABLE_REQUESTED
+[323]
+Value = 停用已请求
+
+;IDS_CONN_ITEM_STATUS_ENABLE_REQUESTED
+[324]
+Value = 启用已请求
+
+;IDS_LB_WX_STATUS
+[325]
+Value = 状态：
+
+;IDS_MSG_UNSPECIFIED_ERROR
+[329]
+Value = 未指定的错误
+
+;IDS_PULSE_VERSIONS
+[330]
+Value = {0} 版本详细信息
+
+;IDS_LINK_VERSION_DETAILS
+[331]
+Value = 版本详细信息
+
+;IDS_BTN_SMALL_DECREMENT - Decreases button font size.
+[332]
+Value = 0
+
+;IDS_STATUS_EES_CHECKING_MEMORY
+[333]
+Value = 执行文件扫描
+
+;IDS_STATUS_EES_MALWARE_DETECTED_CHECKING_MEMORY
+[334]
+Value = 检测到恶意软件 – 正在执行内存重新扫描
+
+;IDS_INVALID
+[335]
+Value = <无效>
+
+;IDS_STATUS_AUTH_USING_CLIENT_CERT
+[400]
+Value = 正在使用客户端证书进行验证...
+
+;IDS_LOGIN_DLG_BTN_VIEW_CERT
+[401]
+Value = 查看(&V)
+
+;IDS_TRAY_DISCONNECT
+[450]
+Value = 断开网络连接(&D)
+
+;IDS_TRAY_CONNECT
+[451]
+Value = 连接网络(&C)
+
+;IDS_BUTTON_NETWORK_PROPERTIES
+[452]
+Value = 属性
+
+;IDS_BUTTON_NETWORK_HELP
+[453]
+Value = 帮助
+
+;IDS_BUTTON_NETWORK_DIAL
+[454]
+Value = 拨号
+
+;IDS_PULSE_NOT_RUNNING
+[455]
+Value = Juniper Pulse 服务未运行
+
+;IDS_NO_CHOICE_TEMPLATE
+[456]
+Value = ({0} 个选择)
+
+;IDS_NO_CHOICES_TEMPLATE
+[457]
+Value = ({0} 个选择)
+
+;IDS_NO_ITEMS
+[458]
+Value = 无 {0}
+
+;IDS_EMPTY_NETWORK_PROVIDER
+[459]
+Value = 
+
+;IDS_TRAY_WND_TT_ACCELERATION
+[460]
+Value = \r\n加速： {0}
+
+;IDS_TRAY_WND_TT_NETWORK
+[461]
+Value = \r\n网络： {0}
+
+;IDS_ST_TNC_SHAVLIK_CONSENT_PROMPT
+[462]
+Value = Pulse 必须安装安全性补丁程序才能完成连接。\n\n注意：选择“不安装”可能导致受限制或无连接性。
+
+;IDS_LOGIN_DLG_BTN_INSTALL
+[463]
+Value = 安装(&I)
+
+;IDS_LOGIN_DLG_BTN_DONT_INSTALL
+[464]
+Value = 不安装(&D)
+
+;IDS_LOGIN_DLG_BTN_CONTINUE
+[465]
+Value = 继续(&C)
+
+;IDS_LOGIN_DLG_BTN_REBOOT_NOW
+[466]
+Value = 立即重新启动(&N)
+
+;IDS_LOGIN_DLG_BTN_REBOOT_LATER
+[467]
+Value = 稍后重新启动(&L)
+
+;IDS_ST_TNC_REBOOT_REQUIRED
+[468]
+Value = 需要重新启动才能完成补丁程序安装。\n\n注意：未重新启动可能导致受限制或无连接性，直到您重新启动为止。
+
+;IDS_CONN_ITEM_WX_STATUS_ACCELERATING
+[469]
+Value = 加速
+
+;IDS_CONN_ITEM_WX_STATUS_NOT_ACCELERATING
+[470]
+Value = 未加速
+
+;IDS_MAIN_DLG_MENU_ACCELERATION
+[471]
+Value = 加速(&E)
+
+;IDS_MAIN_DLG_MENU_ENABLE
+[472]
+Value = 启用(&E)
+
+;IDS_MAIN_DLG_MENU_DISABLE
+[473]
+Value = 禁用(&D)
+
+;IDS_MAIN_DLG_MENU_CANCEL
+[474]
+Value = 取消(&C)
+
+;IDS_TRAY_WND_TT_CONNECTIONS
+[475]
+Value = \r\n{0}
+
+;IDS_ST_TNC_REBOOT_REQUIRED
+[476]
+Value = 需要重新启动才能完成补丁程序安装。\n\n注意：选取稍后重新启动可能导致受限制或无连接性，直到您重新启动为止。
+
+;IDS_ERROR_INFO_ACTION_PREFIX
+[477]
+Value = 错误信息： 
+
+;IDS_ERROR_INFO_TITLE
+[478]
+Value = 连接错误 
+
+;IDS_ERROR_INFO_ERROR_CODE
+[479]
+Value = 错误：
+
+;IDS_MAIN_DLG_MENU_FILE
+[480]
+Value = 文件(&F)
+
+;IDS_TT_CANCEL
+[481]
+Value = 单击以取消
+
+;IDS_REMEDIATION_HTML_REPORT
+[482]
+Value = 以下任务已由 Pulse 解决：
+
+;IDS_STATUS_CHECKING_COMPLIANCE_REMEDIATION_COMPLETE
+[483]
+Value = 自动修复完成。正在检查合规性...
+
+;IDS_REMEDIATION_PROGRESS_TITLE_SHAVLIK_PATCH
+[484]
+Value = 补丁程序安装：
+
+;IDS_REMEDIATION_PROGRESS_MESSAGE_OTHER
+[485]
+Value = 1 项工作待完成。
+
+;IDS_REMEDIATION_PROGRESS_MESSAGE_OTHER_PLURAL
+[486]
+Value = {0} 项工作待完成。
+
+;IDS_REMEDIATION_PROGRESS_MESSAGE_OTHER_COMPLETED
+[487]
+Value = 1 项工作已完成。
+
+;IDS_REMEDIATION_PROGRESS_MESSAGE_OTHER_PLURAL_COMPLETED
+[488]
+Value = {0} 项工作已完成。
+
+;IDS_REMEDIATION_PATCH_SUMMARY_DOWNLOAD_FAILED
+[489]
+Value = [下载
+
+;IDS_REMEDIATION_PATCH_SUMMARY_INSTALL_FAILED
+[490]
+Value = [安装
+
+;IDS_REMEDIATION_PATCH_SUMMARY_REBOOT_REQUIRED
+[491]
+Value = [需要重新启动]
+
+;IDS_REMEDIATION_PATCH_PROGRESS_MESSAGE_ERROR
+[492]
+Value = {0} 个补丁程序已下载。{1} 个补丁程序已安装。  
+
+;IDS_REMEDIATION_PATCH_PROGRESS_MESSAGE_ERROR_PLURAL
+[493]
+Value = 已安装 {0} 个补丁程序，供 {1} 个。已安装 {2} 个补丁程序，供 {3} 个。
+
+;IDS_REMEDIATION_PATCH_PROGRESS_MESSAGE_START
+[494]
+Value = 正在开始安装 1 个补丁程序...
+
+;IDS_REMEDIATION_PATCH_PROGRESS_MESSAGE_START_PLURAL
+[495]
+Value = 正在开始安装 {0} 个补丁程序...
+
+;IDS_REMEDIATION_PATCH_PROGRESS_MESSAGE_DOWNLOADING
+[496]
+Value = 下载 1 个补丁程序中...
+
+;IDS_REMEDIATION_PATCH_PROGRESS_MESSAGE_DOWNLOADING_PLURAL
+[497]
+Value = 正在下载 {0} 个补丁程序，共 {1} 个...
+
+;IDS_REMEDIATION_PATCH_PROGRESS_MESSAGE_DOWNLOADED
+[498]
+Value = 已下载 1 个补丁程序。
+
+;IDS_REMEDIATION_PATCH_PROGRESS_MESSAGE_DOWNLOADED_PLURAL
+[499]
+Value = 已下载 {0} 个补丁程序。
+
+;IDS_REMEDIATION_PATCH_PROGRESS_MESSAGE_PREINSTALL
+[500]
+Value = 准备安装 1 保额补丁程序...
+
+;;IDS_REMEDIATION_PATCH_PROGRESS_MESSAGE_PREINSTALL_PLURAL
+[501]
+Value = 准备安装 {0} 个补丁程序...
+
+;IDS_REMEDIATION_PATCH_PROGRESS_MESSAGE_INSTALLING
+[502]
+Value = 安装 1 个补丁程序中...
+
+;IDS_REMEDIATION_PATCH_PROGRESS_MESSAGE_INSTALLING_PLURAL
+[503]
+Value = 正在安装 {0} 个补丁程序，共 {1} 个...
+
+;IDS_REMEDIATION_PATCH_PROGRESS_MESSAGE_INSTALLED
+[504]
+Value = 已安装 1 个补丁程序。
+
+;IDS_REMEDIATION_PATCH_PROGRESS_MESSAGE_INSTALLED_PLURAL
+[505]
+Value = 已安装 {0} 个补丁程序。
+
+;IDS_REMEDIATION_PATCH_PROGRESS_INIT
+[506]
+Value = 补丁程序引擎初始化中...
+
+;IDS_REMEDIATION_PATCH_PROGRESS_INIT_SDK_DL_IN_PROGRESS
+[507]
+Value = 补丁程序引擎下载 SDK 中...
+
+;IDS_REMEDIATION_PATCH_PROGRESS_INIT_SDK_DL_DONE
+[508]
+Value = 补丁程序引擎 SDK 已下载。
+
+;IDS_REMEDIATION_PATCH_PROGRESS_INIT_SDK_DL_FAILED
+[509]
+Value = 补丁程序引擎 SDK 下载失败。
+
+;IDS_REMEDIATION_PATCH_PROGRESS_INIT_SDK_UP_TO_DATE
+[510]
+Value = 补丁程序引擎 SDK 已更新。
+
+;IDS_REMEDIATION_PATCH_PROGRESS_UNINITIALIZED
+[511]
+Value = 未初始化。
+
+;IDS_REMEDIATION_PATCH_PROGRESS_POSTINSTALL
+[512]
+Value = 完成安装中...
+
+;IDS_REMEDIATION_PATCH_PROGRESS_CLEAN_UP
+[513]
+Value = 清理中...
+
+;IDS_REMEDIATION_PATCH_PROGRESS_REBOOT_REQUIRED
+[514]
+Value = 需要重新启动才能完成安装。
+
+;IDS_REMEDIATION_PATCH_PROGRESS_FINISHED
+[515]
+Value = 已完成。
+
+;IDS_REMEDIATION_PATCH_PROGRESS_CANCELED
+[516]
+Value = 已取消。
+
+;IDS_REMEDIATION_OTHER_PROGRESS_AV_RTP_ON
+[517]
+Value = 已开启“实时保护”({0})。
+
+;IDS_REMEDIATION_OTHER_PROGRESS_AV_SIG_DL_STARTED
+[518]
+Value = 已开始下载病毒签名 ({0})...
+
+;IDS_REMEDIATION_OTHER_PROGRESS_AV_SIG_DL_FINISHED
+[519]
+Value = 已下载病毒签名 ({0})。
+
+;IDS_REMEDIATION_OTHER_PROGRESS_AV_SCAN_STARTED
+[520]
+Value = 已开始病毒扫描 ({0})...
+
+;IDS_REMEDIATION_OTHER_PROGRESS_FIREWALL_ON
+[521]
+Value = 开启防火墙 ({0})。
+
+;IDS_REMEDIATION_OTHER_PROGRESS_FIREWALL_OFF
+[522]
+Value = 关闭防火墙 ({0})。
+
+;IDS_REMEDIATION_OTHER_PROGRESS_PROCESS
+[523]
+Value = 正在消除 {0}...
+
+;IDS_REMEDIATION_OTHER_PROGRESS_FILE
+[524]
+Value = 正在删除 {0}...
+
+;IDS_REMEDIATION_OTHER_PROGRESS_REGISTRY
+[525]
+Value = 正在将 {0} 设置为 {1}...
+
+;IDS_REMEDIATION_OTHER_PROGRESS_SMS
+[526]
+Value = 正在启动 Microsoft 补丁程序部署客户端...
+
+;IDS_REMEDIATION_OTHER_PROGRESS_UNDEFINED
+[527]
+Value = 未定义的工作。
+
+;IDS_REMEDIATION_OTHER_SUMMARY_AV_RTP_ON
+[528]
+Value = 已开启“实时保护”({0})。
+
+;IDS_REMEDIATION_OTHER_SUMMARY_AV_SIG_DL_STARTED
+[529]
+Value = 已开始下载病毒签名 ({0})。
+
+;IDS_REMEDIATION_OTHER_SUMMARY_AV_SIG_DL_FINISHED
+[530]
+Value = 已下载病毒签名 ({0})。
+
+;IDS_REMEDIATION_PATCH_SUMMARY_FIREWALL_ON
+[531]
+Value = 防火墙 ({0}) 已开启。
+
+;IDS_REMEDIATION_PATCH_SUMMARY_FIREWALL_OFF
+[532]
+Value = 防火墙 ({0}) 已关闭。
+
+;IDS_REMEDIATION_PATCH_SUMMARY_PROCESS
+[533]
+Value = 已消除过程 {0}。
+
+;IDS_REMEDIATION_PATCH_SUMMARY_FILE
+[534]
+Value = 已删除文件 {0}。
+
+;IDS_REMEDIATION_PATCH_SUMMARY_REGISTRY
+[535]
+Value = 将注册表键值 {0} 设置为 {1}。
+
+;IDS_REMEDIATION_PATCH_SUMMARY_SMS
+[536]
+Value = 已启动 Microsoft 补丁程序部署客户端。
+
+;IDS_REMEDIATION_PATCH_SUMMARY_SMS_FAIL
+[537]
+Value = 已启动 Microsoft 补丁程序部署客户端 [失败]。
+
+;IDS_REMEDIATION_PATCH_SUMMARY_UNDEFINED
+[538]
+Value = 未定义的工作。
+
+;IDS_REMEDIATION_PATCH_MANUAL_REBOOT_REQUIRED_POLICY
+[539]
+Value = 需要重新启动
+
+;IDS_REMEDIATION_PATCH_MANUAL_REBOOT_REQUIRED_REASON
+[540]
+Value = 安装的补丁程序要求重新启动此计算机。
+
+;IDS_REMEDIATION_PATCH_MANUAL_REBOOT_REQUIRED_INSTRUCTIONS
+[541]
+Value = 重新启动此计算机以完成补丁程序安装。
+
+;IDS_REMEDIATION_PATCH_COMPLETE_MESSAGE
+[542]
+Value = 修正工作已完成。
+
+;IDS_REMEDIATION_DETAILS_LINK
+[544]
+Value = 查看<a>详细信息</a>了解已完成的修复任务。
+
+;IDS_REMEDIATION_PATCH_SUMMARY_FAILED
+[546]
+Value = 失败]
+
+;IDS_REMEDIATION_SUMMARY_TITLE
+[547]
+Value = 完成的工作
+
+;IDS_REMEDIATION_SUMMARY_DESCRIPTION
+[548]
+Value = 这些工作已由 Pulse 自动完成：
+
+;IDS_REMEDIATION_PATCH_ACTION_TAKEN
+[549]
+Value = 采取的操作：
+
+;IDS_REMEDIATION_PATCH_NO_ACTIONS
+[550]
+Value = 没有可用的操作。
+
+;IDS_REMEDIATION_PATCH_SUMMARY_PATCHES_INSTALLED
+[551]
+Value = 补丁程序安装：
+
+;IDS_REMEDIATION_PROGRESS_DETAILS_LINK
+[553]
+Value = 可能需要其他修复任务。单击<a>此处</a>查看详细信息。
+
+;IDS_REMEDIATION_PROGRESS_TITLE_OTHER
+[555]
+Value = 其他修复工作：
+
+;IDS_REMEDIATION_ACTION_TAKEN_SMS_STARTED
+[556]
+Value = <b>已启动 Microsoft 补丁程序部署客户端。如果无法安装上述列出的遗失补丁程序，尝试单击下载链接，手动安装。</b>
+
+;IDS_REMEDIATION_ACTION_TAKEN_SMS_FAILED
+[557]
+Value = <b>启动 Microsoft 补丁程序部署客户端失败。请尝试单击上方下载链接，手动安装遗失的补丁程序。</b>
+
+;IDS_LIST_NAME_PULSE_CONNECTIONS
+[558]
+Value = 连接
+
+;IDS_LIST_NAME_ACCELERATION
+[559]
+Value = 加速
+
+;IDS_LIST_NAME_SECURITY
+[560]
+Value = 安全
+
+;IDS_LIST_NAME_IPASS_NETWORKS
+[561]
+Value = iPass 网络
+
+;IDS_REMEDIATION_OTHER_SUMMARY_AV_SCAN_STARTED
+[562]
+Value = 已开始病毒扫描 ({0})。
+
+;IDS_REMEDIATION_OTHER_SUMMARY_AV_SCAN_FINISHED
+[563]
+Value = 已完成病毒扫描 ({0})。
+
+;IDS_REMEDIATION_OTHER_PROGRESS_AV_SCAN_FINISHED
+[564]
+Value = 已完成病毒扫描 ({0})。
+
+;IDS_REMEDIATION_OTHER_SUMMARY_AV_RTP_FAILED
+[565]
+Value = 无法开启“实时保护”({0})。
+
+;IDS_REMEDIATION_OTHER_PROGRESS_AV_RTP_FAILED
+[566]
+Value = 无法开启“实时保护”({0})。
+
+;IDS_NETWORK_TYPE_WIRED
+[581]
+Value = 有线
+
+;IDS_NETWORK_TYPE_WIRELESS
+[582]
+Value = Wi-Fi
+
+;IDS_NETWORK_TYPE_DIALUP
+[583]
+Value = 拨号
+
+;IDS_NETWORK_TYPE_MOBILE_DATA
+[584]
+Value = 3G
+
+;IDS_NETWORK_TYPE_WIMAX
+[585]
+Value = 4G
+
+;IDS_NETWORK_TYPE_UNKNOWN
+[586]
+Value = 未知
+
+;IDS_NETWORK_TYPE_FMT_NUMBERED
+[587]
+Value = 类型 {0}
+
+;IDS_CONN_ITEM_STATUS_CONNECTED_NO_INTERNET
+[588]
+Value = 已连接 - 无 Internet
+
+;IDS_TRAY_WND_STATE_CONNECTED_NO_INTERNET
+[589]
+Value = 已连接 - 无 Internet
+
+;IDS_CONN_ITEM_STATUS_CONNECTED_DETECTING_INTERNET
+[590]
+Value = 已连接 - 正在检测 Internet
+
+;IDS_TRAY_WND_STATE_CONNECTED_DETECTING_INTERNET
+[591]
+Value = 已连接 - 正在检测 Internet
+
+;IDS_LINK_WX_HELP
+[592]
+Value = （为什么？）
+
+;IDS_TIP_CLICK_FOR_DETAILS
+[593]
+Value = 单击此处获取详细信息
+
+;IDS_INTRUSION_DETECTION
+[700]
+Value = 入侵检测
+
+;IDS_NETWORK_ACCESS_LIMITED
+[701]
+Value = 您的网络访问因检测到不正常的网络行为而受限制。请联系您的管理员以获得帮助。
+
+;IDS_TRAY_ROLE
+[800]
+Value = 角色
+
+;IDS_TRAY_REALMS
+[801]
+Value = 群组
+
+;IDS_TRAY_SESSIONS
+[802]
+Value = 会话
+
+;IDS_TRAY_ROLE_DESC
+[803]
+Value = 选择角色
+
+;IDS_TRAY_REALMS_DESC
+[804]
+Value = 选择群组
+
+;IDS_TRAY_SESSION_DESC
+[805]
+Value = 选择会话
+
+;IDS_TRAY_ROLE_TITLE
+[806]
+Value = 此连接要求选择角色
+
+;IDS_TRAY_REALMS_TITLE
+[807]
+Value = 此连接要求选择群组
+
+;IDS_TRAY_SESSION_TITLE
+[808]
+Value = 此连接要求选择会话
+
+;IDS_TRAY_PASSCODE
+[809]
+Value = 通行码
+
+;IDS_TRAY_MESSAGEFROMSERVER_TITLE
+[810]
+Value = 此连接的服务器要求您作出响应才能继续连接。
+
+;IDS_TRAY_CONNECTTO_LABEL
+[811]
+Value = 连接到:
+
+;IDS_MAC_MENU_HIDE
+[812]
+Value = 隐藏:
+
+;IDS_MAC_MENU_TURNON
+[813]
+Value = 开启 {0}
+
+;IDS_MAC_MENU_TURNOFF
+[814]
+Value = 关闭 {0}
+
+;IDS_MAC_MENU_OFF
+[815]
+Value = 关闭
+
+;IDS_MAC_MENU_ON
+[816]
+Value = 开启
+
+;IDS_MAIN_DLG_MENU_EDIT
+[817]
+Value = 高级连接详细信息(&V)...
+
+;IDS_ST_SELECT_SSID
+[818]
+Value = 请选择网络(&N)：
+
+;IDS_MAC_WINDOWTITLE_CONNECTIONS
+[819]
+Value = 连接数
+
+;IDS_TRAY_CERT_DESC
+[820]
+Value = 选择一个证书
+
+;IDS_TRAY_CERT_TITLE
+[821]
+Value = 此连接需要选择证书
+
+;IDS_TRAY_CERTS
+[822]
+Value = 证书
+
+;IDS_MAC_ABOUTVERSION
+[823]
+Value = 版本
+
+;IDS_ST_SELECT_CONNECTION
+[824]
+Value = 选择一个连接：
+
+;IDS_MAC_MAINMENU_WINDOW
+[825]
+Value = 窗口 
+
+;IDS_MAC_MAINMENU_MINIMIZE
+[826]
+Value = 最小化
+
+;IDS_MAC_MAINMENU_ZOOM
+[827]
+Value = 缩放
+
+;IDS_MAC_MAINMENU_BRINGTOFRONT
+[828]
+Value = 全部置于顶层
+
+;IDS_MAC_MAINMENU_CUT
+[829]
+Value = 剪切
+
+;IDS_MAC_MAINMENU_COPY
+[830]
+Value = 复制
+ 
+;IDS_MAC_MAINMENU_PASTE
+[831]
+Value = 粘贴
+
+;IDS_MAC_MAINMENU_SELECTALL
+[832]
+Value = 全选
+
+;IDS_MAC_MAINMENU_SPEECH
+[833]
+Value = 语音
+ 
+;IDS_MAC_MAINMENU_STARTSPEAKING
+[834]
+Value = 开始留言
+
+;IDS_MAC_MAINMENU_STOPSPEAKING
+[835]
+Value = 停止留言
+
+;IDS_MAC_MAINMENU_HIDEOTHERS
+[836]
+Value = 隐藏其他
+
+;IDS_MAC_MAINMENU_SHOWALL
+[837]
+Value = 显示全部
+
+;IDS_MAC_STATUS_DETAILS_FROM_TRAY_ICON
+[838]
+Value = 可通过菜单栏上的 Pulse 图标访问 {0} 条连接详细信息。
+
+;IDS_MAC_EXIT_NOT_ALLOWED
+[839]
+Value = 您的管理员不允许从 Pulse 关闭。
+
+;IDS_MAC_MENU_EXIT
+[840]
+Value = 退出
+
+;IDS_TRAY_MAC_EXIT_QUESTION
+[841]
+Value = 现有的 {0} 可能会禁用某些网络连接，直到您重新启动 {0}。\n\n可以从应用程序列表运行以重新启动 {0}。\n\n是否确实要退出？
+
+;IDS_LOGIN_DLG_TEXT_SESSION_EXPIRING_ACTION
+[900]
+Value = 连接：{0}
+
+;IDS_LOGIN_DLG_BTN_EXTEND_SESSION
+[901]
+Value = 扩展(&E)
+
+;IDS_LOGIN_DLG_TEXT_SESSION_EXPIRING
+[902]
+Value = 此 Pulse 连接将在 {0} 后超时。\n请选择“扩展”以扩展会话。
+
+;IDS_LOGIN_DLG_TEXT_SESSION_WILL_EXPIRE_SHORTLY
+[903]
+Value = 此 Pulse 连接不久将过期。
+
+;IDS_LOGIN_DLG_TEXT_SESSION_LIFETIME_FORMAT_INCLUDE_DAYS_HOURS_MINUTES_SECONDS
+[904]
+Value = {0} 天 {1} 小时 {2} 分 {3} 秒
+
+;IDS_LOGIN_DLG_TEXT_SESSION_LIFETIME_FORMAT_INCLUDE_HOURS_MINUTES_SECONDS
+[905]
+Value = {0} 小时 {1} 分 {2} 秒
+
+;IDS_LOGIN_DLG_TEXT_SESSION_LIFETIME_FORMAT_INCLUDE_MINUTES_SECONDS
+[906]
+Value = {0} 分 {1} 秒
+
+;IDS_LOGIN_DLG_TEXT_SESSION_LIFETIME_FORMAT_INCLUDE_SECONDS
+[907]
+Value = {0} 秒
+
+;IDS_MENU_ITEM_EXTEND_SESSION
+[908]
+Value = 扩展会话(&x)
+
+;IDS_WARNING_ALSO_SECURE_MEETING
+[910]
+Value = 这也可能会结束您的安全会议。
+
+;IDS_WARNING_SECURE_MEETING_FAILURE
+[911]
+Value = 不能为此连接开始安全会议
+
+;IDS_MENU_ITEM_SECURE_MEETING
+[912]
+Value = Pulse 协作
+
+;IDS_MENU_ITEM_SECURE_MEETING_START
+[913]
+Value = 会议数
+
+;IDS_MENU_ITEM_SECURE_MEETING_STOP
+[914]
+Value = 注销
+ 
+;IDS_SECURE_MEETING_STARTED_SOON
+[915]
+Value = 您的 Pulse Collaboration 会议不久将开始。
+
+;IDS_SECURE_MEETING_USE_DISCONNECT_TO_STOP
+[916]
+Value = （使用断开连接以注销）
+
+;IDS_ADVANCED_INFO
+[917]
+Value = 高级详细信息：
+
+;IDS_LOGIN_DLG_BTN_REFRESH
+[918]
+Value = 刷新(&R)
+
+;IDS_ADVANCED_STR_NO_DATA_AVAILABLE
+[919]
+Value = 没有其他详细信息可供使用。
+
+;IDS_ADVANCED_LABEL_BYTES_IN
+[920]
+Value = 字节输入
+
+;IDS_ADVANCED_LABEL_BYTES_OUT
+[921]
+Value = 字节输出
+
+;IDS_ADVANCED_LABEL_TIME_REMAINING
+[922]
+Value = 剩余会话时间
+
+;IDS_ADVANCED_LABEL_TEMPLATE
+[923]
+Value = {0}: 
+
+;IDS_ADVANCED_LABEL_TUNNEL_TYPE
+[924]
+Value = 隧道类型
+
+;IDS_ADVANCED_LABEL_VPN_TYPE
+[925]
+Value = VPN 类型
+
+;IDS_ADVANCED_VPN_ESP
+[926]
+Value = ESP
+
+;IDS_ADVANCED_VPN_SSL
+[927]
+Value = SSL/VPN
+
+;IDS_ADVANCED_TUNNEL_VPN
+[928]
+Value = VPN
+
+;IDS_ADVANCED_TUNNEL_WSAM
+[929]
+Value = WSAM
+
+;IDS_ADVANCED_TUNNEL_UNKNOWN
+[930]
+Value = 其他
+
+;IDS_ADVANCED_VPN_UNKNOWN
+[931]
+Value = 其他
+
+;IDS_ADVANCED_STR_GATHERING
+[932]
+Value = 正在收集数据...
+
+;IDS_LOGIN_DLG_TEXT_SESSION_EXPIRING_NO_EXTEND_SESSION_BUTTON
+[933]
+Value = 此 Pulse 连接将在 {0} 后超时。\n请先保存工作以防止\n网络断开连接导致数据丢失。
+
+;IDS_ADVANCED_STR_DISCONNECTED
+[934]
+Value = 此会话尚未连接。
+
+;IDS_TT_MINIMIZE
+[935]
+Value = 最小化
+
+;IDS_TT_MAXIMIZE
+[936]
+Value = 最大化
+
+;IDS_TT_CLOSE
+[937]
+Value = 关闭
+
+;IDS_ERROR_URL_FORMAT
+[938]
+Value = URL 中不允许存在字符 %&?: 和空格。
+
+;IDS_ADVANCED_TUNNEL_UAC
+[939]
+Value = UAC
+
+;IDS_CRED_PROV_STATUS_TO_WINDOWS
+[950]
+Value = Pulse 正连接到 '{0}' ...
+
+;IDS_CRED_PROV_ERROR_TO_WINDOWS
+[951]
+Value = Pulse 连接到 '{0}' 失败，\n原因: {1}
+
+;IDS_EXIT_NOT_ALLOWED
+[952]
+Value = 您的管理员不允许您退出 Pulse
+
+;IDS_ADVANCED_TUNNEL_NONE
+[953]
+Value = &lt;隧道尚未启用&gt;
+
+;IDS_ST_TNCSAM_REBOOT_REQUIRED
+[954]
+Value = 需要重新启动才能完成 Pulse 配置。请关闭所有应用程序以避免数据丢失，然后重新启动计算机。\n\n注意：不重新启动可能导致无法连接网络，重新启动后即可恢复。
+
+;IDS_PROXY_SERVERDETAILS
+[955]
+Value = 代理服务器地址(&S)：
+
+;IDS_PROXY_SERVERDETAILSMESSAGE
+[956]
+Value = Pulse 无法联系登录服务器。如果您的站点使用的是代理服务器，请立即输入代理服务器详细信息，然后按“连接”。否则按“取消”。
+
+;IDS_ST_PROXY_USER_NAME_PROMPT_3
+[957]
+Value = 请提供代理服务器凭证（如果您的站点要求）
+
+;IDS_MSG_TOAST_INPUT_NEEDED
+[958]
+Value = 需要您的输入才能连接
+
+;IDS_LOGIN_DLG_BTN_DECLINE
+[959]
+Value = 拒绝(&D)
+
+;IDS_LOGIN_DLG_BTN_PROCEED
+[960]
+Value = 继续(&P)
+
+;IDS_CONN_ITEM_STATUS_WAITING_FOR_NETWORK
+[961]
+Value = 取消
+
+;IDS_MAIN_DLG_MENU_SUSPEND
+[962]
+Value = 挂起(&S)
+
+;IDS_MAIN_DLG_MENU_RESUME
+[963]
+Value = 恢复(R)
+
+;IDS_TT_CANCEL
+[964]
+Value = 单击以恢复
+
+;IDS_BTN_RESUME
+[965]
+Value = 恢复(R)
+
+;IDS_CONN_ITEM_STATUS_SUSPENDING
+[966]
+Value = 正在挂起
+
+;IDS_CONN_ITEM_STATUS_SUSPENDED
+[967]
+Value = 已挂起
+
+;IDS_TRAY_WND_STATE_CONNECTED
+[968]
+Value = 已挂起
+
+;IDS_BTN_CANCEL_NOSHORTCUT
+[969]
+Value  = 取消
+
+;IDS_MAIN_DLG_MENU_FIPS
+[970]
+Value = FIPS(&I)
+
+;IDS_FIPS_MODE_ON
+[971]
+Value = FIPS 开
+
+;IDS_FIPS_MODE_OFF
+[972]
+Value = FIPS 关
+
+;IDS_PASSWORD_EXPIRING
+[973]
+Value = 您的 {0} 密码将在 {1}过期。
+
+;IDS_PASSWORD_EXPIRING_ONE_DAY
+[974]
+Value = 1 天后
+
+;IDS_PASSWORD_EXPIRING_DAYS
+[975]
+Value = {0} 天后
+
+;IDS_PASSWORD_EXPIRING_ONE_HOUR
+[976]
+Value = 1 小时后
+
+;IDS_PASSWORD_EXPIRING_HOURS
+[977]
+Value = {0} 小时后
+
+;IDS_PASSWORD_EXPIRING_UNDER_ONE_HOUR
+[978]
+Value = 1 小时内
+
+;IDS_STATUS_SECURING_CONNECTION
+[980]
+Value = 正在保护连接...
+
+;IDS_CONN_ITEM_STATUS_SECURING_CONNECTION
+[981]
+Value = 正在保护连接
+
+;IDS_ADVANCED_LABEL_ADDRESS_IP4
+[990]
+Value = 已指定 IPV4
+
+;IDS_ADVANCED_LABEL_ADDRESS_IP6
+[991]
+Value = 已指定 IPV6
+
+;IDS_ST_AUTOMATIC_REFRESH
+[992]
+Value = 自动刷新(&A)
+
+;IDS_ADVANCED_ADDRESS_NOT_ASSIGNED
+[993]
+Value = &lt;未指定&gt;
+
+;IDS_ADVANCED_ADDRESS_NOT_ASSIGNED
+[993]
+Value = &lt;未指定&gt;
+
+;IDS_CONN_ITEM_STATUS_MANUAL_OVERRIDE
+[994]
+Value = 手动替代
+
+;IDS_DASH_SEPARATOR
+[995]
+Value = -
+
+;IDS_MAIN_DLG_MENU_REMOVE_OVERRIDE
+[996]
+Value = 删除替代（返回到自动控制）(&O)
+
+; IDS_CONN_ITEM_STATUS_WIRELESS_SUPPRESSED
+[1004]
+Value = 已禁用 - 无线连接处于活动状态
+
+; IDS_CONN_ITEM_STATUS_WIRELESS_ADAPTER_NOT_PRESENT
+[1005]
+Value = 无可用无线适配器
+
+; IDS_TRAY_WIRELESS_CANCEL_IO
+[1006]
+Value = 由于您的管理员不允许同时进行有线和无线连接，因此 Pulse 已断开无线连接。
+
+; IDS_TRAY_WND_TT_WIRELESS_SUPPRESSED
+[1007]
+Value = \r\n已禁用无线连接
+
+; IDS_PASSWORD_EXPIRING_PRIMARY
+[1008]
+Value = 一级
+
+; IDS_PASSWORD_EXPIRING_SECONDARY
+[1009]
+Value = 二级

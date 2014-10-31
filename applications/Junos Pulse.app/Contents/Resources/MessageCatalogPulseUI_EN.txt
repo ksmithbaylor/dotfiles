@@ -1,0 +1,151 @@
+﻿; JUNS catalogUtil requires message catalog files to be saved with UTF-8 encoding, which put 3 bytes {0xEF, 0xBB, 0xBF} at the file beginning called Byte Order Mark (BOM) for UTF-8 files . For modifications in this files, please use Text Editors which persist these BOM bytes (like Notepad.exe, Visual Studio IDE, etc).
+
+;kMsgCommonCertTrustNoError
+[1700]
+Short-desc = No error found for this certificate or chain.
+Long-desc = The network resource for this connection has been verified and can be trusted.
+
+;kMsgCommonCertTrustIsNotTimeValid
+[1701]
+Short-desc = This certificate or one of the certificates in the certificate chain is not time valid.
+Long-desc = The system time on your endpoint may be incorrect, the certificate may have expired, or the time of the system that signed the certificate might have been incorrect. Verify that the clock on your computer is accurate. If your computer clock is accurate, then network resource for this connection cannot be verified. Contact your network administrator.
+
+;kMsgCommonCertTrustIsNotTimeNested
+[1702]
+Short-desc = Certificates in the chain are not properly time nested. 
+Long-desc = This message indicates that the certificate chain is corrupted or otherwise unreliable. The network resource for this connection cannot be verified. Contact your network administrator.
+
+;kMsgCommonCertTrustIsRevoked
+[1703]
+Short-desc = Trust for this certificate or one of the certificates in the certificate chain has been revoked. 
+Long-desc = The network resource for this connection cannot be verified. Contact your network administrator.
+
+;kMsgCommonCertTrustIsNotSignatureValid
+[1704]
+Short-desc = The certificate or one of the certificates in the certificate chain does not have a valid signature.
+Long-desc = The network resource for this connection cannot be verified. Contact your network administrator.
+
+;kMsgCommonCertTrustIsNotValidForUsage
+[1705]
+Short-desc = The certificate or certificate chain is not valid for its proposed usage.
+Long-desc = This status message indicates that the certificate is not properly enabled for use in the current application. The network resource for this connection cannot be verified. Contact your network administrator.
+
+;kMsgCommonCertTrustIsUntrustedRoot
+[1706]
+Short-desc = The certificate or certificate chain is based on an untrusted root. 
+Long-desc = The network resource for this connection cannot be verified. Contact your network administrator. 
+
+;kMsgCommonCertTrustRevocationStatusUnknown
+[1707]
+Short-desc = The revocation status of the certificate or one of the certificates in the certificate chain is unknown.
+Long-desc = Before accepting a certificate, the system must make sure that the certificate has not been revoked. The system cannot verify that the certificate is valid. Contact your network administrator.
+
+;kMsgCommonCertTrustIsCyclic
+[1708]
+Short-desc = One of the certificates in the chain was issued by a certificate authority that the original certificate had certified.
+Long-desc = The system cannot verify that the certificate is valid. Contact your network administrator.
+
+;kMsgCommonCertTrustInvalidExtension
+[1709]
+Short-desc = One of the certificates has an extension that is not valid.
+Long-desc = The system cannot verify that the certificate is valid. Contact your network administrator.
+
+;kMsgCommonCertTrustInvalidPolicyConstraints
+[1710]
+Short-desc = The certificate or certificate chain has a policy constraints extension.
+Long-desc = The system cannot verify that the certificate is valid. Contact your network administrator.
+
+;kMsgCommonCertTrustInvalidBasicConstraints
+[1711]
+Short-desc = The certificate or certificate chain has a basic constraints extension.
+Long-desc = The system cannot verify that the certificate is valid. Contact your network administrator.
+
+;kMsgCommonCertTrustInvalidNameConstraints
+[1712]
+Short-desc = The certificate or one of the certificates in the certificate chain has a name constraints extension that is not valid.
+Long-desc = The system cannot verify that the certificate is valid. Contact your network administrator.
+
+;kMsgCommonCertTrustHasNotSupportedNameConstraint
+[1713]
+Short-desc = The certificate or one of the certificates in the certificate chain has a name constraints extension that contains unsupported fields.
+Long-desc = The system cannot verify that the certificate is valid. Contact your network administrator.
+
+;kMsgCommonCertTrustHasNotDefinedNameConstraint
+[1714]
+Short-desc = The certificate or one of the certificates in the certificate chain has a name constraints extension and a name constraint is missing for one of the name choices in the end certificate.
+Long-desc = The system cannot verify that the certificate is valid. Contact your network administrator.
+
+;kMsgCommonCertTrustHasNotPermittedNameContraint
+[1715]
+Short-desc = The certificate or one of the certificates in the certificate chain has a name constraints extension, and there is not a permitted name constraint for one of the name choices in the end certificate.
+Long-desc = The system cannot verify that the certificate is valid. Contact your network administrator.
+
+;kMsgCommonCertTrustHasExcludedNameConstraint
+[1716]
+Short-desc = The certificate or one of the certificates in the certificate chain has a name constraints extension, and one of the name choices in the end certificate is explicitly excluded.
+Long-desc = The system cannot verify that the certificate is valid. Contact your network administrator.
+
+;kMsgCommonCertTrustIsPartialChain
+[1717]
+Short-desc = The certificate chain is not complete. 
+Long-desc = The system cannot verify that the certificate is valid. Contact your network administrator.
+
+;kMsgCommonCertTrustCtlIsNotTimeValid
+[1718]
+Short-desc = A Certificate Trust List used to create this chain was not time valid.
+Long-desc = The system cannot verify that the certificate is valid. Contact your network administrator.
+
+;kMsgCommonCertTrustCtlIsNotSignatureValid
+[1719]
+Short-desc = A Certificate Trust List used to create this certificate chain did not have a valid signature.
+Long-desc = The system cannot verify that the certificate is valid. Contact your network administrator.
+
+;kMsgCommonCertTrustCtlIsNotValidForUsage
+[1720]
+Short-desc = A Certificate Trust List used to create this chain is not valid for this usage.
+Long-desc = The system cannot verify that the certificate is valid. Contact your network administrator.
+
+;kMsgCommonCertTrustIsOfflineRevocation
+[1725]
+Short-desc = The revocation servers for end certificate or its chain certificates are offine.
+Long-desc = Try the operation again. If the problem persists, contact your network administrator.
+
+;kMsgCommonCertTrustNoIssuanceChainPolicy
+[1726]
+Short-desc = The end certificate does not any issuance policy.
+Long-desc = The system cannot verify that the certificate is valid. Contact your network administrator.
+
+;kMsgCommonCertTrustIsExplicitDistrust
+[1727]
+Short-desc = The end certificate is explicitly not trusted.
+Long-desc = The system cannot verify that the certificate is valid. Contact your network administrator.
+
+;kMsgCommonCertHasNotSupportedCriticalExt
+[1728]
+Short-desc = The end certificate has a unsupported critical extension.
+Long-desc = The system cannot verify that the certificate is valid. Contact your network administrator.
+
+[1730]
+;kMsgCommonCertTrustPulseCertificateError
+Short-desc=Certificate Error
+Long-desc=Certificate Error
+
+[1731]
+;kMsgCommonCertTrustPulseAuthServerIdentityNotFound
+Short-desc = Authentication server not trusted.
+Long-desc = Authentication server identity not found in client's "Trusted Server List". Contact your network administrator.
+
+;kMsgCommonCertTrustPulseDoesntMatch
+[1732]
+Short-desc = The certificate name does not match the server you are trying to connect to.
+Long-desc = All certificates contain the name of the server to insure that your connection has not been compromised. If you are accessing a server with a different name, this warning will appear. If you are in a location where it is possible that your network connection is compromised, then please contact your administrator to make sure that the server thumbprint is correct.
+
+;kMsgUISmartcardPinError
+[1733]
+Short-desc = Incorrect PIN.
+Long-desc = Please be careful when re-entering the PIN because if you exceed the retry count you will lock the token.
+
+;kMsgUISmartcardBlockedError
+[1734]
+Short-desc = Smartcard blocked.
+Long-desc = Please contact the administrator for unblocking the smartcard.

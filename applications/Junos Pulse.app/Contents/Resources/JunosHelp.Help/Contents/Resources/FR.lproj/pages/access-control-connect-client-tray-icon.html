@@ -1,0 +1,34 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<title>Utiliser l’icône du Dock Junos Pulse et afficher l’état de la connexion</title> <meta name="description" content="Décrit les options disponibles depuis l'icône Pulse dans la barre de menus." /> <meta http-equiv="Content-Type" content_SDL="text/html; charset=UTF-8"/> <link href="../sty/standard.css" rel="stylesheet" type="text/css" /> <meta name="keywords" content="icône de la barre de menus, icônes, état de connexion, ouvrir Pulse, fermer Pulse, connexion, déconnexion" />
+</head>
+<body style="width:95%;>
+<div id="content">
+<h1 class="Title">Utiliser l’icône de la barre de menus Junos Pulse et afficher l’état de la connexion</h1>
+<p class="Para1">L’icône de la barre de menus Junos Pulse indique l’état actuel de votre connexion réseau. Une seule icône de connexion est affichée dans la barre de menus même si plusieurs connexions sont actives. Lorsqu’une connexion active rencontre un problème, l’état de l’icône change. La liste suivante décrit les états de l’icône de la barre de menus.</p>
+<p class="Para2"><img src="../../../shrd/pulse_menubar_connected.png" width="16" height="16" />    Connecté<br /> <img src="../../../shrd/pulse_menubar_icon_colored.png" /> Pas de connexion<br /> <img src="../../../shrd/pulse_menubar_02.png" width="16" height="16" /> En cours de connexion 
+  <br /> <img src="../../../shrd/pulse_menubar_error.png" width="16" height="16" /> Connecté avec des erreurs<br /><img src="../../../shrd/pulse_menubar_error.png" width="16" height="16" /> Échec de la connexion<br /> <img src="../../../shrd/pulse_menubar_icon_suspended.png" width="16" height="16" /> Connexion suspendue<br /> <img src="../../../shrd/pulse_menubar_icon_GrayScaled.png" alt="icône - pulse n'est pas exécuté" width="16" height="16" /> Pulse n'est pas en cours d'exécution </p>
+<p class="Para1">Vous pouvez également cliquer sur une icône de la barre de menus pour afficher un menu et effectuer les actions suivantes&nbsp;:</p>
+<ul>
+  <li class="li"><strong>Ouvrir Junos Pulse</strong> - Afficher l'interface de Pulse. Si Pulse n'est pas en cours d'exécution, l'option <strong>Ouvrir Junos Pulse</strong> lance le service Pulse. </li>
+  <li class="li"><strong>Liste des connexions</strong> - Le menu dresse la liste des connexions Pulse. Cliquez sur le nom de connexion pour afficher les actions réalisables sur cette connexion&nbsp;:</p>
+  </li>
+
+  <ul>
+    <li><strong>Connexion</strong> - Établir une connexion au réseau sélectionné.</li>
+    <li><strong>Déconnexion</strong> - Mettre fin à la connexion réseau sélectionnée.</li>
+    <li><strong>Annuler</strong> - Annuler une action lancée par le serveur Pulse. L’option Annuler est disponible lorsque le serveur a lancé une opération Host Checker. Si vous choisissez cette option, Pulse ne se connecte pas au réseau.</li><li><strong>Suspendre/Relancer</strong> - Suspendre une connexion à un réseau distant, puis la relancer pour permettre l'accès aux ressources du réseau local, telles qu'une imprimante locale. Lorsque vous suspendez une connexion, vous perdez l'accès aux ressources réseau protégées jusqu'à la relance de la connexion. Lorsque vous relancez une connexion, vous êtes connectés sans avoir à fournir de données d'identification. </li>
+    
+    <li><strong>Prolonger la session</strong> - Vous pouvez prolonger une session de connexion active sans attendre que Pulse affiche le message d'expiration de session. Sélectionnez cette option à tout moment pour rétablir les valeurs maximales des minuteurs de session et d'inactivité.</li>
+  </ul>
+<li class="li"><strong>Quitter</strong> - Mettre fin aux connexions actives et arrêter Pulse. L'icône de la barre de menus Pulse reste affichée dans la barre de menus après l'arrêt de Pulse. Vous pouvez l'utiliser pour redémarrer Pulse.</li></ul>
+
+<h4 class="Head4">Rubriques connexes</h4>
+<ul>
+  <li class="li"><a href="access-control-connect-client-ui.html">Interface Junos Pulse</a></li>
+  <li class="li"><a href="access-control-connect-pulse-starting-stopping.html">Démarrer ou arrêter Junos Pulse</a></li>
+</ul>
+
+</body></html>

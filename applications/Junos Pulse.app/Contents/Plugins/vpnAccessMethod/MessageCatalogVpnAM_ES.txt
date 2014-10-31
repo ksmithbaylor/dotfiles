@@ -1,0 +1,220 @@
+﻿
+; JUNS catalogUtil requires catalog message files to be saved with UTF-8 encoding, which put 3 bytes {0xEF, 0xBB, 0xBF} at the file beginning called Byte Order Mark (BOM) for UTF-8 files . For modifications in this files, please use Text Editors which persist these BOM bytes (like Notepad.exe, Visual Studio IDE, etc).
+
+; kMsgVpnAMErrAlreadyInUse
+[1400]
+Short-desc = La instancia del componente ya está en uso.
+Long-desc = Esta conexión VPN ya se ha inicializado o no se ha cerrado por completo.
+
+; kMsgVpnAMErrMemoryAllocation
+[1401]
+Short-desc = Error en la asignación de memoria.
+Long-desc = No fue posible asignar una cantidad de memoria suficiente.
+
+; kMsgVpnAMErrIpsecMgrFailed
+[1402]
+Short-desc = Error de inicialización de IPSecManager
+Long-desc = Pulse no pudo inicializar IPSecManager, el cual mantiene todas las propiedades de IPSec. 
+
+;kMsgVpnAMErrConnStoreFailed
+[1403]
+Short-desc = Error al cargar el almacén de conexión.
+Long-desc = Pulse no pudo cargar el almacén de conexión, el cual contiene todos los ajustes de conexión.  Reinicie Pulse o reinicie el equipo, y vuelva a intentarlo.  Si esta condición persiste, comuníquese con el administrador.
+
+; kMsgVpnAMErrHttpAuthError 
+[1404]
+Short-desc = Código de respuesta HTTP desconocido
+Long-desc = El servidor devolvió una respuesta desconocida a la solicitud de autenticación
+
+
+; kMsgVpnAMErrHttpAuthFailed = 
+[1405]
+Short-desc = Credenciales incorrectas.
+Long-desc = Credenciales de autenticación incorrectas.  Compruebe su nombre de usuario y contraseña y verifique que la tecla Mayús. esté desactivada.
+
+; kMsgVpnAMErrHttpNoLicense
+[1406]
+Short-desc = La licencia del cortafuegos ha expirado.
+Long-desc = El conteo del usuario en el cortafuegos ha excedido los límites de licencia.  Comuníquese con el administrador.
+
+; kMsgVpnAMErrHttpNoConfig 
+[1407]
+Short-desc = No existe configuración disponible
+Long-desc = No existe configuración de cliente disponible.
+
+; kMsgVpnAMErrNoConnInfo = 
+[1408]
+Short-desc = No se puede obtener información de la conexión para el cortafuegos.
+Long-desc = No fue posible recuperar los ajustes de conexión para el cortafuegos desde el almacén de conexión.
+
+; kMsgVpnAMErrAuthFailed = 
+[1409]
+Short-desc = Error de autenticación.
+Long-desc = Error de autenticación.
+        
+; kMsgVpnAMErrAuthSuccess = 
+[1410]
+Short-desc = Autenticación correcta.
+Long-desc = Autenticación correcta.
+
+; kMsgVpnAMErrCreateRouteFailed = 
+[1411]
+Short-desc = No se puede crear ruta de entrada IPSec.
+Long-desc = No es posible proporcionar los parámetros IPSec que entrega el cortafuegos.
+
+; kMsgVpnAMErrReadRouteFailed = 
+[1412]
+Short-desc = Error al leer la ruta de entrada desde el almacén de conexión.
+Long-desc = No fue posible recuperar los parámetros de configuración de ruta IPSec desde el almacén de conexión.
+
+; kMsgVpnAMErrAddRouteFailed = 
+[1413]
+Short-desc = Error al agregar una ruta de entrada a la directiva.
+Long-desc = No fue posible agregar una entrada de ruta IPSec a la directiva IPSec existente.
+
+; kMsgVpnAMErrDisconnect 
+[1414]
+Short-desc = Desconexión en curso.
+Long-desc =
+
+; kMsgVpnAMErrDisconnected = 
+[1415]
+Short-desc = Desconectado
+Long-desc =
+
+; kMsgVpnAMErrIpsecAuthFailed = 
+[1416]
+Short-desc = Error de autenticación IPSec.
+Long-desc = Error de conexión durante la fase de autenticación (IKE) IPSec.
+
+;kMsgVpnAMErrIpsecConfigFailed = 
+[1417]
+Short-desc = Error de configuración IPSec
+Long-desc =
+
+; kMsgVpnAMErrConnectStarted = 1418,
+[1418]
+Short-desc = Iniciando conexión.
+Long-desc = 
+       
+; kMsgVpnAMErrConnectPhase1NoProp = 
+[1419]
+Short-desc = Error en la negociación IKE.
+Long-desc = El cliente y el cortafuegos no concuerdan en los ajustes de túnel.
+
+;kMsgVpnAMErrConnectAuthChangedUser = 
+[1420]
+Short-desc = El usuario intentó cambiar el nombre de usuario para iniciar sesión.
+Long-desc = Debe utilizar el mismo nombre de usuario y contraseña para todas las partes de la secuencia de inicio de sesión.
+
+;kMsgVpnAMErrHttpOneConnPerPc =
+[1421]
+Short-desc = Sólo se permite una conexión por punto final.
+Long-desc = Este usuario ya tiene una conexión establecida desde este punto final. Desconéctese y vuelva a intentarlo.
+
+;kMsgVpnAMErrHttpInvalidResponse
+[1422]
+Short-desc = Respuesta no válida del servidor.
+Long-desc = El servidor ha respondido, pero la respuesta enviada no es válida.  Verifique que el servidor al que se está conectando es un cortafuegos JUNOS. Si el error persiste, comuníquese con el administrador.
+
+; kMsgVpnAMErrHttpErrBase
+; this message is unused; it's an offset base for the messages which succeed it
+;
+[1450]        
+Short-desc = Error desconocido
+Long-desc = Error desconocido
+
+; kMsgVpnAMErrHttpInitialization 
+[1451]
+Short-desc = Error al inicializar el servicio web.
+Long-desc = Pulse detectó un error interno al inicializar WinHTTP.  Reinicie el equipo y vuelva a intentar la operación. Si el problema persiste, comuníquese con el administrador de la red.
+
+; kMsgVpnAMErrHttpStageConnect = 
+[1452]
+Short-desc = Error al conectarse con el servidor.
+Long-desc = No fue posible establecer una conexión con el servidor.  Compruebe la conectividad a Internet.
+
+; kMsgVpnAMErrHttpStageSendHeader = 
+[1453]
+Short-desc = Error al enviar la solicitud HTTP inicial.
+Long-desc =
+
+; kMsgVpnAMErrHttpStageGetResponse = 
+[1454]
+Short-desc = Error al obtener la respuesta HTTP.
+Long-desc = El cortafuegos no respondió a la solicitud inicial de autenticación HTTP.
+
+; kMsgVpnAMErrHttpStageAuthSetup = 
+[1455]
+Short-desc = Error del cortafuegos al inicializar la solicitud de autenticación.
+Long-desc =
+
+; kMsgVpnAMErrHttpStageSendAuthHeader = 
+[1456]
+Short-desc = Error del cortafuegos al enviar la solicitud de autenticación.
+Long-desc =
+
+; kMsgVpnAMErrHttpStageGetAuthResponse = 
+[1457]
+Short-desc = Error del cortafuegos al responder a la solicitud de autenticación. 
+Long-desc =
+
+; kMsgVpnAMErrHttpStageAuthentication = 
+[1458]
+Short-desc = Error en la negociación de la autenticación IKE.
+Long-desc =
+
+; kMsgVpnAMErrHttpStageInputCancel = 
+[1459]
+Short-desc = El usuario canceló la autenticación.
+Long-desc = El usuario canceló el proceso de autenticación.
+
+; kMsgVpnAMErrHttpStageInputTimeout = 
+[1460]
+Short-desc = Error al introducir nombre de usuario y contraseña.
+Long-desc = El proceso de autenticación agotó el tiempo de espera de respuesta; el nombre de usuario y/o contraseña no se ingresaron oportunamente.
+
+; kMsgVpnAMErrHttpStageInputFailure = 
+[1461]
+Short-desc = Error al solicitar a la entrada del usuario.
+Long-desc = El cliente no pudo solicitarle al usuario información necesaria.
+
+; kMsgVpnAMErrHttpStageWrongState = 
+[1462]
+Short-desc = El estado del cliente impide la conexión.
+Long-desc =
+
+; kMsgVpnAMErrHttpResponseFailure = 
+[1463]
+Short-desc = Código de respuesta HTTP desconocido. 
+Long-desc = El cortafuegos respondió a la autenticación con un código de respuesta inesperado o desconocido.
+
+; kMsgVpnAMErrHttpAuthFailure = 
+[1464]
+Short-desc = Credenciales incorrectas.
+Long-desc = El cortafuegos rechazó las credenciales suministradas.
+
+; kMsgVpnAMErrHttpAuthLicense = 
+[1465]
+Short-desc = La licencia del cortafuegos ha expirado.
+Long-desc = La cantidad de usuarios en el cortafuegos excede el número con licencia.  Comuníquese con el administrador.
+
+; kMsgVpnAMErrHttpAuthNoCfg = 
+[1466]
+Short-desc = No existe configuración disponible.
+Long-desc = El cortafuegos informó que no había configuración remota disponible para el usuario autenticado.
+
+; kMsgVpnAMErrProcessScript = 
+[1467]
+Short-desc = No se puede procesar la configuración que proporciona el cortafuegos.
+Long-desc = El cortafuegos proporcionó un conjunto de datos de configuración que el cliente no pudo comprender.  
+
+; kMsgVpnAMErrHostNotFound
+[1468]
+Short-desc = No se puede resolver el nombre de host.
+Long-desc = El nombre del cortafuegos proporcionado no coincide con ningún servidor conocido. Verifique que ha escrito correctamente el nombre del servidor.
+
+; kMsgVpnAMErrInvalidFipsConfiguration
+[1469]
+Short-desc = Parámetro de configuración de IKE/IPSec de FIPS no válido.
+Long-desc = La configuración de IKE/IPSec que ha enviado SRX no es válida para un cliente con modo FIPS. Corrija la configuración de SRX o deshabilite el modo FIPS de Pulse.
