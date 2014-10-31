@@ -1,6 +1,8 @@
 function _setup_symlinks() {
     local symlinks=$(find * -maxdepth 1 -mindepth 1 ! -name *.swp |
-                     grep -ve '^bin.*') # don't include bin files
+                     grep -ve '^bin.*' |
+                     grep -ve '^packages.*' |
+                     grep -ve '^automator.*')
 
     for link in $symlinks; do
         local actual=$PWD/$link
@@ -20,7 +22,14 @@ unset _setup_symlinks
 
 # Link personal binaries into ~/bin
 rm -rf $HOME/bin
-mkdir $HOME/bin
-for file in $(ls $PWD/bin); do
-    ln -sf $PWD/bin/$file $HOME/bin/$file
+ln -sf $PWD/bin $HOME/bin
+
+# Link automator apps into /Applications
+SAVEIFS=$IFS
+IFS=$(echo -en "\n\b")
+for file in $(ls automator)
+do
+  rm -rf /Applications/$file
+  cp -r automator/$file /Applications/$file
 done
+IFS=$SAVEIFS
