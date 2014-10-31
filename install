@@ -20,7 +20,8 @@ function setup_symlinks() {
         else
             local symlink_path="$HOME/.$(basename $link)"
         fi
-        rm -rf $symlink_path && ln -sf $actual $symlink_path
+        rm $symlink_path 2> /dev/null
+        ln -sf $actual $symlink_path
     done
 }
 
@@ -49,7 +50,7 @@ if [[ ! -n $(brew list | grep brew-cask) ]]; then
 fi
 
 echo -- Updating Homebrew and Homebrew cask
-brew update | grep -v 'Already up-to-date'
+brew update
 
 echo -- Installing any missing Homebrew packages
 brew_packages=$(cat packages/brew)

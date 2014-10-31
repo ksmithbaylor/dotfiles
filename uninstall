@@ -1,0 +1,24 @@
+#!/usr/bin/env bash
+
+function remove_symlinks() {
+    local symlinks=$(find * -maxdepth 1 -mindepth 1 ! -name *.swp |
+                     grep -ve '^bin.*' |
+                     grep -ve '^packages.*' |
+                     grep -ve '^serials*')
+
+    for link in $symlinks; do
+        local actual=$PWD/$link
+        if [[ -f $link && $(head -n 1 $link | grep location) ]]; then
+            local symlink_path="$(head -n 1 $link |
+                                  awk '{print $NF}' |
+                                  sed "s|~|$HOME|")"
+        else
+            local symlink_path="$HOME/.$(basename $link)"
+        fi
+        rm $symlink_path 2> /dev/null
+    done
+}
+
+remove_symlinks
+rm $HOME/bin 2> /dev/null
+unset remove_symlinks
