@@ -49,6 +49,13 @@ function repeat {
     done
 }
 
+function try {
+    mkdir -p $HOME/main/try
+    cd $HOME/main/try
+    mkdir $1
+    cd $1
+}
+
 function ove() {
     ssh tworker@$1.onyx.ove.com
 }
