@@ -60,6 +60,21 @@ function ove() {
     ssh tworker@$1.onyx.ove.com
 }
 
+function _tmux_new_window() {
+    tmux new-window -n "$1"
+    tmux select-window -t "$1"
+    tmux send-keys "$2" C-m
+}
+
+function chestnut() {
+    _tmux_new_window 'Vim'          'vim'
+    _tmux_new_window 'Browser REPL' '{ sleep 2; echo "(browser-repl)"; cat; } | lein repl'
+    _tmux_new_window 'Server'       '{ echo "(run)"; cat; } | lein repl'
+    _tmux_new_window 'LR'           'livereload resources'
+    tmux select-window -t 'Vim'
+    open -g 'http://localhost:10555/' -a "$(grealpath '/Applications/Google Chrome.app')"
+}
+
 function printall {
     for file in $@; do
         vim "+colorscheme newsprint" -c "hardcopy > $file.ps" -c "quit" $file
