@@ -1,6 +1,6 @@
 # location ~/.bashrc
-source ~/.scripts/path.sh
-source ~/.scripts/exports.sh
-source ~/.scripts/prompt.sh
-source ~/.scripts/aliases.sh
-source ~/.scripts/bookmarks.sh
+source ~/.bash_scripts/path.sh
+source ~/.bash_scripts/exports.sh
+source ~/.bash_scripts/prompt.sh
+source ~/.bash_scripts/aliases.sh
+source ~/.bash_scripts/bookmarks.sh
