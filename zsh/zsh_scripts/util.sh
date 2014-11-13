@@ -3,11 +3,12 @@ function command_exists() {
 }
 
 function _pretty_print_time() {
-    local h=$1 m=$2 s=$3 ms=$4
+    local d=$1 h=$2 m=$3 s=$4 ms=$5 d2='%02d' d3='%03d'
 
-    [ $h -gt 0 ] && printf "%d:%02d:%02d.%03d h\n" $h $m $s $ms && return
-    [ $m -gt 0 ] && printf "%d:%02d.%03d m\n" $m $s $ms && return
-    [ $s -gt 0 ] && printf "%d.%03d s\n" $s $ms && return
+    [ $d  -gt 0 ] && printf "%d d, $d2:$d2:$d2.$d3 h\n" $d $h $m $s $ms && return
+    [ $h  -gt 0 ] && printf "%d:$d2:$d2.$d3 h\n"           $h $m $s $ms && return
+    [ $m  -gt 0 ] && printf "%d:$d2.$d3 m\n"                  $m $s $ms && return
+    [ $s  -gt 0 ] && printf "%d.$d3 s\n"                         $s $ms && return
     printf "%d ms\n" $ms
 }
 
@@ -16,3 +17,5 @@ for COLOR in Red Green Yellow Blue Magenta Cyan Black White Orange; do
     eval _$COLOR='%{$fg_no_bold[${(L)COLOR}]%}'
 done
 eval _Reset='%{$reset_color%}'
+
+bindkey -e

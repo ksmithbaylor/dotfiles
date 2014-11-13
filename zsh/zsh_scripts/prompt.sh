@@ -5,7 +5,7 @@ _start_timer () {
 
 _stop_timer () {
     export _previous=$?
-    local time_difference h m s ms
+    local time_difference d h m s ms
 
     if [[ $_timer_is_active == 1 ]]; then
         local _end=$(gdate +%s%3N)
@@ -14,7 +14,8 @@ _stop_timer () {
         (( s = $time_difference / 1000 ))
         (( m = s / 60 ))
         (( h = m / 60 ))
-        export _pretty_duration="$(_pretty_print_time $h $m $s $ms)"
+        (( d = h / 24 ))
+        export _pretty_duration="$(_pretty_print_time $d $h $m $s $ms)"
     else
         export _pretty_duration='0 ms'
     fi

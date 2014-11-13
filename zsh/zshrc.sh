@@ -1,5 +1,4 @@
 # location ~/.zshrc
-bindkey -e
 source ~/.zsh_scripts/util.sh
 source ~/.zsh_scripts/path.sh
 source ~/.zsh_scripts/exports.sh
