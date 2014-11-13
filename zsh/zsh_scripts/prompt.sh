@@ -5,21 +5,22 @@ _start_timer () {
 
 _stop_timer () {
     export _previous=$?
-    local time_difference d h m s ms
+    local duration ms s m h d
 
     if [[ $_timer_is_active == 1 ]]; then
-        local _end=$(gdate +%s%3N)
-        (( time_difference = $_end - $_start ))
-        (( ms = $time_difference % 1000 ))
-        (( s = $time_difference / 1000 ))
-        (( m = s / 60 ))
-        (( h = m / 60 ))
-        (( d = h / 24 ))
-        export _pretty_duration="$(_pretty_print_time $d $h $m $s $ms)"
+        local end=$(gdate +%s%3N)
+        (( duration = end - _start ))
     else
-        export _pretty_duration='0 ms'
+        (( duration = 0 ))
     fi
 
+    (( ms = duration % 1000 ))
+    (( s = duration / 1000 % 60 ))
+    (( m = duration / 60000 % 60 ))
+    (( h = duration / 3600000 % 24 ))
+    (( d = duration / 86400000 ))
+
+    export _pretty_duration="$(_pretty_print_time $d $h $m $s $ms)"
     export _timer_is_active=0
 }
 
