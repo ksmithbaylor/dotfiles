@@ -71,8 +71,6 @@ Plugin 'kien/ctrlp.vim'
         vmap <C-j> ]egv
         inoremap <C-j> <Esc>:m .+1<CR>==gi
         inoremap <C-k> <Esc>:m .-2<CR>==gi
-" Auto-insert pairs
-    Plugin 'jiangmiao/auto-pairs.git'
 " Awesome syntax highlighting and checker
     Plugin 'scrooloose/syntastic'
         let g:syntastic_mode_map = {'mode':'passive','active_filetypes':[],'passive_filetypes':[]}
