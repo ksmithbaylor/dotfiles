@@ -21,91 +21,103 @@ Plugin 'gmarik/Vundle.vim'
 " ----- BEGIN PLUGIN LIST -----
 
 " Directory tree popover, use CTRL-E to toggle
-    Plugin 'scrooloose/nerdtree'
-        nmap <C-e> :NERDTreeToggle<CR>
-        imap <C-e> :NERDTreeToggle<CR>
-        autocmd bufenter * if (winnr("$") == 1 && exists("b:NERDTreeType") && b:NERDTreeType == "primary") | q | endif
-        let g:NERDTreeChDirMode=2
-        let g:NERDTreeWinPos = "left"
+Plugin 'scrooloose/nerdtree'
+"autocmd bufenter * if (winnr("$") == 1 && exists("b:NERDTreeType") && b:NERDTreeType == "primary") | q | endif
+"let g:NERDTreeChDirMode=2
+"let g:NERDTreeWinPos = "left"
+" NERDTree but for tabs
+Plugin 'jistr/vim-nerdtree-tabs'
+nmap <C-e> :NERDTreeTabsToggle<CR>
 " Commenter, (leader)c<space> to (un)comment
-    Plugin 'scrooloose/nerdcommenter'
+Plugin 'scrooloose/nerdcommenter'
 " Fuzzy-finds a file in the current directory and subdirectories
 Plugin 'kien/ctrlp.vim'
-    set wildignore+=*/node_modules/**
-    let g:ctrlp_show_hidden=1
+set wildignore+=*/node_modules/**
+let g:ctrlp_show_hidden=1
 " Git stuff
-    Plugin 'tpope/vim-fugitive'
-    Plugin 'airblade/vim-gitgutter'
+Plugin 'tpope/vim-fugitive'
+Plugin 'airblade/vim-gitgutter'
 " CSV viewing and manipulation
-    Plugin 'chrisbra/csv.vim'
+Plugin 'chrisbra/csv.vim'
+" J language syntax highlighting
+Plugin 'guersam/vim-j'
+" Auto-close xml/html tags
+Plugin 'sukima/xmledit'
+let g:xmledit_enable_html=1
+function HtmlAttribCallback( xml_tag )
+endfunction
+" Better html syntax/indentation
+Plugin 'othree/html5.vim'
 " Awesome minimalistic statusline
-    Plugin 'bling/vim-airline'
-        let g:airline_powerline_fonts=1
-        let g:airline#extensions#quickfix#quickfix_text = 'Quickfix'
-        let g:airline#extensions#quickfix#location_text = 'Location'
-        let g:airline#extensions#tabline#enabled = 1
-        let g:airline#extensions#tabline#tab_nr_type = 1
-        let g:airline#extensions#tabline#show_tab_nr = 1
-        let g:airline#extensions#tabline#buffer_nr_show = 1
-        let g:airline#extensions#tabline#formatter = 'unique_tail_improved'
-
-            nnoremap <Leader>- :bp<CR>
-            nnoremap <Leader>= :bn<CR>
-            nnoremap <Leader>0 :bd<CR>
-            nnoremap <Leader>p <C-^>
-            nnoremap <Leader>] :tabn<CR>
-            nnoremap <Leader>[ :tabp<CR>
-            nnoremap <Leader><CR> :tabnew<CR>
-        let g:airline#extensions#branch#enabled = 1
-        let g:airline#extensions#syntastic#enabled = 1
-        let g:airline#extensions#ctrlp#show_adjacent_modes = 1
-        let g:airline#extensions#whitespace#enabled = 1
+Plugin 'bling/vim-airline'
+let g:airline_powerline_fonts=1
+let g:airline#extensions#quickfix#quickfix_text = 'Quickfix'
+let g:airline#extensions#quickfix#location_text = 'Location'
+let g:airline#extensions#tabline#enabled = 1
+let g:airline#extensions#tabline#tab_nr_type = 1
+let g:airline#extensions#tabline#show_tab_nr = 1
+let g:airline#extensions#tabline#buffer_nr_show = 1
+let g:airline#extensions#tabline#formatter = 'unique_tail_improved'
+let g:airline#extensions#branch#enabled = 1
+let g:airline#extensions#syntastic#enabled = 1
+let g:airline#extensions#ctrlp#show_adjacent_modes = 1
+let g:airline#extensions#whitespace#enabled = 1
+nnoremap <Leader>- :bp<CR>
+nnoremap <Leader>= :bn<CR>
+nnoremap <Leader>0 :bd<CR>
+nnoremap <Leader>p <C-^>
+nnoremap <Leader>] :tabn<CR>
+nnoremap <Leader>[ :tabp<CR>
+nnoremap <Leader><CR> :tabnew<CR>
 " Adds an html color background for hex colors
-    Plugin 'lilydjwg/colorizer'
-" Inserts pairs of appropriate characters
-    Plugin 'tpope/vim-unimpaired'
-        " Enables line bubbling using unimpaired shortcuts
-        nmap <C-k> [e
-        nmap <C-j> ]e
-        vmap <C-k> [egv
-        vmap <C-j> ]egv
-        inoremap <C-j> <Esc>:m .+1<CR>==gi
-        inoremap <C-k> <Esc>:m .-2<CR>==gi
+Plugin 'lilydjwg/colorizer'
+" Auto-pair brackets and stuff
+Plugin 'jiangmiao/auto-pairs'
+let g:AutoPairs = { '(' : ')', '[' : ']', '{' : '}' }
+" Pairs of mappings
+Plugin 'tpope/vim-unimpaired'
+" Enables line bubbling using unimpaired shortcuts
+nmap <C-k> [e
+nmap <C-j> ]e
+vmap <C-k> [egv
+vmap <C-j> ]egv
+inoremap <C-j> <Esc>:m .+1<CR>==gi
+inoremap <C-k> <Esc>:m .-2<CR>==gi
 " Awesome syntax highlighting and checker
-    Plugin 'scrooloose/syntastic'
-        let g:syntastic_mode_map = {'mode':'passive','active_filetypes':[],'passive_filetypes':[]}
-        nmap <C-l><C-l> :SyntasticCheck<CR>
+Plugin 'scrooloose/syntastic'
+let g:syntastic_mode_map = {'mode':'passive','active_filetypes':[],'passive_filetypes':[]}
+nmap <C-l><C-l> :SyntasticCheck<CR>
 " Aligns text on certain characters
-    Plugin 'godlygeek/tabular'
-        nmap <leader>l= :Tabularize /=<CR>
-        vmap <leader>l= :Tabularize /=<CR>
-        nmap <leader>l: :Tabularize /:\zs<CR>
-        vmap <leader>l: :Tabularize /:\zs<CR>
+Plugin 'godlygeek/tabular'
+nmap <leader>l= :Tabularize /=<CR>
+vmap <leader>l= :Tabularize /=<CR>
+nmap <leader>l: :Tabularize /:\zs<CR>
+vmap <leader>l: :Tabularize /:\zs<CR>
 " Enable some plugins like surround.vim to be repeated
-    Plugin 'tpope/vim-repeat'
+Plugin 'tpope/vim-repeat'
 " Change surroundings of a word
-    Plugin 'tpope/vim-surround'
+Plugin 'tpope/vim-surround'
 " Syntax highlighting for tmux config files
-    Plugin 'zaiste/tmux.vim'
+Plugin 'zaiste/tmux.vim'
 " Clojure stuff
-    Plugin 'tpope/vim-leiningen'
-    Plugin 'tpope/vim-fireplace'
-    Plugin 'vim-scripts/paredit.vim'
-    Plugin 'kien/rainbow_parentheses.vim'
-    Plugin 'jpalardy/vim-slime'
-        let g:slime_target = "tmux"
-        let g:slime_paste_file = tempname()
+Plugin 'tpope/vim-leiningen'
+Plugin 'tpope/vim-fireplace'
+Plugin 'vim-scripts/paredit.vim'
+Plugin 'kien/rainbow_parentheses.vim'
+Plugin 'jpalardy/vim-slime'
+let g:slime_target = "tmux"
+let g:slime_paste_file = tempname()
 
-        nmap ,e va(<C-c><C-c>
-        nmap ,d <C-c><C-c>
+nmap ,e va(<C-c><C-c>
+nmap ,d <C-c><C-c>
 
-        autocmd BufEnter *.clj RainbowParenthesesToggle
-        autocmd BufLeave *.clj RainbowParenthesesToggle
-        autocmd Syntax * RainbowParenthesesLoadRound
-        autocmd Syntax * RainbowParenthesesLoadSquare
-        autocmd Syntax * RainbowParenthesesLoadBraces
+autocmd BufEnter *.clj RainbowParenthesesToggle
+autocmd BufLeave *.clj RainbowParenthesesToggle
+autocmd Syntax * RainbowParenthesesLoadRound
+autocmd Syntax * RainbowParenthesesLoadSquare
+autocmd Syntax * RainbowParenthesesLoadBraces
 
-        let g:rbpt_colorpairs = [
+let g:rbpt_colorpairs = [
             \ ['magenta',     'purple1'],
             \ ['cyan',        'magenta1'],
             \ ['green',       'slateblue1'],
@@ -116,33 +128,33 @@ Plugin 'kien/ctrlp.vim'
             \ ['green',       'yellow1'],
             \ ['yellow',      'orange1'],
             \ ]
-        let g:rbpt_max = 9
+let g:rbpt_max = 9
 " Ruby stuff
-    Plugin 'vim-ruby/vim-ruby'
-    Plugin 'tpope/vim-endwise'
-    Plugin 'pgr0ss/vimux-ruby-test'
-        map <leader>rb :RunAllRubyTests<CR>
-        map <leader>rf :RunRubyFocusedTest<CR>
+Plugin 'vim-ruby/vim-ruby'
+Plugin 'tpope/vim-endwise'
+Plugin 'pgr0ss/vimux-ruby-test'
+map <leader>rb :RunAllRubyTests<CR>
+map <leader>rf :RunRubyFocusedTest<CR>
 " Coffeescript support
-    Plugin 'kchmck/vim-coffee-script'
+Plugin 'kchmck/vim-coffee-script'
 " Handlebars support
-    Plugin 'mustache/vim-mustache-handlebars'
-        let g:mustache_abbreviations = 1
+Plugin 'mustache/vim-mustache-handlebars'
+let g:mustache_abbreviations = 1
 " awesome tmux integration
-    Plugin 'benmills/vimux'
-        map <Leader>rn :wa<CR> :VimuxPromptCommand<CR>
-        map <Leader>rl :wa<CR> :VimuxRunLastCommand<CR>
-        map <leader>vq :VimuxCloseRunner<CR>
+Plugin 'benmills/vimux'
+map <Leader>rn :wa<CR> :VimuxPromptCommand<CR>
+map <Leader>rl :wa<CR> :VimuxRunLastCommand<CR>
+map <leader>vq :VimuxCloseRunner<CR>
 " Cool color picker for OS X
-    Plugin 'iandoe/vim-osx-colorpicker'
+Plugin 'iandoe/vim-osx-colorpicker'
 " Syntax highlighting
-    Plugin 'ksmithbaylor/tomorrow-theme', {'rtp': 'vim/'} " modified
-    Plugin 'pangloss/vim-javascript'
-    Plugin 'groenewege/vim-less'
-    Plugin 'briancollins/vim-jst'
+Plugin 'ksmithbaylor/tomorrow-theme', {'rtp': 'vim/'} " modified
+Plugin 'pangloss/vim-javascript'
+Plugin 'groenewege/vim-less'
+Plugin 'briancollins/vim-jst'
 " Searching
-    Plugin 'mileszs/ack.vim'
-        let g:ackprg = 'ag --nogroup --nocolor --column'
+Plugin 'mileszs/ack.vim'
+let g:ackprg = 'ag --nogroup --nocolor --column'
 
 " ------ END PLUGIN LIST ------
 
@@ -160,13 +172,13 @@ filetype plugin indent on
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " Configure syntax highlighting
 syntax enable
- " Necessary for tmux support
+" Necessary for tmux support
 set t_Co=256
 set t_ut=
 colorscheme Tomorrow-Night-Bright
-    " Change gutter line numbers to be lighter
-    highlight LineNr      ctermbg=235
-    highlight LineNr      ctermfg=241
+" Change gutter line numbers to be lighter
+highlight LineNr      ctermbg=235
+highlight LineNr      ctermfg=241
 
 " Default tab settings, may be overridden in syntax-specific files
 set tabstop=4      " Width of a tab character
@@ -233,19 +245,19 @@ set mouse=nicr
 
 " Set clipboard pasting to automatically work
 function! WrapForTmux(s)
-  if !exists('$TMUX')
-    return a:s
-  endif
-  let tmux_start = "\<Esc>Ptmux;"
-  let tmux_end = "\<Esc>\\"
-  return tmux_start . substitute(a:s, "\<Esc>", "\<Esc>\<Esc>", 'g') . tmux_end
+    if !exists('$TMUX')
+        return a:s
+    endif
+    let tmux_start = "\<Esc>Ptmux;"
+    let tmux_end = "\<Esc>\\"
+    return tmux_start . substitute(a:s, "\<Esc>", "\<Esc>\<Esc>", 'g') . tmux_end
 endfunction
 let &t_SI .= WrapForTmux("\<Esc>[?2004h")
 let &t_EI .= WrapForTmux("\<Esc>[?2004l")
 function! XTermPasteBegin()
-  set pastetoggle=<Esc>[201~
-  set paste
-  return ""
+    set pastetoggle=<Esc>[201~
+    set paste
+    return ""
 endfunction
 inoremap <special> <expr> <Esc>[200~ XTermPasteBegin()
 
@@ -272,7 +284,7 @@ au BufWritePre * call TrimEndLines()
 " some commands from ove
 map <silent> <LocalLeader>ff :CtrlP<CR>
 map <silent> <LocalLeader>aw :Ack '<C-R><C-W>'
-map <silent> <LocalLeader>nt :NERDTreeToggle<CR>
+map <silent> <LocalLeader>nt :NERDTreeTabsToggle<CR>
 nnoremap * *N
 
 " ev opens up the vimrc file
@@ -301,3 +313,13 @@ nnoremap <silent> <LocalLeader>ww :%s/\s\+$//<CR>:let @/=''<CR><C-o>
 
 " source the vimrc and install plugins using Vundle
 nnoremap <silent> <LocalLeader>bi :w<CR>:so $MYVIMRC<CR>:PluginInstall<CR>:q<CR>
+
+" Move tab left and right
+nnoremap <leader>{ :tabm -1<CR>
+nnoremap <leader>} :tabm +1<CR>
+
+" Indent the whole file
+nnoremap <leader>i gg=G<C-o><C-o>
+
+" Search by visual selection
+vnorem * y/<C-r>"<CR>N

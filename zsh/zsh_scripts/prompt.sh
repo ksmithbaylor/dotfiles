@@ -25,7 +25,7 @@ _stop_timer () {
 }
 
 _prompt () {
-    local pwd_length_limit=14
+    local pwd_length_limit=20
     local directory=$(pwd | sed -e "s|$HOME|~|" |
                 perl -pe "s|(~?/[^/]+/).{$pwd_length_limit,}(/[^/]+/?\$)|\$1...\$2|")
 

@@ -21,6 +21,7 @@ function apply_aliases() {
     alias .....="cd ../../../.."
     alias ......="cd ../../../../.."
     alias -- -="cd -"
+    alias ':q'='exit'
 
     alias o="open"
     alias tu="top -o cpu"
@@ -147,3 +148,11 @@ if command_exists highlight; then
         fi
     }
 fi
+
+function timecard {
+    vim -c '/\s[123456789]\s' $HOME/main/manheim/timecard
+}
+
+function gh {
+    git clone "https://github.com/$1/$2.git" $3
+}

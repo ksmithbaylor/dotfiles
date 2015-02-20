@@ -7,6 +7,7 @@
     autocrlf = false
     safecrlf = true
     excludesfile = ~/.gitignore_global
+    filemode = false
 [color]
     ui = true
 [color "status"]
@@ -20,3 +21,5 @@
     lg = log --color --graph --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr) %C(bold blue)<%an>%Creset' --abbrev-commit
 [push]
     default = simple
+[url "https://"]
+	insteadOf = git://
