@@ -25,7 +25,7 @@ function apply_aliases() {
 
     alias o="open"
     alias tu="top -o cpu"
-    alias tm="top -o vsize"
+    alias tm="top -o mem"
     alias brake="bundle exec rake"
     alias st="git status"
     alias cm="git commit -m"
