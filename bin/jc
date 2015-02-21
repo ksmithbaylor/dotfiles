@@ -1,0 +1,6 @@
+#!/usr/bin/env zsh
+
+cat "$1" > runjc
+echo "exit ''" >> runjc
+$HOME/bin/j/bin/jc runjc
+rm runjc
