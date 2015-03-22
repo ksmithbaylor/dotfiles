@@ -62,31 +62,17 @@ done
 echo -- Installing any missing Homebrew Cask packages
 brew_packages=$(cat packages/brew-cask)
 installed_packages=$(brew cask list)
-[[ $(brew tap | grep 'ksmithbaylor/homebrew-casks') ]] && brew tap 'ksmithbaylor/homebrew-casks'
+[[ $(brew tap | grep 'ksmithbaylor/casks') ]] || brew tap 'ksmithbaylor/homebrew-casks'
+[[ $(brew tap | grep 'caskroom/fonts') ]] || brew tap 'caskroom/fonts'
 for package in $brew_packages; do
     [[ ! $(echo $installed_packages | grep $package) ]] && brew cask install $package
 done
 
-echo -- Checking for presence of other apps
-SAVEIFS=$IFS
-IFS=$(echo -en "\n\b")
-for app in $(cat packages/mac-app-store)
-do
-    if [ ! -d /Applications/$app.app ]; then
-        echo Go install $app!
-    fi
-done
-IFS=$SAVEIFS
-
 echo -- Running Brew doctor
 brew doctor || echo Brew doctor failed
-
-echo -- Checking for other potential problems
-[ -d $HOME/Applications ] && echo Why is the ~/Applications folder present?
 
 # Cleanup
 unset die
 unset setup_symlinks
 unset brew_cask_packages
 unset installed_packages
-unset SAVEIFS

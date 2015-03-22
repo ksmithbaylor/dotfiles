@@ -12,10 +12,8 @@ highlight
 htop-osx
 leiningen
 lua
-meld
 mongodb
 mysql
-ncurses
 nmap
 nodenv
 openssl
