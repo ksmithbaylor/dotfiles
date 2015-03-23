@@ -37,6 +37,7 @@ function apply_aliases() {
     alias pull="git pull"
     alias up="git pull"
     alias tags="tag -l *"
+    alias untagged="tags | egrep '^[a-z0-9-]* *$'"
     if command_exists clipper; then
         alias clip="nc localhost 8377"
     fi
