@@ -5,9 +5,9 @@ function apply_aliases() {
         local colorflag="-G"
     fi
 
-    alias l="ls -Ap $colorflag"
-    alias ll="ls -Aplah $colorflag"
-    alias lll="ls -Aplahrt $colorflag"
+    alias l="ls -F1 $colorflag"
+    alias ll="ls -AFlh $colorflag"
+    alias lll="ls -aFlhrt $colorflag"
     if command_exists tree; then
         alias t="tree -ACa --dirsfirst"
         alias t2="t -L 2"
