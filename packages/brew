@@ -1,5 +1,6 @@
 ack
 bash
+clipper
 coreutils
 ctags
 curl
@@ -15,6 +16,7 @@ lua
 mongodb
 mysql
 nmap
+node
 nodenv
 openssl
 pv
