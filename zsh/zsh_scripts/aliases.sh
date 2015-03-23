@@ -36,6 +36,7 @@ function apply_aliases() {
     alias push="git push"
     alias pull="git pull"
     alias up="git pull"
+    alias tags="tag -l *"
     if command_exists clipper; then
         alias clip="nc localhost 8377"
     fi
