@@ -9,7 +9,7 @@ function apply_aliases() {
     alias ll="ls -AFlh $colorflag"
     alias lll="ls -aFlhrt $colorflag"
     if command_exists tree; then
-        alias t="tree -ACa --dirsfirst"
+        alias t="tree -ACaF --dirsfirst"
         alias t2="t -L 2"
         alias t3="t -L 3"
         alias t4="t -L 4"
