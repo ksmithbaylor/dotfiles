@@ -13,6 +13,7 @@ highlight
 htop-osx
 leiningen
 lua
+lynx
 mongodb
 mysql
 nmap
@@ -27,8 +28,8 @@ ruby-build
 speedtest_cli
 sqlite
 the_silver_searcher
+tag
 tmux
-tmux-cssh
 tree
 vim
 watch
