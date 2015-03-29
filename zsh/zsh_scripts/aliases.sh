@@ -161,6 +161,15 @@ function gh {
     git clone "https://github.com/$1/$2.git" $3
 }
 
-function json {
-    curl -s $@ | underscore print --color
+function couch {
+    if [[ $# -eq 2 ]]; then
+        local host='localhost:5984'
+    else
+        local host=$1
+        shift
+    fi
+    local method=$1
+    local url=$2
+
+    curl -s -X $method $host$url | underscore print --color
 }
