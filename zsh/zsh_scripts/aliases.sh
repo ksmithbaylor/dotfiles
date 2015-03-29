@@ -160,3 +160,7 @@ function timecard {
 function gh {
     git clone "https://github.com/$1/$2.git" $3
 }
+
+function json {
+    curl -s $@ | underscore print --color
+}
