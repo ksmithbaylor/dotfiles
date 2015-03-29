@@ -162,14 +162,26 @@ function gh {
 }
 
 function couch {
-    if [[ $# -eq 2 ]]; then
-        local host='localhost:5984'
+    if [[ $# -eq 0 || $1 = '--help' || $1 = '-h' ]]; then
+        echo "Usage: couch [<host>] <method> <path>"
+        echo "  host - location of the couchdb server, defaults to localhost:5984 if not present"
+        echo "  method - HTTP method (GET, PUT, POST, DELETE, etc)"
+        echo "  path - URL path after the host"
+        echo "Examples:"
+        echo "  couch GET /"
+        echo "  couch PUT /test"
+        echo "  couch cdb.example.com GET /"
     else
-        local host=$1
-        shift
-    fi
-    local method=$1
-    local url=$2
+        if [[ $# -eq 2 ]]; then
+            local host='localhost:5984'
+        else
+            local host=$1
+            shift
+        fi
 
-    curl -s -X $method $host$url | underscore print --color
+        local method=$1
+        local url=$2
+
+        curl -s -X $method $host$url | underscore print --color
+    fi
 }
