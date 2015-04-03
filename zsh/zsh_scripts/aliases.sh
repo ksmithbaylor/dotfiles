@@ -185,3 +185,8 @@ function couch {
         curl -s -X $method $host$url | underscore print --color
     fi
 }
+
+function rmswap {
+    find . -name '*.swp' -exec rm {} \;
+    find . -name '*.swo' -exec rm {} \;
+}
