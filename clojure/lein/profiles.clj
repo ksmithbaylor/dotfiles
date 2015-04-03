@@ -2,4 +2,4 @@
                   [cider/cider-nrepl "0.7.0"]
                   [chestnut/lein-template "0.6.0"]
                   [lein-exec "0.3.4"]]
-        :dependencies [[net.mikera/core.matrix "0.29.1"]]}}
+        :dependencies [[net.mikera/core.matrix "0.33.2"]]}}
