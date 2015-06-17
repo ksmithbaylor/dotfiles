@@ -8,15 +8,14 @@ function die() {
 function setup_symlinks() {
     local symlinks=$(find * -maxdepth 1 -mindepth 1 ! -name *.swp |
                      grep -ve '^bin.*' |
-                     grep -ve '^packages.*' |
-                     grep -ve '^serials*')
+                     grep -ve '^packages.*')
 
     for link in $symlinks; do
         local actual=$PWD/$link
         if [[ -f $link && $(head -n 1 $link | grep location) ]]; then
             local symlink_path="$(head -n 1 $link |
-                                  awk '{print $NF}' |
-                                  sed "s|~|$HOME|")"
+            awk '{print $NF}' |
+            sed "s|~|$HOME|")"
         else
             local symlink_path="$HOME/.$(basename $link)"
         fi
@@ -25,54 +24,68 @@ function setup_symlinks() {
     done
 }
 
-echo -- Setting up symlinks
-setup_symlinks
-
-echo -- Linking personal binaries
-rm -rf $HOME/bin
-ln -sf $PWD/bin $HOME/bin
-
-echo -- Making sure that Xcode is installed
-[ ! -d /Applications/Xcode.app ] && die "Xcode is not installed. Go install it and re-run this script"
-
-echo -- Making sure that Homebrew is installed
-if [[ ! $(which brew) ]]; then
-    echo "Homebrew is not installed. Installing Homebrew..."
-    sudo mkdir -p /usr/local/Cellar
-    sudo chown -R $(whoami) /usr/local
-    ruby -e "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install)"
+if [[ "$#" -ne 1 ]]; then
+    die "Usage: ./install {symlinks,homebrew,homebrew-cask,homebrew-packages}"
 fi
 
-echo -- Making sure that Homebrew Cask is installed
-if [[ ! -n $(brew list | grep brew-cask) ]]; then
-    echo "Homebrew Cask is not installed. Installing Homebrew Cask..."
-    brew install caskroom/cask/brew-cask
+if [[ "$1" == "symlinks" ]]; then
+    echo -- Setting up symlinks
+    setup_symlinks
+
+    echo -- Linking personal binaries
+    rm -f $HOME/bin
+    ln -sf $PWD/bin $HOME/bin
+    exit 0
 fi
 
-echo -- Updating Homebrew and Homebrew cask
-brew update
+if [[ "$1" == "homebrew" ]]; then
+    echo -- Making sure that Homebrew is installed
+    if [[ ! $(which brew) ]]; then
+        echo "-- Homebrew is not installed. Installing Homebrew..."
+        sudo mkdir -p /usr/local/Cellar
+        sudo chown -R $(whoami) /usr/local
+        ruby -e "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install)"
 
-echo -- Installing any missing Homebrew packages
-brew_packages=$(cat packages/brew)
-installed_packages=$(brew list)
-for package in $brew_packages; do
-    [[ ! $(echo $installed_packages | grep $package) ]] && brew install $package
-done
+        echo -- Running Brew doctor
+        brew doctor && echo "-- Homebrew is installed and healthy." || die "-- Brew doctor failed. Fix the issues above and try again."
+    else
+        echo "-- Checking Homebrew health"
+        brew doctor || die "-- Brew doctor failed."
+        echo "-- Homebrew is installed and healthy."
+    fi
+fi
 
-echo -- Installing any missing Homebrew Cask packages
-brew_packages=$(cat packages/brew-cask)
-installed_packages=$(brew cask list)
-[[ $(brew tap | grep 'ksmithbaylor/casks') ]] || brew tap 'ksmithbaylor/homebrew-casks'
-[[ $(brew tap | grep 'caskroom/fonts') ]] || brew tap 'caskroom/fonts'
-for package in $brew_packages; do
-    [[ ! $(echo $installed_packages | grep $package) ]] && brew cask install $package
-done
+if [[ "$1" == "homebrew-cask" ]]; then
+    echo -- Making sure that Homebrew Cask is installed
+    if [[ ! -n $(brew list | grep brew-cask) ]]; then
+        echo "Homebrew Cask is not installed. Installing Homebrew Cask..."
+        brew install caskroom/cask/brew-cask
+    else
+        echo "-- Homebrew Cask is installed."
+    fi
+fi
 
-echo -- Running Brew doctor
-brew doctor || echo Brew doctor failed
+if [[ "$1" == "homebrew-packages" ]]; then
+    echo -- Updating Homebrew and Homebrew cask
+    brew update
+
+    echo -- Installing any missing Homebrew packages
+    local brew_packages=$(cat packages/brew)
+    local installed_packages=$(brew list)
+    for package in $brew_packages; do
+        [[ ! $(echo $installed_packages | grep $package) ]] && brew install $package
+    done
+
+    echo -- Installing any missing Homebrew Cask packages
+    local brew_packages=$(cat packages/brew-cask)
+    local installed_packages=$(brew cask list)
+    [[ $(brew tap | grep 'ksmithbaylor/casks') ]] || brew tap 'ksmithbaylor/homebrew-casks'
+    [[ $(brew tap | grep 'caskroom/fonts') ]] || brew tap 'caskroom/fonts'
+    for package in $brew_packages; do
+        [[ ! $(echo $installed_packages | grep $package) ]] && brew cask install $package
+    done
+fi
 
 # Cleanup
 unset die
 unset setup_symlinks
-unset brew_cask_packages
-unset installed_packages
