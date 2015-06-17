@@ -23,3 +23,5 @@
     default = simple
 [url "https://"]
 	insteadOf = git://
+[merge]
+	conflictstyle = diff3
