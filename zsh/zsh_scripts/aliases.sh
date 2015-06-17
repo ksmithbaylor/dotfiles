@@ -39,6 +39,7 @@ function apply_aliases() {
     alias tags="tag -l *"
     alias todo="todo.sh -d ~/dotfiles/todo-txt/todo.cfg"
     alias untagged="tags | egrep '^[a-z0-9-]* *$'"
+    alias dcmp="docker-compose"
     if command_exists clipper; then
         alias clip="nc localhost 8377"
     fi
