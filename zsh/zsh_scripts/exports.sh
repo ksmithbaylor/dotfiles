@@ -18,3 +18,8 @@ if command_exists nodenv; then
     export NODENV_ROOT=/usr/local/var/nodenv
     eval "$(nodenv init - zsh)"
 fi
+
+if command_exists jenv; then
+    export JENV_ROOT=/usr/local/opt/jenv
+    eval "$(jenv init - zsh)"
+fi
