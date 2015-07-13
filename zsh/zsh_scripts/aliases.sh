@@ -1,7 +1,7 @@
 function apply_aliases() {
-    if ls --color > /dev/null 2>&1; then
+    if ls --color > /dev/null 2>&1; then # GNU `ls`
         local colorflag="--color"
-    else
+    else # OS X `ls`
         local colorflag="-G"
     fi
 
