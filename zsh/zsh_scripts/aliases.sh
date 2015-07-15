@@ -40,6 +40,7 @@ function apply_aliases() {
     alias todo="todo.sh -d ~/dotfiles/todo-txt/todo.cfg"
     alias untagged="tags | egrep '^[a-z0-9-]* *$'"
     alias dcmp="docker-compose"
+    alias maven="mvn" # I always type this wrong
     if command_exists clipper; then
         alias clip="nc localhost 8377"
     fi
