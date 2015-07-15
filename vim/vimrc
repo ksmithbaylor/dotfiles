@@ -257,7 +257,7 @@ set listchars=tab:▸\
 :vmap > >gv
 
 " Makes Vim use the same zshrc so aliases are available in shell commands
-set shell=/usr/local/zsh\ --rcfile\ ~/.zshrc\ -i
+set shell=/bin/bash\ --rcfile\ ~/.bashrc\ -i
 
 " When saving a session, only save certain things
 set ssop=blank,buffers,curdir,help,tabpages
