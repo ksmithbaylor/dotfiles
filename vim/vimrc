@@ -4,6 +4,10 @@ set encoding=utf-8
 " Get rid of vi-era compatibility, we are better than that.
 set nocompatible
 
+" Backup and swap files in a central location
+set directory=$HOME/.vim/swapfiles//
+set backupdir=$HOME/.vim/backup//
+
 " Initialize Vundle and load plugins (plugin manager)
 " If vundle is not installed, do it first
 let should_plugin_install=0
