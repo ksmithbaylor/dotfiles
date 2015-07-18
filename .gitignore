@@ -2,3 +2,7 @@
 *.swp
 vim/vim/bundle
 clojure/lein/repl-history
+emacs/emacs.d/elpa
+emacs/emacs.d/auto-save-list
+emacs/emacs.d/autosave
+emacs/emacs.d/backup
