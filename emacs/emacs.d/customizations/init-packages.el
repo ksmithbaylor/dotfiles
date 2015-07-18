@@ -6,10 +6,11 @@
 
 ; Install necessary packages
 (setq my-packages '(
-            evil
-            js2-mode
-            ruby-end
-            ))
+                    evil
+                    neotree
+                    js2-mode
+                    ruby-end
+                    ))
 
 (unless package-archive-contents
   (package-refresh-contents))
