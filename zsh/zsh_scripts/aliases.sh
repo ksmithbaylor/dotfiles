@@ -38,6 +38,7 @@ function apply_aliases() {
     alias up="git pull"
     alias tags="tag -l *"
     alias todo="todo.sh -d ~/dotfiles/todo-txt/todo.cfg"
+    alias note="cat > /dev/null"
     alias untagged="tags | egrep '^[a-z0-9-]* *$'"
     alias dcmp="docker-compose"
     alias maven="mvn" # I always type this wrong
