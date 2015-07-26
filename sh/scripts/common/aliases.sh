@@ -1,56 +1,59 @@
-function apply_aliases() {
-    if ls --color > /dev/null 2>&1; then # GNU `ls`
-        local colorflag="--color"
-    else # OS X `ls`
-        local colorflag="-G"
-    fi
+if ls --color > /dev/null 2>&1; then # GNU `ls`
+    _colorflag="--color"
+else # OS X `ls`
+    _colorflag="-G"
+fi
 
-    alias l="ls -F1 $colorflag"
-    alias ll="ls -AFlh $colorflag"
-    alias lll="ls -aFlhrt $colorflag"
-    if command_exists tree; then
-        alias t="tree -ACaF --dirsfirst"
-        alias t2="t -L 2"
-        alias t3="t -L 3"
-        alias t4="t -L 4"
-    fi
+alias l="ls -F1 $colorflag"
+alias ll="ls -AFlh $colorflag"
+alias lll="ls -aFlhrt $colorflag"
+alias ..="cd .."
+alias ...="cd ../.."
+alias ....="cd ../../.."
+alias .....="cd ../../../.."
+alias ......="cd ../../../../.."
+alias -- -="cd -"
+alias ':q'='exit'
+alias brake="bundle exec rake"
+alias st="git status"
+alias cm="git commit -m"
+alias cma="git commit -am"
+alias co="git checkout"
+alias gd="git diff"
+alias lg="git lg"
+alias push="git push"
+alias pull="git pull"
+alias up="git pull"
+alias note="cat > /dev/null"
 
-    alias ..="cd .."
-    alias ...="cd ../.."
-    alias ....="cd ../../.."
-    alias .....="cd ../../../.."
-    alias ......="cd ../../../../.."
-    alias -- -="cd -"
-    alias ':q'='exit'
-
-    alias o="open"
+if is_mac; then
     alias tu="top -o cpu"
     alias tm="top -o mem"
-    alias brake="bundle exec rake"
-    alias st="git status"
-    alias cm="git commit -m"
-    alias cma="git commit -am"
-    alias co="git checkout"
-    alias gd="git diff"
-    alias lg="git lg"
-    alias push="git push"
-    alias pull="git pull"
-    alias up="git pull"
-    alias tags="tag -l *"
-    alias todo="todo.sh -d ~/dotfiles/todo-txt/todo.cfg"
-    alias note="cat > /dev/null"
-    alias untagged="tags | egrep '^[a-z0-9-]* *$'"
-    alias dcmp="docker-compose"
-    alias maven="mvn" # I always type this wrong
-    if command_exists clipper; then
-        alias clip="nc localhost 8377"
+
+    command_exists open && alias o="open"
+    if command_exists tag; then
+        alias tags="tag -l *"
+        alias untagged="tags | egrep '^[a-z0-9-]* *$'"
     fi
-}
+    command_exists clipper && alias clip="nc localhost 8377"
+    command_exists todo.sh && alias todo="todo.sh -d ~/dotfiles/todo-txt/todo.cfg"
+    command_exists docker-compose && alias dcmp="docker-compose"
+else
+    alias tu="top -o %CPU"
+    alias tm="top -o %MEM"
+fi
 
-apply_aliases
-unset apply_aliases
+if command_exists tree; then
+    alias t="tree -ACaF --dirsfirst"
+    alias t2="t -L 2"
+    alias t3="t -L 3"
+    alias t4="t -L 4"
+fi
 
-function mdcd() {
+command_exists docker-compose && alias dcmp="docker-compose"
+command_exists mvn && alias maven="mvn" # I always type this wrong
+
+function mdcd {
     mkdir -p "$1"
     cd "$1"
 }
@@ -67,11 +70,11 @@ function try {
     mdcd "$HOME/main/try/$1"
 }
 
-function ove() {
+function ove {
     ssh "tworker@$1.onyx.ove.com"
 }
 
-function _tmux_new_window() {
+function _tmux_new_window {
     tmux new-window -n "$1"
     tmux select-window -t "$1"
     tmux send-keys "$2" C-m
@@ -86,6 +89,11 @@ function chestnut() {
     open -g 'http://localhost:10555/' -a "$(grealpath '/Applications/Google Chrome.app')"
 }
 
+function ip {
+    echo "Public: $(dig +short myip.opendns.com @resolver1.opendns.com)"
+    echo "Private: $(ifconfig | grep inet | grep -v inet6 | grep -v '127.0.0.1' | awk '{print $2}')"
+}
+
 function printall {
     for file in "$@"; do
         vim "+colorscheme newsprint" -c "hardcopy > $file.ps" -c "quit" "$file"
@@ -98,6 +106,25 @@ function ip() {
     echo "Public: $(dig +short myip.opendns.com @resolver1.opendns.com)"
     echo "Private: $(ifconfig | grep inet | grep -v inet6 | grep -v '127.0.0.1' | awk '{print $2}')"
 }
+
+function timecard {
+    vim -c '/\s[123456789]\s' $HOME/main/manheim/timecard
+}
+
+function gh {
+    git clone "https://github.com/$1/$2.git" $3
+}
+
+if command_exists highlight; then
+    function hl { # Prints out a file with syntax highlighting
+        # Highlight with 'moria' theme to terminal, and suppress errors
+        highlight "$1" -s moria -O xterm256 2> /dev/null
+
+        if (($? != 0)); then # If the command had errors
+            cat "$1" # Just cat the file out instead
+        fi
+    }
+fi
 
 function runjava {
     local filename="$1" classname="${$(basename "$1")%.*}"
@@ -145,25 +172,6 @@ function hex {
     fi
 }
 
-if command_exists highlight; then
-    function hl { # Prints out a file with syntax highlighting
-        # Highlight with 'moria' theme to terminal, and suppress errors
-        highlight "$1" -s moria -O xterm256 2> /dev/null
-
-        if (($? != 0)); then # If the command had errors
-            cat "$1" # Just cat the file out instead
-        fi
-    }
-fi
-
-function timecard {
-    vim -c '/\s[123456789]\s' $HOME/main/manheim/timecard
-}
-
-function gh {
-    git clone "https://github.com/$1/$2.git" $3
-}
-
 function couch {
     if [[ $# -eq 0 || $1 = '--help' || $1 = '-h' ]]; then
         echo "Usage: couch [<host>] <method> <path>"
@@ -193,3 +201,26 @@ function rmswap {
     find . -name '*.swp' -exec rm {} \;
     find . -name '*.swo' -exec rm {} \;
 }
+
+export MARKPATH=$HOME/.marks
+function jump {
+    cd -P "$MARKPATH/$1" 2>/dev/null || echo "No such mark: $1"
+}
+
+function mark {
+    mkdir -p "$MARKPATH"; ln -s "$(pwd)" "$MARKPATH/$1"
+}
+
+function unmark {
+    rm -i "$MARKPATH/$1"
+}
+
+if is_mac; then
+    function marks {
+        ls -l "$MARKPATH" | tail -n +2 | sed 's/  / /g' | cut -d' ' -f9- | awk -F ' -> ' '{printf "%-10s -> %s\n", $1, $2}'
+    }
+else
+    function marks {
+        ls -l "$MARKPATH" | sed 's/  / /g' | cut -d' ' -f9- | sed 's/ -/\t-/g' && echo
+    }
+fi

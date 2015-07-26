@@ -1,0 +1,7 @@
+source ~/.scripts/common/util.sh
+source ~/.scripts/common/path.sh
+source ~/.scripts/common/exports.sh
+source ~/.scripts/common/aliases.sh
+source ~/.scripts/zsh/prompt.sh
+source ~/.scripts/zsh/completions.sh
+source ~/.scripts/zsh/keys.sh

@@ -174,8 +174,8 @@ Plugin 'benmills/vimux'
 " Syntax highlighting
 Plugin 'ksmithbaylor/tomorrow-theme', {'rtp': 'vim/'} " modified
 Plugin 'pangloss/vim-javascript'
-Plugin 'groenewege/vim-less'
-Plugin 'briancollins/vim-jst'
+    let g:javascript_ignore_javaScriptdoc = 1
+Plugin 'mxw/vim-jsx'
 
 " Searching
 Plugin 'mileszs/ack.vim'

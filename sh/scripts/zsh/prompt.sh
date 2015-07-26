@@ -1,9 +1,25 @@
-_start_timer () {
+autoload colors && colors
+for COLOR in Red Green Yellow Blue Magenta Cyan Black White Orange; do
+    eval _$COLOR='%{$fg_no_bold[${(L)COLOR}]%}'
+done
+eval _Reset='%{$reset_color%}'
+
+function _pretty_print_time() {
+    local d=$1 h=$2 m=$3 s=$4 ms=$5 d2='%02d' d3='%03d'
+
+    [ $d -gt 0 ] && printf "%d d, $d2:$d2:$d2.$d3 h\n" $d $h $m $s $ms && return
+    [ $h -gt 0 ] && printf "%d:$d2:$d2.$d3 h\n"           $h $m $s $ms && return
+    [ $m -gt 0 ] && printf "%d:$d2.$d3 m\n"                  $m $s $ms && return
+    [ $s -gt 0 ] && printf "%d.$d3 s\n"                         $s $ms && return
+    printf "%d ms\n" $ms
+}
+
+function _start_timer {
     export _start="$(gdate +%s%3N)"
     export _timer_is_active=1
 }
 
-_stop_timer () {
+function _stop_timer {
     export _previous=$?
     local duration ms s m h d
 
@@ -24,7 +40,7 @@ _stop_timer () {
     export _timer_is_active=0
 }
 
-_prompt () {
+function _prompt {
     local pwd_length_limit=20
     local directory=$(pwd | sed -e "s|$HOME|~|" |
                 perl -pe "s|(~?/[^/]+/).{$pwd_length_limit,}(/[^/]+/?\$)|\$1...\$2|")
