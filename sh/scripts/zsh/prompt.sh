@@ -4,6 +4,16 @@ for COLOR in Red Green Yellow Blue Magenta Cyan Black White Orange; do
 done
 eval _Reset='%{$reset_color%}'
 
+if is_mac; then
+    if command_exists gdate; then
+        _DATE_COMMAND="gdate"
+    else
+        echo "Please run \`brew install coreutils\`"
+    fi
+else
+    _DATE_COMMAND=date
+fi
+
 function _pretty_print_time() {
     local d=$1 h=$2 m=$3 s=$4 ms=$5 d2='%02d' d3='%03d'
 
@@ -15,7 +25,7 @@ function _pretty_print_time() {
 }
 
 function _start_timer {
-    export _start="$(gdate +%s%3N)"
+    export _start="$($_DATE_COMMAND +%s%3N)"
     export _timer_is_active=1
 }
 
@@ -24,7 +34,7 @@ function _stop_timer {
     local duration ms s m h d
 
     if [[ $_timer_is_active == 1 ]]; then
-        local end=$(gdate +%s%3N)
+        local end=$($_DATE_COMMAND +%s%3N)
         (( duration = end - _start ))
     else
         (( duration = 0 ))
