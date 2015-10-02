@@ -12,11 +12,9 @@
    ;;((eq overriding-terminal-local-map evil-read-key-map) (keyboard-quit) (kbd ""))
    (t (kbd "C-g"))))
 (define-key key-translation-map (kbd "C-c") 'my-esc)
+(define-key key-translation-map (kbd "C-M-g") 'my-esc)
 ;; Works around the fact that Evil uses read-event directly when in operator state, which
 ;; doesn't use the key-translation-map.
 (define-key evil-operator-state-map (kbd "C-c") 'keyboard-quit)
-;; Not sure what behavior this changes, but might as well set it, seeing the Elisp manual's
-;; documentation of it.
-;(set-quit-char "C-c")
 
 (provide 'init-evil)
