@@ -94,11 +94,13 @@ case $(uname -s) in
                     export curcap=$value;;
                 "ExternalConnected")
                     if [ -n "$ext" ] && [ "$ext" != "$value" ]; then
+                        export curcap=$value
                         exit
                     fi
                 ;;
                 "FullyCharged")
                     if [ "$value" = "Yes" ]; then
+                        export curcap=$value
                         exit
                     fi
                 ;;
@@ -119,4 +121,3 @@ if [ -n "$CUTE_BATTERY_INDICATOR" ]; then
 else
     echo ${BATTERY_STATUS}%
 fi
-
