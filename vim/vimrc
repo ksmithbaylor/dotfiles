@@ -26,9 +26,13 @@ Plugin 'gmarik/Vundle.vim'
 
 " Directory tree popover, use CTRL-E to toggle
 Plugin 'scrooloose/nerdtree'
-" NERDTree but for tabs (syncs across all tabs)
-Plugin 'jistr/vim-nerdtree-tabs'
-    nmap <C-e> :NERDTreeTabsToggle<CR>
+    nmap <C-e> :NERDTreeToggle<CR>
+    let g:NERDTreeCaseSensitiveSort = 1
+    let g:NERDTreeSortOrder = ['^index\.js', '\/$', '^[a-z]', '^[A-Z]', '*']
+    map <silent> <LocalLeader>nt :NERDTreeToggle<CR>
+
+" Convenience menu for switching buffers
+Plugin 'jlanzarotta/bufexplorer'
 
 " Commenter, (leader)c<space> to (un)comment
 Plugin 'scrooloose/nerdcommenter'
@@ -37,6 +41,7 @@ Plugin 'scrooloose/nerdcommenter'
 Plugin 'kien/ctrlp.vim'
     set wildignore+=*/node_modules/**
     let g:ctrlp_show_hidden=1
+    let g:ctrlp_match_window = 'bottom,order:btt,min:1,max:50'
     let g:ctrlp_user_command = {
         \ 'types': {
             \ 1: ['.git', 'cd %s && git ls-files . --cached --exclude-standard --others']
@@ -45,7 +50,7 @@ Plugin 'kien/ctrlp.vim'
     \ }
 
 " For showing modifications from the latest commit in the gutter
-Plugin 'airblade/vim-gitgutter'
+"Plugin 'airblade/vim-gitgutter'
 
 " CSV viewing and manipulation
 Plugin 'chrisbra/csv.vim'
@@ -74,7 +79,7 @@ Plugin 'bling/vim-airline'
     let g:airline#extensions#tabline#buffer_nr_show = 1
     let g:airline#extensions#tabline#formatter = 'unique_tail_improved'
     let g:airline#extensions#branch#enabled = 1
-    let g:airline#extensions#syntastic#enabled = 1
+    "let g:airline#extensions#syntastic#enabled = 1
     let g:airline#extensions#ctrlp#show_adjacent_modes = 1
     let g:airline#extensions#whitespace#enabled = 1
     nnoremap <Leader>- :bp<CR>
@@ -100,9 +105,9 @@ Plugin 'tpope/vim-unimpaired'
     inoremap <C-k> <Esc>:m .-2<CR>==gi
 
 " Awesome syntax highlighting and checker
-Plugin 'scrooloose/syntastic'
-    let g:syntastic_mode_map = {'mode':'passive','active_filetypes':[],'passive_filetypes':[]}
-    nmap <C-l><C-l> :SyntasticCheck<CR>
+"Plugin 'scrooloose/syntastic'
+    "let g:syntastic_mode_map = {'mode':'passive','active_filetypes':[],'passive_filetypes':[]}
+    "nmap <C-l><C-l> :SyntasticCheck<CR>
 
 " Aligns text on certain characters
 Plugin 'godlygeek/tabular'
@@ -176,6 +181,7 @@ Plugin 'ksmithbaylor/tomorrow-theme', {'rtp': 'vim/'} " modified
 Plugin 'pangloss/vim-javascript'
     let g:javascript_ignore_javaScriptdoc = 1
 Plugin 'mxw/vim-jsx'
+Plugin 'kongo2002/fsharp-vim'
 
 " Searching
 Plugin 'mileszs/ack.vim'
@@ -229,8 +235,8 @@ set cursorline                    " Highlight the current line
 set ttyfast                       " Improves smoothness in fast terminals
 set backspace=indent,eol,start    " Not sure what this does, but I trust him
 set laststatus=2                  " Put a statusline in every buffer
-set relativenumber                " Display relative line numbers
 set number                        " Display the absolute line number as well
+set colorcolumn=81                " Put line after 80 columns
 
 " Tame searching and moving
 set ignorecase
@@ -310,7 +316,6 @@ au BufWritePre * call TrimEndLines()
 " some commands from ove
 map <silent> <LocalLeader>ff :CtrlP<CR>
 map <silent> <LocalLeader>aw :Ack '<C-R><C-W>'
-map <silent> <LocalLeader>nt :NERDTreeTabsToggle<CR>
 nnoremap * *N
 
 " ev opens up the vimrc file
