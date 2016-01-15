@@ -28,6 +28,7 @@ alias pull="git pull"
 alias up="git up"
 alias flow="git push $2 +refs/remotes/$1/*:refs/heads/*"
 alias note="cat > /dev/null"
+alias tmux="tmux -2"
 
 if is_mac; then
     alias tu="top -o cpu"
