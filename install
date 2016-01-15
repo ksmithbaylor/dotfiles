@@ -22,6 +22,9 @@ function setup_symlinks() {
         rm $symlink_path 2> /dev/null
         ln -sf $actual $symlink_path
     done
+
+    mkdir -p $HOME/.vim/swapfiles
+    mkdir -p $HOME/.vim/backup
 }
 
 if [[ "$#" -ne 1 ]]; then
