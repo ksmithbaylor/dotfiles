@@ -41,6 +41,8 @@ if is_mac; then
     command_exists clipper && alias clip="nc localhost 8377"
     command_exists todo.sh && alias todo="todo.sh -d ~/dotfiles/todo-txt/todo.cfg"
     command_exists docker-compose && alias dcmp="docker-compose"
+    command_exists reattach-to-user-namespace && alias subl="reattach-to-user-namespace subl"
+    command_exists reattach-to-user-namespace && alias open="reattach-to-user-namespace open"
 else
     alias tu="top -o %CPU"
     alias tm="top -o %MEM"
@@ -203,6 +205,19 @@ function couch {
 function rmswap {
     find . -name '*.swp' -exec rm {} \;
     find . -name '*.swo' -exec rm {} \;
+}
+
+function runc {
+    local filename=$1
+    local exe=${filename%.c}
+    local args=($(cat $filename | grep '@ARGS' | head -n1 | sed 's/\/\/ @ARGS //'))
+    local compilation=$(cat $filename | grep '@COMPILE' | head -n1 | sed 's/\/\/ @COMPILE //')
+
+    if [[ -z $compilation ]]; then
+        cc -std=c99 -Werror -Wall $filename -o $exe && ./$exe $args
+    else
+        eval "$compilation $filename -o $exe" && ./$exe $args
+    fi
 }
 
 export MARKPATH=$HOME/.marks
