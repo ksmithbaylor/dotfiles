@@ -82,34 +82,7 @@ case $(uname -s) in
                 ext="Yes";;
         esac
 
-        ioreg -c AppleSmartBattery -w0 | \
-        grep -o '"[^"]*" = [^ ]*' | \
-        sed -e 's/= //g' -e 's/"//g' | \
-        sort | \
-        while read key value; do
-            case $key in
-                "MaxCapacity")
-                    export maxcap=$value;;
-                "CurrentCapacity")
-                    export curcap=$value;;
-                "ExternalConnected")
-                    if [ -n "$ext" ] && [ "$ext" != "$value" ]; then
-                        export curcap=$value
-                        exit
-                    fi
-                ;;
-                "FullyCharged")
-                    if [ "$value" = "Yes" ]; then
-                        export curcap=$value
-                        exit
-                    fi
-                ;;
-            esac
-            if [[ -n "$maxcap" && -n $curcap ]]; then
-                echo $(( 100 * $curcap / $maxcap ))
-                break
-            fi
-        done
+        pmset -g batt | egrep "([0-9]+\%).*" -o --colour=auto | sed 's/%//' | cut -f1 -d';'
 esac
 }
 
