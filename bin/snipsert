@@ -1,0 +1,28 @@
+#!/usr/bin/env ruby
+
+def getSnippets(snippetFile)
+  currentTag = ''
+
+  File.read(snippetFile).lines.reduce({}) do |memo, line|
+    if matchData = /@([a-zA-Z]+)$/.match(line)
+      currentTag = matchData.captures[0]
+      memo[currentTag] = []
+    else
+      memo[currentTag] << line
+    end
+
+    memo
+  end
+end
+
+outputLines = File.read(ARGV[0]).lines.map do |line|
+  if matchData = /snipsert @(.*) (.*)$/.match(line)
+    getSnippets(matchData.captures[1])[matchData.captures[0]]
+  else
+    line
+  end
+end.flatten
+
+File.open(ARGV[0].gsub(/\.ss/, ''), 'w') do |f|
+  f.puts outputLines
+end
