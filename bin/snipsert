@@ -4,7 +4,7 @@ def getSnippets(snippetFile)
   currentTag = ''
 
   File.read(snippetFile).lines.reduce({}) do |memo, line|
-    if matchData = /@([a-zA-Z]+)$/.match(line)
+    if matchData = /@([a-zA-Z_]+)$/.match(line)
       currentTag = matchData.captures[0]
       memo[currentTag] = []
     else
