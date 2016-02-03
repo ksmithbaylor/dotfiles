@@ -166,6 +166,12 @@ Plugin 'raichoo/purescript-vim'
 Plugin 'mileszs/ack.vim'
 let g:ackprg = 'ag --nogroup --nocolor --column'
 
+" Linting
+Plugin 'benekastah/neomake'
+let g:neomake_javascript_enabled_makers = ['eslint']
+let g:neomake_open_list = 2
+autocmd! BufWritePost,BufEnter * Neomake
+
 " ------------------------------ END PLUGIN LIST -------------------------------
 
 " Finish initializing Vundle plugins
