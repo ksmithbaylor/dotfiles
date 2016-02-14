@@ -161,6 +161,7 @@ Plugin 'zaiste/tmux.vim'
 Plugin 'lambdatoast/elm.vim'
     au BufWritePost *.elm ElmMakeCurrentFile
 Plugin 'raichoo/purescript-vim'
+Plugin 'elixir-lang/vim-elixir'
 
 " Searching
 Plugin 'mileszs/ack.vim'
