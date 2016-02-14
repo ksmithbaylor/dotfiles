@@ -245,3 +245,31 @@ else
         ls -l "$MARKPATH" | sed 's/  / /g' | cut -d' ' -f9- | sed 's/ -/\t-/g' && echo
     }
 fi
+
+if command_exists wrk; then
+  function tl() {
+    if [ $# = 0 ]; then
+      wrk
+    elif [ $1 = "inbox" ]; then
+      wrk cards in l:569d3eb7c9dd3d76e8333726
+    elif [ $1 = "today" ]; then
+      wrk cards in l:569d5706061fcefb01394324
+    elif [ $1 = "doing" ]; then
+      wrk cards in l:569e5ec371e333340979cd18
+    elif [ $1 = "add" ]; then
+      shift
+      wrk create card in 569d3eb7c9dd3d76e8333726 "$(echo $@)"
+    elif [ $1 = "do" ]; then
+      if [ $2 = "today" ]; then
+        wrk assign $3
+        wrk move $3 to 569d5706061fcefb01394324
+      else
+        wrk assign $2
+        wrk move $2 to 569e5ec371e333340979cd18
+      fi
+    elif [ $1 = "done" ]; then
+      wrk unassign $2
+      wrk move $2 to 568a90a3b6c9fef11a77aaf4
+    fi
+  }
+fi

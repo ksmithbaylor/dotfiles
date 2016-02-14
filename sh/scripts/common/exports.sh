@@ -23,3 +23,6 @@ if command_exists jenv; then
     export JENV_ROOT=/usr/local/opt/jenv
     eval "$(jenv init - zsh)"
 fi
+
+export JAVA_HOME=$(/usr/libexec/java_home)
+
