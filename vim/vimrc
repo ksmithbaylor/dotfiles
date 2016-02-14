@@ -335,6 +335,8 @@ vnorem * y/<C-r>"<CR>N
 nnoremap <leader>a :autocmd BufWritePost * :VimuxRunLastCommand<CR>
 nnoremap <leader>x :autocmd! BufWritePost *<CR>
 
+vmap <leader>b S{i(<C-w><C-c>l%
+
 " NEOVIM!
 if has("nvim")
   set shell=/usr/local/bin/zsh
