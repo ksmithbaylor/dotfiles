@@ -178,8 +178,9 @@ let g:ackprg = 'ag --nogroup --nocolor --column'
 " Linting
 Plugin 'benekastah/neomake'
 let g:neomake_javascript_enabled_makers = ['eslint']
-let g:neomake_open_list = 2
-autocmd! BufWritePost,BufEnter * Neomake
+"let g:neomake_open_list = 2
+nnoremap <leader>l :Neomake<CR>
+autocmd! BufWritePost,BufEnter *.js Neomake
 
 " ------------------------------ END PLUGIN LIST -------------------------------
 
