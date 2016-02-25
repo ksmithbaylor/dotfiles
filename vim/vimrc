@@ -28,7 +28,7 @@ Plugin 'gmarik/Vundle.vim'
 Plugin 'scrooloose/nerdtree'
 nmap <C-e> :NERDTreeToggle<CR>
 let g:NERDTreeCaseSensitiveSort = 1
-let g:NERDTreeSortOrder = ['^index\.js', '^shared', '^[A-Z].*\.js', '\/$', '^\.']
+let g:NERDTreeSortOrder = ['__tests__', '^index\.js', '^shared', '^[A-Z].*\.js', '\/$', '^\.']
 let g:NERDTreeShowHidden = 1
 let g:NERDTreeMinimalUI = 1
 let g:NERDTreeDirArrows = 1
