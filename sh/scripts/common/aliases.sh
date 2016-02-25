@@ -30,6 +30,7 @@ alias up="git up"
 alias flow="git push $2 +refs/remotes/$1/*:refs/heads/*"
 alias note="cat > /dev/null"
 alias tmux="tmux -2"
+alias vim="nvim"
 alias b="bundle exec"
 
 if is_mac; then
