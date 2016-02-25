@@ -44,16 +44,24 @@ Plugin 'jlanzarotta/bufexplorer'
 Plugin 'scrooloose/nerdcommenter'
 
 " Fuzzy-finds a file in the current directory and subdirectories
-Plugin 'kien/ctrlp.vim'
-set wildignore+=*/node_modules/**
-let g:ctrlp_show_hidden=1
-let g:ctrlp_match_window = 'bottom,order:btt,min:1,max:50'
-let g:ctrlp_user_command = {
-      \ 'types': {
-      \ 1: ['.git', 'cd %s && git ls-files . --cached --exclude-standard --others']
-      \ },
-      \ 'fallback': 'find %s -type f'
-      \ }
+"Plugin 'kien/ctrlp.vim'
+"set wildignore+=*/node_modules/**
+"let g:ctrlp_show_hidden=1
+"let g:ctrlp_match_window = 'bottom,order:btt,min:1,max:50'
+"let g:ctrlp_user_command = {
+      "\ 'types': {
+      "\ 1: ['.git', 'cd %s && git ls-files . --cached --exclude-standard --others']
+      "\ },
+      "\ 'fallback': 'find %s -type f'
+      "\ }
+
+Plugin 'junegunn/fzf.vim'
+set rtp+=~/.fzf
+let g:fzf_command_prefix = 'Fzf'
+let g:fzf_layout = { 'down': '~40%' }
+nnoremap <C-p> :FzfGitFiles<CR>
+nnoremap <C-s> :FzfAg<CR>
+nnoremap <C-l> :FzfBuffers<CR>
 
 " Auto-close xml/html tags
 Plugin 'sukima/xmledit'
