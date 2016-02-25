@@ -26,3 +26,6 @@ fi
 
 export JAVA_HOME=$(/usr/libexec/java_home)
 
+if command_exists pair; then
+  eval "$(pair --setup)"
+fi
