@@ -1,0 +1,21 @@
+# location ~/.slate
+config defaultToCurrentScreen true
+
+alias full move screenOriginX;screenOriginY screenSizeX;screenSizeY
+alias lefthalf move screenOriginX;screenOriginY screenSizeX/2;screenSizeY
+alias righthalf move screenOriginX+screenSizeX/2;screenOriginY screenSizeX/2;screenSizeY
+alias tophalf move screenOriginX;screenOriginY screenSizeX;screenSizeY/2
+alias bottomhalf move screenOriginX;screenOriginY+screenSizeY/2 screenSizeX;screenSizeY/2
+
+alias triple ctrl,alt,cmd
+alias double alt,cmd
+
+bind left:${triple} ${lefthalf}
+bind right:${triple} ${righthalf}
+bind up:${triple} ${tophalf}
+bind down:${triple} ${bottomhalf}
+bind up:${double} ${full}
+bind 1:${double} throw 0 resize
+bind 2:${double} throw 1 resize
+bind 3:${double} throw 3 resize
+bind 4:${double} throw 2 resize
