@@ -302,7 +302,7 @@ function! TrimEndLines()
   :silent! %s#\($\n\s*\)\+\%$##
   call setpos('.', save_cursor)
 endfunction
-"au BufWritePre * call TrimEndLines()
+au BufWritePre * call TrimEndLines()
 
 " A wrapper function to restore the cursor position, window position,
 " and last search after running a command.
