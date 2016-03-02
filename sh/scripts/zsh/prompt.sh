@@ -1,3 +1,5 @@
+source $HOME/.scripts/zsh/git_prompt_string.sh
+
 autoload colors && colors
 for COLOR in Red Green Yellow Blue Magenta Cyan Black White Orange; do
     eval _$COLOR='%{$fg_no_bold[${(L)COLOR}]%}'
@@ -65,6 +67,7 @@ function _prompt {
     PROMPT+="${_Yellow}/ "
     PROMPT+="${_Cyan}$_pretty_duration"
     PROMPT+="${_Yellow}] "
+    PROMPT+="$(git_prompt_string)"
     PROMPT+="${status_color}$directory "
     PROMPT+="$previous_status\$ "
     PROMPT+="${_Reset}"
