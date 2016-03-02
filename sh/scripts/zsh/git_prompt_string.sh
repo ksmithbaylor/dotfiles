@@ -51,12 +51,13 @@ parse_git_state() {
   fi
 
   if [[ -n $GIT_STATE ]]; then
-    echo "$GIT_STATE"
+    echo "$GIT_STATE "
   fi
+
 }
 
 # If inside a Git repository, print its branch and state
 git_prompt_string() {
   local git_where="$(parse_git_branch)"
-  [ -n "$git_where" ] && echo "%{$fg[blue]%}($(parse_git_state) %{$fg[blue]%}${git_where#(refs/heads/|tags/)})%{$reset_color%} "
+  [ -n "$git_where" ] && echo "%{$fg[blue]%}($(parse_git_state)%{$fg[blue]%}${git_where#(refs/heads/|tags/)})%{$reset_color%} "
 }
