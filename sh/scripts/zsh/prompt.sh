@@ -67,8 +67,8 @@ function _prompt {
     PROMPT+="${_Yellow}/ "
     PROMPT+="${_Cyan}$_pretty_duration"
     PROMPT+="${_Yellow}] "
-    PROMPT+="$(git_prompt_string)"
     PROMPT+="${status_color}$directory "
+    PROMPT+="$(git_prompt_string)"
     PROMPT+="$previous_status\$ "
     PROMPT+="${_Reset}"
 }
