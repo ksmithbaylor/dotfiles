@@ -332,8 +332,9 @@ nnoremap <leader>i :call Preserve('normal gg=G')<CR>
 " clear trailing whitespace in the whole file
 nnoremap <silent> <leader>ww :%s/\s\+$//<CR>:let @/=''<CR><C-o>
 
-" split splits the window vertically and switches to the new one
+" splits the window vertically or horizontally and switches to the new one
 nnoremap <leader>s <C-w>v<C-w>l
+nnoremap <leader>h <C-w>s<C-w>j
 
 " Move tab left and right
 nnoremap <leader>{ :tabm -1<CR>
