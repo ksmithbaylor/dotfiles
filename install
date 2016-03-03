@@ -25,6 +25,10 @@ function setup_symlinks() {
 
     mkdir -p $HOME/.vim/swapfiles
     mkdir -p $HOME/.vim/backup
+
+    mkdir -p ~/.config
+    ln -s ~/.vim ~/.config/nvim
+    ln -s ~/.vimrc ~/.config/nvim/init.vim
 }
 
 if [[ "$#" -ne 1 ]]; then
