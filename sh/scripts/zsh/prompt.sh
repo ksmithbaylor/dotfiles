@@ -59,7 +59,7 @@ function _prompt {
 
     [ $_previous -eq 0 ] &&
         local status_color=${_Green} previous_status='' ||
-        local status_color=${_Red} previous_status="($_previous) "
+        local status_color=${_Red} previous_status="[$_previous] "
 
     PROMPT=''
     PROMPT+="${_Yellow}["
@@ -68,9 +68,10 @@ function _prompt {
     PROMPT+="${_Cyan}$_pretty_duration"
     PROMPT+="${_Yellow}] "
     PROMPT+="${status_color}$directory "
-    PROMPT+="$(git_prompt_string)"
-    PROMPT+="$previous_status\$ "
+    PROMPT+="${status_color}$previous_status%{$fg_bold[black]%}\$ "
     PROMPT+="${_Reset}"
+
+    RPS1="$(git_prompt_string)"
 }
 
 autoload -Uz add-zsh-hook
