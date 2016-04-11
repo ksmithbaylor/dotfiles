@@ -64,6 +64,9 @@ nnoremap <C-p> :FzfGitFiles<CR>
 nnoremap <C-s> :FzfAg<CR>
 nnoremap <C-l> :FzfBuffers<CR>
 
+Plugin 'airblade/vim-gitgutter'
+let g:gitgutter_max_signs=10000
+
 " Auto-close xml/html tags
 Plugin 'sukima/xmledit'
 let g:xmledit_enable_html=1
@@ -107,10 +110,15 @@ Plugin 'tpope/vim-repeat'
 Plugin 'neovimhaskell/haskell-vim'
 
 " Clojure stuff
-" Plugin 'tpope/vim-leiningen'
-" Plugin 'tpope/vim-fireplace'
-" Plugin 'vim-scripts/paredit.vim'
-" Plugin 'kien/rainbow_parentheses.vim'
+"Plugin 'tpope/vim-leiningen'
+Plugin 'guns/vim-clojure-static'
+Plugin 'kien/rainbow_parentheses.vim'
+  autocmd BufEnter *.clj,*.cljs RainbowParenthesesToggle
+  autocmd Syntax *.clj,*.cljs RainbowParenthesesLoadRound
+  autocmd Syntax *.clj,*.cljs RainbowParenthesesLoadSquare
+  autocmd Syntax *.clj,*.cljs RainbowParenthesesLoadBraces
+Plugin 'tpope/vim-fireplace'
+Plugin 'vim-scripts/paredit.vim'
 " Plugin 'jpalardy/vim-slime'
 "     let g:slime_target = 'tmux'
 "     let g:slime_paste_file = tempname()
@@ -171,6 +179,7 @@ Plugin 'lambdatoast/elm.vim'
     au BufWritePost *.elm ElmMakeCurrentFile
 Plugin 'raichoo/purescript-vim'
 Plugin 'elixir-lang/vim-elixir'
+Plugin 'rust-lang/rust.vim'
 
 " Searching
 Plugin 'mileszs/ack.vim'
@@ -347,6 +356,7 @@ nnoremap <leader>a :autocmd BufWritePost * :VimuxRunLastCommand<CR>
 nnoremap <leader>x :autocmd! BufWritePost *<CR>
 
 vmap <leader>b S{i(<C-w><C-c>l%
+nnoremap <leader>m 0d$i////////////////////////////////////////////////////////////////////////////////<C-c>0
 
 " NEOVIM!
 if has("nvim")
