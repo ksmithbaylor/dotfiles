@@ -4,19 +4,19 @@
 # <sequence> ST, and for all ESCs in <sequence> to be replaced with ESC ESC. It
 # only accepts ESC backslash for ST.
 function print_osc() {
-    if [[ $TERM == screen* ]] ; then
-        printf "\033Ptmux;\033\033]"
-    else
+    if [ -z $TMUX ] ; then
         printf "\033]"
+    else
+        printf "\033Ptmux;\033\033]"
     fi
 }
 
 # More of the tmux workaround described above.
 function print_st() {
-    if [[ $TERM == screen* ]] ; then
-        printf "\a\033\\"
-    else
+    if [ -z $TMUX ] ; then
         printf "\a"
+    else
+        printf "\a\033\\"
     fi
 }
 
@@ -38,6 +38,8 @@ function print_image() {
     fi
     echo -n "$3" | base64 $BASE64ARG | wc -c | awk '{printf "size=%d",$1}'
     printf ";inline=$2"
+    printf ";height=auto"
+    printf ";width=auto"
     printf ":"
     echo -n "$3"
     print_st
