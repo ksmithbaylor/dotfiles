@@ -11,5 +11,6 @@ prepend_path true       $HOME/bin/j/bin
 prepend_path true       $HOME/bin
 prepend_path nodebrew   $HOME/.nodebrew/current/bin
 prepend_path brew       /usr/local/bin
+prepend_path brew       /usr/local/sbin
 
 unset prepend_path
