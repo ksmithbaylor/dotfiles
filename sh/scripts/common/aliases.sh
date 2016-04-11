@@ -98,6 +98,10 @@ function chestnut() {
     open -g 'http://localhost:10555/' -a "$(grealpath '/Applications/Google Chrome.app')"
 }
 
+if command_exists tmuxinator; then
+  alias gitmonitor="tmuxinator start gitmonitor"
+fi
+
 function ip {
     echo "Public: $(dig +short myip.opendns.com @resolver1.opendns.com)"
     echo "Private: $(ifconfig | grep inet | grep -v inet6 | grep -v '127.0.0.1' | awk '{print $2}')"
