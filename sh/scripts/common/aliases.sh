@@ -32,6 +32,15 @@ alias note="cat > /dev/null"
 alias tmux="tmux -2"
 alias vim="nvim"
 alias b="bundle exec"
+alias tls="tmux ls"
+alias tn="tmux new -s"
+ta() {
+  if [ $# -gt 0 ]; then
+    tmux a -t $1
+  else
+    tmux a
+  fi
+}
 
 if is_mac; then
     alias tu="top -o cpu"
