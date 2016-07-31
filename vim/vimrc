@@ -118,6 +118,8 @@ Plugin 'kien/rainbow_parentheses.vim'
   autocmd Syntax *.clj,*.cljs RainbowParenthesesLoadSquare
   autocmd Syntax *.clj,*.cljs RainbowParenthesesLoadBraces
 Plugin 'tpope/vim-fireplace'
+Plugin 'kovisoft/slimv'
+  let g:slimv_swank_cmd = '! xterm -e clisp -i ~/bin/start-swank.lisp &'
 Plugin 'vim-scripts/paredit.vim'
 " Plugin 'jpalardy/vim-slime'
 "     let g:slime_target = 'tmux'
