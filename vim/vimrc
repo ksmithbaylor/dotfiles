@@ -192,6 +192,10 @@ let g:ackprg = 'ag --nogroup --nocolor --column'
 " Linting
 Plugin 'benekastah/neomake'
 let g:neomake_javascript_enabled_makers = ['eslint']
+" load local eslint in the project root
+" modified from https://github.com/mtscout6/syntastic-local-eslint.vim
+let s:eslint_path = system('PATH=$(npm bin):$PATH && which eslint')
+let g:neomake_javascript_eslint_exe = substitute(s:eslint_path, '^\n*\s*\(.\{-}\)\n*\s*$', '\1', '')
 "let g:neomake_open_list = 2
 nnoremap <leader>l :Neomake<CR>
 autocmd! BufWritePost,BufEnter *.js Neomake
