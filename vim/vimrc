@@ -182,6 +182,8 @@ Plugin 'lambdatoast/elm.vim'
 Plugin 'raichoo/purescript-vim'
 Plugin 'elixir-lang/vim-elixir'
 Plugin 'rust-lang/rust.vim'
+Plugin 'mustache/vim-mustache-handlebars'
+Plugin 'digitaltoad/vim-pug'
 
 " Searching
 Plugin 'mileszs/ack.vim'
