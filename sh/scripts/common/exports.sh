@@ -2,7 +2,7 @@ export EDITOR=vim
 export HISTFILESIZE=10000
 export CLICOLOR=true
 export HOMEBREW_CASK_OPTS="--appdir=/Applications"
-is_mac && command_exists brew && export ANDROID_HOME=$(brew --prefix android-sdk)
+is_mac && command_exists brew && command_exists android && export ANDROID_HOME=$(brew --prefix android-sdk)
 
 # Docker
 export DOCKER_HOST=tcp://192.168.59.103:2376
