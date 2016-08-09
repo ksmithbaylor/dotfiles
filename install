@@ -1,98 +1,63 @@
 #!/usr/bin/env bash
 
-function die() {
-    echo $@
-    exit 1
+set -e
+
+function confirm() {
+  # call with a prompt string or use a default
+  read -r -p "${1:-Are you sure? [y/N]} " response
+  case $response in
+    [yY][eE][sS]|[yY])
+      true
+      ;;
+    *)
+      false
+      ;;
+  esac
 }
 
-function setup_symlinks() {
-    local symlinks=$(find * -maxdepth 1 -mindepth 1 ! -name *.swp |
-                     grep -ve '^bin.*' |
-                     grep -ve '^packages.*')
+symlinks=$(find * -maxdepth 1 -mindepth 1 ! -name '*.swp' |
+                 grep -ve '^bin.*' |
+                 grep -ve '^packages.*')
 
-    for link in $symlinks; do
-        local actual=$PWD/$link
-        if [[ -f $link && $(head -n 1 $link | grep location) ]]; then
-            local symlink_path="$(head -n 1 $link |
-            awk '{print $NF}' |
-            sed "s|~|$HOME|")"
-        else
-            local symlink_path="$HOME/.$(basename $link)"
-        fi
-        rm $symlink_path 2> /dev/null
-        ln -sf $actual $symlink_path
-    done
+for link in $symlinks; do
+    actual=$PWD/$link
 
-    mkdir -p $HOME/.vim/swapfiles
-    mkdir -p $HOME/.vim/backup
-
-    mkdir -p ~/.config
-    ln -s ~/.vim ~/.config/nvim
-    ln -s ~/.vimrc ~/.config/nvim/init.vim
-}
-
-if [[ "$#" -ne 1 ]]; then
-    die "Usage: ./install {symlinks,homebrew,homebrew-cask,homebrew-packages}"
-fi
-
-if [[ "$1" == "symlinks" ]]; then
-    echo -- Setting up symlinks
-    setup_symlinks
-
-    echo -- Linking personal binaries
-    rm -f $HOME/bin
-    ln -sf $PWD/bin $HOME/bin
-    exit 0
-fi
-
-if [[ "$1" == "homebrew" ]]; then
-    echo -- Making sure that Homebrew is installed
-    if [[ ! $(which brew) ]]; then
-        echo "-- Homebrew is not installed. Installing Homebrew..."
-        sudo mkdir -p /usr/local/Cellar
-        sudo chown -R $(whoami) /usr/local
-        ruby -e "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install)"
-
-        echo -- Running Brew doctor
-        brew doctor && echo "-- Homebrew is installed and healthy." || die "-- Brew doctor failed. Fix the issues above and try again."
+    if [[ -f $link && $(head -n 1 $link | grep location) ]]; then
+        symlink_path="$(head -n 1 $link | awk '{print $NF}' | sed "s|~|$HOME|")"
     else
-        echo "-- Checking Homebrew health"
-        brew doctor || die "-- Brew doctor failed."
-        echo "-- Homebrew is installed and healthy."
+        symlink_path="$HOME/.$(basename $link)"
     fi
-fi
 
-if [[ "$1" == "homebrew-cask" ]]; then
-    echo -- Making sure that Homebrew Cask is installed
-    if [[ ! -n $(brew list | grep brew-cask) ]]; then
-        echo "Homebrew Cask is not installed. Installing Homebrew Cask..."
-        brew install caskroom/cask/brew-cask
+    if [[ -e $symlink_path ]]; then
+      exists=" (exists already)"
     else
-        echo "-- Homebrew Cask is installed."
+      exists=""
     fi
+
+    if confirm "Link $symlink_path -> $actual$exists? [y/N]"; then
+      rm $symlink_path 2> /dev/null
+      ln -sf $actual $symlink_path
+    fi
+done
+
+if confirm "Create vim swapfiles/backup directories? [y/N]"; then
+  mkdir -p $HOME/.vim/swapfiles
+  mkdir -p $HOME/.vim/backup
 fi
 
-if [[ "$1" == "homebrew-packages" ]]; then
-    echo -- Updating Homebrew and Homebrew cask
-    brew update
-
-    echo -- Installing any missing Homebrew packages
-    local brew_packages=$(cat packages/brew)
-    local installed_packages=$(brew list)
-    for package in $brew_packages; do
-        [[ ! $(echo $installed_packages | grep $package) ]] && brew install $package
-    done
-
-    echo -- Installing any missing Homebrew Cask packages
-    local brew_packages=$(cat packages/brew-cask)
-    local installed_packages=$(brew cask list)
-    [[ $(brew tap | grep 'ksmithbaylor/casks') ]] || brew tap 'ksmithbaylor/homebrew-casks'
-    [[ $(brew tap | grep 'caskroom/fonts') ]] || brew tap 'caskroom/fonts'
-    for package in $brew_packages; do
-        [[ ! $(echo $installed_packages | grep $package) ]] && brew cask install $package
-    done
+if confirm "Symlink neovim config? [y/N]"; then
+  mkdir -p ~/.config
+  ln -sf ~/.vim ~/.config/nvim
+  ln -sf ~/.vimrc ~/.config/nvim/init.vim
 fi
 
-# Cleanup
-unset die
-unset setup_symlinks
+if confirm "Symlink personal binaries? [y/N]"; then
+  rm -f $HOME/bin
+  ln -sf $PWD/bin $HOME/bin
+fi
+
+unset confirm
+unset symlinks
+unset actual
+unset symlink_path
+unset exists
