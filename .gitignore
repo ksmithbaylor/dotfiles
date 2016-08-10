@@ -1,9 +1,3 @@
 .DS_Store
 *.swp
-vim/vim/bundle
-clojure/lein/repl-history
-clojure/lein/repl-port
-emacs/emacs.d/elpa
-emacs/emacs.d/auto-save-list
-emacs/emacs.d/autosave
-emacs/emacs.d/backup
+.vim/bundle

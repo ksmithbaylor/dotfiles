@@ -2,62 +2,76 @@
 
 set -e
 
-function confirm() {
-  # call with a prompt string or use a default
-  read -r -p "${1:-Are you sure? [y/N]} " response
-  case $response in
-    [yY][eE][sS]|[yY])
-      true
-      ;;
-    *)
-      false
-      ;;
-  esac
-}
+#function confirm() {
+#  # call with a prompt string or use a default
+#  read -r -p "${1:-Are you sure? [y/N]} " response
+#  case $response in
+#    [yY][eE][sS]|[yY])
+#      true
+#      ;;
+#    *)
+#      false
+#      ;;
+#  esac
+#}
 
-symlinks=$(find * -maxdepth 1 -mindepth 1 ! -name '*.swp' |
-                 grep -ve '^bin.*' |
-                 grep -ve '^packages.*')
+#symlinks=$(find * -maxdepth 1 -mindepth 1 ! -name '*.swp' |
+#                 grep -ve '^bin.*' |
+#                 grep -ve '^packages.*')
 
-for link in $symlinks; do
-    actual=$PWD/$link
+#for link in $symlinks; do
+#    actual=$PWD/$link
+#
+#    if [[ -f $link && $(head -n 1 $link | grep location) ]]; then
+#        symlink_path="$(head -n 1 $link | awk '{print $NF}' | sed "s|~|$HOME|")"
+#    else
+#        symlink_path="$HOME/.$(basename $link)"
+#    fi
+#
+#    if [[ -e $symlink_path ]]; then
+#      exists=" (exists already)"
+#    else
+#      exists=""
+#    fi
+#
+#    if confirm "Link $symlink_path -> $actual$exists? [y/N]"; then
+#      rm $symlink_path 2> /dev/null
+#      ln -sf $actual $symlink_path
+#    fi
+#done
 
-    if [[ -f $link && $(head -n 1 $link | grep location) ]]; then
-        symlink_path="$(head -n 1 $link | awk '{print $NF}' | sed "s|~|$HOME|")"
-    else
-        symlink_path="$HOME/.$(basename $link)"
-    fi
+dotfiles=(
+  bin
+  .scripts
+  .bash_profile
+  .bashrc
+  .zshrc
+  .tmux.conf
+  .vim
+  .vimrc
+  .gitconfig
+  .htoprc
+  .irssi
+)
 
-    if [[ -e $symlink_path ]]; then
-      exists=" (exists already)"
-    else
-      exists=""
-    fi
-
-    if confirm "Link $symlink_path -> $actual$exists? [y/N]"; then
-      rm $symlink_path 2> /dev/null
-      ln -sf $actual $symlink_path
-    fi
+for dotfile in ${dotfiles[@]}; do
+  ln -sf $PWD/$dotfile $HOME/$dotfile
 done
 
-if confirm "Create vim swapfiles/backup directories? [y/N]"; then
-  mkdir -p $HOME/.vim/swapfiles
-  mkdir -p $HOME/.vim/backup
-fi
+#ln -sf $PWD/bin $HOME/bin
+#ln -sf $PWD/git/gitconfig $HOME/.gitconfig
+#ln -sf $PWD/htop/htoprc $HOME/.htoprc
+#ln -sf $PWD/irc/irssi $HOME/.irssi
+#ln -sf $PWD/sh/scripts $HOME/.scripts
+#ln -sf $PWD/sh/bash_profile $HOME/.bash_profile
+#ln -sf $PWD/sh/bashrc $HOME/.bashrc
+#ln -sf $PWD/sh/zshrc $HOME/.zshrc
+#ln -sf $PWD/tmux/tmux.conf $HOME/.tmux.conf
+#ln -sf $PWD/vim/vim $HOME/.vim
+#ln -sf $PWD/vim/vimrc $HOME/.vimrc
 
-if confirm "Symlink neovim config? [y/N]"; then
-  mkdir -p ~/.config
-  ln -sf ~/.vim ~/.config/nvim
-  ln -sf ~/.vimrc ~/.config/nvim/init.vim
-fi
+mkdir -p $HOME/.vim/swapfiles
+mkdir -p $HOME/.vim/backup
 
-if confirm "Symlink personal binaries? [y/N]"; then
-  rm -f $HOME/bin
-  ln -sf $PWD/bin $HOME/bin
-fi
-
-unset confirm
-unset symlinks
-unset actual
-unset symlink_path
-unset exists
+mkdir -p $HOME/.config
+ln -sf $HOME/.vim $HOME/.config/nvim
