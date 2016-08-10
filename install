@@ -2,44 +2,6 @@
 
 set -e
 
-#function confirm() {
-#  # call with a prompt string or use a default
-#  read -r -p "${1:-Are you sure? [y/N]} " response
-#  case $response in
-#    [yY][eE][sS]|[yY])
-#      true
-#      ;;
-#    *)
-#      false
-#      ;;
-#  esac
-#}
-
-#symlinks=$(find * -maxdepth 1 -mindepth 1 ! -name '*.swp' |
-#                 grep -ve '^bin.*' |
-#                 grep -ve '^packages.*')
-
-#for link in $symlinks; do
-#    actual=$PWD/$link
-#
-#    if [[ -f $link && $(head -n 1 $link | grep location) ]]; then
-#        symlink_path="$(head -n 1 $link | awk '{print $NF}' | sed "s|~|$HOME|")"
-#    else
-#        symlink_path="$HOME/.$(basename $link)"
-#    fi
-#
-#    if [[ -e $symlink_path ]]; then
-#      exists=" (exists already)"
-#    else
-#      exists=""
-#    fi
-#
-#    if confirm "Link $symlink_path -> $actual$exists? [y/N]"; then
-#      rm $symlink_path 2> /dev/null
-#      ln -sf $actual $symlink_path
-#    fi
-#done
-
 dotfiles=(
   bin
   .scripts
@@ -54,26 +16,13 @@ dotfiles=(
   .irssi
 )
 
+# Symlink all dotfiles listed above to the right spot
 for dotfile in ${dotfiles[@]}; do
   rm -f $HOME/$dotfile
   ln -sf $PWD/$dotfile $HOME/$dotfile
 done
 
-#ln -sf $PWD/bin $HOME/bin
-#ln -sf $PWD/git/gitconfig $HOME/.gitconfig
-#ln -sf $PWD/htop/htoprc $HOME/.htoprc
-#ln -sf $PWD/irc/irssi $HOME/.irssi
-#ln -sf $PWD/sh/scripts $HOME/.scripts
-#ln -sf $PWD/sh/bash_profile $HOME/.bash_profile
-#ln -sf $PWD/sh/bashrc $HOME/.bashrc
-#ln -sf $PWD/sh/zshrc $HOME/.zshrc
-#ln -sf $PWD/tmux/tmux.conf $HOME/.tmux.conf
-#ln -sf $PWD/vim/vim $HOME/.vim
-#ln -sf $PWD/vim/vimrc $HOME/.vimrc
-
-mkdir -p $HOME/.vim/swapfiles
-mkdir -p $HOME/.vim/backup
-
+# Symlink NeoVim config in place
 mkdir -p $HOME/.config
 rm -f $HOME/.config/nvim
 ln -sf $HOME/.vim $HOME/.config/nvim
