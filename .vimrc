@@ -1,4 +1,3 @@
-"location ~/.vimrc
 set encoding=utf-8
 
 " Get rid of vi-era compatibility, we are better than that.
