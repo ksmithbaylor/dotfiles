@@ -55,6 +55,7 @@ dotfiles=(
 )
 
 for dotfile in ${dotfiles[@]}; do
+  rm -f $HOME/$dotfile
   ln -sf $PWD/$dotfile $HOME/$dotfile
 done
 
@@ -74,4 +75,5 @@ mkdir -p $HOME/.vim/swapfiles
 mkdir -p $HOME/.vim/backup
 
 mkdir -p $HOME/.config
+rm -f $HOME/.config/nvim
 ln -sf $HOME/.vim $HOME/.config/nvim
