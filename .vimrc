@@ -170,6 +170,7 @@ nnoremap <Leader>rl :VimuxRunLastCommand<CR>
 " Syntax highlighting and colors
 Plugin 'ksmithbaylor/tomorrow-theme', {'rtp': 'vim/'} " modified
 Plugin 'othree/html5.vim'
+  autocmd BufNewFile,BufRead *.ejs set filetype=html
 Plugin 'lilydjwg/colorizer'
 Plugin 'pangloss/vim-javascript'
 let g:javascript_ignore_javaScriptdoc = 1
