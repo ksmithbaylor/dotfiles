@@ -24,7 +24,9 @@ if command_exists jenv; then
     eval "$(jenv init - zsh)"
 fi
 
-export JAVA_HOME=$(/usr/libexec/java_home)
+if [ -f /usr/libexec/java_home ]; then
+  export JAVA_HOME=$(/usr/libexec/java_home)
+fi
 
 if command_exists pair; then
   eval "$(pair --setup)"
