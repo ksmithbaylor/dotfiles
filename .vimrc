@@ -253,6 +253,7 @@ set backspace=indent,eol,start    " Not sure what this does, but I trust him
 set laststatus=2                  " Put a statusline in every buffer
 set number                        " Display the absolute line number as well
 set colorcolumn=81                " Put line after 80 columns
+set cinkeys-=0#                   " Don't force # directives to column 0 (OpenMP)
 
 " Tame searching and moving
 set ignorecase
