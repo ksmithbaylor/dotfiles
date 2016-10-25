@@ -1,0 +1,1 @@
+:set prompt "\n\ESC[1;90m%s\n\ESC[1;34mλ\ESC[0;90m: \ESC[m"

@@ -13,6 +13,7 @@ dotfiles=(
   .vimrc
   .gitconfig
   .htoprc
+  .ghci
   .irssi
 )
 
