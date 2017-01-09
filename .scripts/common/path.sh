@@ -10,7 +10,9 @@ function prepend_path() {
 prepend_path true       $HOME/bin/j/bin
 prepend_path stack       /usr/local/stack
 prepend_path nodebrew   $HOME/.nodebrew/current/bin
-prepend_path yarn       $(yarn global bin)
+if command_exists yarn; then
+  export PATH=$(yarn global bin):$PATH
+fi
 prepend_path true       $HOME/.cargo/bin
 prepend_path true       $HOME/bin
 prepend_path brew       /usr/local/bin
