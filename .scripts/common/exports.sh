@@ -19,15 +19,6 @@ if command_exists nodenv; then
     eval "$(nodenv init - zsh)"
 fi
 
-if command_exists jenv; then
-    export JENV_ROOT=/usr/local/opt/jenv
-    eval "$(jenv init - zsh)"
-fi
-
-if [ -f /usr/libexec/java_home ]; then
-  export JAVA_HOME=$(/usr/libexec/java_home)
-fi
-
 if command_exists pair; then
   eval "$(pair --setup)"
 fi
