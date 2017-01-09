@@ -180,8 +180,10 @@ let g:jsx_ext_required = 0
 "Plugin 'kongo2002/fsharp-vim'
 "Plugin 'guersam/vim-j'
 Plugin 'zaiste/tmux.vim'
-Plugin 'lambdatoast/elm.vim'
-    au BufWritePost *.elm ElmMakeCurrentFile
+Plugin 'elmcast/elm-vim'
+    au BufWritePost *.elm ElmFormat
+    au BufEnter,BufWritePost *.elm ElmMake
+"Plugin 'lambdatoast/elm.vim'
 Plugin 'raichoo/purescript-vim'
 Plugin 'elixir-lang/vim-elixir'
 Plugin 'rust-lang/rust.vim'

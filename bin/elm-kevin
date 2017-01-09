@@ -1,0 +1,36 @@
+#!/usr/bin/env zsh
+
+cat << EOF > package.json
+{
+  "name": "$(basename $PWD)",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "reactor": "elm-reactor -a 0.0.0.0 -p 7072",
+    "refresh": "browser-sync start --proxy localhost:7072 --files 'src/**/*' --open local",
+    "init": "elm-test init",
+    "start": "npm-run-all --parallel reactor refresh",
+    "test": "elm-test"
+  },
+  "author": "Kevin Smith <ksmithbaylor@gmail.com>",
+  "license": "MIT"
+}
+EOF
+
+npm install --save elm elm-test browser-sync npm-run-all
+npm run init
+
+cat << EOF > src/Main.elm
+module Main exposing (..)
+
+import Html exposing (text)
+
+
+main =
+    text "hello world"
+EOF
+
+elm make --yes
+sed -i '' 's#"."#"./src"#' elm-package.json
+npm start
