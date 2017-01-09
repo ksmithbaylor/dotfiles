@@ -60,6 +60,7 @@ Plugin 'scrooloose/nerdcommenter'
 
 Plugin 'junegunn/fzf.vim'
   set rtp+=~/.fzf
+  set rtp+=/usr/local/opt/fzf
   let g:fzf_command_prefix = 'Fzf'
   let g:fzf_layout = { 'down': '~40%' }
   nnoremap <C-p> :FzfGitFiles<CR>
