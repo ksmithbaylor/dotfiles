@@ -27,7 +27,7 @@ Plugin 'gmarik/Vundle.vim'
 
 " Directory tree popover, use CTRL-E to toggle
 Plugin 'scrooloose/nerdtree'
-nmap <C-e> :NERDTreeToggle<CR>
+nmap <C-t> :NERDTreeToggle<CR>
 map <silent> <leader>nf :NERDTreeFind<CR>
 map <silent> <leader>nt :NERDTreeToggle<CR>
 let g:NERDTreeCaseSensitiveSort = 1
@@ -59,15 +59,17 @@ Plugin 'scrooloose/nerdcommenter'
       "\ }
 
 Plugin 'junegunn/fzf.vim'
-set rtp+=~/.fzf
-let g:fzf_command_prefix = 'Fzf'
-let g:fzf_layout = { 'down': '~40%' }
-nnoremap <C-p> :FzfGitFiles<CR>
-nnoremap <C-s> :FzfAg<CR>
-nnoremap <C-l> :FzfBuffers<CR>
+  set rtp+=~/.fzf
+  let g:fzf_command_prefix = 'Fzf'
+  let g:fzf_layout = { 'down': '~40%' }
+  nnoremap <C-p> :FzfGitFiles<CR>
+  nnoremap <C-s> :FzfAg<CR>
+  nnoremap <C-l> :FzfBuffers<CR>
 
-Plugin 'airblade/vim-gitgutter'
-let g:gitgutter_max_signs=10000
+Plugin 'tpope/vim-fugitive'
+
+"Plugin 'airblade/vim-gitgutter'
+"let g:gitgutter_max_signs=10000
 
 " Auto-close xml/html tags
 Plugin 'sukima/xmledit'
@@ -113,16 +115,21 @@ Plugin 'neovimhaskell/haskell-vim'
 
 " Clojure stuff
 "Plugin 'tpope/vim-leiningen'
-Plugin 'guns/vim-clojure-static'
-Plugin 'kien/rainbow_parentheses.vim'
-  autocmd BufEnter *.clj,*.cljs RainbowParenthesesToggle
-  autocmd Syntax *.clj,*.cljs RainbowParenthesesLoadRound
-  autocmd Syntax *.clj,*.cljs RainbowParenthesesLoadSquare
-  autocmd Syntax *.clj,*.cljs RainbowParenthesesLoadBraces
+"Plugin 'guns/vim-clojure-static'
+"Plugin 'kien/rainbow_parentheses.vim'
+  "autocmd BufEnter *.clj,*.cljs RainbowParenthesesToggle
+  "autocmd Syntax *.clj,*.cljs RainbowParenthesesLoadRound
+  "autocmd Syntax *.clj,*.cljs RainbowParenthesesLoadSquare
+  "autocmd Syntax *.clj,*.cljs RainbowParenthesesLoadBraces
 Plugin 'tpope/vim-fireplace'
+if has("nvim")
+  Plugin 'neovim/node-host'
+endif
+Plugin 'snoe/nvim-parinfer.js'
+  "let g:parinfer_preview_cursor_scope = 1
 Plugin 'kovisoft/slimv'
   let g:slimv_swank_cmd = '! xterm -e clisp -i ~/bin/start-swank.lisp &'
-Plugin 'vim-scripts/paredit.vim'
+"Plugin 'vim-scripts/paredit.vim'
 " Plugin 'jpalardy/vim-slime'
 "     let g:slime_target = 'tmux'
 "     let g:slime_paste_file = tempname()
@@ -371,6 +378,9 @@ nnoremap <leader>x :autocmd! BufWritePost *<CR>
 
 vmap <leader>b S{i(<C-w><C-c>l%
 nnoremap <leader>m 0d$i////////////////////////////////////////////////////////////////////////////////<C-c>0
+
+" two-column scrollbinding
+noremap <silent> <Leader>vs :<C-u>let @z=&so<CR>:set so=0 noscb<CR>:bo vs<CR>Ljzt:setl scb<CR><C-w>p:setl scb<CR>:let &so=@z<CR>
 
 " NEOVIM!
 if has("nvim")
