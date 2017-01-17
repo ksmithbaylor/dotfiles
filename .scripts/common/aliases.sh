@@ -69,11 +69,6 @@ if command_exists tree; then
     alias t4="t -L 4"
 fi
 
-if command_exists atom-beta; then
-    alias atom="atom-beta"
-    alias apm="apm-beta"
-fi
-
 command_exists docker-compose && alias dcmp="docker-compose"
 command_exists mvn && alias maven="mvn" # I always type this wrong
 
