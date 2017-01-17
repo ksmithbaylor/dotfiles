@@ -306,3 +306,16 @@ if command_exists wrk; then
     fi
   }
 fi
+
+if command_exists dayone; then
+  function journal() {
+    local file=/tmp/new-journal-entry
+    rm -rf $file
+    vim $file
+    if [ -f $file ]; then
+      cat $file | dayone new
+    else
+      echo "File not saved, journal entry not created"
+    fi
+  }
+fi
