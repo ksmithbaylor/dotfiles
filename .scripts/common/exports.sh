@@ -11,12 +11,12 @@ export DOCKER_TLS_VERIFY=1
 
 if command_exists rbenv; then
     export RBENV_ROOT=/usr/local/var/rbenv
-    eval "$(rbenv init - zsh)"
+    eval "$(rbenv init -)"
 fi
 
 if command_exists nodenv; then
     export NODENV_ROOT=/usr/local/var/nodenv
-    eval "$(nodenv init - zsh)"
+    eval "$(nodenv init -)"
 fi
 
 if command_exists pair; then
@@ -25,4 +25,8 @@ fi
 
 if command_exists opam; then
   eval $(opam config env)
+fi
+
+if [ -f /usr/libexec/java_home ]; then
+  export JAVA_HOME=$(/usr/libexec/java_home)
 fi
