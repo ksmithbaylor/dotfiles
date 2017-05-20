@@ -8,7 +8,10 @@ function prepend_path() {
 
 # Least important first
 prepend_path true       $HOME/bin/j/bin
-prepend_path stack       /usr/local/stack
+prepend_path cabal      $HOME/.cabal/bin
+prepend_path cabal      $HOME/Library/Haskell/bin
+prepend_path stack      /usr/local/stack
+prepend_path stack      $HOME/.local/bin
 prepend_path nodebrew   $HOME/.nodebrew/current/bin
 if command_exists yarn; then
   export PATH=$(yarn global bin):$PATH
