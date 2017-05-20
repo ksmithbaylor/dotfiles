@@ -102,10 +102,6 @@ function try {
     mdcd "$HOME/main/try/$1"
 }
 
-function ove {
-    ssh "tworker@$1.onyx.ove.com"
-}
-
 function _tmux_new_window {
     tmux new-window -n "$1"
     tmux select-window -t "$1"
@@ -125,11 +121,6 @@ if command_exists tmuxinator; then
   alias gitmonitor="tmuxinator start gitmonitor"
 fi
 
-function ip {
-    echo "Public: $(dig +short myip.opendns.com @resolver1.opendns.com)"
-    echo "Private: $(ifconfig | grep inet | grep -v inet6 | grep -v '127.0.0.1' | awk '{print $2}')"
-}
-
 function printall {
     for file in "$@"; do
         vim "+colorscheme newsprint" -c "hardcopy > $file.ps" -c "quit" "$file"
@@ -141,10 +132,6 @@ function printall {
 function ip() {
     echo "Public: $(dig +short myip.opendns.com @resolver1.opendns.com)"
     echo "Private: $(ifconfig | grep inet | grep -v inet6 | grep -v '127.0.0.1' | awk '{print $2}')"
-}
-
-function timecard {
-    vim -c '/\s[123456789]\s' $HOME/main/manheim/timecard
 }
 
 function gh {
@@ -272,45 +259,4 @@ else
     function marks {
         ls -l "$MARKPATH" | sed 's/  / /g' | cut -d' ' -f9- | sed 's/ -/\t-/g' && echo
     }
-fi
-
-if command_exists wrk; then
-  function tl() {
-    if [ $# = 0 ]; then
-      wrk
-    elif [ $1 = "inbox" ]; then
-      wrk cards in l:569d3eb7c9dd3d76e8333726
-    elif [ $1 = "today" ]; then
-      wrk cards in l:569d5706061fcefb01394324
-    elif [ $1 = "doing" ]; then
-      wrk cards in l:569e5ec371e333340979cd18
-    elif [ $1 = "add" ]; then
-      shift
-      wrk create card in 569d3eb7c9dd3d76e8333726 "$(echo $@)"
-    elif [ $1 = "do" ]; then
-      if [ $2 = "today" ]; then
-        wrk assign $3
-        wrk move $3 to 569d5706061fcefb01394324
-      else
-        wrk assign $2
-        wrk move $2 to 569e5ec371e333340979cd18
-      fi
-    elif [ $1 = "done" ]; then
-      wrk unassign $2
-      wrk move $2 to 568a90a3b6c9fef11a77aaf4
-    fi
-  }
-fi
-
-if command_exists dayone; then
-  function journal() {
-    local file=/tmp/new-journal-entry
-    rm -rf $file
-    vim $file
-    if [ -f $file ]; then
-      cat $file | dayone new
-    else
-      echo "File not saved, journal entry not created"
-    fi
-  }
 fi
