@@ -53,6 +53,7 @@ function _stop_timer {
 }
 
 function _prompt {
+    echo -ne "\e]1;${USER}@${HOSTNAME%%.*}:${PWD/#$HOME/~}\a"
     local pwd_length_limit=20
     local directory=$(pwd | sed -e "s|$HOME|~|" |
                 perl -pe "s|(~?/[^/]+/).{$pwd_length_limit,}(/[^/]+/?\$)|\$1...\$2|")
