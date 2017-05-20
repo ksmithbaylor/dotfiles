@@ -1,64 +1,35 @@
-set encoding=utf-8
+" ------------------------------------------------------------------------------
+" === PLUGINS ==================================================================
 
-" Get rid of vi-era compatibility, we are better than that.
-set nocompatible
-
-" Backup and swap files in a central location
-silent !mkdir -p $HOME/.vim/swapfiles > /dev/null 2>&1
-silent !mkdir -p $HOME/.vim/backup > /dev/null 2>&1
-set directory=$HOME/.vim/swapfiles//
-set backupdir=$HOME/.vim/backup//
-
-" Initialize Vundle and load plugins (plugin manager)
-" If vundle is not installed, do it first
-let should_plugin_install=0
-if !filereadable($HOME."/.vim/bundle/Vundle.vim/README.md")
-  silent !mkdir -p $HOME/.vim/bundle
-  silent !git clone https://github.com/gmarik/Vundle.vim $HOME/.vim/bundle/Vundle.vim > /dev/null 2>&1
-  let should_plugin_install=1
+" Check to see if vim-plug has already run. If not, keep a flag for later
+let should_plug_install=0
+if !isdirectory($HOME."/.vim/plugged")
+  let should_plug_install=1
 endif
 
-filetype off " Needed to initialize Vundle
-set rtp+=~/.vim/bundle/Vundle.vim
-call vundle#begin()
-Plugin 'gmarik/Vundle.vim'
+" Initialize plugins
+call plug#begin('~/.vim/plugged')
 
-" ----------------------------- BEGIN PLUGIN LIST ------------------------------
-
-" Directory tree popover, use CTRL-E to toggle
-Plugin 'scrooloose/nerdtree'
-nmap <C-t> :NERDTreeToggle<CR>
-map <silent> <leader>nf :NERDTreeFind<CR>
-map <silent> <leader>nt :NERDTreeToggle<CR>
-let g:NERDTreeCaseSensitiveSort = 1
-let g:NERDTreeSortOrder = ['__tests__', '^index\.js', '^shared', '^[A-Z].*\.js', '\/$', '^\.']
-let g:NERDTreeShowHidden = 1
-let g:NERDTreeMinimalUI = 1
-let g:NERDTreeDirArrows = 1
-let g:NERDTreeCascadeOpenSingleChildDir = 1
-let g:NERDTreeAutoDeleteBuffer = 1
-"let g:NERDTreeQuitOnOpen = 1
-let g:NERDTreeSortHiddenFirst = 1
-
-" Convenience menu for switching buffers
-Plugin 'jlanzarotta/bufexplorer'
-
-" Commenter, (leader)c<space> to (un)comment
-Plugin 'scrooloose/nerdcommenter'
-
-" Fuzzy-finds a file in the current directory and subdirectories
-"Plugin 'kien/ctrlp.vim'
-"set wildignore+=*/node_modules/**
-"let g:ctrlp_show_hidden=1
-"let g:ctrlp_match_window = 'bottom,order:btt,min:1,max:50'
-"let g:ctrlp_user_command = {
-      "\ 'types': {
-      "\ 1: ['.git', 'cd %s && git ls-files . --cached --exclude-standard --others']
-      "\ },
-      "\ 'fallback': 'find %s -type f'
-      "\ }
-
-Plugin 'junegunn/fzf.vim'
+" General plugins, applicable for any file
+Plug 'scrooloose/nerdtree', { 'on': 'NERDTreeToggle' }
+  nnoremap <silent> <C-t> :NERDTreeToggle<CR>
+  nnoremap <silent> <leader>nf :NERDTreeFind<CR>
+  nnoremap <silent> <leader>nt :NERDTreeToggle<CR>
+  let g:NERDTreeCaseSensitiveSort = 1
+  let g:NERDTreeSortOrder = ['__tests__', '^index\.js', '^shared', '^[A-Z].*\.js', '\/$', '^\.']
+  let g:NERDTreeShowHidden = 1
+  let g:NERDTreeMinimalUI = 1
+  let g:NERDTreeDirArrows = 1
+  let g:NERDTreeCascadeOpenSingleChildDir = 1
+  let g:NERDTreeAutoDeleteBuffer = 1
+  let g:NERDTreeSortHiddenFirst = 1
+Plug 'Xuyuanp/nerdtree-git-plugin', { 'on': 'NERDTreeToggle' }
+Plug 'scrooloose/nerdcommenter'
+Plug 'jlanzarotta/bufexplorer', { 'on': 'BufExplorer' }
+Plug 'fholgado/minibufexpl.vim', { 'on': 'MBEOpen!' }
+  nnoremap <silent><leader>b :MBEOpen!<CR>:MBEFocus<CR>
+Plug 'junegunn/fzf', { 'dir': '~/.fzf', 'do': './install --all' }
+Plug 'junegunn/fzf.vim'
   set rtp+=~/.fzf
   set rtp+=/usr/local/opt/fzf
   let g:fzf_command_prefix = 'Fzf'
@@ -66,169 +37,70 @@ Plugin 'junegunn/fzf.vim'
   nnoremap <C-p> :FzfGitFiles<CR>
   nnoremap <C-s> :FzfAg<CR>
   nnoremap <C-l> :FzfBuffers<CR>
+Plug 'tpope/vim-fugitive'
+Plug 'sukima/xmledit'
+  let g:xmledit_enable_html=1
+  function HtmlAttribCallback( xml_tag )
+  endfunction
+Plug 'itchyny/lightline.vim'
+Plug 'jiangmiao/auto-pairs'
+  let g:AutoPairsShortcutFastWrap = '<C-W>'
+Plug 'tpope/vim-unimpaired'
+Plug 'tpope/vim-surround'
+Plug 'tpope/vim-repeat'
+Plug 'tpope/vim-endwise'
+Plug 'godlygeek/tabular'
+Plug 'benmills/vimux'
+  nnoremap <leader>rn :VimuxPromptCommand<CR>
+  nnoremap <leader>rl :VimuxRunLastCommand<CR>
+Plug 'mileszs/ack.vim'
+  let g:ackprg = 'ag --nogroup --nocolor --column'
+Plug 'ksmithbaylor/tomorrow-theme', { 'rtp': 'vim' }
+Plug 'lilydjwg/colorizer'
 
-Plugin 'tpope/vim-fugitive'
-
-"Plugin 'airblade/vim-gitgutter'
-"let g:gitgutter_max_signs=10000
-
-" Auto-close xml/html tags
-Plugin 'sukima/xmledit'
-let g:xmledit_enable_html=1
-function HtmlAttribCallback( xml_tag )
-endfunction
-
-" Awesome minimalistic statusline
-Plugin 'itchyny/lightline.vim'
-nnoremap <Leader>] :tabn<CR>
-nnoremap <Leader>[ :tabp<CR>
-nnoremap <Leader><CR> :tabnew<CR>
-
-" Auto-pair brackets and stuff
-Plugin 'jiangmiao/auto-pairs'
-let g:AutoPairsShortcutFastWrap = '<C-W>'
-
-" Pairs of mappings
-Plugin 'tpope/vim-unimpaired'
-" Enables line bubbling using unimpaired shortcuts
-nmap <C-k> [e
-nmap <C-j> ]e
-vmap <C-k> [egv
-vmap <C-j> ]egv
-inoremap <C-j> <Esc>:m .+1<CR>==gi
-inoremap <C-k> <Esc>:m .-2<CR>==gi
-
-" Aligns text on certain characters
-Plugin 'godlygeek/tabular'
-nmap <leader>l= :Tabularize /=<CR>
-vmap <leader>l= :Tabularize /=<CR>
-nmap <leader>l: :Tabularize /:\zs<CR>
-vmap <leader>l: :Tabularize /:\zs<CR>
-
-" Change surroundings of a word
-Plugin 'tpope/vim-surround'
-
-" Enable some plugins like surround.vim to be repeated
-Plugin 'tpope/vim-repeat'
-
-" Haskell highlighting
-Plugin 'neovimhaskell/haskell-vim'
-
-" Clojure stuff
-"Plugin 'tpope/vim-leiningen'
-"Plugin 'guns/vim-clojure-static'
-"Plugin 'kien/rainbow_parentheses.vim'
-  "autocmd BufEnter *.clj,*.cljs RainbowParenthesesToggle
-  "autocmd Syntax *.clj,*.cljs RainbowParenthesesLoadRound
-  "autocmd Syntax *.clj,*.cljs RainbowParenthesesLoadSquare
-  "autocmd Syntax *.clj,*.cljs RainbowParenthesesLoadBraces
-Plugin 'tpope/vim-fireplace'
-if has("nvim")
-  Plugin 'neovim/node-host'
-endif
-Plugin 'snoe/nvim-parinfer.js'
-  "let g:parinfer_preview_cursor_scope = 1
-Plugin 'kovisoft/slimv'
-  let g:slimv_swank_cmd = '! xterm -e clisp -i ~/bin/start-swank.lisp &'
-"Plugin 'vim-scripts/paredit.vim'
-" Plugin 'jpalardy/vim-slime'
-"     let g:slime_target = 'tmux'
-"     let g:slime_paste_file = tempname()
-"
-"     nmap ,e va(<C-c><C-c>
-"     nmap ,d <C-c><C-c>
-"
-"     autocmd BufEnter *.clj RainbowParenthesesToggle
-"     autocmd BufLeave *.clj RainbowParenthesesToggle
-"     autocmd Syntax * RainbowParenthesesLoadRound
-"     autocmd Syntax * RainbowParenthesesLoadSquare
-"     autocmd Syntax * RainbowParenthesesLoadBraces
-"
-"     let g:rbpt_colorpairs = [
-"                 \ ['magenta',     'purple1'],
-"                 \ ['cyan',        'magenta1'],
-"                 \ ['green',       'slateblue1'],
-"                 \ ['yellow',      'cyan1'],
-"                 \ ['red',         'springgreen1'],
-"                 \ ['magenta',     'green1'],
-"                 \ ['cyan',        'greenyellow'],
-"                 \ ['green',       'yellow1'],
-"                 \ ['yellow',      'orange1'],
-"                 \ ]
-"     let g:rbpt_max = 9
-
-" Ruby stuff
-Plugin 'vim-ruby/vim-ruby'
-Plugin 'tpope/vim-endwise'
-"Plugin 'pgr0ss/vimux-ruby-test'
-"map <leader>rb :RunAllRubyTests<CR>
-"map <leader>rf :RunRubyFocusedTest<CR>
-
-" Coffeescript support
-"Plugin 'kchmck/vim-coffee-script'
-
-" Handlebars support
-"Plugin 'mustache/vim-mustache-handlebars'
-"let g:mustache_abbreviations = 1
-
-" awesome tmux integration
-Plugin 'benmills/vimux'
-nnoremap <Leader>rn :VimuxPromptCommand<CR>
-nnoremap <Leader>rl :VimuxRunLastCommand<CR>
-
-" Syntax highlighting and colors
-Plugin 'ksmithbaylor/tomorrow-theme', {'rtp': 'vim/'} " modified
-Plugin 'othree/html5.vim'
+" Language-specific plugins
+Plug 'othree/html5.vim'
   autocmd BufNewFile,BufRead *.ejs set filetype=html
-Plugin 'lilydjwg/colorizer'
-Plugin 'pangloss/vim-javascript'
-let g:javascript_ignore_javaScriptdoc = 1
-Plugin 'mxw/vim-jsx'
-let g:jsx_ext_required = 0
-"Plugin 'kongo2002/fsharp-vim'
-"Plugin 'guersam/vim-j'
-Plugin 'zaiste/tmux.vim'
-Plugin 'elmcast/elm-vim'
-    au BufWritePost *.elm ElmFormat
-    au BufEnter,BufWritePost *.elm ElmMake
-"Plugin 'lambdatoast/elm.vim'
-Plugin 'raichoo/purescript-vim'
-Plugin 'elixir-lang/vim-elixir'
-Plugin 'rust-lang/rust.vim'
-Plugin 'mustache/vim-mustache-handlebars'
-Plugin 'digitaltoad/vim-pug'
-
-" Searching
-Plugin 'mileszs/ack.vim'
-let g:ackprg = 'ag --nogroup --nocolor --column'
+Plug 'neovimhaskell/haskell-vim', { 'for': 'haskell' }
+Plug 'vim-ruby/vim-ruby', { 'for': 'ruby' }
+Plug 'pangloss/vim-javascript'
+  let g:javascript_ignore_javaScriptdoc = 1
+Plug 'mxw/vim-jsx'
+  let g:jsx_ext_required = 0
+Plug 'zaiste/tmux.vim'
+Plug 'elmcast/elm-vim'
+  au BufWritePost *.elm ElmFormat
+  au BufEnter,BufWritePost *.elm ElmMake
+Plug 'raichoo/purescript-vim'
+Plug 'elixir-lang/vim-elixir'
+Plug 'rust-lang/rust.vim'
+Plug 'mustache/vim-mustache-handlebars'
+Plug 'digitaltoad/vim-pug'
 
 " Linting
-Plugin 'benekastah/neomake'
-let g:neomake_javascript_enabled_makers = ['eslint']
-" load local eslint in the project root
-" modified from https://github.com/mtscout6/syntastic-local-eslint.vim
-let s:eslint_path = system('PATH=$(npm bin):$PATH && which eslint')
-let g:neomake_javascript_eslint_exe = substitute(s:eslint_path, '^\n*\s*\(.\{-}\)\n*\s*$', '\1', '')
-"let g:neomake_open_list = 2
-nnoremap <leader>l :Neomake<CR>
-autocmd! BufWritePost,BufEnter *.js Neomake
+Plug 'benekastah/neomake'
+  let g:neomake_javascript_enabled_makers = ['eslint']
+  " load local eslint in the project root
+  " modified from https://github.com/mtscout6/syntastic-local-eslint.vim
+  let s:eslint_path = system('PATH=$(npm bin):$PATH && which eslint')
+  let g:neomake_javascript_eslint_exe = substitute(s:eslint_path, '^\n*\s*\(.\{-}\)\n*\s*$', '\1', '')
+  "let g:neomake_open_list = 2
+  nnoremap <leader>l :Neomake<CR>
+  autocmd! BufWritePost,BufEnter *.js Neomake
 
-" ------------------------------ END PLUGIN LIST -------------------------------
-
-" Finish initializing Vundle plugins
-call vundle#end()
-if should_plugin_install == 1
-  :silent! PluginInstall
+" All plugins have been declared. If needed, install them and quit
+call plug#end()
+if should_plug_install == 1
+  :echo "Installing plugins..."
+  :silent! PlugInstall
+  :echo "Done! Please re-launch.\n"
   :qa
 endif
-filetype plugin indent on
 
 
+" ------------------------------------------------------------------------------
+" === GENERAL ==================================================================
 
-" General Options
-""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " Configure syntax highlighting
 syntax enable
 colorscheme Tomorrow-Night-Bright
@@ -237,21 +109,17 @@ colorscheme Tomorrow-Night-Bright
 highlight LineNr      ctermbg=235
 highlight LineNr      ctermfg=241
 
-" Necessary for tmux support
-set t_Co=256
-set t_ut=
-
-" Default tab settings, may be overridden in syntax-specific files
-set tabstop=2      " Width of a tab character
-set shiftwidth=2   "
-set softtabstop=2  " Number of spaces per tabstop
-set expandtab      " Uses spaces in place of tab characters
+" Put backup and swap files in a central location
+silent !mkdir -p $HOME/.vim/swapfiles > /dev/null 2>&1
+silent !mkdir -p $HOME/.vim/backup > /dev/null 2>&1
+set directory=$HOME/.vim/swapfiles//
+set backupdir=$HOME/.vim/backup//
 
 " General options to make things better
+set nocompatible                  " Don't use old vi-era compatibility settings
 set encoding=utf-8                " Default encoding is UTF-8
-set scrolloff=3                   " Don't let the cursor get to the edge
+set scrolloff=1                   " Don't let the cursor get to the edge
 set autoindent                    " Start new lines at the same indent level
-set showmode                      " Shows the current mode at bottom
 set showcmd                       " Shows extra info about the current command
 set hidden                        " Hides buffers when they are abandoned
 set wildmenu                      " Tab-completion of menu options
@@ -264,34 +132,22 @@ set laststatus=2                  " Put a statusline in every buffer
 set number                        " Display the absolute line number as well
 set colorcolumn=81                " Put line after 80 columns
 set cinkeys-=0#                   " Don't force # directives to column 0 (OpenMP)
-
-" Tame searching and moving
+set wrap
+set textwidth=80
+set formatoptions=qrn1
 set ignorecase
 set smartcase
 set gdefault
 set incsearch
+set inccommand=split
 set showmatch
 set hlsearch
-nnoremap <leader><space> :noh<cr>
-nnoremap <tab> %
-vnoremap <tab> %
-
-" Make Vim handle long lines correctly
-set wrap
-set textwidth=80
-set formatoptions=qrn1
-nnoremap j gj
-nnoremap k gk
-nnoremap <Down> gj
-nnoremap <Up> gk
-
-" Show invisible characters
-set list
+set tabstop=2      " Width of a tab character
+set shiftwidth=2   "
+set softtabstop=2  " Number of spaces per tabstop
+set expandtab      " Uses spaces in place of tab characters
+set list               " invisible characters
 set listchars=tab:▸\
-
-" Re-highlight lines in visual mode after indent
-:vnoremap < <gv
-:vnoremap > >gv
 
 " Makes Vim use the same zshrc so aliases are available in shell commands
 set shell=/bin/bash\ --rcfile\ ~/.bashrc\ -i
@@ -302,7 +158,14 @@ set ssop=blank,buffers,curdir,help,tabpages
 " Enable mouse movements
 set mouse=nicr
 
-" Set clipboard pasting to automatically work
+if has("nvim")
+  set shell=/usr/local/bin/zsh
+  tnoremap <Esc> <C-\><C-n>
+endif
+
+" Tmux-specific settings for colors and pasting
+set t_Co=256
+set t_ut=
 function! WrapForTmux(s)
   if !exists('$TMUX')
     return a:s
@@ -320,21 +183,37 @@ function! XTermPasteBegin()
 endfunction
 inoremap <special> <expr> <Esc>[200~ XTermPasteBegin()
 
-" Highlight trailing whitespace
-autocmd InsertEnter * match ExtraWhitespace /\s\+\%#\@<!$/
-autocmd BufRead,InsertLeave * match ExtraWhitespace /\s\+$/
-" Set up highlight group & retain through colorscheme changes
-highlight ExtraWhitespace ctermbg=red guibg=red
-autocmd ColorScheme * highlight ExtraWhitespace ctermbg=red guibg=red
-map <silent> <LocalLeader>ws :highlight clear ExtraWhitespace<CR>
 
-" Automatically strip trailing blank lines on all files
-function! TrimEndLines()
-  let save_cursor = getpos(".")
-  :silent! %s#\($\n\s*\)\+\%$##
-  call setpos('.', save_cursor)
-endfunction
-au BufWritePre * call TrimEndLines()
+" ------------------------------------------------------------------------------
+" === MAPPINGS =================================================================
+
+" Clear the current search
+nnoremap <leader><space> :noh<cr>
+
+" Make Vim handle long lines correctly
+nnoremap j gj
+nnoremap k gk
+nnoremap <Down> gj
+nnoremap <Up> gk
+
+" Enable quicker creation and navigation of tabs
+nnoremap <leader>] :tabn<CR>
+nnoremap <leader>[ :tabp<CR>
+nnoremap <leader><CR> :tabnew<CR>
+nnoremap <leader>{ :tabm -1<CR>
+nnoremap <leader>} :tabm +1<CR>
+
+" Enable 'line bubbling' (requires vim-unimpaired)
+nmap <C-k> [e
+nmap <C-j> ]e
+vmap <C-k> [egv
+vmap <C-j> ]egv
+inoremap <C-j> <Esc>:m .+1<CR>==gi
+inoremap <C-k> <Esc>:m .-2<CR>==gi
+
+" Re-highlight lines in visual mode after indent
+vnoremap < <gv
+vnoremap > >gv
 
 " A wrapper function to restore the cursor position, window position,
 " and last search after running a command.
@@ -356,40 +235,44 @@ function! Preserve(command)
   call setpos('.', save_cursor)
 endfunction
 
-" highlight all of the word under the cursor
+" Highlight all of the word under the cursor
 nnoremap * :call Preserve('call feedkeys("*N", "n")')<CR>
-" re-indent the whole file
+
+" Re-indent the whole file
 nnoremap <leader>i :call Preserve('normal gg=G')<CR>
-" clear trailing whitespace in the whole file
+
+" Clear trailing whitespace in the whole file
 nnoremap <silent> <leader>ww :%s/\s\+$//<CR>:let @/=''<CR><C-o>
 
-" splits the window vertically or horizontally and switches to the new one
+" Splits the window vertically or horizontally and switches to the new one
 nnoremap <leader>s <C-w>v<C-w>l
 nnoremap <leader>h <C-w>s<C-w>j
 
-" Move tab left and right
-nnoremap <leader>{ :tabm -1<CR>
-nnoremap <leader>} :tabm +1<CR>
-
 " Search by visual selection
-vnorem * y/<C-r>"<CR>N
+vnoremap * y/<C-r>"<CR>N
 
 nnoremap <leader>a :autocmd BufWritePost * :VimuxRunLastCommand<CR>
 nnoremap <leader>x :autocmd! BufWritePost *<CR>
 
-vmap <leader>b S{i(<C-w><C-c>l%
-nnoremap <leader>m 0d$i////////////////////////////////////////////////////////////////////////////////<C-c>0
+" Two-column scrollbinding
+nnoremap <silent> <leader>vs :<C-u>let @z=&so<CR>:set so=0 noscb<CR>:bo vs<CR>Ljzt:setl scb<CR><C-w>p:setl scb<CR>:let &so=@z<CR>
 
-" two-column scrollbinding
-noremap <silent> <Leader>vs :<C-u>let @z=&so<CR>:set so=0 noscb<CR>:bo vs<CR>Ljzt:setl scb<CR><C-w>p:setl scb<CR>:let &so=@z<CR>
 
-" NEOVIM!
-if has("nvim")
-  set shell=/usr/local/bin/zsh
-  tnoremap <Esc> <C-\><C-n>
-endif
+" ------------------------------------------------------------------------------
+" === MORE COMPLEX FEATURES ====================================================
 
-" Get rid of the delay after ESC for mappings and shorten it for key codes
-"set timeoutlen=1000 ttimeoutlen=10
-"autocmd InsertEnter * set timeoutlen=0
-"autocmd InsertLeave * set timeoutlen=1000
+" Highlight trailing whitespace
+autocmd InsertEnter * match ExtraWhitespace /\s\+\%#\@<!$/
+autocmd BufRead,InsertLeave * match ExtraWhitespace /\s\+$/
+" Set up highlight group & retain through colorscheme changes
+highlight ExtraWhitespace ctermbg=red guibg=red
+autocmd ColorScheme * highlight ExtraWhitespace ctermbg=red guibg=red
+map <silent> <LocalLeader>ws :highlight clear ExtraWhitespace<CR>
+
+" Automatically strip trailing blank lines on all files
+function! TrimEndLines()
+  let save_cursor = getpos(".")
+  :silent! %s#\($\n\s*\)\+\%$##
+  call setpos('.', save_cursor)
+endfunction
+au BufWritePre * call TrimEndLines()

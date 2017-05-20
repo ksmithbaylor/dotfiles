@@ -4,3 +4,4 @@
 .vim/swapfiles
 .vim/.netrwhist
 *.swp
+.vim/plugged
