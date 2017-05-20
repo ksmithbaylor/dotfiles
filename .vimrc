@@ -1,8 +1,15 @@
 " ------------------------------------------------------------------------------
 " === PLUGINS ==================================================================
 
-" Check to see if vim-plug has already run. If not, keep a flag for later
 let should_plug_install=0
+
+if empty(glob('~/.vim/autoload/plug.vim'))
+  echo "Downloading vim-plug..."
+  silent !curl -fLo ~/.vim/autoload/plug.vim --create-dirs
+    \ https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim
+  let should_plug_install = 1
+endif
+
 if !isdirectory($HOME."/.vim/plugged")
   let should_plug_install=1
 endif
@@ -94,6 +101,7 @@ Plug 'sbdchd/neoformat'
 
 " All plugins have been declared. If needed, install them and quit
 call plug#end()
+
 if should_plug_install == 1
   :echo "Installing plugins..."
   :silent! PlugInstall
