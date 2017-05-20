@@ -88,6 +88,10 @@ Plug 'benekastah/neomake'
   nnoremap <leader>l :Neomake<CR>
   autocmd! BufWritePost,BufEnter *.js Neomake
 
+" Formatting
+Plug 'sbdchd/neoformat'
+  autocmd BufWritePre *.js Neoformat
+
 " All plugins have been declared. If needed, install them and quit
 call plug#end()
 if should_plug_install == 1
