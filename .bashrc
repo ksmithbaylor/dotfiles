@@ -1,3 +1,5 @@
+stty icrnl
+
 source ~/.scripts/common/util.sh
 source ~/.scripts/common/path.sh
 source ~/.scripts/common/exports.sh
