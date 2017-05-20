@@ -3,18 +3,18 @@
 set -e
 
 dotfiles=(
-  bin
+  .irssi
   .scripts
+  .vim
+  bin
   .bash_profile
   .bashrc
-  .zshrc
-  .tmux.conf
-  .vim
-  .vimrc
+  .ghci
   .gitconfig
   .htoprc
-  .ghci
-  .irssi
+  .tmux.conf
+  .vimrc
+  .zshrc
 )
 
 # Symlink all dotfiles listed above to the right spot
