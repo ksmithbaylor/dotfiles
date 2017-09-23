@@ -99,7 +99,9 @@ Plug 'benekastah/neomake'
 
 " Formatting
 Plug 'sbdchd/neoformat'
-  autocmd BufWritePre *.js Neoformat
+  "autocmd BufWritePre *.js Neoformat
+  nnoremap <leader>neo :autocmd BufWritePre * :Neoformat<CR>
+  nnoremap <leader>noneo :autocmd! BufWritePre *<CR>
 
 " All plugins have been declared. If needed, install them and quit
 call plug#end()
