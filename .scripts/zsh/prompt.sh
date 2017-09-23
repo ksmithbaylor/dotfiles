@@ -3,6 +3,7 @@ source $HOME/.scripts/zsh/git_prompt_string.sh
 autoload colors && colors
 for COLOR in Red Green Yellow Blue Magenta Cyan Black White Orange; do
     eval _$COLOR='%{$fg_no_bold[${(L)COLOR}]%}'
+    eval _Bold_$COLOR='%{$fg_bold[${(L)COLOR}]%}'
 done
 eval _Reset='%{$reset_color%}'
 
@@ -57,22 +58,27 @@ function _prompt {
     local pwd_length_limit=20
     local directory=$(pwd | sed -e "s|$HOME|~|" |
                 perl -pe "s|(~?/[^/]+/).{$pwd_length_limit,}(/[^/]+/?\$)|\$1...\$2|")
+    local gitstatus=$(git_prompt_string)
 
     [ $_previous -eq 0 ] &&
-        local status_color=${_Green} previous_status='%{$fg_bold[black]%}\$' ||
+        local status_color=${_Green} previous_status="" ||
         local status_color=${_Red} previous_status="[$_previous] 😭  "
 
-    PROMPT=''
-    PROMPT+="${_Yellow}["
-    PROMPT+="${_Yellow}%* "
-    PROMPT+="${_Yellow}/ "
-    PROMPT+="${_Cyan}$_pretty_duration"
-    PROMPT+="${_Yellow}] "
-    PROMPT+="${status_color}$directory "
-    PROMPT+="${status_color}$previous_status "
+    PROMPT=$'${_Blue}╭$(printf "%$(($(tput cols) - 1))s" | tr " " "─")\n'
+    PROMPT+="${_Blue}│ "
+    PROMPT+="${_Yellow}%D{%r}"
+    PROMPT+="${_Bold_Black} ┃ "
+    PROMPT+="${_Cyan}$_pretty_duration ⤴ "
+    PROMPT+="${_Bold_Black} │ "
+    if [ ! -z $gitstatus ]; then
+      PROMPT+="${_Reset}"
+      PROMPT+=$gitstatus
+      PROMPT+="${_Reset}"
+    fi
+    PROMPT+="${status_color}%U$directory%u "
+    PROMPT+="$previous_status"
+    PROMPT+=$'\n${_Blue}╰─▶ '
     PROMPT+="${_Reset}"
-
-    RPS1="$(git_prompt_string)"
 }
 
 autoload -Uz add-zsh-hook
