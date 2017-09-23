@@ -2,7 +2,7 @@
     name = Kevin Smith
     email = ksmithbaylor@gmail.com
 [core]
-    editor = vim
+    editor = nvim
     autocrlf = false
     safecrlf = true
     excludesfile = ~/.gitignore_global
