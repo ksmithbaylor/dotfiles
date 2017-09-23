@@ -103,6 +103,9 @@ Plug 'sbdchd/neoformat'
   nnoremap <leader>neo :autocmd BufWritePre * :Neoformat<CR>
   nnoremap <leader>noneo :autocmd! BufWritePre *<CR>
 
+" Why not?
+Plug 'johngrib/vim-game-code-break', { 'on': 'VimGameCodeBreak' }
+
 " All plugins have been declared. If needed, install them and quit
 call plug#end()
 
