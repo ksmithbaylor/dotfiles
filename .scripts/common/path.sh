@@ -18,8 +18,8 @@ if command_exists yarn; then
   export PATH=$(yarn global bin):$PATH
 fi
 prepend_path true       $HOME/.cargo/bin
-prepend_path true       $HOME/bin
 prepend_path brew       /usr/local/bin
 prepend_path brew       /usr/local/sbin
+prepend_path true       $HOME/bin
 
 unset prepend_path
