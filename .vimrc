@@ -18,7 +18,7 @@ endif
 call plug#begin('~/.vim/plugged')
 
 " General plugins, applicable for any file
-Plug 'scrooloose/nerdtree', { 'on': 'NERDTreeToggle' }
+Plug 'scrooloose/nerdtree'
   nnoremap <silent> <C-t> :NERDTreeToggle<CR>
   nnoremap <silent> <leader>nf :NERDTreeFind<CR>
   nnoremap <silent> <leader>nt :NERDTreeToggle<CR>
