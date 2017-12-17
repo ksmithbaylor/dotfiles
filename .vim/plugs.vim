@@ -102,6 +102,7 @@ Plug 'elixir-lang/vim-elixir'
 Plug 'rust-lang/rust.vim'
 Plug 'mustache/vim-mustache-handlebars'
 Plug 'digitaltoad/vim-pug'
+Plug 'jparise/vim-graphql'
 
 " Linting
 Plug 'benekastah/neomake'
