@@ -90,8 +90,7 @@ Plug 'mxw/vim-jsx'
   let g:jsx_ext_required = 0
 Plug 'zaiste/tmux.vim'
 Plug 'elmcast/elm-vim'
-  au BufWritePost *.elm ElmFormat
-  au BufEnter,BufWritePost *.elm ElmMake
+  " au BufEnter,BufWritePost *.elm ElmMake
 Plug 'raichoo/purescript-vim'
 Plug 'elixir-lang/vim-elixir'
 Plug 'rust-lang/rust.vim'
@@ -111,9 +110,13 @@ Plug 'benekastah/neomake'
 
 " Formatting
 Plug 'sbdchd/neoformat'
-  "autocmd BufWritePre *.js Neoformat
-  nnoremap <leader>neo :autocmd BufWritePre * :Neoformat<CR>
-  nnoremap <leader>noneo :autocmd! BufWritePre *<CR>
+  let g:neoformat_c_clangformat = { 'exe': 'clang-format', 'args': ['-style=Google'], 'stdin': 1 }
+  let g:neoformat_enabled_c = ['clangformat']
+  let g:neoformat_cpp_clangformat = g:neoformat_c_clangformat
+  let g:neoformat_enabled_cpp = g:neoformat_enabled_c
+
+Plug 'prettier/vim-prettier'
+  let g:prettier#autoformat = 0
 
 " Why not?
 Plug 'johngrib/vim-game-code-break', { 'on': 'VimGameCodeBreak' }
@@ -126,3 +129,23 @@ if should_plug_install == 1
   :echo "Done! Please re-launch.\n"
   :qa
 endif
+
+function! ToggleAutoFormatting()
+    if !exists('#AutoFormattingPreSave#BufWritePre')
+        augroup AutoFormattingPreSave
+            autocmd!
+            autocmd BufWritePre *.js,*.jsx,*.mjs,*.ts,*.tsx,*.css,*.less,*.scss,*.graphql Prettier
+            autocmd BufWritePre *.cpp,*.hpp,*.c,*.h Neoformat
+            autocmd BufWritePost *.elm ElmFormat
+        augroup END
+        echo 'Auto-formatting on'
+    else
+        augroup AutoFormattingPreSave
+            autocmd!
+        augroup END
+        echo 'Auto-formatting off'
+    endif
+endfunction
+
+nnoremap <F4> :call ToggleAutoFormatting()<CR>
+silent call ToggleAutoFormatting()

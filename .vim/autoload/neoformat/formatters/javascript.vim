@@ -39,7 +39,7 @@ endfunction
 function! neoformat#formatters#javascript#prettier() abort
     return {
         \ 'exe': 'prettier',
-        \ 'args': ['--stdin', '--single-quote'],
+        \ 'args': ['--stdin'],
         \ 'stdin': 1,
         \ }
 endfunction
@@ -47,7 +47,7 @@ endfunction
 function! neoformat#formatters#javascript#prettierLocal() abort
     return {
         \ 'exe': './node_modules/.bin/prettier',
-        \ 'args': ['--stdin', '--single-quote'],
+        \ 'args': ['--stdin'],
         \ 'stdin': 1,
         \ }
 endfunction
