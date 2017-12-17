@@ -48,13 +48,19 @@ Plug 'junegunn/fzf.vim'
   " Search through open buffers
   nnoremap <C-l> :FzfBuffers<CR>
   " Folder search with preview
-  nnoremap <C-F> :Ag<CR>
+  nnoremap <C-s> :Ag<CR>
   command! -nargs=* Ag
     \ call fzf#vim#ag(<q-args>, fzf#vim#with_preview('right:50%', '?'))
   " Fuzzy file find with preview
   nnoremap <C-p> :FF -c -o --directory<CR>
   command! -nargs=* FF
     \ call fzf#vim#gitfiles(<q-args>, fzf#vim#with_preview('right:50%', '?'))
+
+" Ack, used with ag
+Plug 'mileszs/ack.vim'
+  if executable('ag')
+    let g:ackprg = 'ag --vimgrep'
+  endif
 
 " Git integration
 Plug 'tpope/vim-fugitive'
