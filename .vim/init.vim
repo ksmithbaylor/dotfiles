@@ -1,14 +1,6 @@
 " Install and configure plugins
 source $HOME/.vim/plugs.vim
 
-" Configure syntax highlighting
-syntax enable
-colorscheme Tomorrow-Night-Bright
-
-" Change gutter line numbers to be lighter
-highlight LineNr      ctermbg=235
-highlight LineNr      ctermfg=241
-
 " Put backup and swap files in a central location
 silent !mkdir -p $HOME/.vim/swapfiles > /dev/null 2>&1
 silent !mkdir -p $HOME/.vim/backup > /dev/null 2>&1
@@ -173,3 +165,59 @@ function! TrimEndLines()
   call setpos('.', save_cursor)
 endfunction
 au BufWritePre * call TrimEndLines()
+
+map <F10> :echo "hi<" . synIDattr(synID(line("."),col("."),1),"name") . '> trans<'
+\ . synIDattr(synID(line("."),col("."),0),"name") . "> lo<"
+\ . synIDattr(synIDtrans(synID(line("."),col("."),1)),"name") . ">"<CR>
+
+function! ToggleAutoFormatting()
+    if !exists('#AutoFormattingPreSave#BufWritePre')
+        augroup AutoFormattingPreSave
+            autocmd!
+            autocmd BufWritePre *.js,*.jsx,*.mjs,*.ts,*.tsx,*.css,*.less,*.scss,*.graphql Prettier
+            autocmd BufWritePre *.cpp,*.hpp,*.c,*.h Neoformat
+            autocmd BufWritePost *.elm ElmFormat
+            autocmd BufWritePre *.ex,*.exs MixFormat
+        augroup END
+        echo 'Auto-formatting on'
+    else
+        augroup AutoFormattingPreSave
+            autocmd!
+        augroup END
+        echo 'Auto-formatting off'
+    endif
+endfunction
+
+nnoremap <F3> :call ToggleAutoFormatting()<CR>
+silent call ToggleAutoFormatting()
+
+" Configure syntax highlighting
+"Credit joshdick
+"Use 24-bit (true-color) mode in Vim/Neovim when outside tmux.
+"If you're using tmux version 2.2 or later, you can remove the outermost $TMUX check and use tmux's 24-bit color support
+"(see < http://sunaku.github.io/tmux-24bit-color.html#usage > for more information.)
+if (has("nvim"))
+  "For Neovim 0.1.3 and 0.1.4 < https://github.com/neovim/neovim/pull/2198 >
+  let $NVIM_TUI_ENABLE_TRUE_COLOR=1
+endif
+"For Neovim > 0.1.5 and Vim > patch 7.4.1799 < https://github.com/vim/vim/commit/61be73bb0f965a895bfb064ea3e55476ac175162 >
+"Based on Vim patch 7.4.1770 (`guicolors` option) < https://github.com/vim/vim/commit/8a633e3427b47286869aa4b96f2bfc1fe65b25cd >
+" < https://github.com/neovim/neovim/wiki/Following-HEAD#20160511 >
+if (has("termguicolors"))
+  set termguicolors
+endif
+set t_8b=[48;2;%lu;%lu;%lum
+set t_8f=[38;2;%lu;%lu;%lum
+syntax enable
+" colorscheme Tomorrow-Night-Bright
+let g:one_allow_italics = 1 " I love italic for comments
+set background=dark
+colorscheme one
+highlight link jsComment Comment
+highlight link vimComment Comment
+highlight link elmLineComment Comment
+highlight Comment cterm=italic
+
+" Change gutter line numbers to be lighter
+highlight LineNr      ctermbg=235
+highlight LineNr      ctermfg=241

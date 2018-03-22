@@ -34,6 +34,11 @@ Plug 'scrooloose/nerdtree'
 " Shows git status of files in file tree
 Plug 'Xuyuanp/nerdtree-git-plugin'
 
+" Smooth scrolling
+Plug 'yuttie/comfortable-motion.vim'
+  noremap <silent> <ScrollWheelDown> :call comfortable_motion#flick(10)<CR>
+  noremap <silent> <ScrollWheelUp>   :call comfortable_motion#flick(-10)<CR>
+
 " Allows toggling comments with <leader>c<space>
 Plug 'scrooloose/nerdcommenter'
   let g:NERDSpaceDelims = 1
@@ -67,7 +72,7 @@ Plug 'tpope/vim-fugitive'
 
 Plug 'sukima/xmledit'
   let g:xmledit_enable_html=1
-  function HtmlAttribCallback( xml_tag )
+  function! HtmlAttribCallback( xml_tag )
   endfunction
 Plug 'itchyny/lightline.vim'
 Plug 'jiangmiao/auto-pairs'
@@ -82,7 +87,8 @@ Plug 'benmills/vimux'
   nnoremap <leader>rl :VimuxRunLastCommand<CR>
   nnoremap <leader>a :autocmd BufWritePost * :VimuxRunLastCommand<CR>
   nnoremap <leader>x :autocmd! BufWritePost *<CR>
-Plug 'ksmithbaylor/tomorrow-theme', { 'rtp': 'vim' }
+"Plug 'ksmithbaylor/tomorrow-theme', { 'rtp': 'vim' }
+Plug 'rakr/vim-one'
 Plug 'lilydjwg/colorizer'
 
 " Language-specific plugins
@@ -92,8 +98,10 @@ Plug 'neovimhaskell/haskell-vim', { 'for': 'haskell' }
 Plug 'vim-ruby/vim-ruby', { 'for': 'ruby' }
 Plug 'pangloss/vim-javascript'
   let g:javascript_ignore_javaScriptdoc = 1
+  let g:javascript_plugin_flow = 1
 Plug 'mxw/vim-jsx'
   let g:jsx_ext_required = 0
+Plug 'hail2u/vim-css3-syntax'
 Plug 'zaiste/tmux.vim'
 Plug 'elmcast/elm-vim'
   " au BufEnter,BufWritePost *.elm ElmMake
@@ -103,17 +111,21 @@ Plug 'rust-lang/rust.vim'
 Plug 'mustache/vim-mustache-handlebars'
 Plug 'digitaltoad/vim-pug'
 Plug 'jparise/vim-graphql'
+Plug 'posva/vim-vue'
+Plug 'dart-lang/dart-vim-plugin'
 
 " Linting
-Plug 'benekastah/neomake'
-  let g:neomake_javascript_enabled_makers = ['eslint']
-  " load local eslint in the project root
-  " modified from https://github.com/mtscout6/syntastic-local-eslint.vim
-  let s:eslint_path = system('PATH=$(npm bin):$PATH && which eslint')
-  let g:neomake_javascript_eslint_exe = substitute(s:eslint_path, '^\n*\s*\(.\{-}\)\n*\s*$', '\1', '')
-  "let g:neomake_open_list = 2
-  nnoremap <leader>l :Neomake<CR>
-  autocmd! BufWritePost,BufEnter *.js Neomake
+Plug 'w0rp/ale'
+
+" Plug 'benekastah/neomake'
+  " let g:neomake_javascript_enabled_makers = ['eslint']
+  " " load local eslint in the project root
+  " " modified from https://github.com/mtscout6/syntastic-local-eslint.vim
+  " let s:eslint_path = system('PATH=$(npm bin):$PATH && which eslint')
+  " let g:neomake_javascript_eslint_exe = substitute(s:eslint_path, '^\n*\s*\(.\{-}\)\n*\s*$', '\1', '')
+  " "let g:neomake_open_list = 2
+  " nnoremap <leader>l :Neomake<CR>
+  " autocmd! BufWritePost,BufEnter *.js Neomake
 
 " Formatting
 Plug 'sbdchd/neoformat'
@@ -124,6 +136,9 @@ Plug 'sbdchd/neoformat'
 
 Plug 'prettier/vim-prettier'
   let g:prettier#autoformat = 0
+
+Plug 'mhinz/vim-mix-format'
+  let g:mix_format_on_save = 0
 
 " Why not?
 Plug 'johngrib/vim-game-code-break', { 'on': 'VimGameCodeBreak' }
@@ -136,23 +151,3 @@ if should_plug_install == 1
   :echo "Done! Please re-launch.\n"
   :qa
 endif
-
-function! ToggleAutoFormatting()
-    if !exists('#AutoFormattingPreSave#BufWritePre')
-        augroup AutoFormattingPreSave
-            autocmd!
-            autocmd BufWritePre *.js,*.jsx,*.mjs,*.ts,*.tsx,*.css,*.less,*.scss,*.graphql Prettier
-            autocmd BufWritePre *.cpp,*.hpp,*.c,*.h Neoformat
-            autocmd BufWritePost *.elm ElmFormat
-        augroup END
-        echo 'Auto-formatting on'
-    else
-        augroup AutoFormattingPreSave
-            autocmd!
-        augroup END
-        echo 'Auto-formatting off'
-    endif
-endfunction
-
-nnoremap <F4> :call ToggleAutoFormatting()<CR>
-silent call ToggleAutoFormatting()
