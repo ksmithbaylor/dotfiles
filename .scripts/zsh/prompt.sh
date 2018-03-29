@@ -59,7 +59,6 @@ function _prompt {
     local directory=$(pwd | sed -e "s|$HOME|~|" |
                 perl -pe "s|(~?/[^/]+/).{$pwd_length_limit,}(/[^/]+/?\$)|\$1...\$2|")
     local gitstatus=$(git_prompt_string)
-    local rubyversion=$(rvm-prompt)
 
     [ $_previous -eq 0 ] &&
         local status_color=${_Green} previous_status="" ||
@@ -68,22 +67,21 @@ function _prompt {
     PROMPT=$'${_Blue}╭$(printf "%$(($(tput cols) - 1))s" | tr " " "─")\n'
     PROMPT+="${_Blue}│ "
     PROMPT+="${_Yellow}%D{%r}"
-    PROMPT+="${_Bold_Black} ┃ "
-    PROMPT+="${_Cyan}$_pretty_duration ⤴ "
     PROMPT+="${_Bold_Black} │ "
-    if [ ! -z $rubyversion ]; then
+    PROMPT+="${_Cyan}$_pretty_duration ⤴ "
+    PROMPT+="${_Bold_Black} │"
+    if command_exists rvm-prompt; then
       PROMPT+="${_Bold_Red}"
-      PROMPT+="($rubyversion)"
+      PROMPT+=" ($(rvm-prompt))"
       PROMPT+="${_Reset}"
     fi
     if [ ! -z $gitstatus ]; then
       PROMPT+="${_Reset} "
       PROMPT+=$gitstatus
       PROMPT+="${_Reset}"
-    else
+    elif command_exists rvm-prompt; then
       PROMPT+=" "
     fi
-    PROMPT+="${_Bold_Black}│ "
     PROMPT+="${status_color}%U$directory%u "
     PROMPT+="$previous_status"
     PROMPT+=$'\n${_Blue}╰─▶ '
