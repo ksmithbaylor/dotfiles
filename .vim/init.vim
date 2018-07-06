@@ -174,7 +174,7 @@ function! ToggleAutoFormatting()
     if !exists('#AutoFormattingPreSave#BufWritePre')
         augroup AutoFormattingPreSave
             autocmd!
-            autocmd BufWritePre *.js,*.jsx,*.mjs,*.ts,*.tsx,*.css,*.less,*.scss,*.graphql Prettier
+            autocmd BufWritePre *.js,*.jsx,*.mjs,*.ts,*.tsx,*.vue,*.css,*.less,*.scss,*.graphql Prettier
             autocmd BufWritePre *.cpp,*.hpp,*.c,*.h Neoformat
             autocmd BufWritePost *.elm ElmFormat
             autocmd BufWritePre *.ex,*.exs MixFormat
