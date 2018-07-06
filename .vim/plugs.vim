@@ -140,6 +140,9 @@ Plug 'prettier/vim-prettier'
 Plug 'mhinz/vim-mix-format'
   let g:mix_format_on_save = 0
 
+Plug 'mindriot101/vim-yapf'
+  let g:yapf_style = "facebook"
+
 " Why not?
 Plug 'johngrib/vim-game-code-break', { 'on': 'VimGameCodeBreak' }
 

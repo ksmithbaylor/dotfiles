@@ -178,6 +178,7 @@ function! ToggleAutoFormatting()
             autocmd BufWritePre *.cpp,*.hpp,*.c,*.h Neoformat
             autocmd BufWritePost *.elm ElmFormat
             autocmd BufWritePre *.ex,*.exs MixFormat
+            autocmd BufWritePre *.py Yapf
         augroup END
         echo 'Auto-formatting on'
     else
