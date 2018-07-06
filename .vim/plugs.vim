@@ -132,6 +132,7 @@ Plug 'pangloss/vim-javascript'
   let g:javascript_plugin_flow = 1
 Plug 'mxw/vim-jsx'
   let g:jsx_ext_required = 0
+Plug 'leafgarland/typescript-vim'
 Plug 'hail2u/vim-css3-syntax'
 Plug 'zaiste/tmux.vim'
 Plug 'elmcast/elm-vim'
