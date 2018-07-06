@@ -1,0 +1,7 @@
+#!/usr/bin/env zsh
+
+if [[ ! -z "$VIRTUAL_ENV" ]]; then
+    PYTHONHOME=$VIRTUAL_ENV /usr/local/bin/python "$@"
+else
+    /usr/local/bin/python "$@"
+fi
