@@ -1,0 +1,103 @@
+#!/bin/bash
+
+function message() {
+    printf "\e[42m\e[30m $@ \e[49m\e[39m\n"
+}
+
+function install_message() {
+    printf "\e[44m\e[30m $@ \e[49m\e[39m\n"
+}
+
+function ensure_installed() {
+    if ! brew list | grep $1 > /dev/null; then
+	install_message "Installing brew formula $1..."
+        brew install $1
+    else
+        message "brew formula $1 already installed."
+    fi
+}
+
+function ensure_installed_cask() {
+    if ! brew cask list | grep $1 > /dev/null; then
+	install_message "Installing brew cask $1..."
+        brew cask install $1
+    else
+        message "brew cask $1 already installed."
+    fi
+}
+
+# Basics
+basics=(coreutils git vim neovim tmux fzf reattach-to-user-namespace diff-so-fancy htop tree the_silver_searcher rlwrap ripgrep bat)
+for formula in ${basics[@]}; do
+    ensure_installed $formula
+done
+
+# Useful
+useful=(jq jsonpp wget gdb sqlite youtube-dl speedtest-cli ascii)
+for formula in ${useful[@]}; do
+    ensure_installed $formula
+done
+if ! which tmuxinator > /dev/null; then
+    install_message "Installing tmuxinator..."
+    gem install tmuxinator
+else
+    message "tmuxinator already installed."    
+fi
+
+# Languages
+languages=(nodenv yarn rbenv python python@2 elixir)
+for formula in ${languages[@]}; do
+    ensure_installed $formula
+done
+if [ ! -d $HOME/.cargo ]; then
+    install_message "Installing rust..."
+    curl https://sh.rustup.rs -sSf | sh
+else
+    message "Rust already installed."
+fi
+
+
+# Apps
+casks=(iterm2 visual-studio-code daisydisk spotify carbon-copy-cloner)
+for formula in ${casks[@]}; do
+    ensure_installed_cask $formula
+done
+
+# Neovim
+if ! pip2 list | grep neovim > /dev/null; then
+    install_message "Installing neovim for python 2..."
+    pip2 install --user --upgrade neovim
+else
+    message "Neovim for python 2 already installed."
+fi
+if ! pip3 list | grep neovim > /dev/null; then
+    install_message "Installing neovim for python 3..."
+    pip3 install --user --upgrade neovim
+else
+    message "Neovim for python 3 already installed."
+fi
+if ! gem list | grep neovim > /dev/null; then
+    install_message "Installing neovim gem..."
+    gem install neovim
+else
+    message "Neovim gem already installed."
+fi
+
+# Install fzf
+if ! which fzf > /dev/null; then
+    ensure_installed fzf
+    $(brew --prefix)/opt/fzf/install --no-update-rc
+else
+    message "fzf already installed."
+fi
+
+# Set default shell
+if ! grep /usr/local/bin/zsh /etc/shells > /dev/null; then
+    install_message "Setting shell to zsh..."
+    echo "/usr/local/bin/bash" | sudo tee -a /etc/shells
+    echo "/usr/local/bin/zsh" | sudo tee -a /etc/shells
+    chsh -s /usr/local/bin/zsh
+else
+    message "Shell already set."
+fi
+
