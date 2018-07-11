@@ -10,7 +10,7 @@ function install_message() {
 
 function ensure_installed() {
     if ! brew list | grep $1 > /dev/null; then
-	install_message "Installing brew formula $1..."
+        install_message "Installing brew formula $1..."
         brew install $1
     else
         message "brew formula $1 already installed."
@@ -19,7 +19,7 @@ function ensure_installed() {
 
 function ensure_installed_cask() {
     if ! brew cask list | grep $1 > /dev/null; then
-	install_message "Installing brew cask $1..."
+        install_message "Installing brew cask $1..."
         brew cask install $1
     else
         message "brew cask $1 already installed."
@@ -101,3 +101,5 @@ else
     message "Shell already set."
 fi
 
+# Setting some Apple defaults
+defaults write NSGlobalDomain ApplePressAndHoldEnabled -bool false
