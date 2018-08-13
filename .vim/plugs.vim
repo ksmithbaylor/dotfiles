@@ -122,6 +122,15 @@ Plug 'benmills/vimux'
 Plug 'rakr/vim-one'
 Plug 'lilydjwg/colorizer'
 
+" Typescript
+Plug 'HerringtonDarkholme/yats.vim'
+Plug 'mhartington/nvim-typescript', {'do': './install.sh'}
+  let g:nvim_typescript#type_info_on_hold = 1
+  let g:nvim_typescript#default_mappings = 1
+Plug 'Shougo/deoplete.nvim'
+  let g:deoplete#enable_at_startup = 1
+Plug 'Shougo/denite.nvim'
+
 " Language-specific plugins
 Plug 'othree/html5.vim'
   autocmd BufNewFile,BufRead *.ejs set filetype=html
@@ -132,7 +141,6 @@ Plug 'pangloss/vim-javascript'
   let g:javascript_plugin_flow = 1
 Plug 'mxw/vim-jsx'
   let g:jsx_ext_required = 0
-Plug 'leafgarland/typescript-vim'
 Plug 'hail2u/vim-css3-syntax'
 Plug 'zaiste/tmux.vim'
 Plug 'elmcast/elm-vim'
