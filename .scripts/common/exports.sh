@@ -26,6 +26,8 @@ if command_exists pair; then
   }
 fi
 
+[[ -s "$HOME/.rvm/scripts/rvm" ]] && source "$HOME/.rvm/scripts/rvm" # Load RVM into a shell session *as a function*
+
 # if command_exists opam; then
   # eval $(opam config env)
 # fi

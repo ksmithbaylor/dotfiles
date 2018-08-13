@@ -21,5 +21,6 @@ prepend_path true       $HOME/.cargo/bin
 prepend_path brew       /usr/local/bin
 prepend_path brew       /usr/local/sbin
 prepend_path true       $HOME/bin
+prepend_path rvm        $HOME/.rvm/bin
 
 unset prepend_path
