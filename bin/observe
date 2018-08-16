@@ -1,0 +1,24 @@
+#!/usr/bin/env ruby
+
+invalid = false
+command = ARGV.shift
+paths = ARGV.map do |path|
+  if File.directory? path
+    "'#{path}/**/*'"
+  elsif File.file? path
+    "'#{path}'"
+  else
+    puts "Invalid path given: '#{path}'"
+    invalid = true
+    "''"
+  end
+end.join ' '
+
+paths << "'*/**/*'" if paths.empty?
+
+exit 1 if invalid
+
+system command
+watchman_command = "watchman-make -p #{paths} --make 'clear &&' -t '#{command}'"
+puts "--------\n$ #{watchman_command}"
+system watchman_command
