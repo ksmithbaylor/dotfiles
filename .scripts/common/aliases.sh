@@ -259,13 +259,3 @@ else
         ls -l "$MARKPATH" | sed 's/  / /g' | cut -d' ' -f9- | sed 's/ -/\t-/g' && echo
     }
 fi
-
-######### Listen360
-
-function sshl {
-  ssh $1.listen360.com
-}
-
-function sshlt {
-  ssh -t $1.listen360.com 'tmux a || tmux'
-}
