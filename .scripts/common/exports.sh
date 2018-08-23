@@ -2,6 +2,13 @@ export EDITOR=nvim
 export HISTFILESIZE=10000
 export CLICOLOR=true
 export HOMEBREW_CASK_OPTS="--appdir=/Applications"
+
+# Android Studio / React Native
+export ANDROID_HOME=$HOME/Library/Android/sdk
+export PATH=$PATH:$ANDROID_HOME/tools
+export PATH=$PATH:$ANDROID_HOME/tools/bin
+export PATH=$PATH:$ANDROID_HOME/platform-tools
+
 # is_mac && command_exists brew && command_exists android && export ANDROID_HOME=$(brew --prefix android-sdk)
 
 # if command_exists rbenv; then
