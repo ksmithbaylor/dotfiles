@@ -18,6 +18,8 @@ paths << "'*/**/*'" if paths.empty?
 
 exit 1 if invalid
 
+Process.setproctitle('observe-' + command.gsub(' ', '-'))
+
 system command
 watchman_command = "watchman-make -p #{paths} --make 'clear &&' -t '#{command}'"
 puts "--------\n$ #{watchman_command}"
