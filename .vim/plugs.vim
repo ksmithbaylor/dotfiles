@@ -141,6 +141,7 @@ Plug 'pangloss/vim-javascript'
   let g:javascript_plugin_flow = 1
 Plug 'mxw/vim-jsx'
   let g:jsx_ext_required = 0
+Plug 'flowtype/vim-flow'
 Plug 'hail2u/vim-css3-syntax'
 Plug 'zaiste/tmux.vim'
 Plug 'elmcast/elm-vim'
@@ -156,6 +157,9 @@ Plug 'dart-lang/dart-vim-plugin'
 
 " Linting
 Plug 'w0rp/ale'
+  let g:ale_linters = {
+  \  'javascript': ['eslint', 'flow', 'flow-language-server']
+  \}
 
 " Lisp
 Plug 'bhurlow/vim-parinfer', { 'for': 'lisp' }
