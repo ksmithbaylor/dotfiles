@@ -164,10 +164,6 @@ Plug 'w0rp/ale'
 " Lisp
 Plug 'bhurlow/vim-parinfer', { 'for': 'lisp' }
 Plug 'junegunn/rainbow_parentheses.vim', { 'for': 'lisp' }
-  augroup rainbow_lisp
-    autocmd!
-    autocmd FileType lisp,clojure,scheme RainbowParentheses
-  augroup END
 
 " Plug 'benekastah/neomake'
   " let g:neomake_javascript_enabled_makers = ['eslint']
