@@ -1,0 +1,1 @@
+Plug 'raichoo/purescript-vim'

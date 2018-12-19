@@ -1,0 +1,1 @@
+Plug 'digitaltoad/vim-pug'
