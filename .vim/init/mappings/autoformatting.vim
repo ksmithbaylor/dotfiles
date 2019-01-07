@@ -8,6 +8,7 @@ function! ToggleAutoFormatting()
             autocmd BufWritePost *.elm ElmFormat
             autocmd BufWritePre *.ex,*.exs MixFormat
             autocmd BufWritePre *.py Yapf
+            autocmd BufWritePre *.rs call Preserve('%!rustfmt')
         augroup END
         echo 'Auto-formatting on'
     else
