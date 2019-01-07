@@ -1,3 +1,9 @@
+function! UndoIfShellError()
+    if v:shell_error
+        undo
+    endif
+endfunction
+
 " Put all commands that format on save here
 function! ToggleAutoFormatting()
     if !exists('#AutoFormattingPreSave#BufWritePre')
@@ -8,7 +14,7 @@ function! ToggleAutoFormatting()
             autocmd BufWritePost *.elm ElmFormat
             autocmd BufWritePre *.ex,*.exs MixFormat
             autocmd BufWritePre *.py Yapf
-            autocmd BufWritePre *.rs call Preserve('%!rustfmt')
+            autocmd BufWritePre *.rs silent call Preserve("silent call Preserve('1,$ ! rustfmt 2>/dev/null') | call UndoIfShellError()")
         augroup END
         echo 'Auto-formatting on'
     else
