@@ -36,6 +36,8 @@ alias b="bundle exec"
 alias tls="tmux ls"
 alias tn="tmux new -s"
 alias circle="open https://circleci.com/gh/ksmithbaylor"
+alias top="npx vtop"
+
 ta() {
   if [ $# -gt 0 ]; then
     tmux a -t $1
