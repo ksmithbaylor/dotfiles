@@ -4,7 +4,7 @@ function SetupPlugs()
 
   " Load all plug declarations
   runtime! init/plugs/*.vim
-  runtime! init/plugs/language_specific.vim
+  runtime! init/plugs/language_specific/*.vim
 
   " All plugins have been declared!
   call plug#end()
