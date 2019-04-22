@@ -39,3 +39,8 @@ set ssop=blank,buffers,curdir,help,tabpages
 
 " Enable mouse movements
 set mouse=nicr
+
+" Recommended by COC readme
+set cmdheight=2                   " Better display for messages
+set shortmess+=c
+set signcolumn=yes

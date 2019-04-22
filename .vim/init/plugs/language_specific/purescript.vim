@@ -1,1 +1,1 @@
-Plug 'raichoo/purescript-vim'
+" Plug 'raichoo/purescript-vim'

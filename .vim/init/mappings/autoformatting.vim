@@ -11,7 +11,7 @@ function! ToggleAutoFormatting()
             autocmd!
             autocmd BufWritePre *.js,*.jsx,*.mjs,*.ts,*.tsx,*.vue,*.css,*.less,*.scss,*.graphql Prettier
             autocmd BufWritePre *.cpp,*.hpp,*.c,*.h Neoformat
-            autocmd BufWritePost *.elm ElmFormat
+            autocmd BufWritePre *.elm ElmFormat
             autocmd BufWritePre *.ex,*.exs MixFormat
             autocmd BufWritePre *.py Yapf
             autocmd BufWritePre *.rs silent call Preserve("silent call Preserve('1,$ ! rustfmt 2>/dev/null') | call UndoIfShellError()")

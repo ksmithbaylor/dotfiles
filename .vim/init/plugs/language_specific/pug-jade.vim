@@ -1,1 +1,1 @@
-Plug 'digitaltoad/vim-pug'
+" Plug 'digitaltoad/vim-pug'

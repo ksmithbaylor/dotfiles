@@ -1,1 +1,0 @@
-Plug 'flowtype/vim-flow'
