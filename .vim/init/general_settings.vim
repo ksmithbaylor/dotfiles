@@ -1,5 +1,5 @@
 " Set leader keys
-let mapleader = '\\'
+let mapleader = '\'
 let maplocalleader = ','
 
 " General options to make things better
