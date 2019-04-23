@@ -1,3 +1,7 @@
+" Set leader keys
+let mapleader = '\\'
+let maplocalleader = ','
+
 " General options to make things better
 set nocompatible                  " Don't use old vi-era compatibility settings
 set encoding=utf-8                " Default encoding is UTF-8
