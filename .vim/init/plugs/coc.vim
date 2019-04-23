@@ -6,6 +6,8 @@ let g:coc_global_extensions = [
   \ 'coc-html',
   \ 'coc-tsserver',
   \ 'coc-tslint-plugin',
+  \ 'coc-eslint',
+  \ 'coc-prettier',
   \ 'coc-rls',
   \ 'coc-python',
   \ 'coc-highlight',
@@ -17,6 +19,7 @@ map <silent> <C-]> <Plug>(coc-definition)
 map <silent> <C-[> <Plug>(coc-codeaction)
 map <leader>R <Plug>(coc-rename)
 map <leader>F <Plug>(coc-fix-current)
+command! -nargs=0 Prettier :CocCommand prettier.formatFile
 
 " Use <c-space> to trigger completion.
 inoremap <silent><expr> <c-space> coc#refresh()
