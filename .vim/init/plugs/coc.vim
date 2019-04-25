@@ -41,7 +41,7 @@ endfunction
 
 "Close preview window when completion is done.
 autocmd! CompleteDone * if pumvisible() == 0 | pclose | endif
-autocmd CursorHold * silent call CocActionAsync('doHover')
+" autocmd CursorHold * silent call CocActionAsync('doHover')
 
 " Use K to show documentation in preview window
 nnoremap <silent> K :call <SID>show_documentation()<CR>
