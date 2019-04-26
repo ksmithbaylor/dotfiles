@@ -12,7 +12,7 @@ let $FZF_DEFAULT_OPTS='--layout=reverse --inline-info'
 nnoremap <silent> <C-p> :call FuzzyFindFile()<CR>
 function! FuzzyFindFile(...)
   let g:fzf_layout = { 'window': 'call FloatingFZF(30, 100)' }
-  :FzfGitFiles -c -o --directory
+  :FzfGitFiles -c -o
 endfunction
 
 " Search through open buffers
