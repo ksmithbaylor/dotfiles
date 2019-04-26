@@ -37,6 +37,7 @@ alias tls="tmux ls"
 alias tn="tmux new -s"
 alias circle="open https://circleci.com/gh/ksmithbaylor"
 alias top="npx vtop"
+alias rot13="tr 'A-Za-z' 'N-ZA-Mn-za-m'"
 
 ta() {
   if [ $# -gt 0 ]; then
