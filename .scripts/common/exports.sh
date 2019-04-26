@@ -2,6 +2,7 @@ export EDITOR=nvim
 export HISTFILESIZE=10000
 export CLICOLOR=true
 export HOMEBREW_CASK_OPTS="--appdir=/Applications"
+export GPG_TTY=`tty`
 
 # Android Studio / React Native
 export ANDROID_HOME=$HOME/Library/Android/sdk
