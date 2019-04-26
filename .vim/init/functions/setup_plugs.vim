@@ -1,4 +1,4 @@
-function SetupPlugs()
+function! SetupPlugs()
   " Initialize plugins
   call plug#begin('~/.vim/plugged')
 

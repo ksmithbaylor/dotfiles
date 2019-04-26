@@ -1,4 +1,4 @@
-function EnsureVimPlugInstalled()
+function! EnsureVimPlugInstalled()
   " Assume vim-plug is present and plugins are installed
   let g:should_plug_install = 0
 
