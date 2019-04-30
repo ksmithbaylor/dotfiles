@@ -16,7 +16,7 @@ syntax enable
 
 let g:one_allow_italics = 1 " I love italic for comments
 set background=dark
-colorscheme one
+colorscheme OceanicNext
 highlight link jsComment Comment
 highlight link vimComment Comment
 highlight link elmLineComment Comment
