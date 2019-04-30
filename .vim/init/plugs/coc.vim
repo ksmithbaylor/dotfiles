@@ -20,6 +20,7 @@ map <silent> <C-]> <Plug>(coc-definition)
 map <silent> <C-[> <Plug>(coc-codeaction)
 map <leader>R <Plug>(coc-rename)
 map <leader>F <Plug>(coc-fix-current)
+map <leader>? <Plug>(coc-diagnostic-info)
 command! -nargs=0 Prettier :CocCommand prettier.formatFile
 
 " Use <c-space> to trigger completion.
