@@ -17,10 +17,10 @@ let g:coc_global_extensions = [
   \ ]
 
 map <silent> <C-]> <Plug>(coc-definition)
-map <silent> <C-[> <Plug>(coc-codeaction)
+map <silent> <leader>d <Plug>(coc-codeaction)
 map <leader>R <Plug>(coc-rename)
 map <leader>F <Plug>(coc-fix-current)
-map <leader>? <Plug>(coc-diagnostic-info)
+map <leader>? <Plug>(coc-diagnostic-info)<CR>
 command! -nargs=0 Prettier :CocCommand prettier.formatFile
 
 " Use <c-space> to trigger completion.
