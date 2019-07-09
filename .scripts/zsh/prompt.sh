@@ -56,8 +56,12 @@ function _stop_timer {
 function _prompt {
     echo -ne "\e]1;${USER}@${HOSTNAME%%.*}:${PWD/#$HOME/~}\a"
     local pwd_length_limit=20
-    local directory=$(pwd | sed -e "s|$HOME|~|" |
-                perl -pe "s|(~?/[^/]+/).{$pwd_length_limit,}(/[^/]+/?\$)|\$1...\$2|")
+    if command_exists tico; then
+      local directory=$(tico $(print -D $PWD))
+    else
+      local directory=$(pwd | sed -e "s|$HOME|~|" |
+                  perl -pe "s|(~?/[^/]+/).{$pwd_length_limit,}(/[^/]+/?\$)|\$1...\$2|")
+    fi
     local gitstatus=$(git_prompt_string)
 
     [ $_previous -eq 0 ] &&
