@@ -74,7 +74,7 @@ function _prompt {
     PROMPT+="${_Bold_Black} │ "
     PROMPT+="${_Cyan}$_pretty_duration ⤴ "
     PROMPT+="${_Bold_Black} │"
-    if command_exists rvm-prompt; then
+    if [ -f .ruby-version ] && command_exists rvm-prompt; then
       PROMPT+="${_Bold_Red}"
       PROMPT+=" ($(rvm-prompt))"
       PROMPT+="${_Reset}"
