@@ -13,6 +13,7 @@ prepend_path cabal      $HOME/Library/Haskell/bin
 prepend_path stack      /usr/local/stack
 prepend_path stack      $HOME/.local/bin
 prepend_path true       /Library/TeX/texbin
+prepend_path true       /usr/local/mysql/bin
 prepend_path nodebrew   $HOME/.nodebrew/current/bin
 if command_exists yarn; then
   export PATH=$(yarn global bin):$PATH
