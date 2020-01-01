@@ -6,14 +6,7 @@ let g:coc_global_extensions = [
   \ 'coc-html',
   \ 'coc-tsserver',
   \ 'coc-tslint-plugin',
-  \ 'coc-eslint',
-  \ 'coc-prettier',
-  \ 'coc-rls',
-  \ 'coc-python',
-  \ 'coc-solargraph',
-  \ 'coc-highlight',
-  \ 'coc-snippets',
-  \ 'coc-highlight'
+  \ 'coc-prettier'
   \ ]
 
 map <silent> <C-]> <Plug>(coc-definition)
