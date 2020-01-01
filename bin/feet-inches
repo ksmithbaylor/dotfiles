@@ -1,0 +1,8 @@
+#!/usr/bin/env ruby
+
+loop do
+  print "feet inches: "
+  line = gets.chomp
+  feet, inches = line.split
+  puts "inches: #{feet.to_f * 12 + inches.to_f}"
+end

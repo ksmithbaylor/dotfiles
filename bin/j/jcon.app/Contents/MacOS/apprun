@@ -1,2 +1,0 @@
-#!/bin/sh
-open "`dirname "$0"`/../../../bin/jconsole"
