@@ -29,5 +29,4 @@ rm -f $HOME/.config/nvim
 ln -sf $HOME/.vim $HOME/.config/nvim
 
 # Set up term info
-tic -x xterm-256color-italic.terminfo
-tic -x tmux-256color.terminfo
+tic -x xterm-256color.terminfo
