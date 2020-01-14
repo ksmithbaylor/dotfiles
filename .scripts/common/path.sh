@@ -23,5 +23,6 @@ prepend_path brew       /usr/local/bin
 prepend_path brew       /usr/local/sbin
 prepend_path true       $HOME/bin
 prepend_path rvm        $HOME/.rvm/bin
+prepend_path rbenv      /usr/local/var/rbenv/shims
 
 unset prepend_path

@@ -83,7 +83,7 @@ function _prompt {
       PROMPT+="${_Reset} "
       PROMPT+=$gitstatus
       PROMPT+="${_Reset}"
-    elif command_exists rvm-prompt; then
+    else
       PROMPT+=" "
     fi
     PROMPT+="${status_color}%U$directory%u "

@@ -12,10 +12,10 @@ export PATH=$PATH:$ANDROID_HOME/platform-tools
 
 # is_mac && command_exists brew && command_exists android && export ANDROID_HOME=$(brew --prefix android-sdk)
 
-# if command_exists rbenv; then
-    # export RBENV_ROOT=/usr/local/var/rbenv
-    # eval "$(rbenv init -)"
-# fi
+if command_exists rbenv; then
+    export RBENV_ROOT=/usr/local/var/rbenv
+    eval "$(rbenv init -)"
+fi
 
 if command_exists nodenv; then
     export NODENV_ROOT=/usr/local/var/nodenv
@@ -34,7 +34,7 @@ if command_exists pair; then
   }
 fi
 
-[[ -s "$HOME/.rvm/scripts/rvm" ]] && source "$HOME/.rvm/scripts/rvm" # Load RVM into a shell session *as a function*
+# [[ -s "$HOME/.rvm/scripts/rvm" ]] && source "$HOME/.rvm/scripts/rvm" # Load RVM into a shell session *as a function*
 
 # if command_exists opam; then
   # eval $(opam config env)
