@@ -1,7 +1,6 @@
 {
   "suggest.echodocSupport": true,
   "suggest.maxCompleteItemCount": 20,
-  "coc.preferences.formatOnSaveFiletypes": ["javascript", "typescript", "typescriptreact", "json", "javascriptreact", "css", "html", "vue", "scss", "graphql"],
   "tslint.autoFixOnSave": true,
   "prettier.semi": true,
   "prettier.singleQuote": true,
