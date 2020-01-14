@@ -12,7 +12,7 @@ Plug 'euclio/vim-markdown-composer', { 'do': function('BuildComposer') }
 " let g:markdown_composer_open_browser=0
 " let g:markdown_composer_autostart=0
 
-Plug 'tpope/vim-markdown'
-let g:markdown_fenced_languages = ['css', 'javascript', 'js=javascript', 'typescript']
+" Plug 'tpope/vim-markdown'
+" let g:markdown_fenced_languages = ['css', 'javascript', 'js=javascript', 'typescript']
 
-Plug 'jxnblk/vim-mdx-js'
+" Plug 'jxnblk/vim-mdx-js'

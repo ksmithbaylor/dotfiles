@@ -1,3 +1,4 @@
+Plug 'sheerun/vim-polyglot'
 Plug 'jiangmiao/auto-pairs'
   let g:AutoPairsShortcutFastWrap = '<C-W>'
 Plug 'tpope/vim-unimpaired'

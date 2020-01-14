@@ -1,1 +1,0 @@
-Plug 'zaiste/tmux.vim'
