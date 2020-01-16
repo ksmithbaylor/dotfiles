@@ -1,0 +1,41 @@
+#!/usr/bin/env ruby
+
+require 'date'
+
+if ARGV.size == 3
+  raw_date, op, operand = ARGV
+else
+  op, operand = ARGV
+  raw_date = Date.today.strftime('%m/%d/%Y')
+end
+
+supported_formats = [
+  '%m/%d/%Y'
+]
+
+date = nil
+input_format = supported_formats[0]
+
+supported_formats.each do |format|
+  begin
+    date = Date.strptime(raw_date, format)
+    input_format = format
+    break
+  rescue Exception => e
+    next
+  end
+end
+
+new_date = Date.jd(
+  case op
+  when '+'
+    date.jd + operand.to_i
+  when '-'
+    date.jd - operand.to_i
+  else
+    puts 'invalid op (+ or - only)'
+    0
+  end
+)
+
+puts new_date.strftime(input_format)
