@@ -1,0 +1,62 @@
+window:
+  padding:
+    x: 2
+    y: 2
+  dynamic_padding: true
+  decorations: buttonless
+
+scrolling:
+  history: 100000
+
+tabspaces: 8
+
+font:
+  normal:
+    family: Dank Mono
+  size: 15.0
+  offset:
+    x: -1
+    y: -3
+  use_thin_strokes: true
+
+colors:
+  primary:
+    background: '0x000000'
+    foreground: '0xeaeaea'
+  normal:
+    black:   '0x000000'
+    red:     '0xff4f4f'
+    green:   '0x5ddf6f'
+    yellow:  '0xeadf00'
+    blue:    '0x3082e2'
+    magenta: '0xd720ff'
+    cyan:    '0x30dfdf'
+    white:   '0xdddddd'
+  bright: # polished.darken(0.15, color)
+    black:   '0x676767'
+    red:     '0xff0202'
+    green:   '0x28c83e'
+    yellow:  '0xc7a31a'
+    blue:    '0x185dad'
+    magenta: '0xad00d3'
+    cyan:    '0x1aa8a8'
+    white:   '0xffffff'
+
+visual_bell:
+  animation: EaseOutExpo
+  duration: 0
+  color: '0xffffff'
+
+background_opacity: 1.0
+
+live_config_reload: true
+
+shell:
+  program: /usr/local/bin/zsh
+  args:
+    - --login
+mouse:
+  hide_when_typing: true
+
+key_bindings:
+   - { key: N, mods: Command, command: { program: “open”, args: [“-n”, “/Applications/Alacritty.app”] } }

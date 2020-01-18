@@ -13,6 +13,7 @@ dotfiles=(
   .gitconfig
   .htoprc
   .tmux.conf
+  .config/alacritty/alacritty.yml
   .vimrc
   .zshrc
 )
