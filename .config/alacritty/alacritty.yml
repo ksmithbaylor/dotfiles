@@ -59,4 +59,4 @@ mouse:
   hide_when_typing: true
 
 key_bindings:
-   - { key: N, mods: Command, command: { program: “open”, args: [“-n”, “/Applications/Alacritty.app”] } }
+   - { key: N, mods: Command, command: { program: "open", args: ["-n", "/Applications/Alacritty.app"] } }
