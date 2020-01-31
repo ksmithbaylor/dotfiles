@@ -6,7 +6,9 @@ let g:coc_global_extensions = [
   \ 'coc-html',
   \ 'coc-tsserver',
   \ 'coc-tslint-plugin',
-  \ 'coc-prettier'
+  \ 'coc-prettier',
+  \ 'coc-angular',
+  \ 'coc-elixir'
   \ ]
 
 map <silent> <C-]> <Plug>(coc-definition)
