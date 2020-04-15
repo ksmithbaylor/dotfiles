@@ -2,7 +2,7 @@
 
 class Projects
   def initialize
-    @skip_directories = `cat .skip`.split
+    @skip_directories = `[ -f .skip ] && cat .skip`.split
     @directories = `ls -p | grep '/'`.split.map { |d| d.gsub '/', '' } - @skip_directories
     @cols = `tput cols`.to_i
   end
@@ -17,6 +17,17 @@ class Projects
       master
     when 'refresh'
       refresh
+    when nil, 'help', '--help'
+      puts <<~HELP
+        Usage: `projects <command>`
+
+          Command      Shortened      Description
+
+          status       st             Show the status of all projects
+          update       up             Update all branches of all projects
+          master                      Switch back to master on all projects
+          refresh                     Combines `master` and `update`
+      HELP
     else
       puts 'No such command.'
     end
@@ -67,6 +78,7 @@ class Projects
   end
 
   def each_directory
+    puts 'No directories found!' if @directories.empty?
     @directories.each do |dir|
       print_header dir
       if is_clean dir
