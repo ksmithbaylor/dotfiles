@@ -1,0 +1,94 @@
+#!/usr/bin/env ruby
+
+class Projects
+  def initialize
+    @skip_directories = `cat .skip`.split
+    @directories = `ls -p | grep '/'`.split.map { |d| d.gsub '/', '' } - @skip_directories
+    @cols = `tput cols`.to_i
+  end
+
+  def run(command)
+    case command
+    when 'status', 'st'
+      status
+    when 'update', 'up'
+      update
+    when 'master'
+      master
+    when 'refresh'
+      refresh
+    else
+      puts 'No such command.'
+    end
+  end
+
+  def status
+    each_directory do |dir|
+      if is_clean dir
+        branch = in_directory dir, 'git branch --show-current'
+        puts "Clean, on branch #{branch}"
+      else
+        puts git_status dir
+      end
+    end
+  end
+
+  def update
+    each_directory do |dir|
+      update_all_branches dir
+    end
+  end
+
+  def master
+    each_directory do |dir|
+      checkout_master dir
+    end
+  end
+
+  def refresh
+    each_directory do |dir|
+      checkout_master dir
+      update_all_branches dir
+    end
+  end
+
+  private
+
+  def git_status(dir)
+    puts(in_directory dir, "git -c color.status=always status")
+  end
+
+  def update_all_branches(dir)
+    puts(in_directory dir, "git -c color.status=always up")
+  end
+
+  def checkout_master(dir)
+    in_directory dir, "git checkout master"
+  end
+
+  def each_directory
+    @directories.each do |dir|
+      print_header dir
+      if is_clean dir
+        yield dir
+      else
+        git_status dir
+        puts "Not clean, skipping"
+      end
+    end
+  end
+
+  def print_header(dir)
+    puts "===== #{(dir + ' ').ljust @cols - 7, '='}"
+  end
+
+  def in_directory(dir, cmd)
+    Dir.chdir(dir) { `#{cmd}` }
+  end
+
+  def is_clean(dir)
+    (in_directory dir, "git -c color.status=always status -s").size == 0
+  end
+end
+
+Projects.new.run(ARGV[0])
