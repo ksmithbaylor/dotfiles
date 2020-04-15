@@ -7,6 +7,7 @@ function prepend_path() {
 }
 
 # Least important first
+prepend_path true       $HOME/main/tst/code/compose-services/bin
 prepend_path true       $HOME/bin/j/bin
 prepend_path cabal      $HOME/.cabal/bin
 prepend_path cabal      $HOME/Library/Haskell/bin
