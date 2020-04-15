@@ -9,6 +9,8 @@ class Projects
 
   def run(command)
     case command
+    when 'clone'
+      clone
     when 'status', 'st'
       status
     when 'update', 'up'
@@ -23,6 +25,7 @@ class Projects
 
           Command      Shortened      Description
 
+          clone                       Clones multiple repos (<base> [repo_names])
           status       st             Show the status of all projects
           update       up             Update all branches of all projects
           master                      Switch back to master on all projects
@@ -30,6 +33,17 @@ class Projects
       HELP
     else
       puts 'No such command.'
+    end
+  end
+
+  def clone
+    base = ARGV[1]
+    repos = ARGV[2..-1]
+
+    base = "git@github.com:#{base}" unless base.start_with?('git@') or base.start_with?('http')
+
+    repos.each do |repo|
+      `git clone #{base}/#{repo}`
     end
   end
 
