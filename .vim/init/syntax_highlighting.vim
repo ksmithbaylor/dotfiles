@@ -20,7 +20,8 @@ colorscheme OceanicNext
 highlight link jsComment Comment
 highlight link vimComment Comment
 highlight link elmLineComment Comment
-highlight Comment cterm=italic
+" highlight Comment cterm=italic
+highlight Comment gui=italic
 
 " Change gutter line numbers to be lighter
 highlight LineNr      ctermbg=235
