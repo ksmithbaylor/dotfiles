@@ -5,3 +5,4 @@
 .vim/.netrwhist
 *.swp
 .vim/plugged
+bin/pdfr
