@@ -50,6 +50,16 @@ ta() {
   fi
 }
 
+tc() {
+  tmux new -t $1 -s $1-
+}
+
+td() {
+  for session in $(tmux list-sessions -F '#{session_name}' | grep $1 | grep -e '-$'); do
+    tmux kill-session -t $session
+  done
+}
+
 if is_mac; then
     alias tu="top -o cpu"
     alias tm="top -o mem"
