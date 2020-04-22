@@ -8,8 +8,6 @@ window:
 scrolling:
   history: 100000
 
-tabspaces: 8
-
 font:
   normal:
     family: Dank Mono
