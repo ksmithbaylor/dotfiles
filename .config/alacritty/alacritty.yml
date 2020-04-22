@@ -11,10 +11,10 @@ scrolling:
 font:
   normal:
     family: Dank Mono
-  size: 15.0
+  size: 16.0
   offset:
-    x: -1
-    y: -3
+    x: -2
+    y: -4
   use_thin_strokes: true
 
 colors:
