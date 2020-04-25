@@ -5,6 +5,7 @@ Plug 'junegunn/fzf.vim'
 set rtp+=~/.fzf
 set rtp+=/usr/local/opt/fzf
 let g:fzf_command_prefix = 'Fzf'
+let g:fzf_preview_window = ''
 
 let $FZF_DEFAULT_OPTS='--layout=reverse --inline-info'
 
