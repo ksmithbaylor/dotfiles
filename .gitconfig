@@ -1,41 +1,41 @@
 [user]
-	name = Kevin Smith
-	email = ksmithbaylor@gmail.com
+  name = Kevin Smith
+  email = ksmithbaylor@gmail.com
 [core]
-    editor = nvim
-    autocrlf = false
-    safecrlf = true
-    excludesfile = ~/.gitignore_global
-    filemode = false
+  editor = nvim
+  autocrlf = false
+  safecrlf = true
+  excludesfile = ~/.gitignore_global
+  filemode = false
+  pager = delta --dark
+[interactive]
+  diffFilter = delta --color-only
 [color]
-    ui = true
+  ui = true
 [color "status"]
-    changed = green
-    untracked = blue
-    added = yellow
+  changed = green
+  untracked = blue
+  added = yellow
 [alias]
-    st = status
-    co = checkout
-    com = commit
-    br = branch
-    lg = log --color --graph --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr) %C(bold blue)<%an>%Creset' --abbrev-commit
-    lgu = log @{u}..
+  st = status
+  co = checkout
+  com = commit
+  br = branch
+  lg = log --color --graph --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr) %C(bold blue)<%an>%Creset' --abbrev-commit
+  lgu = log @{u}..
 [push]
-    default = simple
+  default = simple
 [url "https://"]
-	insteadOf = git://
+  insteadOf = git://
 [merge]
-	conflictstyle = diff3
-[pager]
-  diff = diff-so-fancy | less --tabs=1,5 -RFX
-  show = diff-so-fancy | less --tabs=1,5 -RFX
+  conflictstyle = diff3
 [color "diff-highlight"]
-	oldNormal = red bold
-	oldHighlight = red bold 52
-	newNormal = green bold
-	newHighlight = green bold 22
+  oldNormal = red bold
+  oldHighlight = red bold 52
+  newNormal = green bold
+  newHighlight = green bold 22
 [filter "lfs"]
-	clean = git-lfs clean -- %f
-	smudge = git-lfs smudge -- %f
-	process = git-lfs filter-process
-	required = true
+  clean = git-lfs clean -- %f
+  smudge = git-lfs smudge -- %f
+  process = git-lfs filter-process
+  required = true
