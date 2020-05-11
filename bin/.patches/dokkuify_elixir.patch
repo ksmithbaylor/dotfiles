@@ -1,0 +1,53 @@
+diff --git a/.buildpacks b/.buildpacks
+new file mode 100644
+index 0000000..b15ddba
+--- /dev/null
++++ b/.buildpacks
+@@ -0,0 +1,2 @@
++https://github.com/HashNuke/heroku-buildpack-elixir
++https://github.com/gjaldon/heroku-buildpack-phoenix-static
+diff --git a/app.json b/app.json
+new file mode 100644
+index 0000000..8bfc301
+--- /dev/null
++++ b/app.json
+@@ -0,0 +1,7 @@
++{
++  "scripts": {
++    "dokku": {
++      "predeploy": "mix ecto.create && mix ecto.migrate"
++    }
++  }
++}
+diff --git a/config/prod.exs b/config/prod.exs
+index 1d0f793..f0cf6d6 100644
+--- a/config/prod.exs
++++ b/config/prod.exs
+@@ -10,7 +10,8 @@ use Mix.Config
+ # which you should run after static files are built and
+ # before starting your production server.
+ config :APP_NAME, APP_UPPERWeb.Endpoint,
+-  url: [host: "example.com", port: 80],
++  url: [host: System.get_env("HOSTNAME"), port: 80],
++  server: true,
+   cache_static_manifest: "priv/static/cache_manifest.json"
+ 
+ # Do not print debug messages in production
+diff --git a/elixir_buildpack.config b/elixir_buildpack.config
+new file mode 100644
+index 0000000..6647c42
+--- /dev/null
++++ b/elixir_buildpack.config
+@@ -0,0 +1,3 @@
++erlang_version=22.3.3
++elixir_version=1.10.3
++release=true
+diff --git a/phoenix_static_buildpack.config b/phoenix_static_buildpack.config
+new file mode 100644
+index 0000000..c65a168
+--- /dev/null
++++ b/phoenix_static_buildpack.config
+@@ -0,0 +1,3 @@
++clean_cache=true
++node_version=12.16.3
++remove_node=true

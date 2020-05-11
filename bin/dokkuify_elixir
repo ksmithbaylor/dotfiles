@@ -1,0 +1,46 @@
+#!/usr/bin/env zsh
+
+set -euo pipefail
+
+echo "Make sure you have:"
+echo "  1. Initialized a phoenix app"
+echo "  2. Allowed it to install deps"
+echo "  3. Initialized git and made an initial commit"
+echo 
+printf "Press enter to continue."
+read -s -k
+echo
+echo
+printf "Elixir app name: "
+read app_name
+printf "Uppercased elixir app name: "
+read app_upper
+printf "Dokku subdomain: "
+read app_subdomain
+
+cat ~/bin/.patches/dokkuify_elixir.patch |
+  sed "s/APP_NAME/$app_name/g" |
+  sed "s/APP_UPPER/$app_upper/g" |
+  sed "s/APP_SUBDOMAIN/$app_subdomain/g" |
+  git apply
+
+echo "Done!"
+echo
+echo "Paste into root (sudo su) shell on the server:"
+echo
+echo dokku apps:create ${app_subdomain}
+echo dokku postgres:create ${app_subdomain}_db
+echo dokku postgres:link ${app_subdomain}_db ${app_subdomain}
+echo dokku config:set ${app_subdomain} SECRET_KEY_BASE=$(mix phx.gen.secret)
+echo dokku config:set ${app_subdomain} POOL_SIZE=18
+echo dokku config:set ${app_subdomain} HOSTNAME=${app_subdomain}.home.kevinsmith.xyz
+echo
+printf "When that's done, hit enter."
+read -s -k
+echo
+set -x
+git remote add dokku dokku@home.kevinsmith.xyz:${app_subdomain}
+git add .
+git commit -m 'Set up dokku'
+echo
+echo "When you're ready, push it up with 'git push dokku master'"
