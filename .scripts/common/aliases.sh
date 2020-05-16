@@ -43,6 +43,12 @@ alias top="npx vtop"
 alias rot13="tr 'A-Za-z' 'N-ZA-Mn-za-m'"
 alias pg="docker run -e POSTGRES_PASSWORD=postgres -p 5432:5432 postgres"
 
+katie() {
+  while read message; do
+    osascript -e "tell application \"Messages\" to send \"$message\" to buddy \"Katie Smith\""
+  done
+}
+
 dockspacer() {
   defaults write com.apple.dock persistent-apps -array-add '{"tile-type"="spacer-tile";}'
   killall Dock
