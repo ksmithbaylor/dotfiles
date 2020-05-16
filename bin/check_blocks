@@ -1,0 +1,30 @@
+#!/usr/bin/env ruby
+
+EXPECTED_BLOCKS = 9
+
+found_blocks = []
+
+lines = File.read('/etc/hosts').chomp.lines
+in_blocks = false
+lines.each do |line|
+  if line.include? 'BEGIN BLOCKS'
+    in_blocks = true
+    next
+  end
+
+  if line.include? 'END BLOCKS'
+    in_blocks = false
+  end
+
+  if in_blocks
+    found_blocks.push line
+  end
+end
+
+real_blocks = found_blocks.reject do |block|
+  block.include?('#') || !block.include?('127.0.0.1')
+end
+
+if real_blocks.length != EXPECTED_BLOCKS
+  `osascript -e 'tell application "Messages" to send "MAYDAY, Kevin disabled at least one site block on his laptop. Send help." to buddy "Katie Smith"'`
+end
