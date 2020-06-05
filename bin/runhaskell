@@ -1,7 +1,0 @@
-#!/bin/bash
-
-if command -v stack > /dev/null; then
-  stack runhaskell $@
-else
-  runhaskell $@
-fi
