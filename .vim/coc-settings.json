@@ -14,6 +14,14 @@
       "command": "~/.mix/elixir_ls/language_server.sh",
       "filetypes": ["elixir", "eelixir"]
     },
+    "elmLS": {
+      "command": "elm-language-server",
+      "filetypes": ["elm"],
+      "rootPatterns": ["elm.json"],
+      "initializationOptions": {
+        "elmAnalyseTrigger": "change"
+      }
+    },
     "ccls": {
       "command": "ccls",
       "filetypes": ["c", "cpp", "objc", "objcpp"],
