@@ -1,6 +1,6 @@
 #!/usr/bin/env ruby
 
-EXPECTED_BLOCKS = 16
+EXPECTED_BLOCKS = 17
 
 found_blocks = []
 
