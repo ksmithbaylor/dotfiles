@@ -8,7 +8,8 @@ let g:coc_global_extensions = [
   \ 'coc-tslint-plugin',
   \ 'coc-prettier',
   \ 'coc-angular',
-  \ 'coc-elixir'
+  \ 'coc-elixir',
+  \ 'coc-metals'
   \ ]
 
 map <silent> <C-]> <Plug>(coc-definition)
