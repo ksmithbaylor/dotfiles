@@ -13,6 +13,7 @@ let &t_8b="\<Esc>[48;2;%lu;%lu;%lum"
 set termguicolors
 
 syntax enable
+syntax sync fromstart
 
 let g:one_allow_italics = 1 " I love italic for comments
 colorscheme one
