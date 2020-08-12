@@ -40,7 +40,7 @@ colors:
     cyan:    '0x1aa8a8'
     white:   '0xffffff'
 
-visual_bell:
+bell:
   animation: EaseOutExpo
   duration: 0
   color: '0xffffff'
@@ -56,5 +56,5 @@ shell:
 mouse:
   hide_when_typing: true
 
-key_bindings:
-   - { key: N, mods: Command, command: { program: "open", args: ["-n", "/Applications/Alacritty.app"] } }
+# key_bindings:
+   # - { key: N, mods: Command, command: { program: "open", args: ["-n", "/Applications/Alacritty.app"] } }
