@@ -1,0 +1,21 @@
+#!/usr/bin/env bash
+
+random_name=$(date | md5 | head -c 8)
+read -p "Sandbox name (no spaces) [$random_name]: " sandbox_name
+read -p "Template [vanilla]: " sandbox_template
+sandbox_name=${sandbox_name:-$random_name}
+sandbox_template=${sandbox_template:-vanilla}
+dir="$HOME/main/sandboxes/$sandbox_name"
+# dir=$(mktemp -d -t $sandbox_name)
+
+cd $HOME/main/sandboxes
+yarn create @vitejs/app $sandbox_name --template $sandbox_template
+cd $sandbox_name
+yarn
+
+tmux split-window -p 25
+tmux send-keys -t 2 "yarn dev --open" C-m
+tmux split-pane -h
+tmux select-pane -t 1
+tmux send-keys -t 1 "cd $dir" C-m
+tmux send-keys -t 1 "nvim -p index.html +NERDTreeToggle" C-m
