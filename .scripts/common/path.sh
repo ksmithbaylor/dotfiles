@@ -26,4 +26,6 @@ prepend_path true       $HOME/bin
 prepend_path rvm        $HOME/.rvm/bin
 prepend_path rbenv      /usr/local/var/rbenv/shims
 
+source "$HOME/.cargo/env"
+
 unset prepend_path
