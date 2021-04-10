@@ -5,16 +5,22 @@ window:
   dynamic_padding: true
   decorations: buttonless
 
+# background_opacity: 0.8
+
 scrolling:
   history: 100000
 
 font:
   normal:
-    family: Dank Mono
-  size: 16.0
-  offset:
-    x: -1
-    y: -3
+    family: JetBrains Mono
+    style: Light
+  italic:
+    family: JetBrains Mono
+    style: Light Italic
+  size: 12.0
+  # offset:
+  #   x: -1
+  #   y: -4
   use_thin_strokes: true
 
 colors:
@@ -44,8 +50,6 @@ bell:
   animation: EaseOutExpo
   duration: 0
   color: '0xffffff'
-
-background_opacity: 1.0
 
 live_config_reload: true
 
