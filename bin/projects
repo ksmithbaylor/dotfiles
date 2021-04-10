@@ -19,6 +19,8 @@ class Projects
       master
     when 'refresh'
       refresh
+    when 'clean'
+      clean
     when nil, 'help', '--help'
       puts <<~HELP
         Usage: `projects <command>`
@@ -77,6 +79,12 @@ class Projects
     end
   end
 
+  def clean
+    each_directory do |dir|
+      git_clean dir
+    end
+  end
+
   private
 
   def git_status(dir)
@@ -89,6 +97,10 @@ class Projects
 
   def checkout_master(dir)
     in_directory dir, "git checkout master"
+  end
+
+  def git_clean(dir)
+    in_directory dir, "git clean -dfX"
   end
 
   def each_directory
