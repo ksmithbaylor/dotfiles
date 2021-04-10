@@ -42,6 +42,10 @@ alias circle="open https://circleci.com/gh/ksmithbaylor"
 alias top="npx vtop"
 alias rot13="tr 'A-Za-z' 'N-ZA-Mn-za-m'"
 alias pg="docker run -e POSTGRES_PASSWORD=postgres -p 5432:5432 postgres"
+alias dharma=" curl -s 'https://api.dharma.io/' -H 'content-type: application/json' --data-raw '{\"operationName\":null,\"variables\":{},\"query\":\"{compoundInterestRates {value tokenSymbol}}\"}' | jq '.data.compoundInterestRates[1].value' | ruby -e 'puts \"Interest rate: #{(STDIN.read.to_f * 100).round(2)}%\"'"
+alias btc="echo \"\\\$\$(curl -s https://api.pro.coinbase.com/products/BTC-USD/ticker | jq -r .bid)\""
+alias eth="echo \"\\\$\$(curl -s https://api.pro.coinbase.com/products/ETH-USD/ticker | jq -r .bid)\""
+alias gas="curl -s https://www.gasnow.org/api/v3/gas/price | jq .data.standard | xargs -I{} echo \"{} / 1000000000\" | bc"
 
 katie() {
   while read message; do
@@ -161,10 +165,6 @@ function printall {
 function ip() {
     echo "Public: $(dig +short myip.opendns.com @resolver1.opendns.com)"
     echo "Private: $(ifconfig | grep inet | grep -v inet6 | grep -v '127.0.0.1' | awk '{print $2}')"
-}
-
-function gh {
-    git clone "https://github.com/$1/$2.git" $3
 }
 
 if command_exists highlight; then

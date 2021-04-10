@@ -3,6 +3,7 @@ export HISTFILESIZE=100000
 export CLICOLOR=true
 export HOMEBREW_CASK_OPTS="--appdir=/Applications"
 export GPG_TTY=`tty`
+export ERL_AFLAGS="-kernel shell_history enabled"
 
 # Android Studio / React Native
 export ANDROID_HOME=$HOME/Library/Android/sdk
@@ -32,6 +33,10 @@ if command_exists pair; then
       echo "Please run $> gem install pair-up"
     fi
   }
+fi
+
+if command_exists go; then
+  export GOPATH="$HOME/main/code/go"
 fi
 
 # [[ -s "$HOME/.rvm/scripts/rvm" ]] && source "$HOME/.rvm/scripts/rvm" # Load RVM into a shell session *as a function*
