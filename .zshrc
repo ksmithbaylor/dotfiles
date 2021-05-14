@@ -3,7 +3,7 @@
 
 if [[ $PROFILE_STARTUP = true ]]; then
   exec 3>&2 2> >(tee /tmp/sample-time.log |
-                   gsed -u 's/^.*$/now/' |
+                   sed -u 's/^.*$/now/' |
                    gdate -f - +%s.%N >/tmp/sample-time.tim)
 
   set -x
