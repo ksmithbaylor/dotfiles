@@ -7,6 +7,7 @@ export ERL_AFLAGS="-kernel shell_history enabled"
 
 # Android Studio / React Native
 export ANDROID_HOME=$HOME/Library/Android/sdk
+export ANDROID_NDK_HOME=$ANDROID_HOME/ndk/$(ls $ANDROID_HOME/ndk/ | sort -n -r | head -n 1)
 export PATH=$PATH:$ANDROID_HOME/tools
 export PATH=$PATH:$ANDROID_HOME/tools/bin
 export PATH=$PATH:$ANDROID_HOME/platform-tools
@@ -21,6 +22,10 @@ fi
 if command_exists nodenv; then
     export NODENV_ROOT=/usr/local/var/nodenv
     eval "$(nodenv init -)"
+fi
+
+if command_exists pyenv; then
+    eval "$(pyenv init -)"
 fi
 
 if command_exists pair; then
