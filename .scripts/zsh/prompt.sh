@@ -58,6 +58,8 @@ function _prompt {
     local pwd_length_limit=20
     if command_exists tico; then
       local directory=$(tico $(print -D $PWD))
+    elif [[ "$PWD" =~ coinbase/code/mono-repo ]]; then
+      local directory=$(pwd | sed -e "s|$HOME/coinbase/code/mono-repo|壱|")
     else
       local directory=$(pwd | sed -e "s|$HOME|~|" |
                   perl -pe "s|(~?/[^/]+/).{$pwd_length_limit,}(/[^/]+/?\$)|\$1...\$2|")

@@ -22,6 +22,8 @@ source ~/.scripts/zsh/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
 
 [ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
 
+[ -f ~/coinbase/.coinbaserc ] && source ~/coinbase/.coinbaserc
+
 if [[ $PROFILE_STARTUP = true ]]; then
   set +x
   exec 2>&3 3>&-

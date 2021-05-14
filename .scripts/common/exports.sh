@@ -35,10 +35,6 @@ if command_exists pair; then
   }
 fi
 
-if command_exists go; then
-  export GOPATH="$HOME/main/code/go"
-fi
-
 # [[ -s "$HOME/.rvm/scripts/rvm" ]] && source "$HOME/.rvm/scripts/rvm" # Load RVM into a shell session *as a function*
 
 # if command_exists opam; then
