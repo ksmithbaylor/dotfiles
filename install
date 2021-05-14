@@ -10,11 +10,11 @@ dotfiles=(
   .bash_profile
   .bashrc
   .ghci
-  .gitconfig
   .htoprc
   .prettierrc.yml
   .tmux.conf
   .config/alacritty/alacritty.yml
+  .config/git/config
   .vimrc
   .zshrc
 )
