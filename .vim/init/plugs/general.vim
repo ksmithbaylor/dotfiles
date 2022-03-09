@@ -1,5 +1,5 @@
 Plug 'sheerun/vim-polyglot'
-  let g:polyglot_disabled = ['typescript', 'typescript.tsx']
+  let g:polyglot_disabled = ['typescript', 'typescript.tsx', 'go']
 Plug 'jiangmiao/auto-pairs'
   let g:AutoPairsShortcutFastWrap = '<C-W>'
 Plug 'tpope/vim-unimpaired'

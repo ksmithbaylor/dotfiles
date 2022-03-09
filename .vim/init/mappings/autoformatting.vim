@@ -14,6 +14,7 @@ function! ToggleAutoFormatting()
             autocmd BufWritePre *.elm ElmFormat
             autocmd BufWritePre *.ex,*.exs MixFormat
             autocmd BufWritePre *.py Yapf
+            autocmd BufWritePre *.go GoFmt
             autocmd BufWritePre *.rs silent call Preserve("silent call Preserve('1,$ ! rustfmt 2>/dev/null') | call UndoIfShellError()")
         augroup END
         echo 'Auto-formatting on'
