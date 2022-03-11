@@ -46,6 +46,7 @@ alias dharma=" curl -s 'https://api.dharma.io/' -H 'content-type: application/js
 alias btc="echo \"\\\$\$(curl -s https://api.pro.coinbase.com/products/BTC-USD/ticker | jq -r .bid)\""
 alias eth="echo \"\\\$\$(curl -s https://api.pro.coinbase.com/products/ETH-USD/ticker | jq -r .bid)\""
 alias gas="curl -s https://www.gasnow.org/api/v3/gas/price | jq .data.standard | xargs -I{} echo \"{} / 1000000000\" | bc"
+alias rosetta="env /usr/bin/arch -x86_64 /bin/zsh --login"
 
 katie() {
   while read message; do
