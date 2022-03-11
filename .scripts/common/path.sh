@@ -16,7 +16,7 @@ prepend_path stack      $HOME/.local/bin
 prepend_path true       /Library/TeX/texbin
 prepend_path true       /usr/local/mysql/bin
 prepend_path nodebrew   $HOME/.nodebrew/current/bin
-prepend_path cargo      $HOME/.cargo/bin
+prepend_path true       $HOME/.cargo/bin
 prepend_path brew       /usr/local/bin
 prepend_path brew       /usr/local/sbin
 prepend_path true       $HOME/bin
