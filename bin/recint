@@ -1,0 +1,75 @@
+#!/usr/bin/env ruby
+
+# Copy this file as `recint` (or whatever you want) somewhere in your path and
+# use it according to the usage notes below!
+
+if ARGV.size < 4
+  puts "Usage: recint <collateral_factor> <supply_apr> <supply_bonus> <borrow_apr> <borrow_bonus>"
+  puts
+  puts "  Example - To calculate the net interest on recursively lending this asset:"
+  puts
+  puts "    80% collateral factor (CF)"
+  puts "    2.5% supply APR"
+  puts "    3.7% supply incentive APR"
+  puts "    3.2% borrow APR"
+  puts "    2.1% borrow incentive APR"
+  puts
+  puts "  Use this command:"
+  puts
+  puts "    recint 80 2.5 3.7 3.2 2.1"
+  puts 
+  puts "  Output:"
+  puts
+  puts "    Base APR:  -0.30%"
+  puts "    Bonus APR: 26.90%"
+  puts "    Total APR: 26.60%"
+  puts
+  exit 1
+end
+
+# Gather input
+cf, supply_apr, supply_bonus, borrow_apr, borrow_bonus, principal = ARGV.map(&:to_f)
+cf /= 100
+
+# Calculate recursive supply and borrow
+total_supply = 1 / (1 - cf)
+total_borrow = total_supply * cf
+
+# Calculate base apr
+base_supply_apr = total_supply * supply_apr
+base_borrow_apr = total_borrow * borrow_apr
+base_apr = base_supply_apr - base_borrow_apr
+
+# Calculate bonus apr
+bonus_supply_apr = total_supply * supply_bonus
+bonus_borrow_apr = total_borrow * borrow_bonus
+bonus_apr = bonus_supply_apr + bonus_borrow_apr
+
+# Calculate total apr
+total_apr = base_apr + bonus_apr
+
+def percent(f, dec = 2)
+  "%.#{dec.to_s}f" % f + '%'
+end
+
+def usd(f)
+  '$%.2f' % f
+end
+
+puts "Base APR:  #{percent(base_apr)}"
+puts "Bonus APR: #{percent(bonus_apr)}"
+puts "Total APR: #{percent(total_apr)}"
+
+if !principal.nil?
+  daily_return = (1 + total_apr / 100) ** (1.0/365)
+  daily_yield = daily_return * principal - principal
+  monthly_return = (1 + total_apr / 100) ** (1.0/12)
+  monthly_yield = monthly_return * principal - principal
+  annual_return = (1 + total_apr / 100)
+  annual_yield = annual_return * principal - principal
+  puts "-----------------------------"
+  puts "With initial principal of #{usd(principal)}:"
+  puts "  Daily yield:   #{usd(daily_yield)} (#{percent(daily_return - 1, 6)})"
+  puts "  Monthly yield: #{usd(monthly_yield)} (#{percent(monthly_return - 1, 6)})"
+  puts "  Annual yield:  #{usd(annual_yield)} (#{percent(annual_return - 1, 6)})"
+end

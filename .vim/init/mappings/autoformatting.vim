@@ -12,6 +12,7 @@ function! ToggleAutoFormatting()
             " autocmd BufWritePre *.js,*.jsx,*.mjs,*.ts,*.tsx,*.vue,*.css,*.less,*.scss,*.graphql Prettier
             autocmd BufWritePre *.cpp,*.hpp,*.c,*.h Neoformat
             autocmd BufWritePre *.elm ElmFormat
+            autocmd BufWritePre *.gleam silent call Preserve("silent call Preserve('1,$ ! gleam format --stdin 2>/dev/null') | call UndoIfShellError()")
             autocmd BufWritePre *.ex,*.exs MixFormat
             autocmd BufWritePre *.py Yapf
             autocmd BufWritePre *.go GoFmt

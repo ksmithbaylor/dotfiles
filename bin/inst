@@ -1,0 +1,21 @@
+#!/bin/bash
+
+curl -s https://api.instadapp.io/defi/polygon/prices \
+  | jq -r '.["0xf50D05A1402d0adAfA880D36050736f9f6ee7dee"]' \
+  | ruby -e 'price = gets.to_f; puts "Price on instadapp: #{price} USD"'
+
+curl -s 'https://pathfinder-polygon-137.1inch.exchange/v1.0/quotes?deepLevel=2&mainRouteParts=20&parts=80&virtualParts=80&walletAddress=0xa5D3Bc5ac4a5850D1673814489B3BCe8C584Bf48&fromTokenAddress=0xf50d05a1402d0adafa880d36050736f9f6ee7dee&toTokenAddress=0x2791bca1f2de4661ed88a30c99a7a9449aa84174&amount=1000000000000000000&gasPrice=1000000000&protocolWhiteList=POLYGON_QUICKSWAP,POLYGON_CURVE,WMATIC,POLYGON_SUSHISWAP,POLYGON_AAVE_V2,COMETH,DFYN,POLYGON_MSTABLE,FIREBIRD_FINANCE,ONESWAP,POLYDEX_FINANCE,POLYGON_ONE_INCH_LIMIT_ORDER&protocols=POLYGON_QUICKSWAP,POLYGON_CURVE,WMATIC,POLYGON_SUSHISWAP,POLYGON_AAVE_V2,COMETH,DFYN,POLYGON_MSTABLE,FIREBIRD_FINANCE,ONESWAP,POLYDEX_FINANCE&deepLevels=1,1,1,1,1,1,1,1,1,1,1&mainRoutePartsList=1,1,1,1,1,1,1,1,1,1,1&partsList=1,1,1,1,1,1,1,1,1,1,1&virtualPartsList=1,1,1,1,1,1,1,1,1,1,1' \
+  -H 'Accept: application/json, text/plain, */*' \
+  -H 'Referer: https://app.1inch.io/' \
+  -H 'User-Agent: Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/90.0.4430.212 Safari/537.36' \
+  --compressed \
+  | jq -r '.bestResult.toTokenAmount' \
+  | ruby -e 'usdc = (gets.to_i / 1000000.0).round 3; puts "Price on 1inch:     #{usdc} USDC"'
+
+curl -s 'https://pathfinder-polygon-137.1inch.exchange/v1.0/quotes?deepLevel=2&mainRouteParts=20&parts=80&virtualParts=80&walletAddress=0xa5D3Bc5ac4a5850D1673814489B3BCe8C584Bf48&fromTokenAddress=0xf50d05a1402d0adafa880d36050736f9f6ee7dee&toTokenAddress=0x2791bca1f2de4661ed88a30c99a7a9449aa84174&amount=84785000000000000000&gasPrice=1000000000&protocolWhiteList=POLYGON_QUICKSWAP,POLYGON_CURVE,WMATIC,POLYGON_SUSHISWAP,POLYGON_AAVE_V2,COMETH,DFYN,POLYGON_MSTABLE,FIREBIRD_FINANCE,ONESWAP,POLYDEX_FINANCE,POLYGON_ONE_INCH_LIMIT_ORDER&protocols=POLYGON_QUICKSWAP,POLYGON_CURVE,WMATIC,POLYGON_SUSHISWAP,POLYGON_AAVE_V2,COMETH,DFYN,POLYGON_MSTABLE,FIREBIRD_FINANCE,ONESWAP,POLYDEX_FINANCE&deepLevels=1,1,1,1,1,1,1,1,1,1,1&mainRoutePartsList=1,1,1,1,1,1,1,1,1,1,1&partsList=1,1,1,1,1,1,1,1,1,1,1&virtualPartsList=1,1,1,1,1,1,1,1,1,1,1' \
+  -H 'Accept: application/json, text/plain, */*' \
+  -H 'Referer: https://app.1inch.io/' \
+  -H 'User-Agent: Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/90.0.4430.212 Safari/537.36' \
+  --compressed \
+  | jq -r '.bestResult.toTokenAmount' \
+  | ruby -e 'usdc = (gets.to_i / 1000000.0).round 3; puts "Real swap:          #{usdc} USDC"'

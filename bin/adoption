@@ -1,0 +1,62 @@
+#!/usr/bin/env ruby
+
+require 'httparty'
+require 'json'
+require 'pp'
+require 'pry'
+
+HTTParty::Basement.default_options.update(verify: false)
+
+res = HTTParty.get 'https://cdn.parentfinder.com/agency/5f0af3c2fc253d0be2014b07/BadgeProfile/families.json'
+data = JSON.parse(res.body)
+# binding.pry
+by_status = data['profiles'].group_by { |p| p['placement_status']['status'] }
+
+our_spot = -1
+our_status = nil
+
+puts '  ' + [
+  'Status'.ljust(7),
+  '#'.rjust(2),
+  'Names'.ljust(24),
+  'Started Waiting'.rjust(24),
+  'Gender'.ljust(6),
+  'Ethnicities'.rjust(11),
+  'Special Needs'.rjust(13),
+  'Number'.ljust(15),
+].join('   ') + "\n\n"
+
+$full_list = []
+
+['Placed', 'Matched', 'Waiting'].each do |status|
+  sorted = by_status[status].sort_by { |p| p['waiting_for'] }
+  sorted.each_with_index do |p, i|
+    spot = i + 1
+    # puts spot.to_s + ' ' + p.dig('preference', 'special_needs').inspect
+    if p['name'] == 'Kevin / Katie'
+      our_spot = spot
+      our_status = status
+    end
+    puts '  ' + [
+      status.ljust(7),
+      spot.to_s.rjust(2),
+      p['name'].ljust(24),
+      p['waiting_for'].rjust(24),
+      (p.dig('preference', 'gender') || '-').ljust(6),
+      (p.dig('preference', 'ethnicity')&.size&.to_s || '-').rjust(11),
+      [  
+        (p.dig('preference', 'ready_to_adopt_special_need_child') ? 'yes' : 'no' || '-').rjust(3),
+        (p.dig('preference', 'special_needs')&.size&.to_s || '-').rjust(2)
+      ].join(' / ').rjust(13),
+      (p.dig('preference', 'number_of_children') || '-').inspect.ljust(15),
+    ].join('   ')
+    ethnicities = p.dig('preference', 'ethnicity') || []
+    $full_list = ethnicities if ethnicities.size == 19
+    if $full_list.size > 0
+      # puts "    Excluded #{($full_list - ethnicities).join(',j')}"
+    end
+  end
+  puts
+end
+
+puts "  We are #{our_status} in spot #{our_spot}."

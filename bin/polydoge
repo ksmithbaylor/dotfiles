@@ -1,0 +1,9 @@
+#!/bin/bash
+
+curl -s 'https://pathfinder-polygon-137.1inch.exchange/v1.0/quotes?deepLevel=2&mainRouteParts=20&parts=80&virtualParts=80&fromTokenAddress=0x8a953cfe442c5e8855cc6c61b1293fa648bae472&toTokenAddress=0xeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeee&amount=219489203797385417947724243&gasPrice=1000000000&protocolWhiteList=POLYGON_QUICKSWAP,POLYGON_CURVE,WMATIC,POLYGON_SUSHISWAP,POLYGON_AAVE_V2,COMETH,DFYN&protocols=POLYGON_QUICKSWAP,POLYGON_CURVE,WMATIC,POLYGON_SUSHISWAP,POLYGON_AAVE_V2,COMETH,DFYN&deepLevels=1,1,1,1,1,1,1&mainRoutePartsList=1,1,1,1,1,1,1&partsList=1,1,1,1,1,1,1&virtualPartsList=1,1,1,1,1,1,1' \
+  -H 'Accept: application/json, text/plain, */*' \
+  -H 'Referer: https://app.1inch.io/' \
+  -H 'User-Agent: Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/90.0.4430.93 Safari/537.36' \
+  --compressed \
+  | jq -r '.bestResult.toTokenAmount' \
+  | ruby -e 'matic = (gets.to_i / 1000000000000000000.0).round 3; puts "#{matic} MATIC (#{((100 * matic / 2.5) - 100).round}%)"'
