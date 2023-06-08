@@ -12,16 +12,16 @@ scrolling:
 
 font:
   normal:
-    family: JetBrainsMono Nerd Font Mono
+    family: JetBrainsMono Nerd Font
     style: Light
   italic:
-    family: JetBrainsMono Nerd Font Mono
+    family: JetBrainsMono Nerd Font
     style: Light Italic
   size: 12.0
   # offset:
   #   x: -1
   #   y: -4
-  use_thin_strokes: true
+  # use_thin_strokes: true
 
 colors:
   primary:
@@ -54,7 +54,7 @@ bell:
 live_config_reload: true
 
 shell:
-  program: /usr/local/bin/zsh
+  program: /opt/homebrew/bin/zsh
   args:
     - --login
 mouse:
