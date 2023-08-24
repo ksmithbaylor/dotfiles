@@ -1,0 +1,9 @@
+#!/bin/bash
+
+mkdir -p ~/.private
+
+if [[ -f ~/.private/enabled ]]; then
+  rm ~/.private/enabled
+else
+  touch ~/.private/enabled
+fi

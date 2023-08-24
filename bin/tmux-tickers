@@ -43,6 +43,9 @@ function coin() {
   value=$(curl -s https://query1.finance.yahoo.com/v6/finance/quoteSummary/coin?modules=financialData | jq -r '.quoteSummary.result[0].financialData.currentPrice.fmt')
 
   printf "$(colorize "COIN" "colour33" "colour26" $value)"
+  if [[ -f ~/.private/enabled ]] && [[ -f ~/.private/tmux-tickers ]]; then
+    ~/.private/tmux-tickers $value
+  fi
 }
 
 function tickers() {
