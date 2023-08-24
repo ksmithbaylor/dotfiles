@@ -1,0 +1,54 @@
+#!/bin/bash
+
+function colorize() {
+  currency=$1
+  default_color=$2
+  up_color=$3
+  value=$(echo -ne $4 | xargs printf '%0.2f')
+  color=$default_color
+
+  file="/tmp/ticker_$currency"
+
+  if [ ! -f "$file" ]
+  then
+    echo "$value" > "$file"
+    fileValue=$value
+  else
+    fileValue=$(cat $file)
+  fi
+
+  if (( $(echo "$fileValue >= $value" | bc -l) ));
+  then
+    color=$up_color
+  fi
+
+  echo "$value" > "$file"
+
+  echo "#[fg=$default_color] $currency #[fg=$color]\$$value"
+}
+
+function btc() {
+  value=$(curl -s https://api.pro.coinbase.com/products/BTC-USD/ticker | jq -r .bid)
+
+  printf "$(colorize "BTC" "colour208" "colour202" $value)"
+}
+
+function eth() {
+  value=$(curl -s https://api.pro.coinbase.com/products/ETH-USD/ticker | jq -r .bid)
+
+  printf "$(colorize "ETH" "colour141" "colour135" $value)"
+}
+
+function coin() {
+  value=$(curl -s https://query1.finance.yahoo.com/v6/finance/quoteSummary/coin?modules=financialData | jq -r '.quoteSummary.result[0].financialData.currentPrice.fmt')
+
+  printf "$(colorize "COIN" "colour33" "colour26" $value)"
+}
+
+function tickers() {
+  btc
+  eth
+  coin
+}
+
+tickers
