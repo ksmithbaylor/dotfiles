@@ -12,16 +12,15 @@ scrolling:
 
 font:
   normal:
-    family: JetBrainsMono Nerd Font
-    style: Light
+    family: Dank Mono
+    style: Regular
   italic:
-    family: JetBrainsMono Nerd Font
-    style: Light Italic
-  size: 12.0
-  # offset:
-  #   x: -1
-  #   y: -4
-  # use_thin_strokes: true
+    family: Dank Mono
+    style: Italic
+  size: 14.0
+  offset:
+    x: -1
+    y: -5
 
 colors:
   primary:
