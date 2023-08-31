@@ -24,9 +24,11 @@ if command_exists nodenv; then
     eval "$(nodenv init -)"
 fi
 
-if command_exists pyenv; then
-    eval "$(pyenv init -)"
-fi
+export PYENV_ROOT="$HOME/.pyenv"
+export PATH="$PYENV_ROOT/bin:$PATH"
+# if command_exists pyenv; then
+#     eval "$(pyenv init -)"
+# fi
 
 if command_exists pair; then
   pair() {
