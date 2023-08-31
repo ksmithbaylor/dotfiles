@@ -26,6 +26,3 @@ for dotfile in ${dotfiles[@]}; do
   mkdir -p $(dirname $HOME/$dotfile)
   ln -sf $PWD/$dotfile $HOME/$dotfile
 done
-
-# Set up term info
-tic -x xterm-256color.terminfo
