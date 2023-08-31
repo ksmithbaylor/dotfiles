@@ -1,6 +1,5 @@
 runtime! init/functions/*.vim
 
-call SetupBackupAndSwapfiles()
 call EnsureVimPlugInstalled()
 call SetupPlugs()
 
