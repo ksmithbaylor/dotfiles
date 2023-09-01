@@ -6,6 +6,11 @@ nnoremap <silent> * :let @/= '\<' . expand('<cword>') . '\>' <bar> set hls <cr>
 nnoremap <silent> <C-t> :NvimTreeToggle<CR>
 nnoremap <silent> <leader>nf :NvimTreeFindFile<CR>
 
+" Search shortcuts
+nnoremap <C-p> <Cmd>Telescope find_files<CR>
+nnoremap <leader>f <Cmd>Telescope live_grep<CR>
+nnoremap <leader>e <Cmd>Telescope grep_string<CR>
+
 " Quicker creation and navigation of tabs
 nnoremap <leader>] :tabn<CR>
 nnoremap <leader>[ :tabp<CR>
@@ -103,3 +108,6 @@ nmap <silent> <leader>tf :TestFile<CR>
 nmap <silent> <leader>ts :TestSuite<CR>
 nmap <silent> <leader>tl :TestLast<CR>
 nmap <silent> <leader>tg :TestVisit<CR>
+
+" Pair wrapping
+let g:AutoPairsShortcutFastWrap = '<C-w>'

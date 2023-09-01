@@ -53,4 +53,3 @@ runtime! languageconfig/*.lua
 runtime mappings.vim
 runtime mappings.lua
 runtime colors.vim
-
