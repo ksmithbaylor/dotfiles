@@ -42,9 +42,15 @@ set shell=/usr/local/bin/zsh
 
 " Load plugins and their config
 runtime plugins.vim
-runtime! lua/pluginconfig/*.lua
+runtime! pluginconfig/*.vim
+runtime! pluginconfig/*.lua
+
+" Load language-specific config
+runtime! languageconfig/*.vim
+runtime! languageconfig/*.lua
 
 " Load other configuration
 runtime mappings.vim
+runtime mappings.lua
 runtime colors.vim
 

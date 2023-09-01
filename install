@@ -5,7 +5,6 @@ set -e
 dotfiles=(
   .irssi
   .scripts
-  .vim
   bin
   .bash_profile
   .bashrc

@@ -12,4 +12,10 @@ hi ColorColumn guibg=#112630 ctermbg=235 gui=NONE cterm=NONE
 
 " Tweak tree colors
 hi NvimTreeNormal guibg=#01101d
+hi NvimTreeNormal guibg=#01101d
 hi NvimTreeNormalNC guibg=#01101d
+
+" Highlight trailing whitespace red
+autocmd InsertEnter * match ExtraWhitespace /\s\+\%#\@<!$/
+autocmd BufRead,InsertLeave * match ExtraWhitespace /\s\+$/
+highlight ExtraWhitespace ctermbg=red guibg=red
