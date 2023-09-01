@@ -1,3 +1,8 @@
+" Do this first to disable netrw in favor of nvim-tree
+let g:loaded_netrw = 1
+let g:loaded_netrwPlugin = 1
+
+" Leader keys
 let mapleader = '\'
 let maplocalleader = ','
 
@@ -35,8 +40,11 @@ set mouse=nicr
 " Use zsh in terminals and background commands
 set shell=/usr/local/bin/zsh
 
+" Load plugins and their config
 runtime plugins.vim
+runtime! lua/pluginconfig/*.lua
+
+" Load other configuration
 runtime mappings.vim
 runtime colors.vim
-runtime statusline.lua
 

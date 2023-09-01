@@ -6,6 +6,10 @@ syntax sync fromstart
 
 colorscheme night-owl
 
-" Tweak colors
+" Tweak editor colors
 hi LineNr guifg=#2b404a ctermfg=238 guibg=#011627 ctermbg=233 gui=NONE cterm=NONE
 hi ColorColumn guibg=#112630 ctermbg=235 gui=NONE cterm=NONE
+
+" Tweak tree colors
+hi NvimTreeNormal guibg=#01101d
+hi NvimTreeNormalNC guibg=#01101d
