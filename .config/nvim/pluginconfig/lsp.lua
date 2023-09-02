@@ -3,7 +3,7 @@ local luasnip = require('luasnip')
 local cmp = require('cmp')
 
 local servers = {
-  -- Installed by default with Go
+  -- go install golang.org/x/tools/gopls@latest
   'gopls',
 
   -- go install github.com/nametake/golangci-lint-langserver@latest
