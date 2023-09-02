@@ -14,6 +14,7 @@ Plug 'hrsh7th/cmp-nvim-lsp'
 " Plug 'hrsh7th/cmp-buffer'
 " Plug 'hrsh7th/cmp-path'
 Plug 'hrsh7th/cmp-nvim-lsp-signature-help'
+Plug 'sbdchd/neoformat'
 Plug 'saadparwaiz1/cmp_luasnip'
 Plug 'L3MON4D3/LuaSnip'
 Plug 'hrsh7th/nvim-cmp'
@@ -34,7 +35,7 @@ Plug 'benmills/vimux'
 Plug 'janko-m/vim-test'
 
 " Language-specific
-Plug 'darrikonn/vim-gofmt', { 'for': 'go' }
+" Plug 'darrikonn/vim-gofmt', { 'for': 'go' }
 Plug 'gleam-lang/gleam.vim', { 'for': 'gleam' }
 Plug 'mracos/mermaid.vim', { 'for': 'mermaid' }
 Plug 'bhurlow/vim-parinfer', { 'for': 'lisp' }

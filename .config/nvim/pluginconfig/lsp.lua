@@ -1,4 +1,3 @@
-local capabilities = require('cmp_nvim_lsp').default_capabilities()
 local lspconfig = require('lspconfig')
 local luasnip = require('luasnip')
 local cmp = require('cmp')
@@ -19,9 +18,38 @@ local servers = {
 
   -- yarn global add pyright
   'pyright',
+
+  -- yarn global add vscode-langservers-extracted
+  'cssls',
+  'jsonls',
+  'html',
+
+  -- yarn global add @microsoft/compose-language-service
+  'docker_compose_language_service',
+
+  -- yarn global add dockerfile-language-server-nodejs
+  'dockerls',
+
+  -- yarn global add graphql-language-service-cli
+  'graphql',
+
+  -- gem install solargraph
+  'solargraph',
+
+  -- gem install rubocop
+  'rubocop',
+
+  -- yarn global add @ignored/solidity-language-server
+  'solidity_ls_nomicfoundation'
 }
 
 for _, lsp in ipairs(servers) do
+  local capabilities = require('cmp_nvim_lsp').default_capabilities()
+
+  if lsp == 'cssls' or lsp == 'jsonls' or lsp == 'html' then
+    capabilities.textDocument.completion.completionItem.snippetSupport = true
+  end
+
   lspconfig[lsp].setup { capabilities = capabilities }
 end
 

@@ -40,6 +40,9 @@ set mouse=nicr
 " Use zsh in terminals and background commands
 set shell=/usr/local/bin/zsh
 
+" Keep the diagnostics column always open to prevent shifting
+set signcolumn=yes
+
 " Load plugins and their config
 runtime plugins.vim
 runtime! pluginconfig/*.vim
