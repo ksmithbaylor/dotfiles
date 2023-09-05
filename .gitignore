@@ -1,8 +1,2 @@
 .DS_Store
-.vim/bundle
-.vim/backup
-.vim/swapfiles
-.vim/.netrwhist
-*.swp
-.vim/plugged
 bin/pdfr
