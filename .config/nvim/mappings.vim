@@ -10,6 +10,8 @@ nnoremap <silent> <leader>nf :NvimTreeFindFile<CR>
 nnoremap <C-p> <Cmd>Telescope find_files<CR>
 nnoremap <leader>f <Cmd>Telescope live_grep<CR>
 nnoremap <leader>e <Cmd>Telescope grep_string<CR>
+nnoremap <leader>b <Cmd>Telescope buffers<CR>
+nnoremap <leader>d <Cmd>Telescope dash search<CR>
 
 " Quicker creation and navigation of tabs
 nnoremap <leader>] :tabn<CR>
