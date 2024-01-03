@@ -43,6 +43,9 @@ set shell=/usr/local/bin/zsh
 " Keep the diagnostics column always open to prevent shifting
 set signcolumn=yes
 
+" Disable folding for now
+set nofoldenable
+
 " Load plugins and their config
 runtime plugins.vim
 runtime! pluginconfig/*.vim
