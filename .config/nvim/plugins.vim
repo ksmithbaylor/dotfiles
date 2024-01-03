@@ -34,6 +34,7 @@ Plug 'vim-scripts/loremipsum'
 Plug 'benmills/vimux'
 Plug 'janko-m/vim-test'
 Plug 'mrjones2014/dash.nvim', { 'do': 'make install' }
+Plug 'github/copilot.vim'
 
 " Language-specific
 " Plug 'darrikonn/vim-gofmt', { 'for': 'go' }
