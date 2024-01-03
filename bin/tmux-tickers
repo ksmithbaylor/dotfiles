@@ -4,7 +4,7 @@ function colorize() {
   currency=$1
   default_color=$2
   up_color=$3
-  value=$(echo -ne $4 | xargs printf '%0.2f')
+  value=$(echo -ne $4 | xargs printf $5)
   color=$default_color
 
   file="/tmp/ticker_$currency"
@@ -24,25 +24,32 @@ function colorize() {
 
   echo "$value" > "$file"
 
-  echo "#[fg=$default_color] $currency #[fg=$color]\$$value"
+  echo "#[fg=$default_color] $currency #[fg=$color]$6$value"
 }
 
 function btc() {
   value=$(curl -s https://api.pro.coinbase.com/products/BTC-USD/ticker | jq -r .bid)
 
-  printf "$(colorize "BTC" "colour208" "colour202" $value)"
+  printf "$(colorize "BTC" "colour208" "colour202" $value '%0.2f' '$')"
 }
 
 function eth() {
   value=$(curl -s https://api.pro.coinbase.com/products/ETH-USD/ticker | jq -r .bid)
 
-  printf "$(colorize "ETH" "colour141" "colour135" $value)"
+  printf "$(colorize "ETH" "colour141" "colour135" $value '%0.2f' '$')"
+}
+
+function ratio() {
+  value=$(curl -s https://api.pro.coinbase.com/products/ETH-BTC/ticker | jq -r .bid)
+
+  printf "$(colorize "ratio" "colour143" "colour137" $value '%0.6f' '')"
 }
 
 function coin() {
-  value=$(curl -s https://query1.finance.yahoo.com/v6/finance/quoteSummary/coin?modules=financialData | jq -r '.quoteSummary.result[0].financialData.currentPrice.fmt')
+  value=$(curl -s 'https://query2.finance.yahoo.com/v8/finance/chart/COIN' | jq '.chart.result[0].indicators.quote[0].close | last * 100 | round / 100')
+  # value=$(curl -s https://query1.finance.yahoo.com/v6/finance/quoteSummary/coin?modules=financialData | jq -r '.quoteSummary.result[0].financialData.currentPrice.fmt')
 
-  printf "$(colorize "COIN" "colour33" "colour26" $value)"
+  printf "$(colorize "COIN" "colour33" "colour26" $value '%0.2f' '$')"
   if [[ -f ~/.private/enabled ]] && [[ -f ~/.private/tmux-tickers ]]; then
     ~/.private/tmux-tickers $value
   fi
@@ -51,6 +58,7 @@ function coin() {
 function tickers() {
   btc
   eth
+  ratio
   coin
 }
 
