@@ -1,0 +1,15 @@
+#!/usr/bin/env zsh
+
+set -e
+
+if [[ -n $(git status -s) ]]; then
+  echo "Working directory not clean, exiting"
+  exit
+fi
+
+git fetch upstream
+git fetch origin
+
+git checkout master
+git merge upstream/master
+git push origin master
