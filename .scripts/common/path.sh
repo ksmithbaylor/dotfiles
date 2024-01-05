@@ -6,9 +6,14 @@ function prepend_path() {
     fi
 }
 
+# path_helper is returning nonsense for some reason, do it manually
+PATH=$(echo $(cat /etc/paths && cat /etc/paths.d/*) | cat | sed 's/ /:/g')
+
 # Least important first
-prepend_path brew       /usr/local/bin
+prepend_path true       /opt/homebrew/sbin
+prepend_path true       /opt/homebrew/bin
 prepend_path true       $HOME/.cargo/bin
+prepend_path true       $HOME/coinbase/go/bin
 prepend_path true       $HOME/bin
 
 unset prepend_path
