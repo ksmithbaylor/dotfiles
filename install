@@ -12,7 +12,7 @@ dotfiles=(
   .htoprc
   .prettierrc.yml
   .tmux.conf
-  .config/alacritty/alacritty.yml
+  .config/alacritty/alacritty.toml
   .config/git/config
   .config/nvim
   .vimrc

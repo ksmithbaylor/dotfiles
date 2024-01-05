@@ -1,0 +1,62 @@
+live_config_reload = true
+
+[bell]
+animation = "EaseOutExpo"
+color = "0xffffff"
+duration = 0
+
+[colors.bright]
+black = "0x676767"
+blue = "0x185dad"
+cyan = "0x1aa8a8"
+green = "0x28c83e"
+magenta = "0xad00d3"
+red = "0xff0202"
+white = "0xffffff"
+yellow = "0xc7a31a"
+
+[colors.normal]
+black = "0x000000"
+blue = "0x3082e2"
+cyan = "0x30dfdf"
+green = "0x5ddf6f"
+magenta = "0xd720ff"
+red = "0xff4f4f"
+white = "0xdddddd"
+yellow = "0xeadf00"
+
+[colors.primary]
+background = "0x000000"
+foreground = "0xeaeaea"
+
+[env]
+TERM = "xterm-256color"
+
+[font]
+size = 15.0
+
+[font.italic]
+family = "Dank Mono"
+style = "Italic"
+
+[font.normal]
+family = "DankMono Nerd Font"
+style = "Regular"
+
+[mouse]
+hide_when_typing = true
+
+[scrolling]
+history = 100000
+
+[shell]
+args = ["--login"]
+program = "/usr/local/bin/zsh"
+
+[window]
+decorations = "buttonless"
+dynamic_padding = true
+
+[window.padding]
+x = 2
+y = 2
