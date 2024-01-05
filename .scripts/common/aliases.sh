@@ -38,16 +38,13 @@ alias vim="nvim"
 alias b="bundle exec"
 alias tls="tmux ls"
 alias tn="tmux new -s"
-alias circle="open https://circleci.com/gh/ksmithbaylor"
-alias top="npx vtop"
 alias rot13="tr 'A-Za-z' 'N-ZA-Mn-za-m'"
 alias pg="docker run -e POSTGRES_PASSWORD=postgres -p 5432:5432 postgres"
 alias vimchanged="git status --porcelain | cut -c 4- | xargs nvim -p"
-alias dharma=" curl -s 'https://api.dharma.io/' -H 'content-type: application/json' --data-raw '{\"operationName\":null,\"variables\":{},\"query\":\"{compoundInterestRates {value tokenSymbol}}\"}' | jq '.data.compoundInterestRates[1].value' | ruby -e 'puts \"Interest rate: #{(STDIN.read.to_f * 100).round(2)}%\"'"
 alias btc="echo \"\\\$\$(curl -s https://api.pro.coinbase.com/products/BTC-USD/ticker | jq -r .bid)\""
 alias eth="echo \"\\\$\$(curl -s https://api.pro.coinbase.com/products/ETH-USD/ticker | jq -r .bid)\""
-alias gas="curl -s https://www.gasnow.org/api/v3/gas/price | jq .data.standard | xargs -I{} echo \"{} / 1000000000\" | bc"
 alias rosetta="env /usr/bin/arch -x86_64 /bin/zsh --login"
+alias dcmp="docker-compose"
 
 katie() {
   while read message; do
@@ -83,14 +80,6 @@ if is_mac; then
     alias tm="top -o mem"
 
     command_exists open && alias o="open"
-    if command_exists tag; then
-        alias tags="tag -l *"
-        alias untagged="tags | egrep '^[a-z0-9-]* *$'"
-    fi
-    command_exists clipper && alias clip="nc localhost 8377"
-    command_exists todo.sh && alias todo="todo.sh -d ~/dotfiles/todo-txt/todo.cfg"
-    command_exists docker-compose && alias dcmp="docker-compose"
-    command_exists reattach-to-user-namespace && alias subl="reattach-to-user-namespace subl"
     command_exists reattach-to-user-namespace && alias open="reattach-to-user-namespace open"
 else
     alias tu="top -o %CPU"
@@ -103,9 +92,6 @@ if command_exists tree; then
     alias t3="t -L 3"
     alias t4="t -L 4"
 fi
-
-command_exists docker-compose && alias dcmp="docker-compose"
-command_exists mvn && alias maven="mvn" # I always type this wrong
 
 function mdcd {
     mkdir -p "$1"
@@ -135,21 +121,6 @@ function repeatedly {
 
 function try {
     mdcd "$HOME/main/try/$1"
-}
-
-function _tmux_new_window {
-    tmux new-window -n "$1"
-    tmux select-window -t "$1"
-    tmux send-keys "$2" C-m
-}
-
-function chestnut() {
-    _tmux_new_window 'Vim'          'vim'
-    _tmux_new_window 'Browser REPL' '{ sleep 2; echo "(browser-repl)"; cat; } | lein repl'
-    _tmux_new_window 'Server'       '{ echo "(run)"; cat; } | lein repl'
-    _tmux_new_window 'LR'           'livereload resources'
-    tmux select-window -t 'Vim'
-    open -g 'http://localhost:10555/' -a "$(grealpath '/Applications/Google Chrome.app')"
 }
 
 if command_exists tmuxinator; then
@@ -224,36 +195,6 @@ function hex {
     else
         ruby -e "puts $1.to_s(16).reverse.scan(/../).map{|s|s.ljust(2,'0')}.join(' ').reverse"
     fi
-}
-
-function couch {
-    if [[ $# -eq 0 || $1 = '--help' || $1 = '-h' ]]; then
-        echo "Usage: couch [<host>] <method> <path>"
-        echo "  host - location of the couchdb server, defaults to localhost:5984 if not present"
-        echo "  method - HTTP method (GET, PUT, POST, DELETE, etc)"
-        echo "  path - URL path after the host"
-        echo "Examples:"
-        echo "  couch GET /"
-        echo "  couch PUT /test"
-        echo "  couch cdb.example.com GET /"
-    else
-        if [[ $# -eq 2 ]]; then
-            local host='localhost:5984'
-        else
-            local host=$1
-            shift
-        fi
-
-        local method=$1
-        local url=$2
-
-        curl -s -X $method $host$url | underscore print --color
-    fi
-}
-
-function rmswap {
-    find . -name '*.swp' -exec rm {} \;
-    find . -name '*.swo' -exec rm {} \;
 }
 
 function runc {
