@@ -3,19 +3,15 @@
 set -e
 
 dotfiles=(
-  .irssi
   .scripts
   bin
-  .bash_profile
   .bashrc
   .ghci
-  .htoprc
   .prettierrc.yml
   .tmux.conf
   .config/alacritty/alacritty.toml
   .config/git/config
   .config/nvim
-  .vimrc
   .zshrc
 )
 
