@@ -5,15 +5,6 @@ export HOMEBREW_CASK_OPTS="--appdir=/Applications"
 export GPG_TTY=`tty`
 export ERL_AFLAGS="-kernel shell_history enabled"
 
-# Android Studio / React Native
-export ANDROID_HOME=$HOME/Library/Android/sdk
-export ANDROID_NDK_HOME=$ANDROID_HOME/ndk/$(ls $ANDROID_HOME/ndk/ | sort -n -r | head -n 1)
-export PATH=$PATH:$ANDROID_HOME/tools
-export PATH=$PATH:$ANDROID_HOME/tools/bin
-export PATH=$PATH:$ANDROID_HOME/platform-tools
-
-# is_mac && command_exists brew && command_exists android && export ANDROID_HOME=$(brew --prefix android-sdk)
-
 if command_exists rbenv; then
     export RBENV_ROOT=/usr/local/var/rbenv
     eval "$(rbenv init -)"
@@ -26,28 +17,6 @@ fi
 
 export PYENV_ROOT="$HOME/.pyenv"
 export PATH="$PYENV_ROOT/bin:$PATH"
-# if command_exists pyenv; then
-#     eval "$(pyenv init -)"
-# fi
-
-if command_exists pair; then
-  pair() {
-    if gem list -i pair-up 2>/dev/null 1>/dev/null; then
-      command pair "$@"
-      if [[ -s "$HOME/.pair-up_export_authors" ]] ; then source "$HOME/.pair-up_export_authors" ; fi
-    else
-      echo "You do not have pair-up installed for your current ruby version."
-      echo "Please run $> gem install pair-up"
-    fi
-  }
+if command_exists pyenv; then
+    eval "$(pyenv init -)"
 fi
-
-# [[ -s "$HOME/.rvm/scripts/rvm" ]] && source "$HOME/.rvm/scripts/rvm" # Load RVM into a shell session *as a function*
-
-# if command_exists opam; then
-  # eval $(opam config env)
-# fi
-
-# if [ -f /usr/libexec/java_home ]; then
-  # export JAVA_HOME=$(/usr/libexec/java_home)
-# fi

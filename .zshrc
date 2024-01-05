@@ -1,6 +1,3 @@
-# PS4=$'+ %D{%s.%6.}\011 '
-# exec 3>&2 2>/tmp/zshstart.$$.log
-
 if [[ $PROFILE_STARTUP = true ]]; then
   exec 3>&2 2> >(tee /tmp/sample-time.log |
                    sed -u 's/^.*$/now/' |
