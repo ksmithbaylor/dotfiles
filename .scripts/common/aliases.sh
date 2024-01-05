@@ -1,7 +1,7 @@
 if ls --color > /dev/null 2>&1; then # GNU `ls`
-    local colorflag="--color"
+    colorflag="--color"
 else # OS X `ls`
-    local colorflag="-G"
+    colorflag="-G"
 fi
 
 alias l="ls -F1 $colorflag"
