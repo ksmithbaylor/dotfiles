@@ -45,6 +45,7 @@ alias btc="echo \"\\\$\$(curl -s https://api.pro.coinbase.com/products/BTC-USD/t
 alias eth="echo \"\\\$\$(curl -s https://api.pro.coinbase.com/products/ETH-USD/ticker | jq -r .bid)\""
 alias rosetta="env /usr/bin/arch -x86_64 /bin/zsh --login"
 alias dcmp="docker-compose"
+alias mux="tmuxinator start"
 
 katie() {
   while read message; do
