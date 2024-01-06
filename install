@@ -1,4 +1,4 @@
-#!/usr/bin/env bash
+#!/usr/bin/env zsh
 
 set -e
 
@@ -13,7 +13,7 @@ else
 fi
 
 echo Installing homebrew packages...
-brew install bash zsh coreutils fzf jq htop neovim mise readline tmux tree-sitter yarn
+brew install bash zsh coreutils curl git rlwrap readline fzf jq htop neovim mise tmux tree-sitter yarn
 
 dotfiles=(
   .scripts
@@ -25,6 +25,7 @@ dotfiles=(
   .config/alacritty/alacritty.toml
   .config/git/config
   .config/nvim
+  .config/mise/config.toml
   .zshrc
 )
 
@@ -36,4 +37,44 @@ for dotfile in ${dotfiles[@]}; do
   ln -sf $PWD/$dotfile $HOME/$dotfile
 done
 
+source ./.scripts/common/path.sh
+
+# Make sure language versions are installed
+echo Installing language versions with mise...
+mise install
+
+# Make sure go tools are installed
+echo Installing go tools...
+mise exec go -- go version
+mise exec go -- go install golang.org/x/tools/gopls@latest
+mise exec go -- go install github.com/nametake/golangci-lint-langserver@latest
+mise exec go -- go install github.com/golangci/golangci-lint/cmd/golangci-lint@latest
+
+# Make sure node tools are installed
+echo Installing node tools...
+mise exec node -- node --version
+mise exec node -- yarn global add \
+  typescript typescript-language-server \
+  pyright \
+  vscode-langservers-extracted \
+  @microsoft/compose-language-service \
+  dockerfile-language-server-nodejs \
+  graphql-language-service-cli \
+  @ignored/solidity-language-server
+
+# Make sure ruby tools are installed
+echo Installing ruby tools...
+mise exec ruby -- ruby --version
+mise exec ruby -- gem install git-up bundler solargraph rubocop pry httparty
+
+# Make sure python tools are installed
+echo Installing python tools...
+mise exec python -- python --version
+mise exec python -- pip install --upgrade pip
+mise exec python -- pip install yfinance plotext
+
+if [[ -f ~/coinbase/install ]]; then
+  echo Installing work stuff...
+  ~/coinbase/install
+fi
 echo Done!

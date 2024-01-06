@@ -10,10 +10,12 @@ function prepend_path() {
 PATH=$(echo $(cat /etc/paths && cat /etc/paths.d/*) | cat | sed 's/ /:/g')
 
 # Least important first
-prepend_path true       /opt/homebrew/sbin
-prepend_path true       /opt/homebrew/bin
-prepend_path true       $HOME/.cargo/bin
-prepend_path true       $HOME/coinbase/go/bin
-prepend_path true       $HOME/bin
+prepend_path true /opt/homebrew/sbin
+prepend_path true /opt/homebrew/bin
+prepend_path true $HOME/.cargo/bin
+prepend_path true $HOME/bin
 
+eval "$(mise activate zsh)"
+
+export PATH
 unset prepend_path
