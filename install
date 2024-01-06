@@ -2,6 +2,19 @@
 
 set -e
 
+source ./.scripts/common/util.sh
+
+echo Checking homebrew...
+if command_exists brew; then
+  echo Homebrew installed!
+else
+  echo Installing homebrew...
+  /bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"
+fi
+
+echo Installing homebrew packages...
+brew install bash zsh coreutils fzf jq htop neovim mise readline tmux tree-sitter yarn
+
 dotfiles=(
   .scripts
   bin
@@ -16,8 +29,11 @@ dotfiles=(
 )
 
 # Symlink all dotfiles listed above to the right spot
+echo Symlinking dotfiles...
 for dotfile in ${dotfiles[@]}; do
   rm -f $HOME/$dotfile
   mkdir -p $(dirname $HOME/$dotfile)
   ln -sf $PWD/$dotfile $HOME/$dotfile
 done
+
+echo Done!
