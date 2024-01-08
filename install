@@ -13,7 +13,10 @@ else
 fi
 
 echo Installing homebrew packages...
-brew install bash zsh coreutils curl git rlwrap readline fzf jq htop neovim mise tmux tree-sitter yarn
+brew install \
+  bash zsh \
+  coreutils curl git rlwrap readline fzf jq htop tree \
+  neovim mise tmux tree-sitter yarn
 
 dotfiles=(
   .scripts
