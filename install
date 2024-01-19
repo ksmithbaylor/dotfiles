@@ -29,6 +29,7 @@ dotfiles=(
   .config/git/config
   .config/nvim
   .config/mise/config.toml
+  .zshenv
   .zshrc
 )
 

@@ -1,15 +1,3 @@
-if [[ $PROFILE_STARTUP = true ]]; then
-  exec 3>&2 2> >(tee /tmp/sample-time.log |
-                   sed -u 's/^.*$/now/' |
-                   gdate -f - +%s.%N >/tmp/sample-time.tim)
-
-  set -x
-fi
-
-source ~/.scripts/common/util.sh
-source ~/.scripts/common/path.sh
-source ~/.scripts/common/exports.sh
-source ~/.scripts/common/aliases.sh
 source ~/.scripts/zsh/prompt.sh
 source ~/.scripts/zsh/completions.sh
 source ~/.scripts/zsh/keys.sh
@@ -18,8 +6,6 @@ source ~/.scripts/zsh/zsh-autosuggestions/zsh-autosuggestions.zsh
 source ~/.scripts/zsh/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
 
 [ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
-
-[ -f ~/coinbase/.coinbaserc ] && source ~/coinbase/.coinbaserc
 
 if [[ $PROFILE_STARTUP = true ]]; then
   set +x
