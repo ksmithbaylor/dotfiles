@@ -11,4 +11,10 @@ source ~/.scripts/common/path.sh
 source ~/.scripts/common/exports.sh
 source ~/.scripts/common/aliases.sh
 
+if [[ -v IN_NEOVIM ]]; then
+  export PATH=$HOME/.local/share/mise/shims:$PATH
+else
+  eval "$(mise activate zsh)"
+fi
+
 [ -f ~/coinbase/.coinbaserc ] && source ~/coinbase/.coinbaserc
