@@ -41,4 +41,6 @@
   process = git-lfs filter-process
   required = true
 [init]
-	defaultBranch = master
+  defaultBranch = master
+[includeIf "gitdir:~/coinbase/"]
+  path = ~/coinbase/.gitconfig
