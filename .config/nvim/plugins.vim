@@ -2,6 +2,7 @@ call plug#begin()
 
 " General plugins
 Plug 'oxfist/night-owl.nvim'
+Plug 'stevedylandev/flexoki-nvim'
 Plug 'nvim-lualine/lualine.nvim'
 Plug 'nvim-treesitter/nvim-treesitter', {'do': ':TSUpdate'}
 Plug 'nvim-telescope/telescope-fzf-native.nvim', { 'do': 'make' }

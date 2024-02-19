@@ -5,6 +5,7 @@ syntax enable
 syntax sync fromstart
 
 colorscheme night-owl
+" colorscheme flexoki
 
 " Tweak editor colors
 hi LineNr guifg=#2b404a ctermfg=238 guibg=#011627 ctermbg=233 gui=NONE cterm=NONE
