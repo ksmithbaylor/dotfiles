@@ -29,23 +29,42 @@ function sol() {
 function ethbtc() {
   value=$(curl -s https://api.exchange.coinbase.com/products/ETH-BTC/ticker | jq -r .bid)
 
-  printf "$(colorize "E/B" "colour244" $value '%0.4f' '')"
+  printf "$(colorize "E/B" "colour244" $value '%0.5f' '')"
 }
 
 function soleth() {
   value=$(curl -s https://api.exchange.coinbase.com/products/SOL-ETH/ticker | jq -r .bid)
 
-  printf "$(colorize "S/E" "colour241" $value '%0.4f' '')"
+  printf "$(colorize "S/E" "colour242" $value '%0.5f' '')"
+}
+
+function solbtc() {
+  value=$(curl -s https://api.exchange.coinbase.com/products/SOL-BTC/ticker | jq -r .bid)
+
+  printf "$(colorize "S/B" "colour240" $value '%0.5f' '')"
+}
+
+function tk() {
+  t=$(curl -s https://clob.polymarket.com/rewards/markets/0xdd22472e552920b8438158ea7238bfadfa4f736aa4cee91a6b86c39ead110917 | jq '.data[0].tokens | map(select(.outcome == "Yes"))[0].price')
+  k=$(curl -s https://clob.polymarket.com/rewards/markets/0xc6485bb7ea46d7bb89beb9c91e7572ecfc72a6273789496f78bc5e989e4d1638 | jq '.data[0].tokens | map(select(.outcome == "Yes"))[0].price')
+  diff=$(bc -e "100 * ($t - $k)")
+
+  printf "$(colorize "T-K" "colour164" $diff '%0.1f' '')"
 }
 
 function coin() {
   value=$(curl -s 'https://query2.finance.yahoo.com/v8/finance/chart/COIN' | jq '.chart.result[0].indicators.quote[0].close | last * 100 | round / 100')
-  # value=$(curl -s https://query1.finance.yahoo.com/v6/finance/quoteSummary/coin?modules=financialData | jq -r '.quoteSummary.result[0].financialData.currentPrice.fmt')
 
   printf "$(colorize "COIN" "colour33" $value '%0.2f' '$')"
   if [[ -f ~/.private/enabled ]] && [[ -f ~/.private/tmux-tickers ]]; then
     ~/.private/tmux-tickers $value
   fi
+}
+
+function sq() {
+  value=$(curl -s 'https://query2.finance.yahoo.com/v8/finance/chart/SQ' | jq '.chart.result[0].indicators.quote[0].close | last * 100 | round / 100')
+
+  printf "$(colorize "SQ" "colour51" $value '%0.2f' '$')"
 }
 
 function tickers() {
@@ -54,7 +73,10 @@ function tickers() {
   sol
   ethbtc
   soleth
+  solbtc
+  tk
   # coin
+  # sq
 }
 
 tickers
