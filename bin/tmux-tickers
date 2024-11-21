@@ -54,9 +54,9 @@ function tk() {
 
 function usdc() {
   value=$(curl -s 'https://usdc.cool/api/supply/0' | jq '.data.supply.native')
-  billions=$(bc -e "scale=2; $value / 1000000000")
+  billions=$(bc -e "scale=3; $value / 1000000000")
 
-  printf "$(colorize "USDC" "colour33" $billions '%0.2fB' '')"
+  printf "$(colorize "USDC" "colour33" $billions '%0.3fB' '$')"
 }
 
 function coin() {

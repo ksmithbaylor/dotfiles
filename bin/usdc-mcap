@@ -1,0 +1,11 @@
+#!/usr/bin/env sh
+
+# Displays the market cap of USDC across all chains
+#     Requires jq (brew install jq)
+function usdc() {
+  value=$(curl -s 'https://usdc.cool/api/supply/0' | jq '.data.supply.native')
+  billions=$(bc -e "scale=3; $value / 1000000000")
+  printf "\$${billions} billion\n" '%0.3f'
+}
+
+usdc
