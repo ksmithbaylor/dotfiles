@@ -17,4 +17,4 @@ else
   eval "$(mise activate zsh)"
 fi
 
-[ -f ~/coinbase/.coinbaserc ] && source ~/coinbase/.coinbaserc
+[ -f ~/circle/.circlerc ] && source ~/circle/.circlerc
