@@ -16,7 +16,8 @@ echo Installing homebrew packages...
 brew install \
   bash zsh \
   coreutils curl git rlwrap readline fzf jq htop tree \
-  neovim mise tmux tree-sitter yarn git-delta ripgrep
+  neovim mise tmux tree-sitter yarn git-delta ripgrep \
+  zlib libyaml openssl@1.1
 
 dotfiles=(
   .scripts
@@ -45,6 +46,7 @@ source ./.scripts/common/path.sh
 
 # Make sure language versions are installed
 echo Installing language versions with mise...
+export RUBY_CONFIGURE_OPTS="--with-zlib-dir=$(brew --prefix zlib) --with-readline-dir=$(brew --prefix readline) --with-libyaml-dir=$(brew --prefix libyaml)"
 mise install
 
 # Make sure go tools are installed
