@@ -52,6 +52,13 @@ function tk() {
   printf "$(colorize "T-K" "colour164" $diff '%0.1f' '')"
 }
 
+function usdc() {
+  value=$(curl -s 'https://usdc.cool/api/supply/0' | jq '.data.supply.native')
+  billions=$(bc -e "scale=2; $value / 1000000000")
+
+  printf "$(colorize "USDC" "colour33" $billions '%0.2fB' '')"
+}
+
 function coin() {
   value=$(curl -s 'https://query2.finance.yahoo.com/v8/finance/chart/COIN' | jq '.chart.result[0].indicators.quote[0].close | last * 100 | round / 100')
 
@@ -61,22 +68,16 @@ function coin() {
   fi
 }
 
-function sq() {
-  value=$(curl -s 'https://query2.finance.yahoo.com/v8/finance/chart/SQ' | jq '.chart.result[0].indicators.quote[0].close | last * 100 | round / 100')
-
-  printf "$(colorize "SQ" "colour51" $value '%0.2f' '$')"
-}
-
 function tickers() {
   btc
   eth
   sol
+  usdc
   ethbtc
   soleth
   solbtc
-  tk
+  # tk
   # coin
-  # sq
 }
 
 tickers
