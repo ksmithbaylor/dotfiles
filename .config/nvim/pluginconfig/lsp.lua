@@ -11,7 +11,7 @@ local servers = {
   'golangci_lint_ls',
 
   -- yarn global add typescript typescript-language-server
-  'tsserver',
+  'ts_ls',
 
   -- Installed by default with rustup
   'rust_analyzer',
