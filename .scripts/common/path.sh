@@ -13,6 +13,7 @@ PATH=$(echo $(cat /etc/paths && cat /etc/paths.d/*) | cat | sed 's/ /:/g')
 prepend_path true /opt/homebrew/sbin
 prepend_path true /opt/homebrew/bin
 prepend_path true $HOME/.cargo/bin
+prepend_path true $HOME/.foundry/bin
 prepend_path true $HOME/bin
 
 eval "$(mise activate zsh)"
