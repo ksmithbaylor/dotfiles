@@ -25,6 +25,7 @@
   lg = log --color --graph --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr) %C(bold blue)<%an>%Creset' --abbrev-commit
   lgu = log @{u}..
   recent = branch --sort=-committerdate --format="%(committerdate:relative)%09%(refname:short)"
+  up = pull --rebase --autostash
 [push]
   default = simple
 [url "https://"]
