@@ -8,6 +8,7 @@
   excludesfile = ~/.gitignore_global
   filemode = false
   pager = delta --dark
+  sshCommand = ssh -i ~/.ssh/id_ed25519-personal
 [interactive]
   diffFilter = delta --color-only
 [color]
@@ -42,5 +43,5 @@
   required = true
 [init]
   defaultBranch = master
-[includeIf "gitdir:~/coinbase/"]
-  path = ~/coinbase/.gitconfig
+[includeIf "gitdir:~/circle/"]
+  path = ~/circle/.gitconfig
