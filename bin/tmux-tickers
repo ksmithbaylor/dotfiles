@@ -68,11 +68,35 @@ function coin() {
   fi
 }
 
+function circle() {
+  if [[ -f ~/.hiive-token ]]; then
+    value=$(
+      curl -s 'https://api.hiive.com/graphql' \
+        -H "authorization: Bearer $(cat $HOME/.hiive-token)" \
+        -H 'content-type: application/json' \
+        -H 'user-agent: Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/131.0.0.0 Safari/537.36' \
+        --data-raw $'{
+          "operationName": "companyPriceData",
+          "variables": {
+            "companyId": "d0332e1c-cd29-4272-b150-33be5395e06b",
+            "startDate": "2024-01-01",
+            "indicators": ["INDEX_PRICE"]
+          },
+          "query": "query companyPriceData($companyId: ID\u0021, $startDate: Date\u0021, $indicators: [Indicator]\u0021) {\\n  companyPriceData(\\n    companyId: $companyId\\n    startDate: $startDate\\n    indicators: $indicators\\n  ) { indexPriceTrends { currentPrice } } }"
+        }' \
+        | jq '.data.companyPriceData.indexPriceTrends[0].currentPrice / 100'
+    )
+
+    printf "$(colorize "CIR" "colour99" $value '%0.2f' '$')"
+  fi
+}
+
 function tickers() {
   btc
   eth
   sol
   usdc
+  circle
   ethbtc
   soleth
   solbtc
