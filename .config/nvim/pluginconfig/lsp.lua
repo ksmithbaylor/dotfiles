@@ -40,8 +40,20 @@ local servers = {
   'rubocop',
 
   -- yarn global add @ignored/solidity-language-server
-  'solidity_ls_nomicfoundation'
+  'solidity_ls_nomicfoundation',
+
+  -- automatically installed with nvim-java
+  -- 'jdtls'
 }
+
+-- require('mason').setup({
+--   registries = {
+--     'github:nvim-java/mason-registry',
+--     'github:mason-org/mason-registry'
+--   }
+-- })
+-- 
+-- require('java').setup()
 
 for _, lsp in ipairs(servers) do
   local capabilities = require('cmp_nvim_lsp').default_capabilities()

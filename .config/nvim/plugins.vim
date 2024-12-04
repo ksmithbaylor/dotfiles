@@ -44,4 +44,17 @@ Plug 'bhurlow/vim-parinfer', { 'for': 'lisp' }
 Plug 'rust-lang/rust.vim', { 'for': 'rust' }
 Plug 'styled-components/vim-styled-components', { 'branch': 'main' }
 
+" Java and deps
+" Plug 'nvim-java/lua-async-await'
+" Plug 'nvim-java/nvim-java-refactor'
+" Plug 'nvim-java/nvim-java-core'
+" Plug 'nvim-java/nvim-java-test'
+" Plug 'nvim-java/nvim-java-dap'
+" Plug 'MunifTanjim/nui.nvim'
+" Plug 'neovim/nvim-lspconfig'
+" Plug 'mfussenegger/nvim-dap'
+" Plug 'JavaHello/spring-boot.nvim', { 'commit': '218c0c26c14d99feca778e4d13f5ec3e8b1b60f0' }
+" Plug 'williamboman/mason.nvim'
+" Plug 'nvim-java/nvim-java', { 'for': 'java' }
+
 call plug#end()
