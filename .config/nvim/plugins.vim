@@ -1,3 +1,13 @@
+function! BuildComposer(info)
+  if a:info.status != 'unchanged' || a:info.force
+    if has('nvim')
+      !cargo build --release --locked
+    else
+      !cargo build --release --locked --no-default-features --features json-rpc
+    endif
+  endif
+endfunction
+
 call plug#begin()
 
 " General plugins
@@ -35,6 +45,7 @@ Plug 'vim-scripts/loremipsum'
 Plug 'benmills/vimux'
 Plug 'janko-m/vim-test'
 Plug 'mrjones2014/dash.nvim', { 'do': 'make install' }
+Plug 'euclio/vim-markdown-composer', { 'do': function('BuildComposer') }
 
 " Language-specific
 " Plug 'darrikonn/vim-gofmt', { 'for': 'go' }
