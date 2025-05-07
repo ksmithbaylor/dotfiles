@@ -17,11 +17,11 @@ Plug 'nvim-lualine/lualine.nvim'
 Plug 'nvim-treesitter/nvim-treesitter', {'do': ':TSUpdate'}
 Plug 'nvim-telescope/telescope-fzf-native.nvim', { 'do': 'make' }
 Plug 'nvim-lua/plenary.nvim'
-Plug 'nvim-telescope/telescope.nvim', { 'tag': '0.1.2' }
+Plug 'nvim-telescope/telescope.nvim', { 'branch': '0.1.x' }
 Plug 'nvim-tree/nvim-tree.lua'
 Plug 'nvim-tree/nvim-web-devicons'
 Plug 'neovim/nvim-lspconfig'
-Plug 'prettier/vim-prettier', { 'do': 'yarn install --frozen-lockfile --production', 'for': ['sql'] }
+Plug 'prettier/vim-prettier', { 'do': 'yarn install --frozen-lockfile --production', 'for': ['sql', 'typescript', 'javascript', 'json', 'css', 'html'] }
 Plug 'hrsh7th/cmp-nvim-lsp'
 Plug 'echasnovski/mini.diff'
 " Plug 'hrsh7th/cmp-buffer'
@@ -45,10 +45,10 @@ Plug 'tpope/vim-endwise'
 Plug 'jiangmiao/auto-pairs'
 Plug 'AndrewRadev/splitjoin.vim'
 Plug 'godlygeek/tabular'
-Plug 'vim-scripts/loremipsum'
+" Plug 'vim-scripts/loremipsum'
 Plug 'benmills/vimux'
-Plug 'janko-m/vim-test'
-Plug 'mrjones2014/dash.nvim', { 'do': 'make install' }
+" Plug 'janko-m/vim-test'
+" Plug 'mrjones2014/dash.nvim', { 'do': 'make install' }
 Plug 'euclio/vim-markdown-composer', { 'do': function('BuildComposer') }
 
 " Language-specific
