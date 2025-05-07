@@ -12,6 +12,7 @@ PATH=$(echo $(cat /etc/paths && cat /etc/paths.d/*) | cat | sed 's/ /:/g')
 # Least important first
 prepend_path true /opt/homebrew/sbin
 prepend_path true /opt/homebrew/bin
+prepend_path true $HOME/.local/share/solana/install/active_release/bin
 prepend_path true $HOME/.cargo/bin
 prepend_path true $HOME/.foundry/bin
 prepend_path true $HOME/bin
