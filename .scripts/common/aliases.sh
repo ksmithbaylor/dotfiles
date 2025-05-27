@@ -47,6 +47,34 @@ alias rosetta="env /usr/bin/arch -x86_64 /bin/zsh --login"
 alias dcmp="docker-compose"
 alias mux="tmuxinator start"
 
+replace() {
+  local search="$1"
+  local replace="$2"
+
+  if [[ $(git diff --name-only) ]]; then
+    echo "There are uncommitted changes in the git repo. Please stage, commit, or stash them first."
+    return 1
+  fi
+
+  shift 2
+  rg "${search}" -r "${replace}" "$@"
+
+  echo
+  read -s -k '?(press y to continue, any other key to cancel) '
+
+  if [[ $REPLY =~ ^[Yy]$ ]]; then
+    echo
+    echo
+    echo replacing...
+    rg "${search}" --files-with-matches | xargs sed -i '' "s/${search}/${replace}/g"
+  else
+    echo
+    echo
+    echo "Cancelled."
+  fi
+
+}
+
 katie() {
   while read message; do
     osascript -e "tell application \"Messages\" to send \"$message\" to buddy \"Katie Smith\""
