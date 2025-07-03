@@ -70,9 +70,10 @@ function _prompt {
         local status_color=${_Green} previous_status="" ||
         local status_color=${_Red} previous_status="[$_previous] 😭  "
 
+    export TZ="America/New_York"
     PROMPT=$'${_Blue}╭$(printf "%$(($(tput cols) - 1))s" | tr " " "─")\n'
     PROMPT+="${_Blue}│ "
-    PROMPT+="${_Yellow}%D{%r}"
+    PROMPT+="${_Yellow}%D{%L:%M:%S %p} "
     PROMPT+="${_Bold_Black} │ "
     PROMPT+="${_Cyan}$_pretty_duration ⤴ "
     PROMPT+="${_Bold_Black} │"
