@@ -20,3 +20,5 @@ if [[ $PROFILE_STARTUP = true ]]; then
     done < /tmp/sample-time.tim
   ) /tmp/sample-time.log | sort -rn | less
 fi
+
+alias claude="CLAUDE_CODE_USE_BEDROCK=1 /Users/kevin.smith/.claude/local/claude"
