@@ -6,6 +6,7 @@ source ~/.scripts/zsh/zsh-autosuggestions/zsh-autosuggestions.zsh
 source ~/.scripts/zsh/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
 
 [ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
+[ -f ~/circle/.chatai_api_key ] && source ~/circle/.chatai_api_key
 
 if [[ $PROFILE_STARTUP = true ]]; then
   set +x

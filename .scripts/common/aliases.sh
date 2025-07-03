@@ -47,6 +47,11 @@ alias rosetta="env /usr/bin/arch -x86_64 /bin/zsh --login"
 alias dcmp="docker-compose"
 alias mux="tmuxinator start"
 
+chatai() {
+  echo "export OPENAI_API_KEY=\"$(pbpaste)\"" > ~/circle/.chatai_api_key
+  source ~/circle/.chatai_api_key
+}
+
 replace() {
   local search="$1"
   local replace="$2"
