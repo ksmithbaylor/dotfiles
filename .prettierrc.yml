@@ -1,5 +1,5 @@
-singleQuote: true
-semi: true
-trailingComma: none
-arrowParens: avoid
-vueIndentScriptAndStyle: true
+# singleQuote: false
+# semi: true
+# trailingComma: always
+# arrowParens: avoid
+# vueIndentScriptAndStyle: true
