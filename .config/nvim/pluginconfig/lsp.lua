@@ -1,6 +1,9 @@
-local lspconfig = require('lspconfig')
-local luasnip = require('luasnip')
-local cmp = require('cmp')
+-- Set default root markers for all clients
+vim.lsp.config('*', {
+  root_markers = {
+    '.git'
+  },
+})
 
 local servers = {
   -- go install golang.org/x/tools/gopls@latest
@@ -41,19 +44,7 @@ local servers = {
 
   -- yarn global add @ignored/solidity-language-server
   'solidity_ls_nomicfoundation',
-
-  -- automatically installed with nvim-java
-  -- 'jdtls'
 }
-
--- require('mason').setup({
---   registries = {
---     'github:nvim-java/mason-registry',
---     'github:mason-org/mason-registry'
---   }
--- })
--- 
--- require('java').setup()
 
 for _, lsp in ipairs(servers) do
   local capabilities = require('cmp_nvim_lsp').default_capabilities()
@@ -62,7 +53,8 @@ for _, lsp in ipairs(servers) do
     capabilities.textDocument.completion.completionItem.snippetSupport = true
   end
 
-  lspconfig[lsp].setup { capabilities = capabilities }
+  vim.lsp.config(lsp, { capabilities = capabilities })
+  vim.lsp.enable(lsp)
 end
 
 -- General LSP mappings
@@ -75,11 +67,6 @@ vim.api.nvim_create_autocmd('LspAttach', {
     vim.keymap.set('n', 'K', vim.lsp.buf.hover, opts)
     vim.keymap.set('n', 'gi', vim.lsp.buf.implementation, opts)
     vim.keymap.set('n', '<C-k>', vim.lsp.buf.signature_help, opts)
-    vim.keymap.set('n', '<space>wa', vim.lsp.buf.add_workspace_folder, opts)
-    vim.keymap.set('n', '<space>wr', vim.lsp.buf.remove_workspace_folder, opts)
-    vim.keymap.set('n', '<space>wl', function()
-      print(vim.inspect(vim.lsp.buf.list_workspace_folders()))
-    end, opts)
     vim.keymap.set('n', '<space>D', vim.lsp.buf.type_definition, opts)
     vim.keymap.set('n', '<space>rn', vim.lsp.buf.rename, opts)
     vim.keymap.set({ 'n', 'v' }, '<space>ca', vim.lsp.buf.code_action, opts)
@@ -102,6 +89,8 @@ local has_words_before = function()
   return col ~= 0 and vim.api.nvim_buf_get_lines(0, line - 1, line, true)[1]:sub(col, col):match("%s") == nil
 end
 
+local cmp = require('cmp')
+
 cmp.setup({
   snippet = {
     expand = function(args)
@@ -112,8 +101,6 @@ cmp.setup({
   sources = cmp.config.sources({
     { name = 'nvim_lsp' },
     { name = 'nvim_lsp_signature_help' },
-    -- { name = 'buffer' },
-    -- { name = 'path' }
   }),
 
   mapping = cmp.mapping.preset.insert({
