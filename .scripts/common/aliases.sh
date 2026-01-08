@@ -46,6 +46,7 @@ alias eth="echo \"\\\$\$(curl -s https://api.pro.coinbase.com/products/ETH-USD/t
 alias rosetta="env /usr/bin/arch -x86_64 /bin/zsh --login"
 alias dcmp="docker-compose"
 alias mux="tmuxinator start"
+alias gcli="npm run -s gateway-cli --"
 
 chatai() {
   echo "export OPENAI_API_KEY=\"$(pbpaste)\"" > ~/circle/.chatai_api_key
