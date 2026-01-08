@@ -7,3 +7,6 @@ if [[ -f ~/.private/enabled ]]; then
 else
   touch ~/.private/enabled
 fi
+
+rm /tmp/tmux-tickers-cache
+tmux refresh-client -S

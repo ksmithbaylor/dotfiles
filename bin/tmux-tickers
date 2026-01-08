@@ -1,5 +1,17 @@
 #!/bin/bash
 
+CACHE_FILE="/tmp/tmux-tickers-cache"
+CACHE_AGE=10 # seconds
+
+# Check if cache is fresh
+if [[ -f "$CACHE_FILE" ]]; then
+  file_age=$(($(date +%s) - $(stat -f %m "$CACHE_FILE")))
+  if [[ $file_age -lt $CACHE_AGE ]]; then
+    cat "$CACHE_FILE"
+    exit 0
+  fi
+fi
+
 function colorize() {
   currency=$1
   color=$2
@@ -60,30 +72,29 @@ function usdc() {
 }
 
 function coin() {
-  value=$(curl -s 'https://query2.finance.yahoo.com/v8/finance/chart/COIN' | jq '.chart.result[0].indicators.quote[0].close | last * 100 | round / 100')
-
+  value=$(curl -s https://stockanalysis.com/api/quotes/s/coin | jq .data.p)
   printf "$(colorize "COIN" "colour33" $value '%0.2f' '$')"
+}
+
+function circle() {
+  value=$(curl -s https://stockanalysis.com/api/quotes/s/crcl | jq .data.p)
+  printf "$(colorize "CRCL" "colour99" $value '%0.2f' '$')"
   if [[ -f ~/.private/enabled ]] && [[ -f ~/.private/tmux-tickers ]]; then
     ~/.private/tmux-tickers $value
   fi
 }
 
-function circle() {
-  value=$(curl -s 'https://notice.co/c/circle' | sed -nE 's/.*\<title\>.*(\$[0-9]+\.[0-9]+).*\<\/title\>.*/\1/p' | sed 's/\$//')
-  printf "$(colorize "CIR" "colour99" $value '%0.2f' '$')"
-}
-
 function tickers() {
   btc
   eth
-  sol
-  usdc
+  # sol
+  # usdc
+  # coin
   circle
   ethbtc
-  soleth
-  solbtc
+  # soleth
+  # solbtc
   # tk
-  # coin
 }
 
-tickers
+tickers | tee "$CACHE_FILE"
