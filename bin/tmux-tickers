@@ -77,7 +77,7 @@ function coin() {
 }
 
 function circle() {
-  value=$(curl -s https://stockanalysis.com/api/quotes/s/crcl | jq .data.p)
+  value=$(curl -s https://stockanalysis.com/api/quotes/s/crcl | jq .data.ep)
   printf "$(colorize "CRCL" "colour99" $value '%0.2f' '$')"
   if [[ -f ~/.private/enabled ]] && [[ -f ~/.private/tmux-tickers ]]; then
     ~/.private/tmux-tickers $value
