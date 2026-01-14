@@ -22,6 +22,9 @@ local claude_layout = "float"
 
 -- Setup function that can be called with different layouts
 local function setup_claude(layout)
+  if layout == "vertical" then
+    vim.opt.splitright = true
+  end
   claude_layout = layout
   require("claude-code").setup({
     window = {
@@ -51,7 +54,7 @@ local function setup_claude(layout)
       pushd_cmd = 'pushd',
       popd_cmd = 'popd',
     },
-    command = "claude",
+    command = "claude --permission-mode acceptEdits",
     command_variants = {
       continue = "--continue",
       resume = "--resume",
@@ -81,9 +84,6 @@ local function toggle_claude_layout()
   end
 
   local new_layout = claude_layout == "float" and "vertical" or "float"
-  if new_layout == "vertical" then
-    vim.opt.splitright = true
-  end
   setup_claude(new_layout)
   vim.cmd("echo 'Claude Code layout: " .. new_layout .. "'")
 end
@@ -91,4 +91,4 @@ end
 vim.keymap.set({'n', 'i'}, '<M-f>', toggle_claude_layout, { desc = 'Toggle Claude Code layout' })
 
 -- Initial setup
-setup_claude("float")
+setup_claude("vertical")

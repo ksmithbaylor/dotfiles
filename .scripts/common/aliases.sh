@@ -48,6 +48,14 @@ alias dcmp="docker-compose"
 alias mux="tmuxinator start"
 alias gcli="npm run -s gateway-cli --"
 
+sand() {
+  local name="$1"
+  local dir="$(mktemp -d -t sand.$name)"
+  cd "$dir" || return
+  echo "Created and moved to sandbox directory: $dir"
+  exec nvim +ClaudeCode
+}
+
 chatai() {
   echo "export OPENAI_API_KEY=\"$(pbpaste)\"" > ~/circle/.chatai_api_key
   source ~/circle/.chatai_api_key
