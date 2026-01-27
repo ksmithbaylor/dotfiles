@@ -14,7 +14,10 @@ local servers = {
   'golangci_lint_ls',
 
   -- yarn global add typescript typescript-language-server
-  'ts_ls',
+  -- 'ts_ls',
+
+  -- mise install deno
+  'denols',
 
   -- Installed by default with rustup
   'rust_analyzer',
@@ -46,6 +49,19 @@ local servers = {
   'solidity_ls_nomicfoundation',
 }
 
+vim.g.markdown_fenced_languages = {
+  "ts=typescript"
+}
+
+-- require('mason').setup({
+--   registries = {
+--     'github:nvim-java/mason-registry',
+--     'github:mason-org/mason-registry'
+--   }
+-- })
+--
+-- require('java').setup()
+
 for _, lsp in ipairs(servers) do
   local capabilities = require('cmp_nvim_lsp').default_capabilities()
 
@@ -53,7 +69,24 @@ for _, lsp in ipairs(servers) do
     capabilities.textDocument.completion.completionItem.snippetSupport = true
   end
 
-  vim.lsp.config(lsp, { capabilities = capabilities })
+  params = { capabilities = capabilities }
+
+  if lsp == 'ts_ls' then
+    params = {
+      capabilities = capabilities,
+      root_markers = { "package.json" },
+      single_file_support = false
+    }
+  end
+
+  if lsp == 'denols' then
+    params = {
+      capabilities = capabilities,
+      root_markers = { "deno.json", "deno.jsonc" }
+    }
+  end
+
+  vim.lsp.config(lsp, params)
   vim.lsp.enable(lsp)
 end
 

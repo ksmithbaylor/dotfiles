@@ -20,3 +20,5 @@ if [[ $PROFILE_STARTUP = true ]]; then
     done < /tmp/sample-time.tim
   ) /tmp/sample-time.log | sort -rn | less
 fi
+
+export PATH="$HOME/.local/bin:$PATH"
