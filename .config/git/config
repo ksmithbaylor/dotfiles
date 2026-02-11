@@ -45,4 +45,12 @@
 [init]
   defaultBranch = master
 [includeIf "gitdir:~/circle/"]
-  path = ~/circle/.gitconfig
+  path = ~/circle/.gitconfig-circlefin
+[includeIf "gitdir:~/circle/crcl-main/"]
+  path = ~/circle/.gitconfig-crcl-main
+[includeIf "gitdir:~/circle/kevin-smith_crcl/"]
+  path = ~/circle/.gitconfig-crcl-main
+[includeIf "gitdir:~/circle/circlefin/"]
+  path = ~/circle/.gitconfig-circlefin
+[includeIf "gitdir:~/circle/ksmith-circle/"]
+  path = ~/circle/.gitconfig-circlefin
