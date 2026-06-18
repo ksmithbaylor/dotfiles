@@ -54,7 +54,7 @@ local function setup_claude(layout)
       pushd_cmd = 'pushd',
       popd_cmd = 'popd',
     },
-    command = "claude --permission-mode acceptEdits",
+    command = "$HOME/.local/bin/claude --permission-mode acceptEdits",
     command_variants = {
       continue = "--continue",
       resume = "--resume",

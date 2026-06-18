@@ -54,3 +54,5 @@
   path = ~/circle/.gitconfig-circlefin
 [includeIf "gitdir:~/circle/ksmith-circle/"]
   path = ~/circle/.gitconfig-circlefin
+[includeIf "gitdir:~/.claude/plugins/marketplaces"]
+  path = ~/circle/.gitconfig-crcl-main
