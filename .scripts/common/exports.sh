@@ -8,3 +8,5 @@ export ERL_AFLAGS="-kernel shell_history enabled"
 if command_exists cargo; then
   source "$HOME/.cargo/env"
 fi
+
+[ -f "$HOME/.arc/env" ] && . "$HOME/.arc/env"
