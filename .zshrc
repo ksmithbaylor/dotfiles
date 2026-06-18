@@ -8,6 +8,12 @@ source ~/.scripts/zsh/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
 [ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
 [ -f ~/circle/.chatai_api_key ] && source ~/circle/.chatai_api_key
 
+# wt — git worktree manager.  rbenv-style: the `wt` binary works everywhere
+# (in scripts, use `cd "$(wt path <branch>)"`); this only adds the interactive
+# auto-cd wrapper.  Lives in .zshrc (not .zshenv) so the `wt` subprocess never
+# re-sources it.  No-op if `wt` isn't installed.
+command_exists wt && eval "$(wt shell-init)"
+
 if [[ $PROFILE_STARTUP = true ]]; then
   set +x
   exec 2>&3 3>&-
