@@ -1,0 +1,26 @@
+#!/bin/zsh
+
+tmpfifo=$(mktemp -u)
+mkfifo "$tmpfifo"
+trap "rm -f '$tmpfifo'" EXIT
+
+curl -sN 'https://www.coinbase.com/graphql/query?&operationName=EquityPriceSubscriptionSubscription' \
+  -H 'accept: multipart/mixed;subscriptionSpec="1.0", application/json' \
+  -H 'content-type: application/json' \
+  --data-raw $'{"query":"subscription EquityPriceSubscriptionSubscription($productId:ThirdPartyIdString\u0021){productStats(productId:$productId,updateInterval:TWO_HUNDRED_FIFTY_MS_STATS){productStats{price}}}","operationName":"EquityPriceSubscriptionSubscription","variables":{"productId":"049f87ae264372d729b2908ce50993476131e64e24a4bf4faebfb6d60e16b773"}}' \
+  > "$tmpfifo" &
+curl_pid=$!
+
+price=""
+while IFS= read -r line; do
+  p=$(printf '%s' "$line" | jq -r '.payload.data.productStats.productStats.price // empty' 2>/dev/null)
+  if [[ -n "$p" ]]; then
+    price=$p
+    break
+  fi
+done < "$tmpfifo"
+
+kill "$curl_pid" 2>/dev/null
+wait "$curl_pid" 2>/dev/null
+
+echo "$price"
