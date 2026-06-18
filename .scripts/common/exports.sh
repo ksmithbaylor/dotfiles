@@ -10,3 +10,4 @@ if command_exists cargo; then
 fi
 
 [ -f "$HOME/.arc/env" ] && . "$HOME/.arc/env"
+[ -f "$HOME/.claude/oauth_token" ] && . "$HOME/.claude/oauth_token"
