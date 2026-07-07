@@ -1,0 +1,35 @@
+[terminal]
+# tmux used: set -g default-shell /opt/homebrew/bin/zsh
+default_shell = "/opt/homebrew/bin/zsh"
+# "auto" => login shell on macOS, matching Alacritty's `args = ["--login"]`
+shell_mode = "auto"
+# tmux opened new panes/windows in the current pane's dir (-c "#{pane_current_path}")
+new_cwd = "follow"
+
+[keys]
+# tmux: unbind C-b; set -g prefix 'C-\'
+prefix = "ctrl+\\"
+
+# --- Splits: match tmux (% = left/right, " = top/bottom) ---
+split_vertical   = "prefix+%"
+split_horizontal = "prefix+\""
+
+# --- Directional pane focus: vim keys (already herdr's defaults, set explicitly) ---
+focus_pane_left  = "prefix+h"
+focus_pane_down  = "prefix+j"
+focus_pane_up    = "prefix+k"
+focus_pane_right = "prefix+l"
+
+# --- Rotate pane focus: tmux prefix+o ---
+cycle_pane_next = "prefix+o"
+
+# herdr plugin install dantehemerson/herdr-last-tab
+[[keys.command]]
+key = "alt+\\"
+type = "plugin_action"
+command = "dantehemerson.last-tab.toggle"
+description = "toggle last-used tab"
+
+[ui]
+pane_borders = true
+pane_gaps = false
