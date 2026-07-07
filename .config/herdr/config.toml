@@ -33,3 +33,7 @@ description = "toggle last-used tab"
 [ui]
 pane_borders = true
 pane_gaps = false
+agent_panel_sort = "priority"
+
+[theme]
+name = "gruvbox"
