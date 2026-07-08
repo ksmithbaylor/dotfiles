@@ -1,0 +1,7 @@
+#!/usr/bin/env zsh
+# Launch herdr inside a minimal, isolated tmux purely to get a status bar on the
+# bottom row. Dedicated socket + config => never touches your real tmux.
+# Any extra args are forwarded to herdr (e.g. `herdrmux --session work`).
+
+conf="${0:A:h}/../.config/tmux/herdrmux.conf"
+exec tmux -L herdrmux -f "$conf" new-session -A -s herdr herdr "$@"

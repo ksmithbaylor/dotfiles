@@ -1,0 +1,12 @@
+#!/usr/bin/env zsh
+# Shared tmux status-right content: tickers | date | NY time | battery.
+# Referenced by ~/.tmux.conf and ~/.config/tmux/herdrmux.conf as:
+#   set -g status-right "#(~/bin/tmux-statusline)"
+# Collapses what were three separate #() jobs into one.
+
+tickers="$(~/bin/tmux-tickers)"
+day="$(date '+%a, %b %d')"
+clock="$(TZ='America/New_York' date '+%H:%M %p')"
+bat="$(battery)"
+
+print -r -- "${tickers} #[fg=colour246]| #[fg=colour214]${day} #[fg=colour246]| #[fg=colour34]${clock} #[fg=colour246]| #[fg=colour203]${bat} #[fg=colour246]"
