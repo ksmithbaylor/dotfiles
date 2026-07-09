@@ -23,6 +23,10 @@ focus_pane_right = "prefix+l"
 # --- Rotate pane focus: tmux prefix+o ---
 cycle_pane_next = "prefix+o"
 
+# Unbind close-pane (default prefix+x): too easy to hit by accident and lose a
+# running process. Close via the mouse/context menu or by exiting the shell.
+close_pane = ""
+
 # herdr plugin install dantehemerson/herdr-last-tab
 [[keys.command]]
 key = "alt+\\"
@@ -30,10 +34,34 @@ type = "plugin_action"
 command = "dantehemerson.last-tab.toggle"
 description = "toggle last-used tab"
 
+# Open new tabs in the focused pane's current directory (like tmux's
+# `-c "#{pane_current_path}"`). herdr's built-in new_tab uses the workspace's
+# origin dir and ignores where the pane has cd'd, so we shell out and pass the
+# focused pane's live cwd explicitly. This overrides the default new_tab on
+# prefix+c; the `:+` guard falls back to a plain new tab if the cwd is unset.
+[[keys.command]]
+key = "prefix+c"
+type = "shell"
+command = 'herdr tab create --focus ${HERDR_ACTIVE_PANE_CWD:+--cwd "$HERDR_ACTIVE_PANE_CWD"}'
+description = "new tab in current dir"
+
 [ui]
 pane_borders = true
 pane_gaps = false
 agent_panel_sort = "spaces"
+show_agent_labels_on_pane_borders = true
+
+[ui.toast]
+delivery = "herdr"
 
 [theme]
-name = "gruvbox"
+name = "one-dark"
+auto_switch = false
+
+# Override individual color tokens on top of one-dark. Inactive tab labels are
+# drawn as fg=overlay0 on bg=surface0 (see herdr src/ui/tabs.rs), so brightening
+# overlay0 makes them more legible against the tab bar. Valid token names are
+# Catppuccin-style (overlay0/overlay1/surface0/subtext0/…), NOT "overlay". Tune
+# the value to taste; `herdr server reload-config` previews live.
+[theme.custom]
+overlay0 = "#8f97a3"
