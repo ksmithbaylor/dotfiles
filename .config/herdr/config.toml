@@ -45,6 +45,32 @@ type = "shell"
 command = 'herdr tab create --focus ${HERDR_ACTIVE_PANE_CWD:+--cwd "$HERDR_ACTIVE_PANE_CWD"}'
 description = "new tab in current dir"
 
+# Break the focused pane out into a new tab (like tmux's `prefix + !`).
+# herdr has no built-in break_pane action, so shell out to the CLI and pass
+# the focused pane's id. `pane move --new-tab` creates a fresh tab and
+# relocates the pane; --focus follows it, matching tmux's break-pane.
+[[keys.command]]
+key = "prefix+!"
+type = "shell"
+command = 'herdr pane move "$HERDR_ACTIVE_PANE_ID" --new-tab --focus'
+description = "break pane into new tab"
+
+# Join-pane, tmux-style. herdr has no native "marked pane", so we stash the
+# target tab id in a temp file with prefix+m, then prefix+shift+m moves the
+# focused pane into that marked tab (as a right split). Change --split right to
+# --split down for a top/bottom join.
+[[keys.command]]
+key = "prefix+m"
+type = "shell"
+command = 'printf %s "$HERDR_ACTIVE_TAB_ID" > "${TMPDIR:-/tmp}/herdr-marked-tab"'
+description = "mark current tab as join target"
+
+[[keys.command]]
+key = "prefix+shift+m"
+type = "shell"
+command = 'herdr pane move "$HERDR_ACTIVE_PANE_ID" --tab "$(cat "${TMPDIR:-/tmp}/herdr-marked-tab" 2>/dev/null)" --split right --focus'
+description = "move focused pane into marked tab"
+
 [ui]
 pane_borders = true
 pane_gaps = false
