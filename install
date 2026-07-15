@@ -34,6 +34,8 @@ dotfiles=(
   .config/mise/config.toml
   .zshenv
   .zshrc
+  .claude/statusline.sh
+  .claude/CLAUDE.md
 )
 
 # Symlink all dotfiles listed above to the right spot
@@ -43,6 +45,22 @@ for dotfile in ${dotfiles[@]}; do
   mkdir -p $(dirname $HOME/$dotfile)
   ln -sf $PWD/$dotfile $HOME/$dotfile
 done
+
+# Symlink authored skills into both Claude and Codex (flat, one level deep).
+# Codex follows symlinked skill dirs; each tool discovers <dir>/<name>/SKILL.md.
+echo Symlinking authored skills into Claude and Codex...
+for skill in skills/*/; do
+  name=$(basename "$skill")
+  for dir in $HOME/.claude/skills $HOME/.codex/skills; do
+    mkdir -p $dir
+    ln -sfn $PWD/skills/$name $dir/$name
+  done
+done
+
+# Apply durable Claude settings (repo -> machine; </dev/null = non-interactive,
+# applies all tracked keys and leaves machine-only keys like marketplaces intact).
+echo Applying Claude settings...
+./bin/claude-settings push </dev/null
 
 source ./.scripts/common/path.sh
 

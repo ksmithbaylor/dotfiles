@@ -1,0 +1,76 @@
+{
+  "autoCompactEnabled": true,
+  "effortLevel": "high",
+  "hooks": {
+    "Notification": [
+      {
+        "hooks": [
+          {
+            "command": "# afplay /System/Library/Sounds/Funk.aiff",
+            "type": "command"
+          }
+        ],
+        "matcher": ""
+      }
+    ],
+    "SessionEnd": [
+      {
+        "hooks": [
+          {
+            "command": "if [ -n \"$TMUX\" ]; then tmux set-window-option -t \"$TMUX_PANE\" automatic-rename on; fi",
+            "type": "command"
+          }
+        ],
+        "matcher": ""
+      }
+    ],
+    "SessionStart": [
+      {
+        "hooks": [
+          {
+            "command": "if [ -n \"$TMUX\" ]; then b=$(git branch --show-current 2>/dev/null); tmux rename-window -t \"$TMUX_PANE\" \"CC - ${b:-detached}\"; fi",
+            "type": "command"
+          }
+        ],
+        "matcher": ""
+      }
+    ],
+    "Stop": [
+      {
+        "hooks": [
+          {
+            "command": "# afplay /System/Library/Sounds/Glass.aiff",
+            "type": "command"
+          }
+        ],
+        "matcher": ""
+      },
+      {
+        "hooks": [
+          {
+            "command": "if [ -n \"$TMUX\" ]; then b=$(git branch --show-current 2>/dev/null); tmux rename-window -t \"$TMUX_PANE\" \"CC - ${b:-detached}\"; fi",
+            "type": "command"
+          }
+        ],
+        "matcher": ""
+      }
+    ],
+    "UserPromptSubmit": [
+      {
+        "hooks": [
+          {
+            "command": "if [ -n \"$TMUX\" ]; then b=$(git branch --show-current 2>/dev/null); tmux rename-window -t \"$TMUX_PANE\" \"CC - ${b:-detached}\"; fi",
+            "type": "command"
+          }
+        ],
+        "matcher": ""
+      }
+    ]
+  },
+  "model": "opus",
+  "statusLine": {
+    "command": "~/.claude/statusline.sh",
+    "type": "command"
+  },
+  "tui": "fullscreen"
+}

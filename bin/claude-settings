@@ -1,0 +1,109 @@
+#!/usr/bin/env bash
+# claude-settings — two-way sync of durable Claude Code settings between this
+# dotfiles repo and ~/.claude/settings.json.
+#
+#   pull   machine → repo : capture your live settings INTO the repo.
+#                           Any key not yet tracked or ignored is surfaced one
+#                           at a time to add or ignore; the choice is remembered
+#                           by rewriting this script's key lists below.
+#   push   repo → machine : apply the repo's tracked settings TO this machine.
+#                           Each key whose value would change is shown old→new
+#                           for you to confirm before it's overwritten. Keys the
+#                           repo doesn't track (marketplaces, plugins, …) are
+#                           left untouched.
+#   diff   show what push would change, without writing anything.
+#
+# Only keys in TRACKED_KEYS round-trip; IGNORED_KEYS are never touched.
+set -euo pipefail
+
+# --- managed key lists (rewritten in place by `pull`) ---
+TRACKED_KEYS=(model effortLevel tui autoCompactEnabled hooks statusLine)
+IGNORED_KEYS=(extraKnownMarketplaces enabledPlugins)
+# --- end managed key lists ---
+
+# Resolve our real path through the `bin` dir-symlink so self-edits land in the repo.
+SELF_DIR="$(cd "$(dirname "${BASH_SOURCE[0]}")" && pwd -P)"
+SELF="$SELF_DIR/$(basename "${BASH_SOURCE[0]}")"
+REPO_FILE="$(dirname "$SELF_DIR")/.claude/settings.json"
+LIVE_FILE="$HOME/.claude/settings.json"
+
+live()         { cat "$LIVE_FILE" 2>/dev/null || echo '{}'; }
+repo()         { cat "$REPO_FILE" 2>/dev/null || echo '{}'; }
+as_json()      { jq -nc '$ARGS.positional' --args "$@"; }          # bash list -> JSON array
+tracked_json() { as_json "${TRACKED_KEYS[@]+"${TRACKED_KEYS[@]}"}"; }
+ignored_json() { as_json "${IGNORED_KEYS[@]+"${IGNORED_KEYS[@]}"}"; }
+interactive()  { [ -t 0 ] && [ -e /dev/tty ]; }
+ask()          { local a; read -r -p "$1 " a </dev/tty; [[ ${a:-} == [yY]* ]]; }
+
+# append $2 to the "ARR=(...)" line named $1, in this script file and in memory
+persist_key() {
+  local arr="$1" key="$2" line; local -a cur
+  eval "cur=(\"\${$arr[@]}\")"; cur+=("$key"); line="$arr=(${cur[*]})"
+  awk -v a="$arr" -v r="$line" '$0 ~ "^"a"=\\(" {print r; next} {print}' "$SELF" >"$SELF.tmp" \
+    && mv "$SELF.tmp" "$SELF" && chmod +x "$SELF"
+  eval "$arr+=(\"$key\")"
+}
+
+# tracked keys whose repo value differs from (or is missing on) the machine
+changed_keys() {
+  jq -r -s --argjson t "$(tracked_json)" \
+    '.[0] as $r | .[1] as $m | $t[] as $k | select(($r|has($k)) and ($r[$k] != $m[$k])) | $k' \
+    "$REPO_FILE" <(live)
+}
+
+cmd_pull() {   # machine → repo
+  if interactive; then
+    local unknown k
+    unknown=$(live | jq -r --argjson t "$(tracked_json)" --argjson i "$(ignored_json)" \
+      'keys[] as $k | select((($t+$i)|index($k))|not) | $k')
+    while IFS= read -r k; do
+      [ -n "$k" ] || continue
+      echo "New key '$k' — value: $(live | jq -c --arg k "$k" '.[$k]')"
+      if ask "  track '$k' in the repo? [y/N]"; then persist_key TRACKED_KEYS "$k"; echo "  ✓ tracking"
+      else persist_key IGNORED_KEYS "$k"; echo "  – ignoring"; fi
+    done <<<"$unknown"
+  fi
+  # capture every tracked key's current machine value into the repo
+  jq -S -s --argjson t "$(tracked_json)" \
+    '.[0] + (.[1] | with_entries(select(.key as $k|$t|index($k))))' \
+    "$REPO_FILE" <(live) >"$REPO_FILE.tmp" && mv "$REPO_FILE.tmp" "$REPO_FILE"
+  echo "Pulled machine → $REPO_FILE (review & commit)"
+}
+
+cmd_push() {   # repo → machine
+  local changed approved=() k old new
+  changed=$(changed_keys)
+  if [ -z "$changed" ]; then echo "Nothing to push — machine already matches repo."; return; fi
+  while IFS= read -r k; do
+    [ -n "$k" ] || continue
+    old=$(live | jq -c --arg k "$k" 'if has($k) then .[$k] else "(absent)" end')
+    new=$(repo | jq -c --arg k "$k" '.[$k]')
+    echo "'$k':"; echo "  machine: $old"; echo "  repo:    $new"
+    if interactive; then
+      if ask "  overwrite machine with repo value? [y/N]"; then approved+=("$k"); fi
+    else approved+=("$k"); fi   # non-interactive (e.g. from install): apply all
+  done <<<"$changed"
+  [ ${#approved[@]} -gt 0 ] || { echo "No keys applied."; return; }
+  mkdir -p "$HOME/.claude"
+  jq -S -s --argjson k "$(as_json "${approved[@]}")" \
+    '.[1] + (.[0] | with_entries(select(.key as $x|$k|index($x))))' \
+    "$REPO_FILE" <(live) >"$LIVE_FILE.tmp" && mv "$LIVE_FILE.tmp" "$LIVE_FILE"
+  echo "Pushed ${#approved[@]} key(s) → $LIVE_FILE"
+}
+
+cmd_diff() {
+  local changed k; changed=$(changed_keys)
+  [ -n "$changed" ] || { echo "No differences in tracked keys."; return; }
+  echo "push would overwrite these machine keys with the repo's values:"
+  while IFS= read -r k; do
+    [ -n "$k" ] || continue
+    echo "  $k:  $(live|jq -c --arg k "$k" 'if has($k) then .[$k] else "(absent)" end')  →  $(repo|jq -c --arg k "$k" '.[$k]')"
+  done <<<"$changed"
+}
+
+case "${1:-}" in
+  pull) cmd_pull ;;
+  push) cmd_push ;;
+  diff) cmd_diff ;;
+  *) echo "usage: claude-settings {pull|push|diff}" >&2; exit 1 ;;
+esac
