@@ -1,3 +1,4 @@
+onboarding = false
 [terminal]
 # tmux used: set -g default-shell /opt/homebrew/bin/zsh
 default_shell = "/opt/homebrew/bin/zsh"
