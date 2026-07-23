@@ -57,8 +57,8 @@ Avoid using the following specific terms, phrases, or constructions:
   additional check ensures that the error is not missed", "removing the schema
   validation decreases the safety of the system"
 - "genuinely". Examples to avoid: "this is a genuinely clean design", "that's a
-  genuinely nice side-effect". Alternatives: "this is a clean design", "that's a
-  nice side-effect".
+  genuinely nice side-effect", "this is genuinely your call". Alternatives:
+  "this is a clean design", "that's a nice side-effect", "this is your call".
 - "X is real". Examples to avoid: "the tradeoffs are real", "the objection is
   real", "the scaling constraints are real". Alternatives: "there are
   tradeoffs", "there's a valid objection", "there are significant scaling
@@ -83,3 +83,6 @@ Avoid using the following specific terms, phrases, or constructions:
   downloader interface, the file adapter, and the intent classifier", "I'll
   implement the networking interface first".
 - "—" (em-dash)
+- "byte-identical" should be used sparingly, only when talking about actual
+  byte-level protocols or files. Text or semantic lists should just be described
+  as "identical".
