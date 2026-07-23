@@ -19,7 +19,5 @@ prepend_path true $HOME/.cargo/bin
 prepend_path true $HOME/.foundry/bin
 prepend_path true $HOME/bin
 
-eval "$(mise activate zsh)"
-
 export PATH
 unset prepend_path
