@@ -46,6 +46,11 @@ for dotfile in ${dotfiles[@]}; do
   ln -sf $PWD/$dotfile $HOME/$dotfile
 done
 
+# Share global agent instructions between Claude and Codex.
+rm -f $HOME/.codex/AGENTS.md
+mkdir -p $HOME/.codex
+ln -sf $PWD/.claude/CLAUDE.md $HOME/.codex/AGENTS.md
+
 # Symlink authored skills into both Claude and Codex (flat, one level deep).
 # Codex follows symlinked skill dirs; each tool discovers <dir>/<name>/SKILL.md.
 echo Symlinking authored skills into Claude and Codex...
