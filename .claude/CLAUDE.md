@@ -53,12 +53,14 @@ Avoid using the following specific terms, phrases, or constructions:
   interface here is load-bearing". Alternatives: "the code should better reflect
   the intent, rather than leaving it to the comment", "it's important that this
   interface be preserved".
-- "belt-and-suspenders". Examples to avoid: "coupling the try/catch with this
-  additional check is a belt-and-suspenders approach and makes sure the error is
-  not missed", "removing the schema validation eliminates the
-  belt-and-suspenders". Alternatives: "coupling the try/catch with this
+- "belt-and-suspenders", "belt-level confidence". Examples to avoid: "coupling
+  the try/catch with this additional check is a belt-and-suspenders approach and
+  makes sure the error is not missed", "removing the schema validation
+  eliminates the belt-and-suspenders", "Worth running tests if you want
+  belt-level confidence". Alternatives: "coupling the try/catch with this
   additional check ensures that the error is not missed", "removing the schema
-  validation decreases the safety of the system"
+  validation decreases the safety of the system", "Worth running tests for extra
+  confidence".
 - "genuinely". Examples to avoid: "this is a genuinely clean design", "that's a
   genuinely nice side-effect", "this is genuinely your call". Alternatives:
   "this is a clean design", "that's a nice side-effect", "this is your call".
