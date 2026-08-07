@@ -1,0 +1,57 @@
+{
+  "type": "object",
+  "additionalProperties": false,
+  "required": ["verdict", "summary", "findings"],
+  "properties": {
+    "verdict": {
+      "type": "string",
+      "enum": ["approved", "changes_requested"]
+    },
+    "summary": {
+      "type": "string",
+      "description": "What changed in your assessment since the previous round."
+    },
+    "findings": {
+      "type": "array",
+      "description": "Every finding raised so far in this review, including ones already resolved or withdrawn. Ids are stable across rounds.",
+      "items": {
+        "type": "object",
+        "additionalProperties": false,
+        "required": [
+          "id",
+          "status",
+          "severity",
+          "file",
+          "line",
+          "claim",
+          "rationale"
+        ],
+        "properties": {
+          "id": {
+            "type": "string",
+            "description": "Stable identifier, e.g. F1. Never reuse or renumber."
+          },
+          "status": {
+            "type": "string",
+            "enum": ["open", "resolved", "withdrawn", "impasse"],
+            "description": "open: still stands. resolved: the fix is verified. withdrawn: the rebuttal convinced you. impasse: neither side is moving."
+          },
+          "severity": {
+            "type": "string",
+            "enum": ["blocker", "major", "minor", "nit"]
+          },
+          "file": { "type": "string" },
+          "line": { "type": "integer" },
+          "claim": {
+            "type": "string",
+            "description": "One sentence stating the defect."
+          },
+          "rationale": {
+            "type": "string",
+            "description": "Why it is a defect, or why you changed its status this round."
+          }
+        }
+      }
+    }
+  }
+}
