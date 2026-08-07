@@ -55,3 +55,24 @@ else
   export NODE_EXTRA_CA_CERTS=$HOME/.certs/root_bundle.pem
   export AWS_CA_BUNDLE=$HOME/.certs/root_bundle.pem
 fi
+
+# BEGIN CIRCLE MANAGED — ZSCALER SSL CONFIG
+# Rebuild CA bundle on each shell start (picks up keychain changes)
+if [ -d ~/circle ]; then
+  if [ -z "$(security find-certificate -p -c 'Zscaler Root CA')" ]; then
+    echo "Warning: Zscaler certificate does not exist. Please contact IT"
+  else
+    mkdir -p $HOME/.certs
+    security find-certificate -a -p /System/Library/Keychains/SystemRootCertificates.keychain > $HOME/.certs/root_bundle.pem && \
+    security find-certificate -p -c 'Zscaler Root CA' >> $HOME/.certs/root_bundle.pem
+    export CURL_CA_BUNDLE=$HOME/.certs/root_bundle.pem
+    export REQUESTS_CA_BUNDLE=$HOME/.certs/root_bundle.pem
+    export CERT_PATH=$HOME/.certs/root_bundle.pem
+    export SSL_CERT_FILE=$HOME/.certs/root_bundle.pem
+    export NODE_EXTRA_CA_CERTS=$HOME/.certs/root_bundle.pem
+  fi
+  # END CIRCLE MANAGED — ZSCALER SSL CONFIG
+  # BEGIN CIRCLE BUDDY — CIRCLE TOKEN PATH
+  export PATH="/opt/circle/ai-identity:$PATH"
+  # END CIRCLE BUDDY — CIRCLE TOKEN PATH
+fi
