@@ -1,0 +1,87 @@
+{
+  "type": "object",
+  "additionalProperties": false,
+  "required": ["title", "overview", "sections", "files"],
+  "properties": {
+    "title": { "type": "string" },
+    "repo": {
+      "type": "string",
+      "description": "basename of the repository directory"
+    },
+    "scope": {
+      "type": "string",
+      "description": "Human description of what diff this covers, e.g. 'branch vs master, incl. uncommitted'."
+    },
+    "date": { "type": "string", "description": "YYYY-MM-DD" },
+    "overview": {
+      "type": "string",
+      "description": "Markdown. One paragraph: what the whole change does and why, at the level of a good PR description."
+    },
+    "files": {
+      "type": "array",
+      "description": "The complete diff, one entry per changed file in git's own order. Feeds the Tree tab; must cover the entire scope with nothing omitted.",
+      "items": {
+        "type": "object",
+        "additionalProperties": false,
+        "required": ["file", "status", "hunks"],
+        "properties": {
+          "file": { "type": "string", "description": "Repo-relative path (new path for renames)." },
+          "status": { "type": "string", "enum": ["added", "modified", "deleted", "renamed"] },
+          "oldFile": { "type": "string", "description": "Previous path, renames only." },
+          "lang": { "type": "string", "description": "highlight.js language id override." },
+          "hunks": {
+            "type": "string",
+            "description": "This file's full unified-diff text exactly as git produced it, @@ headers included."
+          }
+        }
+      }
+    },
+    "sections": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "additionalProperties": false,
+        "required": ["title", "prose", "blocks"],
+        "properties": {
+          "title": { "type": "string" },
+          "prose": {
+            "type": "string",
+            "description": "Markdown. A few sentences: what the code in this section now does differently, or why it exists."
+          },
+          "blocks": {
+            "type": "array",
+            "items": {
+              "type": "object",
+              "additionalProperties": false,
+              "required": ["type", "file"],
+              "properties": {
+                "type": { "type": "string", "enum": ["diff", "context"] },
+                "file": { "type": "string", "description": "Repo-relative path." },
+                "lang": {
+                  "type": "string",
+                  "description": "highlight.js language id. Optional; inferred from the file extension when omitted."
+                },
+                "hunks": {
+                  "type": "string",
+                  "description": "diff blocks only. Raw unified-diff text: one or more @@ hunks exactly as git produced them, headers included."
+                },
+                "code": {
+                  "type": "string",
+                  "description": "context blocks only. Verbatim excerpt of existing code that is NOT part of the diff."
+                },
+                "startLine": {
+                  "type": "integer",
+                  "description": "context blocks only. Line number of the excerpt's first line in the file."
+                },
+                "note": {
+                  "type": "string",
+                  "description": "context blocks only. Optional markdown pointing out why this excerpt matters here."
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}

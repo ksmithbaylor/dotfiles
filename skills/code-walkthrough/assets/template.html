@@ -1,0 +1,1259 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Code walkthrough</title>
+<style>
+  :root {
+    --bg: #0d1117;
+    --panel: #161b22;
+    --panel-2: #1c2129;
+    --border: #30363d;
+    --text: #e6edf3;
+    --muted: #8b949e;
+    --accent: #58a6ff;
+    --green: #3fb950;
+    --green-strong: #2ea043;
+    --yellow: #d29922;
+    --red: #f85149;
+    --add-bg: rgba(46, 160, 67, 0.15);
+    --add-num-bg: rgba(46, 160, 67, 0.28);
+    --del-bg: rgba(248, 81, 73, 0.15);
+    --del-num-bg: rgba(248, 81, 73, 0.28);
+    --hunk-bg: rgba(56, 139, 253, 0.10);
+    --hunk-text: #7d8590;
+    --ctx-accent: #a371f7;
+    --ctx-bg: rgba(163, 113, 247, 0.06);
+    --mono: ui-monospace, SFMono-Regular, "SF Mono", Menlo, monospace;
+    --sans: -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, Arial, sans-serif;
+  }
+  * { box-sizing: border-box; }
+  html { scroll-behavior: smooth; }
+  body {
+    margin: 0;
+    background: var(--bg);
+    color: var(--text);
+    font-family: var(--sans);
+    font-size: 15px;
+    line-height: 1.6;
+  }
+  a { color: var(--accent); text-decoration: none; }
+  a:hover { text-decoration: underline; }
+  button { font-family: var(--sans); }
+
+  header {
+    position: sticky;
+    top: 0;
+    z-index: 10;
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    padding: 10px 20px;
+    background: rgba(13, 17, 23, 0.92);
+    backdrop-filter: blur(6px);
+    border-bottom: 1px solid var(--border);
+  }
+  header h1 { font-size: 15px; font-weight: 600; margin: 0; white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
+  header .meta { color: var(--muted); font-size: 12.5px; white-space: nowrap; }
+  header .spacer { flex: 1; }
+  #review-count { color: var(--muted); font-size: 12.5px; white-space: nowrap; }
+  #review-count.done { color: var(--green); }
+
+  .seg {
+    display: flex;
+    border: 1px solid var(--border);
+    border-radius: 6px;
+    overflow: hidden;
+    flex-shrink: 0;
+  }
+  .seg button {
+    background: var(--panel);
+    color: var(--muted);
+    border: none;
+    font-size: 12.5px;
+    padding: 5px 12px;
+    cursor: pointer;
+  }
+  .seg button + button { border-left: 1px solid var(--border); }
+  .seg button.active { background: #21384f; color: var(--text); }
+
+  /* review dropdown */
+  .dd { position: relative; flex-shrink: 0; }
+  .btn-primary {
+    background: var(--green-strong);
+    color: #fff;
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    border-radius: 6px;
+    font-size: 12.5px;
+    font-weight: 600;
+    padding: 5px 12px;
+    cursor: pointer;
+  }
+  .btn-primary:hover { background: #2f9e44; }
+  .btn-danger {
+    background: transparent;
+    border: 1px solid rgba(248, 81, 73, 0.5);
+    color: var(--red);
+    border-radius: 6px;
+    font-size: 12.5px;
+    padding: 5px 10px;
+    cursor: pointer;
+  }
+  .btn-danger:hover { background: rgba(248, 81, 73, 0.12); border-color: var(--red); }
+  #comment-badge {
+    background: rgba(255, 255, 255, 0.25);
+    border-radius: 10px;
+    font-size: 11px;
+    padding: 0 6px;
+    margin-left: 6px;
+    display: none;
+  }
+  #review-panel {
+    position: absolute;
+    right: 0;
+    top: calc(100% + 8px);
+    width: 340px;
+    background: var(--panel);
+    border: 1px solid var(--border);
+    border-radius: 8px;
+    box-shadow: 0 8px 30px rgba(0, 0, 0, 0.5);
+    padding: 14px;
+    z-index: 20;
+  }
+  #review-panel label { display: block; font-size: 12.5px; font-weight: 600; margin-bottom: 6px; }
+  #review-panel label .opt { color: var(--muted); font-weight: 400; }
+  #review-panel textarea, .comment-box textarea {
+    width: 100%;
+    min-height: 76px;
+    resize: vertical;
+    background: var(--bg);
+    color: var(--text);
+    border: 1px solid var(--border);
+    border-radius: 6px;
+    font: 13px/1.5 var(--sans);
+    padding: 8px;
+  }
+  #review-panel .hint { color: var(--muted); font-size: 11.5px; margin: 8px 0 10px; }
+  #review-panel .panel-foot { display: flex; align-items: center; gap: 10px; }
+  #review-panel .panel-foot #comment-summary { color: var(--muted); font-size: 12px; flex: 1; }
+
+  .layout { display: flex; max-width: 1500px; margin: 0 auto; }
+  body[data-tab="walkthrough"] #layout-tree { display: none; }
+  body[data-tab="tree"] #layout-walkthrough { display: none; }
+
+  .sidecol {
+    position: sticky;
+    top: 49px;
+    align-self: flex-start;
+    width: 250px;
+    flex-shrink: 0;
+    max-height: calc(100vh - 49px);
+    display: flex;
+    flex-direction: column;
+    padding: 18px 8px 18px 20px;
+  }
+  .sidecol .tabs { margin-bottom: 12px; }
+  .sidecol .tabs button { flex: 1; }
+  nav.side {
+    overflow-y: auto;
+    font-size: 13px;
+    min-height: 0;
+  }
+  nav.side a {
+    display: block;
+    color: var(--muted);
+    padding: 4px 10px;
+    border-radius: 6px;
+    border-left: 2px solid transparent;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+  }
+  nav.side a:hover { color: var(--text); text-decoration: none; background: var(--panel); }
+  nav.side a.current {
+    background: var(--panel);
+    color: var(--text);
+    border-left-color: var(--accent);
+    border-radius: 0 6px 6px 0;
+  }
+  nav#toc a .n { color: var(--hunk-text); font-family: var(--mono); font-size: 11px; margin-right: 7px; }
+  nav#toc a.reviewed { color: var(--green); background: rgba(46, 160, 67, 0.08); }
+  nav#toc a.reviewed::after { content: " ✓"; }
+  @media (max-width: 1000px) {
+    .sidecol { width: auto; }
+    nav.side { display: none; }
+  }
+
+  nav#filetree { font-family: var(--mono); font-size: 12px; }
+  nav#filetree summary {
+    cursor: pointer;
+    color: var(--muted);
+    padding: 3px 6px;
+    user-select: none;
+  }
+  nav#filetree .tdir { margin-left: 14px; }
+  nav#filetree a { padding: 3px 8px; }
+  .fstat {
+    display: inline-block;
+    width: 14px;
+    font-weight: 700;
+    margin-right: 4px;
+  }
+  .fstat.added { color: var(--green); }
+  .fstat.modified { color: var(--yellow); }
+  .fstat.deleted { color: var(--red); }
+  .fstat.renamed { color: var(--accent); }
+
+  section.walk, .block, .hunk-wrap { scroll-margin-top: 60px; }
+
+  main {
+    flex: 1;
+    min-width: 0;
+    padding: 28px 32px 120px;
+  }
+  .overview { max-width: 800px; }
+  .overview h1 { font-size: 26px; margin: 0 0 10px; }
+  .overview .sub { color: var(--muted); font-size: 13px; margin-bottom: 18px; }
+
+  section.walk { margin-top: 46px; }
+  section.walk > h2 {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    font-size: 20px;
+    margin: 0 0 4px;
+    padding-top: 10px;
+  }
+  section.walk > h2 .n { color: var(--hunk-text); font-family: var(--mono); font-size: 14px; }
+  section.walk > h2 .review-btn { margin-left: 6px; }
+  .prose { max-width: 800px; }
+  .prose p { margin: 10px 0; }
+  .prose code, .overview code {
+    font-family: var(--mono);
+    font-size: 85%;
+    background: var(--panel-2);
+    border: 1px solid var(--border);
+    border-radius: 4px;
+    padding: 1px 5px;
+  }
+  .prose pre, .overview pre {
+    background: var(--panel);
+    border: 1px solid var(--border);
+    border-radius: 8px;
+    padding: 12px 14px;
+    overflow-x: auto;
+  }
+  .prose pre code, .overview pre code { background: none; border: none; padding: 0; font-size: 12.5px; line-height: 1.5; }
+
+  .block { margin: 18px 0; border: 1px solid var(--border); border-radius: 8px; overflow: hidden; background: var(--panel); }
+  .block .file-head {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    padding: 8px 14px;
+    font: 12.5px var(--mono);
+    background: var(--panel-2);
+    border-bottom: 1px solid var(--border);
+    color: var(--text);
+    cursor: pointer;
+    user-select: none;
+  }
+  .block .file-head .chev {
+    display: inline-block;
+    color: var(--muted);
+    font-size: 10px;
+    transition: transform 0.12s ease;
+  }
+  .block.collapsed .file-head .chev { transform: rotate(-90deg); }
+  .block.collapsed .file-head { border-bottom: none; }
+  .block.collapsed .body { display: none; }
+  .block .file-head .path { font-weight: 600; }
+  .block .file-head .stat { color: var(--muted); font-size: 11.5px; }
+  .block .file-head .stat .plus { color: var(--green); }
+  .block .file-head .stat .minus { color: var(--red); }
+
+  .block.context { border-color: rgba(163, 113, 247, 0.45); border-style: dashed; background: var(--ctx-bg); }
+  .block.context .file-head { background: rgba(163, 113, 247, 0.12); border-bottom-color: rgba(163, 113, 247, 0.35); }
+  .badge {
+    font: 600 10px var(--sans);
+    letter-spacing: 0.06em;
+    text-transform: uppercase;
+    color: var(--ctx-accent);
+    border: 1px solid var(--ctx-accent);
+    border-radius: 20px;
+    padding: 2px 9px;
+    white-space: nowrap;
+  }
+  .context-note { padding: 8px 14px 0; color: var(--muted); font-size: 13px; }
+  .context-note p { margin: 0 0 6px; }
+
+  .hunk-wrap { position: relative; }
+  .hunk-wrap + .hunk-wrap { border-top: 1px solid var(--border); }
+  .hunk-head {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    padding: 3px 14px;
+    background: var(--hunk-bg);
+    color: var(--hunk-text);
+    font: 11.5px/1.9 var(--mono);
+    user-select: none;
+  }
+  .hunk-head .spacer { flex: 1; }
+  .review-btn {
+    flex-shrink: 0;
+    background: transparent;
+    border: 1px solid var(--border);
+    color: var(--muted);
+    border-radius: 20px;
+    font-size: 11px;
+    line-height: 1.4;
+    padding: 1px 10px;
+    cursor: pointer;
+  }
+  .review-btn:hover { border-color: var(--muted); color: var(--text); }
+  .review-btn.on {
+    border-color: var(--green-strong);
+    color: var(--green);
+    background: rgba(46, 160, 67, 0.15);
+  }
+  .hunk-wrap.reviewed { box-shadow: inset 0 0 0 1.5px var(--green-strong); }
+  .hunk-wrap.reviewed .hunk-head { background: rgba(46, 160, 67, 0.12); }
+  .xlink {
+    flex-shrink: 0;
+    background: none;
+    border: none;
+    color: var(--accent);
+    font-size: 11px;
+    padding: 1px 6px;
+    cursor: pointer;
+  }
+  .xlink:hover { text-decoration: underline; }
+
+  @keyframes flashring {
+    0% { box-shadow: 0 0 0 3px var(--accent); }
+    100% { box-shadow: 0 0 0 3px transparent; }
+  }
+  .flash { animation: flashring 1.6s ease-out 1; }
+
+  .scroll { overflow-x: auto; }
+  table.code {
+    border-collapse: collapse;
+    width: 100%;
+    font: 12.5px/1.55 var(--mono);
+  }
+  table.code td { padding: 0 10px; white-space: pre; vertical-align: top; }
+  body[data-wrap="on"] table.code td.code-cell { white-space: pre-wrap; overflow-wrap: anywhere; }
+  td.num {
+    width: 1%;
+    min-width: 42px;
+    text-align: right;
+    color: var(--hunk-text);
+    user-select: none;
+    padding: 0 8px;
+  }
+  tr[data-ck] td.num, tr[data-ck-l] td.num { cursor: pointer; }
+  tr[data-ck] td.num:hover, tr[data-ck-l] td.num:hover {
+    color: var(--accent);
+    font-weight: 700;
+  }
+  tr.add td.code-cell { background: var(--add-bg); }
+  tr.add td.num { background: var(--add-num-bg); }
+  tr.del td.code-cell { background: var(--del-bg); }
+  tr.del td.num { background: var(--del-num-bg); }
+  td.code-cell .sign { display: inline-block; width: 1ch; margin-right: 6px; color: var(--muted); user-select: none; }
+  tr.add td.code-cell .sign { color: var(--green); }
+  tr.del td.code-cell .sign { color: var(--red); }
+  tr.meta td { color: var(--muted); font-style: italic; }
+
+  table.code.split td.pane { width: 50%; }
+  table.code.split td.pane.empty { background: var(--panel-2); }
+  table.code.split td.code-cell.add-cell { background: var(--add-bg); }
+  table.code.split td.num.add-cell { background: var(--add-num-bg); }
+  table.code.split td.code-cell.del-cell { background: var(--del-bg); }
+  table.code.split td.num.del-cell { background: var(--del-num-bg); }
+
+  body[data-view="unified"] .view-split { display: none; }
+  body[data-view="split"] .view-unified { display: none; }
+
+  /* comments */
+  tr.comment-row td { padding: 6px 14px 10px 56px; }
+  .comment-box {
+    background: var(--panel-2);
+    border: 1px solid var(--border);
+    border-left: 3px solid var(--accent);
+    border-radius: 6px;
+    padding: 8px 12px;
+    max-width: 760px;
+    font-family: var(--sans);
+    white-space: normal;
+  }
+  .comment-box .clabel {
+    font: 600 10px var(--sans);
+    letter-spacing: 0.06em;
+    text-transform: uppercase;
+    color: var(--accent);
+    margin-right: 8px;
+  }
+  .comment-box .ctext { font-size: 13px; margin-top: 4px; white-space: pre-wrap; }
+  .comment-box .cbtns { display: flex; gap: 8px; margin-top: 8px; justify-content: flex-end; }
+  .comment-box .cbtns .del { color: var(--red); }
+  .sec-comment-slot .comment-box { margin: 8px 0 12px; }
+
+  /* highlight.js — github dark */
+  .hljs-comment, .hljs-quote { color: #8b949e; }
+  .hljs-keyword, .hljs-selector-tag, .hljs-doctag, .hljs-template-tag, .hljs-template-variable, .hljs-type { color: #ff7b72; }
+  .hljs-title, .hljs-title.class_, .hljs-title.class_.inherited__, .hljs-title.function_ { color: #d2a8ff; }
+  .hljs-attr, .hljs-attribute, .hljs-literal, .hljs-meta, .hljs-number, .hljs-operator, .hljs-variable, .hljs-selector-attr, .hljs-selector-class, .hljs-selector-id { color: #79c0ff; }
+  .hljs-string, .hljs-regexp, .hljs-meta .hljs-string { color: #a5d6ff; }
+  .hljs-built_in, .hljs-symbol { color: #ffa657; }
+  .hljs-name, .hljs-selector-pseudo, .hljs-tag { color: #7ee787; }
+  .hljs-section, .hljs-bullet { color: #f2cc60; }
+  .hljs-emphasis { font-style: italic; }
+  .hljs-strong { font-weight: 600; }
+  .hljs-addition { color: #aff5b4; background: rgba(46,160,67,0.15); }
+  .hljs-deletion { color: #ffdcd7; background: rgba(248,81,73,0.15); }
+</style>
+</head>
+<body data-view="unified" data-wrap="on" data-tab="walkthrough">
+<header>
+  <h1 id="hdr-title"></h1>
+  <span class="meta" id="hdr-meta"></span>
+  <span class="spacer"></span>
+  <span id="review-count"></span>
+  <div class="seg" role="group" aria-label="Line wrap">
+    <button id="btn-wrap">Wrap</button>
+  </div>
+  <div class="seg" role="group" aria-label="Diff view">
+    <button id="btn-unified">Condensed</button>
+    <button id="btn-split">Side by side</button>
+  </div>
+  <div class="dd" id="review-dd">
+    <button id="btn-review" class="btn-primary">Review<span id="comment-badge"></span> ▾</button>
+    <div id="review-panel" hidden>
+      <label>Overall comment <span class="opt">(optional)</span></label>
+      <textarea id="overall-input" placeholder="High-level feedback for the author…"></textarea>
+      <div class="hint">Click any line number in a diff, or the Comment button on a section, to attach specific feedback.</div>
+      <div class="panel-foot">
+        <button id="btn-clear" class="btn-danger">Clear all</button>
+        <span id="comment-summary"></span>
+        <button id="btn-copy" class="btn-primary">Copy prompt</button>
+      </div>
+    </div>
+  </div>
+</header>
+<div class="layout" id="layout-walkthrough">
+  <div class="sidecol">
+    <div class="seg tabs"><button class="tab-btn" data-tab="walkthrough">Walkthrough</button><button class="tab-btn" data-tab="tree">Tree</button></div>
+    <nav class="side" id="toc"></nav>
+  </div>
+  <main id="main"></main>
+</div>
+<div class="layout" id="layout-tree">
+  <div class="sidecol">
+    <div class="seg tabs"><button class="tab-btn" data-tab="walkthrough">Walkthrough</button><button class="tab-btn" data-tab="tree">Tree</button></div>
+    <nav class="side" id="filetree"></nav>
+  </div>
+  <main id="tree-main"></main>
+</div>
+
+<script>/*__VENDOR_JS__*/</script>
+<script>
+const WALKTHROUGH = /*__DATA__*/null;
+
+const LANG_BY_EXT = {
+  js: 'javascript', jsx: 'javascript', mjs: 'javascript', cjs: 'javascript',
+  ts: 'typescript', tsx: 'typescript',
+  py: 'python', rb: 'ruby', go: 'go', rs: 'rust',
+  sh: 'bash', bash: 'bash', zsh: 'bash',
+  c: 'c', h: 'c', cpp: 'cpp', cc: 'cpp', hpp: 'cpp',
+  java: 'java', kt: 'kotlin', swift: 'swift', m: 'objectivec',
+  cs: 'csharp', php: 'php', scala: 'scala', lua: 'lua', pl: 'perl', r: 'r',
+  json: 'json', yml: 'yaml', yaml: 'yaml', toml: 'ini', ini: 'ini',
+  xml: 'xml', html: 'xml', svg: 'xml', css: 'css', scss: 'scss', less: 'less',
+  md: 'markdown', sql: 'sql', graphql: 'graphql', gql: 'graphql',
+  diff: 'diff', patch: 'diff', vim: 'vim', ex: 'elixir', exs: 'elixir',
+  clj: 'clojure', cljs: 'clojure', edn: 'clojure', hs: 'haskell',
+};
+const LANG_BY_NAME = {
+  dockerfile: 'dockerfile', makefile: 'makefile', 'cmakelists.txt': 'cmake',
+  gemfile: 'ruby', rakefile: 'ruby', 'install': 'bash', '.zshrc': 'bash',
+  '.zshenv': 'bash', '.bashrc': 'bash',
+};
+
+function langForPath(path, override) {
+  if (override) return override;
+  const base = (path || '').split('/').pop().toLowerCase();
+  if (LANG_BY_NAME[base]) return LANG_BY_NAME[base];
+  const ext = base.includes('.') ? base.split('.').pop() : '';
+  return LANG_BY_EXT[ext] || 'plaintext';
+}
+
+function esc(s) {
+  return s.replace(/&/g, '&amp;').replace(/</g, '&lt;').replace(/>/g, '&gt;');
+}
+
+function escAttr(s) {
+  return esc(s).replace(/"/g, '&quot;');
+}
+
+function hl(text, lang) {
+  if (text === '') return '';
+  try {
+    if (lang !== 'plaintext' && hljs.getLanguage(lang)) {
+      return hljs.highlight(text, { language: lang, ignoreIllegals: true }).value;
+    }
+  } catch (e) {}
+  return esc(text);
+}
+
+// ---- diff parsing ----
+
+function parseDiff(text) {
+  const hunks = [];
+  let cur = null;
+  const lines = text.split('\n');
+  if (lines[lines.length - 1] === '') lines.pop();
+  for (const raw of lines) {
+    const m = raw.match(/^@@ -(\d+)(?:,(\d+))? \+(\d+)(?:,(\d+))? @@/);
+    if (m) {
+      cur = {
+        header: raw,
+        oldStart: +m[1], oldCount: m[2] === undefined ? 1 : +m[2],
+        newStart: +m[3], newCount: m[4] === undefined ? 1 : +m[4],
+        lines: [],
+      };
+      hunks.push(cur);
+      continue;
+    }
+    if (raw.startsWith('diff ') || raw.startsWith('index ') ||
+        raw.startsWith('--- ') || raw.startsWith('+++ ') ||
+        raw.startsWith('new file') || raw.startsWith('deleted file') ||
+        raw.startsWith('similarity') || raw.startsWith('rename ') ||
+        raw.startsWith('old mode') || raw.startsWith('new mode') ||
+        raw.startsWith('Binary files')) continue;
+    if (!cur) continue;
+    const c = raw[0];
+    if (c === '+') cur.lines.push({ t: 'add', s: raw.slice(1) });
+    else if (c === '-') cur.lines.push({ t: 'del', s: raw.slice(1) });
+    else if (c === '\\') cur.lines.push({ t: 'meta', s: raw });
+    else cur.lines.push({ t: 'ctx', s: raw.slice(1) });
+  }
+  return hunks;
+}
+
+function diffStat(hunks) {
+  let add = 0, del = 0;
+  for (const h of hunks) for (const l of h.lines) {
+    if (l.t === 'add') add++;
+    if (l.t === 'del') del++;
+  }
+  return { add, del };
+}
+
+function isOneSided(hunk) {
+  const kinds = new Set(hunk.lines.filter(l => l.t !== 'meta').map(l => l.t));
+  return kinds.size <= 1;
+}
+
+function hunksIntersect(a, b) {
+  const oldSide = a.oldCount > 0 && b.oldCount > 0 &&
+    a.oldStart <= b.oldStart + b.oldCount - 1 && b.oldStart <= a.oldStart + a.oldCount - 1;
+  const newSide = a.newCount > 0 && b.newCount > 0 &&
+    a.newStart <= b.newStart + b.newCount - 1 && b.newStart <= a.newStart + a.newCount - 1;
+  return oldSide || newSide;
+}
+
+// line keys identify a physical diff line across every table that renders it:
+// "<file>|<old line>|<new line>" for diff rows, "<file>|C|<line>" for context.
+function lineKey(file, oldNo, newNo) {
+  return `${file}|${oldNo || ''}|${newNo || ''}`;
+}
+
+// ---- persisted state ----
+
+const REVIEW_KEY = 'code-walkthrough-reviewed:' + location.pathname;
+const COMMENT_KEY = 'code-walkthrough-comments:' + location.pathname;
+let reviewedState = {};
+let commentState = { lines: {}, sections: {}, overall: '' };
+try { reviewedState = JSON.parse(localStorage.getItem(REVIEW_KEY)) || {}; } catch (e) {}
+try {
+  const stored = JSON.parse(localStorage.getItem(COMMENT_KEY));
+  if (stored) commentState = { lines: {}, sections: {}, overall: '', ...stored };
+} catch (e) {}
+let totalHunks = 0;
+
+function saveReviewed() {
+  try { localStorage.setItem(REVIEW_KEY, JSON.stringify(reviewedState)); } catch (e) {}
+}
+function saveComments() {
+  try { localStorage.setItem(COMMENT_KEY, JSON.stringify(commentState)); } catch (e) {}
+}
+
+function updateReviewCount() {
+  const done = document.querySelectorAll('#main .hunk-wrap.reviewed').length;
+  const el = document.getElementById('review-count');
+  el.textContent = totalHunks ? `${done}/${totalHunks} reviewed` : '';
+  el.classList.toggle('done', done === totalHunks && totalHunks > 0);
+}
+
+function commentCount() {
+  return Object.keys(commentState.lines).length + Object.keys(commentState.sections).length;
+}
+
+function updateCommentBadge() {
+  const n = commentCount();
+  const badge = document.getElementById('comment-badge');
+  badge.textContent = n;
+  badge.style.display = n ? 'inline-block' : 'none';
+  const overall = commentState.overall.trim() ? 1 : 0;
+  const summary = document.getElementById('comment-summary');
+  summary.textContent = n + overall
+    ? `${n} comment${n === 1 ? '' : 's'}${overall ? ' + overall' : ''}`
+    : 'No comments yet';
+}
+
+// ---- hunk registries for cross-linking ----
+
+const wtHunks = [];
+const trHunks = [];
+
+function findTreeAnchor(file, hunk) {
+  const hit = trHunks.find(t => t.file === file && hunksIntersect(t.hunk, hunk));
+  return hit ? hit.domId : null;
+}
+function findWalkthroughAnchor(file, hunk) {
+  const hit = wtHunks.find(t => t.file === file && hunksIntersect(t.hunk, hunk));
+  return hit ? hit.domId : null;
+}
+
+// ---- rendering ----
+
+function renderUnifiedRows(hunk, lang, file) {
+  const rows = [];
+  let o = hunk.oldStart, n = hunk.newStart;
+  for (const l of hunk.lines) {
+    if (l.t === 'meta') {
+      rows.push(`<tr class="meta"><td class="num"></td><td class="num"></td><td class="code-cell">${esc(l.s)}</td></tr>`);
+      continue;
+    }
+    const sign = l.t === 'add' ? '+' : l.t === 'del' ? '-' : ' ';
+    const oNum = l.t === 'add' ? '' : o++;
+    const nNum = l.t === 'del' ? '' : n++;
+    const ck = lineKey(file, oNum, nNum);
+    rows.push(`<tr class="${l.t}" data-ck="${escAttr(ck)}"><td class="num">${oNum}</td><td class="num">${nNum}</td>` +
+      `<td class="code-cell"><span class="sign">${sign}</span>${hl(l.s, lang)}</td></tr>`);
+  }
+  return rows.join('');
+}
+
+function renderSplitRows(hunk, lang, file) {
+  const rows = [];
+  const side = (num, line, cls) => line === null
+    ? `<td class="num pane-num"></td><td class="pane code-cell empty"></td>`
+    : `<td class="num ${cls}">${num}</td><td class="pane code-cell ${cls}">${hl(line, lang)}</td>`;
+  let o = hunk.oldStart, n = hunk.newStart;
+  let i = 0;
+  const ls = hunk.lines.filter(l => l.t !== 'meta');
+  while (i < ls.length) {
+    if (ls[i].t === 'ctx') {
+      const ck = lineKey(file, o, n);
+      rows.push(`<tr data-ck-l="${escAttr(ck)}" data-ck-r="${escAttr(ck)}">${side(o++, ls[i].s, '')}${side(n++, ls[i].s, '')}</tr>`);
+      i++;
+      continue;
+    }
+    const dels = [], adds = [];
+    while (i < ls.length && ls[i].t === 'del') dels.push(ls[i++].s);
+    while (i < ls.length && ls[i].t === 'add') adds.push(ls[i++].s);
+    const rowsN = Math.max(dels.length, adds.length);
+    for (let k = 0; k < rowsN; k++) {
+      const lKey = k < dels.length ? lineKey(file, o, '') : null;
+      const rKey = k < adds.length ? lineKey(file, '', n) : null;
+      const left = k < dels.length ? side(o++, dels[k], 'del-cell') : side('', null, '');
+      const right = k < adds.length ? side(n++, adds[k], 'add-cell') : side('', null, '');
+      const attrs = (lKey ? ` data-ck-l="${escAttr(lKey)}"` : '') + (rKey ? ` data-ck-r="${escAttr(rKey)}"` : '');
+      rows.push(`<tr${attrs}>${left}${right}</tr>`);
+    }
+  }
+  return rows.join('');
+}
+
+function hunkTables(hunk, lang, file) {
+  if (isOneSided(hunk)) {
+    return `<div class="scroll"><table class="code">${renderUnifiedRows(hunk, lang, file)}</table></div>`;
+  }
+  return `<div class="scroll view-unified"><table class="code">${renderUnifiedRows(hunk, lang, file)}</table></div>` +
+    `<div class="scroll view-split"><table class="code split">${renderSplitRows(hunk, lang, file)}</table></div>`;
+}
+
+function renderWalkthroughHunk(hunk, lang, file) {
+  const storageId = `${file}|${hunk.header}`;
+  const domId = `wt-h-${wtHunks.length}`;
+  wtHunks.push({ domId, file, hunk });
+  const on = reviewedState[storageId];
+  return `<div class="hunk-wrap${on ? ' reviewed' : ''}" id="${domId}" data-storage-id="${escAttr(storageId)}">
+    <div class="hunk-head"><span>${esc(hunk.header)}</span><span class="spacer"></span>
+      <button class="xlink to-tree" data-wt="${domId}">Show in tree →</button>
+      <button class="review-btn hunk-review${on ? ' on' : ''}">${on ? 'Reviewed ✓' : 'Mark reviewed'}</button>
+    </div>${hunkTables(hunk, lang, file)}</div>`;
+}
+
+function renderDiffBlock(block) {
+  const lang = langForPath(block.file, block.lang);
+  const hunks = parseDiff(block.hunks);
+  const { add, del } = diffStat(hunks);
+  totalHunks += hunks.length;
+  const body = hunks.map(h => renderWalkthroughHunk(h, lang, block.file)).join('');
+  return `<div class="block diff">
+    <div class="file-head"><span class="chev">▼</span><span class="path">${esc(block.file)}</span>
+      <span class="stat"><span class="plus">+${add}</span> <span class="minus">−${del}</span></span></div>
+    <div class="body">${body}</div>
+  </div>`;
+}
+
+function renderContextBlock(block) {
+  const lang = langForPath(block.file, block.lang);
+  const lines = block.code.replace(/\n$/, '').split('\n');
+  let n = block.startLine || 1;
+  const rows = lines.map(s => {
+    const ck = `${block.file}|C|${n}`;
+    return `<tr data-ck="${escAttr(ck)}"><td class="num">${n++}</td><td class="code-cell">${hl(s, lang)}</td></tr>`;
+  }).join('');
+  const note = block.note ? `<div class="context-note">${marked.parse(block.note)}</div>` : '';
+  return `<div class="block context">
+    <div class="file-head"><span class="chev">▼</span><span class="badge">Context · not in diff</span>
+      <span class="path">${esc(block.file)}${block.startLine ? ':' + block.startLine : ''}</span></div>
+    <div class="body">${note}
+    <div class="scroll"><table class="code">${rows}</table></div></div>
+  </div>`;
+}
+
+function renderWalkthrough(w) {
+  const toc = document.getElementById('toc');
+  const main = document.getElementById('main');
+
+  const overview = document.createElement('div');
+  overview.className = 'overview';
+  overview.innerHTML = `<h1>${esc(w.title)}</h1>
+    <div class="sub">${esc([w.repo, w.scope, w.date].filter(Boolean).join(' · '))}</div>
+    ${marked.parse(w.overview || '')}`;
+  main.appendChild(overview);
+
+  (w.sections || []).forEach((s, idx) => {
+    const num = String(idx + 1).padStart(2, '0');
+    const id = 'sec-' + (idx + 1);
+    const sectionKey = 's:' + idx;
+    const on = reviewedState[sectionKey];
+    const sec = document.createElement('section');
+    sec.className = 'walk';
+    sec.id = id;
+    let html = `<h2><span class="n">${num}</span>${esc(s.title)}
+      <button class="review-btn section-review${on ? ' on' : ''}" data-storage-id="${sectionKey}" data-toc="toc-${idx}">${on ? 'Reviewed ✓' : 'Mark reviewed'}</button>
+      <button class="review-btn section-comment" data-idx="${idx}">Comment</button></h2>
+      <div class="sec-comment-slot" data-idx="${idx}"></div>`;
+    html += `<div class="prose">${marked.parse(s.prose || '')}</div>`;
+    for (const b of (s.blocks || [])) {
+      html += b.type === 'context' ? renderContextBlock(b) : renderDiffBlock(b);
+    }
+    sec.innerHTML = html;
+    main.appendChild(sec);
+
+    const a = document.createElement('a');
+    a.href = '#' + id;
+    a.id = 'toc-' + idx;
+    if (on) a.classList.add('reviewed');
+    a.innerHTML = `<span class="n">${num}</span>${esc(s.title)}`;
+    toc.appendChild(a);
+  });
+
+  main.querySelectorAll('pre code').forEach(c => { try { hljs.highlightElement(c); } catch (e) {} });
+}
+
+// ---- tree view ----
+
+function renderTreeSidebar(files) {
+  const root = {};
+  files.forEach((f, i) => {
+    const parts = f.file.split('/');
+    let node = root;
+    parts.forEach((p, j) => {
+      if (j === parts.length - 1) (node.__files ??= []).push({ name: p, i, f });
+      else node = node[p] ??= {};
+    });
+  });
+  const walk = node => {
+    let html = '';
+    for (const k of Object.keys(node).filter(k => k !== '__files').sort()) {
+      html += `<details open><summary>${esc(k)}/</summary><div class="tdir">${walk(node[k])}</div></details>`;
+    }
+    for (const fe of (node.__files || [])) {
+      const st = fe.f.status || 'modified';
+      html += `<a href="#tree-file-${fe.i}" data-goto="tree-file-${fe.i}" title="${escAttr(fe.f.file)}">` +
+        `<span class="fstat ${st}">${st[0].toUpperCase()}</span>${esc(fe.name)}</a>`;
+    }
+    return html;
+  };
+  document.getElementById('filetree').innerHTML = walk(root);
+}
+
+function renderTree(files) {
+  const main = document.getElementById('tree-main');
+  const parts = files.map((f, i) => {
+    const lang = langForPath(f.file, f.lang);
+    const hunks = parseDiff(f.hunks);
+    const { add, del } = diffStat(hunks);
+    const st = f.status || 'modified';
+    const body = hunks.map(h => {
+      const domId = `tr-h-${trHunks.length}`;
+      trHunks.push({ domId, file: f.file, hunk: h });
+      const wtAnchor = findWalkthroughAnchor(f.file, h);
+      const link = wtAnchor
+        ? `<button class="xlink to-walkthrough" data-target="${wtAnchor}">← See in walkthrough</button>`
+        : '';
+      return `<div class="hunk-wrap" id="${domId}">
+        <div class="hunk-head"><span>${esc(h.header)}</span><span class="spacer"></span>${link}</div>
+        ${hunkTables(h, lang, f.file)}</div>`;
+    }).join('');
+    const renamed = f.oldFile ? `${esc(f.oldFile)} → ` : '';
+    return `<div class="block diff" id="tree-file-${i}">
+      <div class="file-head"><span class="chev">▼</span><span class="fstat ${st}">${st[0].toUpperCase()}</span>
+        <span class="path">${renamed}${esc(f.file)}</span>
+        <span class="stat"><span class="plus">+${add}</span> <span class="minus">−${del}</span></span></div>
+      <div class="body">${body}</div>
+    </div>`;
+  });
+  main.innerHTML = parts.join('');
+}
+
+// ---- comments ----
+
+let openEditor = null;
+
+function closeEditor() {
+  if (openEditor) { openEditor.remove(); openEditor = null; }
+}
+
+function commentBoxHtml(text) {
+  return `<div class="comment-box"><span class="clabel">Comment</span><button class="xlink edit-comment">Edit</button>
+    <div class="ctext">${esc(text)}</div></div>`;
+}
+
+function editorHtml(text) {
+  return `<div class="comment-box"><span class="clabel">Comment</span>
+    <textarea>${esc(text || '')}</textarea>
+    <div class="cbtns">
+      ${text ? '<button class="xlink del">Delete</button>' : ''}
+      <button class="xlink cancel">Cancel</button>
+      <button class="btn-primary save">Save</button>
+    </div></div>`;
+}
+
+function refreshComments() {
+  closeEditor();
+  document.querySelectorAll('tr.comment-row').forEach(e => e.remove());
+  document.querySelectorAll('.sec-comment-slot').forEach(s => s.innerHTML = '');
+
+  for (const [key, text] of Object.entries(commentState.lines)) {
+    const sel = `tr[data-ck="${key.replace(/"/g, '\\"')}"], tr[data-ck-l="${key.replace(/"/g, '\\"')}"], tr[data-ck-r="${key.replace(/"/g, '\\"')}"]`;
+    document.querySelectorAll(sel).forEach(row => {
+      const tr = document.createElement('tr');
+      tr.className = 'comment-row';
+      tr.dataset.commentKey = key;
+      tr.innerHTML = `<td colspan="${row.children.length}">${commentBoxHtml(text)}</td>`;
+      row.after(tr);
+    });
+  }
+  for (const [idx, text] of Object.entries(commentState.sections)) {
+    const slot = document.querySelector(`.sec-comment-slot[data-idx="${idx}"]`);
+    if (slot) {
+      slot.dataset.commentKey = idx;
+      slot.innerHTML = commentBoxHtml(text);
+    }
+  }
+  updateCommentBadge();
+}
+
+function openLineEditor(row, key) {
+  closeEditor();
+  document.querySelectorAll(`tr.comment-row[data-comment-key="${key.replace(/"/g, '\\"')}"]`).forEach(e => e.remove());
+  const tr = document.createElement('tr');
+  tr.className = 'comment-row editing';
+  tr.innerHTML = `<td colspan="${row.children.length}">${editorHtml(commentState.lines[key])}</td>`;
+  tr.dataset.editKey = key;
+  tr.dataset.editKind = 'line';
+  row.after(tr);
+  openEditor = tr;
+  tr.querySelector('textarea').focus();
+}
+
+function openSectionEditor(idx) {
+  closeEditor();
+  const slot = document.querySelector(`.sec-comment-slot[data-idx="${idx}"]`);
+  slot.innerHTML = '';
+  const div = document.createElement('div');
+  div.innerHTML = editorHtml(commentState.sections[idx]);
+  div.dataset.editKey = idx;
+  div.dataset.editKind = 'section';
+  slot.appendChild(div);
+  openEditor = div;
+  div.querySelector('textarea').focus();
+}
+
+function commitEditor(save) {
+  if (!openEditor) return;
+  const key = openEditor.dataset.editKey;
+  const kind = openEditor.dataset.editKind;
+  const store = kind === 'line' ? commentState.lines : commentState.sections;
+  if (save) {
+    const text = openEditor.querySelector('textarea').value.trim();
+    if (text) store[key] = text; else delete store[key];
+    saveComments();
+  }
+  openEditor = null;
+  refreshComments();
+}
+
+function deleteFromEditor() {
+  if (!openEditor) return;
+  const key = openEditor.dataset.editKey;
+  const kind = openEditor.dataset.editKind;
+  delete (kind === 'line' ? commentState.lines : commentState.sections)[key];
+  saveComments();
+  openEditor = null;
+  refreshComments();
+}
+
+// ---- prompt building ----
+
+function lineLabel(key) {
+  const [file, oldNo, newNo] = key.split('|');
+  if (oldNo === 'C') return `${file}:${newNo} (context shown in the walkthrough, not part of the diff)`;
+  if (newNo) return `${file}:${newNo}`;
+  return `${file}, removed line ${oldNo} (old numbering)`;
+}
+
+function lineText(key) {
+  const sel = `tr[data-ck="${key.replace(/"/g, '\\"')}"]`;
+  const row = document.querySelector(sel);
+  if (!row) return '';
+  const cell = row.querySelector('.code-cell');
+  if (!cell) return '';
+  const clone = cell.cloneNode(true);
+  clone.querySelector('.sign')?.remove();
+  return clone.textContent;
+}
+
+function orderedCommentKeys() {
+  const seen = new Set();
+  const ordered = [];
+  document.querySelectorAll('#main tr[data-ck], #tree-main tr[data-ck]').forEach(row => {
+    const key = row.dataset.ck;
+    if (commentState.lines[key] && !seen.has(key)) { seen.add(key); ordered.push(key); }
+  });
+  for (const key of Object.keys(commentState.lines)) {
+    if (!seen.has(key)) ordered.push(key);
+  }
+  return ordered;
+}
+
+function buildPrompt() {
+  const w = WALKTHROUGH;
+  const parts = [];
+  parts.push(`I reviewed these changes and have comments. Note that the line a comment lands on may be the end of a code block, function, or other logical separation, or it may be a comment on the whole file. Use context to figure this out so you don't hyper-focus on the specific line the comment happens to be on. But if the comment is about one line, don't overly-generalize either.`);
+  if (commentState.overall.trim()) {
+    parts.push(`\nOverall:\n${commentState.overall.trim()}`);
+  }
+  const sectionEntries = Object.entries(commentState.sections)
+    .sort(([a], [b]) => a - b)
+    .map(([idx, text]) => {
+      const title = (w.sections[idx] || {}).title || `#${+idx + 1}`;
+      return `- Walkthrough section "${title}": ${text}`;
+    });
+  const lineEntries = orderedCommentKeys().map(key => {
+    const quoted = lineText(key).trimEnd();
+    return `- ${lineLabel(key)}:${quoted ? `\n  > ${quoted.trim()}` : ''}\n  ${commentState.lines[key]}`;
+  });
+  if (sectionEntries.length || lineEntries.length) {
+    parts.push(`\nSpecific comments:\n${[...sectionEntries, ...lineEntries].join('\n')}`);
+  }
+  parts.push(`\nPlease address each comment and respond to each. If unambiguous, make the requested changes. If you have questions or want to push back on anything, clarify with me before proceeding. When all comments are addressed, re-generate the walkthrough (same scope) so I can re-review.`);
+  return parts.join('\n');
+}
+
+async function copyPrompt() {
+  const text = buildPrompt();
+  let ok = false;
+  try {
+    await navigator.clipboard.writeText(text);
+    ok = true;
+  } catch (e) {
+    const ta = document.createElement('textarea');
+    ta.value = text;
+    ta.style.position = 'fixed';
+    ta.style.opacity = '0';
+    document.body.appendChild(ta);
+    ta.select();
+    try { ok = document.execCommand('copy'); } catch (e2) {}
+    ta.remove();
+  }
+  const btn = document.getElementById('btn-copy');
+  btn.textContent = ok ? 'Copied ✓' : 'Copy failed';
+  setTimeout(() => { btn.textContent = 'Copy prompt'; }, 1600);
+}
+
+// ---- scroll position tracking ----
+
+function setCurrent(nav, link) {
+  const prev = nav.querySelector('a.current');
+  if (prev === link) return;
+  prev?.classList.remove('current');
+  if (!link) return;
+  link.classList.add('current');
+  const nr = nav.getBoundingClientRect();
+  const lr = link.getBoundingClientRect();
+  if (lr.top < nr.top || lr.bottom > nr.bottom) {
+    nav.scrollTop += lr.top - nr.top - nr.height / 2;
+  }
+}
+
+function currentTarget(selector) {
+  const els = document.querySelectorAll(selector);
+  if (!els.length) return null;
+  if (window.innerHeight + window.scrollY >= document.body.scrollHeight - 2) {
+    return els[els.length - 1];
+  }
+  let cur = els[0];
+  for (const el of els) {
+    if (el.getBoundingClientRect().top <= 120) cur = el;
+  }
+  return cur;
+}
+
+function spy() {
+  if (document.body.dataset.tab === 'walkthrough') {
+    const sec = currentTarget('#main section.walk');
+    const idx = sec ? sec.id.replace('sec-', '') - 1 : null;
+    setCurrent(document.getElementById('toc'),
+      idx === null ? null : document.getElementById('toc-' + idx));
+  } else {
+    const block = currentTarget('#tree-main > .block');
+    setCurrent(document.getElementById('filetree'),
+      block ? document.querySelector(`#filetree a[data-goto="${block.id}"]`) : null);
+  }
+}
+
+let spyQueued = false;
+window.addEventListener('scroll', () => {
+  if (spyQueued) return;
+  spyQueued = true;
+  requestAnimationFrame(() => { spyQueued = false; spy(); });
+}, { passive: true });
+
+// ---- interactions ----
+
+function setTab(tab) {
+  document.body.dataset.tab = tab;
+  document.querySelectorAll('.tab-btn').forEach(b =>
+    b.classList.toggle('active', b.dataset.tab === tab));
+  requestAnimationFrame(spy);
+}
+
+function goTo(domId, tab, smooth) {
+  setTab(tab);
+  requestAnimationFrame(() => {
+    const el = document.getElementById(domId);
+    if (!el) return;
+    const block = el.closest('.block');
+    if (block) block.classList.remove('collapsed');
+    el.scrollIntoView({ block: 'start', behavior: smooth ? 'smooth' : 'instant' });
+    document.querySelectorAll('.flash').forEach(f => f.classList.remove('flash'));
+    void el.offsetWidth;
+    el.classList.add('flash');
+  });
+}
+
+function wireEvents() {
+  document.querySelectorAll('.block .file-head').forEach(head => {
+    head.addEventListener('click', () => head.closest('.block').classList.toggle('collapsed'));
+  });
+
+  const setHunkReviewed = (wrap, on) => {
+    const id = wrap.dataset.storageId;
+    if (on) reviewedState[id] = true; else delete reviewedState[id];
+    wrap.classList.toggle('reviewed', on);
+    const btn = wrap.querySelector('.hunk-review');
+    btn.classList.toggle('on', on);
+    btn.textContent = on ? 'Reviewed ✓' : 'Mark reviewed';
+  };
+
+  const setSectionFlag = (secBtn, on) => {
+    const id = secBtn.dataset.storageId;
+    if (on) reviewedState[id] = true; else delete reviewedState[id];
+    secBtn.classList.toggle('on', on);
+    secBtn.textContent = on ? 'Reviewed ✓' : 'Mark reviewed';
+    document.getElementById(secBtn.dataset.toc)?.classList.toggle('reviewed', on);
+  };
+
+  document.querySelectorAll('.hunk-review').forEach(btn => {
+    btn.addEventListener('click', e => {
+      e.stopPropagation();
+      const wrap = btn.closest('.hunk-wrap');
+      const on = !reviewedState[wrap.dataset.storageId];
+      setHunkReviewed(wrap, on);
+      if (!on) {
+        const secBtn = wrap.closest('section.walk')?.querySelector('.section-review');
+        if (secBtn && reviewedState[secBtn.dataset.storageId]) setSectionFlag(secBtn, false);
+      }
+      saveReviewed();
+      updateReviewCount();
+    });
+  });
+
+  document.querySelectorAll('.section-review').forEach(btn => {
+    btn.addEventListener('click', () => {
+      const on = !reviewedState[btn.dataset.storageId];
+      setSectionFlag(btn, on);
+      btn.closest('section.walk').querySelectorAll('.hunk-wrap')
+        .forEach(wrap => setHunkReviewed(wrap, on));
+      saveReviewed();
+      updateReviewCount();
+    });
+  });
+
+  document.querySelectorAll('.section-comment').forEach(btn => {
+    btn.addEventListener('click', () => openSectionEditor(btn.dataset.idx));
+  });
+
+  document.querySelectorAll('.to-tree').forEach(btn => {
+    btn.addEventListener('click', e => {
+      e.stopPropagation();
+      const wt = wtHunks.find(h => h.domId === btn.dataset.wt);
+      const target = wt && findTreeAnchor(wt.file, wt.hunk);
+      if (target) goTo(target, 'tree');
+    });
+  });
+  document.querySelectorAll('.to-walkthrough').forEach(btn => {
+    btn.addEventListener('click', e => {
+      e.stopPropagation();
+      goTo(btn.dataset.target, 'walkthrough');
+    });
+  });
+
+  document.querySelectorAll('#filetree a').forEach(a => {
+    a.addEventListener('click', e => {
+      e.preventDefault();
+      goTo(a.dataset.goto, 'tree', true);
+    });
+  });
+
+  // line comments: click a line number cell
+  document.addEventListener('click', e => {
+    const num = e.target.closest('td.num');
+    if (num) {
+      const row = num.parentElement;
+      let key = null;
+      if (row.dataset.ck) key = row.dataset.ck;
+      else if (row.dataset.ckL || row.dataset.ckR) {
+        const cells = [...row.children];
+        key = cells.indexOf(num) === 0 ? (row.dataset.ckL || row.dataset.ckR)
+                                       : (row.dataset.ckR || row.dataset.ckL);
+      }
+      if (key) { openLineEditor(row, key); return; }
+    }
+
+    if (e.target.closest('.comment-box')) {
+      if (e.target.matches('.save')) commitEditor(true);
+      else if (e.target.matches('.cancel')) commitEditor(false);
+      else if (e.target.matches('.del')) deleteFromEditor();
+      else if (e.target.matches('.edit-comment')) {
+        const holder = e.target.closest('tr.comment-row, .sec-comment-slot');
+        const key = holder.dataset.commentKey;
+        if (holder.matches('.sec-comment-slot')) openSectionEditor(key);
+        else {
+          let prev = holder.previousElementSibling;
+          while (prev && prev.matches('.comment-row')) prev = prev.previousElementSibling;
+          if (prev) openLineEditor(prev, key);
+        }
+      }
+      return;
+    }
+  });
+
+  // review dropdown
+  const panel = document.getElementById('review-panel');
+  document.getElementById('btn-review').addEventListener('click', () => {
+    panel.hidden = !panel.hidden;
+  });
+  document.addEventListener('click', e => {
+    if (!panel.hidden && !e.target.closest('#review-dd')) panel.hidden = true;
+  });
+  const overallInput = document.getElementById('overall-input');
+  overallInput.value = commentState.overall;
+  overallInput.addEventListener('input', () => {
+    commentState.overall = overallInput.value;
+    saveComments();
+    updateCommentBadge();
+  });
+  document.getElementById('btn-copy').addEventListener('click', copyPrompt);
+
+  document.getElementById('btn-clear').addEventListener('click', () => {
+    if (!confirm('Clear all comments, including the overall comment?')) return;
+    commentState = { lines: {}, sections: {}, overall: '' };
+    saveComments();
+    overallInput.value = '';
+    refreshComments();
+  });
+
+  document.querySelectorAll('.tab-btn').forEach(b =>
+    b.addEventListener('click', () => setTab(b.dataset.tab)));
+}
+
+// ---- header controls ----
+
+function setView(view) {
+  document.body.dataset.view = view;
+  document.getElementById('btn-unified').classList.toggle('active', view === 'unified');
+  document.getElementById('btn-split').classList.toggle('active', view === 'split');
+  try { localStorage.setItem('code-walkthrough-view', view); } catch (e) {}
+}
+document.getElementById('btn-unified').addEventListener('click', () => setView('unified'));
+document.getElementById('btn-split').addEventListener('click', () => setView('split'));
+
+function setWrap(on) {
+  document.body.dataset.wrap = on ? 'on' : 'off';
+  document.getElementById('btn-wrap').classList.toggle('active', on);
+  try { localStorage.setItem('code-walkthrough-wrap', on ? 'on' : 'off'); } catch (e) {}
+}
+document.getElementById('btn-wrap').addEventListener('click',
+  () => setWrap(document.body.dataset.wrap !== 'on'));
+
+// ---- boot ----
+
+const w = WALKTHROUGH;
+document.title = w.title;
+document.getElementById('hdr-title').textContent = w.title;
+document.getElementById('hdr-meta').textContent = [w.repo, w.scope, w.date].filter(Boolean).join(' · ');
+
+let initialView = 'unified', initialWrap = 'on';
+try {
+  initialView = localStorage.getItem('code-walkthrough-view') || 'unified';
+  initialWrap = localStorage.getItem('code-walkthrough-wrap') || 'on';
+} catch (e) {}
+setView(initialView);
+setWrap(initialWrap === 'on');
+setTab('walkthrough');
+
+renderWalkthrough(w);
+if (Array.isArray(w.files) && w.files.length) {
+  renderTreeSidebar(w.files);
+  renderTree(w.files);
+} else {
+  document.querySelectorAll('.tabs').forEach(t => t.style.display = 'none');
+}
+wireEvents();
+updateReviewCount();
+refreshComments();
+</script>
+</body>
+</html>
