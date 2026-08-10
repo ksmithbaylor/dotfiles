@@ -17,6 +17,11 @@ lines_removed=$(echo "$input" | jq -r '.cost.total_lines_removed // empty')
 ctx_pct=$(echo "$input"    | jq -r '.context_window.used_percentage // empty')
 ctx_tokens=$(echo "$input" | jq -r '.context_window.total_input_tokens // empty')
 transcript_path=$(echo "$input" | jq -r '.transcript_path // empty')
+# Subscription rate limits (Pro/Max only; appears after first API response)
+rl_5h=$(echo "$input"   | jq -r '.rate_limits.five_hour.used_percentage // empty')
+rl_5h_reset=$(echo "$input" | jq -r '.rate_limits.five_hour.resets_at // empty')
+rl_7d=$(echo "$input"   | jq -r '.rate_limits.seven_day.used_percentage // empty')
+rl_7d_reset=$(echo "$input" | jq -r '.rate_limits.seven_day.resets_at // empty')
 
 # ---- Colors ----
 BLUE='\033[0;34m'
@@ -59,6 +64,42 @@ if [ -n "$ctx_pct" ]; then
     ctx_str=$(printf "${ctx_color}ctx %s%%${RESET}" "$pct")
   fi
 fi
+
+# ---- Subscription rate limits (5-hour + weekly) ----
+# Purple deepens as each window fills. Shows e.g. "5h 12% · 7d 47%".
+PURPLE='\033[38;5;141m'       # medium purple, normal usage
+PURPLE_MID='\033[38;5;135m'   # brighter purple, filling up
+PURPLE_HOT='\033[1;38;5;165m' # bold magenta-purple, nearly maxed
+rl_color() { # $1 = integer pct -> echoes a color escape
+  if   [ "$1" -ge 90 ]; then printf '%b' "$PURPLE_HOT"
+  elif [ "$1" -ge 70 ]; then printf '%b' "$PURPLE_MID"
+  else printf '%b' "$PURPLE"; fi
+}
+fmt_reset() { # $1 = reset epoch seconds -> echoes "3h24m" / "42m" of time remaining (empty if past/invalid)
+  [ -n "$1" ] || return
+  local now rem d h m
+  now=$(date +%s)
+  rem=$(( $1 - now ))
+  [ "$rem" -gt 0 ] 2>/dev/null || return
+  d=$(( rem / 86400 )); h=$(( (rem % 86400) / 3600 )); m=$(( (rem % 3600) / 60 ))
+  if   [ "$d" -gt 0 ]; then printf '%dd%dh' "$d" "$h"
+  elif [ "$h" -gt 0 ]; then printf '%dh%dm' "$h" "$m"
+  else printf '%dm' "$m"; fi
+}
+rl_seg() { # $1 = label, $2 = used_percentage, $3 = reset epoch -> echoes a colored segment
+  [ -n "$2" ] || return
+  local p seg r
+  p=$(printf "%.0f" "$2")
+  seg=$(printf "$(rl_color "$p")%s %s%%${RESET}" "$1" "$p")
+  r=$(fmt_reset "$3")
+  [ -n "$r" ] && seg="$seg $(printf "${DIM}(⤺%s)${RESET}" "$r")"
+  printf '%s' "$seg"
+}
+limits_str=""
+seg5=$(rl_seg "5h" "$rl_5h" "$rl_5h_reset")
+seg7=$(rl_seg "7d" "$rl_7d" "$rl_7d_reset")
+[ -n "$seg5" ] && limits_str="$seg5"
+[ -n "$seg7" ] && limits_str="${limits_str:+$limits_str ${DIM}·${RESET} }$seg7"
 
 # ---- Session cost + duration ----
 cost_str=""
@@ -167,6 +208,7 @@ if [ -n "$output_style" ] && [ "$output_style" != "default" ] && [ "$output_styl
   parts+=("$(printf "${DIM}[%s]${RESET}" "$output_style")")
 fi
 [ -n "$ctx_str" ]  && parts+=("$ctx_str")
+[ -n "$limits_str" ] && parts+=("$limits_str")
 [ -n "$cost_str" ] && parts+=("$cost_str")
 [ -n "$tps_str" ]  && parts+=("$tps_str")
 
