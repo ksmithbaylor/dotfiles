@@ -67,7 +67,6 @@
       }
     ]
   },
-  "model": "opus",
   "statusLine": {
     "command": "~/.claude/statusline.sh",
     "type": "command"
