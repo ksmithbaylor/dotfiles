@@ -419,7 +419,6 @@
 <body data-view="unified" data-wrap="on" data-tab="walkthrough">
 <header>
   <h1 id="hdr-title"></h1>
-  <span class="meta" id="hdr-meta"></span>
   <span class="spacer"></span>
   <span id="review-count"></span>
   <div class="seg" role="group" aria-label="Line wrap">
@@ -1232,8 +1231,12 @@ document.getElementById('btn-wrap').addEventListener('click',
 
 const w = WALKTHROUGH;
 document.title = w.title;
-document.getElementById('hdr-title').textContent = w.title;
-document.getElementById('hdr-meta').textContent = [w.repo, w.scope, w.date].filter(Boolean).join(' · ');
+const stampMatch = location.pathname.match(/(\d{4}-\d{2}-\d{2})-(\d{2})(\d{2})(\d{2})/);
+const stamp = stampMatch
+  ? `${stampMatch[1]} ${stampMatch[2]}:${stampMatch[3]}:${stampMatch[4]}`
+  : (w.date || '');
+document.getElementById('hdr-title').textContent =
+  `Code Walkthrough - ${w.repo || ''}${stamp ? ` (${stamp})` : ''}`;
 
 let initialView = 'unified', initialWrap = 'on';
 try {

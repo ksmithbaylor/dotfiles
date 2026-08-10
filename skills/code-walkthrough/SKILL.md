@@ -45,10 +45,13 @@ heart of the change.
 
 **Every hunk in the diff appears in exactly one section.** Nothing may be
 summarized away: a closing section batching lockfile churn or renames is fine,
-but it shows those hunks like any other section. Before building, verify
-coverage two ways: every entry in `files` (below) has its lines accounted for
-across the sections, and the per-file added/removed line counts match
-`git diff --numstat` for the scope.
+but it shows those hunks like any other section. Coverage is enforced
+mechanically: pass the scope's diff command to the build script (below) and it
+refuses to build on any mismatch, telling you what is missing or extra.
+
+To split one large hunk across sections, don't recompute `@@` headers by
+hand; pipe the file's diff through `scripts/slice-hunks.py` (see the script
+reference) and paste each emitted piece into its section.
 
 Never use the word "stop" for these groupings anywhere in the output. They are
 just sections.
@@ -93,9 +96,15 @@ two-or-three-word kebab-case name for the change, then build and open:
 ```bash
 out=~/.claude/code-walkthroughs
 mkdir -p $out
-~/.claude/skills/code-walkthrough/scripts/build.sh $out/<name>.json $out/<name>.html
+~/.claude/skills/code-walkthrough/scripts/build.sh $out/<name>.json $out/<name>.html \
+  --diff "<the exact command that produces the scope's diff>"
 open $out/<name>.html
 ```
+
+Always pass `--diff` with the same command the scope came from (e.g.
+`git diff <merge-base>`, `git show <sha>`, `git diff --cached`); it is what
+guarantees the walkthrough shows the whole diff and nothing else. If the check
+fails, fix the JSON and rebuild; don't narrate the failure to the user.
 
 The timestamp matters: the page stores the user's review state (comments,
 reviewed marks) in the browser keyed by filename, so a unique name per
@@ -103,5 +112,43 @@ generation is what makes each review start fresh. Never reuse or overwrite an
 earlier walkthrough's filename.
 
 The JSON stays next to the HTML so a walkthrough can be rebuilt or revised
-later. Finish by giving the user both paths and a one-line summary of the
-section count; do not dump the walkthrough content into the conversation.
+later.
+
+## Reporting back
+
+Close with a short summary about the change itself: what it does, why, and
+anything worth the reviewer's attention first. Do not summarize the
+walkthrough's structure, the steps you took, or the coverage verification;
+all of that happens in the background. Give exactly two mechanics: the HTML
+path (never the JSON path) and the diff command the walkthrough is based on.
+The `open` in the build step already put it on screen. Do not dump walkthrough
+content into the conversation.
+
+## Script reference
+
+`scripts/build.sh <walkthrough.json> <out.html> [--diff "<command>"]`
+renders the JSON into the self-contained HTML page. With `--diff`, the command
+runs through bash and its output is compared against the JSON before building:
+
+- The `files` array must contain exactly the diff's files, with matching
+  added/removed lines, matching `status`, and matching `oldFile` on renames.
+- The union of all section diff blocks must likewise contain exactly the
+  diff's added/removed lines per file, with split-hunk pieces reassembled by
+  their `@@` positions.
+- On mismatch, nothing is built; the failure lists each missing or extra line
+  so the JSON can be corrected. Matching content in the wrong order builds
+  with a warning that points at the `@@` headers of split hunks.
+
+`scripts/slice-hunks.py [--old] START END`
+reads one file's unified diff on stdin and writes the hunk pieces covering
+the inclusive line range START..END to stdout, with `@@` headers recomputed
+(zero-count sides anchor git-style to the line before the insertion point).
+The range is in new-file numbering; pass `--old` to use old-file numbering,
+which is what deleted files need. Removed lines belong to the range containing
+the position they were removed from. Example, splitting one file across two
+sections:
+
+```bash
+git show <sha> -- src/big.ts | scripts/slice-hunks.py 1 80    # first piece
+git show <sha> -- src/big.ts | scripts/slice-hunks.py 81 200  # second piece
+```
