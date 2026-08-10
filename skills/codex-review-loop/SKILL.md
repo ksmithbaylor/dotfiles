@@ -23,16 +23,24 @@ Run `codex exec --version` to confirm the CLI is there, and work from the repo
 root. `codex exec resume` has no `--cd` flag, so the review follows the current
 directory.
 
-Create a run directory and announce it:
+Create a run directory under `~/.claude/codex-review-loop` and announce it. The
+directory name is a timestamp, the name of the directory being reviewed, and a
+two-or-three-word kebab-case slug for what the review is about, so a later
+listing reads as a history rather than a pile of timestamps:
 
 ```bash
-run=.codex-review/$(date +%Y%m%d-%H%M%S)
+slug=proration-rounding   # what this review is about, 2-3 words
+run=$HOME/.claude/codex-review-loop/$(date +%Y%m%d-%H%M%S)-$(basename "$PWD")-$slug
 mkdir -p "$run"
 ```
 
-Everything for the run lives there: prompts, Codex's raw events, the JSON
-verdict per round, and `review.md`. Suggest the user gitignore `.codex-review/`
-if it is not already ignored.
+Pick the slug from the scope and intent you were given, before round 1 starts.
+Everything for the run lives in that directory: prompts, Codex's raw events, the
+JSON verdict per round, and `review.md`. Nothing is written into the repo under
+review, so there is nothing to gitignore.
+
+Only the directory's basename goes in the name, so record the full path at the
+top of `review.md` to keep the run traceable when two checkouts share a name.
 
 ## The argument
 
@@ -213,8 +221,8 @@ Four other exits, all of which end the run and go to the user:
 Maintain `$run/review.md` and update it after every round, so an interrupted
 run still leaves something readable. Structure it as:
 
-- **Summary**: rounds taken, how it ended, counts by outcome, and the round the
-  user handed off in if they did.
+- **Summary**: the full path of the directory reviewed, rounds taken, how it
+  ended, counts by outcome, and the round the user handed off in if they did.
 - **Findings**: one section per finding id, covering what Codex claimed, what
   you answered, and how it resolved. Quote the arguments where they matter;
   this file is the record of *why* the code looks the way it does. Where the
