@@ -13,6 +13,10 @@
       "description": "Human description of what diff this covers, e.g. 'branch vs master, incl. uncommitted'."
     },
     "date": { "type": "string", "description": "YYYY-MM-DD" },
+    "snapshot": {
+      "type": "string",
+      "description": "SHA printed by scripts/snapshot.sh at generation time. The review prompt uses it to scope the next round to exactly what changed since this walkthrough."
+    },
     "overview": {
       "type": "string",
       "description": "Markdown. One paragraph: what the whole change does and why, at the level of a good PR description."

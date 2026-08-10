@@ -27,6 +27,16 @@ If the user named a narrower target (a path, a commit range, uncommitted only),
 use that instead. When the scope is ambiguous and the readings differ
 materially, ask.
 
+**Re-review rounds.** When regenerating after review feedback, the feedback
+prompt carries a snapshot SHA for the tree the user reviewed. After making
+your changes, take a fresh snapshot with `scripts/snapshot.sh` (the new
+walkthrough needs it anyway) and scope to
+`git diff <reviewed sha> <fresh sha>`, passing the same command to the build
+script's `--diff` check. Always diff snapshot-to-snapshot; diffing a snapshot
+against the working tree misreports files that are still untracked. If the
+reviewed snapshot has been pruned, fall back to the original full scope and
+tell the user.
+
 ## Grouping and ordering
 
 Read the full diff before writing anything. If you didn't author the change,
@@ -89,6 +99,11 @@ renumber lines within a hunk. Splitting one large hunk across sections is fine
 as long as each piece keeps a correct `@@` header for where it starts. Set
 `lang` only when the file's extension would misidentify the language.
 
+Every walkthrough also records where the next round starts from: run
+`scripts/snapshot.sh` and put the SHA it prints in the JSON's `snapshot`
+field. The page embeds it in the copied review prompt, which is how a future
+round (even in a fresh session) knows to scope itself to just what changed.
+
 Name both files `YYYY-MM-DD-HHMMSS-<repo>-<slug>` (timestamp from
 `date +%Y-%m-%d-%H%M%S`) where `<repo>` is `basename $(pwd)` and `<slug>` is a
 two-or-three-word kebab-case name for the change, then build and open:
@@ -138,6 +153,16 @@ runs through bash and its output is compared against the JSON before building:
 - On mismatch, nothing is built; the failure lists each missing or extra line
   so the JSON can be corrected. Matching content in the wrong order builds
   with a warning that points at the `@@` headers of split hunks.
+
+`scripts/snapshot.sh`
+prints the SHA of a commit object capturing the current working tree, tracked
+and untracked files alike, without touching the index, the worktree, or any
+ref (it stages into a throwaway index and uses `commit-tree`). The commit is
+dangling: invisible to log/status/stash, diffable like any commit, and safe
+from garbage collection for weeks. Run it from the repo root at generation
+time and store the SHA in the JSON's `snapshot` field. Round-to-round deltas
+are always computed snapshot-to-snapshot (`git diff <old> <new>`), never
+snapshot-to-worktree, which misreports still-untracked files.
 
 `scripts/slice-hunks.py [--old] START END`
 reads one file's unified diff on stdin and writes the hunk pieces covering

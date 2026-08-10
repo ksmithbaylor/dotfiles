@@ -288,6 +288,8 @@
   .context-note { padding: 8px 14px 0; color: var(--muted); font-size: 13px; }
   .context-note p { margin: 0 0 6px; }
 
+  .sec-foot { display: flex; gap: 8px; margin-top: 10px; }
+
   .hunk-wrap { position: relative; }
   .hunk-wrap + .hunk-wrap { border-top: 1px solid var(--border); }
   .hunk-head {
@@ -747,14 +749,17 @@ function renderWalkthrough(w) {
     const sec = document.createElement('section');
     sec.className = 'walk';
     sec.id = id;
-    let html = `<h2><span class="n">${num}</span>${esc(s.title)}
-      <button class="review-btn section-review${on ? ' on' : ''}" data-storage-id="${sectionKey}" data-toc="toc-${idx}">${on ? 'Reviewed ✓' : 'Mark reviewed'}</button>
-      <button class="review-btn section-comment" data-idx="${idx}">Comment</button></h2>
+    const secButtons =
+      `<button class="review-btn section-review${on ? ' on' : ''}" data-storage-id="${sectionKey}" data-toc="toc-${idx}">${on ? 'Reviewed ✓' : 'Mark reviewed'}</button>
+      <button class="review-btn section-comment" data-idx="${idx}">Comment</button>`;
+    let html = `<h2><span class="n">${num}</span>${esc(s.title)} ${secButtons}</h2>
       <div class="sec-comment-slot" data-idx="${idx}"></div>`;
     html += `<div class="prose">${marked.parse(s.prose || '')}</div>`;
     for (const b of (s.blocks || [])) {
       html += b.type === 'context' ? renderContextBlock(b) : renderDiffBlock(b);
     }
+    html += `<div class="sec-foot">${secButtons}</div>
+      <div class="sec-comment-slot" data-idx="${idx}"></div>`;
     sec.innerHTML = html;
     main.appendChild(sec);
 
@@ -864,11 +869,10 @@ function refreshComments() {
     });
   }
   for (const [idx, text] of Object.entries(commentState.sections)) {
-    const slot = document.querySelector(`.sec-comment-slot[data-idx="${idx}"]`);
-    if (slot) {
+    document.querySelectorAll(`.sec-comment-slot[data-idx="${idx}"]`).forEach(slot => {
       slot.dataset.commentKey = idx;
       slot.innerHTML = commentBoxHtml(text);
-    }
+    });
   }
   updateCommentBadge();
 }
@@ -886,10 +890,11 @@ function openLineEditor(row, key) {
   tr.querySelector('textarea').focus();
 }
 
-function openSectionEditor(idx) {
+function openSectionEditor(idx, targetSlot) {
   closeEditor();
-  const slot = document.querySelector(`.sec-comment-slot[data-idx="${idx}"]`);
-  slot.innerHTML = '';
+  const slots = document.querySelectorAll(`.sec-comment-slot[data-idx="${idx}"]`);
+  slots.forEach(s => { s.innerHTML = ''; });
+  const slot = targetSlot || slots[0];
   const div = document.createElement('div');
   div.innerHTML = editorHtml(commentState.sections[idx]);
   div.dataset.editKey = idx;
@@ -959,7 +964,7 @@ function orderedCommentKeys() {
 function buildPrompt() {
   const w = WALKTHROUGH;
   const parts = [];
-  parts.push(`I reviewed these changes and have comments. Note that the line a comment lands on may be the end of a code block, function, or other logical separation, or it may be a comment on the whole file. Use context to figure this out so you don't hyper-focus on the specific line the comment happens to be on. But if the comment is about one line, don't overly-generalize either.`);
+  parts.push(`I reviewed these changes and have comments. Some might be direct requests, some might be general questions, and some might require a response from you before proceeding with a requested change (such as when I'm not sure about something and want some clarification before deciding whether my request makes sense). Note that the line a comment lands on may be the end of a code block, function, or other logical separation, or it may be a comment on the whole file. Use context to figure this out so you don't hyper-focus on the specific line the comment happens to be on. But if the comment is about one line, don't overly-generalize either.`);
   if (commentState.overall.trim()) {
     parts.push(`\nOverall:\n${commentState.overall.trim()}`);
   }
@@ -976,7 +981,10 @@ function buildPrompt() {
   if (sectionEntries.length || lineEntries.length) {
     parts.push(`\nSpecific comments:\n${[...sectionEntries, ...lineEntries].join('\n')}`);
   }
-  parts.push(`\nPlease address each comment and respond to each. If unambiguous, make the requested changes. If you have questions or want to push back on anything, clarify with me before proceeding. When all comments are addressed, re-generate the walkthrough (same scope) so I can re-review.`);
+  parts.push(`\nPlease address each comment in the way that's most appropriate. If I've asked a question and you think I should weigh in before you proceed with a change, respond and ask me before proceeding. If the comment is an unambiguous request, just make the changes. If you have any questions for me or want to push back on anything, let's have a conversation to clarify things before proceeding. When all comments are addressed, re-generate the walkthrough with just the changes you made and your reasoning in response to my comments, so I can re-review. Once you're done generating the new walkthrough, respond to my comments one by one in the conversation.`);
+  if (w.snapshot) {
+    parts.push(`\nScope the regenerated walkthrough to exactly what changed since this review. Commit ${w.snapshot} snapshots the tree this walkthrough was generated from; after making your changes, run the code-walkthrough skill's scripts/snapshot.sh to capture a fresh snapshot (you need it for the new walkthrough's JSON anyway), then use \`git diff ${w.snapshot} <new snapshot>\` as both the walkthrough's scope and the build script's --diff coverage check. Do not use \`git diff ${w.snapshot}\` against the working tree directly; it misreports files that are still untracked. If the snapshot commit no longer exists (pruned), fall back to the walkthrough's original full scope and say so.`);
+  }
   return parts.join('\n');
 }
 
@@ -1089,8 +1097,10 @@ function wireEvents() {
   const setSectionFlag = (secBtn, on) => {
     const id = secBtn.dataset.storageId;
     if (on) reviewedState[id] = true; else delete reviewedState[id];
-    secBtn.classList.toggle('on', on);
-    secBtn.textContent = on ? 'Reviewed ✓' : 'Mark reviewed';
+    document.querySelectorAll(`.section-review[data-storage-id="${id}"]`).forEach(b => {
+      b.classList.toggle('on', on);
+      b.textContent = on ? 'Reviewed ✓' : 'Mark reviewed';
+    });
     document.getElementById(secBtn.dataset.toc)?.classList.toggle('reviewed', on);
   };
 
@@ -1121,7 +1131,11 @@ function wireEvents() {
   });
 
   document.querySelectorAll('.section-comment').forEach(btn => {
-    btn.addEventListener('click', () => openSectionEditor(btn.dataset.idx));
+    btn.addEventListener('click', () => {
+      const near = btn.parentElement.nextElementSibling;
+      openSectionEditor(btn.dataset.idx,
+        near?.matches('.sec-comment-slot') ? near : undefined);
+    });
   });
 
   document.querySelectorAll('.to-tree').forEach(btn => {
@@ -1168,7 +1182,7 @@ function wireEvents() {
       else if (e.target.matches('.edit-comment')) {
         const holder = e.target.closest('tr.comment-row, .sec-comment-slot');
         const key = holder.dataset.commentKey;
-        if (holder.matches('.sec-comment-slot')) openSectionEditor(key);
+        if (holder.matches('.sec-comment-slot')) openSectionEditor(key, holder);
         else {
           let prev = holder.previousElementSibling;
           while (prev && prev.matches('.comment-row')) prev = prev.previousElementSibling;
