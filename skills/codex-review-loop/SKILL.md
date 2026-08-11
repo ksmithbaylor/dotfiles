@@ -19,9 +19,9 @@ either side, and what they say carries more weight than either agent's argument.
 
 ## Before starting
 
-Run `codex exec --version` to confirm the CLI is there, and work from the repo
-root. `codex exec resume` has no `--cd` flag, so the review follows the current
-directory.
+Run `codex --version` to confirm the CLI is there, and work from the repo root.
+The Codex thread takes its working directory from yours, so the review follows
+the current directory.
 
 Create a run directory under `~/.claude/codex-review-loop` and announce it. The
 directory name is a timestamp, the name of the directory being reviewed, and a
@@ -108,13 +108,17 @@ request, the diff, and the protocol Codex must follow:
 Then run the round, from the repo under review:
 
 ```bash
-~/.claude/skills/codex-review-loop/scripts/codex-round.sh "$run" "$run/round-1-prompt.md"
+~/.claude/skills/codex-review-loop/scripts/codex-round.mjs "$run" "$run/round-1-prompt.md"
 ```
 
-The script starts the session, records its thread id, and prints the path to
-Codex's JSON verdict. Read that file. Its shape is
-`reference/verdict-schema.json`, enforced by Codex, so you can branch on
-`verdict` and finding `status` directly rather than interpreting prose.
+The script starts the thread, records its id, and prints the path to Codex's
+JSON verdict. Read that file. Its shape is `reference/verdict-schema.json`,
+enforced by Codex, so you can branch on `verdict` and finding `status` directly
+rather than interpreting prose.
+
+Every round runs on `gpt-5.6-sol` at `xhigh` reasoning, pinned in the script.
+That is why it drives `codex app-server` over JSON-RPC instead of `codex exec`,
+which offers no way to raise reasoning effort.
 
 Then go to the checkpoint below. Do not start fixing anything yet.
 
@@ -192,7 +196,7 @@ the diff of what you changed this round and any `HUMAN` block from either
 checkpoint. Take the second checkpoint on that draft, then resume the session:
 
 ```bash
-~/.claude/skills/codex-review-loop/scripts/codex-round.sh "$run" "$run/round-N-prompt.md"
+~/.claude/skills/codex-review-loop/scripts/codex-round.mjs "$run" "$run/round-N-prompt.md"
 ```
 
 Every call after the first resumes automatically, since the thread id is on disk.
