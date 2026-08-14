@@ -48,7 +48,10 @@ def changes_in(text):
         if HUNK_RE.match(ln):
             in_hunk = True
             continue
-        if not in_hunk or ln.startswith("+++") or ln.startswith("---"):
+        # The trailing space is what distinguishes a `--- a/path` header from a
+        # removed line whose content is itself `--` (e.g. a SQL comment), which
+        # parse_expected already relies on.
+        if not in_hunk or ln.startswith("+++ ") or ln.startswith("--- "):
             continue
         if ln.startswith("+"):
             out.append("+" + ln[1:])
@@ -120,7 +123,7 @@ def sections_changes(data):
                     cur = {"o": int(m.group(1)), "n": int(m.group(3)), "changes": []}
                     per.setdefault(b["file"], []).append(cur)
                     continue
-                if cur is None or ln.startswith("+++") or ln.startswith("---"):
+                if cur is None or ln.startswith("+++ ") or ln.startswith("--- "):
                     continue
                 if ln.startswith("+"):
                     cur["changes"].append("+" + ln[1:])
