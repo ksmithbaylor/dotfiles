@@ -40,25 +40,9 @@ if [ -f '/usr/local/google-cloud-sdk/path.zsh.inc' ]; then . '/usr/local/google-
 # The next line enables shell command completion for gcloud.
 if [ -f '/usr/local/google-cloud-sdk/completion.zsh.inc' ]; then . '/usr/local/google-cloud-sdk/completion.zsh.inc'; fi
 
-# Update Cert Bundle and set exports
-if [ -z "$(security find-certificate -p -c 'Zscaler Root CA')" ]
-then
-  echo "Warning: Zscaler certificate does not exist. Please contact IT"
-else
-  mkdir -p $HOME/.certs
-  security find-certificate -a -p /System/Library/Keychains/SystemRootCertificates.keychain > $HOME/.certs/root_bundle.pem && \
-  security find-certificate -p -c 'Zscaler Root CA' >> $HOME/.certs/root_bundle.pem
-  export CURL_CA_BUNDLE=$HOME/.certs/root_bundle.pem
-  export REQUESTS_CA_BUNDLE=$HOME/.certs/root_bundle.pem
-  export CERT_PATH=$HOME/.certs/root_bundle.pem
-  export SSL_CERT_FILE=$HOME/.certs/root_bundle.pem
-  export NODE_EXTRA_CA_CERTS=$HOME/.certs/root_bundle.pem
-  export AWS_CA_BUNDLE=$HOME/.certs/root_bundle.pem
-fi
-
 # BEGIN CIRCLE MANAGED — ZSCALER SSL CONFIG
 # Rebuild CA bundle on each shell start (picks up keychain changes)
-if [ -d ~/circle ]; then
+if [[ -d $HOME/circle ]]; then
   if [ -z "$(security find-certificate -p -c 'Zscaler Root CA')" ]; then
     echo "Warning: Zscaler certificate does not exist. Please contact IT"
   else
