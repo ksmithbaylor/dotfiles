@@ -18,7 +18,7 @@ brew install \
   coreutils curl git rlwrap readline fzf jq htop tree \
   neovim mise tmux tree-sitter yarn git-delta ripgrep \
   herdr glow bat \
-  zlib libyaml openssl@1.1
+  zlib libyaml
 
 dotfiles=(
   .scripts
@@ -102,10 +102,6 @@ mise exec ruby -- gem install git-up bundler solargraph rubocop pry httparty
 echo Installing python tools...
 mise exec python -- python --version
 mise exec python -- pip install --upgrade pip
-mise exec python -- pip install yfinance plotext
+# mise exec python -- pip install yfinance plotext
 
-if [[ -f ~/coinbase/install ]]; then
-  echo Installing work stuff...
-  ~/coinbase/install
-fi
 echo Done!
