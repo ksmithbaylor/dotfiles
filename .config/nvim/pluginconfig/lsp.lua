@@ -123,6 +123,7 @@ local has_words_before = function()
 end
 
 local cmp = require('cmp')
+local luasnip = require('luasnip')
 
 cmp.setup({
   snippet = {
