@@ -1,0 +1,84 @@
+#!/usr/bin/env python3
+"""Screenshot running Pebble emulators without booting stopped ones.
+
+`pebble screenshot --emulator X` boots X as a side effect if it is not
+running; this wrapper only captures platforms whose qemu pid is verifiably
+alive, and refuses the rest.
+
+Usage: emu-screenshot [-o DIR] [platform ...]
+  No platforms given: capture every running emulator.
+  Output: DIR/<platform>.png (default ./screenshots), path printed per capture.
+Exit status: nonzero if an explicitly requested platform was not running or a
+capture failed.
+"""
+import json
+import os
+import subprocess
+import sys
+import tempfile
+
+PLATFORMS = ["aplite", "basalt", "chalk", "diorite", "emery", "flint", "gabbro"]
+
+
+def running_platforms():
+    path = os.path.join(tempfile.gettempdir(), "pb-emulator.json")
+    try:
+        with open(path) as f:
+            state = json.load(f)
+    except (OSError, ValueError):
+        return set()
+    up = set()
+    for platform, sdks in state.items():
+        for procs in sdks.values():
+            pid = procs.get("qemu", {}).get("pid")
+            try:
+                os.kill(pid, 0)
+                up.add(platform)
+                break
+            except (OSError, TypeError):
+                continue
+    return up
+
+
+def main():
+    args = sys.argv[1:]
+    outdir = "screenshots"
+    if "-o" in args:
+        i = args.index("-o")
+        outdir = args[i + 1]
+        del args[i:i + 2]
+
+    for p in args:
+        if p not in PLATFORMS:
+            sys.exit(f"emu-screenshot: unknown platform {p!r} (want one of {', '.join(PLATFORMS)})")
+
+    up = running_platforms()
+    requested = args or sorted(up)
+    if not requested:
+        sys.exit("emu-screenshot: no emulators running (and none requested)")
+
+    pebble = os.environ.get("PEBBLE_BIN", "pebble")
+    os.makedirs(outdir, exist_ok=True)
+    failed = False
+    for p in requested:
+        if p not in up:
+            print(f"emu-screenshot: {p} is not running, refusing to capture "
+                  "(pebble screenshot would boot it)", file=sys.stderr)
+            failed = True
+            continue
+        out = os.path.join(outdir, f"{p}.png")
+        r = subprocess.run(
+            [pebble, "screenshot", "--emulator", p, "--no-open", out],
+            capture_output=True, text=True)
+        if r.returncode != 0:
+            msg = (r.stderr or r.stdout).strip().splitlines()
+            print(f"emu-screenshot: {p} failed: {msg[-1] if msg else 'unknown error'}",
+                  file=sys.stderr)
+            failed = True
+        else:
+            print(out)
+    sys.exit(1 if failed else 0)
+
+
+if __name__ == "__main__":
+    main()

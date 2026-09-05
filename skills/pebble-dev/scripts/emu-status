@@ -1,0 +1,73 @@
+#!/usr/bin/env python3
+"""Report which Pebble emulators are actually running.
+
+Reads $TMPDIR/pb-emulator.json (the pebble tool's registry) and verifies each
+recorded pid with signal 0, since entries go stale when processes die.
+Read-only: never boots or signals anything.
+
+Usage: emu-status [--json]
+"""
+import json
+import os
+import sys
+import tempfile
+
+PLATFORMS = ["aplite", "basalt", "chalk", "diorite", "emery", "flint", "gabbro"]
+
+
+def alive(pid):
+    if not isinstance(pid, int) or pid <= 0:
+        return False
+    try:
+        os.kill(pid, 0)
+        return True
+    except OSError:
+        return False
+
+
+def read_state():
+    path = os.path.join(tempfile.gettempdir(), "pb-emulator.json")
+    try:
+        with open(path) as f:
+            return json.load(f)
+    except (OSError, ValueError):
+        return {}
+
+
+def main():
+    state = read_state()
+    result = {}
+    for platform in PLATFORMS:
+        entry = {"running": False}
+        for sdk, procs in state.get(platform, {}).items():
+            qemu = procs.get("qemu", {})
+            pypkjs = procs.get("pypkjs", {})
+            if alive(qemu.get("pid")):
+                entry = {
+                    "running": True,
+                    "sdk": sdk,
+                    "qemu_pid": qemu.get("pid"),
+                    "qemu_port": qemu.get("port"),
+                    "pypkjs_pid": pypkjs.get("pid"),
+                    "pypkjs_port": pypkjs.get("port"),
+                    "pypkjs_alive": alive(pypkjs.get("pid")),
+                }
+                break
+        result[platform] = entry
+
+    if "--json" in sys.argv[1:]:
+        print(json.dumps(result, indent=2))
+        return
+
+    for platform, entry in result.items():
+        if entry["running"]:
+            note = "" if entry["pypkjs_alive"] else "  (pypkjs DEAD)"
+            print(f"{platform:<8} RUNNING  sdk {entry['sdk']}  "
+                  f"qemu pid {entry['qemu_pid']} port {entry['qemu_port']}  "
+                  f"pypkjs pid {entry['pypkjs_pid']} port {entry['pypkjs_port']}{note}")
+        else:
+            print(f"{platform:<8} stopped")
+
+
+if __name__ == "__main__":
+    main()
