@@ -1,0 +1,138 @@
+#!/usr/bin/env bash
+# Show the state of the most recently started codex-review-loop run, then
+# tail its live activity (following into the next round if one starts).
+set -euo pipefail
+
+RUN_ROOT="$HOME/.claude/codex-review-loop"
+
+if [[ -t 1 && -z "${NO_COLOR:-}" ]]; then
+  ESC=$'\033'
+  C_RESET="${ESC}[0m"
+  C_BOLD="${ESC}[1m"
+  C_DIM="${ESC}[2m"
+  C_GRAY="${ESC}[90m"
+  C_RED="${ESC}[31m"
+  C_GREEN="${ESC}[32m"
+  C_YELLOW="${ESC}[33m"
+  C_CYAN="${ESC}[36m"
+  C_MAGENTA="${ESC}[35m"
+else
+  C_RESET=""; C_BOLD=""; C_DIM=""; C_GRAY=""
+  C_RED=""; C_GREEN=""; C_YELLOW=""; C_CYAN=""; C_MAGENTA=""
+fi
+
+# Shell commands in gray (background noise), plan updates in yellow (progress
+# markers), agent messages in cyan (the actual back-and-forth commentary).
+FILTER='
+if .method == "item/completed" then
+  .params.item as $item |
+  if $item.type == "commandExecution" then ($gray + "$ " + $item.command + $reset)
+  elif $item.type == "agentMessage" then
+    ($item.text | (try (fromjson | .summary) catch $item.text)) as $s | ($cyan + "💬 " + $s + $reset)
+  else empty end
+elif .method == "turn/plan/updated" then
+  ((.params.explanation // "") | select(length > 0) | ($yellow + "📋 " + . + $reset))
+else empty end
+'
+FILTER_ARGS=(--arg gray "$C_GRAY" --arg cyan "$C_CYAN" --arg yellow "$C_YELLOW" --arg reset "$C_RESET")
+
+run=$(find "$RUN_ROOT" -maxdepth 1 -mindepth 1 -type d 2>/dev/null | sort | tail -1)
+if [[ -z "$run" ]]; then
+  echo "No codex review loops found under $RUN_ROOT" >&2
+  exit 1
+fi
+
+name=$(basename "$run")
+started_raw=${name:0:15}
+about=${name:16}
+started_human=$(date -j -f "%Y%m%d-%H%M%S" "$started_raw" "+%Y-%m-%d %H:%M:%S" 2>/dev/null || echo "$started_raw")
+
+round=$(find "$run" -maxdepth 1 -name 'round-*-prompt.md' -exec basename {} \; \
+  | sed -E 's/round-([0-9]+)-prompt\.md/\1/' | sort -n | tail -1)
+round=${round:-0}
+
+review_file="$run/review.md"
+
+echo "${C_DIM}run:${C_RESET}     ${C_BOLD}${name}${C_RESET}"
+echo "${C_DIM}started:${C_RESET} $started_human"
+echo "${C_DIM}about:${C_RESET}   $about"
+echo "${C_DIM}round:${C_RESET}   $round"
+echo
+
+verdict_file="$run/round-${round}-verdict.json"
+if [[ -f "$verdict_file" ]]; then
+  jq -r \
+    --arg bold "$C_BOLD" --arg reset "$C_RESET" \
+    --arg red "$C_RED" --arg green "$C_GREEN" --arg yellow "$C_YELLOW" --arg gray "$C_DIM" --arg magenta "$C_MAGENTA" \
+    '
+    ($bold + "verdict: " + $reset + (if .verdict == "approved" then $green else $yellow end) + .verdict + $reset),
+    ($bold + "summary: " + $reset + .summary),
+    "",
+    (.findings | group_by(.status) | map(
+        .[0].status as $st |
+        (if $st == "open" then $red
+         elif $st == "resolved" then $green
+         elif $st == "withdrawn" then $gray
+         else $magenta end) as $c |
+        ($c + $st + ": " + (length | tostring) + $reset)
+      ) | join("  "))
+    ' "$verdict_file"
+  echo
+fi
+
+# review.md is rewritten after every round, not just the final one, so its
+# mere existence doesn't mean the loop is over. The real signal is whether
+# the latest verdict has any finding still "open".
+open_count=0
+if [[ -f "$verdict_file" ]]; then
+  open_count=$(jq '[.findings[] | select(.status == "open")] | length' "$verdict_file")
+fi
+
+if [[ "$open_count" -eq 0 && -f "$verdict_file" ]]; then
+  echo "${C_BOLD}${C_GREEN}no open findings — review is finished${C_RESET}"
+  if [[ -f "$review_file" ]]; then
+    echo
+    awk '/^## Findings/{exit} {print}' "$review_file"
+  fi
+  exit 0
+fi
+
+events_file="$run/round-${round}-events.jsonl"
+active_pid=$(ps aux | grep -F "codex-round.mjs $run " | grep -v grep | awk '{print $2}' | head -1 || true)
+
+if [[ -n "$active_pid" ]]; then
+  echo "${C_GREEN}round $round is running (pid $active_pid) — tailing live:${C_RESET}"
+  echo
+  exec tail -f -n 40 "$events_file" | jq -r --unbuffered "${FILTER_ARGS[@]}" "$FILTER"
+fi
+
+echo "${C_DIM}no round is currently running; last activity from round $round:${C_RESET}"
+echo
+[[ -f "$events_file" ]] && tail -n 2000 "$events_file" | jq -r "${FILTER_ARGS[@]}" "$FILTER" | tail -20
+echo
+echo "${C_DIM}waiting for the next round to start... (Ctrl-C to stop)${C_RESET}"
+
+while true; do
+  next=$((round + 1))
+  next_events="$run/round-${next}-events.jsonl"
+
+  if [[ -f "$next_events" ]] && ps aux | grep -F "codex-round.mjs $run " | grep -v grep >/dev/null; then
+    round=$next
+    echo
+    echo "${C_GREEN}round $round started — tailing live:${C_RESET}"
+    echo
+    exec tail -f -n +1 "$next_events" | jq -r --unbuffered "${FILTER_ARGS[@]}" "$FILTER"
+  fi
+
+  if [[ -f "$verdict_file" ]]; then
+    open_count=$(jq '[.findings[] | select(.status == "open")] | length' "$verdict_file")
+    if [[ "$open_count" -eq 0 ]]; then
+      echo
+      echo "${C_BOLD}${C_GREEN}no open findings — review is finished${C_RESET}"
+      [[ -f "$review_file" ]] && { echo; awk '/^## Findings/{exit} {print}' "$review_file"; }
+      exit 0
+    fi
+  fi
+
+  sleep 2
+done
