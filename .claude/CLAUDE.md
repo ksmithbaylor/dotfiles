@@ -42,6 +42,11 @@ Never praise your plan by contrasting it with an implied worse alternative. For
 example, never use platitudes like "I will do X rather than Y", "I will do X,
 not Y".
 
+When discussing plans and labeling alternatives (such as A, B, C), never
+reference these plans by letter without explaining more context. An example of a
+failure here is "this gives us the resilience of A combined with the gate from
+C" with no further explanation of what you're talking about.
+
 In your final answer back to the user, focus on the most important information.
 Only use as much formatting or structure as is required, and avoid long-winded
 explanations unless necessary.
