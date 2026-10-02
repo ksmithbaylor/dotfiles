@@ -116,7 +116,7 @@ JSON verdict. Read that file. Its shape is `reference/verdict-schema.json`,
 enforced by Codex, so you can branch on `verdict` and finding `status` directly
 rather than interpreting prose.
 
-Every round runs on `gpt-6-sol` at `xhigh` reasoning, pinned in the script.
+Every round runs on `gpt-6.1-sol` at `xhigh` reasoning, pinned in the script.
 That is why it drives `codex app-server` over JSON-RPC instead of `codex exec`,
 which offers no way to raise reasoning effort.
 

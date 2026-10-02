@@ -21,7 +21,7 @@ import { appendFileSync, existsSync, mkdirSync, readFileSync, readdirSync, write
 import { dirname, join } from "node:path";
 import { fileURLToPath } from "node:url";
 
-const MODEL = "gpt-6-sol";
+const MODEL = "gpt-6.1-sol";
 const EFFORT = "xhigh";
 
 const skillDir = join(dirname(fileURLToPath(import.meta.url)), "..");
