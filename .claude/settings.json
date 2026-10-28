@@ -1,6 +1,9 @@
 {
-  "autoCompactEnabled": true,
+  "autoCompactEnabled": false,
   "effortLevel": "high",
+  "env": {
+    "DISABLE_AUTO_COMPACT": "1"
+  },
   "hooks": {
     "Notification": [
       {
