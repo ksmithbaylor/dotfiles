@@ -17,7 +17,7 @@
 set -euo pipefail
 
 # --- managed key lists (rewritten in place by `pull`) ---
-TRACKED_KEYS=(model effortLevel tui autoCompactEnabled hooks statusLine)
+TRACKED_KEYS=(model effortLevel tui autoCompactEnabled hooks statusLine env)
 IGNORED_KEYS=(extraKnownMarketplaces enabledPlugins)
 # --- end managed key lists ---
 
